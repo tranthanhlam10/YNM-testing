@@ -1,0 +1,276 @@
+{
+   "id":"de737438-9528-594e-b698-ec054f486caa",
+   "title":"Cơ hội săn Sale sách",
+   "_version_":1809261042234032128,
+   "last_status":1,
+   "id_social":"C_Sm4gsPTLe",
+   "comment_updated_at":1725442344,
+   "next_crawl_time":"2024-08-31T09:32:24.243Z",
+   "crawled_date":"2024-08-31T08:54:24.572Z",
+   "id_source":"ig_52536402028",
+   "created_date":{"set":"2024-08-31T11:00:46Z"}
+ }
+
+
+ {
+   "id":"de737438-9528-594e-b698-ec054f486vnb",
+   "title":"Lam Test Khanh Vy Posst",
+   "last_status":1,
+   "id_social":"C-78WylSVid",
+   "comment_updated_at":1725442344,
+   "next_crawl_time":"2024-08-31T09:32:24.243Z",
+   "crawled_date":"2024-08-31T08:54:24.572Z",
+   "id_source":"ig_",
+   "created_date":{"set":"2024-08-31T11:00:46Z"}
+ }
+
+
+{
+       "id":"ace1430f-f870-5d7e-9574-191733d63379",
+       "title":"#JaPhachara",
+       "id_social":"C4licpmP6Wd",
+       "next_crawl_time":"2024-09-08T07:43:31.172Z",
+       "crawled_date":"2024-09-08T07:28:31.172Z",
+       "id_source":"ig_",
+       "last_status": {"set": 4}
+       "created_date":"2024-09-08T19:16:27Z"}
+
+{
+       "id":"5462ae9c-5342-5a20-a03b-20f32637db8d",
+       "title":"Lam Test NDLN POST 2",
+       "id_social":"C_hj9u-SvHZ",
+       "next_crawl_time":"2024-09-09T07:43:31.172Z",
+       "crawled_date":"2024-09-09T07:28:31.172Z",
+       "id_source":"ig_201057170",
+       "created_date":{"set":"2024-09-09T16:57:52Z"}}
+
+        {
+       "id":"ace1430f-f870-5d7e-9574-191733d63379ádfá",
+       "title":"Lam Test NDLN POST",
+       "id_social":"C_qxJMMBmI2",
+       "next_crawl_time":"2024-09-08T07:43:31.172Z",
+       "crawled_date":"2024-09-08T07:28:31.172Z",
+       "id_source":"ig_201057170",
+       "last_status": 1
+       "created_date":"2024-09-08T19:16:27Z"}
+
+
+
+       
+{
+   "_query_": "created_date:[NOW-30DAYS TO *] AND next_crawl_time:[* TO NOW] AND -last_status:4",
+   "created_date": {"set": "2024-03-31T11:00:46Z"}  }
+ 
+ 
+ 
+   {
+         "id":"de737438-9528-594e-b698-ec054f486wqe",
+         "title":"Tran Thanh Lam Test lots of comments",
+         "comment_last_date":"2024-09-04T09:23:15Z",
+         "last_status":0,
+         "id_social":"C_S-on-yIsM",
+         "comment_updated_at":1725450050,
+         "next_crawl_time":"2024-09-01T05:40:50.663Z",
+         "crawled_date":"2024-08-31T08:54:24.572Z",
+         "id_source":"ig_1820571729",
+         "created_date":"2024-08-31T11:00:46Z"}
+ 
+ 
+ 
+  {
+         "id":"de737438-9528-594e-b698-ec054f486caa",
+         "title":"Cơ hội săn Sale sách",
+         "comment_last_date":"2024-09-04T09:23:15Z",
+         "last_status":0,
+         "id_social":"C_Sm4gsPTLe",
+         "comment_updated_at":1725450050,
+         "next_crawl_time":"set":{"2024-08-31T11:00:46Z"},
+         "crawled_date":"2024-08-31T08:54:24.572Z",
+         "id_source":"ig_52536402028",
+         "created_date":"2024-08-31T11:00:46Z"}
+ 
+ 
+          {
+         "id":"de737438-9528-594e-b698-ec054f486waq",
+         "title":"Tran Thanh Lam Test Post",
+         "comment_last_date":"2024-09-04T09:23:15Z",
+         "last_status":0,
+         "id_social":"C9Mns7AvztE",
+         "comment_updated_at":1725450050,
+         "next_crawl_time":"2024-09-02T05:40:50.663Z",
+         "crawled_date":"2024-08-31T08:54:24.572Z",
+         "id_source":"ig_5335118483",
+         "created_date":"2024-08-31T11:00:46Z"}
+
+
+
+         {
+            "id":"a13156a4-7588-58f7-bbea-be5a1131ab63",
+            "title":"Crawl bai Post HTH",
+            "id_social":"C_FxsGjStgj",
+            "next_crawl_time":"2024-09-09T07:43:31.535Z",
+            "crawled_date":"2024-09-09T07:28:31.535Z",
+            "id_source":"ig_1186821553",
+            "created_date":"2024-09-09T13:20:32Z"}
+
+
+
+            {
+               "id":"160c9381-807b-5465-a43d-069c658f8cf9",
+               "title":{"set":"Lam Test Hoa Hau tieu Vy Post"},
+               "id_social":"C_iHEqBhDAi",
+               "next_crawl_time":"2024-09-09T07:43:31.535Z",
+               "crawled_date":"2024-09-09T07:28:31.535Z",
+               "id_source":"ig_8722266979",
+               "created_date":"2024-09-09T17:07:16Z"
+            }
+
+
+            {
+               "id":"160c9381-807b-5465-a43d-069c658f8cf9",
+               "title":{"set":"Lam Test Phuong Ly Post"},
+               "id_social":"C_iHEqBhDAi",
+               "next_crawl_time":"2024-09-09T07:43:31.535Z",
+               "crawled_date":"2024-09-09T07:28:31.535Z",
+               "id_source":"ig_8722266979",
+               "created_date":"2024-09-09T17:07:16Z"
+            }
+
+
+            {
+               "id":"454858c4-b5cd-5e26-9c0e-465e97a8c2f0",
+               "title":{"set":"Lam Test Phuong Ly Post"},
+               "id_social":"C_k2i50yBv1",
+               "next_crawl_time":"2024-09-11T17:07:20.390Z",
+               "crawled_date":"2024-09-11T16:52:20.390Z",
+               "id_source":"ig_12269594961",
+               "created_date":"2024-09-07T08:22:52Z"}
+
+
+               {
+                  "id":"160c9381-807b-5465-a43d-069c658f8cf9",
+                  "title":"Lam Test Hoa Hau tieu Vy Post",
+                  "comment_last_date":{"set":null},
+                  "last_status":0,
+                  "id_social":"C_iHEqBhDAi",
+                  "comment_updated_at":{"set":null},
+                  "next_crawl_time":"2024-09-09T22:32:32.577Z",
+                  "crawled_date":{"set":null},
+                  "id_source":"ig_8722266979",
+                  "created_date":"2024-09-09T17:07:16Z"}
+
+
+                  {
+                     "id":"1a3a38b8-c532-5aa7-a26e-b24bc2b691dd",
+                     "title":"Good bye tháng 8",
+                     "last_status":1,
+                     "id_social":"C_R3akGyrag1",
+                    "comment_updated_at":{"set":null},
+                    "comment_last_date":{"set":null},
+                     "next_crawl_time":"2024-09-10T04:39:13.755Z",
+                     "crawled_date":"2024-09-09T16:52:21.645Z",
+                     "id_source":"ig_206172061",
+                     "created_date":"2024-08-30T03:34:37Z"}
+
+
+                     {
+                        "id":"00c0f4fd-7a18-5398-a9e9-87f78d87087f",
+                        "title":"Note: new set+not",
+                        "comment_updated_at":1726127258,
+                        "id_source":"ig_65955598703",
+                        "id_social":"C_bn2MHRltF"}
+
+
+                        {
+                           "id":"59afd0b1-57c1-5b77-a09b-ed785b33fbc4",
+                           "title":"Trần Thanh Lâm Test Post my crush",
+                           "id_social":"C_LNxe3SFpn",
+                           "comment_updated_at":{"set":null},
+                           "comment_last_date":{"set":null},
+                           "next_crawl_time":"2024-09-12T07:27:25.149Z",
+                           "crawled_date":"2024-09-12T08:19:03.993Z",
+                           "id_source":"ig_28600663",
+                           "created_date":"2024-09-08T05:27:08Z",
+                           "is_kol":true}
+
+
+                           {
+                              "id":"59afd0b1-57c1-5b77-a09b-ed785b33fbc4",
+                              "title":"Trần Thanh Lâm Test Post my crush",
+                              "priority":1,
+                              "last_status": 1,
+                              "id_social":"C_LNxe3SFpn",
+                              "next_crawl_time":"2024-08-13T08:32:34.334Z",
+                              "crawled_date":"2024-09-13T08:19:03.993Z",
+                              "id_source":"ig_28600663",
+                              "created_date":"2024-08-08T05:27:08Z",
+                              "is_kol":true}
+
+
+                              {
+                                 "id":"f3519483-a322-5847-bc1e-82ef1e940cac",
+                                 "title":"“Lam Test hoa hau ki duyen Post",
+                                 "priority":1,
+                                 "id_social":"C_sjyBMBxSR",
+                                 "next_crawl_time":"2024-08-11T16:54:27.997Z",
+                                 "crawled_date":"2024-09-11T16:39:27.997Z",
+                                 "comment_updated_at":{"set":null},
+                                 "comment_last_date":{"set":null},
+                                 "last_status": 1,
+                                 "id_source":"ig_198280262",
+                                 "created_date":"2024-09-11T12:18:41Z",
+                                 "is_kol":true}
+                                 
+
+                                 {
+                                    "id":"fa58cc85-1f38-5146-ab0d-06ef5a898ea2",
+                                    "title":"Lam Test bài Post không có comment",
+                                    "priority":1,
+                                    "id_social":"C_sSlW4P5Wt",
+                                    "next_crawl_time":"2024-09-11T16:54:29.444Z",
+                                    "crawled_date":"2024-09-11T16:39:29.444Z",
+                                    "comment_updated_at":{"set":null},
+                                    "comment_last_date":{"set":null},
+                                    "id_source":"ig_5335118483",
+                                    "created_date":"2024-09-11T10:02:03Z",
+                                    "is_kol":true
+                                 }
+
+
+
+                                 {
+                                    "id":"fa58cc85-1f38-5146-ab0d-06ef5a898ea2",
+                                    "title":"Lam Test bài Post của Phương Anh Đào",
+                                    "priority":1,
+                                    "id_social":"DALlRs5PJIC",
+                                    "next_crawl_time":"2024-09-15T16:54:29.444Z",
+                                    "crawled_date":"2024-09-11T16:39:29.444Z",
+                                    "comment_updated_at":{"set":null},
+                                    "comment_last_date":{"set":null},
+                                    "id_source":"ig_1227831817",
+                                    "created_date":"2024-09-15T10:02:03Z",
+                                    "is_kol":true
+                                 }
+
+                                
+                                 
+                                 {
+                                    "sources": [
+                                      {
+                                        "id": 170460,
+                                        "platform": 9,
+                                        "type": "BRAND_TRACKING",
+                                        "delay_time_rules": [],
+                                        "last_data_date": "2024-08-18T08:24:00.772Z",
+                                        "from_date": "1723969440",
+                                        "to_date": "1726647840",
+                                        "createdBy": "TiktokKeywordPostCrawlingLoader",
+                                        "post_updated_at": "2024-09-19T09:17:19.029Z",
+                                        "updated_at": "2024-09-19T09:17:19.030Z",
+                                        "keyword": "tranthanhlamtestbuilder",
+                                        "total": 0,
+                                        "logid": ""
+                                      }
+
+
+                                 
