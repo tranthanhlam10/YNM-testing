@@ -2,7 +2,6 @@ const axios = require('axios');
 const fs = require('fs');
 
 async function fetchMessages(url ,batchSize, totalMessages) {
-    //const url = "https://rabbitmq-staging.younetmedia.com/api/queues/%2F/testing.cl.tr.mentions_2_solr_mentions/get";
     const auth = Buffer.from("lamtt:vYoWn4KCmDYpvuFiqovWbF").toString("base64");
 
     let messages = [];
@@ -13,7 +12,7 @@ async function fetchMessages(url ,batchSize, totalMessages) {
             const remainingMessages = totalMessages - currentCount;
             const count = Math.min(batchSize, remainingMessages); // Điều chỉnh batchSize ở lần cuối
 
-            const response = await axios.post(
+            const response = await axios.post( 
                 url,
                 {
                     vhost: "/",
@@ -35,7 +34,7 @@ async function fetchMessages(url ,batchSize, totalMessages) {
 
             if (response.data.length === 0) {
                 console.log("No more messages in the queue.");
-                break; // Dừng nếu queue trả về rỗng (trường hợp không đủ totalMessages)
+                break; 
             }
 
             messages.push(...response.data.map(message => message.payload));
