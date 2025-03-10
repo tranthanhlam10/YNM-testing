@@ -665,3 +665,29 @@ solr_range_from=2025-10-14 03:27:33, solr_range_to=null, solr_core_segment=null,
 -abnormal: 1
 - Nếu chọn thêm option thì abnormal mới có thêm param %
 -country_id: 0
+
+// Các tài khoản trên social suite
+Account Admin
+lamtt_AccountAdmin@younetgroup.com	
+Lam@12345
+
+
+User
+lamtt_User@younetgroup.com	
+Lam@12345
+
+Editor
+lamtt_Editor@younetgroup.com
+Lam@12345
+
+
+System Admin
+lamtt@younetgroup.com
+Lam@12345
+
+Observer
+lamtt_Observer@younetgroup.com
+Lam@12345
+
+nguyennp@younetgroup.com
+123456789q

@@ -1,106 +1,80 @@
-const axios = require('axios');
-const fs = require('fs');
+import axios from 'axios';
+import { createWriteStream } from 'fs';
+import csvWriter from 'csv-write-stream';
 
-async function fetchMessages(url ,batchSize, totalMessages) {
-    const auth = Buffer.from("lamtt:vYoWn4KCmDYpvuFiqovWbF").toString("base64");
-
-    let messages = [];
-    let currentCount = 0;
-
-    while (currentCount < totalMessages) { // Lặp đến khi đạt totalMessages
-        try {
-            const remainingMessages = totalMessages - currentCount;
-            const count = Math.min(batchSize, remainingMessages); // Điều chỉnh batchSize ở lần cuối
-
-            const response = await axios.post( 
-                url,
-                {
-                    vhost: "/",
-                    name: "testing.cl.tr.mentions_2_solr_mentions",
-                    truncate: "50000",
-                    ackmode: "ack_requeue_true",
-                    encoding: "auto",
-                    count: count
-                },
-                {
-                    headers: {
-                        "accept": "*/*",
-                        "authorization": `Basic ${auth}`,
-                        "content-type": "text/plain;charset=UTF-8"
-                    },
-                    httpsAgent: new (require('https').Agent)({ rejectUnauthorized: false })
-                }
-            );
-
-            if (response.data.length === 0) {
-                console.log("No more messages in the queue.");
-                break; 
-            }
-
-            messages.push(...response.data.map(message => message.payload));
-            currentCount += response.data.length;
-
-            console.log(`Fetched ${currentCount}/${totalMessages} messages...`);
-        } catch (error) {
-            console.error("Error fetching messages:", error);
-            break;
+async function fetchMessagesAndSaveToCSV() {
+  try {
+    const response = await axios.post(
+      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.tr.identities_crawled_sources_LamTT/get',
+      {
+        count: 100,
+        ackmode: 'ack_requeue_false',
+        encoding: 'auto'
+      },
+      {
+        auth: {
+          username: 'lamtt',
+          password: 'lamtt'
+        },
+        timeout: 100000,
+        headers: {
+          'Content-Type': 'application/json'
         }
+      }
+    );
+
+    if (!response.data || response.data.length === 0) {
+      console.log('No messages found in the queue.');
+      return;
     }
 
-    return messages;
-}
+    // Chỉ lấy phần payload của tin nhắn
+    const payloads = response.data.map(message => 
+      typeof message.payload === 'string' ? JSON.parse(message.payload) : message.payload
+    );
 
-// Hàm kiểm tra số lượng payload trùng id
-function findDuplicateIds(payloads) {
-    const idCounts = {};
-    const duplicates = [];
+    // Xác định headers từ payload đầu tiên
+    const headers = Object.keys(payloads[0] || {});
+    
+    // Khởi tạo csv writer với headers
+    const writer = csvWriter({ headers });
+    const fileStream = createWriteStream('messages.csv', { encoding: 'utf8' });
+    writer.pipe(fileStream);
 
+    // Ghi payload vào CSV
     payloads.forEach(payload => {
-        try {
-            const parsedPayload = JSON.parse(payload); 
-            const id = parsedPayload.id;
-
-            if (id) {
-                idCounts[id] = (idCounts[id] || 0) + 1;
-                if (idCounts[id] === 2) {
-                    duplicates.push(id);
-                }
-            }
-        } catch (error) {
-            console.error("Error parsing payload:", error);
-        }
+      writer.write(flattenObject(payload));
     });
 
-    return {
-        duplicateCount: duplicates.length,
-        duplicateIds: duplicates
-    };
+    writer.end();
+    console.log(`Successfully saved ${payloads.length} messages to messages.csv`);
+
+  } catch (error) {
+    if (error.response) {
+      console.error('Server Error:', error.response.status, error.response.data);
+    } else if (error.request) {
+      console.error('No response received:', error.request);
+    } else {
+      console.error('Error setting up request:', error.message);
+    }
+  }
 }
 
-// RabbitMQ config
-const url = "https://rabbitmq-staging.younetmedia.com/api/queues/%2F/testing.cl.tr.mentions_2_solr_mentions/get";
+function flattenObject(obj, prefix = '') {
+  // Xử lý trường hợp obj có thể là null hoặc không phải object
+  if (!obj || typeof obj !== 'object') return {};
+  
+  return Object.keys(obj).reduce((acc, key) => {
+    const pre = prefix.length ? prefix + '.' : '';
+    
+    if (typeof obj[key] === 'object' && obj[key] !== null && !Array.isArray(obj[key])) {
+      Object.assign(acc, flattenObject(obj[key], pre + key));
+    } else {
+      acc[pre + key] = obj[key];
+    }
+    
+    return acc;
+  }, {});
+}
 
-const url2 = "https://rabbitmq-staging.younetmedia.com/api/queues/%2F/staging.cl.tr.posts_by_topic_finished_sources/get";
-const batchSize = 100;
-const totalMessages = 472;
-
-
-fetchMessages(url2, batchSize, totalMessages).then(payloads => {
-    // Lưu chỉ phần payload vào file JSON
-    fs.writeFile("payloads_staging_topic.json", JSON.stringify(payloads, null, 2), (err) => {
-        if (err) {
-            console.error("Error writing to file:", err);
-        } else {
-            console.log("Payloads saved to payloads_staging_topic.json");
-
-            // Kiểm tra các payload bị trùng ID
-            const { duplicateCount, duplicateIds } = findDuplicateIds(payloads);
-            console.log(`Found ${duplicateCount} duplicate IDs.`);
-            if (duplicateCount > 0) {
-                console.log("Duplicate IDs:", duplicateIds);
-            }
-        }
-    });
-}).catch(error => {
-    console.error("Error in fetching messages:", error);
-});
+fetchMessagesAndSaveToCSV();
