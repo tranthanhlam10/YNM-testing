@@ -691,3 +691,9 @@ Lam@12345
 
 nguyennp@younetgroup.com
 123456789q
+
+
+nameserver 192.168.1.101
+nameserver 8.8.8.8
+options edns0 trust-ad
+search YNM.LOCAL
