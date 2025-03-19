@@ -692,8 +692,49 @@ Lam@12345
 nguyennp@younetgroup.com
 123456789q
 
-
+// setup ynm local
 nameserver 192.168.1.101
 nameserver 8.8.8.8
 options edns0 trust-ad
 search YNM.LOCAL
+
+
+// Các kiến thức bổ trợ được khi test task Monthly (Có làm việc với BigQuery)
+fq={!frange l=0 u=0}if(eq(sentiment_rule, sentiment), 1, 0)
+
+fq={!frange l=0 u=0}if(eq(sentiment_auto, sentiment), 1, 0)
+fq=-sentiment_rule:[* TO *]
+
+
+
+fq=sentiment_auto:-10 AND is_noisy:1
+
+fq=(-sentiment_auto:-10 AND is_noisy:1) OR (sentiment_auto:-10 AND is_noisy:0)
+
+fq=(sentiment_auto:-10 AND is_noisy:1 AND is_ignore:1)
+
+
+
+Câu query ở solr đế tính toán  
+
+
+select id, is_active From topic where is_active = 1 
+
+
+Các bước gọi được API trên Postman:
+1.  paste cURL vào Postman curl -X POST \
+     -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+     -H "Content-Type: application/json" \
+     -d '{"query": "SELECT * FROM `eci-testing.Socialheat_Monitoring.local_monthly_action_topics` LIMIT 10"}' \
+     "https://bigquery.googleapis.com/bigquery/v2/projects/eci-testing/queries"
+2. 	Cài đặt gg cloud CLI
+3.  gcloud auth login -> Đăng nhập tài khoản GG 
+4. 	gcloud config set project eci-testing (eci-testing là project mà mình muốn access vào )
+5.  gcloud auth print-access-token -> Chạy câu lệnh này để lấy Bearer token để gọi 
+
+
+
+ya29.a0AeXRPp6jpfxllvcifUjhV6_bXu7PWCfUuAP2uDfAK5_rLVz9hkuicrNwmeOy1gSiiRlMOmMd7DpWP2_yA9tnuWIEHSsgRDPrwK4CShZVgUnCZa5Qev1CNlwg6gnGpOf7begkN9eE8xOkeHCODEXRCZkLJbwrqejrLg7j2ewSMnSn4AaCgYKARMSARMSFQHGX2MiiPrygitajZMLsebZ1gpOug0181
+
+
+gcloud auth print-access-token
