@@ -722,11 +722,14 @@ select id, is_active From topic where is_active = 1
 
 
 Các bước gọi được API trên Postman:
-1.  paste cURL vào Postman curl -X POST \
-     -H "Authorization: Bearer $(gcloud auth print-access-token)" \
-     -H "Content-Type: application/json" \
-     -d '{"query": "SELECT * FROM `eci-testing.Socialheat_Monitoring.local_monthly_action_topics` LIMIT 10"}' \
-     "https://bigquery.googleapis.com/bigquery/v2/projects/eci-testing/queries"
+1.  paste cURL vào Postman curl
+    curl --location 'https://bigquery.googleapis.com/bigquery/v2/projects/eci-testing/queries' \
+--header 'Authorization: Bearer ya29.a0AeXRPp6jpfxllvcifUjhV6_bXu7PWCfUuAP2uDfAK5_rLVz9hkuicrNwmeOy1gSiiRlMOmMd7DpWP2_yA9tnuWIEHSsgRDPrwK4CShZVgUnCZa5Qev1CNlwg6gnGpOf7begkN9eE8xOkeHCODEXRCZkLJbwrqejrLg7j2ewSMnSn4AaCgYKARMSARMSFQHGX2MiiPrygitajZMLsebZ1gpOug0181' \
+--header 'Content-Type: application/json' \
+--data '{
+  "query": "SELECT * FROM `eci-testing.Socialheat_Monitoring.local_monthly_action_topics` LIMIT 1000",
+  "useLegacySql": false
+}'
 2. 	Cài đặt gg cloud CLI
 3.  gcloud auth login -> Đăng nhập tài khoản GG 
 4. 	gcloud config set project eci-testing (eci-testing là project mà mình muốn access vào )
@@ -737,4 +740,3 @@ Các bước gọi được API trên Postman:
 ya29.a0AeXRPp6jpfxllvcifUjhV6_bXu7PWCfUuAP2uDfAK5_rLVz9hkuicrNwmeOy1gSiiRlMOmMd7DpWP2_yA9tnuWIEHSsgRDPrwK4CShZVgUnCZa5Qev1CNlwg6gnGpOf7begkN9eE8xOkeHCODEXRCZkLJbwrqejrLg7j2ewSMnSn4AaCgYKARMSARMSFQHGX2MiiPrygitajZMLsebZ1gpOug0181
 
 
-gcloud auth print-access-token
