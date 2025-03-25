@@ -740,3 +740,35 @@ Các bước gọi được API trên Postman:
 ya29.a0AeXRPp6jpfxllvcifUjhV6_bXu7PWCfUuAP2uDfAK5_rLVz9hkuicrNwmeOy1gSiiRlMOmMd7DpWP2_yA9tnuWIEHSsgRDPrwK4CShZVgUnCZa5Qev1CNlwg6gnGpOf7begkN9eE8xOkeHCODEXRCZkLJbwrqejrLg7j2ewSMnSn4AaCgYKARMSARMSFQHGX2MiiPrygitajZMLsebZ1gpOug0181
 
 
+
+
+Chạy postman bằng newman CLI
+newman run SH - Script calculate monthly topic.postman_collection.json -e SH - Script calculate monthly topic.postman_environment.json  -n 5000
+// Hiện tại thằng Postman V6 nó không hỗ trợ như vầy nữa, nên chỉ có thể chạy 3 luồng song song
+
+
+// Cách chạy đúng
+Tên folder chưa request cần chạy
+
+newman run "SH - Script calculate monthly topic.postman_collection.json" \
+  -e "SH - Script calculate monthly topic.postman_environment.json" \
+  --iteration-data "data.json" \
+  --folder "Topic" \
+  -n 10000 &
+
+newman run "SH - Script calculate monthly topic.postman_collection.json" \
+  -e "SH - Script calculate monthly topic.postman_environment.json" \
+  --iteration-data "data.json" \
+  --folder "Topic" \
+  -n 10000 &
+
+newman run "SH - Script calculate monthly topic.postman_collection.json" \
+  -e "SH - Script calculate monthly topic.postman_environment.json" \
+  --iteration-data "data.json" \
+  --folder "Tên Topic" \
+  -n 10000 &
+
+wait
+
+1. Phải tạo 1 thư mục chứa collection SH - Script calculate monthly topic.postman_collection.json
+2. Ngoài ra phải tạo thư mục chưa
