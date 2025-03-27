@@ -771,4 +771,4 @@ newman run "SH - Script calculate monthly topic.postman_collection.json" \
 wait
 
 1. Phải tạo 1 thư mục chứa collection SH - Script calculate monthly topic.postman_collection.json
-2. Ngoài ra phải tạo thư mục chưa
+2. Ngoài ra phải tạo thư mục chứa collection -> 
