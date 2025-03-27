@@ -4,7 +4,7 @@
  * Tìm max là bao nhiêu
  * Số thứ 2 của max nó phải bé hơn max
  * Và nó lớn hơn các phần tử còn lại 
- * 
+ * Xác định được số nào là số cố định, số nào là biến chạy 
  * 
  * 
  * 
@@ -18,12 +18,12 @@ function findMax(arr){
     for(let i = 0;i < arr.length; i++){
         if(arr[i] > max){
             max = arr[i];
-        } // Chỗ này nếu đúng thì sẽ không gián, sau đó tăng i lên
+        } 
     }
     return max;
 }
 
-const arr = [9, 2, 40, 1200, -5];
+const arr = [9, 2, 40, 1200, -5, 1200];
 console.log(findMax(arr)); 
 
 
@@ -38,5 +38,6 @@ function findSecondMax(arr){
     }
     return secondMax;
 }
+
 
 console.log(findSecondMax(arr)); 
