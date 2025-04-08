@@ -114,15 +114,20 @@ async function getQueueInfo(
 
 
 async function main() {
-  try {
+  
+  for(let i = 0; i < 5000; i++){
+    try {
  
     await getQueueInfo();
     
     const count = await pushMessagesToRabbitMQ('src/RabbitMQ_Script/data.json');
     console.log(`Tổng số tin nhắn đã gửi: ${count}`);
+    console.log(`Thứ tự tin nhắn: ${i+1}`);
+    console.log('-----------------------------------');
   } catch (error) {
     console.error('Không thể gửi tin nhắn:', error);
   }
+}
 }
 
 
