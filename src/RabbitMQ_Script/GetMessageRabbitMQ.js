@@ -5,7 +5,7 @@ import csvWriter from 'csv-write-stream';
 async function fetchMessagesAndSaveToCSV() {
   try {
     const response = await axios.post(
-      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.tr.identities_crawled_sources_LamTT/get',
+      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.fb.page_web_comments_crawling_sources_LamTT/get',
       {
         count: 100,
         ackmode: 'ack_requeue_false',

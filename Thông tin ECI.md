@@ -698,6 +698,9 @@ nameserver 8.8.8.8
 options edns0 trust-ad
 search YNM.LOCAL
 
+// Cau lenh de chinh sua
+sudo vim  /etc/resolv.conf
+
 
 // Các kiến thức bổ trợ được khi test task Monthly (Có làm việc với BigQuery)
 fq={!frange l=0 u=0}if(eq(sentiment_rule, sentiment), 1, 0)
