@@ -5,9 +5,9 @@ import csvWriter from 'csv-write-stream';
 async function fetchMessagesAndSaveToCSV() {
   try {
     const response = await axios.post(
-      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.fb.page_web_comments_crawling_sources_LamTT/get',
+      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.fb.page_web_comments_crawled_sources_LamTT/get',
       {
-        count: 100,
+        count: 1,
         ackmode: 'ack_requeue_false',
         encoding: 'auto'
       },
@@ -38,7 +38,7 @@ async function fetchMessagesAndSaveToCSV() {
     
     // Khởi tạo csv writer với headers
     const writer = csvWriter({ headers });
-    const fileStream = createWriteStream('messages.csv', { encoding: 'utf8' });
+    const fileStream = createWriteStream('messages1.csv', { encoding: 'utf8' });
     writer.pipe(fileStream);
 
     // Ghi payload vào CSV
@@ -47,7 +47,7 @@ async function fetchMessagesAndSaveToCSV() {
     });
 
     writer.end();
-    console.log(`Successfully saved ${payloads.length} messages to messages.csv`);
+    console.log(`Successfully saved ${payloads.length} messages to messages1.csv`);
 
   } catch (error) {
     if (error.response) {
