@@ -1,8 +1,5 @@
 // Selection sort 
 
-let arr = [5, -4, 3, 2, 1];
-
-
 /*
  * 1. Tìm phần tử nhỏ nhất trong mảng
  * 2. Đưa nó về đầu mảng
@@ -22,24 +19,29 @@ let arr = [5, -4, 3, 2, 1];
  */
 
 function selectionSort(arr) {
-    for (let i = 0 ; i < arr.length; i ++ ){
-        let minIndex = i;
-        for(let j = i + 1; j < arr.length; j++){
-            if(arr[j] < arr[minIndex]){
-                minIndex = j;
-            }
-        // Ở đây cần thêm đổi chỗ
-       let temp = arr[i];
-        arr[i] = arr[minIndex];
-        arr[minIndex] = temp;
+    for (let i = 0; i < arr.length; i++) {
+      let minIndex = i;
+      
+      // Find minimum element in the unsorted part
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[j] < arr[minIndex]) {
+          minIndex = j;
         }
+      }
+      
+      // Swap the found minimum element with the first element
+      // This should be OUTSIDE the inner loop
+      let temp = arr[i];
+      arr[i] = arr[minIndex];
+      arr[minIndex] = temp;
     }
+    
     return arr;
-}
-
-
-// Hiện tại vẫn còn sai
-console.log(selectionSort(arr));
+  }
+  
+  // Example usage
+  const arr = [64, 25, 12, 22, 11];
+  console.log(selectionSort(arr)); // [11, 12, 22, 25, 64]
 
 
 
@@ -55,3 +57,18 @@ console.log(selectionSort(arr));
     * 
     * 
     */
+function bubbleSort(arr){
+    for(let i = 0 ; i < arr.length-1; i++){
+        for(let j = 0; j < arr.length - i -1; j ++){
+            if(arr[j] > arr[j+1]){
+                let temp= arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;    
+            }
+        }
+    }
+    return arr;
+}
+const arr1 = [64, 25, 12, 22, 11];
+console.log(bubbleSort(arr1)); 
+
