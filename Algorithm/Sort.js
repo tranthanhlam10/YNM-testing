@@ -72,3 +72,17 @@ function bubbleSort(arr){
 const arr1 = [64, 25, 12, 22, 11];
 console.log(bubbleSort(arr1)); 
 
+
+// Merge sort
+
+/*
+* 1. Chia mảng thành 2 nửa
+* 2. Gọi đệ quy cho 2 nửa   
+* 3. Gộp 2 nửa lại với nhau
+*
+*
+* Input: Array                              
+
+* Output: SORT ASC  
+*/
+
