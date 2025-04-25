@@ -272,3 +272,21 @@ http://graph.facebook.com/pfbid02BYnzGuenbUCbFPMwQBADVLK34yg6wK4DsjbLMW4xBMg3Rmk
 
 11h20p -> Chạy lần đầu, xem thử khi nào thì dừng script 
 
+
+
+
+
+ynm-cl-fb-page-web-cmt-service
+ynm-cl-fb-page-web-reply-cmt-service
+
+
+
+// Những deployment đã deploy cho task comment facebook 
+
+ynm-cl-fb-page-web-cmt-service
+ynm-cl-fb-page-web-reply-cmt-service
+
+
+PAGE_WEB_COMMENT_CRAWLING_LOADER_ENABLE
+
+(.*(fb\.page_web_comments|page_web_reply_comments).*)|(cl\.(mentions_2_solr_mentions|profiles_2_solr_identities|profiles_2_redis_identities|fb_posts_finished_sources))

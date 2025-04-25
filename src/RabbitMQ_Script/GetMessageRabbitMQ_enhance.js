@@ -3,13 +3,13 @@ import { createWriteStream } from 'fs';
 import csvWriter from 'csv-write-stream';
 import { promises as fs } from 'fs';
 
-async function fetchMessagesAndSaveToCSV() {
+async function peekMessagesAndSaveToCSV() {
   try {
     const response = await axios.post(
-      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.mentions_2_solr_mentions/get',
+      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.news.article_urls_crawling_sources/get',
       {
         count: 5000, // Lấy số lượng message phù hợp
-        ackmode: 'ack_requeue_false',
+        ackmode: 'reject_requeue_true', // Quan trọng: Đảm bảo message vẫn ở trong queue
         encoding: 'auto'
       },
       {
@@ -73,7 +73,7 @@ async function fetchMessagesAndSaveToCSV() {
     // Tạo CSV writer với đầy đủ headers
     const headers = Array.from(allKeys);
     const writer = csvWriter({ headers });
-    const fileStream = createWriteStream('messages_export.csv', { encoding: 'utf8' });
+    const fileStream = createWriteStream('messages_peek.csv', { encoding: 'utf8' });
 
     writer.pipe(fileStream);
 
@@ -103,11 +103,11 @@ async function fetchMessagesAndSaveToCSV() {
     writer.end();
 
     // Đồng thời lưu toàn bộ dữ liệu dưới dạng JSON để đối chiếu
-    await fs.writeFile('messages_export.json', JSON.stringify(payloads, null, 2));
+    await fs.writeFile('messages_peek.json', JSON.stringify(payloads, null, 2));
 
-    console.log(`Successfully processed ${payloads.length} messages.`);
-    console.log(`- CSV saved to messages_export.csv`);
-    console.log(`- JSON saved to messages_export.json`);
+    console.log(`Successfully peeked ${payloads.length} messages (messages remain in queue).`);
+    console.log(`- CSV saved to messages_peek.csv`);
+    console.log(`- JSON saved to messages_peek.json`);
 
   } catch (error) {
     console.error('Error occurred:');
@@ -154,5 +154,5 @@ function flattenObject(obj, prefix = '') {
   return result;
 }
 
-// Chạy hàm để lấy và lưu messages
-fetchMessagesAndSaveToCSV();
+// Chạy hàm để xem messages mà không xóa chúng khỏi queue
+peekMessagesAndSaveToCSV();
