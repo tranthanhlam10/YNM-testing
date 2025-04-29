@@ -6,7 +6,7 @@ import { promises as fs } from 'fs';
 async function peekMessagesAndSaveToCSV() {
   try {
     const response = await axios.post(
-      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.news.article_urls_crawling_sources/get',
+      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.news.html_2_mysql_openai_batches/get',
       {
         count: 5000, // Lấy số lượng message phù hợp
         ackmode: 'reject_requeue_true', // Quan trọng: Đảm bảo message vẫn ở trong queue
