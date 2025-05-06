@@ -3,21 +3,21 @@ import { createWriteStream } from 'fs';
 import csvWriter from 'csv-write-stream';
 import { promises as fs } from 'fs';
 
-async function peekMessagesAndSaveToCSV() {
+async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, passWord) {
   try {
     const response = await axios.post(
-      'http://rabbitmq-testing.ynm.local/api/queues/%2F/testing.cl.news.html_2_mysql_openai_batches/get',
+      `${method}://${domain}/api/queues/%2F/${queueName}/get`,
       {
-        count: 5000, // Lấy số lượng message phù hợp
+        count: 500, // Lấy số lượng message phù hợp
         ackmode: 'reject_requeue_true', // Quan trọng: Đảm bảo message vẫn ở trong queue
         encoding: 'auto'
       },
       {
         auth: {
-          username: 'lamtt',
-          password: 'lamtt'
+          username: `${userName}`,
+          password: `${passWord}`
         },
-        timeout: 500000, // Tăng timeout
+        timeout: 5000000, // Tăng timeout
         headers: {
           'Content-Type': 'application/json'
         },
@@ -155,4 +155,4 @@ function flattenObject(obj, prefix = '') {
 }
 
 // Chạy hàm để xem messages mà không xóa chúng khỏi queue
-peekMessagesAndSaveToCSV();
+peekMessagesAndSaveToCSV('https', 'rabbitmq-cluster-staging.younetmedia.com', 'staging.cl.news.article_urls', 'lamtt', 'vYoWn4KCmDYpvuFiqovWbF') ;
