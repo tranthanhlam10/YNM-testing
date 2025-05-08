@@ -310,3 +310,7 @@ ynm-cl-news-crawling-loader-service-staging
 ynm-cl-news-article-url-service-staging
 ynm-cl-news-source-updater-service-staging
 ynm-cl-news-data-pusher-service-staging
+
+
+// Domain đi crawl mà bị dừng 
+https://ionia.com.vn/wp-content/uploads/2023/11/Catalogue-IONIA.pdf

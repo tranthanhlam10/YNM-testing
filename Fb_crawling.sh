@@ -268,19 +268,6 @@ http://graph.facebook.com/pfbid02BYnzGuenbUCbFPMwQBADVLK34yg6wK4DsjbLMW4xBMg3Rmk
 - Cursor in ymn.crawling_loaders was set (!= "*")
 - Id post h
 
-
-
-11h20p -> Chạy lần đầu, xem thử khi nào thì dừng script 
-
-
-
-
-
-ynm-cl-fb-page-web-cmt-service
-ynm-cl-fb-page-web-reply-cmt-service
-
-
-
 // Những deployment đã deploy cho task comment facebook 
 
 ynm-cl-fb-page-web-cmt-service
