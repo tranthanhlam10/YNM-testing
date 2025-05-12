@@ -16,7 +16,7 @@ import axios from 'axios';
 async function pushMessagesToRabbitMQ(
   jsonFilePath,
   rabbitmqHost = 'rabbitmq-cluster-staging.younetmedia.com',
-  queueName = 'staging.cl.tr.identities_crawled_sources',
+  queueName = 'staging.cl.identities_2_redis_identities',
   username = 'lamtt',
   password = 'vYoWn4KCmDYpvuFiqovWbF',
   vhost = '/'
@@ -89,7 +89,7 @@ async function pushMessagesToRabbitMQ(
 
 async function getQueueInfo(
   rabbitmqHost = 'rabbitmq-cluster-staging.younetmedia.com',
-  queueName = 'staging.cl.tr.identities_crawled_sources',
+  queueName = 'staging.cl.identities_2_redis_identities',
   username = 'lamtt',
   password = 'vYoWn4KCmDYpvuFiqovWbF',
   vhost = '/'
@@ -120,7 +120,7 @@ async function main() {
  
     await getQueueInfo();
     
-    const count = await pushMessagesToRabbitMQ('src/RabbitMQ_Script/data.json');
+    const count = await pushMessagesToRabbitMQ('messages_peek.json');
     console.log(`Tổng số tin nhắn đã gửi: ${count}`);
     console.log(`Thứ tự tin nhắn: ${i+1}`);
     console.log('-----------------------------------');

@@ -1,0 +1,950 @@
+[
+  {
+    "id": "fb_100067875617116",
+    "fullname": "Cửa Hàng Sữa Nghĩa Thu",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100067875617116,
+    "domain": "facebook.com",
+    "created_date": "2026-04-29T16:33:16.968Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAc6o_kgs_lugzkZRD2G4wV4UQMFrg-SmFnVH1ahFPEjCHNImU8Ec5RdbsWWbOpvzw",
+    "fullname": "Hệ thống Bệnh viện Mắt Sài Gòn",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAc6o_kgs_lugzkZRD2G4wV4UQMFrg-SmFnVH1ahFPEjCHNImU8Ec5RdbsWWbOpvzw",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100064806603692",
+    "fullname": "Dinh Hội Babymart Thái Bình",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064806603692,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:20.837Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100083226248003",
+    "fullname": "ASUN KIDS",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100083226248003,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:23.974Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAA6NjRYswD_5lnypW1WCPOs4qpWVRybH20DbnMaptuWUoHhGadLBfOCg9VMdDNbJUi",
+    "fullname": "Link Cua",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAA6NjRYswD_5lnypW1WCPOs4qpWVRybH20DbnMaptuWUoHhGadLBfOCg9VMdDNbJUi",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAP84-F5tOEvi840f0dKmjJtniq_QPNU41GKkV6OTq4V-GnHhHQEDGnaPYiUNvHOVP",
+    "fullname": "Đinh Toàn Trung DVDL",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAP84-F5tOEvi840f0dKmjJtniq_QPNU41GKkV6OTq4V-GnHhHQEDGnaPYiUNvHOVP",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAJNoBCBVuSBnV54Eoz_Fhfg7w9xrLcdeFxJS0_Sz4Ybh3D_0038FiHP5e77L9aGaD",
+    "fullname": "suamell:v",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAJNoBCBVuSBnV54Eoz_Fhfg7w9xrLcdeFxJS0_Sz4Ybh3D_0038FiHP5e77L9aGaD",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100014736033246",
+    "fullname": "Vũ Nhung",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100014736033246,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:20.963Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100022891573120",
+    "fullname": "Kỷ Nguyên Trần",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100022891573120,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T04:05:23.018Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAOax0_Mpd2hyVQOJ-8W9Srxr8eiFoEkVO-yfVgOcPrDUxfXz_S_6-ACkfnKENojzQ",
+    "fullname": "Tín Villa",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAOax0_Mpd2hyVQOJ-8W9Srxr8eiFoEkVO-yfVgOcPrDUxfXz_S_6-ACkfnKENojzQ",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAMLP98atV9CVT1KzRUjWNJypW8IDCXFACL6KnkNl7ooRtSUrgV1f6w1XQYJzx7N9Y",
+    "fullname": "Mắt Sài Gòn Ngô Gia Tự",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAMLP98atV9CVT1KzRUjWNJypW8IDCXFACL6KnkNl7ooRtSUrgV1f6w1XQYJzx7N9Y",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100013633514754",
+    "fullname": "Võ Phương",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100013633514754,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T20:04:49.925Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064806603692",
+    "fullname": "Dinh Hội Babymart Thái Bình",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064806603692,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.798Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:20.743Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063770521383",
+    "fullname": "Ngộ Baby Shop",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063770521383,
+    "domain": "facebook.com",
+    "created_date": "2026-04-29T23:27:20.784Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063456275465",
+    "fullname": "Shop Mỹ Linh -Mẹ và Bé - Long Xuyên",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063456275465,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.910Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.132Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100006895237043",
+    "fullname": "Đào Hương",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100006895237043,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T08:07:13.630Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064315496287",
+    "fullname": "VitaDairy - Vì con mẹ chọn",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064315496287,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.107Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100000183533025",
+    "fullname": "Vịnh Nguyễn",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100000183533025,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T18:43:22.468Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAzoe4agLyL3OFZ_3zyUisj3QRqlQj9mkNNk0PagP93poWkRVICasX5nUoo9dqUMfp",
+    "fullname": "Light On TV",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAzoe4agLyL3OFZ_3zyUisj3QRqlQj9mkNNk0PagP93poWkRVICasX5nUoo9dqUMfp",
+    "created_date": "2026-04-03T09:47:24.200Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100064806603692",
+    "fullname": "Dinh Hội Babymart Thái Bình",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064806603692,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:22.522Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063702576326",
+    "fullname": "Tấn Vi Babi",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063702576326,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T18:43:22.479Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAA0hl_5pKoSOVf8RzlJVICTkmQL_9FJ2LJypRy2dNmZdH8Uhhwaq1QzreZNgRemJUq",
+    "fullname": "Tủ Thuốc Gia Đình",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAA0hl_5pKoSOVf8RzlJVICTkmQL_9FJ2LJypRy2dNmZdH8Uhhwaq1QzreZNgRemJUq",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAARzwRJSSwjuemcV5dd8T3v_qtywBb9V7h1sy4wKsrgmo",
+    "fullname": "Hải Yến ♡",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAARzwRJSSwjuemcV5dd8T3v_qtywBb9V7h1sy4wKsrgmo",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100067868055357",
+    "fullname": "Vườn Của Bé - Hệ thống siêu thị mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100067868055357,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T07:58:15.370Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064806603692",
+    "fullname": "Dinh Hội Babymart Thái Bình",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064806603692,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:22.759Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100055309812513",
+    "fullname": "Huyền Diệu",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100055309812513,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:24.177Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100065635562992",
+    "fullname": "Cửa Hàng Dinh Dưỡng Mẹ & Bé Hải Vy",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100065635562992,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:20.761Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAineEGDdUrb9WCQVexvHCto8vJqHG_qtOglVDuWwbq8WCHevw9HHhLCyyv4emO4Tk",
+    "fullname": "🚕_TAXI_TânUyên_61BD_🚕",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAineEGDdUrb9WCQVexvHCto8vJqHG_qtOglVDuWwbq8WCHevw9HHhLCyyv4emO4Tk",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100057158865820",
+    "fullname": "Trương Ái Nhi",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100057158865820,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:25.047Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAABRKlyfZmWjO79RId_UAHDuwmewsyL0ttfJZTJh9-eeDSSD4oYOmfL9hCWMHZ7nvY",
+    "fullname": "Dược sĩ Tuyết Trâm",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAABRKlyfZmWjO79RId_UAHDuwmewsyL0ttfJZTJh9-eeDSSD4oYOmfL9hCWMHZ7nvY",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAA0hl_5pKoSOVf8RzlJVICTkmQL_9FJ2LJypRy2dNmZdH8Uhhwaq1QzreZNgRemJUq",
+    "fullname": "Tủ Thuốc Gia Đình",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAA0hl_5pKoSOVf8RzlJVICTkmQL_9FJ2LJypRy2dNmZdH8Uhhwaq1QzreZNgRemJUq",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100063591699647",
+    "fullname": "Shop Baby Sáu Hiếu",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063591699647,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:24.177Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100036360799286",
+    "fullname": "Bach Truong",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100036360799286,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.426Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.543Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100076655352060",
+    "fullname": "Ngọc Mấn",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100076655352060,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T08:07:13.630Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T03:17:36.518Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAsIcaPQxDfKyd6s-zDuWjUKQo8YNLtV5HkqZPsIfk00pPJLyFlkzp0Fn3SR-YJZvP",
+    "fullname": "Mắt Sài Gòn Đường Láng",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAsIcaPQxDfKyd6s-zDuWjUKQo8YNLtV5HkqZPsIfk00pPJLyFlkzp0Fn3SR-YJZvP",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100041706651507",
+    "fullname": "Hoàng Hải",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100041706651507,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.913Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100003611806390",
+    "fullname": "Loan Asun Kids",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100003611806390,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T08:07:13.630Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAv6YT7sHefsSVOJxZKoErt1gobEJQVTSrsDWTDkCjVXUX71VLeLbZ1v2JoWM4Ifk4",
+    "fullname": "Bao Anh ăn hàng",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAv6YT7sHefsSVOJxZKoErt1gobEJQVTSrsDWTDkCjVXUX71VLeLbZ1v2JoWM4Ifk4",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100044972531033",
+    "fullname": "Tuyết Như",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100044972531033,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T04:05:23.018Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAALLNT4-gHTjhqmdnMdivIRnTuOCZQbjhOFDZE6FUIWAaM3rHrSk-tQTtBaGAErcW1",
+    "fullname": "chinguyen13277",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAALLNT4-gHTjhqmdnMdivIRnTuOCZQbjhOFDZE6FUIWAaM3rHrSk-tQTtBaGAErcW1",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAARzwRJSSwjuemcV5dd8T3v_qtywBb9V7h1sy4wKsrgmo",
+    "fullname": "Hải Yến ♡",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAARzwRJSSwjuemcV5dd8T3v_qtywBb9V7h1sy4wKsrgmo",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100003126409140",
+    "fullname": "Hồng Huế",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100003126409140,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.913Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100004000288119",
+    "fullname": "Mỹ Thuận",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100004000288119,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T04:05:23.018Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAcGb7fiz9WGH-6AR71xt50InU_yFERchgssRczg2ZpOJIOlA8fsI9MQc55_iwseJK",
+    "fullname": "Hỏi_Trả Lời BV Da liễu_Mắt",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAcGb7fiz9WGH-6AR71xt50InU_yFERchgssRczg2ZpOJIOlA8fsI9MQc55_iwseJK",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAA8uHvNGo9g7JVLXusd_QxsHUqPWOPFql-8n76NtTEZRuw3-jfkC8ZrDYv7aYnv9kg",
+    "fullname": "Bao Gold Pham",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAA8uHvNGo9g7JVLXusd_QxsHUqPWOPFql-8n76NtTEZRuw3-jfkC8ZrDYv7aYnv9kg",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100064806603692",
+    "fullname": "Dinh Hội Babymart Thái Bình",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064806603692,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.832Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.032Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAhHYP5IF_NkOzOLASO4MybflaKRlr0BURyMst1OzVvJ7JN8Wh8n_fsPeuDXD3Ojkt",
+    "fullname": "BHD Star Cineplex",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAhHYP5IF_NkOzOLASO4MybflaKRlr0BURyMst1OzVvJ7JN8Wh8n_fsPeuDXD3Ojkt",
+    "created_date": "2026-04-03T09:47:24.200Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100046952530101",
+    "fullname": "Linh Vu",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100046952530101,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T08:07:13.630Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100092859333852",
+    "fullname": "Hệ Thống Sữa - Bỉm Hà Hùng",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100092859333852,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.426Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAABRKlyfZmWjO79RId_UAHDuwmewsyL0ttfJZTJh9-eeDSSD4oYOmfL9hCWMHZ7nvY",
+    "fullname": "Dược sĩ Tuyết Trâm",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAABRKlyfZmWjO79RId_UAHDuwmewsyL0ttfJZTJh9-eeDSSD4oYOmfL9hCWMHZ7nvY",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100004535712467",
+    "fullname": "Minh Nguyễn",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100004535712467,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:22.071Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100067868055357",
+    "fullname": "Vườn Của Bé - Hệ thống siêu thị mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100067868055357,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T20:04:50.319Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100009074470890",
+    "fullname": "Anh Ngoc",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100009074470890,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.798Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064846534529",
+    "fullname": "Sữa Bột Tốt - Suabottot.com",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064846534529,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:21.913Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063770521383",
+    "fullname": "Ngộ Baby Shop",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063770521383,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:25.047Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAA82j9GqGaJWKNurvrFZ0RHe_9hZX0OcNgH0-YDhy2SPKGjPYfJscwdy-iyIetdZFO",
+    "fullname": "Đi Theo Sao",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAA82j9GqGaJWKNurvrFZ0RHe_9hZX0OcNgH0-YDhy2SPKGjPYfJscwdy-iyIetdZFO",
+    "created_date": "2026-04-03T09:47:24.200Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100063806132304",
+    "fullname": "Nhà Thuốc Lê Thanh",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063806132304,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.162Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100083226248003",
+    "fullname": "ASUN KIDS",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100083226248003,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:25.156Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAA6N17J9tt7NVuw9RDKoWwjEPPZzfmN-261GXJvWLQEarF7kdy-iwtKMjGr1WEkEpD",
+    "fullname": "Cô Út Đanh Đá🤭",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAA6N17J9tt7NVuw9RDKoWwjEPPZzfmN-261GXJvWLQEarF7kdy-iwtKMjGr1WEkEpD",
+    "created_date": "2026-04-29T09:14:42.902Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAc6o_kgs_lugzkZRD2G4wV4UQMFrg-SmFnVH1ahFPEjCHNImU8Ec5RdbsWWbOpvzw",
+    "fullname": "Hệ thống Bệnh viện Mắt Sài Gòn",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAc6o_kgs_lugzkZRD2G4wV4UQMFrg-SmFnVH1ahFPEjCHNImU8Ec5RdbsWWbOpvzw",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100013180633093",
+    "fullname": "Trang Tr Tiên",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100013180633093,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:23.792Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064806603692",
+    "fullname": "Dinh Hội Babymart Thái Bình",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064806603692,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:22.763Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100024540036091",
+    "fullname": "Kha Thai",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100024540036091,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:22.071Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100013573809320",
+    "fullname": "Thuy Nhung Huynh Thi",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100013573809320,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:29.289Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100005042015909",
+    "fullname": "Linh Pham",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100005042015909,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.835Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100057460808707",
+    "fullname": "Shop Mẹ Và Bé Đức Cơ",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100057460808707,
+    "domain": "facebook.com",
+    "created_date": "2026-05-04T00:20:45.669Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100004831721987",
+    "fullname": "Thanh Thuy Huynh",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100004831721987,
+    "domain": "facebook.com",
+    "created_date": "2026-05-02T20:38:50.403Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100000291627611",
+    "fullname": "Linh Trịnh",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100000291627611,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T07:58:16.528Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100086450136215",
+    "fullname": "Nguyễn Thị Thúy Vy",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100086450136215,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T00:19:07.383Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100043512377811",
+    "fullname": "Lê Tuyền",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100043512377811,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T03:17:39.165Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100072226572769",
+    "fullname": "Nguyễn GiaBảo",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100072226572769,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T00:19:07.383Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063806132304",
+    "fullname": "Nhà Thuốc Lê Thanh",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063806132304,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T17:59:52.505Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:29.355Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100007239640311",
+    "fullname": "Ngát Ngất Ngây",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100007239640311,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.834Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100003940567678",
+    "fullname": "Loan Candy",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100003940567678,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.835Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100064195114458",
+    "fullname": "Nhà Mẹ Ghin - Đồ Dùng Sơ Sinh và Mẹ Bỉm",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064195114458,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:31.852Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100027672291714",
+    "fullname": "Thuonq ThuKhoi",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100027672291714,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.834Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100057460808707",
+    "fullname": "Shop Mẹ Và Bé Đức Cơ",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100057460808707,
+    "domain": "facebook.com",
+    "created_date": "2026-05-04T00:20:46.603Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063706874737",
+    "fullname": "Cửa Hàng VIỆT ĐÀO",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063706874737,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.824Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100018606192168",
+    "fullname": "Lê Thị Ngọc",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100018606192168,
+    "domain": "facebook.com",
+    "created_date": "2026-04-30T10:37:31.625Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100024962258446",
+    "fullname": "Hương Ngọc",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100024962258446,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:50.073Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAcGb7fiz9WGH-6AR71xt50InU_yFERchgssRczg2ZpOJIOlA8fsI9MQc55_iwseJK",
+    "fullname": "Hỏi_Trả Lời BV Da liễu_Mắt",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAcGb7fiz9WGH-6AR71xt50InU_yFERchgssRczg2ZpOJIOlA8fsI9MQc55_iwseJK",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100064171292210",
+    "fullname": "CuteBaby - Chuyên đồ mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100064171292210,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T03:17:37.987Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100037809248570",
+    "fullname": "Quỷ Quỷ",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100037809248570,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:49.166Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100029303580636",
+    "fullname": "Phạm Thanh",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100029303580636,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.835Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100051181520132",
+    "fullname": "Mẹ Và Bé BEE - Thị trấn Sông Vệ",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100051181520132,
+    "domain": "facebook.com",
+    "created_date": "2026-05-05T17:59:52.027Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100027578753693",
+    "fullname": "Nguyễn Huỳnh Như",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100027578753693,
+    "domain": "facebook.com",
+    "created_date": "2026-05-02T20:38:50.404Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100008339348044",
+    "fullname": "Phương Mii",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100008339348044,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.834Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAMLP98atV9CVT1KzRUjWNJypW8IDCXFACL6KnkNl7ooRtSUrgV1f6w1XQYJzx7N9Y",
+    "fullname": "Mắt Sài Gòn Ngô Gia Tự",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAMLP98atV9CVT1KzRUjWNJypW8IDCXFACL6KnkNl7ooRtSUrgV1f6w1XQYJzx7N9Y",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100024818044592",
+    "fullname": "Nhung Nth",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100024818044592,
+    "domain": "facebook.com",
+    "created_date": "2026-05-04T00:20:45.913Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100063832728764",
+    "fullname": "Lothoa",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100063832728764,
+    "domain": "facebook.com",
+    "created_date": "2026-05-06T04:22:29.411Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100067868055357",
+    "fullname": "Vườn Của Bé - Hệ thống siêu thị mẹ và bé",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100067868055357,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:44.797Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  },
+  {
+    "id": "tt_MS4wLjABAAAAP84-F5tOEvi840f0dKmjJtniq_QPNU41GKkV6OTq4V-GnHhHQEDGnaPYiUNvHOVP",
+    "fullname": "Đinh Toàn Trung DVDL",
+    "platform": 9,
+    "id_social": "MS4wLjABAAAAP84-F5tOEvi840f0dKmjJtniq_QPNU41GKkV6OTq4V-GnHhHQEDGnaPYiUNvHOVP",
+    "created_date": "2026-04-29T09:14:43.157Z",
+    "domain": "tiktok.com"
+  },
+  {
+    "id": "fb_100005371660459",
+    "fullname": "Miu Miu",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100005371660459,
+    "domain": "facebook.com",
+    "created_date": "2026-05-01T00:31:48.640Z",
+    "createdBy": "PageWebCommentCrawlingLoader"
+  },
+  {
+    "id": "fb_100067875617116",
+    "fullname": "Cửa Hàng Sữa Nghĩa Thu",
+    "platform": 1,
+    "fb_user_type": 255,
+    "id_social": 100067875617116,
+    "domain": "facebook.com",
+    "created_date": "2026-05-03T20:04:55.542Z",
+    "createdBy": "PageWebReplyCommentCrawlingLoader"
+  }
+]

@@ -5,25 +5,34 @@ import { promises as fs } from 'fs';
 
 async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, passWord) {
   try {
-    const response = await axios.post(
-      `${method}://${domain}/api/queues/%2F/${queueName}/get`,
-      {
-        count:  100, 
-        ackmode: 'reject_requeue_true', 
+    // URL encode queue name để tránh vấn đề với ký tự đặc biệt
+    const encodedQueueName = encodeURIComponent(queueName);
+    
+    // Sửa URL endpoint và method - RabbitMQ Management API sử dụng /api/queues/{vhost}/{name}/get
+    const url = `${method}://${domain}/api/queues/%2F/${encodedQueueName}/get`;
+    
+    console.log(`Sending request to: ${url}`);
+
+    const response = await axios({
+      method: 'post',
+      url: url,
+      auth: {
+        username: userName,
+        password: passWord
       },
-      {
-        auth: {
-          username: `${userName}`,
-          password: `${passWord}`
-        },
-        timeout: 5000000, 
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        maxContentLength: Infinity, // Không giới hạn độ dài phản hồi
-        maxBodyLength: Infinity
-      }
-    );
+      data: {
+        count: 100,       
+        encoding: 'auto', // Thêm encoding auto để RabbitMQ tự xử lý
+        ackmode: 'reject_requeue_true',
+        truncate: 50000   // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
+      },
+      timeout: 300000,    // Giảm timeout xuống mức hợp lý hơn
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      maxContentLength: Infinity,
+      maxBodyLength: Infinity
+    });
 
     if (!response.data || response.data.length === 0) {
       console.log('No messages found in the queue.');
@@ -41,17 +50,33 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
     for (const message of messages) {
       try {
         let payload;
-        if (typeof message.payload === 'string') {
-          payload = JSON.parse(message.payload);
+        if (message.payload) {
+          if (typeof message.payload === 'string') {
+            try {
+              payload = JSON.parse(message.payload);
+            } catch (parseErr) {
+              // Nếu không phải JSON, giữ nguyên dạng string
+              payload = { raw_payload: message.payload };
+            }
+          } else {
+            payload = message.payload;
+          }
+          
+          // Thêm message properties vào payload để có thêm thông tin
+          if (message.properties) {
+            payload.message_properties = message.properties;
+          }
+          
+          payloads.push(payload);
         } else {
-          payload = message.payload;
+          console.warn("Message doesn't have a payload property:", 
+                     JSON.stringify(message).substring(0, 200) + "...");
         }
-        payloads.push(payload);
       } catch (err) {
         console.error('Error parsing message payload:', err.message);
         // Lưu message gốc để debug
         await fs.writeFile(`failed_message_${Date.now()}.txt`, 
-          typeof message.payload === 'string' ? message.payload : JSON.stringify(message.payload));
+          JSON.stringify(message, null, 2));
         console.log(`Saved failed message to file for debugging`);
       }
     }
@@ -111,11 +136,17 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
   } catch (error) {
     console.error('Error occurred:');
     if (error.response) {
-      console.error('Server Error:', error.response.status);
-      // Lưu response.data để debug, nhưng cẩn thận nếu nó quá lớn
-      await fs.writeFile('error_response.json', JSON.stringify(error.response.data).substring(0, 10000));
+      console.error(`Server Error: ${error.response.status}`);
+      console.error(`Response data:`, error.response.data);
+      // Lưu response.data để debug
+      await fs.writeFile('error_response.json', JSON.stringify({
+        status: error.response.status,
+        statusText: error.response.statusText,
+        data: error.response.data
+      }, null, 2));
     } else if (error.request) {
       console.error('No response received');
+      console.error(error.request);
     } else {
       console.error('Error:', error.message);
     }
@@ -154,4 +185,10 @@ function flattenObject(obj, prefix = '') {
 }
 
 // Chạy hàm để xem messages mà không xóa chúng khỏi queue
-peekMessagesAndSaveToCSV('https', 'rabbitmq-cluster-staging.younetmedia.com', 'staging.cl.mentions_2_solr_mentions_DongLH', 'lamtt', 'vYoWn4KCmDYpvuFiqovWbF') ;
+peekMessagesAndSaveToCSV(
+  'https', 
+  'rabbitmq-cluster-staging.younetmedia.com', 
+  'staging.cl.mentions_2_solr_mentions_DongLH', 
+  'lamtt', 
+  'vYoWn4KCmDYpvuFiqovWbF'
+);
