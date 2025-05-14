@@ -120,7 +120,7 @@ async function main() {
  
     await getQueueInfo();
     
-    const count = await pushMessagesToRabbitMQ('messages_peek.json');
+    const count = await pushMessagesToRabbitMQ('mention_queue_value.json');
     console.log(`Tổng số tin nhắn đã gửi: ${count}`);
     console.log(`Thứ tự tin nhắn: ${i+1}`);
     console.log('-----------------------------------');

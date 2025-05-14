@@ -143,9 +143,9 @@ async function getQueueInfo(
 async function main() {
   // Giới hạn số lượng message cần push trong mỗi lần lặp
     const messageLimit = 500;
-    const jsonFilePath= 'messages_peek.json';
+    const jsonFilePath= 'identities_finished_queue_value.json';
     const rabbitmqHost = 'rabbitmq-cluster-staging.younetmedia.com';
-    const queueName = 'staging.cl.identities_2_redis_identities';
+    const queueName = 'staging.cl.fb.identities_finished_sources';
     const username = 'lamtt';
     const password = 'vYoWn4KCmDYpvuFiqovWbF';
     const vhost = '/';

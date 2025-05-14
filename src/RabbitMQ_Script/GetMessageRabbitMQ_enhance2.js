@@ -188,7 +188,7 @@ function flattenObject(obj, prefix = '') {
 peekMessagesAndSaveToCSV(
   'https', 
   'rabbitmq-cluster-staging.younetmedia.com', 
-  'staging.cl.mentions_2_solr_mentions_DongLH', 
+  'staging.cl.fb.identities_finished_sources', 
   'lamtt', 
   'vYoWn4KCmDYpvuFiqovWbF'
 );
