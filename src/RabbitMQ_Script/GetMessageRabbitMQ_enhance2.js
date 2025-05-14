@@ -3,7 +3,7 @@ import { createWriteStream } from 'fs';
 import csvWriter from 'csv-write-stream';
 import { promises as fs } from 'fs';
 
-async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, passWord) {
+async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, passWord, count) {
   try {
     // URL encode queue name để tránh vấn đề với ký tự đặc biệt
     const encodedQueueName = encodeURIComponent(queueName);
@@ -21,7 +21,7 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
         password: passWord
       },
       data: {
-        count: 100,       
+        count: count || 100 ,       
         encoding: 'auto', // Thêm encoding auto để RabbitMQ tự xử lý
         ackmode: 'reject_requeue_true',
         truncate: 50000   // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
@@ -63,9 +63,9 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
           }
           
           // Thêm message properties vào payload để có thêm thông tin
-          if (message.properties) {
-            payload.message_properties = message.properties;
-          }
+          // if (message.properties) {
+          //   payload.message_properties = message.properties;
+          // }
           
           payloads.push(payload);
         } else {
@@ -188,7 +188,8 @@ function flattenObject(obj, prefix = '') {
 peekMessagesAndSaveToCSV(
   'https', 
   'rabbitmq-cluster-staging.younetmedia.com', 
-  'staging.cl.fb.identities_finished_sources', 
+  'staging.cl.tr.identities_finished_sources', 
   'lamtt', 
-  'vYoWn4KCmDYpvuFiqovWbF'
+  'vYoWn4KCmDYpvuFiqovWbF',
+  507
 );
