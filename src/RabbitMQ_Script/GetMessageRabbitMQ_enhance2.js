@@ -21,12 +21,12 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
         password: passWord
       },
       data: {
-        count: count || 100 ,       
+        count: count ,       
         encoding: 'auto', // Thêm encoding auto để RabbitMQ tự xử lý
         ackmode: 'reject_requeue_true',
-        truncate: 50000   // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
+        truncate: 5000000   // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
       },
-      timeout: 300000,    // Giảm timeout xuống mức hợp lý hơn
+      timeout: 300000000,    // Giảm timeout xuống mức hợp lý hơn
       headers: {
         'Content-Type': 'application/json'
       },
@@ -184,12 +184,11 @@ function flattenObject(obj, prefix = '') {
   return result;
 }
 
-// Chạy hàm để xem messages mà không xóa chúng khỏi queue
 peekMessagesAndSaveToCSV(
   'https', 
   'rabbitmq-cluster-staging.younetmedia.com', 
   'staging.cl.tr.identities_finished_sources', 
   'lamtt', 
   'vYoWn4KCmDYpvuFiqovWbF',
-  507
+  256
 );

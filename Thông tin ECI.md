@@ -597,10 +597,16 @@ language
 avatar
 post_updated_at
 post_last_date
+reply_updated_at
+reply_last_date
+repost_updated_at
+repost_last_date
 engagement_updated_at
 info_updated_at
 last_crawl_followers
 next_crawl_time
+reply_next_crawl_time
+repost_next_crawl_time
 priority
 created_date
 updated_at
@@ -608,7 +614,7 @@ last_status
 error_message
 commercial_rate
 tt_user_id
-tt_shop_id
+
 
 
 
