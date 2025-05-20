@@ -24,7 +24,7 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
         count: count ,       
         encoding: 'auto', // Thêm encoding auto để RabbitMQ tự xử lý
         ackmode: 'reject_requeue_true',
-        truncate: 5000000   // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
+        truncate: 5000000  // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
       },
       timeout: 300000000,    // Giảm timeout xuống mức hợp lý hơn
       headers: {
@@ -190,5 +190,5 @@ peekMessagesAndSaveToCSV(
   'staging.cl.tr.identities_finished_sources', 
   'lamtt', 
   'vYoWn4KCmDYpvuFiqovWbF',
-  256
+  800
 );

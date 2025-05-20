@@ -5,6 +5,8 @@ pod: threads-source-no-cookie-staging-ynm-crawler-empty
 kubectl get pods -n crawler-staging | grep threads-source-no-cookie-staging-ynm-crawler-empty
 kubectl exec -it threads-source-no-cookie-staging-ynm-crawler-empty-5fc6b65wnt4m -n crawler-staging -- sh
 
+kubectl exec -it threads-source-no-cookie-staging-ynm-crawler-empty-f5c654cms48z -n crawler-staging -- sh
+
 
 ## Cách test 
 1. Tìm kiếm proxy để chạy
@@ -29,12 +31,14 @@ TR_SOURCE_REPLY_CRAWLER
 
 ThreadsSourcePostNoCookieCrawlingLoader
 ThreadsSourceReplyNoCookieCrawlingLoader
+ThreadsRepostNoCookieCrawlingLoader
 
 
 SELECT * FROM `proxies` WHERE crawler_type = "TR_SOURCE_REPLY_CRAWLER" 
 
 UPDATE `proxies` SET crawler_type = 'TR_SOURCE_POST_CRAWLER' WHERE crawler_type = 'FB_PAGE_WEB_COMMENT_CRAWLER' LIMIT 45
 UPDATE `proxies` SET crawler_type = 'TR_SOURCE_REPLY_CRAWLER' WHERE crawler_type = 'FB_PAGE_WEB_COMMENT_CRAWLER' LIMIT 45
+UPDATE `proxies` SET crawler_type = 'TR_REPOST_CRAWLER' WHERE crawler_type = 'FB_PAGE_WEB_COMMENT_CRAWLER' LIMIT 45
 
 crawler_type LIKE "TR_SOURCE_POST_CRAWLER" OR crawler_type LIKE "TR_SOURCE_REPLY_CRAWLER" 
 
@@ -53,16 +57,55 @@ cl.tr.source_replies_no_cookie_crawling_sources
 cl.tr.source_replies_no_cookie_crawled_sources
 cl.tr.source_replies_no_cookie_crawling_requests
 
+- repost
+cl.tr.reposts_no_cookie_crawling_sources
+cl.tr.reposts_no_cookie_crawling_requests
+cl.tr.reposts_no_cookie_crawled_sources
 
-cl.(mentions_2_solr_mentions|posts_2_solr_tr_posts|tr.identities_finished_sources|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources)
 
 
-
+cl.(mentions_2_solr_mentions|posts_2_solr_tr_posts|tr.identities_finished_sources|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources)
 
 
 kubectl get pods -n crawler-staging | grep threads-source-no-cookie-staging-ynm-crawler-empty
 kubectl exec -it threads-source-no-cookie-staging-ynm-crawler-empty-5fc6b65wnt4m -n crawler-staging -- sh
 
+
+## Endpoint crawler:
+Source Post:
+curl --location 'https://www.threads.com/graphql/query' \
+--header 'x-csrftoken: AWJ8FLzicSJJz6esyAn5t5' \
+--header 'x-ig-app-id: 238260118697367' \
+--header 'x-logged-out-threads-migrated-request: true' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'variables={"first":15,"userID":"3540647487","__relay_internal__pv__BarcelonaIsLoggedInrelayprovider":false,"__relay_internal__pv__BarcelonaHasSelfReplyContextrelayprovider":false,"__relay_internal__pv__BarcelonaHasInlineReplyComposerrelayprovider":false,"__relay_internal__pv__BarcelonaIsSearchDiscoveryEnabledrelayprovider":false,"__relay_internal__pv__BarcelonaOptionalCookiesEnabledrelayprovider":true,"__relay_internal__pv__BarcelonaHasSpoilerStylingInforelayprovider":false,"__relay_internal__pv__BarcelonaQuotedPostUFIEnabledrelayprovider":false,"__relay_internal__pv__BarcelonaIsCrawlerrelayprovider":false,"__relay_internal__pv__BarcelonaHasDisplayNamesrelayprovider":false,"__relay_internal__pv__BarcelonaCanSeeSponsoredContentrelayprovider":false,"__relay_internal__pv__BarcelonaShouldShowFediverseM075Featuresrelayprovider":false,"__relay_internal__pv__BarcelonaIsInternalUserrelayprovider":false}' \
+--data-urlencode 'server_timestamps=true' \
+--data-urlencode 'doc_id=9605580269539982'
+
+
+Source Reply:
+curl --location 'https://www.threads.com/graphql/query' \
+--header 'x-bloks-version-id: cf39c6377e026a1760665d37cfc1b31a93ae150e5d202da0aa6d36af9f0749fd' \
+--header 'x-csrftoken: AWJ8FLzicSJJz6esyAn5t5' \
+--header 'x-fb-friendly-name: BarcelonaProfileRepliesTabDirectQuery' \
+--header 'x-fb-lsd: AVpGVuGhVd0' \
+--header 'x-ig-app-id: 238260118697367' \
+--header 'x-logged-out-threads-migrated-request: true' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'fb_api_req_friendly_name=BarcelonaProfileRepliesTabDirectQuery' \
+--data-urlencode 'variables={"first":15,"userID":"71563042466","__relay_internal__pv__BarcelonaIsLoggedInrelayprovider":false,"__relay_internal__pv__BarcelonaHasSelfReplyContextrelayprovider":false,"__relay_internal__pv__BarcelonaHasInlineReplyComposerrelayprovider":false,"__relay_internal__pv__BarcelonaIsSearchDiscoveryEnabledrelayprovider":false,"__relay_internal__pv__BarcelonaOptionalCookiesEnabledrelayprovider":true,"__relay_internal__pv__BarcelonaHasSpoilerStylingInforelayprovider":false,"__relay_internal__pv__BarcelonaQuotedPostUFIEnabledrelayprovider":false,"__relay_internal__pv__BarcelonaIsCrawlerrelayprovider":false,"__relay_internal__pv__BarcelonaHasDisplayNamesrelayprovider":false,"__relay_internal__pv__BarcelonaCanSeeSponsoredContentrelayprovider":false,"__relay_internal__pv__BarcelonaShouldShowFediverseM075Featuresrelayprovider":false,"__relay_internal__pv__BarcelonaIsInternalUserrelayprovider":false}' \
+--data-urlencode 'server_timestamps=true' \
+--data-urlencode 'doc_id=10054986467894351'
+
+Repost: 
+curl --location 'https://www.threads.com/graphql/query' \
+--header 'x-csrftoken: AWJ8FLzicSJJz6esyAn5t5' \
+--header 'x-ig-app-id: 238260118697367' \
+--header 'x-logged-out-threads-migrated-request: true' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'variables={"first":15,"userID":"63477618248","__relay_internal__pv__BarcelonaIsLoggedInrelayprovider":false,"__relay_internal__pv__BarcelonaHasSelfReplyContextrelayprovider":false,"__relay_internal__pv__BarcelonaHasInlineReplyComposerrelayprovider":false,"__relay_internal__pv__BarcelonaIsSearchDiscoveryEnabledrelayprovider":false,"__relay_internal__pv__BarcelonaOptionalCookiesEnabledrelayprovider":true,"__relay_internal__pv__BarcelonaHasSpoilerStylingInforelayprovider":false,"__relay_internal__pv__BarcelonaQuotedPostUFIEnabledrelayprovider":false,"__relay_internal__pv__BarcelonaIsCrawlerrelayprovider":false,"__relay_internal__pv__BarcelonaHasDisplayNamesrelayprovider":false,"__relay_internal__pv__BarcelonaCanSeeSponsoredContentrelayprovider":false,"__relay_internal__pv__BarcelonaShouldShowFediverseM075Featuresrelayprovider":false,"__relay_internal__pv__BarcelonaIsInternalUserrelayprovider":false}' \
+--data-urlencode 'server_timestamps=true' \
+--data-urlencode 'doc_id=29538977149080218'
 
 ## Source_post:
 
@@ -173,6 +216,61 @@ NODE_ENV=staging node dist/main.js
 
 
 
+### Source repost
+export HTTP_PORT=9044
+export GRPC_PORT=9011
+
+export RABBIT_HEARTBEAT=10
+
+export LOG_LEVEL=info
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+
+
+export PROXY_MANAGER_SERVICE_PORT=9011
+export PROXY_MANAGER_SERVICE_ACCESS_KEY=RpctiXNGzMXP7kza2QHV+A==
+
+export MYSQL_NEWS_CONNECTION_DATABASE=monitoring_crawl
+
+export TR_GRAPH_SERVICE_ENDPOINT=https://www.threads.net/graphql/query
+export TR_GRAPH_SERVICE_TIMEOUT=60000
+export TR_GRAPH_SERVICE_MAX_RETRIES=10
+
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.reposts_no_cookie_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.reposts_no_cookie_crawling_requests
+
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.reposts_no_cookie_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie
+
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie.next_page
+
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.tr.resolved_data
+
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_REPOST_CRAWLER
+
+export CRAWLER_CONFIG_PAGING_ENABLE=true
+
+export BUILDER_ENABLE=true
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+
+export CRAWLER_ENABLE=true
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=10
+
+export RESOLVER_ENABLE=true
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+export RESOLVER_MAX_RETRIES=3
+
+export REDIS_MAX_RETRIES_PER_REQUEST=
+
+
+cd services/threads/services/repost
+NODE_ENV=staging node dist/main.js
 
 ### Những identity bị lỗi (nghi ngờ đó là id instagram)
 [
@@ -515,4 +613,153 @@ Thread reply
   "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader"
 }
 
+Thread repost
+
+{
+  "id": "tr_62109929445",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": null,
+  "from_date": "1744790723",
+  "to_date": "1747382723",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "link": "threads.net/@tranguyeexn",
+  "startedCrawling": "2025-05-16T08:05:23.098Z",
+  "id_social": "1296757110",
+  "default_data_duration": "2025-04-16T08:05:23.098Z"
+}
+
+
+{
+  "id": "tr_72513499082",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": null,
+  "from_date": "1744790723",
+  "to_date": "1747382723",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "link": "threads.net/@tranguyeexn",
+  "startedCrawling": "2025-05-16T08:05:23.098Z",
+  "id_social": "1296757110",
+  "default_data_duration": "2025-04-16T08:05:23.098Z"
+}
+
+
+
+**Check thêm các case ngẫu nhiên nữa**
+
+Post
+{
+  "id": "1331231990",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-05-15T07:19:01.476Z",
+  "from_date": "1715757541",
+  "to_date": "1747293541",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader"
+}
+
+Replies
+{
+  "id": "1331231990",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-05-15T08:15:32.335Z",
+  "from_date": "1715760932",
+  "to_date": "1747296932",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader"
+}
+
+Repost
+{
+  "id": "tr_1331231990",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": null,
+  "from_date": "1744790723",
+  "to_date": "1747382723",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "link": "threads.net/@tranguyeexn",
+  "startedCrawling": "2025-05-16T08:05:23.098Z",
+  "id_social": "1296757110",
+  "default_data_duration": "2025-04-16T08:05:23.098Z"
+}
 
