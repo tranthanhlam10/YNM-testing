@@ -71,6 +71,8 @@ kubectl get pods -n crawler-staging | grep threads-source-no-cookie-staging-ynm-
 kubectl exec -it threads-source-no-cookie-staging-ynm-crawler-empty-5fc6b65wnt4m -n crawler-staging -- sh
 
 
+kubectl exec -it threads-source-no-cookie-staging-ynm-crawler-empty-58f6844hf6ct -n crawler-staging -- sh
+
 ## Endpoint crawler:
 Source Post:
 curl --location 'https://www.threads.com/graphql/query' \

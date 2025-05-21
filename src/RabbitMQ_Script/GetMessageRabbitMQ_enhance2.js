@@ -185,10 +185,10 @@ function flattenObject(obj, prefix = '') {
 }
 
 peekMessagesAndSaveToCSV(
-  'https', 
-  'rabbitmq-cluster-staging.younetmedia.com', 
-  'staging.cl.tr.identities_finished_sources', 
+  'http', 
+  'rabbitmq-testing.ynm.local', 
+  'high_priority_detail_url_info_LamTT', 
   'lamtt', 
-  'vYoWn4KCmDYpvuFiqovWbF',
-  800
+  'lamtt',
+  500
 );
