@@ -187,8 +187,8 @@ function flattenObject(obj, prefix = '') {
 peekMessagesAndSaveToCSV(
   'http', 
   'rabbitmq-testing.ynm.local', 
-  'high_priority_detail_url_info_LamTT', 
+  'testing.cl.news.article_urls', 
   'lamtt', 
   'lamtt',
-  500
+  405
 );

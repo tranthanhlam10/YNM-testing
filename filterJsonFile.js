@@ -123,7 +123,7 @@ async function example3() {
     try {
         await filterJSONFile(
             'news-testing.dev.articles_2.json',
-            item => item.id_source === 'alobacsi.com',
+            item => item.id_source === 'nguoiquansat.vn',
             'output.json' // Lưu kết quả vào file mới
         );
     } catch (error) {
