@@ -24,9 +24,9 @@ async function peekMessagesAndSaveToCSV(method, domain, queueName, userName, pas
         count: count ,       
         encoding: 'auto', // Thêm encoding auto để RabbitMQ tự xử lý
         ackmode: 'reject_requeue_true',
-        truncate: 5000000  // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
+        truncate: 500000 // Giới hạn kích thước message để tránh vấn đề với messages quá lớn
       },
-      timeout: 300000000,    // Giảm timeout xuống mức hợp lý hơn
+      timeout: 30000000,    // Giảm timeout xuống mức hợp lý hơn
       headers: {
         'Content-Type': 'application/json'
       },
@@ -183,12 +183,25 @@ function flattenObject(obj, prefix = '') {
   
   return result;
 }
+const testHTTP = 'http';
+const stagingHTTP = 'https';
+
+const testDomain= 'rabbitmq-testing.ynm.local';
+const stagingDomain= 'rabbitmq-cluster-staging.younetmedia.com';
+
+const queueName = 'staging.cl.tr.source_replies_crawling_sources';
+
+const userName = 'lamtt'; 
+
+const testPassword = 'lamtt';
+const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
+
 
 peekMessagesAndSaveToCSV(
-  'http', 
-  'rabbitmq-testing.ynm.local', 
-  'testing.cl.posts_2_solr_news_posts', 
-  'lamtt', 
-  'lamtt',
-  496
+  stagingHTTP, 
+  stagingDomain, 
+  queueName, 
+  userName, 
+  stagingPassword,
+  500
 );
