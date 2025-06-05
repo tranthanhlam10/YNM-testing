@@ -189,7 +189,7 @@ const stagingHTTP = 'https';
 const testDomain= 'rabbitmq-testing.ynm.local';
 const stagingDomain= 'rabbitmq-cluster-staging.younetmedia.com';
 
-const queueName = 'staging.cl.tr.source_replies_crawling_sources';
+const queueName = 'staging.cl.tr.source_replies_crawling_requests';
 
 const userName = 'lamtt'; 
 
