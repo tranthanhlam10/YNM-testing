@@ -143,9 +143,9 @@ async function getQueueInfo(
 async function main() {
   // Giới hạn số lượng message cần push trong mỗi lần lặp
     const messageLimit = 500;
-    const jsonFilePath= 'high_priorirty_message.json';
+    const jsonFilePath= 'youtube_article_message.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'high_priority_detail_url_info';
+    const queueName = 'testing.cl.news.article_urls';
     const username = 'lamtt';
     const password = 'lamtt';
     const vhost = '/';
