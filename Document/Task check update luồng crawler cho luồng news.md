@@ -55,6 +55,20 @@ ECOM =32
 
 **HighPriorityNewsSourceCrawlingLoader**  - DONE
 
+
+	
++ status = 1
+
++ next_crawl_time <= now
+
++ created_date > (now - 7 days)
+
++ platform = 3
+
++ id_category <> 0
+
++ priority: 1
+
 Key redis: HighPriorityNewsDetailSourcesCrawlingLoader
 crawling_loaders key: 
 
@@ -82,6 +96,17 @@ WHERE state = 1
 
 **NonCategorySourceCrawlingLoader**
 
+
+
++ status = 1
+
++ next_crawl_time <= now
+
++ created_date > (now - 7 days)
+
++ platform = [3, 4, 5, 6]
+
++ id_category = 0
 
 {
   $and: [
@@ -113,6 +138,18 @@ WHERE state = 1
 
 **BlogSourceCrawlingLoader**  - DONE 
 
+
+
++ status = 1
+
++ next_crawl_time <= now
+
++ created_date > (now - 7 days)
+
++ platform = 4
+
++ id_category <> 0
+
 Key redis: HighPriorityNewsDetailSourcesCrawlingLoader
 crawling_loaders key: 
 
@@ -128,6 +165,18 @@ WHERE state = 1
 
 **EcomReviewSourceCrawlingLoader** - DONE 
 
+	
++ status = 1
+
++ next_crawl_time <= now
+
++ created_date > (now - 7 days)
+
++ platform = [5, 6]
+
++ id_category <> 0
+
++ priority: 1
 
 {
   $and: [
@@ -156,7 +205,17 @@ WHERE state = 1
 
 
 **NormalPriorityNewsSourceCrawlingLoader**  - DONE
++ status = 1
 
++ next_crawl_time <= now
+
++ created_date > (now - 7 days)
+
++ platform = 3
+
++ id_category <> 0
+
++ priority: 2
 
 {
   $and: [
@@ -437,7 +496,8 @@ NDNjMWFkZjMtMGYwMS01NjY1LWI4OTYtNzA5MGI5NTMxNTky
 2. auto-parser-testing-high-priority-browser-crawler
 3. auto-parser-testing-high-priority-http-crawler
 4. auto-parser-testing-article-parser
-5. ynm-cl-news-parsed-details-2-mentions-service-testing
+5. auto-parser-testing-error-article-handler
+6. ynm-cl-news-parsed-details-2-mentions-service-testing
 
 
 Bước cuối không scale pod mà chạy script này:
@@ -678,3 +738,19 @@ Các shard của tháng 5:
     count_failed: 0,
     crawled_date: '1970-01-01T00:00:00Z'
   }
+
+#### Những service cần bật chạy ở testing:
+ynm-cl-news-crawling-loader-service-testing
+ynm-cl-news-source-updater-service-testing -> DONE
+
+
+
+ynm-eci-to-sh-loader-service-testing -> DONE
+ynm-eci-to-sh-pusher-service-testing  -> DONE 
+
+
+
+crawler-testing-youtube-search-crisis-keywords-search-bar -> Hiện tại crawl keyword youtube đã được crawl đúng và luuw xuống Mongo
+crawler-testing-youtube-crawl-detail -> 
+
+ynm-cl-news-article-url-crawler-service-testing -> Bật chõ này lên thì có nhiều article

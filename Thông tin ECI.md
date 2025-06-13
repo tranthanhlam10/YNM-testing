@@ -784,4 +784,7 @@ wait
 redis-cli -h 192.168.1.103 -p 6390 --user "data_ynm_crawler_use_news_mongo" --pass "EQ2Sh6DqxWde" -n 2 --scan --pattern '*' | xargs -I {} redis-cli -h 192.168.1.103 -p 6390 --user "data_ynm_crawler_use_news_mongo" --pass "EQ2Sh6DqxWde" -n 2 del {}
 
 
+#### Câu lệnh để kiểm tra các môi trường trên k8s
+env | grep MONGO -> Kiểm tra config của các service (Mongo/Solr/MySQL)
+
 
