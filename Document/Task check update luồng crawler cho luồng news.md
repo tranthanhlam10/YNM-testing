@@ -94,7 +94,7 @@ WHERE state = 1
 
 
 
-**NonCategorySourceCrawlingLoader**
+**NonCategorySourceCrawlingLoader** -> DONE
 
 
 
@@ -740,7 +740,7 @@ Các shard của tháng 5:
   }
 
 #### Những service cần bật chạy ở testing:
-ynm-cl-news-crawling-loader-service-testing
+ynm-cl-news-crawling-loader-service-testing  -> DONE
 ynm-cl-news-source-updater-service-testing -> DONE
 
 
@@ -754,3 +754,13 @@ crawler-testing-youtube-search-crisis-keywords-search-bar -> Hiện tại crawl 
 crawler-testing-youtube-crawl-detail -> 
 
 ynm-cl-news-article-url-crawler-service-testing -> Bật chõ này lên thì có nhiều article
+
+
+db.articles.find({
+  status: 1,
+  next_crawl_time: { $lte: new Date() },
+  created_date: { $gt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) },
+  platform: 3,
+  id_category: { $ne: 0 },
+  priority: 1
+})

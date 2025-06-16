@@ -189,7 +189,7 @@ const stagingHTTP = 'https';
 const testDomain= 'rabbitmq-testing.ynm.local';
 const stagingDomain= 'rabbitmq-cluster-staging.younetmedia.com';
 
-const queueName = 'eca.update_product_item_ranking';
+const queueName = 'staging.cl.tr.identities_finished_sources';
 
 const userName = 'lamtt'; 
 
