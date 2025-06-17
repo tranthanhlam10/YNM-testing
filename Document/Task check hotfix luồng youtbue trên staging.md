@@ -23,8 +23,9 @@ Deployment staging :
 kubectl config use-context lamtt-k8s-ovh
 hotfix-youtube-filter-1d-next-page-staging-crawler-empty-container
 
-kubectl get pods -n crawler-staging | grep hotfix-youtube-filter-1d-
-kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-c6fh7k -n crawler-staging -- sh
+kubectl get pods -n crawler-staging | grep hotfix-youtube-filter-1d-next-page-staging
+
+kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-cr7g2m -n crawler-staging -- sh
 
 
 
@@ -41,6 +42,11 @@ node scripts/articlesV3/search_crisis_keywords_youtube_search_bar.js
 UPDATE monitor_keyword_v2
 SET status = 'DONE'
 WHERE platform = 'YOUTUBE' AND status = 'IDLE';
+
+
+UPDATE `monitor_keywords_v2`
+SET status = 'DONE'
+WHERE platform = 'YOUTUBE';
 
 
 

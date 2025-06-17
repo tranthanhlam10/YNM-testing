@@ -53,6 +53,12 @@ SELECT * FROM `proxies` WHERE crawler_type IN ('TR_SOURCE_REPLY_CRAWLER','TR_SOU
 
 SELECT * FROM `tokens` WHERE crawler_type IN ('TR_SOURCE_REPLY_CRAWLER','TR_SOURCE_POST_CRAWLER','TR_REPOST_CRAWLER')
 
+// Câu lệnh dùng để chỉnh sửa DB
+crawler_type  NOT IN ('TR_SOURCE_REPLY_CRAWLER','TR_SOURCE_POST_CRAWLER','TR_REPOST_CRAWLER') AND crawler_type  LIKE "TR_%"
+
+
+TR_SOURCE_POST_CRAWLER
+
 TR_SOURCE_POST_CRAWLER
 TR_REPLY_CRAWLER
 TR_REPOST_CRAWLER
@@ -167,7 +173,7 @@ hotfix-thread-source-cookie-staging-ynm-crawler-empty
 kubectl config use-context lamtt-k8s-ovh
 
 kubectl get pods -n crawler-staging | grep hotfix-thread-source-cookie-staging-ynm-crawler-empty
-kubectl exec -it hotfix-thread-source-cookie-staging-ynm-crawler-empty-6c8d6cj6h -n crawler-staging -- sh
+kubectl exec -it hotfix-thread-source-cookie-staging-ynm-crawler-empty-5585nklt9 -n crawler-staging -- sh
 
 
 
