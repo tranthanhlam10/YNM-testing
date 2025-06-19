@@ -25,7 +25,7 @@ hotfix-youtube-filter-1d-next-page-staging-crawler-empty-container
 
 kubectl get pods -n crawler-staging | grep hotfix-youtube-filter-1d-next-page-staging
 
-kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-cr7g2m -n crawler-staging -- sh
+kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-ctfqz4 -n crawler-staging -- sh
 
 
 

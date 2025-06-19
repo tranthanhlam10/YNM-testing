@@ -1,0 +1,44 @@
+* Task update luồng Pusher cho news
+
+Sửa mấy phần này em
+- Filter Unique Id : filter message consume queue
+- Filter valid Url: filter sau khi insert article url -> filter valid url -> insert article title
+- Update Schema: _id, hash_link: định dạng UUID
+
+- Sample data: thay đổi data mẫu ở dưới thôi em
+- Update config testing: thêm config MAX_WAITING_TIME=30: đợi đủ batch thì chạy , k đủ batch 30s sau mới chạy
+- EXCLUDE_ID_SOURCES="['duhoc.cn']" loại trừ domain này vào hệ thống
+
+
+### Phân tích luồng
+1. Đầu tiên consume từ queue news.article_urls
+2. Tiếp theo là unique các id lại (Nếu nhiều message có cùng 1 id, thì group by lại và chỉ xử lý 1 thằng)
+3. Kiểm tra trên Redis -> Nếu có trên Redis thì end process luôn 
+4. Nếu không có thì tiếp tục transaction (Nếu từng bước của transaction này bị lỗi thì cache lại -> Cache ở )
+	- Insert vào article_urls -> 
+	- Insert vào article_titles -> Nếu insert được vào article_titles thì cũng insert được vào articles -> Valid này dành cho title
+	- Insert vào articles
+
+
+-> Vậy chung quy lại muốn nó chạy đúng thì 
+- Số lượng Record ở Redis = article_urls (Đúng)
+- Consume từ queue news.article_urls (Đúng)
+- Đã lưu đúng kiểu dữ liệu ở article_title, article_url, article (Đúng)
+- Case check đã tồn tại trong Redis (Đúng)
+- Giờ check vụ unique message trước khi tạo transaction (Chỗ này chỉ cần lấy 2 message trùng nhau là được) (Đúng)
+
+- Kiểm tra luôn chỗ regex, tại sao nó lại bị regex -> Từ chỗ regex sinh ra title bị lỗi (Chỗ này phải check 4 trường hợp)
+- Kiểm tra domian "duhoc.cn" -> Không được lưu xuống hệ thống
+- Kiểm tra update theo batch -> Đủ message theo batch mới chạy -> còn không thì 30s mới chạy -> Chỗ này thì push message theo batch thôi nhỏ hơn, bằng, lớn hơn 
+
+
+Chỗ valid article_url:
+
+Loại bỏ source không có id_source, title, link
+Loại bỏ link chứa chuỗi regex sau /^(javascript:).*|search|tien-ich\/[\w+\-?=&]+|tien-ich|tag-pro|(\?|)tag|(\?|\/)search|Search|tim-kiem|Tim-kiem/
+Loại bỏ title chứa chuỗi regex sau /^(Trang trước|Trang sau|Trang tiếp|Xem theo ngày|Xem tiếp|tìm kiêm|Tìm kiếm|search|Search|Tag)$/
+Loại bỏ domain chứa id_source không mong muốn: mặc định ['duhoc.cn'], thêm ở config 
+
+
+
+

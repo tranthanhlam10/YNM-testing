@@ -764,3 +764,46 @@ db.articles.find({
   id_category: { $ne: 0 },
   priority: 1
 })
+
+
+
+### Script chạy data pusher
+
+
+*Những vấn đề cần lưu ý*
+	
+Filter Unique Id
+Filter valid Url
+Update Schema: _id, hash_link
+Sample data for MongoDB
+Update config testing
+*-------------------------*
+
+
+kubectl config use-context lamtt-k8s-local
+kubectl get pods -n crawler-testing | grep news-data-pusher-process-testing-ynm-crawler-empty
+
+kubectl exec -it news-data-pusher-process-testing-ynm-crawler-empty-8c58bb9mk5cg -n crawler-testing -- sh
+
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_INPUT_EXCHANGE=cl.resolved_data
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_ROUTING_KEY=cl.3.*.*.article_url
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_INPUT_QUEUE=cl.news.article_urls
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_ENABLE=true
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_BATCH_SIZE=100
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_CONCURRENCY=5
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_PREFETCH_MESSAGES=500
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_EXCLUDE_ID_SOURCES="['duhoc.cn']"
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_MAX_WAITING_TIME=1
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_ENABLE_REDIS_SERVICE=false
+ 
+export MONGO_NEWS_HOST=192.168.1.108           
+export MONGO_NEWS_PORT=27017
+export MONGO_NEWS_USERNAME=data_tannn
+export MONGO_NEWS_PASSWORD=YK7U3UapDktu865fKHa4YvHJx           
+export MONGO_NEWS_DATABASE=news-testing
+ 
+cd services/data-pusher
+NODE_ENV=testing node dist/main.js
+
+
+
