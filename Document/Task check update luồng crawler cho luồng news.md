@@ -783,7 +783,7 @@ Update config testing
 kubectl config use-context lamtt-k8s-local
 kubectl get pods -n crawler-testing | grep news-data-pusher-process-testing-ynm-crawler-empty
 
-kubectl exec -it news-data-pusher-process-testing-ynm-crawler-empty-8c58bb9mk5cg -n crawler-testing -- sh
+kubectl exec -it news-data-pusher-process-testing-ynm-crawler-empty-5d85c54mvbtc -n crawler-testing -- sh
 
 export ARTICLE_2_MONGO_ARTICLE_PUSHER_INPUT_EXCHANGE=cl.resolved_data
 export ARTICLE_2_MONGO_ARTICLE_PUSHER_ROUTING_KEY=cl.3.*.*.article_url
