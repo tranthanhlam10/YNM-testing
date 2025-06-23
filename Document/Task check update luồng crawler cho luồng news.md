@@ -771,7 +771,6 @@ db.articles.find({
 
 
 *Những vấn đề cần lưu ý*
-	
 Filter Unique Id
 Filter valid Url
 Update Schema: _id, hash_link
