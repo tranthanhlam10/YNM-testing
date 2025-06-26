@@ -143,9 +143,9 @@ async function getQueueInfo(
 async function main() {
   // Giới hạn số lượng message cần push trong mỗi lần lặp
     const messageLimit = 500;
-    const jsonFilePath= 'message_parsed_detail.json';
+    const jsonFilePath= 'mentions.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'parsed_detail_output';
+    const queueName = 'testing.cl.mentions_2_solr_mentions_LamTT';
     const username = 'lamtt';
     const password = 'lamtt';
     const vhost = '/';
