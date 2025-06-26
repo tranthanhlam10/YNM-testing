@@ -268,7 +268,7 @@ news-ynmpdp-4981-testing-ynm-crawler-empty
 kubectl config use-context lamtt-k8s-local
 kubectl get pods -n crawler-testing | grep news-ynmpdp-4981-testing-ynm-crawler-empty
 
-kubectl exec -it news-ynmpdp-4981-testing-ynm-crawler-empty-6cd9f468b9-qqp8w -n crawler-testing -- sh
+kubectl exec -it news-ynmpdp-4981-testing-ynm-crawler-empty-74ff6b597f-kn4jf -n crawler-testing -- sh
 
 
 
@@ -374,9 +374,8 @@ export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
    
-yarn dev --scope=@ynm/cl-news-crawling-loader-service
 
-yarn start --scope=@ynm/cl-news-crawling-loader-service
+yarn testing --scope=@ynm/cl-news-crawling-loader-service
 
 #### Source Updater 
 
@@ -495,7 +494,7 @@ NDNjMWFkZjMtMGYwMS01NjY1LWI4OTYtNzA5MGI5NTMxNTky
 1. auto-parser-testing-high-priority-classifier
 2. auto-parser-testing-high-priority-browser-crawler
 3. auto-parser-testing-high-priority-http-crawler
-4. auto-parser-testing-article-parser
+4. auto-parser-testing-article-parser   (Đợi pod scale lên)
 5. auto-parser-testing-error-article-handler
 6. ynm-cl-news-parsed-details-2-mentions-service-testing
 
@@ -782,7 +781,7 @@ Update config testing
 kubectl config use-context lamtt-k8s-local
 kubectl get pods -n crawler-testing | grep news-data-pusher-process-testing-ynm-crawler-empty
 
-kubectl exec -it news-data-pusher-process-testing-ynm-crawler-empty-5d85c54mvbtc -n crawler-testing -- sh
+kubectl exec -it news-data-pusher-process-testing-ynm-crawler-empty-5b57f882jbf9 -n crawler-testing -- sh
 
 export ARTICLE_2_MONGO_ARTICLE_PUSHER_INPUT_EXCHANGE=cl.resolved_data
 export ARTICLE_2_MONGO_ARTICLE_PUSHER_ROUTING_KEY=cl.3.*.*.article_url
