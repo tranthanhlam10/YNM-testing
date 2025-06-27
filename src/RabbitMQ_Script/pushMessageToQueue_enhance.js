@@ -120,14 +120,12 @@ async function getQueueInfo(
         const auth = Buffer.from(`${username}:${password}`).toString('base64');
         const apiUrl = `https://${rabbitmqHost}/api/queues/${encodeURIComponent(vhost)}/${encodeURIComponent(queueName)}`;
         
-        // Tạo HTTPS Agent để bỏ qua xác thực SSL
         const httpsAgent = await getHttpsAgent();
         
         const response = await axios.get(apiUrl, {
           headers: {
             'Authorization': `Basic ${auth}`
           },
-          // Bỏ qua xác thực chứng chỉ SSL để làm việc với chứng chỉ tự ký
           httpsAgent
         });
         
@@ -141,7 +139,6 @@ async function getQueueInfo(
 
 
 async function main() {
-  // Giới hạn số lượng message cần push trong mỗi lần lặp
     const messageLimit = 500;
     const jsonFilePath= 'mentions.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
