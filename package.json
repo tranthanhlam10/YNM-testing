@@ -4,6 +4,7 @@
     "axios": "^1.7.7",
     "csv-write-stream": "^2.0.0",
     "emoji-regex": "^10.4.0",
+    "https-proxy-agent": "^7.0.6",
     "languagedetect": "^2.0.0"
   },
   "devDependencies": {

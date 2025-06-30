@@ -61,3 +61,25 @@ node scripts/articlesV3WithNextCrawlTime/crawlYoutubeDetails.js
 - Nếu mà ban đầu status là 3 -> DONE  
 
 -> Load từ mongo (Đối status của article từ 1 -> 4) -> Crawl detail -> Nếu có mention thì insert xuống mention , đồng thời update status bằng 2 (Còn lại thì sẽ update status bằng 1 hoặc 3 -> vẫn update xuống mongo ) 
+
+
+
+
+curl 'https://www.youtube.com/results?search_query=M%E1%BB%B9%20M%E1%BB%B9&sp=CAISBAgBEAE%253D' \
+  -x http://media2014:8983UHDk33455skdjfkj@50.2.38.104:12345 \
+  -H 'authority: www.youtube.com' \
+  -H 'pragma: no-cache' \
+  -H 'cache-control: no-cache' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'accept-language: en-US,en;q=0.8,vi;q=0.6,co;q=0.4' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'service-worker-navigation-preload: true' \
+  -H 'sec-fetch-site: none' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'sec-fetch-dest: document' \
+  -H 'cookie: GPS=1; YSC=raDJu7dgOI4; VISITOR_INFO1_LIVE=os4M1Cx7I_k; PREF=tz=Asia.Saigon' \
+  -L
+
