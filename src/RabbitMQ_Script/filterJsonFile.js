@@ -122,8 +122,8 @@ function matchesCondition(item, condition) {
 async function example3() {
     try {
         await filterJSONFile(
-            'news-testing.dev.articles_2.json',
-            item => item.id_source === 'nguoiquansat.vn',
+            'messages_peek.json',
+            item => item.createdBy === 'ThreadsKeywordPostNoCookieCrawlingLoader',
             'output.json' // Lưu kết quả vào file mới
         );
     } catch (error) {

@@ -140,9 +140,9 @@ async function getQueueInfo(
 
 async function main() {
     const messageLimit = 500;
-    const jsonFilePath= 'mentions.json';
+    const jsonFilePath= 'crawler_hashtag_keyword_message.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'testing.cl.mentions_2_solr_mentions_LamTT';
+    const queueName = 'testing.cl.tr.keyword_posts_no_cookie_crawled_sources';
     const username = 'lamtt';
     const password = 'lamtt';
     const vhost = '/';

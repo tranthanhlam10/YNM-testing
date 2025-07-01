@@ -8,7 +8,7 @@ async function fetchYouTubeSearch() {
   const url = `https://www.youtube.com/results?search_query=${encodedQuery}&sp=CAISBAgBEAE%253D`;
 
   // Proxy dạng user:pass@host:port
-  const proxy = 'http://media2014:8983UHDk33455skdjfkj@50.207.199.87:12345';  
+  const proxy = 'http://media2014:8983UHDk33455skdjfkj@45.92.28.192:12345';  
   const agent = new HttpsProxyAgent(proxy);
 
   const headers = {

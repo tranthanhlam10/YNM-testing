@@ -5,7 +5,8 @@
     "csv-write-stream": "^2.0.0",
     "emoji-regex": "^10.4.0",
     "https-proxy-agent": "^7.0.6",
-    "languagedetect": "^2.0.0"
+    "languagedetect": "^2.0.0",
+    "papaparse": "^5.5.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
