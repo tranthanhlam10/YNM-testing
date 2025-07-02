@@ -1,0 +1,1164 @@
+  {
+    "source": {
+      "id": 171783,
+      "retries": 0,
+      "type": "BRAND_TRACKING",
+      "delay_time_rules": [],
+      "last_data_date": "2024-06-27T03:42:04.122Z",
+      "from_date": "1719459724",
+      "to_date": "1750995724",
+      "platform": 10,
+      "createdBy": "ThreadsKeywordPostNoCookieCrawlingLoader",
+      "startedCrawling": "2025-06-27T03:42:04.122Z",
+      "keyword": "HLE"
+    },
+    "data": {
+      "data": {
+        "searchResults": {
+          "inform_module": null,
+          "edges": [
+            {
+              "node": {
+                "thread": {
+                  "id": "3664004895822656371",
+                  "thread_items": [
+                    {
+                      "post": {
+                        "pk": "3664004895822656371",
+                        "id": "3664004895822656371_66987609704",
+                        "user": {
+                          "pk": "66987609704",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-9.fna.fbcdn.net/v/t51.2885-19/513534895_17897786895233705_504405394265021630_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-9.fna.fbcdn.net&_nc_cat=105&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=nIm4fA1gQuMQ7kNvwEHcvTz&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfPefHV-zog9lk0rF9Ib6xjR5sFZ4wwD0ifxWjqjKKRE4Q&oe=68641DE8&_nc_sid=10d13b",
+                          "username": "uxishowa",
+                          "id": "66987609704",
+                          "full_name": "토마토",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "có người còn mua lại card T1 từ mấy ông staff mà=)))))))) ngày 2 mọi người có để ý là ít người bóc ra T1 không? vì staff biết card theo lô nên ém cụ r kkkkkkk",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 1,
+                          "repost_count": 0,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": {
+                            "username": "uxishowa",
+                            "id": "66987609704"
+                          },
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": null,
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": true,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "có người còn mua lại card T1 từ mấy ông staff mà=)))))))) ngày 2 mọi người có để ý là ít người bóc ra T1 không? vì staff biết card theo lô nên ém cụ r kkkkkkk",
+                          "pk": "17912665449139376",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZKQo-zTNz",
+                        "image_versions2": {
+                          "candidates": []
+                        },
+                        "original_height": 612,
+                        "original_width": 612,
+                        "accessibility_caption": null,
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 19,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 0,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751003442,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjpmYWxzZSwidXVpZCI6ImIyMjFhMmQzZDk5MjQ2YWJhOTE0ZjIyYTY1ODY4M2QwMzY2NDAwNDg5NTgyMjY1NjM3MSJ9LCJzaWduYXR1cmUiOiIifQ==",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    },
+                    {
+                      "post": {
+                        "pk": "3664033916052455718",
+                        "id": "3664033916052455718_63390593828",
+                        "user": {
+                          "pk": "63390593828",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-19/358384687_803959968001342_3368167230461788773_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=kjRv5OJ5NUIQ7kNvwGBHhA5&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfN-VgISEPWwWkehG8jBBw8DsUl1fZfbsXUSajaUorjPoQ&oe=6863FFEE&_nc_sid=10d13b",
+                          "username": "unghiyaa",
+                          "id": "63390593828",
+                          "full_name": "",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "ê ngày 2 ko thấy ai bóc dc hle gen t1 =)))))) toàn bóc trúng kt dnf",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 0,
+                          "repost_count": 0,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": {
+                            "username": "uxishowa",
+                            "id": "66987609704"
+                          },
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": null,
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": true,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "ê ngày 2 ko thấy ai bóc dc hle gen t1 =)))))) toàn bóc trúng kt dnf",
+                          "pk": "18053897891366316",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZQ28LSkEm",
+                        "image_versions2": {
+                          "candidates": []
+                        },
+                        "original_height": 612,
+                        "original_width": 612,
+                        "accessibility_caption": null,
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 19,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 0,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751006901,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYjIyMWEyZDNkOTkyNDZhYmE5MTRmMjJhNjU4NjgzZDAzNjY0MDMzOTE2MDUyNDU1NzE4In0sInNpZ25hdHVyZSI6IiJ9",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    }
+                  ]
+                },
+                "__typename": "XDTSearchThread"
+              },
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread": {
+                  "id": "3664029552877674193",
+                  "thread_items": [
+                    {
+                      "post": {
+                        "pk": "3664029552877674193",
+                        "id": "3664029552877674193_71737975941",
+                        "user": {
+                          "pk": "71737975941",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-19/508613366_17868917160391942_5010379028158005313_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=6tAT5DIU1Y0Q7kNvwG794XN&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfMxQgHfTyT8WU1mhhKRpHI3gN3pNMSErUWz_Zr4o7GqGA&oe=6864229B&_nc_sid=10d13b",
+                          "username": "francoeur188",
+                          "id": "71737975941",
+                          "full_name": "Francoeur",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "Một vài tổng hợp về Đậu nhỏ:\n- 7 chiếc cup LCK với 5 đội tuyển khác nhau.\n- 6 lần tham dự CKTG: Á quân 2017; dừng ở bán kết 2016, 2022 và tứ kết 2020, 23, 24\n- 3 lần tham dự MSI: Quán quân 2017, dừng ở á quân 2018 và tứ kết 2023\n- 12 tuyển thủ có danh hiệu LCK đầu tiên cùng Peanut:\nSmeb, Kuro, Pray, Gorilla (Rox - hè 2016)\nChovy, Doran, Ruler, Lehends, Peyz, Delight (GenG - hè 2022, xuân hè 2023)\nViper, Zeka (HLE - hè 2024)\nGriffin 2019 trừ Tarzan đểu nằm trong list này.",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 3,
+                          "repost_count": 1,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": null,
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": null,
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": false,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "Một vài tổng hợp về Đậu nhỏ:\n- 7 chiếc cup LCK với 5 đội tuyển khác nhau.\n- 6 lần tham dự CKTG: Á quân 2017; dừng ở bán kết 2016, 2022 và tứ kết 2020, 23, 24\n- 3 lần tham dự MSI: Quán quân 2017, dừng ở á quân 2018 và tứ kết 2023\n- 12 tuyển thủ có danh hiệu LCK đầu tiên cùng Peanut:\nSmeb, Kuro, Pray, Gorilla (Rox - hè 2016)\nChovy, Doran, Ruler, Lehends, Peyz, Delight (GenG - hè 2022, xuân hè 2023)\nViper, Zeka (HLE - hè 2024)\nGriffin 2019 trừ Tarzan đểu nằm trong list này.",
+                          "pk": "18072107716791807",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZP3cpzp7R",
+                        "image_versions2": {
+                          "candidates": [
+                            {
+                              "height": 1366,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfOWfYKFzsIeb_mD6U54U_VWQ4ZxcYYn5K_ZkaSRWqqykw&oe=6864076A&_nc_sid=10d13b",
+                              "width": 2048
+                            },
+                            {
+                              "height": 720,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_s1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfPCCLYm76aLlEArpxEDHPhUeoc-amCHsdB5ue2pENNmlw&oe=6864076A&_nc_sid=10d13b",
+                              "width": 1080
+                            },
+                            {
+                              "height": 480,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_s720x720_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfP_YMXShNTCOUhgtSVVjGsdR5zUSx-CrterigPbUwMLvw&oe=6864076A&_nc_sid=10d13b",
+                              "width": 720
+                            },
+                            {
+                              "height": 427,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfM3qLPAItNXq2Bx4G7EZys70DC5_LQ6sPug07PMC7QhlQ&oe=6864076A&_nc_sid=10d13b",
+                              "width": 640
+                            },
+                            {
+                              "height": 320,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfOYhmvqd0-DhcGPsiFHPOFLRhSctdbTwcJ3qEfYt09x5g&oe=6864076A&_nc_sid=10d13b",
+                              "width": 480
+                            },
+                            {
+                              "height": 213,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfPbeSE4RDT_xI63JgPIY3wJ0eUi52U0kzSqSlhNaZVNvg&oe=6864076A&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 160,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfNFveDnDjscfBf8-izSzveYSQ_9x0PNfvNxqotoVn0hlg&oe=6864076A&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 1080,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfP2GcetMEkFr0idL_Xzwrpum3uInQh0tEonSaymPkp41g&oe=6864076A&_nc_sid=10d13b",
+                              "width": 1080
+                            },
+                            {
+                              "height": 750,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s750x750_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfOf0aDBW-XOwMSSUKs8LKV1WtlJ4H4Inj43fQbGIH6isg&oe=6864076A&_nc_sid=10d13b",
+                              "width": 750
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfMiByb3AYRDbae1FrkBORjJ77NiuDgAjZ1X1cc2P0JSZg&oe=6864076A&_nc_sid=10d13b",
+                              "width": 640
+                            },
+                            {
+                              "height": 480,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfP36OOtkAjOIUN3l-YLSA1ZwDu4IwhPwn0AxZQeTlfRdQ&oe=6864076A&_nc_sid=10d13b",
+                              "width": 480
+                            },
+                            {
+                              "height": 320,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfOBygW5Dg9S10TT7SoQHRu9V9Ntfvd6qvFCBYfq4X1B4A&oe=6864076A&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 240,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfMYkzHUg4sGhJwHEI13Hj-SuPrqyJnoTDvjUsviICl81g&oe=6864076A&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 150,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/511498016_17870242602391942_5523308416643950932_n.jpg?stp=c341.0.1366.1366a_dst-jpg_e35_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMjA0OHgxMzY2LnNkci5mNzU3NjEuZGVmYXVsdF9pbWFnZSJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=sCq2SgBYnP4Q7kNvwGp3HJP&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyOTU1Mjg3NzY3NDE5Mw%3D%3D.3-ccb7-5&oh=00_AfPovZ0Rfur1QRCyV5lTRgahXxdh47BzDuZwixrCbpBwOw&oe=6864076A&_nc_sid=10d13b",
+                              "width": 150
+                            }
+                          ]
+                        },
+                        "original_height": 1366,
+                        "original_width": 2048,
+                        "accessibility_caption": "Có thể là hình ảnh về 1 người và văn bản",
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 1,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 50,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751006381,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjpmYWxzZSwidXVpZCI6ImIyMjFhMmQzZDk5MjQ2YWJhOTE0ZjIyYTY1ODY4M2QwMzY2NDAyOTU1Mjg3NzY3NDE5MyJ9LCJzaWduYXR1cmUiOiIifQ==",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    }
+                  ]
+                },
+                "__typename": "XDTSearchThread"
+              },
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread": {
+                  "id": "3664028872418996525",
+                  "thread_items": [
+                    {
+                      "post": {
+                        "pk": "3664028872418996525",
+                        "id": "3664028872418996525_71737975941",
+                        "user": {
+                          "pk": "71737975941",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-19/508613366_17868917160391942_5010379028158005313_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=6tAT5DIU1Y0Q7kNvwG794XN&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfMxQgHfTyT8WU1mhhKRpHI3gN3pNMSErUWz_Zr4o7GqGA&oe=6864229B&_nc_sid=10d13b",
+                          "username": "francoeur188",
+                          "id": "71737975941",
+                          "full_name": "Francoeur",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "Cảm giác như hình ảnh Peanut nhỏ bé, say xỉn ở SKT là những ký ức tuyệt vời mà mấy cha phương tây không bao giờ quên ấy. Thỉnh thoảng mấy cha này sẽ nhắc lại về thời kỳ 2016 của Peanut một cách rất vui vẻ và rồi chợt nhận ra đó đã là hỉnh ảnh của gần 10 năm trước. Giống như Pray và các fan đời đầu, Peanut như chưa bao giờ lớn lên, vẫn là cậu bé nhỏ xíu đam mê liên minh huyền thoại vậy\n",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              },
+                              {
+                                "fragment_type": "link",
+                                "link_fragment": {
+                                  "display_text": "reddit.com/r/lea…",
+                                  "uri": "https://www.reddit.com/r/leagueoflegends/comments/1gc9j4f/hle_peanut_postworlds_2024_reflection/"
+                                },
+                                "mention_fragment": null,
+                                "plaintext": "https://www.reddit.com/r/leagueoflegends/comments/1gc9j4f/hle_peanut_postworlds_2024_reflection/",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 2,
+                          "repost_count": 1,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": null,
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": null,
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": false,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "Cảm giác như hình ảnh Peanut nhỏ bé, say xỉn ở SKT là những ký ức tuyệt vời mà mấy cha phương tây không bao giờ quên ấy. Thỉnh thoảng mấy cha này sẽ nhắc lại về thời kỳ 2016 của Peanut một cách rất vui vẻ và rồi chợt nhận ra đó đã là hỉnh ảnh của gần 10 năm trước. Giống như Pray và các fan đời đầu, Peanut như chưa bao giờ lớn lên, vẫn là cậu bé nhỏ xíu đam mê liên minh huyền thoại vậy\nhttps://www.reddit.com/r/leagueoflegends/comments/1gc9j4f/hle_peanut_postworlds_2024_reflection/",
+                          "pk": "18084979504739574",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZPti7TzEt",
+                        "image_versions2": {
+                          "candidates": [
+                            {
+                              "height": 308,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOM7jxiBR45iRxAuFpE8IkKo3BPKlSZjlxS-Nd4BWv-6Q&oe=68640975&_nc_sid=10d13b",
+                              "width": 511
+                            },
+                            {
+                              "height": 193,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOKeCl6rh2Ca5sRRGSfvPkhpNvQodHXDu6XF4KZJ68FNw&oe=68640975&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 145,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOmVwO8vy9gBsDmChK6adrfD8Y2JX0qcXMJMrB0WaBJkA&oe=68640975&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 1080,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOejvT4zxMefqV1Ruq2Veq4h8rgnUVKMh83rqrriVWZUA&oe=68640975&_nc_sid=10d13b",
+                              "width": 1080
+                            },
+                            {
+                              "height": 750,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOejvT4zxMefqV1Ruq2Veq4h8rgnUVKMh83rqrriVWZUA&oe=68640975&_nc_sid=10d13b",
+                              "width": 750
+                            },
+                            {
+                              "height": 640,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOejvT4zxMefqV1Ruq2Veq4h8rgnUVKMh83rqrriVWZUA&oe=68640975&_nc_sid=10d13b",
+                              "width": 640
+                            },
+                            {
+                              "height": 308,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfPnNcBlgvq0vHfn3gh9Ne0Yf2pLMvh14OAZ4Fff-64y3Q&oe=68640975&_nc_sid=10d13b",
+                              "width": 308
+                            },
+                            {
+                              "height": 308,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOtwNjQ1D8kUgXHIUR-UqA4ioZCjjnUXelVgMxrwWiJKA&oe=68640975&_nc_sid=10d13b",
+                              "width": 308
+                            },
+                            {
+                              "height": 240,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfNkY5zUu6ng53GskH7eBVRy6471emkAw6QanBv-TGuJ0Q&oe=68640975&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 150,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513819424_17870242536391942_2988048909633947338_n.jpg?stp=c101.0.308.308a_dst-jpg_e35_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNTExeDMwOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=xmvgXfObxJsQ7kNvwFPvnuq&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyODg3MjQxODk5NjUyNQ%3D%3D.3-ccb7-5&oh=00_AfOzrw7d1DkK7N0kksMOg27yVOJGL4wKT05_j8TbKIFXxQ&oe=68640975&_nc_sid=10d13b",
+                              "width": 150
+                            }
+                          ]
+                        },
+                        "original_height": 308,
+                        "original_width": 511,
+                        "accessibility_caption": "Có thể là ảnh chụp màn hình Twitter về văn bản cho biết 'RebelCow 8 tháng trước Everybody loves Peanut, guy IS too likeable 190 PeaceAlier PeaceAlien 8 tháng trước 1% người bình luận nhiều nhất Except Kkoma when Peanui 106 is drunk streaming RodneyPonk. 8 tháng trước Lmao thanks for the reminder, what a great moment 14'",
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 1,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 6,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751006300,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjpmYWxzZSwidXVpZCI6ImIyMjFhMmQzZDk5MjQ2YWJhOTE0ZjIyYTY1ODY4M2QwMzY2NDAyODg3MjQxODk5NjUyNSJ9LCJzaWduYXR1cmUiOiIifQ==",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    }
+                  ]
+                },
+                "__typename": "XDTSearchThread"
+              },
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread": {
+                  "id": "3664023157005999390",
+                  "thread_items": [
+                    {
+                      "post": {
+                        "pk": "3664023157005999390",
+                        "id": "3664023157005999390_68322047201",
+                        "user": {
+                          "pk": "68322047201",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-19/503443393_17889335211279202_1647220393368645715_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=pGwh2_Dp72gQ7kNvwGEMmOl&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfOANn8mp2ucWu-aK-JJRYH55cG6Rl9Q8g4djN3ruaxl-w&oe=6864176D&_nc_sid=10d13b",
+                          "username": "hlewin_elw25",
+                          "id": "68322047201",
+                          "full_name": "hlewin_orangewin🙏🍊",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "Lịch trình trong mơ của 🍊 con nhưng tụi bảo hiểm tạc gáo nước lạnh cho tỉnh\n- 13/6 lấy seed 1 đi MSI, giật tóp tóp ăn mừng mấy hôm\n- 16-17/6 di chuyển vào SG\n- 18/6 fanfest, về nhà\n- 19/6 lụy fanfest, giật tóp tóp mấy hôm nữa\n- xem content ê hề từ cam mẹ, xem đánh rank, xem đồng phục mới\n- qua Canada, vlog gặp hội nyc ctct\n- xem Pelu react content, nhận định các đội, đánh giá áo đấu\n- vào dì ghẻ xem rank, des canva \n- không bận thì 2h sáng hoặc 7h sáng dậy coi giải\n😇 Vâng mơ đẹp quá mà hẹ hẹ",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 1,
+                          "repost_count": 0,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": null,
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": {
+                            "display_name": "HLE",
+                            "id": "18437296501016708"
+                          },
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": false,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "Lịch trình trong mơ của 🍊 con nhưng tụi bảo hiểm tạc gáo nước lạnh cho tỉnh\n- 13/6 lấy seed 1 đi MSI, giật tóp tóp ăn mừng mấy hôm\n- 16-17/6 di chuyển vào SG\n- 18/6 fanfest, về nhà\n- 19/6 lụy fanfest, giật tóp tóp mấy hôm nữa\n- xem content ê hề từ cam mẹ, xem đánh rank, xem đồng phục mới\n- qua Canada, vlog gặp hội nyc ctct\n- xem Pelu react content, nhận định các đội, đánh giá áo đấu\n- vào dì ghẻ xem rank, des canva \n- không bận thì 2h sáng hoặc 7h sáng dậy coi giải\n😇 Vâng mơ đẹp quá mà hẹ hẹ",
+                          "pk": "18313736353235876",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZOaYCJd0e",
+                        "image_versions2": {
+                          "candidates": [
+                            {
+                              "height": 360,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfP2_AeqVxqRSHWGY0JM5Ci_b0jQ-8N7fNIAZFMMzkKY8Q&oe=68640669&_nc_sid=10d13b",
+                              "width": 360
+                            },
+                            {
+                              "height": 320,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?stp=dst-webp_s320x320&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfPBj2kE3a8Unb4jJdJGbZ67LJUETT3EgbIVmfyxKtxRUA&oe=68640669&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 240,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?stp=dst-webp_s240x240&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfO0FNj27DysLy72n5dQ6dyz2o2iJH8KicFktATNIUVP-A&oe=68640669&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 360,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfP2_AeqVxqRSHWGY0JM5Ci_b0jQ-8N7fNIAZFMMzkKY8Q&oe=68640669&_nc_sid=10d13b",
+                              "width": 360
+                            },
+                            {
+                              "height": 360,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfP2_AeqVxqRSHWGY0JM5Ci_b0jQ-8N7fNIAZFMMzkKY8Q&oe=68640669&_nc_sid=10d13b",
+                              "width": 360
+                            },
+                            {
+                              "height": 360,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfP2_AeqVxqRSHWGY0JM5Ci_b0jQ-8N7fNIAZFMMzkKY8Q&oe=68640669&_nc_sid=10d13b",
+                              "width": 360
+                            },
+                            {
+                              "height": 360,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfP2_AeqVxqRSHWGY0JM5Ci_b0jQ-8N7fNIAZFMMzkKY8Q&oe=68640669&_nc_sid=10d13b",
+                              "width": 360
+                            },
+                            {
+                              "height": 320,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?stp=dst-webp_s320x320&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfPBj2kE3a8Unb4jJdJGbZ67LJUETT3EgbIVmfyxKtxRUA&oe=68640669&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 240,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?stp=dst-webp_s240x240&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfO0FNj27DysLy72n5dQ6dyz2o2iJH8KicFktATNIUVP-A&oe=68640669&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 150,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/513868944_17890198461279202_5295338463514745962_n.webp?stp=dst-webp_s150x150&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMzYweDM2MC5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MiQucdqSEF0Q7kNvwEj7OMs&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2NDAyMzE1NzAwNTk5OTM5MA%3D%3D.3-ccb7-5&oh=00_AfP8d6SnhNrxMXsaz7mjFplegvYKzoy7tlxdxqTGrWhzrA&oe=68640669&_nc_sid=10d13b",
+                              "width": 150
+                            }
+                          ]
+                        },
+                        "original_height": 360,
+                        "original_width": 360,
+                        "accessibility_caption": "Không có mô tả ảnh.",
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 1,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 28,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751005619,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjpmYWxzZSwidXVpZCI6ImIyMjFhMmQzZDk5MjQ2YWJhOTE0ZjIyYTY1ODY4M2QwMzY2NDAyMzE1NzAwNTk5OTM5MCJ9LCJzaWduYXR1cmUiOiIifQ==",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    }
+                  ]
+                },
+                "__typename": "XDTSearchThread"
+              },
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread": {
+                  "id": "3664012241995260604",
+                  "thread_items": [
+                    {
+                      "post": {
+                        "pk": "3664012241995260604",
+                        "id": "3664012241995260604_66193336645",
+                        "user": {
+                          "pk": "66193336645",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-14.fna.fbcdn.net/v/t51.2885-19/509248693_17902284075200646_3990006499254743419_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-14.fna.fbcdn.net&_nc_cat=106&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=tZgYNk6FsRIQ7kNvwG_IYE_&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfOQEu7rMXXDZZAukXNOJzpeG6ggBzX0oucGCAsrsnUdDQ&oe=68640E3A&_nc_sid=10d13b",
+                          "username": "socvameo",
+                          "id": "66193336645",
+                          "full_name": "hoseok ơi, sanghyeok à.",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "nhma kiểu lúc đấu dành vé seed 2 t kiểu lo tí chứ ko lo bằng những trận đấu để xếp hạng bn",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 1,
+                          "repost_count": 0,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": {
+                            "username": "wwapf_",
+                            "id": "63223149896"
+                          },
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": null,
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": true,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "nhma kiểu lúc đấu dành vé seed 2 t kiểu lo tí chứ ko lo bằng những trận đấu để xếp hạng bn",
+                          "pk": "18104421733538649",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZL7ioz2K8",
+                        "image_versions2": {
+                          "candidates": []
+                        },
+                        "original_height": 612,
+                        "original_width": 612,
+                        "accessibility_caption": null,
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 19,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 0,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751004318,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYjIyMWEyZDNkOTkyNDZhYmE5MTRmMjJhNjU4NjgzZDAzNjY0MDEyMjQxOTk1MjYwNjA0In0sInNpZ25hdHVyZSI6IiJ9",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    },
+                    {
+                      "post": {
+                        "pk": "3664014459070760189",
+                        "id": "3664014459070760189_63223149896",
+                        "user": {
+                          "pk": "63223149896",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-14.fna.fbcdn.net/v/t51.2885-19/495982999_17908345680109897_2690697955678183022_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-14.fna.fbcdn.net&_nc_cat=101&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=-OkXGZUcBHoQ7kNvwFbi9vL&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfPrgGVUbg41w6PQ_Rm3a-fUlQM2N98HZ8RNlk1Uspu0_w&oe=686406F4&_nc_sid=10d13b",
+                          "username": "wwapf_",
+                          "id": "63223149896",
+                          "full_name": "",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "không biết sao có tự tin là đi msi á mom =))) trận kt win t vấn bth tại trong dự liệu r, trận với hle lúc đầu cũng hơi run mà sau ván 2 phát phải gọi là tr oi win đi đừng sang ván sau nha 😭😭😭😭 sau đó là biết r đấy =))))",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": null,
+                          "direct_reply_count": 0,
+                          "repost_count": 0,
+                          "quote_count": 0,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": {
+                            "username": "socvameo",
+                            "id": "66193336645"
+                          },
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": null,
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": true,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "không biết sao có tự tin là đi msi á mom =))) trận kt win t vấn bth tại trong dự liệu r, trận với hle lúc đầu cũng hơi run mà sau ván 2 phát phải gọi là tr oi win đi đừng sang ván sau nha 😭😭😭😭 sau đó là biết r đấy =))))",
+                          "pk": "18071459192485689",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZMbzczsT9",
+                        "image_versions2": {
+                          "candidates": []
+                        },
+                        "original_height": 612,
+                        "original_width": 612,
+                        "accessibility_caption": null,
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 19,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 0,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1751004582,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjpmYWxzZSwidXVpZCI6ImIyMjFhMmQzZDk5MjQ2YWJhOTE0ZjIyYTY1ODY4M2QwMzY2NDAxNDQ1OTA3MDc2MDE4OSJ9LCJzaWduYXR1cmUiOiIifQ==",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    }
+                  ]
+                },
+                "__typename": "XDTSearchThread"
+              },
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread": {
+                  "id": "3663974770416209421",
+                  "thread_items": [
+                    {
+                      "post": {
+                        "pk": "3663974770416209421",
+                        "id": "3663974770416209421_68322047201",
+                        "user": {
+                          "pk": "68322047201",
+                          "friendship_status": null,
+                          "profile_pic_url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-19/503443393_17889335211279202_1647220393368645715_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=pGwh2_Dp72gQ7kNvwGEMmOl&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfOANn8mp2ucWu-aK-JJRYH55cG6Rl9Q8g4djN3ruaxl-w&oe=6864176D&_nc_sid=10d13b",
+                          "username": "hlewin_elw25",
+                          "id": "68322047201",
+                          "full_name": "hlewin_orangewin🙏🍊",
+                          "transparency_label": null,
+                          "transparency_product": null,
+                          "transparency_product_enabled": false,
+                          "is_verified": false,
+                          "text_post_app_is_private": false,
+                          "has_onboarded_to_text_post_app": true
+                        },
+                        "text_post_app_info": {
+                          "show_header_follow": null,
+                          "is_spoiler_media": null,
+                          "is_markup": null,
+                          "custom_feed_preview_info": null,
+                          "link_preview_attachment": null,
+                          "linked_inline_media": null,
+                          "special_effects_enabled_str": "",
+                          "text_fragments": {
+                            "fragments": [
+                              {
+                                "fragment_type": "plaintext",
+                                "link_fragment": null,
+                                "mention_fragment": null,
+                                "plaintext": "Cái đội này trần cao đến cỡ nào thì chưa biết ( LCK CUP hay FS vẫn chưa phải đỉnh đâu còn có thể cao hơn thế nữa) nhưng sàn là thấy rồi á 😇\nTính luôn cả năm 24-25 cũng có thua chứ đâu phải không nhưng chưa bao giờ thấy HLE đánh dở ở trận BO5 nào cả, thua mà chải dóng kiểu trận tranh seed 2 này lần đầu thấy.\nOff 1 lượt 5 thằng , hôm đó nếu xét thì em Cá đánh đỡ nhất nhưng vẫn dưới phong độ mà ẻm từng thể hiện. Đội khác off 1,2 chỗ thôi là quằn rồi, HLE không bỏ lại 1 ai, off đủ 5  người cho vui.",
+                                "tag_fragment": null,
+                                "linkified_web_url": null,
+                                "styling_info": null
+                              }
+                            ]
+                          },
+                          "reshare_count": 2,
+                          "direct_reply_count": 27,
+                          "repost_count": 3,
+                          "quote_count": 2,
+                          "share_info": {
+                            "quoted_attachment_author_attribution_allowed": true,
+                            "quoted_attachment_post_unavailable": false,
+                            "quoted_attachment_post": null,
+                            "quoted_post": null,
+                            "reposted_post": null
+                          },
+                          "reply_to_author": null,
+                          "reply_control": "everyone",
+                          "private_reply_partner": null,
+                          "self_thread_count": null,
+                          "tag_header": {
+                            "display_name": "HLE",
+                            "id": "18437296501016708"
+                          },
+                          "root_post_author": null,
+                          "is_liked_by_root_author": null,
+                          "pinned_post_info": null,
+                          "related_trends_info": null,
+                          "is_reply": false,
+                          "is_post_unavailable": false,
+                          "post_unavailable_reason": null,
+                          "hush_info": null
+                        },
+                        "is_paid_partnership": null,
+                        "audio": null,
+                        "caption": {
+                          "text": "Cái đội này trần cao đến cỡ nào thì chưa biết ( LCK CUP hay FS vẫn chưa phải đỉnh đâu còn có thể cao hơn thế nữa) nhưng sàn là thấy rồi á 😇\nTính luôn cả năm 24-25 cũng có thua chứ đâu phải không nhưng chưa bao giờ thấy HLE đánh dở ở trận BO5 nào cả, thua mà chải dóng kiểu trận tranh seed 2 này lần đầu thấy.\nOff 1 lượt 5 thằng , hôm đó nếu xét thì em Cá đánh đỡ nhất nhưng vẫn dưới phong độ mà ẻm từng thể hiện. Đội khác off 1,2 chỗ thôi là quằn rồi, HLE không bỏ lại 1 ai, off đủ 5  người cho vui.",
+                          "pk": "17938365465011382",
+                          "has_translation": null
+                        },
+                        "caption_is_edited": false,
+                        "transcription_data": null,
+                        "carousel_media": null,
+                        "code": "DLZDaQgps4N",
+                        "image_versions2": {
+                          "candidates": [
+                            {
+                              "height": 571,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfNHpm-eCDg8YccT7CE--Q2FhSb0Pqs-MpHLsoGp5_43tQ&oe=68642993&_nc_sid=10d13b",
+                              "width": 684
+                            },
+                            {
+                              "height": 401,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=dst-webp_s480x480&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfM8vhZt4oY3MWHOlIHf2sj-uzhP51qV1FRDxXjJZtp3nw&oe=68642993&_nc_sid=10d13b",
+                              "width": 480
+                            },
+                            {
+                              "height": 267,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=dst-webp_s320x320&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfO7gzNXiRAhPfptl4kO44nhhwdVUL3NA0dBR1bfLQXQpw&oe=68642993&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 200,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=dst-webp_s240x240&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfOaLAj9HUZEBX0MkZIHVkUU07N3ZaAjVj0FwfHkCc7Stg&oe=68642993&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 1080,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfPp-7j912avB-jRqOu91eYnCqIfG5cQvYSi4WKa6APxrA&oe=68642993&_nc_sid=10d13b",
+                              "width": 1080
+                            },
+                            {
+                              "height": 750,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfPp-7j912avB-jRqOu91eYnCqIfG5cQvYSi4WKa6APxrA&oe=68642993&_nc_sid=10d13b",
+                              "width": 750
+                            },
+                            {
+                              "height": 571,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp_s640x640_sh0.08&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfOPtiZKy8nD6he2UbbzZcQYOHK-G17sVfUnIeJkQ9Yu6g&oe=68642993&_nc_sid=10d13b",
+                              "width": 571
+                            },
+                            {
+                              "height": 480,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp_s480x480&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfPtnuqkeLULq1kuDjOkgsfh2ZHfFE2_BdwhACXDP9ZscQ&oe=68642993&_nc_sid=10d13b",
+                              "width": 480
+                            },
+                            {
+                              "height": 320,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp_s320x320&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfMGa36BWv4Lk2X9mwKgO31hz080avGhiOPUMZwCx4rmVA&oe=68642993&_nc_sid=10d13b",
+                              "width": 320
+                            },
+                            {
+                              "height": 240,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp_s240x240&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfN1CSstrHTEhnVTtVzbkrD1t2GFbVnIBXt-de3JqhD_Pw&oe=68642993&_nc_sid=10d13b",
+                              "width": 240
+                            },
+                            {
+                              "height": 150,
+                              "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t51.2885-15/504315776_17890191588279202_7533274047800960060_n.webp?stp=c56.0.571.571a_dst-webp_s150x150&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uNjg0eDU3MS5zZHIuZjgyNzg3LmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QGC4JlSRLAqREew3FyY5vQe2BqJd-vJe0y9el1zQc9D5NhFDFvdCxqpaYhphxWdMOHHO-BtybmMAdKNjCNbjIpo&_nc_ohc=MtnbSapiNKIQ7kNvwE5qJao&_nc_gid=SFCOq031fu1Va0lT6rgsxQ&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY2Mzk3NDc3MDQxNjIwOTQyMQ%3D%3D.3-ccb7-5&oh=00_AfPkTwcCXAZv9YtjrKNKq7h5Qj4ojJHDQNESWYZl_skdZw&oe=68642993&_nc_sid=10d13b",
+                              "width": 150
+                            }
+                          ]
+                        },
+                        "original_height": 571,
+                        "original_width": 684,
+                        "accessibility_caption": "Có thể là hình ảnh về 1 người và văn bản cho biết 'T nói nó chánnnn'",
+                        "video_versions": null,
+                        "has_audio": null,
+                        "media_type": 1,
+                        "caption_add_on": null,
+                        "giphy_media_info": null,
+                        "media_overlay_info": null,
+                        "sharing_friction_info": {
+                          "should_have_sharing_friction": false,
+                          "sharing_friction_payload": null
+                        },
+                        "like_count": 193,
+                        "metaPlace": null,
+                        "meta_place": null,
+                        "gen_ai_detection_method": null,
+                        "taken_at": 1750999851,
+                        "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjpmYWxzZSwidXVpZCI6ImIyMjFhMmQzZDk5MjQ2YWJhOTE0ZjIyYTY1ODY4M2QwMzY2Mzk3NDc3MDQxNjIwOTQyMSJ9LCJzaWduYXR1cmUiOiIifQ==",
+                        "logging_info_token": null,
+                        "like_and_view_counts_disabled": false
+                      }
+                    }
+                  ]
+                },
+                "__typename": "XDTSearchThread"
+              },
+              "cursor": ""
+            }
+          ],
+          "page_info": {
+            "end_cursor": null,
+            "has_next_page": false,
+            "has_previous_page": false,
+            "start_cursor": null
+          }
+        }
+      },
+      "crawlerType": "api"
+    }
+  }

@@ -365,6 +365,9 @@ yarn testing:tr-reply-post
 - Những queue cần check
 (cl\.news\.(monitor_news_categories|article_posts|article_crawl_reviews|monitor_sources|article_urlS|crisis_keyword\.(crawling_sources|crawling_requests|crawled_sources))|parsed_detail_output|mentions_2_solr_mentions)
 
+
+high|normal|auto_parser.raw
+
 crawler_type LIKE "TR_%"
 
 
