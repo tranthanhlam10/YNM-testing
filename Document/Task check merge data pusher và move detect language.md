@@ -578,3 +578,44 @@ Tổng hợp lại các issue còn gặp phải
   "options": ""
 }
 
+
+Article_url
+ynm-cl-news-article-url-crawler-service-testing 
+
+
+Crisis
+ynm-cl-news-article-url-crawler-service-testing -> Nhưng bật chỗ gg crisis
+
+
+Parse detail 2 mention
+1. auto-parser-testing-high-priority-classifier
+2. auto-parser-testing-high-priority-browser-crawler
+3. auto-parser-testing-high-priority-http-crawler
+4. auto-parser-testing-article-parser   (Đợi pod scale lên)
+5. auto-parser-testing-error-article-handler
+6. ynm-cl-news-parsed-details-2-mentions-service-testing
+
+
+OPEN AI
+ynm-cl-news-category-link-by-openai-service-testing
+
+
+
+
+
+
+- Mentions: DONE
+- Article post -> DONE 
+- Article_url -> DONE 
+- Monitor_source -> DONE 
+- Open AI -> Not DONE (Đã có message) -> Huy tự động push message lên queue để mình consume  -> DONE
+- Review -> Not done (Đã có message)  -> Huy tự động push message lên queue để mình consume  -> DONE 
+
+
+(cl\.news\.(monitor_news_categories|article_posts|article_crawl_reviews|monitor_sources|article_urlS|crisis_keyword\.(crawling_sources|crawling_requests|crawled_sources))|parsed_detail_output|mentions_2_solr_mentions)
+
+
+### Đã check
+- Hiện tại luồng keyword no cookie đã check xong chỗ detect language 
+- Check tiếp luồng hashtag thử xem sao -> Chỉ cần gọi thành công là đc -> DONE
+- Tiếp theo là check luồng reply
