@@ -83,3 +83,7 @@ curl 'https://www.youtube.com/results?search_query=M%E1%BB%B9%20M%E1%BB%B9&sp=CA
   -H 'cookie: GPS=1; YSC=raDJu7dgOI4; VISITOR_INFO1_LIVE=os4M1Cx7I_k; PREF=tz=Asia.Saigon' \
   -L
 
+
+
+-youtube-search-crisis-keywords-search-bar -
+-youtube-crawl-detail ->
