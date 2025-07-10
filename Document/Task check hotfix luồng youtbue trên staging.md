@@ -12,7 +12,9 @@ UPDATE `monitor_keywords_v2` SET status = 'DONE' WHERE platform = 'YOUTUBE'
 ### Hiện trạng trước khi fix
 
 Không load được keyword, hashtag -> Chỗ này có thể check được dễ dàng, chỉ cần có 1 bộ keyword hashtag -> Sau đó contriol bằng bộ keyword hashtag của mình là được -> **Fixed**
+
 Improve filter date 1 ngày -> Chỗ này cần phải confirm lại -> Hướng giải quyết như thế nào -> Kiểm tra keyword Crisis crawl 1 giờ, các keyword khác thì 1 ngày 
+
 Fix next page ? Khi mà sử lý xong first -page thì chạy như nào -> Chỗ này cũng phải confirm lại -> Hướng giải quyết như thế nào -> Next page has total links: 0 with nextPageInformation: true
 
 
@@ -25,7 +27,7 @@ hotfix-youtube-filter-1d-next-page-staging-crawler-empty-container
 
 kubectl get pods -n crawler-staging | grep hotfix-youtube-filter-1d-next-page-staging
 
-kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-ctfqz4 -n crawler-staging -- sh
+kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-chpzl6 -n crawler-staging -- sh
 
 
 

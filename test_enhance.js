@@ -230,7 +230,7 @@ async function testAllProxies(csvFilePath = 'proxies.csv') {
 
 // Run the test
 console.log('Starting proxy test...');
-testAllProxies('news_forum_proxies_202507011042_Lamtt_Test.csv').then(() => {
+testAllProxies('Hashtag_keyword_no_cookie_data/news_forum_proxies_202507011042_Lamtt_Test.csv').then(() => {
   console.log('\n🏁 Test completed!');
 }).catch(error => {
   console.error('❌ Test failed:', error.message);
