@@ -216,5 +216,13 @@ Phải hoàn thiện được hàm check identity của mình
 cl.(mentions_2_solr_mentions|posts_2_solr_tr_posts|tr.identities_finished_sources|identities_2_solr_identities|identities_2_redis_identities|tr.keyword_posts_no_cookie_crawling_sources|tr.keyword_posts_no_cookie_crawling_requests|tr.keyword_posts_no_cookie_crawled_sources|tr.hashtag_posts_no_cookie_crawling_sources|tr.hashtag_posts_no_cookie_crawling_requests|tr.hashtag_posts_no_cookie_crawled_sources|tr.reply_posts_crawling_sources|cl.tr.posts_2_solr_tr_posts)
 
 
+### Những services cần check ở testing
+ynm-cl-tr-keyword-post-no-cookie-service-testing
+ynm-cl-tr-hashtag-post-no-cookie-service-testing
+
+
+
+
+
 
 
