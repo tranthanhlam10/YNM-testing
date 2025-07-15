@@ -619,4 +619,5 @@ ynm-cl-news-category-link-by-openai-service-testing
 - Hiện tại luồng keyword no cookie đã check xong chỗ detect language 
 - Check tiếp luồng hashtag thử xem sao -> Chỉ cần gọi thành công là đc -> DONE
 - Tiếp theo là check luồng reply
-- Check tiếp các luồng của news -> Kiểm tra xem đường đi có đúng k
+- Check tiếp các luồng của news -> Kiểm tra xem đường đi có đúng không
+
