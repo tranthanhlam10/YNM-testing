@@ -89,3 +89,14 @@ curl 'https://www.youtube.com/results?search_query=M%E1%BB%B9%20M%E1%BB%B9&sp=CA
 
 -youtube-search-crisis-keywords-search-bar -
 -youtube-crawl-detail ->
+
+- Hiện tại đang bị thiếu identity, id_source ở mentions/sai id_source, identity ở Articles_post khi chạy luồng crawl detail
+=> Nguyên nhân khi detect -> Code ở pattern cũ không lấy được các field đó ở HTML response -> Đẫ đến mis match (Luồng pattern cũ)
+
++ identity cho mention
++ id_social, id_channel cho article_posts
+và đẩy thêm vào youtube_posts
+
+https://wiki.younetco.com/display/FB/Crawl+Youtube+Detail -> Wiki cho luồng crawl detail
+
+-> Check lại 

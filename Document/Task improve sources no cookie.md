@@ -927,10 +927,20 @@ Bên phần source_post đã đúng với format
 Bên phần source_replies đã đúng với format
 
 
-
-
-
-
-
-
 - Chạy luông có cookie cũ -> Compare data 
+
+
+
+## Những service cần check lại ở các luồng sources
+
+ynm-cl-tr-source-reply-no-cookie-service-testing
+ynm-cl-tr-source-reply-extension-service-testing
+
+ynm-cl-tr-source-post-no-cookie-service-testing
+ynm-cl-tr-source-post-extension-service-testing
+
+TR_SOURCE_POST_NO_COOKIE_CRAWLER
+
+
+ynm-cl-tr-repost-no-cookie-service-testing
+ynm-cl-tr-repost-extension-service-testing
