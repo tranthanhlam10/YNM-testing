@@ -99,4 +99,27 @@ và đẩy thêm vào youtube_posts
 
 https://wiki.younetco.com/display/FB/Crawl+Youtube+Detail -> Wiki cho luồng crawl detail
 
--> Check lại 
+
+### Những cases hiện tại cần phải check lại
+
+
+
+- Kiểm tra crawl detail từ search bar có đủ không (Ví dụ có 100 urls, thì có crawl đủ k)
+platform: 7
+status: 1
+next_crawl_time: [* TO NOW ]
+sort: next_crawl_time asc , id asc
+limit: 1000
+
+
+- Kiểm tra lại schema của mentions
+- Kiểm tra lại schema của artcle post
+- Kiểm tra lại schema ở Youtube post
+
+
+- Kiểm tra lại các field identity, id_source, identity name ở Solr khi chạy luồng crawl detail
+- Kiểm tra lại field id_social, id channel ở article post
+- Kiểm tra record đẩy vào Youtube_post
+
+
+- Kiểm tra nếu 1 url bị lỗi content -> Có lưu vào monitor error log không

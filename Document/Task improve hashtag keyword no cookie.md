@@ -221,6 +221,11 @@ ynm-cl-tr-keyword-post-no-cookie-service-testing
 ynm-cl-tr-hashtag-post-no-cookie-service-testing
 
 
+### Những services cần check ở staging 
+ynm-cl-tr-keyword-post-no-cookie-service-staging
+ynm-cl-tr-hashtag-post-no-cookie-service-staging
+
+
 
 
 

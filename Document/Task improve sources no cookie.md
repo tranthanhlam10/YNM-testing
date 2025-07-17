@@ -104,6 +104,8 @@ cl.(mentions_2_solr_mentions|tr.posts_2_solr_tr_posts|tr.identities_finished_sou
 cl.(mentions_2_solr_mentions_LamTT|tr.posts_2_solr_tr_posts_LamTT|identities_finished_sources_LamTT|identities_2_redis_identities_LamTT|identities_2_solr_identities_LamTT|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources|tr.source_posts_no_cookie_extension_crawling_sources|tr.source_posts_no_cookie_extension_crawling_requests|tr.source_posts_no_cookie_extension_crawled_sources|tr.source_replies_no_cookie_extension_crawling_sources|tr.source_replies_no_cookie_extension_crawling_requests|tr.source_replies_no_cookie_extension_crawled_sources|tr.reposts_no_cookie_extension_crawling_sources|tr.reposts_no_cookie_extension_crawling_requests|tr.reposts_no_cookie_extension_crawled_sources)
 
 
+cl.(mentions_2_solr_mentions_LamTT|tr.posts_2_solr_tr_posts_LamTT|identities_finished_sources_LamTT|identities_2_redis_identities_LamTT|identities_2_solr_identities_LamTT|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources|tr.source_posts_no_cookie_extension_crawling_sources|tr.source_posts_no_cookie_extension_crawling_requests|tr.source_posts_no_cookie_extension_crawled_sources|tr.source_replies_no_cookie_extension_crawling_sources|tr.source_replies_no_cookie_extension_crawling_requests|tr.source_replies_no_cookie_extension_crawled_sources|tr.reposts_no_cookie_extension_crawling_sources|tr.reposts_no_cookie_extension_crawling_requests|tr.reposts_no_cookie_extension_crawled_sources)
+
 ## Tìm flow để verify lại API identity 
 
 (Chỗ này để nghiên cứu lại sau @@) -> DONE 
@@ -619,6 +621,38 @@ Các cases cần check khi đẩy qua luồng extension:
 }
 
 
+{
+  "id": "63472089649",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": null,
+  "from_date": "1719993793",
+  "to_date": "1751529793",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@miule5791",
+  "id_social": "63472089649",
+  "username": "miule5791"
+}
+
+
 
 {
   "id": "63472089649",
@@ -677,15 +711,15 @@ Các cases cần check khi đẩy qua luồng extension:
       "delay": 48
     }
   ],
-  "last_data_date": "2025-05-30T08:03:07.662Z",
-  "from_date": "1719993785",
+  "last_data_date": "2025-05-01T08:03:07.662Z",
+  "from_date": "1735727297",
   "to_date": "1751529785",
   "platform": 10,
   "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
   "link": "threads.net/@misthyyyy",
   "startedCrawling": "2025-07-03T08:03:05.897Z",
   "id_social": "63098113013",
-  "default_data_duration": "2024-07-03T08:03:05.897Z",
+  "default_data_duration": "2025-06-01T08:03:05.897Z",
   "username": "misthyyyy"
 }
 
@@ -709,7 +743,7 @@ Các cases cần check khi đẩy qua luồng extension:
       "delay": 48
     }
   ],
-  "last_data_date":"2025-05-30T08:03:07.662Z",
+  "last_data_date": "2025-05-01T08:03:07.662Z",
   "from_date": "2025-06-30T02:45:52.000Z",
   "to_date": "1751529785",
   "platform": 10,
@@ -748,7 +782,7 @@ Các cases cần check khi đẩy qua luồng extension:
       "delay": 32
     }
   ],
-  "last_data_date": "2024-07-03T08:03:07.662Z",
+  "last_data_date": "2025-05-01T08:03:07.662Z",
   "from_date": "1719993787",
   "to_date": "1751529787",
   "platform": 10,
@@ -933,14 +967,16 @@ Bên phần source_replies đã đúng với format
 
 ## Những service cần check lại ở các luồng sources
 
-ynm-cl-tr-source-reply-no-cookie-service-testing
-ynm-cl-tr-source-reply-extension-service-testing
+ynm-cl-tr-source-reply-no-cookie-service-testing -> DONE
+ynm-cl-tr-source-reply-extension-service-testing -> DONE
 
-ynm-cl-tr-source-post-no-cookie-service-testing
-ynm-cl-tr-source-post-extension-service-testing
-
-TR_SOURCE_POST_NO_COOKIE_CRAWLER
+ynm-cl-tr-source-post-no-cookie-service-testing -> DONE
+ynm-cl-tr-source-post-extension-service-testing -> DONE
 
 
-ynm-cl-tr-repost-no-cookie-service-testing
-ynm-cl-tr-repost-extension-service-testing
+ynm-cl-tr-repost-no-cookie-service-testing -> DONE
+ynm-cl-tr-repost-extension-service-testing -> 
+
+
+
+cl.(mentions_2_solr_mentions|tr.posts_2_solr_tr_posts|tr.identities_finished_sources|identities_2_redis_identities|identities_2_solr_identities|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources|tr.source_posts_no_cookie_extension_crawling_sources|tr.source_posts_no_cookie_extension_crawling_requests|tr.source_posts_no_cookie_extension_crawled_sources|tr.source_replies_no_cookie_extension_crawling_sources|tr.source_replies_no_cookie_extension_crawling_requests|tr.source_replies_no_cookie_extension_crawled_sources|tr.reposts_no_cookie_extension_crawling_sources|tr.reposts_no_cookie_extension_crawling_requests|tr.reposts_no_cookie_extension_crawled_sources)
