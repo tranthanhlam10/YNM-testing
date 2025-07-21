@@ -140,11 +140,11 @@ async function getQueueInfo(
 
 async function main() {
     const messageLimit = 500;
-    const jsonFilePath= 'Hashtag_keyword_no_cookie_data/hashtag_crawled_messages.json';
-    const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'testing.cl.tr.hashtag_posts_no_cookie_crawled_sources';
+    const jsonFilePath= 'messages_peek.json';
+    const rabbitmqHost = 'rabbitmq-staging.younetmedia.com';
+    const queueName = 'staging.cl.tr.keyword_posts_no_cookie_crawled_sources';
     const username = 'lamtt';
-    const password = 'lamtt';
+    const password = 'vYoWn4KCmDYpvuFiqovWbF';
     const vhost = '/';
 
   

@@ -816,7 +816,7 @@ Các cases cần check khi đẩy qua luồng extension:
       "delay": 32
     }
   ],
-  "last_data_date": "2024-06-28T08:03:07.662Z",
+  "last_data_date": null,
   "from_date": "1719993787",
   "to_date": "1751682691",
   "platform": 10,
@@ -975,7 +975,7 @@ ynm-cl-tr-source-post-extension-service-testing -> DONE
 
 
 ynm-cl-tr-repost-no-cookie-service-testing -> DONE
-ynm-cl-tr-repost-extension-service-testing -> 
+ynm-cl-tr-repost-extension-service-testing -> DONE (Lên staging check lại nguyên nhân không đẩy xuống mentions)
 
 
 

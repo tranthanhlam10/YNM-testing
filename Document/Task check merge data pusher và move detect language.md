@@ -599,11 +599,6 @@ Parse detail 2 mention
 OPEN AI
 ynm-cl-news-category-link-by-openai-service-testing
 
-
-
-
-
-
 - Mentions: DONE
 
 

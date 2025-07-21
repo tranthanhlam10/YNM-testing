@@ -223,9 +223,92 @@ ynm-cl-tr-hashtag-post-no-cookie-service-testing
 
 ### Những services cần check ở staging 
 ynm-cl-tr-keyword-post-no-cookie-service-staging
+- Hiện tại đã insert được xuống Solr,Redis
+- Thieu detect
+{
+        "id":"309fbe4c-2bf8-5cd2-b384-2fd9f250cb67",
+        "link":"threads.net/t/DMP3C6RB9DV",
+        "id_social":3679401513144799445,
+        "id_source":"tr_63662600087",
+        "mention_type":1,
+        "link_shared":"https://l.threads.com/?u=https%3A%2F%2Fwww.nytimes.com%2F2025%2F06%2F27%2Fus%2Fpolitics%2Fgavin-newsom-fox-news-lawsuit-trump-call.html%3Fcampaign_id%3D60%26emc%3Dedit_na_20250627%26instance_id%3D157390%26nl%3Dbreaking-news%26regi_id%3D259859570%26segment_id%3D200784%26user_id%3D32e4bff974e99d7eb7e6e6f451f2faf0&e=AT1qBEiDMingecu_L9c4D3CZVtAfhp7Er4pl30jNSU2udKcykKwRVXQLck7Wme6KElPLhg4jIeMamefZ7jvx_qroM9sVuBKzvP_ftpR-1cxUQb31ZOXYtg",
+        "identity":"tr_63662600087",
+        "identity_name":"fuseboxradio",
+        "attachment":"{\"media_type\":19}",
+        "views":0,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "search_text":["",
+          "Newsom Sues Fox News for Saying He Lied About Call With Trump l New York Times https://www.nytimes.com/2025/06/27/us/politics/gavin-newsom-fox-news-lawsuit-trump-call.html?campaign_id=60&emc=edit_na_20250627&instance_id=157390&nl=breaking-news&regi_id=259859570&segment_id=200784&user_id=32e4bff974e99d7eb7e6e6f451f2faf0",
+          "{\"ynm_name\":\"Newsom Sues Fox News for Saying He Lied About Call With Trump\",\"ynm_caption\":\"nytimes.com\",\"ynm_link\":\"https://www.nytimes.com/2025/06/27/us/politics/gavin-newsom-fox-news-lawsuit-trump-call.html?campaign_id=60&emc=edit_na_20250627&instance_id=157390&nl=breaking-news&regi_id=259859570&segment_id=200784&user_id=32e4bff974e99d7eb7e6e6f451f2faf0\"}"],
+        "is_to_topic":false,
+        "language":-1,
+        "domain":"threads.net",
+        "mention_type_details":5,
+        "platform":10,
+        "updated_at":"2025-07-18T11:46:11.889Z",
+        "created_date":"2025-07-18T11:41:04Z",
+        "link_shared_domain":"nytimes.com"}
+
 ynm-cl-tr-hashtag-post-no-cookie-service-staging
+- Hiện tại đã insert được xuống Solr,Redis
+- Thieu detect
 
 
+
+      {
+        "id":"5a0d5f57-7a1e-5884-9da1-c82ec1487cc8",
+        "link":"threads.net/t/DMP1uZDv5Ha",
+        "id_social":3679395705052434906,
+        "id_source":"tr_63440321672",
+        "mention_type":1,
+        "link_shared":"https://l.threads.com/?u=https%3A%2F%2Fwww.espn.com%2Fradio%2Fplay%2F_%2Fid%2F45765705&e=AT2RgoesVQOO5oRj2NfhclSWrkmCwXY966j0jKCFJyvOwfmZkfjG3ttRAxcKOnTVV4ApUpUSnaLv1u6wmrCAj3VA48BAgq4M3pJf0tIYHits26hPxkd9Uw",
+        "identity":"tr_63440321672",
+        "identity_name":"colemanespn",
+        "attachment":"{\"media_type\":19}",
+        "views":0,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "search_text":["",
+          "Thursday Cool Hour 4 FreddieandHD Showcast w/Me and @HDouglas83 had HD's Top WRs,\nCaitlinClark22 troubles, _TJWatt's new $$$ helping @MicahhParsons11, another edition of Florida Floridaing and mo' Listen Now https://espn.com/radio/play/_/id/45765705\nShare via http://espn.com/app",
+          "{\"ynm_name\":\"Freddie and Harry - Hour 4: White or Brown Gravy | ESPN\",\"ynm_caption\":\"espn.com\",\"ynm_link\":\"https://www.espn.com/radio/play/_/id/45765705\"}"],
+        "is_to_topic":false,
+        "language":-1,
+        "domain":"threads.net",
+        "mention_type_details":5,
+        "platform":10,
+        "updated_at":"2025-07-18T11:38:41.799Z",
+        "created_date":"2025-07-18T11:29:29Z",
+        "link_shared_domain":"espn.com"}
+
+Keyword đã có detect
+
+
+platform IN ('THREADS')
+
+
+
+kubectl config use-context lamtt-k8s-ovh
+
+kubectl get pods -n crawler-staging | grep ynm-cl-tr-keyword-post-no-cookie-service-staging
+
+kubectl get pods -n crawler-staging | grep ynm-cl-tr-hashtag-post-no-cookie-service-staging
+
+
+kubectl exec -it ynm-cl-tr-keyword-post-no-cookie-service-staging-6dc48994cxzp47 -n crawler-staging -- sh
+
+
+kubectl logs -f ynm-cl-tr-keyword-post-no-cookie-service-staging-6dc48994cxzp47 -n crawler-staging --sh
+
+
+
+kubectl logs -f ymn-cl-tr-keyword-post-no-cookie-service-staging-6dc48994cxzp47 -n crawler-staging
 
 
 
