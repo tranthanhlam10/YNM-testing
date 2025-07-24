@@ -1,0 +1,1472 @@
+[
+  {
+    "payload_bytes": 368,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 97,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UC-hGolA4ydwaNu55F22C1jg\",\"domain\":\"youtube.com\",\"link\":\"youtube.com/channel/UC-hGolA4ydwaNu55F22C1jg\",\"fullname\":\"부러운노후\",\"priority\":1,\"id_social\":\"UC-hGolA4ydwaNu55F22C1jg\",\"platform\":7,\"minDateToPull\":\"2024-07-23T09:38:45.259Z\",\"maxDateToPull\":\"2025-07-23T09:38:45.259Z\",\"iPullItems\":0,\"iPullItemsFromSourceErr\":3,\"last_status\":1,\"error_message\":\"\"}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 482,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 96,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvi1vowEbBVXHzhbJBofrJQ\",\"post_updated_at\":1747383813,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-06-10T02:55:06Z\",\"link\":\"youtube.com/channel/UCvi1vowEbBVXHzhbJBofrJQ\",\"fullname\":\"남박사TV\",\"priority\":1,\"id_social\":\"UCvi1vowEbBVXHzhbJBofrJQ\",\"platform\":7,\"minDateToPull\":\"2025-05-14T03:29:40Z\",\"maxDateToPull\":\"2025-05-22T02:46:38Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvi1vowEbBVXHzhbJBofrJQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 497,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 95,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwTeqOOcb4o64be9MnmxUUA\",\"post_updated_at\":1747383716,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:00:43Z\",\"link\":\"youtube.com/channel/UCwTeqOOcb4o64be9MnmxUUA\",\"fullname\":\"빅퀘스천 Big Questions\",\"priority\":1,\"id_social\":\"UCwTeqOOcb4o64be9MnmxUUA\",\"platform\":7,\"minDateToPull\":\"2025-05-16T07:00:01Z\",\"maxDateToPull\":\"2025-05-17T04:00:48Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwTeqOOcb4o64be9MnmxUUA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 480,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 94,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwA3Gik5ZOnXKKV3RF1A8gQ\",\"post_updated_at\":1747383736,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-20T04:56:44Z\",\"link\":\"youtube.com/channel/UCwA3Gik5ZOnXKKV3RF1A8gQ\",\"fullname\":\"꿀단지\",\"priority\":1,\"id_social\":\"UCwA3Gik5ZOnXKKV3RF1A8gQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T21:03:38Z\",\"maxDateToPull\":\"2025-05-17T21:06:04Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwA3Gik5ZOnXKKV3RF1A8gQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 495,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 93,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwBfDJmnPe-dP5dsHNTm17g\",\"post_updated_at\":1747383739,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T00:00:41Z\",\"link\":\"youtube.com/channel/UCwBfDJmnPe-dP5dsHNTm17g\",\"fullname\":\"슬기로운초등생활\",\"priority\":1,\"id_social\":\"UCwBfDJmnPe-dP5dsHNTm17g\",\"platform\":7,\"minDateToPull\":\"2025-05-16T00:00:58Z\",\"maxDateToPull\":\"2025-05-20T00:01:07Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwBfDJmnPe-dP5dsHNTm17g\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 362,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 92,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UC03YL8rdyAGXBjFKGVbRVvA\",\"domain\":\"youtube.com\",\"link\":\"youtube.com/channel/UC03YL8rdyAGXBjFKGVbRVvA\",\"fullname\":\"썰있냐\",\"priority\":1,\"id_social\":\"UC03YL8rdyAGXBjFKGVbRVvA\",\"platform\":7,\"minDateToPull\":\"2024-07-23T09:38:17.048Z\",\"maxDateToPull\":\"2025-07-23T09:38:17.048Z\",\"iPullItems\":0,\"iPullItemsFromSourceErr\":3,\"last_status\":1,\"error_message\":\"\"}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 91,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvLhVCboLFpSirQ6hgahBcA\",\"post_updated_at\":1747383866,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:01:09Z\",\"link\":\"youtube.com/channel/UCvLhVCboLFpSirQ6hgahBcA\",\"fullname\":\"랭킹살롱\",\"priority\":1,\"id_social\":\"UCvLhVCboLFpSirQ6hgahBcA\",\"platform\":7,\"minDateToPull\":\"2025-05-14T13:00:45Z\",\"maxDateToPull\":\"2025-05-16T13:01:06Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvLhVCboLFpSirQ6hgahBcA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 490,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 90,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwKY1AhPspYQGJPLALlzhig\",\"post_updated_at\":1747383799,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T06:30:30Z\",\"link\":\"youtube.com/channel/UCwKY1AhPspYQGJPLALlzhig\",\"fullname\":\"사건 바로미터\",\"priority\":1,\"id_social\":\"UCwKY1AhPspYQGJPLALlzhig\",\"platform\":7,\"minDateToPull\":\"2025-05-16T06:00:10Z\",\"maxDateToPull\":\"2025-05-16T08:28:51Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwKY1AhPspYQGJPLALlzhig\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 495,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 89,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv6nXR8A-wSidnF6H-2wQYg\",\"post_updated_at\":1747383915,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T07:00:57Z\",\"link\":\"youtube.com/channel/UCv6nXR8A-wSidnF6H-2wQYg\",\"fullname\":\"전대미문스튜디오\",\"priority\":1,\"id_social\":\"UCv6nXR8A-wSidnF6H-2wQYg\",\"platform\":7,\"minDateToPull\":\"2025-05-14T07:00:46Z\",\"maxDateToPull\":\"2025-05-21T07:00:06Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv6nXR8A-wSidnF6H-2wQYg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 88,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwHzR_2_UTbZpyeIlRzRPNQ\",\"post_updated_at\":1747383733,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T02:57:43Z\",\"link\":\"youtube.com/channel/UCwHzR_2_UTbZpyeIlRzRPNQ\",\"fullname\":\"장사 권프로\",\"priority\":1,\"id_social\":\"UCwHzR_2_UTbZpyeIlRzRPNQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T22:42:28Z\",\"maxDateToPull\":\"2025-05-17T06:01:00Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwHzR_2_UTbZpyeIlRzRPNQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 490,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 87,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvigwlEujR1xpmskcfT8CLw\",\"post_updated_at\":1747383815,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:01:01Z\",\"link\":\"youtube.com/channel/UCvigwlEujR1xpmskcfT8CLw\",\"fullname\":\"탈모는 이마반\",\"priority\":1,\"id_social\":\"UCvigwlEujR1xpmskcfT8CLw\",\"platform\":7,\"minDateToPull\":\"2025-05-14T08:00:38Z\",\"maxDateToPull\":\"2025-05-16T09:00:32Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvigwlEujR1xpmskcfT8CLw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 492,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 86,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv1Osp_VwPULxI_ahotzHRQ\",\"post_updated_at\":1747383905,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-16T13:44:53Z\",\"link\":\"youtube.com/channel/UCv1Osp_VwPULxI_ahotzHRQ\",\"fullname\":\"에스라소망교회\",\"priority\":1,\"id_social\":\"UCv1Osp_VwPULxI_ahotzHRQ\",\"platform\":7,\"minDateToPull\":\"2025-05-13T08:34:30Z\",\"maxDateToPull\":\"2025-05-22T02:36:04Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv1Osp_VwPULxI_ahotzHRQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 493,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 85,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwgLmKynP2SOWSbhy61ZeXA\",\"post_updated_at\":1747383660,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-05T07:55:52Z\",\"link\":\"youtube.com/channel/UCwgLmKynP2SOWSbhy61ZeXA\",\"fullname\":\"하하호호 클리닉\",\"priority\":1,\"id_social\":\"UCwgLmKynP2SOWSbhy61ZeXA\",\"platform\":7,\"minDateToPull\":\"2025-05-14T08:37:33Z\",\"maxDateToPull\":\"2025-05-20T09:52:11Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwgLmKynP2SOWSbhy61ZeXA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 507,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 84,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwk9lqwELKosfEHrEdrVxow\",\"post_updated_at\":1747383664,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T22:00:05Z\",\"link\":\"youtube.com/channel/UCwk9lqwELKosfEHrEdrVxow\",\"fullname\":\"만화로 보는 맨큐의 경제학\",\"priority\":1,\"id_social\":\"UCwk9lqwELKosfEHrEdrVxow\",\"platform\":7,\"minDateToPull\":\"2025-05-15T10:13:37Z\",\"maxDateToPull\":\"2025-05-18T03:15:03Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwk9lqwELKosfEHrEdrVxow\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 83,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw-jbJS5imcVRnSrrCPr6ZQ\",\"post_updated_at\":1747383774,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-20T05:00:53Z\",\"link\":\"youtube.com/channel/UCw-jbJS5imcVRnSrrCPr6ZQ\",\"fullname\":\"언더우먼\",\"priority\":1,\"id_social\":\"UCw-jbJS5imcVRnSrrCPr6ZQ\",\"platform\":7,\"minDateToPull\":\"2025-05-16T02:22:02Z\",\"maxDateToPull\":\"2025-05-19T02:13:13Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw-jbJS5imcVRnSrrCPr6ZQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 513,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 82,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCmBT5CqUxf3-K5_IU9tVtBg\",\"post_updated_at\":1741264172,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T11:24:20Z\",\"link\":\"youtube.com/channel/UCmBT5CqUxf3-K5_IU9tVtBg\",\"fullname\":\"VNAMEDIA - TRUNG TÂM NỘI DUNG SỐ VÀ TRUYỀN THÔNG\",\"priority\":1,\"id_social\":\"UCmBT5CqUxf3-K5_IU9tVtBg\",\"platform\":7,\"minDateToPull\":\"2025-07-23T11:24:20Z\",\"maxDateToPull\":\"2025-07-23T11:07:17.526Z\",\"iPullItems\":0,\"iPullItemsFromSourceErr\":3,\"uploadId\":\"UCmBT5CqUxf3-K5_IU9tVtBg\",\"last_status\":1,\"error_message\":\"\"}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 479,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 81,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwkmZd9gxV5KT7DBIl_-YQw\",\"post_updated_at\":1747383717,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T06:50:01Z\",\"link\":\"youtube.com/channel/UCwkmZd9gxV5KT7DBIl_-YQw\",\"fullname\":\"풍수TV\",\"priority\":1,\"id_social\":\"UCwkmZd9gxV5KT7DBIl_-YQw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T07:58:24Z\",\"maxDateToPull\":\"2025-05-16T11:01:20Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwkmZd9gxV5KT7DBIl_-YQw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 492,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 80,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCxbFaRc8OE86disi7t1yc-A\",\"post_updated_at\":1747383787,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T04:00:33Z\",\"link\":\"youtube.com/channel/UCxbFaRc8OE86disi7t1yc-A\",\"fullname\":\"코인은처음이라\",\"priority\":1,\"id_social\":\"UCxbFaRc8OE86disi7t1yc-A\",\"platform\":7,\"minDateToPull\":\"2025-05-16T01:00:44Z\",\"maxDateToPull\":\"2025-05-16T09:00:28Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUxbFaRc8OE86disi7t1yc-A\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 490,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 79,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvgRYCzfZk0MtfV26AKRzZA\",\"post_updated_at\":1747383815,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T09:00:54Z\",\"link\":\"youtube.com/channel/UCvgRYCzfZk0MtfV26AKRzZA\",\"fullname\":\"통합과학 박선\",\"priority\":1,\"id_social\":\"UCvgRYCzfZk0MtfV26AKRzZA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T10:21:40Z\",\"maxDateToPull\":\"2025-05-16T10:01:13Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvgRYCzfZk0MtfV26AKRzZA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 492,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 78,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCunCtv_c-la7PPHyLfn9O7w\",\"post_updated_at\":1747383934,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T23:30:12Z\",\"link\":\"youtube.com/channel/UCunCtv_c-la7PPHyLfn9O7w\",\"fullname\":\"이번생은 건생TV\",\"priority\":1,\"id_social\":\"UCunCtv_c-la7PPHyLfn9O7w\",\"platform\":7,\"minDateToPull\":\"2025-05-15T10:00:27Z\",\"maxDateToPull\":\"2025-05-22T09:30:12Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUunCtv_c-la7PPHyLfn9O7w\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 496,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 77,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwhegDfCyzBBKZnJgs6ggqw\",\"post_updated_at\":1747383687,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T07:01:04Z\",\"link\":\"youtube.com/channel/UCwhegDfCyzBBKZnJgs6ggqw\",\"fullname\":\"롯데홈쇼핑 롯튜브\",\"priority\":1,\"id_social\":\"UCwhegDfCyzBBKZnJgs6ggqw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T06:30:22Z\",\"maxDateToPull\":\"2025-05-16T09:01:09Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwhegDfCyzBBKZnJgs6ggqw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 76,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv2gBTk8XHZZaWzAmQdPuXw\",\"post_updated_at\":1747383900,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-20T09:00:29Z\",\"link\":\"youtube.com/channel/UCv2gBTk8XHZZaWzAmQdPuXw\",\"fullname\":\"닥터지훈\",\"priority\":1,\"id_social\":\"UCv2gBTk8XHZZaWzAmQdPuXw\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:00:36Z\",\"maxDateToPull\":\"2025-05-20T09:01:11Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv2gBTk8XHZZaWzAmQdPuXw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 517,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 75,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCmBT5CqUxf3-K5_IU9tVtBg\",\"post_updated_at\":1741264172,\"domain\":\"youtube.com\",\"post_last_date\":\"2023-01-22T11:24:20Z\",\"link\":\"youtube.com/channel/UCmBT5CqUxf3-K5_IU9tVtBg\",\"fullname\":\"VNAMEDIA - TRUNG TÂM NỘI DUNG SỐ VÀ TRUYỀN THÔNG\",\"priority\":1,\"id_social\":\"UCmBT5CqUxf3-K5_IU9tVtBg\",\"platform\":7,\"minDateToPull\":\"2024-07-23T11:05:44.987Z\",\"maxDateToPull\":\"2025-07-23T11:05:44.988Z\",\"iPullItems\":0,\"iPullItemsFromSourceErr\":3,\"uploadId\":\"UCmBT5CqUxf3-K5_IU9tVtBg\",\"last_status\":1,\"error_message\":\"\"}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 74,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwEMIKoxiZ5Agq57NYSGkLg\",\"post_updated_at\":1747383724,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-16T09:15:01Z\",\"link\":\"youtube.com/channel/UCwEMIKoxiZ5Agq57NYSGkLg\",\"fullname\":\"남이사 리뷰\",\"priority\":1,\"id_social\":\"UCwEMIKoxiZ5Agq57NYSGkLg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T11:02:50Z\",\"maxDateToPull\":\"2025-05-16T09:15:01Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwEMIKoxiZ5Agq57NYSGkLg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 73,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvAbyziFdErNm3QKbfLRxGQ\",\"post_updated_at\":1747383888,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-15T16:21:31Z\",\"link\":\"youtube.com/channel/UCvAbyziFdErNm3QKbfLRxGQ\",\"fullname\":\"대장 곽두팔\",\"priority\":1,\"id_social\":\"UCvAbyziFdErNm3QKbfLRxGQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T14:39:05Z\",\"maxDateToPull\":\"2025-05-16T11:26:44Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvAbyziFdErNm3QKbfLRxGQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 72,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvm9ylXLRV3ntSXqitODNyw\",\"post_updated_at\":1747383797,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T09:30:36Z\",\"link\":\"youtube.com/channel/UCvm9ylXLRV3ntSXqitODNyw\",\"fullname\":\"Lydian 리디안\",\"priority\":1,\"id_social\":\"UCvm9ylXLRV3ntSXqitODNyw\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:30:23Z\",\"maxDateToPull\":\"2025-05-21T09:30:36Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvm9ylXLRV3ntSXqitODNyw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 477,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 71,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCucS6NT2a8Q5FkYLX_NKLrQ\",\"post_updated_at\":1747383958,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-21T03:15:00Z\",\"link\":\"youtube.com/channel/UCucS6NT2a8Q5FkYLX_NKLrQ\",\"fullname\":\"든든\",\"priority\":1,\"id_social\":\"UCucS6NT2a8Q5FkYLX_NKLrQ\",\"platform\":7,\"minDateToPull\":\"2025-05-16T03:00:59Z\",\"maxDateToPull\":\"2025-05-16T09:10:00Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUucS6NT2a8Q5FkYLX_NKLrQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 477,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 70,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwZwJkJcqh4Ze0qgVfhwnJw\",\"post_updated_at\":1747383699,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:59:45Z\",\"link\":\"youtube.com/channel/UCwZwJkJcqh4Ze0qgVfhwnJw\",\"fullname\":\"슈콘\",\"priority\":1,\"id_social\":\"UCwZwJkJcqh4Ze0qgVfhwnJw\",\"platform\":7,\"minDateToPull\":\"2025-05-15T16:18:35Z\",\"maxDateToPull\":\"2025-07-02T15:16:20Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwZwJkJcqh4Ze0qgVfhwnJw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 508,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 69,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuK32X0k8fz--WbI5KYKb6g\",\"post_updated_at\":1747384007,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T00:45:33Z\",\"link\":\"youtube.com/channel/UCuK32X0k8fz--WbI5KYKb6g\",\"fullname\":\"경일아(경제 읽어주는 아빠)\",\"priority\":1,\"id_social\":\"UCuK32X0k8fz--WbI5KYKb6g\",\"platform\":7,\"minDateToPull\":\"2025-05-16T01:36:56Z\",\"maxDateToPull\":\"2025-05-20T01:53:19Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuK32X0k8fz--WbI5KYKb6g\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 496,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 68,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvkroS8ThnkkwPt2ajYVblw\",\"post_updated_at\":1747383801,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T04:00:53Z\",\"link\":\"youtube.com/channel/UCvkroS8ThnkkwPt2ajYVblw\",\"fullname\":\"역사야담 인물야담\",\"priority\":1,\"id_social\":\"UCvkroS8ThnkkwPt2ajYVblw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T01:01:02Z\",\"maxDateToPull\":\"2025-05-20T01:00:10Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvkroS8ThnkkwPt2ajYVblw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 485,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 67,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvhklB9mU7Y4kVFq7RsaDTw\",\"post_updated_at\":1747383813,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T10:32:04Z\",\"link\":\"youtube.com/channel/UCvhklB9mU7Y4kVFq7RsaDTw\",\"fullname\":\"dailywonder_kr\",\"priority\":1,\"id_social\":\"UCvhklB9mU7Y4kVFq7RsaDTw\",\"platform\":7,\"minDateToPull\":\"2025-05-14T00:44:12Z\",\"maxDateToPull\":\"2025-05-19T06:05:39Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvhklB9mU7Y4kVFq7RsaDTw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 528,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 66,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuPe_chkvkEqMX98qvuQKwg\",\"post_updated_at\":1747383981,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T10:45:04Z\",\"link\":\"youtube.com/channel/UCuPe_chkvkEqMX98qvuQKwg\",\"fullname\":\"주식하는아저씨 : 손실방어, 수익상승 정보\",\"priority\":1,\"id_social\":\"UCuPe_chkvkEqMX98qvuQKwg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T10:45:02Z\",\"maxDateToPull\":\"2025-05-16T10:45:02Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuPe_chkvkEqMX98qvuQKwg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 518,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 65,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCzEVdE9szSTGVAV-S2aJhEA\",\"post_updated_at\":1747383580,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:39:02Z\",\"link\":\"youtube.com/channel/UCzEVdE9szSTGVAV-S2aJhEA\",\"fullname\":\"법학박사 법무사전문위원 김철중 TV\",\"priority\":1,\"id_social\":\"UCzEVdE9szSTGVAV-S2aJhEA\",\"platform\":7,\"minDateToPull\":\"2025-05-16T06:14:58Z\",\"maxDateToPull\":\"2025-05-16T12:53:05Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUzEVdE9szSTGVAV-S2aJhEA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 505,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 64,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvS5hW5HVgvQD5sMKLaBJbA\",\"post_updated_at\":1747383867,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:01:04Z\",\"link\":\"youtube.com/channel/UCvS5hW5HVgvQD5sMKLaBJbA\",\"fullname\":\"주식썰 용의꼬리올라타다\",\"priority\":1,\"id_social\":\"UCvS5hW5HVgvQD5sMKLaBJbA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:00:49Z\",\"maxDateToPull\":\"2025-05-16T09:00:59Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvS5hW5HVgvQD5sMKLaBJbA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 507,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 63,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw5WOiDY13DtackXcOElDrA\",\"post_updated_at\":1747383755,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-17T13:39:17Z\",\"link\":\"youtube.com/channel/UCw5WOiDY13DtackXcOElDrA\",\"fullname\":\"나크돌(최재권의 어른학교)\",\"priority\":1,\"id_social\":\"UCw5WOiDY13DtackXcOElDrA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T14:24:27Z\",\"maxDateToPull\":\"2025-05-16T12:05:48Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw5WOiDY13DtackXcOElDrA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 496,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 62,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvrx6sAuWC0vnBFdnaMYJFw\",\"post_updated_at\":1747383781,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-07T07:01:07Z\",\"link\":\"youtube.com/channel/UCvrx6sAuWC0vnBFdnaMYJFw\",\"fullname\":\"보험언니 하니언니\",\"priority\":1,\"id_social\":\"UCvrx6sAuWC0vnBFdnaMYJFw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:01:12Z\",\"maxDateToPull\":\"2025-05-21T07:01:04Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvrx6sAuWC0vnBFdnaMYJFw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 490,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 61,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvQCmSsCRb8z3q0SO5JW8Pw\",\"post_updated_at\":1747383856,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-18T08:01:13Z\",\"link\":\"youtube.com/channel/UCvQCmSsCRb8z3q0SO5JW8Pw\",\"fullname\":\"하원장 강동현\",\"priority\":1,\"id_social\":\"UCvQCmSsCRb8z3q0SO5JW8Pw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:00:10Z\",\"maxDateToPull\":\"2025-05-23T08:00:29Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvQCmSsCRb8z3q0SO5JW8Pw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 498,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 60,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCxJu_zqC7C6ioUmqfPVZ0tw\",\"post_updated_at\":1747383675,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:24:34Z\",\"link\":\"youtube.com/channel/UCxJu_zqC7C6ioUmqfPVZ0tw\",\"fullname\":\"미래교육학자신종우\",\"priority\":1,\"id_social\":\"UCxJu_zqC7C6ioUmqfPVZ0tw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T07:33:03Z\",\"maxDateToPull\":\"2025-05-16T08:38:02Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUxJu_zqC7C6ioUmqfPVZ0tw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 510,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 59,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw9uTNNq52_A8lBF113xEmg\",\"post_updated_at\":1747383743,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-20T13:01:22Z\",\"link\":\"youtube.com/channel/UCw9uTNNq52_A8lBF113xEmg\",\"fullname\":\"힘내짜샤(교사꿀팁,쉬운과학)\",\"priority\":1,\"id_social\":\"UCw9uTNNq52_A8lBF113xEmg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T02:51:59Z\",\"maxDateToPull\":\"2025-05-17T13:01:06Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw9uTNNq52_A8lBF113xEmg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 479,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 58,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwZTeeKyb1hT6sg8tfOaZiA\",\"post_updated_at\":1747383709,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T13:00:44Z\",\"link\":\"youtube.com/channel/UCwZTeeKyb1hT6sg8tfOaZiA\",\"fullname\":\"임다TV\",\"priority\":1,\"id_social\":\"UCwZTeeKyb1hT6sg8tfOaZiA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T11:38:07Z\",\"maxDateToPull\":\"2025-05-17T11:50:31Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwZTeeKyb1hT6sg8tfOaZiA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 405,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 57,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UC-zkxBfyGDUgKRapgUruBTw\",\"domain\":\"youtube.com\",\"link\":\"youtube.com/channel/UC-zkxBfyGDUgKRapgUruBTw\",\"fullname\":\"업라이프tv\",\"priority\":1,\"id_social\":\"UC-zkxBfyGDUgKRapgUruBTw\",\"platform\":7,\"minDateToPull\":\"2024-07-23T09:38:19.886Z\",\"maxDateToPull\":\"2025-07-23T09:38:19.886Z\",\"iPullItems\":0,\"iPullItemsFromSourceErr\":3,\"uploadId\":\"UU-zkxBfyGDUgKRapgUruBTw\",\"last_status\":1,\"error_message\":\"\"}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 586,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 56,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw1c11u1rXEHawoB3a6ZtoQ\",\"post_updated_at\":1747383776,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T04:15:08Z\",\"link\":\"youtube.com/channel/UCw1c11u1rXEHawoB3a6ZtoQ\",\"fullname\":\"MiliPreter 강천호 〈통역 병․준위․장교 클래스〉 카페 주소 http://cafe.naver.com/pathtosuccess\",\"priority\":1,\"id_social\":\"UCw1c11u1rXEHawoB3a6ZtoQ\",\"platform\":7,\"minDateToPull\":\"2025-05-16T04:32:18Z\",\"maxDateToPull\":\"2025-05-17T03:53:31Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw1c11u1rXEHawoB3a6ZtoQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 512,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 55,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuvnuWiY0ImG50zTz3fxgCA\",\"post_updated_at\":1747383932,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T10:15:01Z\",\"link\":\"youtube.com/channel/UCuvnuWiY0ImG50zTz3fxgCA\",\"fullname\":\"역사여행 사적돌 KoreaHistoryTravel\",\"priority\":1,\"id_social\":\"UCuvnuWiY0ImG50zTz3fxgCA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T10:15:04Z\",\"maxDateToPull\":\"2025-05-16T10:15:01Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuvnuWiY0ImG50zTz3fxgCA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 54,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwHT1OXtC1rwd7VGHY6HfwQ\",\"post_updated_at\":1747383715,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T07:00:38Z\",\"link\":\"youtube.com/channel/UCwHT1OXtC1rwd7VGHY6HfwQ\",\"fullname\":\"이거살템\",\"priority\":1,\"id_social\":\"UCwHT1OXtC1rwd7VGHY6HfwQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T23:00:49Z\",\"maxDateToPull\":\"2025-05-16T23:00:48Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwHT1OXtC1rwd7VGHY6HfwQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 476,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 53,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw9PqtWROREq54bbDlrEk6A\",\"post_updated_at\":1747383746,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T23:51:18Z\",\"link\":\"youtube.com/channel/UCw9PqtWROREq54bbDlrEk6A\",\"fullname\":\"JMEDU\",\"priority\":1,\"id_social\":\"UCw9PqtWROREq54bbDlrEk6A\",\"platform\":7,\"minDateToPull\":\"2025-05-16T00:21:52Z\",\"maxDateToPull\":\"2025-05-16T13:23:48Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw9PqtWROREq54bbDlrEk6A\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 52,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw_4pI7v7FlROZn5eQaw3XA\",\"post_updated_at\":1747383684,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-17T07:41:39Z\",\"link\":\"youtube.com/channel/UCw_4pI7v7FlROZn5eQaw3XA\",\"fullname\":\"반짝아방\",\"priority\":1,\"id_social\":\"UCw_4pI7v7FlROZn5eQaw3XA\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:01:34Z\",\"maxDateToPull\":\"2025-05-17T12:50:50Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw_4pI7v7FlROZn5eQaw3XA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 484,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 51,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv8COrXw617mdNTzXL98RmQ\",\"post_updated_at\":1747383890,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-04T15:15:03Z\",\"link\":\"youtube.com/channel/UCv8COrXw617mdNTzXL98RmQ\",\"fullname\":\"ASMR Rain Spa\",\"priority\":1,\"id_social\":\"UCv8COrXw617mdNTzXL98RmQ\",\"platform\":7,\"minDateToPull\":\"2025-05-13T15:45:11Z\",\"maxDateToPull\":\"2025-06-14T11:30:10Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv8COrXw617mdNTzXL98RmQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 503,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 50,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwB7x65UzJSTYLBJNd3-Wbg\",\"post_updated_at\":1747383733,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T07:00:29Z\",\"link\":\"youtube.com/channel/UCwB7x65UzJSTYLBJNd3-Wbg\",\"fullname\":\"위장튼튼 한의사 김상태\",\"priority\":1,\"id_social\":\"UCwB7x65UzJSTYLBJNd3-Wbg\",\"platform\":7,\"minDateToPull\":\"2025-05-14T21:00:02Z\",\"maxDateToPull\":\"2025-05-21T07:34:00Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwB7x65UzJSTYLBJNd3-Wbg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 49,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvGO9DOcQrviRegeoGlKn-Q\",\"post_updated_at\":1747383883,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T01:00:18Z\",\"link\":\"youtube.com/channel/UCvGO9DOcQrviRegeoGlKn-Q\",\"fullname\":\"친절한 의사\",\"priority\":1,\"id_social\":\"UCvGO9DOcQrviRegeoGlKn-Q\",\"platform\":7,\"minDateToPull\":\"2025-05-15T01:00:51Z\",\"maxDateToPull\":\"2025-05-20T01:01:10Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvGO9DOcQrviRegeoGlKn-Q\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 490,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 48,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwf2KSoOTg2LeVO22l3C9DA\",\"post_updated_at\":1747383661,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-18T11:00:34Z\",\"link\":\"youtube.com/channel/UCwf2KSoOTg2LeVO22l3C9DA\",\"fullname\":\"홍현우 일본어\",\"priority\":1,\"id_social\":\"UCwf2KSoOTg2LeVO22l3C9DA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T23:00:16Z\",\"maxDateToPull\":\"2025-05-16T11:00:14Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwf2KSoOTg2LeVO22l3C9DA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 47,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvdvPu_7TTcrZz1nGh98Sqg\",\"post_updated_at\":1747383859,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:01:26Z\",\"link\":\"youtube.com/channel/UCvdvPu_7TTcrZz1nGh98Sqg\",\"fullname\":\"오마르의 삶\",\"priority\":1,\"id_social\":\"UCvdvPu_7TTcrZz1nGh98Sqg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:00:21Z\",\"maxDateToPull\":\"2025-05-16T09:01:33Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvdvPu_7TTcrZz1nGh98Sqg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 488,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 46,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwdB1l8Uvrk__Vs33oVzYBA\",\"post_updated_at\":1747383670,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-05-19T21:51:00Z\",\"link\":\"youtube.com/channel/UCwdB1l8Uvrk__Vs33oVzYBA\",\"fullname\":\"English  & Korean\",\"priority\":1,\"id_social\":\"UCwdB1l8Uvrk__Vs33oVzYBA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T21:39:00Z\",\"maxDateToPull\":\"2025-05-16T21:56:02Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwdB1l8Uvrk__Vs33oVzYBA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 45,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwfljfAoyJ5VDrBLUm6CUKg\",\"post_updated_at\":1747383666,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-21T02:20:00Z\",\"link\":\"youtube.com/channel/UCwfljfAoyJ5VDrBLUm6CUKg\",\"fullname\":\"텃밭일기\",\"priority\":1,\"id_social\":\"UCwfljfAoyJ5VDrBLUm6CUKg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T03:15:03Z\",\"maxDateToPull\":\"2025-05-19T05:00:43Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwfljfAoyJ5VDrBLUm6CUKg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 499,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 44,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvEXgEePXxMQuvYR44D0-9A\",\"post_updated_at\":1747383875,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:42:48Z\",\"link\":\"youtube.com/channel/UCvEXgEePXxMQuvYR44D0-9A\",\"fullname\":\"진우쌤의 미인학개론\",\"priority\":1,\"id_social\":\"UCvEXgEePXxMQuvYR44D0-9A\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:45:03Z\",\"maxDateToPull\":\"2025-05-19T10:03:38Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvEXgEePXxMQuvYR44D0-9A\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 502,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 43,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuRUzrlTHlS36AyA7KbuhmA\",\"post_updated_at\":1747383977,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T11:15:02Z\",\"link\":\"youtube.com/channel/UCuRUzrlTHlS36AyA7KbuhmA\",\"fullname\":\"집수리교육 고집코리아\",\"priority\":1,\"id_social\":\"UCuRUzrlTHlS36AyA7KbuhmA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T11:15:09Z\",\"maxDateToPull\":\"2025-05-18T11:15:13Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuRUzrlTHlS36AyA7KbuhmA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 489,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 42,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwjiuJD0sDKqZWnlfLYk9PQ\",\"post_updated_at\":1747383685,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T07:31:05Z\",\"link\":\"youtube.com/channel/UCwjiuJD0sDKqZWnlfLYk9PQ\",\"fullname\":\"comeshop 코메샵\",\"priority\":1,\"id_social\":\"UCwjiuJD0sDKqZWnlfLYk9PQ\",\"platform\":7,\"minDateToPull\":\"2025-05-16T04:24:02Z\",\"maxDateToPull\":\"2025-05-19T01:58:23Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwjiuJD0sDKqZWnlfLYk9PQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 489,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 41,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvMdOuDojk1pVwHyH-E_LQA\",\"post_updated_at\":1747383866,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-17T07:34:10Z\",\"link\":\"youtube.com/channel/UCvMdOuDojk1pVwHyH-E_LQA\",\"fullname\":\"와니사이언스\",\"priority\":1,\"id_social\":\"UCvMdOuDojk1pVwHyH-E_LQA\",\"platform\":7,\"minDateToPull\":\"2025-05-14T06:42:19Z\",\"maxDateToPull\":\"2025-05-22T01:50:36Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvMdOuDojk1pVwHyH-E_LQA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 507,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 40,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvVdyIjSEmPGtQlZG9X4H4Q\",\"post_updated_at\":1747383851,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:15:03Z\",\"link\":\"youtube.com/channel/UCvVdyIjSEmPGtQlZG9X4H4Q\",\"fullname\":\"파이팅팔콘 (부동산파일럿)\",\"priority\":1,\"id_social\":\"UCvVdyIjSEmPGtQlZG9X4H4Q\",\"platform\":7,\"minDateToPull\":\"2025-05-15T13:59:01Z\",\"maxDateToPull\":\"2025-05-16T09:22:11Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvVdyIjSEmPGtQlZG9X4H4Q\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 39,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvQtOstZp8wdN4qrBHZex6g\",\"post_updated_at\":1747383870,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:01:31Z\",\"link\":\"youtube.com/channel/UCvQtOstZp8wdN4qrBHZex6g\",\"fullname\":\"딸칠꿀템\",\"priority\":1,\"id_social\":\"UCvQtOstZp8wdN4qrBHZex6g\",\"platform\":7,\"minDateToPull\":\"2025-05-16T05:30:24Z\",\"maxDateToPull\":\"2025-05-17T01:00:25Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvQtOstZp8wdN4qrBHZex6g\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 480,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 38,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvDZUaQA4bFNZkCI6V2olxQ\",\"post_updated_at\":1747383873,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T12:30:38Z\",\"link\":\"youtube.com/channel/UCvDZUaQA4bFNZkCI6V2olxQ\",\"fullname\":\"참명언\",\"priority\":1,\"id_social\":\"UCvDZUaQA4bFNZkCI6V2olxQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T14:24:24Z\",\"maxDateToPull\":\"2025-05-16T11:31:26Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvDZUaQA4bFNZkCI6V2olxQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 510,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 37,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv8PsRW3WrT45ydwpl0F74Q\",\"post_updated_at\":1747383888,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T05:07:50Z\",\"link\":\"youtube.com/channel/UCv8PsRW3WrT45ydwpl0F74Q\",\"fullname\":\"감동 드라마 - 해외 감동 사연\",\"priority\":1,\"id_social\":\"UCv8PsRW3WrT45ydwpl0F74Q\",\"platform\":7,\"minDateToPull\":\"2025-05-15T03:59:40Z\",\"maxDateToPull\":\"2025-05-17T00:01:17Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv8PsRW3WrT45ydwpl0F74Q\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 36,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvFqejfxHH-p5_qDzCrUbpA\",\"post_updated_at\":1747383874,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T11:30:31Z\",\"link\":\"youtube.com/channel/UCvFqejfxHH-p5_qDzCrUbpA\",\"fullname\":\"아트인문학\",\"priority\":1,\"id_social\":\"UCvFqejfxHH-p5_qDzCrUbpA\",\"platform\":7,\"minDateToPull\":\"2025-05-13T11:30:01Z\",\"maxDateToPull\":\"2025-05-20T11:30:42Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvFqejfxHH-p5_qDzCrUbpA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 478,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 35,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwsnFDt_yphmIa4f-RJ0dVA\",\"post_updated_at\":1747383646,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T00:29:05Z\",\"link\":\"youtube.com/channel/UCwsnFDt_yphmIa4f-RJ0dVA\",\"fullname\":\"G스쿨\",\"priority\":1,\"id_social\":\"UCwsnFDt_yphmIa4f-RJ0dVA\",\"platform\":7,\"minDateToPull\":\"2025-05-16T04:02:32Z\",\"maxDateToPull\":\"2025-05-16T08:43:20Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwsnFDt_yphmIa4f-RJ0dVA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 480,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 34,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwNXhHKqukfwtQUeJYLseLA\",\"post_updated_at\":1747383704,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-05-31T07:08:03Z\",\"link\":\"youtube.com/channel/UCwNXhHKqukfwtQUeJYLseLA\",\"fullname\":\"숏물상\",\"priority\":1,\"id_social\":\"UCwNXhHKqukfwtQUeJYLseLA\",\"platform\":7,\"minDateToPull\":\"2025-05-14T09:39:54Z\",\"maxDateToPull\":\"2025-05-18T11:10:48Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwNXhHKqukfwtQUeJYLseLA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 480,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 33,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv3GJ9bS7GRSXl_sEUvZPbg\",\"post_updated_at\":1747383910,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T06:31:38Z\",\"link\":\"youtube.com/channel/UCv3GJ9bS7GRSXl_sEUvZPbg\",\"fullname\":\"알파제\",\"priority\":1,\"id_social\":\"UCv3GJ9bS7GRSXl_sEUvZPbg\",\"platform\":7,\"minDateToPull\":\"2025-05-16T06:08:33Z\",\"maxDateToPull\":\"2025-05-16T19:53:03Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv3GJ9bS7GRSXl_sEUvZPbg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 515,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 32,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvehF_sAgbrD0SQBEbRjiJw\",\"post_updated_at\":1747383834,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:00:22Z\",\"link\":\"youtube.com/channel/UCvehF_sAgbrD0SQBEbRjiJw\",\"fullname\":\"편한 안경이야기ㅣ안경사 이승원\",\"priority\":1,\"id_social\":\"UCvehF_sAgbrD0SQBEbRjiJw\",\"platform\":7,\"minDateToPull\":\"2025-05-14T09:01:26Z\",\"maxDateToPull\":\"2025-05-16T09:00:37Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvehF_sAgbrD0SQBEbRjiJw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 31,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvjEZ8ZY-CGcNQ1iuwJTV-A\",\"post_updated_at\":1747383802,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-21T10:00:06Z\",\"link\":\"youtube.com/channel/UCvjEZ8ZY-CGcNQ1iuwJTV-A\",\"fullname\":\"닥터 빌리프\",\"priority\":1,\"id_social\":\"UCvjEZ8ZY-CGcNQ1iuwJTV-A\",\"platform\":7,\"minDateToPull\":\"2025-05-14T10:00:48Z\",\"maxDateToPull\":\"2025-05-17T08:00:11Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvjEZ8ZY-CGcNQ1iuwJTV-A\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 30,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvil4OAt-zShzkKHsg9EQAw\",\"post_updated_at\":1747383894,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:30:23Z\",\"link\":\"youtube.com/channel/UCvil4OAt-zShzkKHsg9EQAw\",\"fullname\":\"김작가 TV\",\"priority\":1,\"id_social\":\"UCvil4OAt-zShzkKHsg9EQAw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:00:04Z\",\"maxDateToPull\":\"2025-05-16T09:00:17Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvil4OAt-zShzkKHsg9EQAw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 493,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 29,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvpEugMteInEZHSfUij4qqA\",\"post_updated_at\":1747383801,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T12:49:15Z\",\"link\":\"youtube.com/channel/UCvpEugMteInEZHSfUij4qqA\",\"fullname\":\"비트코인 도지파\",\"priority\":1,\"id_social\":\"UCvpEugMteInEZHSfUij4qqA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T12:36:17Z\",\"maxDateToPull\":\"2025-05-16T11:15:06Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvpEugMteInEZHSfUij4qqA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 28,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvWL8Y1rvHrUrTReJtAyiJw\",\"post_updated_at\":1747383840,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T21:00:42Z\",\"link\":\"youtube.com/channel/UCvWL8Y1rvHrUrTReJtAyiJw\",\"fullname\":\"마음의 울림\",\"priority\":1,\"id_social\":\"UCvWL8Y1rvHrUrTReJtAyiJw\",\"platform\":7,\"minDateToPull\":\"2025-05-15T21:00:21Z\",\"maxDateToPull\":\"2025-05-18T21:00:44Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvWL8Y1rvHrUrTReJtAyiJw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 490,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 27,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw0XXRsEl1vNUy2xrXAokeQ\",\"post_updated_at\":1747383778,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T10:01:16Z\",\"link\":\"youtube.com/channel/UCw0XXRsEl1vNUy2xrXAokeQ\",\"fullname\":\"건강한 기억력\",\"priority\":1,\"id_social\":\"UCw0XXRsEl1vNUy2xrXAokeQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T10:00:30Z\",\"maxDateToPull\":\"2025-05-16T10:00:01Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw0XXRsEl1vNUy2xrXAokeQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 488,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 26,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvWhbmQ1T68sCOFRCtJDIUg\",\"post_updated_at\":1747383842,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-21T09:01:12Z\",\"link\":\"youtube.com/channel/UCvWhbmQ1T68sCOFRCtJDIUg\",\"fullname\":\"Boom TV 붐티비\",\"priority\":1,\"id_social\":\"UCvWhbmQ1T68sCOFRCtJDIUg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:01:17Z\",\"maxDateToPull\":\"2025-05-16T09:00:16Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvWhbmQ1T68sCOFRCtJDIUg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 25,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv188oBfepnJOTl3uWmmNAQ\",\"post_updated_at\":1747383918,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T07:00:09Z\",\"link\":\"youtube.com/channel/UCv188oBfepnJOTl3uWmmNAQ\",\"fullname\":\"선진부동산\",\"priority\":1,\"id_social\":\"UCv188oBfepnJOTl3uWmmNAQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T07:00:01Z\",\"maxDateToPull\":\"2025-05-16T23:15:04Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv188oBfepnJOTl3uWmmNAQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 489,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 24,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuadNOkkeJkUlygTHULA6Pw\",\"post_updated_at\":1747383985,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:39:20Z\",\"link\":\"youtube.com/channel/UCuadNOkkeJkUlygTHULA6Pw\",\"fullname\":\"일동동부교회\",\"priority\":1,\"id_social\":\"UCuadNOkkeJkUlygTHULA6Pw\",\"platform\":7,\"minDateToPull\":\"2025-05-15T20:13:02Z\",\"maxDateToPull\":\"2025-05-16T09:16:28Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuadNOkkeJkUlygTHULA6Pw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 23,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvX6gfYWQj9V2eM9H9wWELQ\",\"post_updated_at\":1747383837,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-19T13:11:09Z\",\"link\":\"youtube.com/channel/UCvX6gfYWQj9V2eM9H9wWELQ\",\"fullname\":\"lallapalooza\",\"priority\":1,\"id_social\":\"UCvX6gfYWQj9V2eM9H9wWELQ\",\"platform\":7,\"minDateToPull\":\"2025-05-14T09:42:03Z\",\"maxDateToPull\":\"2025-05-20T10:47:39Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvX6gfYWQj9V2eM9H9wWELQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 22,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw50hWjmMs4EHT0Yz2VFvPQ\",\"post_updated_at\":1747383826,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-06-12T01:49:24Z\",\"link\":\"youtube.com/channel/UCw50hWjmMs4EHT0Yz2VFvPQ\",\"fullname\":\"쇼핑판타지\",\"priority\":1,\"id_social\":\"UCw50hWjmMs4EHT0Yz2VFvPQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T01:01:36Z\",\"maxDateToPull\":\"2025-05-21T14:05:25Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw50hWjmMs4EHT0Yz2VFvPQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 21,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCv-spDeZBGYVUI9eGXGaLSg\",\"post_updated_at\":1747383919,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:30:17Z\",\"link\":\"youtube.com/channel/UCv-spDeZBGYVUI9eGXGaLSg\",\"fullname\":\"시윤주식\",\"priority\":1,\"id_social\":\"UCv-spDeZBGYVUI9eGXGaLSg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:30:06Z\",\"maxDateToPull\":\"2025-05-19T09:30:15Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUv-spDeZBGYVUI9eGXGaLSg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 482,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 20,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuEuZrDg9XI65klLf2H3MGg\",\"post_updated_at\":1747384007,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T03:00:48Z\",\"link\":\"youtube.com/channel/UCuEuZrDg9XI65klLf2H3MGg\",\"fullname\":\"임영주TV\",\"priority\":1,\"id_social\":\"UCuEuZrDg9XI65klLf2H3MGg\",\"platform\":7,\"minDateToPull\":\"2025-05-16T03:01:08Z\",\"maxDateToPull\":\"2025-05-19T08:15:21Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuEuZrDg9XI65klLf2H3MGg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 480,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 19,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuq_irF0a4dQA_FHkIwaPpQ\",\"post_updated_at\":1747383926,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T22:09:32Z\",\"link\":\"youtube.com/channel/UCuq_irF0a4dQA_FHkIwaPpQ\",\"fullname\":\"goldworld\",\"priority\":1,\"id_social\":\"UCuq_irF0a4dQA_FHkIwaPpQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T19:50:34Z\",\"maxDateToPull\":\"2025-05-17T13:13:11Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuq_irF0a4dQA_FHkIwaPpQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 502,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 18,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCutJAdRH5iOCff0mhP-JFHQ\",\"post_updated_at\":1747383926,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-20T23:42:06Z\",\"link\":\"youtube.com/channel/UCutJAdRH5iOCff0mhP-JFHQ\",\"fullname\":\"네오바이오텍 / Neobiotech\",\"priority\":1,\"id_social\":\"UCutJAdRH5iOCff0mhP-JFHQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T22:00:40Z\",\"maxDateToPull\":\"2025-05-20T23:01:03Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUutJAdRH5iOCff0mhP-JFHQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 509,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 17,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuOE6ontinp4TKaQJZj_08Q\",\"post_updated_at\":1747384001,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T12:00:06Z\",\"link\":\"youtube.com/channel/UCuOE6ontinp4TKaQJZj_08Q\",\"fullname\":\"귀로듣는간호조무사#귀간조#\",\"priority\":1,\"id_social\":\"UCuOE6ontinp4TKaQJZj_08Q\",\"platform\":7,\"minDateToPull\":\"2025-05-14T12:01:04Z\",\"maxDateToPull\":\"2025-05-16T12:01:53Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuOE6ontinp4TKaQJZj_08Q\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 485,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 16,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuyPP1FSCtco1oFCjS_A3eg\",\"post_updated_at\":1747383908,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-21T15:00:07Z\",\"link\":\"youtube.com/channel/UCuyPP1FSCtco1oFCjS_A3eg\",\"fullname\":\"복지콕콕!!\",\"priority\":1,\"id_social\":\"UCuyPP1FSCtco1oFCjS_A3eg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T15:01:01Z\",\"maxDateToPull\":\"2025-05-18T15:00:18Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuyPP1FSCtco1oFCjS_A3eg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 480,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 15,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuH8_elx31tCHX-IV-agtxQ\",\"post_updated_at\":1747384012,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-18T09:30:11Z\",\"link\":\"youtube.com/channel/UCuH8_elx31tCHX-IV-agtxQ\",\"fullname\":\"닥터슌\",\"priority\":1,\"id_social\":\"UCuH8_elx31tCHX-IV-agtxQ\",\"platform\":7,\"minDateToPull\":\"2025-05-15T09:30:24Z\",\"maxDateToPull\":\"2025-05-16T09:30:38Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuH8_elx31tCHX-IV-agtxQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 14,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuZcJ9BmhF0vbef4FjLBYdg\",\"post_updated_at\":1747383960,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:14:04Z\",\"link\":\"youtube.com/channel/UCuZcJ9BmhF0vbef4FjLBYdg\",\"fullname\":\"폴리타임즈\",\"priority\":1,\"id_social\":\"UCuZcJ9BmhF0vbef4FjLBYdg\",\"platform\":7,\"minDateToPull\":\"2025-05-16T07:41:38Z\",\"maxDateToPull\":\"2025-05-16T10:18:42Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuZcJ9BmhF0vbef4FjLBYdg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 489,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 13,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvOPxvjo-orwR8lLEgdXsZQ\",\"post_updated_at\":1747383855,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-20T05:33:55Z\",\"link\":\"youtube.com/channel/UCvOPxvjo-orwR8lLEgdXsZQ\",\"fullname\":\"시니어차차차\",\"priority\":1,\"id_social\":\"UCvOPxvjo-orwR8lLEgdXsZQ\",\"platform\":7,\"minDateToPull\":\"2025-05-14T01:29:27Z\",\"maxDateToPull\":\"2025-05-19T04:40:29Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvOPxvjo-orwR8lLEgdXsZQ\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 487,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 12,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvKH-0hpS6Cqsb-l8e8kZ4w\",\"post_updated_at\":1747383870,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T15:00:44Z\",\"link\":\"youtube.com/channel/UCvKH-0hpS6Cqsb-l8e8kZ4w\",\"fullname\":\"왕쌤 중국어\",\"priority\":1,\"id_social\":\"UCvKH-0hpS6Cqsb-l8e8kZ4w\",\"platform\":7,\"minDateToPull\":\"2025-05-15T14:20:36Z\",\"maxDateToPull\":\"2025-05-18T01:09:02Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvKH-0hpS6Cqsb-l8e8kZ4w\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 483,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 11,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuS2Jmo1c-Td8HMU7shZBpw\",\"post_updated_at\":1747383979,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-17T09:00:10Z\",\"link\":\"youtube.com/channel/UCuS2Jmo1c-Td8HMU7shZBpw\",\"fullname\":\"나의닥터\",\"priority\":1,\"id_social\":\"UCuS2Jmo1c-Td8HMU7shZBpw\",\"platform\":7,\"minDateToPull\":\"2025-05-13T09:00:47Z\",\"maxDateToPull\":\"2025-05-16T09:00:29Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuS2Jmo1c-Td8HMU7shZBpw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 496,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 10,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvW8norVMTLt7QN-s2pS4Bw\",\"post_updated_at\":1747383842,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-19T03:00:16Z\",\"link\":\"youtube.com/channel/UCvW8norVMTLt7QN-s2pS4Bw\",\"fullname\":\"조승연의 탐구생활\",\"priority\":1,\"id_social\":\"UCvW8norVMTLt7QN-s2pS4Bw\",\"platform\":7,\"minDateToPull\":\"2025-05-14T10:41:08Z\",\"maxDateToPull\":\"2025-05-17T03:00:39Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvW8norVMTLt7QN-s2pS4Bw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 523,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 9,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuW7R3vNImoDE7mYhBEnwxA\",\"post_updated_at\":1747383971,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-17T01:07:39Z\",\"link\":\"youtube.com/channel/UCuW7R3vNImoDE7mYhBEnwxA\",\"fullname\":\"한국불교연구원 Institute for Buddhist Studies\",\"priority\":1,\"id_social\":\"UCuW7R3vNImoDE7mYhBEnwxA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T23:30:22Z\",\"maxDateToPull\":\"2025-05-23T00:05:58Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuW7R3vNImoDE7mYhBEnwxA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 481,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 8,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvGvf3Lk0Z5reU544g_SzPg\",\"post_updated_at\":1747383881,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T11:00:59Z\",\"link\":\"youtube.com/channel/UCvGvf3Lk0Z5reU544g_SzPg\",\"fullname\":\"비트 BTE\",\"priority\":1,\"id_social\":\"UCvGvf3Lk0Z5reU544g_SzPg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T11:00:48Z\",\"maxDateToPull\":\"2025-05-16T11:01:27Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvGvf3Lk0Z5reU544g_SzPg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 492,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 7,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuUwtenNZDU3Cng2YGF1jeg\",\"post_updated_at\":1747384001,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-22T15:15:10Z\",\"link\":\"youtube.com/channel/UCuUwtenNZDU3Cng2YGF1jeg\",\"fullname\":\"마이클래스영어\",\"priority\":1,\"id_social\":\"UCuUwtenNZDU3Cng2YGF1jeg\",\"platform\":7,\"minDateToPull\":\"2025-05-15T14:38:58Z\",\"maxDateToPull\":\"2025-05-16T13:01:52Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuUwtenNZDU3Cng2YGF1jeg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 6,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCvK_ar94josSbAF3rmU0rCA\",\"post_updated_at\":1747383859,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-21T01:15:03Z\",\"link\":\"youtube.com/channel/UCvK_ar94josSbAF3rmU0rCA\",\"fullname\":\"산소약사 TV\",\"priority\":1,\"id_social\":\"UCvK_ar94josSbAF3rmU0rCA\",\"platform\":7,\"minDateToPull\":\"2025-05-15T01:45:00Z\",\"maxDateToPull\":\"2025-05-16T09:30:18Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUvK_ar94josSbAF3rmU0rCA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 488,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 5,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCzeqWwJMFvKWjqk2D2m38jg\",\"post_updated_at\":1747383207,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:08:46Z\",\"link\":\"youtube.com/channel/UCzeqWwJMFvKWjqk2D2m38jg\",\"fullname\":\"알뜰몬스터tv\",\"priority\":1,\"id_social\":\"UCzeqWwJMFvKWjqk2D2m38jg\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:08:14Z\",\"maxDateToPull\":\"2025-05-16T08:38:49Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUzeqWwJMFvKWjqk2D2m38jg\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 506,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 4,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCw8pcmyPWGSik7bjJpeINlA\",\"post_updated_at\":1747383806,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T08:15:04Z\",\"link\":\"youtube.com/channel/UCw8pcmyPWGSik7bjJpeINlA\",\"fullname\":\"기릿의 주식노트 Let's Get It\",\"priority\":1,\"id_social\":\"UCw8pcmyPWGSik7bjJpeINlA\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:15:08Z\",\"maxDateToPull\":\"2025-05-17T07:12:43Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUw8pcmyPWGSik7bjJpeINlA\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 3,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwe7e4DLKnt3I6MmOB-gjMw\",\"post_updated_at\":1747383740,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T09:00:01Z\",\"link\":\"youtube.com/channel/UCwe7e4DLKnt3I6MmOB-gjMw\",\"fullname\":\"필살합기도\",\"priority\":1,\"id_social\":\"UCwe7e4DLKnt3I6MmOB-gjMw\",\"platform\":7,\"minDateToPull\":\"2025-05-16T08:00:27Z\",\"maxDateToPull\":\"2025-05-16T09:00:06Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwe7e4DLKnt3I6MmOB-gjMw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 521,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 2,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCwn0o3-PDrNIsDI0aAUVcqw\",\"post_updated_at\":1747383651,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-23T03:00:46Z\",\"link\":\"youtube.com/channel/UCwn0o3-PDrNIsDI0aAUVcqw\",\"fullname\":\"양평시대부동산 양평전원주택 급매물\",\"priority\":1,\"id_social\":\"UCwn0o3-PDrNIsDI0aAUVcqw\",\"platform\":7,\"minDateToPull\":\"2025-05-14T10:00:46Z\",\"maxDateToPull\":\"2025-05-21T04:23:45Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUwn0o3-PDrNIsDI0aAUVcqw\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 368,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 1,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UC-oS6KmV96PK-z-pQI19NEQ\",\"domain\":\"youtube.com\",\"link\":\"youtube.com/channel/UC-oS6KmV96PK-z-pQI19NEQ\",\"fullname\":\"인생스토리\",\"priority\":1,\"id_social\":\"UC-oS6KmV96PK-z-pQI19NEQ\",\"platform\":7,\"minDateToPull\":\"2024-07-23T09:38:33.198Z\",\"maxDateToPull\":\"2025-07-23T09:38:33.198Z\",\"iPullItems\":0,\"iPullItemsFromSourceErr\":3,\"last_status\":1,\"error_message\":\"\"}",
+    "payload_encoding": "string"
+  },
+  {
+    "payload_bytes": 486,
+    "redelivered": true,
+    "exchange": "",
+    "routing_key": "youtube.identity.crawled_source",
+    "message_count": 0,
+    "properties": {
+      "delivery_mode": 2,
+      "headers": {
+        "x-delivery-count": 4
+      }
+    },
+    "payload": "{\"id\":\"UCuNQriIxX4RNwuhBxCWVT4g\",\"post_updated_at\":1747383990,\"domain\":\"youtube.com\",\"post_last_date\":\"2025-07-03T03:00:31Z\",\"link\":\"youtube.com/channel/UCuNQriIxX4RNwuhBxCWVT4g\",\"fullname\":\"교육티타임\",\"priority\":1,\"id_social\":\"UCuNQriIxX4RNwuhBxCWVT4g\",\"platform\":7,\"minDateToPull\":\"2025-05-14T23:39:03Z\",\"maxDateToPull\":\"2025-05-22T00:24:44Z\",\"iPullItems\":1,\"iPullItemsFromSourceErr\":0,\"uploadId\":\"UUuNQriIxX4RNwuhBxCWVT4g\",\"last_status\":0,\"failed_total\":0,\"error_message\":null}",
+    "payload_encoding": "string"
+  }
+]

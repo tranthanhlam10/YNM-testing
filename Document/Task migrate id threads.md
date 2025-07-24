@@ -27,9 +27,10 @@
 1. Điều kiện để load identity đi migrate
 
 
-fullname: [* TO *] 
 -mapping_id:[* TO *]
 platform:10
+link:[* TO *]
+-last_status:4
 
 q=fullname:/[a-z0-9_.]{3,15}/
 
@@ -89,6 +90,33 @@ data-migrate-staging
 kubectl get pods -n sl-staging | grep data-migrate-staging
 
 data-migrate-staging-787768cc46-s4prn
-kubectl exec -it data-migrate-staging-787768cc46-s4prn -n sl-staging -- sh
+kubectl exec -it data-migrate-staging-864c689ffd-74kv7 -n sl-staging -- sh
 
 node scripts/crawler/migrate_threads_identities.js --cursorMark=*
+
+
+
+-mapping_id:[* TO *]
+platform:10
+link:[* TO *]
+-last_status:4
+
+
+## Các câu lệnh SQL dùng để  set-up token
+UPDATE ynm_proxies.proxies
+SET crawler_type = "TR_UNAUTHORIZED_CRAWLER"
+WHERE crawler_type LIKE 'TR_IDENTITY_CRAWLER_1%';
+
+UPDATE ynm_proxies.proxies
+SET status = "ACTIVE"
+WHERE crawler_type LIKE 'TR_UNAUTHORIZED_CRAWLER%';
+
+SELECT *  FROM `proxies` WHERE `crawler_type` LIKE '%TR_%'
+
+
+SELECT *  FROM `proxies` WHERE `crawler_type` LIKE '%TR_UNAUTHORIZED_CRAWLER%'
+
+
+
+
+

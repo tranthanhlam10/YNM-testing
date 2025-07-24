@@ -537,12 +537,9 @@ Các cases cần check khi đẩy qua luồng extension:
 
 - Nếu như last_data_date = null -> Không quan tâm so sánh các fields khác, không đẩy vào luồng extension -> DONE(Case này chắc chắn đúng )
 
-
-
-
 - Nếu như oldestPost =< last_data_date(to_date): Cases này cũng không push message vào luồng extension 
 
-- Nếu như oldest_post > last_data_date(to_date):  (Hiện tại case này đang bị sai)
+- Nếu như oldest_post > last_data_date(to_date):  Hiện tại case này sẽ push qua luồng extentions
 
 
 - Luồng reply không push qua queue reply (Đã log)
@@ -589,36 +586,7 @@ Các cases cần check khi đẩy qua luồng extension:
 
 
 
-{
-  "id": "63472089649",
-  "retries": 0,
-  "delay_time_rules": [
-    {
-      "lte": 720,
-      "delay": 4
-    },
-    {
-      "lte": 1440,
-      "delay": 12
-    },
-    {
-      "lte": 2160,
-      "delay": 18
-    },
-    {
-      "lte": 999999999,
-      "delay": 32
-    }
-  ],
-  "last_data_date": "2025-05-25T08:03:13.913Z",
-  "from_date": "1719993793",
-  "to_date": "1751529793",
-  "platform": 10,
-  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
-  "link": "threads.net/@miule5791",
-  "id_social": "63472089649",
-  "username": "miule5791"
-}
+
 
 
 {
@@ -980,3 +948,154 @@ ynm-cl-tr-repost-extension-service-testing -> DONE (Lên staging check lại ngu
 
 
 cl.(mentions_2_solr_mentions|tr.posts_2_solr_tr_posts|tr.identities_finished_sources|identities_2_redis_identities|identities_2_solr_identities|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources|tr.source_posts_no_cookie_extension_crawling_sources|tr.source_posts_no_cookie_extension_crawling_requests|tr.source_posts_no_cookie_extension_crawled_sources|tr.source_replies_no_cookie_extension_crawling_sources|tr.source_replies_no_cookie_extension_crawling_requests|tr.source_replies_no_cookie_extension_crawled_sources|tr.reposts_no_cookie_extension_crawling_sources|tr.reposts_no_cookie_extension_crawling_requests|tr.reposts_no_cookie_extension_crawled_sources)
+
+
+
+## Những service cần check lại ở các luồng sources
+ynm-cl-tr-source-reply-no-cookie-service-staging 
+ynm-cl-tr-source-reply-extension-service-staging
+
+ynm-cl-tr-source-post-no-cookie-service-staging
+ynm-cl-tr-source-post-extension-service-staging
+
+
+ynm-cl-tr-repost-no-cookie-service-staging 
+ynm-cl-tr-repost-extension-service-staging
+
+
+Hiện tại loader đã load đúng với yêu cầu
+
+
+
+{
+  "id": "63444134794",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-05-25T08:03:13.913Z",
+  "from_date": "1719993793",
+  "to_date": "1751529793",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@yeolan___",
+  "id_social": "63444134794",
+  "username": "yeolan___"
+}
+
+
+// Message có đẩy qua extension
+{
+  "id": "63444134794",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-06T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@yeolan___",
+  "id_social": "63444134794",
+  "is_first_crawled": false,
+  "username": "yeolan___"
+}
+
+
+// Message không đẩy qua extension
+{
+  "id": "63444134794",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-07-23T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@yeolan___",
+  "id_social": "63444134794",
+  "is_first_crawled": false,
+  "username": "yeolan___"
+}
+
+
+
+{
+  "id": "74081456906",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-06T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@lamoonlmao",
+  "id_social": "74081456906",
+  "is_first_crawled": false,
+  "username": "lamoonlmao"
+}
