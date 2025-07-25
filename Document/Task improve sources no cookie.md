@@ -177,11 +177,11 @@ export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.source_posts_no_cookie_crawli
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.source_posts_no_cookie_crawled_sources
 export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.source_posts_no_cookie
-export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source_LamTT
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.source_posts_no_cookie.next_page
-export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.tr.resolved_data_LamTT
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_SOURCE_POST_NO_COOKIE_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_PROXY_CUA_LAMTT
 export CRAWLER_CONFIG_PAGING_ENABLE=false
  
 export BUILDER_ENABLE=true
@@ -205,10 +205,6 @@ export LOG_LEVEL=debug
  
 export MYSQL_NEWS_CONNECTION_DATABASE=crawling
  
-export REDIS_USERNAME=data_ynm_crawler_use_identity
-export REDIS_PASSWORD=TzdcdL6SCIyFdLM
-export REDIS_DB=3
-export REDIS_CACHE_DB=1
  
 export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.source_posts_no_cookie_extension_crawling_sources
 export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=cl.10.*.*.source_posts_no_cookie_extension
@@ -248,27 +244,18 @@ export HTTP_PORT=9999
 export LOG_LEVEL=debug
  
 export MYSQL_NEWS_CONNECTION_DATABASE=crawling
- 
-export REDIS_USERNAME=data_ynm_crawler_use_identity
-export REDIS_PASSWORD=TzdcdL6SCIyFdLM
-export REDIS_DB=3
-export REDIS_CACHE_DB=1
- 
+
 export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.source_replies_no_cookie_crawling_sources
 export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.source_replies_no_cookie_crawling_requests
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.source_replies_no_cookie_crawled_sources
 export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.source_replies_no_cookie
-export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source_LamTT
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.source_replies_no_cookie.next_page
-export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.tr.resolved_data_LamTT
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
 
 
-
-
-
- 
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_SOURCE_REPLY_NO_COOKIE_CRAWLER_1
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_PROXY_CUA_LAMTT
 export CRAWLER_CONFIG_PAGING_ENABLE=false
  
 export BUILDER_ENABLE=true
@@ -292,13 +279,8 @@ yarn start --scope=@ynm/cl-tr-source-reply-crawler-service
 
 export HTTP_PORT=9998
 export LOG_LEVEL=debug
- 
 export MYSQL_NEWS_CONNECTION_DATABASE=crawling
  
-export REDIS_USERNAME=data_ynm_crawler_use_identity
-export REDIS_PASSWORD=TzdcdL6SCIyFdLM
-export REDIS_DB=3
-export REDIS_CACHE_DB=1
  
 export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.source_replies_no_cookie_extension_crawling_sources
 export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=cl.10.*.*.source_replies_no_cookie_extension
@@ -344,21 +326,16 @@ export LOG_LEVEL=debug
  
 export MYSQL_NEWS_CONNECTION_DATABASE=crawling
  
-export REDIS_USERNAME=data_ynm_crawler_use_identity
-export REDIS_PASSWORD=TzdcdL6SCIyFdLM
-export REDIS_DB=3
-export REDIS_CACHE_DB=1
- 
 export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.reposts_no_cookie_crawling_sources
 export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.reposts_no_cookie_crawling_requests
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.reposts_no_cookie_crawled_sources
 export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie
-export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source_LamTT
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie.next_page
-export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.tr.resolved_data_LamTT
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_REPOST_NO_COOKIE_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_PROXY_CUA_LAMTT
 export CRAWLER_CONFIG_PAGING_ENABLE=false
  
 export BUILDER_ENABLE=true
@@ -386,10 +363,6 @@ export LOG_LEVEL=debug
  
 export MYSQL_NEWS_CONNECTION_DATABASE=crawling
  
-export REDIS_USERNAME=data_ynm_crawler_use_identity
-export REDIS_PASSWORD=TzdcdL6SCIyFdLM
-export REDIS_DB=3
-export REDIS_CACHE_DB=1
  
 export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.reposts_no_cookie_extension_crawling_sources
 export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie_extension
@@ -947,25 +920,35 @@ ynm-cl-tr-repost-extension-service-testing -> DONE (Lên staging check lại ngu
 
 
 
-cl.(mentions_2_solr_mentions|tr.posts_2_solr_tr_posts|tr.identities_finished_sources|identities_2_redis_identities|identities_2_solr_identities|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources|tr.source_posts_no_cookie_extension_crawling_sources|tr.source_posts_no_cookie_extension_crawling_requests|tr.source_posts_no_cookie_extension_crawled_sources|tr.source_replies_no_cookie_extension_crawling_sources|tr.source_replies_no_cookie_extension_crawling_requests|tr.source_replies_no_cookie_extension_crawled_sources|tr.reposts_no_cookie_extension_crawling_sources|tr.reposts_no_cookie_extension_crawling_requests|tr.reposts_no_cookie_extension_crawled_sources)
+cl.(mentions_2_solr_mentions|tr.posts_2_solr_tr_posts|tr.identities_finished_sources|identities_2_redis_identities|identities_2_solr_identities|tr.source_posts_no_cookie_crawling_sources|tr.source_posts_no_cookie_crawling_requests|tr.source_posts_no_cookie_crawled_sources|tr.source_replies_no_cookie_crawling_sources|tr.source_replies_no_cookie_crawling_requests|tr.source_replies_no_cookie_crawled_sources|tr.reposts_no_cookie_crawling_sources|tr.reposts_no_cookie_crawling_requests|tr.reposts_no_cookie_crawled_sources|tr.source_posts_no_cookie_extension_crawling_sources|tr.source_posts_no_cookie_extension_crawling_requests|tr.source_posts_no_cookie_extension_crawled_sources|tr.source_replies_no_cookie_extension_crawling_sources|tr.source_replies_no_cookie_extension_crawling_requests|tr.source_replies_no_cookie_extension_crawled_sources|tr.reposts_no_cookie_extension_crawling_sources|tr.reposts_no_cookie_extension_crawling_requests|tr.reposts_no_cookie_extension_crawled_sources|)
 
 
 
 ## Những service cần check lại ở các luồng sources
-ynm-cl-tr-source-reply-no-cookie-service-staging 
-ynm-cl-tr-source-reply-extension-service-staging
 
-ynm-cl-tr-source-post-no-cookie-service-staging
-ynm-cl-tr-source-post-extension-service-staging
+Chạy riêng nhánh fix của Huy trên Staging
+threads-ynmpdp-5121-staging-ynm-crawler-empty
+kubectl config use-context lamtt-k8s-ovh
+
+kubectl get pods -n crawler-staging | grep threads-ynmpdp-5121-staging-ynm-crawler-empty
+kubectl exec -it threads-ynmpdp-5121-staging-ynm-crawler-empty-6cb8975964-ksbnw -n crawler-staging -- sh
 
 
-ynm-cl-tr-repost-no-cookie-service-staging 
-ynm-cl-tr-repost-extension-service-staging
+
+ynm-cl-tr-source-reply-no-cookie-service-staging -> DONE
+ynm-cl-tr-source-reply-extension-service-staging  -> DONE
+
+ynm-cl-tr-source-post-no-cookie-service-staging -> DONE  -> Chỉ còn mỗi source post bị lỗi
+ynm-cl-tr-source-post-extension-service-staging --> DONE
+
+
+ynm-cl-tr-repost-no-cookie-service-staging -> DONE
+ynm-cl-tr-repost-extension-service-staging  -> DONE 
 
 
 Hiện tại loader đã load đúng với yêu cầu
 
-
+### Những messages đế  test trong Source Post
 
 {
   "id": "63444134794",
@@ -999,7 +982,7 @@ Hiện tại loader đã load đúng với yêu cầu
 }
 
 
-// Message có đẩy qua extension
+// Message có đẩy qua extension -> Hiện tại case check dup cũng haojt đông ok rồi
 {
   "id": "63444134794",
   "retries": 0,
@@ -1031,6 +1014,178 @@ Hiện tại loader đã load đúng với yêu cầu
   "is_first_crawled": false,
   "username": "yeolan___"
 }
+
+
+
+{
+  "id": "63431762514",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-06T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@bttran___",
+  "id_social": "63431762514",
+  "is_first_crawled": false,
+  "username": "bttran___"
+}
+
+
+{
+  "id": "74081456906",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-07-23T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@lamoonlmao",
+  "id_social": "74081456906",
+  "is_first_crawled": false,
+  "username": "lamoonlmao"
+}
+
+
+{ "id": "63414470431",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-07-23T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@lamthuynhan",
+  "id_social": "63414470431",
+  "is_first_crawled": false,
+  "username": "lamthuynhan"
+}
+
+
+
+{
+  "id": "63090114906",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-23T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@aza.anhsang",
+  "id_social": "63090114906",
+  "is_first_crawled": false,
+  "username": "aza.anhsang"
+}
+
+
+
+
+{
+  "id": "63255339498",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-23T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@hansara.official",
+  "id_social": "63255339498",
+  "is_first_crawled": false,
+  "username": "hansara.official"
+}
+
+
+
+
 
 
 // Message không đẩy qua extension
@@ -1067,9 +1222,8 @@ Hiện tại loader đã load đúng với yêu cầu
 }
 
 
-
 {
-  "id": "74081456906",
+  "id": "63472089649",
   "retries": 0,
   "delay_time_rules": [
     {
@@ -1089,13 +1243,401 @@ Hiện tại loader đã load đúng với yêu cầu
       "delay": 32
     }
   ],
-  "last_data_date": "2024-07-06T10:42:20.960Z",
+  "last_data_date": null,
+  "from_date": "1719993793",
+  "to_date": "1751529793",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+  "link": "threads.net/@miule5791",
+  "id_social": "63472089649",
+  "username": "miule5791"
+}
+
+
+
+{
+  "id": "64486965161",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-07-23T10:42:20.960Z",
   "from_date": "1751798540",
   "to_date": "1753267340",
   "platform": 10,
   "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
-  "link": "threads.net/@lamoonlmao",
-  "id_social": "74081456906",
+  "link": "threads.net/@buitruonglinh",
+  "id_social": "64486965161",
   "is_first_crawled": false,
-  "username": "lamoonlmao"
+  "username": "buitruonglinh"
 }
+
+
+
+### Những messages đế  test trong Source Reply
+
+
+// Message có đẩy qua extension -> Hiện tại case check dup cũng haojt đông ok rồi
+
+-> Hiện tại luồng reply chưa đẩy qua extension (Chưa biết nguyên nhân do đâu)
+{
+  "id": "63431762514",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-24T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
+  "link": "threads.net/@bttran___",
+  "id_social": "63431762514",
+  "is_first_crawled": false,
+  "username": "bttran___"
+}
+
+
+
+{
+  "id": "63255339498",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2024-07-24T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
+  "link": "threads.net/@hansara.official",
+  "id_social": "63255339498",
+  "is_first_crawled": false,
+  "username": "hansara.official"
+}
+
+
+
+{
+  "id": "63414470431",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-07-24T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
+  "link": "threads.net/@lamthuynhan",
+  "id_social": "63414470431",
+  "is_first_crawled": false,
+  "username": "lamthuynhan"
+}
+
+
+
+
+{
+  "id": "67219999275",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-07-25T10:42:20.960Z",
+  "from_date": "1751798540",
+  "to_date": "1753267340",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
+  "link": "threads.net/@huoggiangggg",
+  "id_social": "67219999275",
+  "is_first_crawled": false,
+  "username": "huoggiangggg"
+}
+
+
+
+
+
+
+
+
+lamthuynhan
+
+// Message không đẩy đẩy qua extension
+
+
+### Những messages đế  test trong Repost
+// Message có đẩy qua extension -> DONE
+
+
+-> Hiện tại message này có đẩy
+{
+  "id": "tr_64486965161",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2024-07-23T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z",
+  "link": "threads.net/@buitruonglinh",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "64486965161",
+  "default_data_duration": "2024-07-03T08:03:05.897Z",
+  "username": "buitruonglinh"
+}
+
+{
+  "id": "tr_63431762514",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2024-07-23T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "link": "threads.net/@bttran___",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "63431762514",
+  "default_data_duration": "2025-07-03T08:03:05.897Z",
+  "username": "bttran___"
+}
+
+
+{
+  "id": "tr_63664048350",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2024-07-01T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z",
+  "link": "threads.net/@chaubui_",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "63664048350",
+  "default_data_duration": "2024-07-03T08:03:05.897Z",
+  "username": "chaubui_"
+}
+
+
+
+{
+  "id": "tr_63255339498",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2024-07-01T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z",
+  "link": "threads.net/@hansara.official",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "63255339498",
+  "default_data_duration": "2024-07-03T08:03:05.897Z",
+  "username": "hansara.official"
+}
+
+
+
+// Message không đẩy qua queue extension
+
+
+{
+  "id": "tr_63664048350",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2025-07-23T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z",
+  "link": "threads.net/@chaubui_",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "63664048350",
+  "default_data_duration": "2025-07-03T08:03:05.897Z",
+  "username": "chaubui_"
+}
+
+
+
+{
+  "id": "tr_67219999275",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2025-07-25T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z",
+  "link": "threads.net/@huoggiangggg",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "67219999275",
+  "default_data_duration": "2025-07-24T08:03:05.897Z",
+  "username": "huoggiangggg"
+}
+
+
+huoggiangggg
+
+
+

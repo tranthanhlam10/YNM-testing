@@ -170,7 +170,7 @@ const stagingHTTP = 'https';
 const testDomain= 'rabbitmq-testing.ynm.local';
 const stagingDomain= 'rabbitmq-staging.younetmedia.com';
 
-const queueName = 'youtube.identity.crawled_source';
+const queueName = "staging.cl.tr.identities_finished_sources";
 
 
 const userName = 'lamtt'; 
@@ -184,5 +184,5 @@ peekMessagesAndSaveToCSV(
   queueName, 
   userName, 
   stagingPassword,
-  200
+  300
 );
