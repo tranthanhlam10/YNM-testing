@@ -170,7 +170,7 @@ const stagingHTTP = 'https';
 const testDomain= 'rabbitmq-testing.ynm.local';
 const stagingDomain= 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.tr.identities_finished_sources";
+const queueName = "mentions_ssd";
 
 
 const userName = 'lamtt'; 

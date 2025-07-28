@@ -27,7 +27,7 @@ hotfix-youtube-filter-1d-next-page-staging-crawler-empty-container
 
 kubectl get pods -n crawler-staging | grep hotfix-youtube-filter-1d-next-page-staging
 
-kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-cgsk9w -n crawler-staging -- sh
+kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-cpk4rh -n crawler-staging -- sh
 
 
 
@@ -193,3 +193,120 @@ likes
 comments
 shares
 views
+
+
+
+// Những value cần lưu ý sau khi đẩy bản hotfix task Youtube
+
+
+Youtube_posts
+{
+        "id":"359b3cfd-aa28-5305-96ce-08ba7b41da92",
+        "id_source":"UC7xBrvlrk5QbrEUTYGbYTrw",
+        "id_social":"h3lngymwVag",
+        "title":"CHỜ BAO LÂU REMIX l",
+        "priority":1,
+        "created_date":"2025-07-23T02:27:54Z",
+        "crawled_date":"2025-07-25T04:56:17.365Z",
+        "next_crawl_time":"2025-07-25T05:11:17.365Z"
+}
+
+- Field id_social sẽ lấy theo những kí tự cuối của link
+- Field id source chính là id channel của kênh đó
+- Priority của các records được insert phải bằng 1
+
+
+Article_posts
+{
+        "id":"359b3cfd-aa28-5305-96ce-08ba7b41da92",
+        "id_category":"0",
+        "id_social":"h3lngymwVag",
+        "title":"CHỜ BAO LÂU REMIX l ÚT NHỊ MINO x HÀO JK | TRÍ THỨC REMIX Xuôi Dòng Theo Con Nước ... HOT TIKTOK",
+        "id_source":"youtube.com",
+        "platform":7,
+        "link":"https://www.youtube.com/watch?v=h3lngymwVag",
+        "published_date":1753237674,
+        "last_have_data_date":1753419347,
+        "id_channel":"UC7xBrvlrk5QbrEUTYGbYTrw",
+        "curr_page":1,
+        "reach_updated_date":"1970-01-01T00:00:00Z",
+        "state_reach":2,
+        "updated_date":0,
+        "state":2,
+        "status":1,
+        "next_time_crawl":"2025-07-25T04:56:17.364Z"
+}
+
+- Field id_category = 0
+- Field id_social sẽ lấy theo những kí tự cuối của link
+- Field id_channel chính là id channel của kênh đó
+- Field id_source luôn luôn là Youtube.com (Nó luôn là domain của trang được crawl về)
+
+Mentions
+
+{
+        "id":"359b3cfd-aa28-5305-96ce-08ba7b41da92",
+        "link":"https://www.youtube.com/watch?v=h3lngymwVag",
+        "id_source":"UC7xBrvlrk5QbrEUTYGbYTrw",
+        "views":15,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "identity":"UC7xBrvlrk5QbrEUTYGbYTrw",
+        "identity_name":"CAO ỐC REMIX",
+        "mention_type":1,
+        "title":"CHỜ BAO LÂU REMIX l ÚT NHỊ MINO x HÀO JK | TRÍ THỨC REMIX Xuôi Dòng Theo Con Nước ... HOT TIKTOK",
+        "search_text":["CHỜ BAO LÂU REMIX l ÚT NHỊ MINO x HÀO JK | TRÍ THỨC REMIX Xuôi Dòng Theo Con Nước ... HOT TIKTOK",
+          "CHỜ BAO LÂU REMIX l ÚT NHỊ MINO x HÀO JK | TRÍ THỨC REMIX Xuôi Dòng Theo Con Nước ... HOT TIKTOK<br> <br>"],
+        "attachment":"{\"media_src\":\"https://i.ytimg.com/vi/7fSYTOe0UH8/hqdefault.jpg\"}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":1,
+        "platform":7,
+        "updated_at":"2025-07-25T04:56:17.318Z",
+        "created_date":"2025-07-23T02:27:54Z"
+        
+}
+
+- Field identity chính là id channel của kênh
+- Field identity_name chính là tên của kênh
+- Field id_source là id channel của kênh
+- Field domain là domain của trang web
+- Những field engagement đã lưu đúng
+- Field search text được lấy theo field message và title của HTML youtube
+- Field attachment thì lấy hình ảnh của video
+
+
+Article_urls
+
+ {
+        "id":"2d2a764f-2a31-52e2-a06a-bab5be6d4ccc",
+        "platform":7,
+        "id_category":"0",
+        "id_source":"youtube.com",
+        "link":"https://www.youtube.com/watch?v=8ALBDBJrvEI",
+        "title":"CÁ VOI 52HZ",
+        "views_avg":0,
+        "priority":1,
+        "status":1,
+        "failed_type":1,
+        "count_failed":0,
+        "crawled_date":"1970-01-01T00:00:00Z",
+        "_version_":1838612177171251200,
+        "next_crawl_time":"2025-07-25T09:53:31.193Z",
+        "created_date":"2025-07-25T09:53:31.193Z"
+}
+
+
+
+- Những lưu ý quan trọng
++ 
+
+
+
+### Những keyword cần tìm kiêm strong log:
+Solr success/ failed
+mentions
