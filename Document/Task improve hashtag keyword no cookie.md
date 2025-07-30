@@ -222,7 +222,7 @@ ynm-cl-tr-hashtag-post-no-cookie-service-testing
 
 
 ### Những services cần check ở staging 
-ynm-cl-tr-keyword-post-no-cookie-service-staging
+ynm-cl-tr-keyword-post-no-cookie-service-staging -> DONE
 - Hiện tại đã insert được xuống Solr,Redis
 - Thieu detect
 {
@@ -252,6 +252,36 @@ ynm-cl-tr-keyword-post-no-cookie-service-staging
         "updated_at":"2025-07-18T11:46:11.889Z",
         "created_date":"2025-07-18T11:41:04Z",
         "link_shared_domain":"nytimes.com"}
+
+
+
+// Check mapping_id luồng keyword no-cookie:
+{
+        "id":"e84ae226-d272-52e4-b1ff-ad3cadd3fc44",
+        "link":"threads.net/t/DMo5BTSyWsZ",
+        "id_social":3686447073089645337,
+        "id_source":"tr_63413191960",
+        "mention_type":1,
+        "identity":"tr_63413191960",
+        "identity_name":"football_buzzer",
+        "attachment":"{\"media_type\":1,\"media_src\":\"https://instagram.fsgn5-8.fna.fbcdn.net/v/t51.2885-15/524369353_17915168385119961_299212441126011472_n.webp?efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTA4MHgxMDgwLnNkci5mODI3ODcuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-8.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2QEx3Mb4ilo1rr7qF6WKOZJE-RgxF2sqovdPEpYMUvlBNfjAes1hGV3FWueMSPhowos&_nc_ohc=lF_4sC5dirIQ7kNvwFKny2O&_nc_gid=p9ANAhC--uJydFytM-qT9w&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzY4NjQ0NzA3MzA4OTY0NTMzNw%3D%3D.3-ccb7-5&oh=00_AfTsToFZpWD9nGVmweBYuK-BB9U6lmmIoR3R0Seyd4kIlg&oe=688D2E0C&_nc_sid=10d13b\"}",
+        "views":0,
+        "likes":13,
+        "comments":0,
+        "shares":0,
+        "engagement_total":13,
+        "engagement_s_c":0,
+        "search_text":["",
+          "🔵 Chelsea are pushing to sign Jorrel Hato!\n✅ Personal terms agreed — talks ongoing with Ajax.\n🚨 Hato has missed two pre-season games, hoping to force a move.\n[@TheSunFootball]\n#CFC #Ajax #Transfers"],
+        "is_to_topic":false,
+        "language":-1,
+        "domain":"threads.net",
+        "mention_type_details":1,
+        "platform":10,
+        "updated_at":"2025-07-28T10:43:45.723Z",
+        "created_date":"2025-07-28T04:59:18Z"
+        }
+
 
 ynm-cl-tr-hashtag-post-no-cookie-service-staging
 

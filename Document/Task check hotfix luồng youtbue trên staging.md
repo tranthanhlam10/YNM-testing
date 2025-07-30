@@ -27,7 +27,7 @@ hotfix-youtube-filter-1d-next-page-staging-crawler-empty-container
 
 kubectl get pods -n crawler-staging | grep hotfix-youtube-filter-1d-next-page-staging
 
-kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-cpk4rh -n crawler-staging -- sh
+kubectl exec -it hotfix-youtube-filter-1d-next-page-staging-crawler-empty-cgpbzh -n crawler-staging -- sh
 
 
 
@@ -310,3 +310,31 @@ Article_urls
 ### Những keyword cần tìm kiêm strong log:
 Solr success/ failed
 mentions
+
+
+
+
+{
+        "id":"c1abd432-86b1-526a-8c75-87b77f72cd0a",
+        "link":"https://www.youtube.com/watch?v=fhB3cowVMIM",
+        "id_source":"UCB1s_QHdgSZwXO2ZjCjtOMw",
+        "views":240,
+        "likes":9,
+        "comments":3,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":12,
+        "engagement_s_c":3,
+        "identity":"UCB1s_QHdgSZwXO2ZjCjtOMw",
+        "identity_name":"VOV Live - Tin Tức Trong Ngày",
+        "mention_type":1,
+        "title":"Nhà thiết kế thời trang nổi tiếng vướng vòng lao lý \"liên quan đường dây ma túy\"! | VOV Live",
+        "search_text":["Nhà thiết kế thời trang nổi tiếng vướng vòng lao lý \"liên quan đường dây ma túy\"! | VOV Live",
+          "Famous fashion designer caught up in legal trouble \"related to drug ring\"! | VOV Live<br> <br>"],
+        "attachment":"{\"media_src\":\"https://i.ytimg.com/vi/fhB3cowVMIM/hqdefault.jpg\"}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":1,
+        "platform":7,
+        "updated_at":"2025-07-29T03:36:11.576Z",
+        "created_date":"2025-07-23T09:52:23Z"}

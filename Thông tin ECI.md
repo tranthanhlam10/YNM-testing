@@ -614,8 +614,9 @@ last_status
 error_message
 commercial_rate
 tt_user_id
-
-
+post_no_cookie_last_date	
+reply_no_cookie_last_date
+repost_no_cookie_last_date
 
 
 

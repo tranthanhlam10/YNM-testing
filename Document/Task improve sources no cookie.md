@@ -112,6 +112,9 @@ cl.(mentions_2_solr_mentions_LamTT|tr.posts_2_solr_tr_posts_LamTT|identities_fin
 
 Chỗ này lưu ý nếu như id sai thì set status bằng 5 (Khác với luồng hashtag keyword, chỉ đơn giản là nếu có id nó sẽ map -> push vào các queue solr id và redis id)
 
+- Nếu như là bài post insert mới thì không cập nhật lại các field ngày no-cookie
+- Chỉ có source đó đi crawl thì mới cập nhật các ngày no-cookie vào soủce đó
+
 ## Những việc cần phải làm để check task:
 
 - Bật loader để load các keyword hashtag lên
@@ -733,6 +736,45 @@ Các cases cần check khi đẩy qua luồng extension:
   "username": "maidora.maidora"
 }
 
+
+// Message để crawl bài bị thiếu search text
+{
+  "id": "67160513497",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-05-01T08:03:07.662Z",
+  "from_date": "1719993787",
+  "to_date": "1751529787",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
+  "link": "threads.com/@phwgthao._0",
+  "id_social": "67160513497",
+  "username": "phwgthao._0"
+}
+
+
+id link platform domain shard id_social id_source id_reference id_parent_comment identity identity_name mention_type mention_type_details source_type source_category post_format views likes comments shares haha sad angry wow heart reaction rating_score engagement_total engagement_s_c title search_text search_text_exactly sound sound_exactly effect effect_exactly attachment link_shared link_shared_id link_shared_domain created_date updated_at is_noisy id_seeder is_admin_creator is_to_topic closed_group is_kol language
+
+
+
+tr_67160513497
 
 
 

@@ -425,6 +425,39 @@ shards=20250101,20250102,20250103,20250104,20250105,20250106,20250107,20250108,2
 }
 
 
+{
+  "id": "63393437281",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": null,
+  "from_date": "1719993793",
+  "to_date": "1751529793",
+  "platform": 10,
+  "createdBy": "ThreadsSourcePostCrawlingLoader",
+  "link": "threads.net/@huonglyly43",
+  "id_social": "63393437281"
+}
+
+
+
+
 
 {
   "id": "63472089649",
@@ -515,7 +548,6 @@ shards=20250101,20250102,20250103,20250104,20250105,20250106,20250107,20250108,2
   "to_date": "1751529785",
   "platform": 10,
   "createdBy": "ThreadsRepostCrawlingLoader",
-  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z"
   "link": "threads.net/@misthyyyy",
   "startedCrawling": "2025-07-03T08:03:05.897Z",
   "id_social": "63098113013",
@@ -524,9 +556,48 @@ shards=20250101,20250102,20250103,20250104,20250105,20250106,20250107,20250108,2
 
 
 
+{
+  "id": "tr_64949886082",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 5
+    },
+    {
+      "lte": 1440,
+      "delay": 24
+    },
+    {
+      "lte": 999999999,
+      "delay": 48
+    }
+  ],
+  "last_data_date": "2025-05-01T08:03:07.662Z",
+  "from_date": "2025-06-30T02:45:52.000Z",
+  "to_date": "1751529785",
+  "platform": 10,
+  "createdBy": "ThreadsRepostCrawlingLoader",
+  "link": "threads.net/@_ngtuankiet_",
+  "startedCrawling": "2025-07-03T08:03:05.897Z",
+  "id_social": "64949886082",
+  "default_data_duration": "2024-07-03T08:03:05.897Z"
+}
+
+
 ###
 Nguyên nhân:
 Lúc gọi crawl -> max response time = 60s (API graph)
 export TR_GRAPH_SERVICE_MAX_RETRIES=10 -> Dẫn tới > max response time và ở trường hơp này max retry không tăng lên được 10 -> Nên không đẩy qua crawled được
 
 
+ ynm-cl-tr-keyword-post-service-staging 
+ ynm-cl-tr-hashtag-post-service-staging 
+
+
+ ynm-cl-tr-source-post-service-staging
+ ynm-cl-tr-reply-service-staging
+ ynm-cl-tr-repost-service-staging
+
+
+ id link id_social title id_source comment_updated_at priority crawled_date created_date comment_last_date is_kol likes comments shares views last_status engagement_updated_at is_auto_engagement next_crawl_time error_message _version_ post_type crawled_by
