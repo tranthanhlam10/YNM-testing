@@ -627,3 +627,56 @@ Những records cần check thêm
 }
 
 
+### Data mẫu để check trên staging 
+
+
+
+youtube-ynmpdp-5136-staging-crawler-empty-container
+kubectl get pods -n crawler-staging | grep youtube-ynmpdp-5136-staging-crawler-empty-container
+kubectl exec -it youtube-ynmpdp-5136-staging-crawler-empty-container-5bb847c9wtx -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh
+
+
+
+script chạy:
+node services.js
+node scripts/youtubeV2/get_latest_potential_channels_info.js
+
+#### Câu lệnh kết nối DB staging bằng mongosh
+mongosh mongodb://qc_lamtt:hk233ASNOFe4ahs@54.39.48.235:27017/socialheat_staging?authSource=socialheat_staging
+
+use your_database_name; // ví dụ: use socialheat_staging
+
+
+
+db.createCollection("identity_last_mentions");
+
+ {
+  "_id": "UCOmHUn--16B90oW2L6FRR3A",
+  "last_mention_in_topic": {
+    "$date": "2025-07-31T07:59:42.821Z"
+  },
+  "platform": 7
+}
+
+
+{
+    "id": "UCOmHUn--16B90oW2L6FRR3A",
+    "fullname": "@BLACKPINK",
+    "created_date": "2025-07-11T09:49:15.594Z"
+}
+
+
+{
+        "id":"UCOmHUn--16B90oW2L6FRR3A",
+        "reply_next_crawl_time":"2025-07-11T09:47:22.369Z",
+        "next_crawl_time":"2025-07-11T09:47:22.369Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCOmHUn--16B90oW2L6FRR3A",
+        "platform":7,
+        "updated_at":"2025-07-11T09:32:22.369Z",
+        "last_status":0,
+        "id_social":"UCOmHUn--16B90oW2L6FRR3A",
+        "fullname":"BLACKPINK",
+        "created_date":"2025-07-11T09:32:20.031Z",
+        "repost_next_crawl_time":"2025-07-11T09:47:22.369Z"}
