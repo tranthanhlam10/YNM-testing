@@ -595,7 +595,24 @@ Những records cần check thêm
     "id": "UCfKMTybh9hHX51Z8QDxBY9Q",
     "fullname": "@zenotv219",
     "created_date": "2025-07-11T09:49:15.594Z"
+        "subscriber_count": 982000000000
 }
+
+
+
+{
+        "id":"UCfKMTybh9hHX51Z8QDxBY9Q",
+        "reply_next_crawl_time":"2025-08-01T07:49:00.337Z",
+        "next_crawl_time":"2025-08-01T07:49:00.337Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCfKMTybh9hHX51Z8QDxBY9Q",
+        "platform":7,
+        "updated_at":"2025-08-01T07:34:00.337Z",
+        "last_status":0,
+        "id_social":"UCfKMTybh9hHX51Z8QDxBY9Q",
+        "fullname":"Zeno tv",
+        "created_date":"2025-08-01T07:33:58.306Z",
+        "repost_next_crawl_time":"2025-08-01T07:49:00.337Z"}
 
 
 
@@ -607,6 +624,25 @@ Những records cần check thêm
   },
   "platform": 7
 }
+
+
+
+
+
+{
+        "id":"UCJVslw0KrVj4oaMeisOrveA",
+        "reply_next_crawl_time":"2025-08-01T03:24:56.462Z",
+        "next_crawl_time":"2025-08-01T03:24:56.462Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCJVslw0KrVj4oaMeisOrveA",
+        "platform":7,
+        "updated_at":"2025-08-01T03:09:56.462Z",
+        "last_status":0,
+        "id_social":"UCJVslw0KrVj4oaMeisOrveA",
+        "fullname":"Nguyễn Hùng - Topic",
+        "subscriber_count": 44444444,
+        "created_date":"2025-08-01T03:09:49.844Z",
+        "repost_next_crawl_time":"2025-08-01T03:24:56.462Z"}
 
 
 // Hiện tại nếu redis đã có subscriber_count thì đã cập nhật tiếp tục được 
@@ -627,13 +663,20 @@ Những records cần check thêm
 }
 
 
+
+
+
+
+
+
+
 ### Data mẫu để check trên staging 
 
 
 
 youtube-ynmpdp-5136-staging-crawler-empty-container
 kubectl get pods -n crawler-staging | grep youtube-ynmpdp-5136-staging-crawler-empty-container
-kubectl exec -it youtube-ynmpdp-5136-staging-crawler-empty-container-5bb847c9wtx -n crawler-staging -- sh
+kubectl exec -it youtube-ynmpdp-5136-staging-crawler-empty-container-845df9gft2q -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
 
 
