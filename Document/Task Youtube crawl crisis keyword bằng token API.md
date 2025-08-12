@@ -122,7 +122,7 @@ Service Data Pusher insert mention, post, identity, article URL vào compatible 
 
 youtube-ynmpdp-5133-testing-ynm-crawler-empty
 kubectl get pods -n crawler-testing | grep youtube-ynmpdp-5133-testing-ynm-crawler-empty
-kubectl exec -it youtube-ynmpdp-5133-testing-ynm-crawler-empty-648ccc8fc-mz899 -n crawler-testing -- sh
+kubectl exec -it youtube-ynmpdp-5133-testing-ynm-crawler-empty-7b756d979f-f2q5v -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -134,14 +134,21 @@ YOUTUBE_POST_FROM_KEYWORD_CRAWLING_LOADER
 // Check cases token nếu bị hết quota thì phải block 1 ngày
 
 
+// 
+updated_at: ["2025-08-11T7:25:42Z" TO *]
+
+
 
 
 ## Câu lệnh script để chạy các services
 
 ### Loader
 
+
+
+
+
 export NODE_ENV=testing
-  
 export HTTP_PORT=9999
 export GRPC_PORT=9011
   
@@ -175,11 +182,15 @@ export REDIS_MAX_RETRIES_PER_REQUEST=null
   
 yarn start --scope=@ynm/cl-yt-crawling-loader-service
 
+
+
+
+
 ### Crawler (Non-crisis keyword):
 
 export NODE_ENV=testing
   
-export HTTP_PORT=9997
+export HTTP_PORT=9977
 export GRPC_PORT=9011
  
 export TOKEN_MANAGER_SERVICE_HOST=localhost
@@ -196,7 +207,7 @@ export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.7.*.*.posts_from_keyword
 export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.7.*.*.posts_from_keyword.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
-export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=YT_TOKEN_CUA_LAMTT
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=1_YT_TOKEN_CUA_LAMTT
 export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=""
 export CRAWLER_CONFIG_PAGING_ENABLE=true
     
@@ -206,13 +217,12 @@ export BUILDER_ENABLE=true
     
 export CRAWLER_BATCH_SIZE=1
 export CRAWLER_CONCURRENCY=1
-export CRAWLER_ENABLE=false
+export CRAWLER_ENABLE=true
    
 export RESOLVER_BATCH_SIZE=1
 export RESOLVER_CONCURRENCY=1
 export RESOLVER_MAX_RETRIES=5
-export RESOLVER_ENABLE=false
- 
+export RESOLVER_ENABLE=true
 export LOG_LEVEL=debug
  
 export RABBIT_HEARTBEAT=10
@@ -254,12 +264,12 @@ export BUILDER_ENABLE=true
     
 export CRAWLER_BATCH_SIZE=1
 export CRAWLER_CONCURRENCY=1
-export CRAWLER_ENABLE=false
+export CRAWLER_ENABLE=true
    
 export RESOLVER_BATCH_SIZE=1
 export RESOLVER_CONCURRENCY=1
 export RESOLVER_MAX_RETRIES=5
-export RESOLVER_ENABLE=false
+export RESOLVER_ENABLE=true
  
 export LOG_LEVEL=debug
  
@@ -278,13 +288,9 @@ export GRPC_PORT=9021
   
 export LOG_LEVEL=debug
   
-export TOKEN_CONFIGS_YT_POST_FROM_CRISIS_KEYWORD_CRAWLER_IN_USED_TIMEOUT=15000
-export TOKEN_CONFIGS_YT_POST_FROM_CRISIS_KEYWORD_CRAWLER_IN_PENDING_TIMEOUT=5000
-export TOKEN_CONFIGS_YT_POST_FROM_CRISIS_KEYWORD_CRAWLER_IN_BLOCKED_TIMEOUT=43200000
-  
-export TOKEN_CONFIGS_YT_POST_FROM_KEYWORD_CRAWLER_IN_USED_TIMEOUT=15000
-export TOKEN_CONFIGS_YT_POST_FROM_KEYWORD_CRAWLER_IN_PENDING_TIMEOUT=5000
-export TOKEN_CONFIGS_YT_POST_FROM_KEYWORD_CRAWLER_IN_BLOCKED_TIMEOUT=43200000
+export TOKEN_CONFIGS_YT_TOKEN_CUA_LAMTT_IN_USED_TIMEOUT=15000
+export TOKEN_CONFIGS_YT_TOKEN_CUA_LAMTT_IN_PENDING_TIMEOUT=5000
+export TOKEN_CONFIGS_YT_TOKEN_CUA_LAMTT_IN_BLOCKED_TIMEOUT=43200000
  
 export MYSQL_CONNECTION_PORT=6033 
 export MYSQL_CONNECTION_DATABASE=ynm_tokens
@@ -350,6 +356,8 @@ cl.(mentions_2_solr_mentions|cl.keywords_finished_sources
 Nhờ Huy config lại chỗ pusher và updater thành những queue riêng LamTT để chạy
 
 
+// Cau query cua token
+crawler_type IN ( 'YT_TOKEN_CUA_LAMTT', '1_YT_TOKEN_CUA_LAMTT'  ) 
 
 
 ## Message mẫu
@@ -398,3 +406,24 @@ Nhờ Huy config lại chỗ pusher và updater thành những queue riêng LamT
   }
 
 
+
+
+{
+  "id": 577246,
+  "retries": 0,
+  "delay_time_rules": [],
+  "last_data_date": "2025-08-11T09:01:27.000Z",
+  "from_date": "1754299200",
+  "to_date": "1754904000",
+  "platform": 7,
+  "createdBy": "YoutubePostFromCrisisKeywordCrawlingLoader",
+  "keyword_info": {
+    "id": 577246,
+    "type": "CRISIS_TRACKING",
+    "keyword": "Mỹ Mỹ Em Xinh",
+    "action": "POST",
+    "expiry_date": "2025-08-30T16:59:59.000Z",
+    "last_crawl_cursor": null,
+    "last_crawl_date": null
+  }
+}
