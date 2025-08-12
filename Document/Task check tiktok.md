@@ -14,7 +14,7 @@ Deployment: hotfixes-tiktok-posts-mapping-response-staging-crawler-empty-contain
 kubectl config use-context lamtt-k8s-ovh
 
 kubectl get pods -n crawler-staging | grep hotfixes-tiktok-posts-mapping-response-staging
-kubectl exec -it hotfixes-tiktok-posts-mapping-response-staging-crawler-emppsqmd -n crawler-staging -- sh
+kubectl exec -it hotfixes-tiktok-posts-mapping-response-staging-crawler-empmkf5h -n crawler-staging -- sh
 
 RUN: CRAWLING_PATTERN_MANAGER_PATH=/app/node_modules/@ynm/pattern-manager TT_API_ENDPOINT=http://graph-tiktok.crawler-staging:5002 node scripts/tiktok/get_latest_user_posts.js
 
