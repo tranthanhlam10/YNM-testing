@@ -338,3 +338,60 @@ mentions
         "platform":7,
         "updated_at":"2025-07-29T03:36:11.576Z",
         "created_date":"2025-07-23T09:52:23Z"}
+
+
+
+
+### Chạy lại luồng search bar trên Staging (Nguyên nhân fix là do conflict code)
+
+hotfix-youtube-ynmpdp-5249-staging-crawler-empty-container
+
+
+kubectl config use-context lamtt-k8s-ovh
+
+
+kubectl get pods -n crawler-staging | grep hotfix-youtube-ynmpdp-5249-staging-crawler-empty-container
+
+
+kubectl exec -it hotfix-youtube-ynmpdp-5249-staging-crawler-empty-container8tjc9 -n crawler-staging -- sh
+
+
+
+// Nguyên tắt check luồng
+
+Search bar load hết các keyword lên đi crawl
+
+Crawl detail lưu được đúng mentions
+
+
+1) Search Article Url From Keyword By Search Bar:  
+-> Load từ mySQL -> Đi crawl -> Push vào queue cl.news.article_urls -> Rồi mới insert xuống Solr
+
+forever start services.js - (Chỗ này lúc nào cũng phải chạy trước)
+node scripts/articlesV3/search_crisis_keywords_youtube_search_bar.js
+
+
+
+
+UPDATE monitor_keyword_v2
+SET status = 'DONE'
+WHERE platform = 'YOUTUBE' AND status = 'IDLE';
+
+
+UPDATE `monitor_keywords_v2`
+SET status = 'DONE'
+WHERE platform = 'YOUTUBE';
+
+
+
+
+2) Crawl Detail Of Youtube Post: 
+
+node services.js
+node scripts/articlesV3WithNextCrawlTime/crawlYoutubeDetails.js
+
+- Nếu mà ban đầu status là 1 -> 4 (Ban đầu reset từ 4 thành 1)
+- Nếu mà ban đầu status là 2 -> DONE
+- Nếu mà ban đầu status là 3 -> DONE  
+
+-> Load từ mongo (Đối status của article từ 1 -> 4) -> Crawl detail -> Nếu có mention thì insert xuống mention , đồng thời update status bằng 2 (Còn lại thì sẽ update status bằng 1 hoặc 3 -> vẫn update xuống mongo ) 

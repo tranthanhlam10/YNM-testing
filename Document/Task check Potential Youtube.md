@@ -690,7 +690,16 @@ mongosh mongodb://qc_lamtt:hk233ASNOFe4ahs@54.39.48.235:27017/socialheat_staging
 
 use your_database_name; // ví dụ: use socialheat_staging
 
+youtube-ynmpdp-5136-staging-crawler-empty-container
+kubectl get pods -n crawler-staging | grep youtube-ynmpdp-5136-staging-crawler-empty-container
+kubectl exec -it youtube-ynmpdp-5136-staging-crawler-empty-container-787bc6blzgd -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh
 
+
+
+script chạy:
+node services.js
+node scripts/youtubeV2/get_latest_potential_channels_info.js
 
 db.createCollection("identity_last_mentions");
 
@@ -702,10 +711,12 @@ db.createCollection("identity_last_mentions");
   "platform": 7
 }
 
+{    "fullname": "Pupe Signature",    "created_date": "2024-06-24T08:54:02.223Z"}
+
 
 {
-    "id": "UCOmHUn--16B90oW2L6FRR3A",
-    "fullname": "@BLACKPINK",
+    "id": "UCzCWSfs-gfx8nT2yRulQ1QA",
+    "fullname": "@Lam Test",
     "created_date": "2025-07-11T09:49:15.594Z"
 }
 

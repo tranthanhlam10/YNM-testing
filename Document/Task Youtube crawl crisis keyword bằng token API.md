@@ -122,7 +122,7 @@ Service Data Pusher insert mention, post, identity, article URL vào compatible 
 
 youtube-ynmpdp-5133-testing-ynm-crawler-empty
 kubectl get pods -n crawler-testing | grep youtube-ynmpdp-5133-testing-ynm-crawler-empty
-kubectl exec -it youtube-ynmpdp-5133-testing-ynm-crawler-empty-7b756d979f-f2q5v -n crawler-testing -- sh
+kubectl exec -it youtube-ynmpdp-5133-testing-ynm-crawler-empty-ddfd7f5bf-pxscs -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -140,7 +140,58 @@ updated_at: ["2025-08-11T7:25:42Z" TO *]
 
 
 
+// crawler_type
+YT_POST_FROM_CRISIS_KEYWORD_CRAWLER
+YT_POST_FROM_KEYWORD_CRAWLER
+
+
+
+
+crawler_type IN ( 'YT_POST_FROM_CRISIS_KEYWORD_CRAWLER', 'YT_POST_FROM_KEYWORD_CRAWLER'  ) 
+
 ## Câu lệnh script để chạy các services
+
+Câu query số lượng load lên của từng luồng
+
+SELECT `id`, `type`, `keyword`, `last_crawl_date`, `last_crawl_cursor`
+FROM monitoring_master.`monitor_keywords_v2`
+WHERE `type` IN ("CRISIS_TRACKING")
+    AND `platform` = "YOUTUBE"
+    AND `status` = "IDLE"
+    AND `keyword` IS NOT NULL
+    AND `keyword` <> ""
+    AND (`last_crawl_date` IS NULL
+            OR (`type` = "CRISIS_TRACKING" AND `last_crawl_date` < NOW() - INTERVAL 30 MINUTE))
+    AND (`expiry_date` > NOW())
+ORDER BY `last_crawl_date` ASC
+
+
+
+
+
+
+SELECT `id`, `type`, `keyword`, `last_crawl_date`, `last_crawl_cursor`, `updated_date_keyword`
+FROM `monitor_keywords_v2`
+WHERE `type` IN ("BRAND_TRACKING", "CAMPAIGN_TRACKING")
+    AND `platform` = "YOUTUBE"
+    AND `status` = "IDLE"
+    AND `keyword` IS NOT NULL
+    AND `keyword` <> ""
+    AND (`updated_date_keyword` IS NULL
+            OR (`type` = "BRAND_TRACKING" AND `updated_date_keyword` < NOW() - INTERVAL 4 HOUR)
+            OR (`type` = "CAMPAIGN_TRACKING" AND `updated_date_keyword` < NOW() - INTERVAL 2 HOUR))
+    AND (`expiry_date` > NOW())
+ORDER BY `updated_date_keyword` ASC
+
+
+
+
+
+
+
+
+
+
 
 ### Loader
 
@@ -207,7 +258,7 @@ export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.7.*.*.posts_from_keyword
 export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.7.*.*.posts_from_keyword.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
-export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=1_YT_TOKEN_CUA_LAMTT
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=YT_TOKEN_CUA_LAMTT
 export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=""
 export CRAWLER_CONFIG_PAGING_ENABLE=true
     
@@ -427,3 +478,68 @@ crawler_type IN ( 'YT_TOKEN_CUA_LAMTT', '1_YT_TOKEN_CUA_LAMTT'  )
     "last_crawl_date": null
   }
 }
+
+
+#### Script chạy đỡ của pusher
+
+
+export HTTP_PORT=9014
+export GRPC_PORT=9011
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+export RABBIT_HEARTBEAT=10
+  
+export MENTION_2_SOLR_MENTION_BATCH_SIZE=500
+export MENTION_2_SOLR_MENTION_CONCURRENCY=5
+export MENTION_2_SOLR_MENTION_ENABLE=true
+export MENTION_2_SOLR_MENTION_INPUT_EXCHANGE=cl.resolved_data
+export MENTION_2_SOLR_MENTION_INPUT_QUEUE=cl.mentions_2_solr_mentions
+export MENTION_2_SOLR_MENTION_PREFETCH_MESSAGES=1000
+export MENTION_2_SOLR_MENTION_ROUTING_KEY=cl.*.mentions
+export MENTION_2_SOLR_MENTION_MAX_WAITING_TIME=60
+  
+ 
+export IDENTITY_2_SOLR_IDENTITY_INPUT_EXCHANGE=cl.resolved_data
+export IDENTITY_2_SOLR_IDENTITY_ROUTING_KEY=cl.*.identities
+export IDENTITY_2_SOLR_IDENTITY_INPUT_QUEUE=cl.identities_2_solr_identities
+export IDENTITY_2_SOLR_IDENTITY_ENABLE=true
+export IDENTITY_2_SOLR_IDENTITY_BATCH_SIZE=100
+export IDENTITY_2_SOLR_IDENTITY_PREFETCH_MESSAGES=1000
+
+  
+export IDENTITY_2_REDIS_IDENTITY_INPUT_EXCHANGE=cl.resolved_data
+export IDENTITY_2_REDIS_IDENTITY_ROUTING_KEY=cl.*.identities
+export IDENTITY_2_REDIS_IDENTITY_INPUT_QUEUE=cl.identities_2_redis_identities
+export IDENTITY_2_REDIS_IDENTITY_ENABLE=true
+export IDENTITY_2_REDIS_IDENTITY_BATCH_SIZE=100
+export IDENTITY_2_REDIS_IDENTITY_PREFETCH_MESSAGES=1000
+
+export POST_2_SOLR_YT_POST_INPUT_EXCHANGE=cl.resolved_data
+export POST_2_SOLR_YT_POST_ROUTING_KEY=cl.10.posts
+export POST_2_SOLR_YT_POST_INPUT_QUEUE=cl.yt.posts_2_solr_tr_posts
+export POST_2_SOLR_YT_POST_ENABLE=true
+export POST_2_SOLR_YT_POST_BATCH_SIZE=100
+export POST_2_SOLR_YT_POST_PREFETCH_MESSAGES=1000
+  
+export REDIS_DB=3
+export REDIS_MAX_RETRIES_PER_REQUEST=null
+  
+  
+NODE_ENV=testing yarn start --scope=@ynm/cl-data-pusher-service
+
+
+
+
+
+## Những cases cần check lại ở testing
+ynm-cl-yt-crawling-loader-service-testing 
+ynm-cl-yt-post-from-crisis-keyword-service-testing -> DONE 
+ynm-cl-yt-post-from-keyword-service-testing -> DONE
+
+
+## Những cases cần check lại ở staging
+ynm-cl-yt-crawling-loader-service-staging
+ynm-cl-yt-post-from-crisis-keyword-service-staging
+ynm-cl-yt-post-from-keyword-service-staging
