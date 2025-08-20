@@ -29,7 +29,7 @@ Và cuối cùng phải check xem những luồng này có update xuống các d
 
 ynmpdp-5324-staging-crawler-empty-container
 kubectl get pods -n crawler-staging | grep ynmpdp-5324-staging-crawler-empty-container
-kubectl exec -it ynmpdp-5324-staging-crawler-empty-container-849c774b98-n26s6 -n crawler-staging -- sh
+kubectl exec -it ynmpdp-5324-staging-crawler-empty-container-5f66c59745-nqz9b -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
 
 
@@ -125,7 +125,7 @@ Data ở mention
 }
 
 Data ở Youtube Posts  
-Hiện tại chỗ này đang thiếu field priority
+Hiện tại chỗ này đang thiếu field priority -> Hiện tại không cần lưu, như anh Thạch confirm
 
 {
   "id": "8cf173f0-2fe1-5e83-99a3-3fa4df6da963",
@@ -224,12 +224,83 @@ update vào youtube comments/ identity / Redis
 - Kiểm tra xem điều kiện query có đúng hay không -> Pass
 - Kiểm tra format queue -> Pass
 - Kiểm tra số lượng comment sau khi crawl có đủ trong video đó không -> Pass
-- Kiểm tra xem có push vào queue crawled source khi crawl xong hay không 
-- Kiểm tra xem có đẩy identity lên Redis sau khi crawl hay không
-- Kiểm tra xem có push vào mention ssd/hdd hay không -> Chưa pass
-    Hiện tại đang lưu sai idenntity name
-- Kiểm tra value ở youtube comments/ identity / Redis 
-- Compare output
+- Kiểm tra xem có push vào queue crawled source khi crawl xong hay không -> Pass
+- Kiểm tra xem có đẩy identity lên Redis sau khi crawl hay không -> Pas
+- Kiểm tra xem có push vào mention ssd/hdd hay không -> Pass
+    Hiện tại đang lưu sai idenntity name -> Không phải sai nhưng cần đợi các luồng update engagement vào
+- Kiểm tra value ở youtube comments/ identity / Redis -> Pass
+
+
+// Message video bị lỗi
+{
+  "id": "2f654c95-d993-53e8-b8c4-6b048fce83fb",
+  "id_source": "UCnRdHj745lc1tQP_gDR8YdQ",
+  "id_social": "4u_bUivflmU",
+  "title": "[36기 갈릴리학교] 7.",
+  "priority": 1,
+  "minDateToPull": "2024-08-19T09:23:26.235Z",
+  "maxDateToPull": "2025-08-19T09:23:26.235Z",
+  "iPullItems": 0,
+  "iPullItemsFromSourceErr": 0
+}
+
+{
+  "id": "2f654c95-d993-53e8-b8c4-6b048fce83fb",
+  "id_source": "UCnzR18c-CrUwpmd69DcuyhA",
+  "id_social": "Yi8gCqSBjlk",
+  "title": "테슬라 2분기 실적 왜 안좋은가?",
+  "priority": 1,
+  "minDateToPull": "2024-08-19T09:23:26.235Z",
+  "maxDateToPull": "2025-08-19T09:23:26.235Z",
+  "iPullItems": 0,
+  "iPullItemsFromSourceErr": 0
+}
+
+
+
+// Các message bị lỗi update ở crawled source
+[
+  {
+    "id": "2f654c95-d993-53e8-b8c4-6b048fce83fb",
+    "id_source": "UCnzR18c-CrUwpmd69DcuyhA",
+    "id_social": "Yi8gCqSBjlk",
+    "title": "테슬라 2분기 실적 왜 안좋은가?",
+    "priority": 1,
+    "minDateToPull": "2024-08-19T09:51:15.547Z",
+    "maxDateToPull": "2025-08-19T09:51:15.547Z",
+    "iPullItems": 0,
+    "iPullItemsFromSourceErr": 3,
+    "last_status": 1,
+    "error_message": ""
+  },
+  {
+    "id": "2f654c95-d993-53e8-b8c4-6b048fce83fb",
+    "id_source": "UCnRdHj745lc1tQP_gDR8YdQ",
+    "id_social": "4u_bUivflmU",
+    "title": "[36기 갈릴리학교] 7.",
+    "priority": 1,
+    "minDateToPull": "2024-08-19T09:48:22.810Z",
+    "maxDateToPull": "2025-08-19T09:48:22.810Z",
+    "iPullItems": 0,
+    "iPullItemsFromSourceErr": 3,
+    "last_status": 1,
+    "error_message": ""
+  },
+  {
+    "id": "2f654c95-d993-53e8-b8c4-6b048fce83fb",
+    "id_source": "UC0HxT53-9BRz93mU9Nju9ig",
+    "id_social": "v2ALHctFoFM",
+    "title": "[🔴라이브] 전기(산업)기사 2회차",
+    "priority": 1,
+    "minDateToPull": "2024-08-19T09:23:26.235Z",
+    "maxDateToPull": "2025-08-19T09:23:26.235Z",
+    "iPullItems": 0,
+    "iPullItemsFromSourceErr": 1,
+    "last_status": 1,
+    "error_message": ""
+  }
+]
+
 
 
 
@@ -309,6 +380,23 @@ Thông tin được lưu ở Solr
         "next_crawl_time":"2025-08-18T09:28:58.470Z"
   }
 
+
+   {
+        "id":"9570c9f8-3691-5257-b069-26c9d748ce5f",
+        "id_source":"UCc4V468kIqAyGd6TVZ4MDCg",
+        "id_social":"Ugx0QbPFSbxgIx1OM754AaABAg",
+        "title":"종아리ab슬라이드 쿠팡 특가템 언박싱",
+        "priority":1,
+        "created_date":"2025-07-21T21:46:25Z",
+        "video_id":"4nRL3K4TmLE",
+        "crawled_date":"2025-08-20T03:57:57.991Z",
+        "next_crawl_time":"2025-08-20T04:12:57.991Z"}
+
+
+  -> Hiện tại title ở Youtube comment đã lấy đúng
+  -> Chỉ khác việc là lưu video_id với lại id_social thôi
+  -> Cần confirm lại nếu như video bị xóa thì có đánh platform cho luồng Youtube hay không
+
 // Mention
 
  {
@@ -337,6 +425,32 @@ Thông tin được lưu ở Solr
         "created_date":"2025-08-01T00:15:35Z"
   }
 
+ {
+        "id":"90a69e79-1fa4-5e8f-937e-062e0f149114",
+        "link":"youtube.com/watch?v=WH1VyN3GmQw&lc=Ugznz081bnLTLE-Mtb94AaABAg",
+        "id_source":"UCa99Kw2LRY6lshTYp6wtLSQ",
+        "id_reference":"db5b82ab-a2e1-5c3c-8cda-c2a56a606bc8",
+        "views":0,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "identity":"UC2_FBjDmvZk-utHC6bU2TEw",
+        "identity_name":"@태산-v1u",
+        "mention_type":2,
+        "search_text":["",
+          "문의 남기고 약수익 중ᄏ 가즈아!!!"],
+        "attachment":"{\"parent_info\":{\"link\":\"youtube.com/watch?v=WH1VyN3GmQw\",\"title\":\"[컴퍼니케이 주가 분석] 넷플릭스도\"}}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":2,
+        "platform":7,
+        "updated_at":"2025-08-20T04:10:59.438Z",
+        "created_date":"2025-07-24T02:30:31Z"}
+
+
 // Identity
 
 {
@@ -353,6 +467,41 @@ Thông tin được lưu ở Solr
         "repost_next_crawl_time":"2025-08-18T09:28:58.515Z"
   }
 
+
+  {
+        "id":"UCDXzHaErMwAFhKJf-OiRrqQ",
+        "reply_next_crawl_time":"2025-08-20T04:25:54.590Z",
+        "next_crawl_time":"2025-08-20T04:25:54.590Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCDXzHaErMwAFhKJf-OiRrqQ",
+        "platform":7,
+        "updated_at":"2025-08-20T04:10:54.590Z",
+        "id_social":"UCDXzHaErMwAFhKJf-OiRrqQ",
+        "fullname":"@켄신-q8f",
+        "created_date":"2025-08-20T04:10:54.584Z",
+        "repost_next_crawl_time":"2025-08-20T04:25:54.590Z"
+
+
+   {
+        "id":"UCa99Kw2LRY6lshTYp6wtLSQ",
+        "country":"KOREA",
+        "language":1,
+        "reply_next_crawl_time":"2025-05-16T07:08:52.903Z",
+        "priority":1,
+        "next_crawl_time":"2025-07-24T23:01:00.985Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCa99Kw2LRY6lshTYp6wtLSQ",
+        "platform":7,
+        "updated_at":"2025-05-16T06:53:52.903Z",
+        "post_last_date":"2025-07-24T02:30:22Z",
+        "last_status":0,
+        "id_social":"UCa99Kw2LRY6lshTYp6wtLSQ",
+        "post_updated_at":1753333260,
+        "subscriber_count":38700,
+        "fullname":"감동마트",
+        "created_date":"2025-05-16T06:53:52.903Z",
+        "repost_next_crawl_time":"2025-05-16T07:08:52.903Z"}
+
 // Redis
 {
     "id": "UCEup0bq1plrbcWAgjWx9Bbg",
@@ -364,6 +513,16 @@ Thông tin được lưu ở Solr
     "domain": "youtube.com"
 }
 
+
+{
+    "id": "UCa99Kw2LRY6lshTYp6wtLSQ",
+    "fullname": "@주식의온도_1",
+    "platform": 7,
+    "link": "youtube.com/channel/UCa99Kw2LRY6lshTYp6wtLSQ",
+    "id_social": "UCa99Kw2LRY6lshTYp6wtLSQ",
+    "created_date": "2025-08-20T04:10:57.077Z",
+    "domain": "youtube.com"
+}
 
 // Log:
 DATA TO QUEUE: {
@@ -377,6 +536,8 @@ DATA TO QUEUE: {
   "video_id": "k6X6mauMvHs",
   "link": "youtube.com/watch?v=k6X6mauMvHs&lc=UgyxEGJ4ceD0gCtKmyJ4AaABAg"
 }
+
+
 
 
 ### Luồng get lastest replies from commment by youtube API
@@ -424,8 +585,222 @@ https://www.googleapis.com/youtube/v3/comments?part=snippet&fields=nextPageToken
 
 -> Các chỗ  cần xử lý retry, hay crawler đều xử lý như những luồng khác (Chỉ đơn giản là nó xử lý trong buffer/code chứ không có queue ở bên ngoài)
 
+// Record ở Redis
+{
+    "id": "UC3TNzf_avzH7qgdGlBNtazg",
+    "fullname": "@GokulDhamMahatirth",
+    "platform": 7,
+    "link": "youtube.com/channel/UC3TNzf_avzH7qgdGlBNtazg",
+    "id_social": "UC3TNzf_avzH7qgdGlBNtazg",
+    "created_date": "2025-08-19T04:31:21.664Z",
+    "domain": "youtube.com"
+}
 
 
+{
+    "id": "UCVHwudzAXhMxluNbeUog0rg",
+    "fullname": "@meiga00-n6b",
+    "platform": 7,
+    "link": "youtube.com/channel/UCVHwudzAXhMxluNbeUog0rg",
+    "id_social": "UCVHwudzAXhMxluNbeUog0rg",
+    "created_date": "2025-08-19T10:36:26.163Z",
+    "domain": "youtube.com"
+}
+
+
+
+{
+    "id": "UC5cRekspGofSLz8G9mEgdiw",
+    "fullname": "@_IU___",
+    "platform": 7,
+    "link": "youtube.com/channel/UC5cRekspGofSLz8G9mEgdiw",
+    "id_social": "UC5cRekspGofSLz8G9mEgdiw",
+    "created_date": "2025-08-20T04:18:20.890Z",
+    "domain": "youtube.com"
+}
+
+// Record ở identity
+{
+        "id":"UC3TNzf_avzH7qgdGlBNtazg",
+        "country":"INDIA",
+        "language":1,
+        "reply_next_crawl_time":"2025-02-26T08:50:23.498Z",
+        "priority":1,
+        "next_crawl_time":"2025-07-25T21:43:43.551Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UC3TNzf_avzH7qgdGlBNtazg",
+        "platform":7,
+        "updated_at":"2023-12-31T17:00:00Z",
+        "post_last_date":"2025-07-24T07:30:24Z",
+        "last_status":0,
+        "id_social":"UC3TNzf_avzH7qgdGlBNtazg",
+        "post_updated_at":1753415023,
+        "fullname":"gokuldhammahatirth",
+        "created_date":"2025-02-26T08:35:23.498Z",
+        "repost_next_crawl_time":"2025-02-26T08:50:23.498Z"}
+
+
+        {
+        "id":"UCVHwudzAXhMxluNbeUog0rg",
+        "reply_next_crawl_time":"2025-08-19T10:51:26.192Z",
+        "next_crawl_time":"2025-08-19T10:51:26.192Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCVHwudzAXhMxluNbeUog0rg",
+        "platform":7,
+        "updated_at":"2025-08-19T10:36:26.192Z",
+        "id_social":"UCVHwudzAXhMxluNbeUog0rg",
+        "fullname":"@meiga00-n6b",
+        "created_date":"2025-08-19T10:36:26.163Z",
+        "repost_next_crawl_time":"2025-08-19T10:51:26.192Z"}
+
+         {
+        "id":"UC5cRekspGofSLz8G9mEgdiw",
+        "reply_next_crawl_time":"2025-08-20T04:33:20.896Z",
+        "next_crawl_time":"2025-08-20T04:33:20.896Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UC5cRekspGofSLz8G9mEgdiw",
+        "platform":7,
+        "updated_at":"2025-08-20T04:18:20.896Z",
+        "id_social":"UC5cRekspGofSLz8G9mEgdiw",
+        "fullname":"@_IU___",
+        "created_date":"2025-08-20T04:18:20.890Z",
+        "repost_next_crawl_time":"2025-08-20T04:33:20.896Z"}
+
+
+// Record ở youtube comment
+ {
+        "id":"74cd3786-fcfe-564c-bf1e-facaa6a05ec5",
+        "id_source":"UC1N28tyMbicNMC26lPNuPLw",
+        "id_social":"UgzW6_rdYD55MBQ0JOt4AaABAg",
+        "title":"सिर्फ 7 दिन में",
+        "priority":1,
+        "created_date":"2025-07-21T07:56:15Z",
+        "video_id":"1MCWZx-GoNM",
+        "crawled_date":"2025-08-18T03:40:42.944Z",
+        "comment_updated_at":1755578767,
+        "comment_last_date":"2025-07-22T17:08:07Z",
+        "next_crawl_time":"2025-08-21T04:46:07.411Z"
+}
+
+
+ {
+        "id":"ea777811-5ab9-5ef0-8967-3ab626375856",
+        "id_source":"UC1ifSsWUG241rRfK0ezYCgA",
+        "id_social":"Ugxw2H1ZSvfCTULei_94AaABAg",
+        "title":"\"월 850만원이 생활비로",
+        "priority":1,
+        "created_date":"2025-07-23T07:29:59Z",
+        "video_id":"fztojzjO5R4",
+        "crawled_date":"2025-08-18T03:54:46.721Z",
+        "comment_updated_at":1755599834,
+        "comment_last_date":"2025-07-26T03:16:20Z",
+        "next_crawl_time":"2025-08-21T10:37:14.790Z"}
+
+  sponse":{"numFound":1,"start":0,"docs":[
+      {
+        "id":"68bffdb7-1f9e-508b-b38c-2066ae2f75d7",
+        "id_source":"UC1ifSsWUG241rRfK0ezYCgA",
+        "id_social":"UgwIfybHdXr5YXtsJAN4AaABAg",
+        "title":"\"나이 많다고 하더니 욕까지 해?\"",
+        "priority":1,
+        "created_date":"2025-07-25T07:47:33Z",
+        "video_id":"Km_4iv5qj5A",
+        "crawled_date":"2025-08-18T03:51:25.833Z",
+        "comment_updated_at":1755663546,
+        "comment_last_date":"2025-07-25T07:50:44Z",
+        "next_crawl_time":"2025-08-22T04:19:06.570Z"}
+
+
+Chỗ này nó sẽ update ở comment_updated_at
+
+// Record ở mention
+
+{
+        "id":"b66cc4c5-3877-5cae-9a08-ea93e8c27064",
+        "link":"youtube.com/watch?v=1MCWZx-GoNM&lc=UgzW6_rdYD55MBQ0JOt4AaABAg.AKpg_BLCToMAKtFWzHjFCk",
+        "id_source":"UC1N28tyMbicNMC26lPNuPLw",
+        "id_reference":"66a7ca14-8b3e-5d6a-8d0e-9fb853e64091",
+        "id_parent_comment":"74cd3786-fcfe-564c-bf1e-facaa6a05ec5",
+        "views":0,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "identity":"UC1N28tyMbicNMC26lPNuPLw",
+        "identity_name":"@Kavyanaturalbeauty",
+        "mention_type":2,
+        "search_text":["",
+          "Han vahi bhi poshtik hota Hai"],
+        "attachment":"{\"parent_info\":{\"link\":\"youtube.com/watch?v=1MCWZx-GoNM\",\"title\":\"सिर्फ 7 दिन में\"}}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":2,
+        "platform":7,
+        "updated_at":"2025-08-19T04:45:15.716Z",
+        "created_date":"2025-07-22T17:08:07Z"
+        
+        }
+
+
+  "created_date":"2025-07-23T09:44:35Z"},
+      {
+        "id":"7c6ee4a0-0f97-5d7d-b0e7-69cb70fc55d8",
+        "link":"youtube.com/watch?v=fztojzjO5R4&lc=Ugxw2H1ZSvfCTULei_94AaABAg.AKun9Yshny0AKv6wdaRdZ7",
+        "id_source":"UC1ifSsWUG241rRfK0ezYCgA",
+        "id_reference":"c79c5808-b093-57f6-bedd-6d38ab0ca18f",
+        "id_parent_comment":"ea777811-5ab9-5ef0-8967-3ab626375856",
+        "views":0,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "identity":"UCVHwudzAXhMxluNbeUog0rg",
+        "identity_name":"@meiga00-n6b",
+        "mention_type":2,
+        "search_text":["",
+          "​@@헐-h6d근데 학원비가 설령\n100이 넘는다쳐도.. 남편 실수령액이\n800만원대인데...\n100이 넘어도 저 800으로 커버가 안되겠어요.\n이건 솔직히 아내가 가계관리를 잘 못한거라고 봐야."],
+        "attachment":"{\"parent_info\":{\"link\":\"youtube.com/watch?v=fztojzjO5R4\",\"title\":\"\\\"월 850만원이 생활비로\"}}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":2,
+        "platform":7,
+        "updated_at":"2025-08-19T10:36:26.039Z",
+        "created_date":"2025-07-23T10:31:35Z"}
+
+        {
+        "id":"94c25dcd-3cec-52a5-a288-3db3df9bbd75",
+        "link":"youtube.com/watch?v=Km_4iv5qj5A&lc=UgwIfybHdXr5YXtsJAN4AaABAg.AKzyl0Xnh5jAKzz7IJDhoG",
+        "id_source":"UC1ifSsWUG241rRfK0ezYCgA",
+        "id_reference":"17f39c11-9dca-5093-bb09-a8f6dccba024",
+        "id_parent_comment":"68bffdb7-1f9e-508b-b38c-2066ae2f75d7",
+        "views":0,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "identity":"UC5cRekspGofSLz8G9mEgdiw",
+        "identity_name":"@_IU___",
+        "mention_type":2,
+        "search_text":["",
+          "나이부터딴지걸고 면접시간10분내외일텐데 3문제나 저렇게물어본건 시비건게 맞죠 님말처럼 스펙이상대적으로 부족하신거같은데 다른 사람보다 뛰어난 강점이있으신가요 물어봤으면될일"],
+        "attachment":"{\"parent_info\":{\"link\":\"youtube.com/watch?v=Km_4iv5qj5A\",\"title\":\"\\\"나이 많다고 하더니 욕까지 해?\\\"\"}}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":2,
+        "platform":7,
+        "updated_at":"2025-08-20T04:18:20.552Z",
+        "created_date":"2025-07-25T07:50:44Z"}
+
+
+Hiện tại cũng cần phải check cho các case:
+Comment góc bị xóa
+Comment không tồn tại 
 
 ### Luồng crawl detail
 
@@ -451,3 +826,290 @@ node scripts/articlesV3/search_crisis_keywords_youtube_search_bar.js
 
 
 //Data sau khi chạy
+
+[
+  {
+    "id": "UC1UOiZd3Scgarj5Da5-79wA",
+    "fullname": "Fitrider X",
+    "platform": 7,
+    "link": "youtube.com/channel/UC1UOiZd3Scgarj5Da5-79wA",
+    "id_social": "UC1UOiZd3Scgarj5Da5-79wA",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCyWlOrOHS6DHtRM5zKd5rXw",
+    "fullname": "Học Tiếng Anh Cho Bé",
+    "platform": 7,
+    "link": "youtube.com/channel/UCyWlOrOHS6DHtRM5zKd5rXw",
+    "id_social": "UCyWlOrOHS6DHtRM5zKd5rXw",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCKAPlZw0AOTMZWWGBplFebQ",
+    "fullname": "Bảo Sting",
+    "platform": 7,
+    "link": "youtube.com/channel/UCKAPlZw0AOTMZWWGBplFebQ",
+    "id_social": "UCKAPlZw0AOTMZWWGBplFebQ",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCaPJ_3h8fdBupcOTdvrAaCA",
+    "fullname": "Farhan Khan official",
+    "platform": 7,
+    "link": "youtube.com/channel/UCaPJ_3h8fdBupcOTdvrAaCA",
+    "id_social": "UCaPJ_3h8fdBupcOTdvrAaCA",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCb_9VTNnBLh1osp6lnRtiiQ",
+    "fullname": "Semicenkdünyamolmuş",
+    "platform": 7,
+    "link": "youtube.com/channel/UCb_9VTNnBLh1osp6lnRtiiQ",
+    "id_social": "UCb_9VTNnBLh1osp6lnRtiiQ",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UC0hURbH0XaJNjHZXuPfXSpg",
+    "fullname": "Ngoài đường piste",
+    "platform": 7,
+    "link": "youtube.com/channel/UC0hURbH0XaJNjHZXuPfXSpg",
+    "id_social": "UC0hURbH0XaJNjHZXuPfXSpg",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCDBMjSGj6Lwpe0HyS6_lL2A",
+    "fullname": "Trường Tiểu học Minh Đạo",
+    "platform": 7,
+    "link": "youtube.com/channel/UCDBMjSGj6Lwpe0HyS6_lL2A",
+    "id_social": "UCDBMjSGj6Lwpe0HyS6_lL2A",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCQ21V9-3BB18RmhA-uy4h3A",
+    "fullname": "VŨ SƯ QUẾ ANH HÁT VỌNG CỔ",
+    "platform": 7,
+    "link": "youtube.com/channel/UCQ21V9-3BB18RmhA-uy4h3A",
+    "id_social": "UCQ21V9-3BB18RmhA-uy4h3A",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCO-7WyqiIDi8Cg9-05JsCkQ",
+    "fullname": "Suti Kids TV",
+    "platform": 7,
+    "link": "youtube.com/channel/UCO-7WyqiIDi8Cg9-05JsCkQ",
+    "id_social": "UCO-7WyqiIDi8Cg9-05JsCkQ",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCrI4iNMPZ2vT_G-TqRO6yrw",
+    "fullname": "VTV Thể Thao",
+    "platform": 7,
+    "link": "youtube.com/channel/UCrI4iNMPZ2vT_G-TqRO6yrw",
+    "id_social": "UCrI4iNMPZ2vT_G-TqRO6yrw",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCoX3xxHIdAdOMmsca29VDTg",
+    "fullname": "Nhung Kim",
+    "platform": 7,
+    "link": "youtube.com/channel/UCoX3xxHIdAdOMmsca29VDTg",
+    "id_social": "UCoX3xxHIdAdOMmsca29VDTg",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  },
+  {
+    "id": "UCW3UHrBAdGZ-ehfqQJY7xtQ",
+    "fullname": "Dòng Sông Phẳng Lặng",
+    "platform": 7,
+    "link": "youtube.com/channel/UCW3UHrBAdGZ-ehfqQJY7xtQ",
+    "id_social": "UCW3UHrBAdGZ-ehfqQJY7xtQ",
+    "created_date": "2025-08-19T10:44:06.275Z",
+    "domain": "youtube.com"
+  }
+]
+
+
+// Data ở Redis:
+{
+    "id": "UCeyn-iB-aWiNFii2wghgJFQ",
+    "fullname": "fan guột của em xinh",
+    "platform": 7,
+    "link": "youtube.com/channel/UCeyn-iB-aWiNFii2wghgJFQ",
+    "id_social": "UCeyn-iB-aWiNFii2wghgJFQ",
+    "created_date": "2025-08-20T02:50:31.843Z",
+    "domain": "youtube.com"
+}
+
+
+{
+    "id": "UCeyn-iB-aWiNFii2wghgJFQ",
+    "fullname": "fan guột của em xinh",
+    "platform": 7,
+    "link": "youtube.com/channel/UCeyn-iB-aWiNFii2wghgJFQ",
+    "id_social": "UCeyn-iB-aWiNFii2wghgJFQ",
+    "created_date": "2025-08-20T02:50:31.843Z",
+    "domain": "youtube.com"
+}
+
+// Data ở mention:
+{
+        "id":"5d44d3b9-925f-5136-88bc-27b5b641556f",
+        "link":"https://www.youtube.com/watch?v=4eWLTWL1U94",
+        "id_source":"UCeyn-iB-aWiNFii2wghgJFQ",
+        "views":4,
+        "likes":0,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":0,
+        "engagement_s_c":0,
+        "identity":"UCeyn-iB-aWiNFii2wghgJFQ",
+        "identity_name":"fan guột của em xinh",
+        "mention_type":1,
+        "title":"19 tháng 8, 2025",
+        "search_text":["19 tháng 8, 2025",
+          "19 tháng 8, 2025<br> <br>"],
+        "attachment":"{\"media_src\":\"https://i.ytimg.com/vi/4eWLTWL1U94/hqdefault.jpg\"}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":1,
+        "platform":7,
+        "updated_at":"2025-08-20T02:50:30.419Z",
+        "created_date":"2025-08-19T10:06:11Z"
+}
+
+
+
+ {
+        "id":"cd9cb519-07e9-5b22-b674-12d6f4c2bb3c",
+        "link":"https://www.youtube.com/watch?v=z2Pi8LO3iDk",
+        "id_source":"UCrmsVrq4GAxkhYg4PHnIlNg",
+        "views":48,
+        "likes":1,
+        "comments":0,
+        "shares":0,
+        "rating_score":0,
+        "engagement_total":1,
+        "engagement_s_c":0,
+        "identity":"UCrmsVrq4GAxkhYg4PHnIlNg",
+        "identity_name":"NDT Moto Du Lịch",
+        "mention_type":1,
+        "title":"35 Thái Lan Ẩm Thực Hải Sản Đường Phố Pattaya Đường Sai Song RD",
+        "search_text":["35 Thái Lan Ẩm Thực Hải Sản Đường Phố Pattaya Đường Sai Song RD",
+          "35 Thái Lan Ẩm Thực Hải Sản Đường Phố Pattaya Đường Sai Song RD<br> <br>"],
+        "attachment":"{\"media_src\":\"https://i.ytimg.com/vi/z2Pi8LO3iDk/hqdefault.jpg\"}",
+        "is_to_topic":false,
+        "domain":"youtube.com",
+        "mention_type_details":1,
+        "platform":7,
+        "updated_at":"2025-08-20T02:50:30.418Z",
+        "created_date":"2025-08-19T10:25:43Z"}
+
+// Data ở identity:
+
+
+   {
+        "id":"UCb_9VTNnBLh1osp6lnRtiiQ",
+        "reply_next_crawl_time":"2025-08-19T10:59:06.590Z",
+        "next_crawl_time":"2025-08-19T10:59:06.590Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCb_9VTNnBLh1osp6lnRtiiQ",
+        "platform":7,
+        "updated_at":"2025-08-19T10:44:06.590Z",
+        "id_social":"UCb_9VTNnBLh1osp6lnRtiiQ",
+        "fullname":"Semicenkdünyamolmuş",
+        "created_date":"2025-08-19T10:44:06.275Z",
+        "repost_next_crawl_time":"2025-08-19T10:59:06.590Z"
+}
+
+
+
+{
+        "id":"UCrmsVrq4GAxkhYg4PHnIlNg",
+        "reply_next_crawl_time":"2025-08-20T03:05:32.434Z",
+        "next_crawl_time":"2025-08-20T03:05:32.434Z",
+        "domain":"youtube.com",
+        "link":"youtube.com/channel/UCrmsVrq4GAxkhYg4PHnIlNg",
+        "platform":7,
+        "updated_at":"2025-08-20T02:50:32.434Z",
+        "id_social":"UCrmsVrq4GAxkhYg4PHnIlNg",
+        "fullname":"NDT Moto Du Lịch",
+        "created_date":"2025-08-20T02:50:31.843Z",
+        "repost_next_crawl_time":"2025-08-20T03:05:32.434Z"}
+
+
+// Data ở Youtube posts
+
+
+ {
+        "id":"5d44d3b9-925f-5136-88bc-27b5b641556f",
+        "id_source":"UCeyn-iB-aWiNFii2wghgJFQ",
+        "id_social":"4eWLTWL1U94",
+        "title":"19 tháng 8, 2025",
+        "priority":1,
+        "created_date":"2025-08-19T10:06:11Z",
+        "crawled_date":"2025-08-20T02:50:30.470Z",
+        "next_crawl_time":"2025-08-20T03:05:30.470Z"
+  }
+
+
+
+  {
+        "id":"cd9cb519-07e9-5b22-b674-12d6f4c2bb3c",
+        "id_source":"UCrmsVrq4GAxkhYg4PHnIlNg",
+        "id_social":"z2Pi8LO3iDk",
+        "title":"35 Thái Lan Ẩm Thực",
+        "priority":1,
+        "created_date":"2025-08-19T10:25:43Z",
+        "crawled_date":"2025-08-20T02:50:30.470Z",
+        "next_crawl_time":"2025-08-20T03:05:30.470Z"}
+
+// Data ở article_urls
+
+ {
+        "id":"5d44d3b9-925f-5136-88bc-27b5b641556f",
+        "platform":7,
+        "id_category":"0",
+        "id_source":"youtube.com",
+        "link":"https://www.youtube.com/watch?v=4eWLTWL1U94",
+        "title":"19 tháng 8, 2025",
+        "views_avg":0,
+        "priority":1,
+        "status":2,
+        "failed_type":1,
+        "count_failed":1,
+        "crawled_date":"2025-08-20T02:50:31.843Z",
+        "next_crawl_time":"2025-08-19T11:43:46.871Z",
+        "created_date":"2025-08-19T10:42:37.893Z",
+        "parse_type":2,
+        "_version_":1840941086122442752
+}
+
+
+{
+        "id":"cd9cb519-07e9-5b22-b674-12d6f4c2bb3c",
+        "platform":7,
+        "id_category":"0",
+        "id_source":"youtube.com",
+        "link":"https://www.youtube.com/watch?v=z2Pi8LO3iDk",
+        "title":"35 Thái Lan Ẩm Thực Hải Sản Đường Phố Pattaya Đường Sai Song RD",
+        "views_avg":0,
+        "priority":1,
+        "status":2,
+        "failed_type":1,
+        "count_failed":1,
+        "crawled_date":"2025-08-20T02:50:31.843Z",
+        "next_crawl_time":"2025-08-19T11:43:47.946Z",
+        "created_date":"2025-08-19T10:42:37.895Z",
+        "parse_type":2,
+        "_version_":1840941086122442752}

@@ -434,6 +434,28 @@ crawler_type IN ( 'YT_TOKEN_CUA_LAMTT', '1_YT_TOKEN_CUA_LAMTT'  )
     "last_crawl_cursor": null,
     "last_crawl_date": null
   }
+}
+
+
+{
+  "id": 3491728,
+  "retries": 0,
+  "delay_time_rules": [],
+  "last_data_date": "2025-07-03T08:43:34.700Z",
+  "from_date": "1751532214",
+  "to_date": "1752137014",
+  "platform": 7,
+  "createdBy": "YoutubePostFromCrisisKeywordCrawlingLoader",
+  "keyword_info": {
+    "id": 1,
+    "type": "CRISIS_TRACKING",
+    "keyword": "TIN NÓNG: TRUMP "BẬT ĐÈN XANH"",
+    "action": "POST",
+    "expiry_date": "2025-12-31T16:59:59.000Z",
+    "last_crawl_cursor": null,
+    "last_crawl_date": null
+  }
+}
 
 // Non Crisis
 
@@ -540,6 +562,57 @@ ynm-cl-yt-post-from-keyword-service-testing -> DONE
 
 
 ## Những cases cần check lại ở staging
-ynm-cl-yt-crawling-loader-service-staging
-ynm-cl-yt-post-from-crisis-keyword-service-staging
-ynm-cl-yt-post-from-keyword-service-staging
+ynm-cl-yt-crawling-loader-service-staging -> DONE
+ynm-cl-yt-post-from-crisis-keyword-service-staging -> DONE 
+ynm-cl-yt-post-from-keyword-service-staging  -> DONE
+
+
+
+
+
+ynmpdp-5133-staging-ynm-crawler-empty
+kubectl get pods -n crawler-staging | grep ynmpdp-5133-staging-ynm-crawler-empty
+kubectl exec -it ynmpdp-5133-staging-ynm-crawler-empty-746688f5f6-st5qw -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh
+
+
+
+export HTTP_PORT=9998
+export GRPC_PORT=9011
+
+export YOUTUBE_API_SERVICE_MAXRETRIES=10
+export YOUTUBE_API_SERVICE_TIMEOUT=45000
+    
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.yt.posts_from_crisis_keyword_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.yt.posts_from_crisis_keyword_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.yt.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.yt.posts_from_crisis_keyword_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.7.*.*.posts_from_crisis_keyword
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.7.*.*.posts_from_crisis_keyword.next_page
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=YT_POST_FROM_CRISIS_KEYWORD_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=""
+export CRAWLER_CONFIG_PAGING_ENABLE=true
+    
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+export BUILDER_ENABLE=true
+    
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=1
+export CRAWLER_ENABLE=true
+
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+export RESOLVER_MAX_RETRIES=5
+export RESOLVER_ENABLE=true
+
+export LOG_LEVEL=debug
+
+export RABBIT_HEARTBEAT=10
+
+export REDIS_DB=3
+export REDIS_MAX_RETRIES_PER_REQUEST=null
+    
+yarn start --scope=@ynm/cl-yt-post-from-keyword-crawler-service
