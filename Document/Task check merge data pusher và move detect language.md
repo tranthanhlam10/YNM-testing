@@ -600,8 +600,6 @@ OPEN AI
 ynm-cl-news-category-link-by-openai-service-testing
 
 - Mentions: DONE
-
-
 - Article post -> DONE 
 - Article_url -> DONE 
 - Monitor_source -> DONE 
@@ -612,9 +610,20 @@ ynm-cl-news-category-link-by-openai-service-testing
 (cl\.news\.(monitor_news_categories|article_posts|article_crawl_reviews|monitor_sources|article_urlS|crisis_keyword\.(crawling_sources|crawling_requests|crawled_sources))|parsed_detail_output|mentions_2_solr_mentions)
 
 
-### Đã check
-- Hiện tại luồng keyword no cookie đã check xong chỗ detect language 
-- Check tiếp luồng hashtag thử xem sao -> Chỉ cần gọi thành công là đc -> DONE
+### Cần phải check
 - Tiếp theo là check luồng reply
 - Check tiếp các luồng của news -> Kiểm tra xem đường đi có đúng không
 
+
+
+
+
+- Hiện tại luồng keyword no cookie
+ynm-cl-tr-keyword-post-no-cookie-service-testing
+end call rnd with result: [{"id":0,"detected_language":"vi"},{"id":1,"detected_language":"vi"},{"id":2,"detected_language":"vi"},{"id":3,"detected_language":"vi"},{"id":4,"detected_language":"vi"},{"id":5,"detected_language":"vi"},{"id":6,"detected_language":"vi"},{"id":7,"detected_language":"vi"},{"id":8,"detected_language":"vi"},{"id":9,"detected_language":"vi"}]
+
+
+
+
+- Luồng hashtag có detect language hay không 
+ynm-cl-tr-hashtag-post-no-cookie-service-testing
