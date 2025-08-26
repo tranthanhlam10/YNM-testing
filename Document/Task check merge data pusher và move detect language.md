@@ -610,20 +610,138 @@ ynm-cl-news-category-link-by-openai-service-testing
 (cl\.news\.(monitor_news_categories|article_posts|article_crawl_reviews|monitor_sources|article_urlS|crisis_keyword\.(crawling_sources|crawling_requests|crawled_sources))|parsed_detail_output|mentions_2_solr_mentions)
 
 
-### Cần phải check
+### Cần phải check ở testing
 - Tiếp theo là check luồng reply
 - Check tiếp các luồng của news -> Kiểm tra xem đường đi có đúng không
 
-
-
-
-
 - Hiện tại luồng keyword no cookie
 ynm-cl-tr-keyword-post-no-cookie-service-testing
+
+
 end call rnd with result: [{"id":0,"detected_language":"vi"},{"id":1,"detected_language":"vi"},{"id":2,"detected_language":"vi"},{"id":3,"detected_language":"vi"},{"id":4,"detected_language":"vi"},{"id":5,"detected_language":"vi"},{"id":6,"detected_language":"vi"},{"id":7,"detected_language":"vi"},{"id":8,"detected_language":"vi"},{"id":9,"detected_language":"vi"}]
 
 
-
-
 - Luồng hashtag có detect language hay không 
-ynm-cl-tr-hashtag-post-no-cookie-service-testing
+ynm-cl-tr-hashtag-post-no-cookie-service-testing 
+-> Hiện tại đang bị lỗi -> Đã được fix
+
+
+- Hiện tại luồng Reply Post chưa có detect language
+-> Hiện tại đã work đúng yêu cầu
+
+- Category link by openai (đổi routing key và exchange)
+Hiện tại đã config đúng
+
+
+- Check article urls  -> Pass
+CHỗ này cũng chỉ crawl để đẩy được message xuống article_urls là được
+
+ynm-cl-news-article-url-crawler-service-testing
+ynm-cl-news-crawling-loader-service-testing
+
+Bật 2 deployments này lên để crawl
+
+testing.cl.news.article_urls_crawled_sources
+testing.cl.news.article_urls_crawling_requests
+testing.cl.news.article_urls_crawling_sources
+testing.cl.news.article_url
+
+^(testing.cl.news.article_urls_crawled_sources|testing.cl.news.article_urls_crawling_requests|testing.cl.news.article_urls_crawling_sources|testing.cl.news.article_urls)$
+
+
+- Crisis keyword -> Pass
+Chỗ này chỉ cần chạy luồng crawl sau đó đẩy xuống article_urls là được\
+
+
+ynm-cl-news-crisis-keyword-service-testing
+
+cl.news.crisis_keyword.crawling_sources
+cl.news.crisis_keyword.crawling_sources_next_pages
+cl.news.crisis_keyword.crawling_requests
+cl.news.crisis_keyword.crawled_sources
+cl.news.updated_crisis_keywords
+cl.news.article_urls
+cl.news.inserted_monitor_sources
+
+- Article_posts -> Pass
+Miễn là message ở queue article_post được cl.pusher đẩy đi là đc 
+
+Message mẫu: 
+
+{
+  "id": "debff0f5-7e5d-53c4-be79-20bcfa36033c",
+  "id_category": "0",
+  "title": "10 Địa chỉ Nha khoa Uy tín trên 15 năm hoạt động tại TPHCM",
+  "id_source": "bookingcare.vn",
+  "platform": 3,
+  "link": "https://bookingcare.vn/cam-nang/10-dia-chi-nha-khoa-uy-tin-tren-15-nam-hoat-dong-tai-tphcm-p2963.html",
+  "published_date": 1668963600,
+  "last_have_data_date": 1754988456,
+  "updated_date": 0
+}
+
+- Review
+ERROR (cl-data-pusher-service): Processing data into solr has been occurred error: 'Error: Request HTTP error 400: {
+  "responseHeader":{
+    "rf":1,
+    "status":400,
+    "QTime":0},
+  "error":{
+    "metadata":[
+      "error-class","org.apache.solr.common.SolrException",
+      "root-error-class","org.apache.solr.common.SolrException"],
+    "msg":"[doc=e54cb3fe-db54-56fd-b140-c2d4ecec7a98] missing required field: title",
+    "code":400}}
+' and retry after 5000ms
+
+
+Hiện tại đang báo lỗi này -> Hiện dev đã fix chỗ này (Nguyên nhân xảy ra bug không có title )
+
+
+- Monitor source
+Hiện tại chỉ cần check consume message từ queue này là done 
+Luồng này đang crawl từ luông keyword crisis cũ
+
+ynm-cl-news-crisis-keyword-service-testing
+Xóa record có priority 10 trong monitor_source
+
+cl.news.monitor_sources
+
+
+- Category link
+-> Liên quan tới Open AI -> Không cần check
+
+- Parse detail
+{
+  "id": "22ec6059-4a42-5477-a77f-07765a7bd5cd",
+  "link": "https://vtcnews.vn/mira-murati-nguoi-phu-nu-tu-choi-loi-de-nghi-1-ty-usd-tu-meta-la-ai-ar957409.html",
+  "domain": "vtcnews.vn",
+  "id_source": "vtcnews.vn",
+  "id_reference": null,
+  "id_parent_comment": null,
+  "views": 0,
+  "likes": 0,
+  "comments": 0,
+  "shares": 0,
+  "engagement_total": 0,
+  "engagement_s_c": 0,
+  "identity": null,
+  "identity_name": null,
+  "platform": 3,
+  "mention_type": 1,
+  "mention_type_details": 1,
+  "title": "Mira Murati - người phụ nữ từ chối lời đề nghị 1 tỷ USD từ Meta là ai?",
+  "search_text": [
+    "Mira Murati - người phụ nữ từ chối lời đề nghị 1 tỷ USD từ Meta là ai?",
+    "<p class='ap-description'><b>Quyết định từ chối lời mời trị giá 1 tỷ USD từ Meta, Mira Murati - cựu Giám đốc Công nghệ (CTO) của OpenAI - khiến nhiều người bất ngờ.</b></p><p class='ap-content'><html><head></head><body><div class=\"edittor-content box-cont mt15 clearfix \" itemprop=\"articleBody\"><p>Mira Murati từng là người đứng sau thành công của hàng loạt dự án AI đình đám tại OpenAI như ChatGPT, DALL·E, Codex và gần đây là Sora. Được mệnh danh là \"trái tim trí tuệ\" của chiến lược AI, Murati góp phần định hình cách con người tương tác với trí tuệ nhân tạo trong đời sống hiện đại.</p><figure class=\"expNoEdit\"><img alt=\"Mira Murati - người phụ nữ mang tầm nhìn AI vượt ra ngoài những con số tỷ USD. (Nguồn: Getty Images)\" height=\"440\" data-id=\"2634993\" data-detail=\"1\" data-width=\"660\" data-height=\"440\" data-src=\"https://cdn-i.vtcnews.vn/resize/th/upload/2025/08/01/123-14361951.jpeg\" class=\" lazy\" data-index=\"1\"><figcaption><p class=\"expEdit\">Mira Murati - người phụ nữ mang tầm nhìn AI vượt ra ngoài những con số tỷ USD. (Nguồn: Getty Images)</p></figcaption></figure><p>Mira Murati sinh ra tại thành phố Vlore, Albania - trái ngược với một số đồn đoán rằng cô có nguồn gốc Ấn Độ. Sau thời gian học tập tại Canada, cô chuyển đến Hoa Kỳ để theo đuổi niềm đam mê với công nghệ tiên tiến. Murati tốt nghiệp ngành Toán học tại Colby College và sau đó lấy bằng Kỹ thuật cơ khí tại Dartmouth College (Thayer School of Engineering) vào năm 2012.</p><p>Trước khi gia nhập OpenAI, cô từng làm việc tại các tập đoàn hàng đầu như Zodiac Aerospace, Tesla và Leap Motion, nơi cô tích lũy kinh nghiệm đáng kể trong lĩnh vực công nghệ cao và giao diện người - máy.</p><p>Tháng 2/2025, Murati sáng lập Thinking Machines Lab, một startup định giá gần 12 tỷ USD dù chưa ra mắt sản phẩm. Sứ mệnh của công ty là phát triển các công cụ AI dễ tiếp cận, tùy chỉnh, và minh bạch - nhằm phá vỡ sự độc quyền công nghệ của các 'ông lớn' Thung lũng Silicon.</p><p>Meta, dưới sự điều hành của Mark Zuckerberg, đã đề nghị 200 triệu đến 1 tỷ USD để mua lại Thinking Machines Lab hoặc thu hút Murati về nhóm AI Superintelligence. Câu trả lời của Murati là một lời từ chối rõ ràng: <em>'Cho đến nay, chưa ai trong nhóm chấp nhận lời đề nghị đó.'</em></p><p>Tại Diễn đàn Kinh tế Thế giới 2025 ở Davos, Murati từng nói: <em>\"AI không có giá trị là trí tuệ không có lương tâm.\"</em> Cô hiện đang tư vấn cho Ủy ban Châu Âu về các chính sách AI - một vai trò hiếm có đối với người sáng lập startup.</p><figure class=\"expNoEdit\"><img alt=\"Mira Murati tại một buổi chia sẻ về trí tuệ nhân tạo - nơi cô không chỉ lan tỏa lý tưởng công nghệ nhân văn. (Nguồn: Getty Images)\" height=\"440\" data-id=\"2634995\" data-detail=\"1\" data-width=\"660\" data-height=\"440\" data-src=\"https://cdn-i.vtcnews.vn/resize/th/upload/2025/08/01/456-14373499.jpeg\" class=\" lazy\" data-index=\"2\"><figcaption><p class=\"expEdit\">Mira Murati tại một buổi chia sẻ về trí tuệ nhân tạo - nơi cô không chỉ lan tỏa lý tưởng công nghệ nhân văn. (Nguồn: Getty Images)</p></figcaption></figure><p>Dù chưa có số liệu chính thức, tài sản cá nhân của Mira Murati được ước tính nằm trong khoảng 5-10 triệu USD. Tuy nhiên, giá trị thực của cô nằm ở tầm ảnh hưởng với cộng đồng AI và những quyết định mang tính biểu tượng.</p><p>Mira Murati không chỉ là người phụ nữ đã nói 'Không' với 1 tỷ USD - cô còn là đại diện cho một xu hướng mới trong ngành công nghệ: Đề cao đạo đức, minh bạch và sự tiếp cận rộng rãi của AI.</p></div></body></html></p>"
+  ],
+  "attachment": "{\"thumbnail\":\"https://cdn-i.vtcnews.vn/resize/DKBM1_6r5IaJAh1_on6DnA2/upload/2025/08/01/upscaleimage320250801-14381196.jpeg\"}",
+  "link_shared": null,
+  "link_shared_domain": null,
+  "source_type": null,
+  "created_date": "2025-08-04T04:34:37.000Z",
+  "shard": "20250804",
+  "source_category": null,
+  "updated_at": "2025-08-25T03:05:41.279Z",
+  "createdBy": "HighPriorityNewsDetailSourcesCrawlingLoader"
+}

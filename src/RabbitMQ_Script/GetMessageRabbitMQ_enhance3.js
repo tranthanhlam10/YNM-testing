@@ -310,7 +310,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.mentions_2_solr_mentions";
+const queueName = "testing.cl.tr.reply_posts_crawling_sources_NganLTK";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -318,12 +318,12 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage example - lấy 10000 messages, mỗi batch 500
 peekMessagesInBatches(
-  stagingHTTP, 
-  stagingDomain, 
+  testHTTP, 
+  testDomain, 
   queueName, 
   userName, 
-  stagingPassword,
-  10000, // Total messages to fetch
+  testPassword,
+  4831, // Total messages to fetch
   500    // Batch size
 ).then(result => {
   if (result.success) {
