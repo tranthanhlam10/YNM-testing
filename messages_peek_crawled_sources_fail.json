@@ -1,0 +1,4514 @@
+[
+  {
+    "source": {
+      "id": 579005,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:02:42",
+      "from_date": "1755864162",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579005,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"aeon dịch vụ tệ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:02:42",
+        "last_crawl_date": "2025-08-22T12:02:42.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"aeon dịch vụ tệ\"",
+              "searchTerms": "\"aeon dịch vụ tệ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578970,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:09:33",
+      "from_date": "1755871773",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578970,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Strepsils sốc phản vệ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:09:33",
+        "last_crawl_date": "2025-08-22T14:09:33.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Strepsils sốc phản vệ\"",
+              "searchTerms": "\"Strepsils sốc phản vệ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579522,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:51:33",
+      "from_date": "1755863493",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579522,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo bán hàng kém chất lượng\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:51:33",
+        "last_crawl_date": "2025-08-22T11:51:33.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo bán hàng kém chất lượng\"",
+              "searchTerms": "\"Uniqlo bán hàng kém chất lượng\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578989,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:34:44",
+      "from_date": "1755869684",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578989,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"bánh xe Bridgstone\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:34:44",
+        "last_crawl_date": "2025-08-22T13:34:44.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"bánh xe Bridgstone\"",
+              "searchTerms": "\"bánh xe Bridgstone\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579678,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.908Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579678,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"xúc xích Oji mốc\"",
+        "action": "POST",
+        "expiry_date": "2025-08-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-14 13:46:36",
+        "last_crawl_date": "2025-08-14T13:46:36.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"xúc xích Oji mốc\"",
+              "searchTerms": "\"xúc xích Oji mốc\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579035,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:27:55",
+      "from_date": "1755865675",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579035,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"nước uống mutant\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:27:55",
+        "last_crawl_date": "2025-08-22T12:27:55.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"nước uống mutant\"",
+              "searchTerms": "\"nước uống mutant\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579135,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:42:16",
+      "from_date": "1755862936",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579135,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Me ta fresh\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:42:16",
+        "last_crawl_date": "2025-08-22T11:42:16.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Me ta fresh\"",
+              "searchTerms": "\"Me ta fresh\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579014,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:24:05",
+      "from_date": "1755851045",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579014,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#aeonmallvn",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:24:05",
+        "last_crawl_date": "2025-08-22T08:24:05.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #aeonmallvn",
+              "searchTerms": "#aeonmallvn",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579227,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:56:52",
+      "from_date": "1755871012",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579227,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"bank N xanh dương\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:56:52",
+        "last_crawl_date": "2025-08-22T13:56:52.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"bank N xanh dương\"",
+              "searchTerms": "\"bank N xanh dương\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579610,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:56:01",
+      "from_date": "1755852961",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579610,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Văn Hiến Uni\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:56:01",
+        "last_crawl_date": "2025-08-22T08:56:01.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Văn Hiến Uni\"",
+              "searchTerms": "\"Văn Hiến Uni\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579323,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:47:02",
+      "from_date": "1755874022",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579323,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"thẩm mỹ th.u cuc\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:47:02",
+        "last_crawl_date": "2025-08-22T14:47:02.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"thẩm mỹ th.u cuc\"",
+              "searchTerms": "\"thẩm mỹ th.u cuc\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579223,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.869Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579223,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"NH quocdan\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-14 13:47:48",
+        "last_crawl_date": "2025-08-14T13:47:48.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"NH quocdan\"",
+              "searchTerms": "\"NH quocdan\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578928,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:10:41",
+      "from_date": "1755871841",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578928,
+        "type": "CRISIS_TRACKING",
+        "keyword": "“tiền ảo XM”",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:10:41",
+        "last_crawl_date": "2025-08-22T14:10:41.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - “tiền ảo XM”",
+              "searchTerms": "“tiền ảo XM”",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579301,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:57:45",
+      "from_date": "1755871065",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579301,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ap pronutra\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:57:45",
+        "last_crawl_date": "2025-08-22T13:57:45.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ap pronutra\"",
+              "searchTerms": "\"ap pronutra\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579734,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:15:21",
+      "from_date": "1755868521",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579734,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Công ty Thịnh Thịnh Vượng\"",
+        "action": "POST",
+        "expiry_date": "2026-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:15:21",
+        "last_crawl_date": "2025-08-22T13:15:21.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Công ty Thịnh Thịnh Vượng\"",
+              "searchTerms": "\"Công ty Thịnh Thịnh Vượng\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579252,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:37:01",
+      "from_date": "1755869821",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579252,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"giám đốc ACB trốn nợ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:37:01",
+        "last_crawl_date": "2025-08-22T13:37:01.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"giám đốc ACB trốn nợ\"",
+              "searchTerms": "\"giám đốc ACB trốn nợ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579220,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:27:59",
+      "from_date": "1755869279",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579220,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ncb có biến\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:27:59",
+        "last_crawl_date": "2025-08-22T13:27:59.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ncb có biến\"",
+              "searchTerms": "\"ncb có biến\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578920,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.805Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578920,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"XM sập sàn\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-11 18:51:16",
+        "last_crawl_date": "2025-08-22T12:42:42.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"XM sập sàn\"",
+              "searchTerms": "\"XM sập sàn\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579246,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.880Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579246,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ACB giả mạo SMS\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-11 10:47:48",
+        "last_crawl_date": "2025-08-14T14:00:57.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ACB giả mạo SMS\"",
+              "searchTerms": "\"ACB giả mạo SMS\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579660,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:29:40",
+      "from_date": "1755872980",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579660,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Cty TNHH Thuỷ Sản Số 1\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:29:40",
+        "last_crawl_date": "2025-08-22T14:29:40.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Cty TNHH Thuỷ Sản Số 1\"",
+              "searchTerms": "\"Cty TNHH Thuỷ Sản Số 1\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579525,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:51:13",
+      "from_date": "1755870673",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579525,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"nhân viên Uniqlo kém\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:51:13",
+        "last_crawl_date": "2025-08-22T13:51:13.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"nhân viên Uniqlo kém\"",
+              "searchTerms": "\"nhân viên Uniqlo kém\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579067,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:08:56",
+      "from_date": "1755857336",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579067,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"fisogoldpro\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:08:56",
+        "last_crawl_date": "2025-08-22T10:08:56.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"fisogoldpro\"",
+              "searchTerms": "\"fisogoldpro\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579523,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:36:39",
+      "from_date": "1755869799",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579523,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo đồ cũ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:36:39",
+        "last_crawl_date": "2025-08-22T13:36:39.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo đồ cũ\"",
+              "searchTerms": "\"Uniqlo đồ cũ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579255,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:41:06",
+      "from_date": "1755859266",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579255,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"giám đốc acb bê bối tài chính\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:41:06",
+        "last_crawl_date": "2025-08-22T10:41:06.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"giám đốc acb bê bối tài chính\"",
+              "searchTerms": "\"giám đốc acb bê bối tài chính\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579229,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:41:01",
+      "from_date": "1755862861",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579229,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ngân hàng N xanh dương\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:41:01",
+        "last_crawl_date": "2025-08-22T11:41:01.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ngân hàng N xanh dương\"",
+              "searchTerms": "\"ngân hàng N xanh dương\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578979,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 09:21:00",
+      "from_date": "1755854460",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578979,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"buger JolliBee\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 09:21:00",
+        "last_crawl_date": "2025-08-22T09:21:00.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"buger JolliBee\"",
+              "searchTerms": "\"buger JolliBee\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578901,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:22:43",
+      "from_date": "1755850963",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578901,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#ThagriLivestock",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:22:43",
+        "last_crawl_date": "2025-08-22T08:22:43.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #ThagriLivestock",
+              "searchTerms": "#ThagriLivestock",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579520,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:31:34",
+      "from_date": "1755869494",
+      "to_date": "1756178521",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579520,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo bóc phốt\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:31:34",
+        "last_crawl_date": "2025-08-22T13:31:34.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo bóc phốt\"",
+              "searchTerms": "\"Uniqlo bóc phốt\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579075,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:06:58",
+      "from_date": "1755857218",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579075,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"prisogoldpro\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:06:58",
+        "last_crawl_date": "2025-08-22T10:06:58.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"prisogoldpro\"",
+              "searchTerms": "\"prisogoldpro\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579655,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-20 18:55:37",
+      "from_date": "1755716137",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579655,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Chủ tịch mê game\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-20 18:55:37",
+        "last_crawl_date": "2025-08-22T10:31:13.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Chủ tịch mê game\"",
+              "searchTerms": "\"Chủ tịch mê game\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579038,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:42:30",
+      "from_date": "1755859350",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579038,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"chai uống thums up\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:42:30",
+        "last_crawl_date": "2025-08-22T10:42:30.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"chai uống thums up\"",
+              "searchTerms": "\"chai uống thums up\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579527,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:23:30",
+      "from_date": "1755872610",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579527,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"vascara bóc phốt\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:23:30",
+        "last_crawl_date": "2025-08-22T14:23:30.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"vascara bóc phốt\"",
+              "searchTerms": "\"vascara bóc phốt\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579644,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:23:08",
+      "from_date": "1755850988",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579644,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Công nghệ sinh học Hùng Hậu\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:23:08",
+        "last_crawl_date": "2025-08-22T08:23:08.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Công nghệ sinh học Hùng Hậu\"",
+              "searchTerms": "\"Công nghệ sinh học Hùng Hậu\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578927,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:04:33",
+      "from_date": "1755867873",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578927,
+        "type": "CRISIS_TRACKING",
+        "keyword": "“XM sập”",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:04:33",
+        "last_crawl_date": "2025-08-22T13:04:33.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - “XM sập”",
+              "searchTerms": "“XM sập”",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579040,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:19:28",
+      "from_date": "1755861568",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579040,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"chai uống thumsup\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:19:28",
+        "last_crawl_date": "2025-08-22T11:19:28.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"chai uống thumsup\"",
+              "searchTerms": "\"chai uống thumsup\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579226,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:03:02",
+      "from_date": "1755871382",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579226,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"bank N xanh biển\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:03:02",
+        "last_crawl_date": "2025-08-22T14:03:02.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"bank N xanh biển\"",
+              "searchTerms": "\"bank N xanh biển\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579375,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:07:25",
+      "from_date": "1755857245",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579375,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"tẩy chay belcheese\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:07:25",
+        "last_crawl_date": "2025-08-22T10:07:25.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"tẩy chay belcheese\"",
+              "searchTerms": "\"tẩy chay belcheese\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579117,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:37:02",
+      "from_date": "1755869822",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579117,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Mờ bờ sờ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:37:02",
+        "last_crawl_date": "2025-08-22T13:37:02.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Mờ bờ sờ\"",
+              "searchTerms": "\"Mờ bờ sờ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579245,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:06:47",
+      "from_date": "1755857207",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579245,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ACB giả mạo tin nhắn\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:06:47",
+        "last_crawl_date": "2025-08-22T10:06:47.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ACB giả mạo tin nhắn\"",
+              "searchTerms": "\"ACB giả mạo tin nhắn\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579364,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:23:38",
+      "from_date": "1755851018",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579364,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"traveloka dịch vụ tệ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:23:38",
+        "last_crawl_date": "2025-08-22T08:23:38.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"traveloka dịch vụ tệ\"",
+              "searchTerms": "\"traveloka dịch vụ tệ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579658,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:19:35",
+      "from_date": "1755872375",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579658,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"chủ tịch vltk\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:19:35",
+        "last_crawl_date": "2025-08-22T14:19:35.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"chủ tịch vltk\"",
+              "searchTerms": "\"chủ tịch vltk\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579529,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:52:40",
+      "from_date": "1755863560",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579529,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"vascara dịch vụ tệ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:52:40",
+        "last_crawl_date": "2025-08-22T11:52:40.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"vascara dịch vụ tệ\"",
+              "searchTerms": "\"vascara dịch vụ tệ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579074,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:34:02",
+      "from_date": "1755862442",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579074,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"prisogold\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:34:02",
+        "last_crawl_date": "2025-08-22T11:34:02.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"prisogold\"",
+              "searchTerms": "\"prisogold\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579616,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:07:23",
+      "from_date": "1755864443",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579616,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Cty CP Phát Triển Giáo Dục Hùng Hậu\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:07:23",
+        "last_crawl_date": "2025-08-22T12:07:23.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Cty CP Phát Triển Giáo Dục Hùng Hậu\"",
+              "searchTerms": "\"Cty CP Phát Triển Giáo Dục Hùng Hậu\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579321,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:41:22",
+      "from_date": "1755859282",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579321,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#thu_cuc",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:41:22",
+        "last_crawl_date": "2025-08-22T10:41:22.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #thu_cuc",
+              "searchTerms": "#thu_cuc",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579358,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:38:19",
+      "from_date": "1755873499",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579358,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"tre vồ lô ka\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:38:19",
+        "last_crawl_date": "2025-08-22T14:38:19.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"tre vồ lô ka\"",
+              "searchTerms": "\"tre vồ lô ka\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579780,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:23:16",
+      "from_date": "1755850996",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579780,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"NCB biểu tình\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:23:16",
+        "last_crawl_date": "2025-08-22T08:23:16.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"NCB biểu tình\"",
+              "searchTerms": "\"NCB biểu tình\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578952,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.816Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578952,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Bắp NK6275\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-14 14:01:20",
+        "last_crawl_date": "2025-08-14T14:01:20.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Bắp NK6275\"",
+              "searchTerms": "\"Bắp NK6275\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579160,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:09:07",
+      "from_date": "1755871747",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579160,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"fru den so\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:09:07",
+        "last_crawl_date": "2025-08-22T14:09:07.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"fru den so\"",
+              "searchTerms": "\"fru den so\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579663,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:09:14",
+      "from_date": "1755871754",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579663,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Cty TNHH Xuất nhập khẩu Đà Lạt\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:09:14",
+        "last_crawl_date": "2025-08-22T14:09:14.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Cty TNHH Xuất nhập khẩu Đà Lạt\"",
+              "searchTerms": "\"Cty TNHH Xuất nhập khẩu Đà Lạt\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579006,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:51:56",
+      "from_date": "1755863516",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579006,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"aeon nhân viên thái độ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:51:56",
+        "last_crawl_date": "2025-08-22T11:51:56.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"aeon nhân viên thái độ\"",
+              "searchTerms": "\"aeon nhân viên thái độ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579302,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:22:55",
+      "from_date": "1755850975",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579302,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ap duoadvance\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:22:55",
+        "last_crawl_date": "2025-08-22T08:22:55.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ap duoadvance\"",
+              "searchTerms": "\"ap duoadvance\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579519,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:52:17",
+      "from_date": "1755863537",
+      "to_date": "1756178521",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579519,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo lừa đảo\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:52:17",
+        "last_crawl_date": "2025-08-22T11:52:17.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo lừa đảo\"",
+              "searchTerms": "\"Uniqlo lừa đảo\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579369,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:05:58",
+      "from_date": "1755857158",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579369,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"phô mai cbc dị vật\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:05:58",
+        "last_crawl_date": "2025-08-22T10:05:58.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"phô mai cbc dị vật\"",
+              "searchTerms": "\"phô mai cbc dị vật\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579247,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:24:01",
+      "from_date": "1755869041",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579247,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Giám đốc phòng giao dịch Ngân hàng ACB bị tố chiếm đoạt tiền tỷ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:24:01",
+        "last_crawl_date": "2025-08-22T13:24:01.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Giám đốc phòng giao dịch Ngân hàng ACB bị tố chiếm đoạt tiền tỷ\"",
+              "searchTerms": "\"Giám đốc phòng giao dịch Ngân hàng ACB bị tố chiếm đoạt tiền tỷ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579735,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:55:40",
+      "from_date": "1755852940",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579735,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Công ty Thuận Phước Thịnh\"",
+        "action": "POST",
+        "expiry_date": "2026-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:55:40",
+        "last_crawl_date": "2025-08-22T08:55:40.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Công ty Thuận Phước Thịnh\"",
+              "searchTerms": "\"Công ty Thuận Phước Thịnh\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578991,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:39:09",
+      "from_date": "1755862749",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578991,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"vỏ Bridgstone\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:39:09",
+        "last_crawl_date": "2025-08-22T11:39:09.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"vỏ Bridgstone\"",
+              "searchTerms": "\"vỏ Bridgstone\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579557,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:03:09",
+      "from_date": "1755867789",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579557,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"màn não B\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:03:09",
+        "last_crawl_date": "2025-08-22T13:03:09.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"màn não B\"",
+              "searchTerms": "\"màn não B\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579763,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-20 22:39:49",
+      "from_date": "1755729589",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579763,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"căn hộ Saigon Boranica\"",
+        "action": "POST",
+        "expiry_date": "2026-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-20 22:39:49",
+        "last_crawl_date": "2025-08-22T10:34:39.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"căn hộ Saigon Boranica\"",
+              "searchTerms": "\"căn hộ Saigon Boranica\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579486,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:49:53",
+      "from_date": "1755863393",
+      "to_date": "1756178521",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579486,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Momo vay nặng lãi\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:49:53",
+        "last_crawl_date": "2025-08-22T11:49:53.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Momo vay nặng lãi\"",
+              "searchTerms": "\"Momo vay nặng lãi\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579598,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:35:22",
+      "from_date": "1755869722",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579598,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Khu đô thị mới cao cấp Tu Bôn\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:35:22",
+        "last_crawl_date": "2025-08-22T13:35:22.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Khu đô thị mới cao cấp Tu Bôn\"",
+              "searchTerms": "\"Khu đô thị mới cao cấp Tu Bôn\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578925,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:10:54",
+      "from_date": "1755857454",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578925,
+        "type": "CRISIS_TRACKING",
+        "keyword": "“Tiền kỹ thuật số XM”",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:10:54",
+        "last_crawl_date": "2025-08-22T10:10:54.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - “Tiền kỹ thuật số XM”",
+              "searchTerms": "“Tiền kỹ thuật số XM”",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579224,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:34:34",
+      "from_date": "1755866074",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579224,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"nganhang quocdan\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:34:34",
+        "last_crawl_date": "2025-08-22T12:34:34.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"nganhang quocdan\"",
+              "searchTerms": "\"nganhang quocdan\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579767,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:55:36",
+      "from_date": "1755852936",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579767,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"dự án Hồng Tân\"",
+        "action": "POST",
+        "expiry_date": "2026-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:55:36",
+        "last_crawl_date": "2025-08-22T08:55:36.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"dự án Hồng Tân\"",
+              "searchTerms": "\"dự án Hồng Tân\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579524,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:20:38",
+      "from_date": "1755865238",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579524,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo dịch vụ tệ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:20:38",
+        "last_crawl_date": "2025-08-22T12:20:38.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo dịch vụ tệ\"",
+              "searchTerms": "\"Uniqlo dịch vụ tệ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579348,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:12:06",
+      "from_date": "1755864726",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579348,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"TravelokaHotelHunt\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:12:06",
+        "last_crawl_date": "2025-08-22T12:12:06.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"TravelokaHotelHunt\"",
+              "searchTerms": "\"TravelokaHotelHunt\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578982,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:42:58",
+      "from_date": "1755859378",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578982,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"trung tâm xét nghiệm G\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:42:58",
+        "last_crawl_date": "2025-08-22T10:42:58.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"trung tâm xét nghiệm G\"",
+              "searchTerms": "\"trung tâm xét nghiệm G\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579317,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:55:45",
+      "from_date": "1755852945",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579317,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"thu cúc tẩy chay\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:55:45",
+        "last_crawl_date": "2025-08-22T08:55:45.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"thu cúc tẩy chay\"",
+              "searchTerms": "\"thu cúc tẩy chay\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578975,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:25:26",
+      "from_date": "1755865526",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578975,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"máy nhiệt Ariston\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:25:26",
+        "last_crawl_date": "2025-08-22T12:25:26.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"máy nhiệt Ariston\"",
+              "searchTerms": "\"máy nhiệt Ariston\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579072,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.843Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579072,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"prisomom\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-11 10:47:36",
+        "last_crawl_date": "2025-08-14T13:57:25.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"prisomom\"",
+              "searchTerms": "\"prisomom\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579254,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-21 01:12:01",
+      "from_date": "1755738721",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579254,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"giám đốc acb chiếm đoạt tài sản\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-21 01:12:01",
+        "last_crawl_date": "2025-08-22T11:26:14.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"giám đốc acb chiếm đoạt tài sản\"",
+              "searchTerms": "\"giám đốc acb chiếm đoạt tài sản\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579526,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:06:52",
+      "from_date": "1755871612",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579526,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo bán đồ xấu\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:06:52",
+        "last_crawl_date": "2025-08-22T14:06:52.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo bán đồ xấu\"",
+              "searchTerms": "\"Uniqlo bán đồ xấu\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578905,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:40:52",
+      "from_date": "1755859252",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578905,
+        "type": "CRISIS_TRACKING",
+        "keyword": "ThagriLivestock",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:40:52",
+        "last_crawl_date": "2025-08-22T10:40:52.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - ThagriLivestock",
+              "searchTerms": "ThagriLivestock",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579007,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:30:23",
+      "from_date": "1755873023",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579007,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"aeon có giòi\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:30:23",
+        "last_crawl_date": "2025-08-22T14:30:23.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"aeon có giòi\"",
+              "searchTerms": "\"aeon có giòi\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579130,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:32:08",
+      "from_date": "1755858728",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579130,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#MSBsignarure",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:32:08",
+        "last_crawl_date": "2025-08-22T10:32:08.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #MSBsignarure",
+              "searchTerms": "#MSBsignarure",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579009,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:30:13",
+      "from_date": "1755865813",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579009,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"aeon biến thái\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:30:13",
+        "last_crawl_date": "2025-08-22T12:30:13.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"aeon biến thái\"",
+              "searchTerms": "\"aeon biến thái\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579071,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 09:27:06",
+      "from_date": "1755854826",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579071,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"prisovietnam\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 09:27:06",
+        "last_crawl_date": "2025-08-22T09:27:06.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"prisovietnam\"",
+              "searchTerms": "\"prisovietnam\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579159,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:24:11",
+      "from_date": "1755851051",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579159,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"frudenso\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:24:11",
+        "last_crawl_date": "2025-08-22T08:24:11.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"frudenso\"",
+              "searchTerms": "\"frudenso\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578958,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.818Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578958,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"thuốc Miravis200SC\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-11 10:47:46",
+        "last_crawl_date": "2025-08-14T13:48:56.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"thuốc Miravis200SC\"",
+              "searchTerms": "\"thuốc Miravis200SC\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579228,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:05:44",
+      "from_date": "1755857144",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579228,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"ngân hàng N xanh biển\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:05:44",
+        "last_crawl_date": "2025-08-22T10:05:44.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"ngân hàng N xanh biển\"",
+              "searchTerms": "\"ngân hàng N xanh biển\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579744,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-21 09:37:17",
+      "from_date": "1755769037",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579744,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Công ty Phát triển bền vững KS\"",
+        "action": "POST",
+        "expiry_date": "2026-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-21 09:37:17",
+        "last_crawl_date": "2025-08-22T14:40:44.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Công ty Phát triển bền vững KS\"",
+              "searchTerms": "\"Công ty Phát triển bền vững KS\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579643,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 08:57:21",
+      "from_date": "1755853041",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579643,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"HungHau Biology\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 08:57:21",
+        "last_crawl_date": "2025-08-22T08:57:21.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"HungHau Biology\"",
+              "searchTerms": "\"HungHau Biology\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579659,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:50:40",
+      "from_date": "1755859840",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579659,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"chủ tịch võ lâm truyền kỳ\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:50:40",
+        "last_crawl_date": "2025-08-22T10:50:40.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"chủ tịch võ lâm truyền kỳ\"",
+              "searchTerms": "\"chủ tịch võ lâm truyền kỳ\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579332,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-20 19:10:31",
+      "from_date": "1755717031",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579332,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#baohiemnhanthophuhung",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-20 19:10:31",
+        "last_crawl_date": "2025-08-22T10:37:50.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #baohiemnhanthophuhung",
+              "searchTerms": "#baohiemnhanthophuhung",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579641,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:14:08",
+      "from_date": "1755868448",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579641,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Hùng Hậu Agri\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:14:08",
+        "last_crawl_date": "2025-08-22T13:14:08.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Hùng Hậu Agri\"",
+              "searchTerms": "\"Hùng Hậu Agri\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578961,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:14:34",
+      "from_date": "1755864874",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578961,
+        "type": "CRISIS_TRACKING",
+        "keyword": " \"ớt ngọt Aladin\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:14:34",
+        "last_crawl_date": "2025-08-22T12:14:34.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search -  \"ớt ngọt Aladin\"",
+              "searchTerms": " \"ớt ngọt Aladin\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578918,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:34:58",
+      "from_date": "1755869698",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578918,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"XM cháy tài khoản\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:34:58",
+        "last_crawl_date": "2025-08-22T13:34:58.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"XM cháy tài khoản\"",
+              "searchTerms": "\"XM cháy tài khoản\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579656,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 11:52:28",
+      "from_date": "1755863548",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579656,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"chủ tịch nghiện game\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 11:52:28",
+        "last_crawl_date": "2025-08-22T11:52:28.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"chủ tịch nghiện game\"",
+              "searchTerms": "\"chủ tịch nghiện game\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579010,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 13:00:59",
+      "from_date": "1755867659",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579010,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"aeon trộm cắp\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 13:00:59",
+        "last_crawl_date": "2025-08-22T13:00:59.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"aeon trộm cắp\"",
+              "searchTerms": "\"aeon trộm cắp\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579528,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:12:41",
+      "from_date": "1755864761",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579528,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"vascara bán đồ xấu\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:12:41",
+        "last_crawl_date": "2025-08-22T12:12:41.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"vascara bán đồ xấu\"",
+              "searchTerms": "\"vascara bán đồ xấu\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578983,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:24:18",
+      "from_date": "1755865458",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578983,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"trung tâm xét nghiệm GS\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:24:18",
+        "last_crawl_date": "2025-08-22T12:24:18.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"trung tâm xét nghiệm GS\"",
+              "searchTerms": "\"trung tâm xét nghiệm GS\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579521,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:24:11",
+      "from_date": "1755865451",
+      "to_date": "1756178521",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579521,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"Uniqlo tẩy chay\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:24:11",
+        "last_crawl_date": "2025-08-22T12:24:11.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"Uniqlo tẩy chay\"",
+              "searchTerms": "\"Uniqlo tẩy chay\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579337,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 12:20:09",
+      "from_date": "1755865209",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579337,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#bhphuhung",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 12:20:09",
+        "last_crawl_date": "2025-08-22T12:20:09.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #bhphuhung",
+              "searchTerms": "#bhphuhung",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 579077,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-19T03:22:00.843Z",
+      "from_date": "1755573720",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 579077,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"prisoPrestige\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-14 13:48:58",
+        "last_crawl_date": "2025-08-14T13:48:58.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"prisoPrestige\"",
+              "searchTerms": "\"prisoPrestige\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578988,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 14:19:36",
+      "from_date": "1755872376",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578988,
+        "type": "CRISIS_TRACKING",
+        "keyword": "\"vỏ xe Bridgstone\"",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 14:19:36",
+        "last_crawl_date": "2025-08-22T14:19:36.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - \"vỏ xe Bridgstone\"",
+              "searchTerms": "\"vỏ xe Bridgstone\"",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  },
+  {
+    "source": {
+      "id": 578903,
+      "retries": 0,
+      "delay_time_rules": [],
+      "last_data_date": "2025-08-22 10:37:12",
+      "from_date": "1755859032",
+      "to_date": "1756178520",
+      "platform": 3,
+      "createdBy": "NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader",
+      "crawledPages": 0,
+      "keyword_info": {
+        "id": 578903,
+        "type": "CRISIS_TRACKING",
+        "keyword": "#ThacoAgriculture",
+        "action": "POST",
+        "expiry_date": "2025-12-31T16:59:59.000Z",
+        "last_crawl_cursor": "2025-08-22 10:37:12",
+        "last_crawl_date": "2025-08-22T10:37:12.000Z",
+        "updated_date_keyword": null
+      }
+    },
+    "data": {
+      "data": {
+        "kind": "customsearch#search",
+        "queries": {
+          "request": [
+            {
+              "title": "Google Custom Search - #ThacoAgriculture",
+              "searchTerms": "#ThacoAgriculture",
+              "count": 10,
+              "startIndex": 1,
+              "inputEncoding": "utf8",
+              "outputEncoding": "utf8",
+              "safe": "off",
+              "cx": "c60fd239f1bae4f01",
+              "sort": "date"
+            }
+          ]
+        },
+        "context": {
+          "title": "ynm-search-engine"
+        }
+      },
+      "crawlerType": "api"
+    }
+  }
+]

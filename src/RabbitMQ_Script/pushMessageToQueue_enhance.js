@@ -139,10 +139,10 @@ async function getQueueInfo(
 
 
 async function main() {
-    const messageLimit = 4831;
-    const jsonFilePath= 'batch_messages_2025-08-25T04-45-34-019Z/all_processed_messages.json';
+    const messageLimit = 50;
+    const jsonFilePath= 'messages_peek_crawled_sources_fail.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'testing.cl.tr.reply_posts_crawling_sources';
+    const queueName = 'testing.cl.news.article_urls_from_crisis_keyword_by_api_crawled_sources';
     const username = 'lamtt';
     const password = 'lamtt';
     const vhost = '/';
