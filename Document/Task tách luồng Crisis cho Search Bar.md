@@ -129,9 +129,82 @@ node scripts/articlesV3/search_brand_campaign_keywords_youtube_search_bar.js
 
 ynmpdp-5129-ytb-crisis-staging-crawler-empty-container
 kubectl get pods -n crawler-staging | grep ynmpdp-5129-ytb-crisis-staging-crawler-empty-container
-kubectl exec -it ynmpdp-5134-testing-ynm-crawler-empty-5c99fc65f8-2vv62 -n crawler-staging -- sh
+kubectl exec -it ynmpdp-5129-ytb-crisis-staging-crawler-empty-container-857zxr4w -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
 
 
+## Câu SQL update
+
+UPDATE monitoring_master.monitor_keywords
+SET status = 'DONE'
+WHERE platform = 'YOUTUBE'
+  AND type = 'CRISIS_TRACKING'
+  AND status IN ( 'IDLE', 'UPDATING');
 
 
+
+
+# Các data sau khi crawl
+
+## Luồng search bar
+
+// Luồng non Crisis Youtube
+
+articles:
+{
+  "id": "6abf06f5-df4c-5b75-b308-9570ef674703",
+  "platform": 7,
+  "id_category": "0",
+  "id_source": "youtube.com",
+  "link": "https://www.youtube.com/watch?v=PrxnTWZtnH4",
+  "title": "MORSE CODE/EM XINH \"SAY HI\"💖LAMON-PHƯƠNG MỸ CHI-ORANGE-PHÁO/#emxinhsayhi#music#vieon #diana",
+  "views_avg": 0,
+  "priority": 2,
+  "status": 1,
+  "failed_type": 1,
+  "count_failed": 0,
+  "crawled_date": "1970-01-01T00:00:00Z",
+  "_version_": 1841773678732247000,
+  "next_crawl_time": "2025-08-29T07:24:14.009Z",
+  "created_date": "2025-08-29T07:24:14.009Z"
+}
+
+// Luồng Crisis Youtube
+
+
+## Luồng crawl detail
+
+// Luồng non Crisis Youtube
+
+
+articles
+
+
+
+
+
+mentions
+
+
+
+
+youtube_posts
+
+
+
+// Luồng Crisis Youtube
+
+
+
+articles
+
+
+
+
+mentions
+
+
+
+
+
+youtube_posts

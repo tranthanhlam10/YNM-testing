@@ -317,3 +317,11 @@ yarn start --scope=@ynm/cl-news-source-updater-service
 ynm-cl-news-crisis-keyword-by-api-service-testing
 ynm-cl-news-crawling-loader-service-testing
 ynm-cl-news-source-updater-service-testing
+
+
+
+# Check lại ở testing
+
+ynm-cl-news-crisis-keyword-by-api-service-staging
+ynm-cl-news-crawling-loader-service-staging
+ynm-cl-news-source-updater-service-staging
