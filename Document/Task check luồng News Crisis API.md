@@ -322,6 +322,6 @@ ynm-cl-news-source-updater-service-testing
 
 # Check lại ở testing
 
-ynm-cl-news-crisis-keyword-by-api-service-staging
-ynm-cl-news-crawling-loader-service-staging
-ynm-cl-news-source-updater-service-staging
+ynm-cl-news-crisis-keyword-by-api-service-staging -> Hiện tại đã xử lý đúng với yêu cầu 
+ynm-cl-news-crawling-loader-service-staging-> Hiện tại đã load lên đúng với yêu cầu
+ynm-cl-news-source-updater-service-staging -> Hiện tại đã được xử lý đúng yêu cầu
