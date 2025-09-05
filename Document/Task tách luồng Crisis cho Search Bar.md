@@ -129,7 +129,7 @@ node scripts/articlesV3/search_brand_campaign_keywords_youtube_search_bar.js
 
 ynmpdp-5129-ytb-crisis-staging-crawler-empty-container
 kubectl get pods -n crawler-staging | grep ynmpdp-5129-ytb-crisis-staging-crawler-empty-container
-kubectl exec -it ynmpdp-5129-ytb-crisis-staging-crawler-empty-container-857zxr4w -n crawler-staging -- sh
+kubectl exec -it ynmpdp-5129-ytb-crisis-staging-crawler-empty-container-7bc5rkxv -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
 
 
