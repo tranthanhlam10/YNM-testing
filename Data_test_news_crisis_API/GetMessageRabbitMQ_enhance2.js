@@ -170,7 +170,7 @@ const stagingHTTP = 'https';
 const testDomain= 'rabbitmq-testing.ynm.local';
 const stagingDomain= 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.tr.keyword_posts_no_cookie_crawled_sources";
+const queueName = "staging.cl.tr.source_posts_no_cookie_crawled_sources";
 
 
 const userName = 'lamtt'; 
@@ -184,5 +184,5 @@ peekMessagesAndSaveToCSV(
   queueName, 
   userName, 
   stagingPassword,
-  1000
+  2
 );

@@ -70,8 +70,7 @@ WHERE `type` = 'CRISIS_TRACKING'
         OR `last_crawl_date` < NOW() - INTERVAL 30 MINUTE)
     AND `expiry_date` > NOW()
 ORDER BY last_crawl_date ASC
-LIMIT 10
-OFFSET 0
+
 
 
 
@@ -268,6 +267,9 @@ yarn start --scope=@ynm/cl-news-data-pusher-service
 ## Source updater
 export NODE_ENV=testing
  
+
+export HTTP_PORT=9996
+export GRPC_PORT=9011 
 export CRISIS_KEYWORD_UPDATER_ENABLE=true
 export CRISIS_KEYWORD_UPDATER_INPUT_EXCHANGE=cl.news.resolved_source
 export CRISIS_KEYWORD_UPDATER_ROUTING_KEY=cl.3.*.*.updated_crisis_keyword
@@ -325,3 +327,10 @@ ynm-cl-news-source-updater-service-testing
 ynm-cl-news-crisis-keyword-by-api-service-staging -> Hiện tại đã xử lý đúng với yêu cầu 
 ynm-cl-news-crawling-loader-service-staging-> Hiện tại đã load lên đúng với yêu cầu
 ynm-cl-news-source-updater-service-staging -> Hiện tại đã được xử lý đúng yêu cầu
+
+
+
+hotfix-ynmpdp-5134-staging-ynm-crawler-empty
+kubectl get pods -n crawler-staging | grep hotfix-ynmpdp-5134-staging-ynm-crawler-empty
+kubectl exec -it hotfix-ynmpdp-5134-staging-ynm-crawler-empty-65ff77c94-jlw4w -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh

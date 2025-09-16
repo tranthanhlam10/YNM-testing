@@ -1,0 +1,2099 @@
+[
+  {
+    "source": {
+      "id": "65349095089",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 4
+        },
+        {
+          "lte": 1440,
+          "delay": 12
+        },
+        {
+          "lte": 2160,
+          "delay": 18
+        },
+        {
+          "lte": 999999999,
+          "delay": 32
+        }
+      ],
+      "last_data_date": "2025-07-05T00:32:05Z",
+      "from_date": "1751675525",
+      "to_date": "1756223053",
+      "platform": 10,
+      "createdBy": "ThreadsSourcePostNoCookieCrawlingLoader",
+      "link": "threads.net/@lee.mylink",
+      "id_social": "65349095089",
+      "is_first_crawled": false,
+      "mapping_id": "65349095089",
+      "username": "lee.mylink"
+    },
+    "data": {
+      "data": {
+        "mediaData": {
+          "edges": [
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3669642738258984249",
+                      "id": "3669642738258984249_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Dạo này ngày nào cũng ngủ mơ ác mộng, tỉnh dậy mệt ơi là mệt :( bt khó ngủ tý thui mà ngủ đc là ngủ ngon á. H đến ngủ cũng ko yên nữa",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Dạo này ngày nào cũng ngủ mơ ác mộng, tỉnh dậy mệt ơi là mệt :( bt khó ngủ tý thui mà ngủ đc là ngủ ngon á. H đến ngủ cũng ko yên nữa",
+                        "pk": "18520571380044316",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DLtMKC6hL05",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 8,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1751675525,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjY5NjQyNzM4MjU4OTg0MjQ5In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3669642738258984249",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3657797750588000468",
+                      "id": "3657797750588000468_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Người ngợm dừ dẫm, mệt ghê Linh ạ",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 1,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Người ngợm dừ dẫm, mệt ghê Linh ạ",
+                        "pk": "17976226835731206",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DLDG6ygBUjU",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 7,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1750263492,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjU3Nzk3NzUwNTg4MDAwNDY4In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3657797750588000468",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3636005406939481667",
+                      "id": "3636005406939481667_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "chúng ta từng chỉ biết có nhau – như thể chẳng gì có thể chen vào.\nnhưng đến một lúc, lời nói ít đi, ánh mắt cũng khác, và mọi thứ cứ thế… trôi xa.",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "chúng ta từng chỉ biết có nhau – như thể chẳng gì có thể chen vào.\nnhưng đến một lúc, lời nói ít đi, ánh mắt cũng khác, và mọi thứ cứ thế… trôi xa.",
+                        "pk": "17874852084244041",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DJ1r6c6BwZD",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 4,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1747665643,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjM2MDA1NDA2OTM5NDgxNjY3In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3636005406939481667",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3633893238458688302",
+                      "id": "3633893238458688302_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "\"Cách tốt nhất để bảo vệ bản thân chính là không bao giờ phỏng đoán địa vị của chính mình trong lòng người khác : không hy vọng, không kỳ vọng, không tham vọng cũng không trông chờ, thì sao có thể thất vọng.\"",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 1,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "\"Cách tốt nhất để bảo vệ bản thân chính là không bao giờ phỏng đoán địa vị của chính mình trong lòng người khác : không hy vọng, không kỳ vọng, không tham vọng cũng không trông chờ, thì sao có thể thất vọng.\"",
+                        "pk": "18081178216777003",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DJuLqWuBiMu",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 3,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1747413852,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjMzODkzMjM4NDU4Njg4MzAyIn0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3633893238458688302",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3633847283214488976",
+                      "id": "3633847283214488976_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "em từng nghĩ mình chỉ cần ai đó đến và yêu em đủ nhiều để lấp đầy những tổn thương.\nnhưng rồi em nhận ra – chỉ có chính em mới thật sự cứu được mình.",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "em từng nghĩ mình chỉ cần ai đó đến và yêu em đủ nhiều để lấp đầy những tổn thương.\nnhưng rồi em nhận ra – chỉ có chính em mới thật sự cứu được mình.",
+                        "pk": "18026169884679906",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DJuBNnkBJWQ",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 7,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1747408374,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjMzODQ3MjgzMjE0NDg4OTc2In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3633847283214488976",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3617079827385230371",
+                      "id": "3617079827385230371_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "“Càng lớn, chúng ta càng trở nên im lặng khi buồn.”\n\"Những người lớn cô đơn” – Nguyễn Ngọc Thạch\n\nHồi bé, buồn là có thể òa khóc ngay.\nLớn rồi, buồn là chỉ biết thở dài thật khẽ trong đêm.\n\nTa dần quen với việc ôm lấy nỗi niềm mà chẳng còn ai để kể.\nNhững ký ức cũ, những ngày từng vô tư,\ngiờ chỉ còn là tiếng vang lặng lẽ nơi góc tim.",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "“Càng lớn, chúng ta càng trở nên im lặng khi buồn.”\n\"Những người lớn cô đơn” – Nguyễn Ngọc Thạch\n\nHồi bé, buồn là có thể òa khóc ngay.\nLớn rồi, buồn là chỉ biết thở dài thật khẽ trong đêm.\n\nTa dần quen với việc ôm lấy nỗi niềm mà chẳng còn ai để kể.\nNhững ký ức cũ, những ngày từng vô tư,\ngiờ chỉ còn là tiếng vang lặng lẽ nơi góc tim.",
+                        "pk": "18042936728411501",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DIycvBbhyQj",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 4,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1745409538,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjE3MDc5ODI3Mzg1MjMwMzcxIn0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3617079827385230371",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3614552488969489836",
+                      "id": "3614552488969489836_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Chúng ta thường nhìn thấy vết nứt của người khác\nqua những biểu hiện vụng về –\nnhưng lại không nhìn ra được nỗi buồn\ntrong nụ cười đã được họ luyện tập rất nhiều lần.",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Chúng ta thường nhìn thấy vết nứt của người khác\nqua những biểu hiện vụng về –\nnhưng lại không nhìn ra được nỗi buồn\ntrong nụ cười đã được họ luyện tập rất nhiều lần.",
+                        "pk": "17859387096402093",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DIpeFaHB82s",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 8,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1745108255,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjE0NTUyNDg4OTY5NDg5ODM2In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3614552488969489836",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3611718723578516535",
+                      "id": "3611718723578516535_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "“Tình yêu không phải lúc nào cũng là hoa hồng và mật ngọt…\nMà là khi ta nhìn thấy nhau trong mệt mỏi, vụn vỡ nhất –\n…vẫn muốn ở lại, vẫn chọn thương nhau.”\n\nVốn dĩ, tình yêu rất thực tế.\nYêu không phải để đẹp lòng, mà là để cùng nhau lớn lên.\n\n#TìnhYêuThậtSự #Guitoicuavesau",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": {
+                          "display_name": "Gửi Tôi Của Về Sau",
+                          "id": "18449048377072115"
+                        },
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "“Tình yêu không phải lúc nào cũng là hoa hồng và mật ngọt…\nMà là khi ta nhìn thấy nhau trong mệt mỏi, vụn vỡ nhất –\n…vẫn muốn ở lại, vẫn chọn thương nhau.”\n\nVốn dĩ, tình yêu rất thực tế.\nYêu không phải để đẹp lòng, mà là để cùng nhau lớn lên.\n\n#TìnhYêuThậtSự #Guitoicuavesau",
+                        "pk": "17860207323329215",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DIfZwsbhlQ3",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 9,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1744770444,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNjExNzE4NzIzNTc4NTE2NTM1In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3611718723578516535",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3599552022531297955",
+                      "id": "3599552022531297955_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "#Guitoicuavesau #LingLung\n\nChào bạn, đây là nơi để ta dừng lại một chút – giữa bộn bề.\nViết cho chính mình những ngày không ổn.\nĐể một ‘tôi’ của về sau được an yên hơn…",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": {
+                          "display_name": "Gửi Tôi Của Về Sau",
+                          "id": "18449048377072115"
+                        },
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "#Guitoicuavesau #LingLung\n\nChào bạn, đây là nơi để ta dừng lại một chút – giữa bộn bề.\nViết cho chính mình những ngày không ổn.\nĐể một ‘tôi’ của về sau được an yên hơn…",
+                        "pk": "18076951246689139",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DH0LX5FhFKj",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 8,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1743320061,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTk5NTUyMDIyNTMxMjk3OTU1In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3599552022531297955",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3587382028485829978",
+                      "id": "3587382028485829978_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Em phải tin rằng trên thế giới này sẽ luôn có người bằng lòng dùng cách mộc mạc nhất để yêu em, không phải tán tỉnh cũng chẳng phải chiêu trò, mà là chỉ muốn đối tốt với em, lo lắng cho em.\n\n(Cre: Warmth)",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Em phải tin rằng trên thế giới này sẽ luôn có người bằng lòng dùng cách mộc mạc nhất để yêu em, không phải tán tỉnh cũng chẳng phải chiêu trò, mà là chỉ muốn đối tốt với em, lo lắng cho em.\n\n(Cre: Warmth)",
+                        "pk": "18090209098560615",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DHI8PK5hKVa",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 7,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1741869284,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTg3MzgyMDI4NDg1ODI5OTc4In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3587382028485829978",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3585922713472387129",
+                      "id": "3585922713472387129_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Nói nhớ Hn thì cũng ko đúng, nhưng mỗi lần phải nghĩ ăn gì bây giờ lại thèm đồ HN dã man :(( \nKo phải SG ko có đồ ngon nhưng mà để đc ăn ngon thì phải đi rõ xa và cũng đắt nữa\nỞ HN thì bước ra đầu ngõ là có hàng ăn ngon r ý :((",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Nói nhớ Hn thì cũng ko đúng, nhưng mỗi lần phải nghĩ ăn gì bây giờ lại thèm đồ HN dã man :(( \nKo phải SG ko có đồ ngon nhưng mà để đc ăn ngon thì phải đi rõ xa và cũng đắt nữa\nỞ HN thì bước ra đầu ngõ là có hàng ăn ngon r ý :((",
+                        "pk": "18093757969553252",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DHDwbV4hsg5",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 14,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1741695320,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTg1OTIyNzEzNDcyMzg3MTI5In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3585922713472387129",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3579465811368825027",
+                      "id": "3579465811368825027_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Rất nhiều lúc mình chẳng muốn nói chuyện.\nMặc kệ mn nghĩ gì, xấu tốt gì cũng được. \nCũng không phải thành phật mà ko bận tâm, chỉ là ko biết nói từ đâu và bắt đầu kết thúc ntn\nCuối cùng, ngoài lặng thinh thì chẳng còn biết làm gì nữa í",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 1,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Rất nhiều lúc mình chẳng muốn nói chuyện.\nMặc kệ mn nghĩ gì, xấu tốt gì cũng được. \nCũng không phải thành phật mà ko bận tâm, chỉ là ko biết nói từ đâu và bắt đầu kết thúc ntn\nCuối cùng, ngoài lặng thinh thì chẳng còn biết làm gì nữa í",
+                        "pk": "18029319146623234",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DGs0TDMS1DD",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 12,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1740925598,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTc5NDY1ODExMzY4ODI1MDI3In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3579465811368825027",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3537562527918150286",
+                      "id": "3537562527918150286_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "“Mất đi mong muốn chia sẻ chính là khởi đầu của việc tan vỡ.”\n\nBạn có biết không, tình yêu của bạn không biến mất vào ngày nói chia tay, nó lặng lẽ tiêu tan trong những đêm thâu ngập ngừng muốn nói lại thôi và trong những khoảnh khắc muốn nói ra nhưng không được đối phương đón nhận.\n\nHãy đến gặp những cặp vợ chồng đối diện với cuộc hôn nhân đang trên đà đổ vỡ có mối quan hệ nào mà không kết thúc trong tình trạng không còn gì để nói và không muốn nói gì thêm...",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 4,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "“Mất đi mong muốn chia sẻ chính là khởi đầu của việc tan vỡ.”\n\nBạn có biết không, tình yêu của bạn không biến mất vào ngày nói chia tay, nó lặng lẽ tiêu tan trong những đêm thâu ngập ngừng muốn nói lại thôi và trong những khoảnh khắc muốn nói ra nhưng không được đối phương đón nhận.\n\nHãy đến gặp những cặp vợ chồng đối diện với cuộc hôn nhân đang trên đà đổ vỡ có mối quan hệ nào mà không kết thúc trong tình trạng không còn gì để nói và không muốn nói gì thêm...",
+                        "pk": "18091633573518059",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DEX8mBXS1KO",
+                      "image_versions2": {
+                        "candidates": [
+                          {
+                            "height": 1200,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfYNqtrsWQ2Qgzf2hX-FFBCbqqd1-hZVF78exG8EO0vC7w&oe=68C415A9&_nc_sid=d92198",
+                            "width": 1200
+                          },
+                          {
+                            "height": 1080,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_Afba3JKpUEZNOEiWG5pfh7a3tOKG1fH_PdASPNTQNEgwZQ&oe=68C415A9&_nc_sid=d92198",
+                            "width": 1080
+                          },
+                          {
+                            "height": 720,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s720x720_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_Afbqei7qha06Ri-o2l9rbbUKMRyxTBJPuzUxBsf7uxF7xw&oe=68C415A9&_nc_sid=d92198",
+                            "width": 720
+                          },
+                          {
+                            "height": 640,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfbIk6g1QmHdOlFaXd0aOSbSisqZOtluvEoV13OMdRaT6Q&oe=68C415A9&_nc_sid=d92198",
+                            "width": 640
+                          },
+                          {
+                            "height": 480,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfbbxGIJA_J9O-qSuy62JMI6vGMQ-Udmsz9tae4fZWr5vg&oe=68C415A9&_nc_sid=d92198",
+                            "width": 480
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfZU_Lq-mEMyusEg_uOKKu_-9hzWxmkw_84eMRhKCV4iHw&oe=68C415A9&_nc_sid=d92198",
+                            "width": 320
+                          },
+                          {
+                            "height": 240,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfZtA6GsjYT1RYi4fmmM7-hHJ2vIABy91el0dJsKP8JKaQ&oe=68C415A9&_nc_sid=d92198",
+                            "width": 240
+                          },
+                          {
+                            "height": 1080,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_Afba3JKpUEZNOEiWG5pfh7a3tOKG1fH_PdASPNTQNEgwZQ&oe=68C415A9&_nc_sid=d92198",
+                            "width": 1080
+                          },
+                          {
+                            "height": 750,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s750x750_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfbX229-XM-clgYaN4wCaMM9T9PcjhAKfR5M66cliv6Ptw&oe=68C415A9&_nc_sid=d92198",
+                            "width": 750
+                          },
+                          {
+                            "height": 640,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfbIk6g1QmHdOlFaXd0aOSbSisqZOtluvEoV13OMdRaT6Q&oe=68C415A9&_nc_sid=d92198",
+                            "width": 640
+                          },
+                          {
+                            "height": 480,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfbbxGIJA_J9O-qSuy62JMI6vGMQ-Udmsz9tae4fZWr5vg&oe=68C415A9&_nc_sid=d92198",
+                            "width": 480
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfZU_Lq-mEMyusEg_uOKKu_-9hzWxmkw_84eMRhKCV4iHw&oe=68C415A9&_nc_sid=d92198",
+                            "width": 320
+                          },
+                          {
+                            "height": 240,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_AfZtA6GsjYT1RYi4fmmM7-hHJ2vIABy91el0dJsKP8JKaQ&oe=68C415A9&_nc_sid=d92198",
+                            "width": 240
+                          },
+                          {
+                            "height": 150,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t51.29350-15/472483023_1774251399976120_7183948866350944897_n.jpg?stp=dst-jpg_e35_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTIwMHgxMjAwLnNkci5mMjkzNTAuZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=dF2FkI_rTkgQ7kNvwFJa6Cy&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&ig_cache_key=MzUzNzU2MjUyNzkxODE1MDI4Ng%3D%3D.3-ccb7-5&oh=00_Afa8OpxAFyFQRBhxGlqeh4Cmetty_bkGaYvCpJ3hYISDmA&oe=68C415A9&_nc_sid=d92198",
+                            "width": 150
+                          }
+                        ]
+                      },
+                      "original_height": 1200,
+                      "original_width": 1200,
+                      "accessibility_caption": "No photo description available.",
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 1,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 6,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1735930337,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTM3NTYyNTI3OTE4MTUwMjg2In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  },
+                  {
+                    "post": {
+                      "pk": "3537563973484861558",
+                      "id": "3537563973484861558_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Không cần biết bạn có thích nghe hay không, có muốn nghe hay không, có thể hiểu được hay không, miễn là bạn vẫn trân trọng mối quan hệ giữa hai người, thì hãy nâng niu giữ gìn nó. Cũng giống như tuy bạn biết rằng người khác chưa hẳn có thể hiểu được cảm xúc của bạn, nhưng bạn luôn mong đợi rằng ai đó sẽ hiểu.",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": {
+                          "username": "lee.mylink",
+                          "id": "65349095089"
+                        },
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": {
+                          "pk": "65349095089",
+                          "id": "65349095089"
+                        },
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": true,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Không cần biết bạn có thích nghe hay không, có muốn nghe hay không, có thể hiểu được hay không, miễn là bạn vẫn trân trọng mối quan hệ giữa hai người, thì hãy nâng niu giữ gìn nó. Cũng giống như tuy bạn biết rằng người khác chưa hẳn có thể hiểu được cảm xúc của bạn, nhưng bạn luôn mong đợi rằng ai đó sẽ hiểu.",
+                        "pk": "17891584059144234",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DEX87DpyNh2",
+                      "image_versions2": {
+                        "candidates": []
+                      },
+                      "original_height": 612,
+                      "original_width": 612,
+                      "accessibility_caption": null,
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 19,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 1,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1735930509,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTM3NTYzOTczNDg0ODYxNTU4In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3537562527918150286",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3529242422062422148",
+                      "id": "3529242422062422148_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "Đôi khi bạn chỉ cần một ai đó cùng đi qua những tháng ngày yên ả, bình lặng ở bên nhau, hiểu nhau kể cả khi không nói điều gì, bạn cần một người đứng về phía mình mà không cần bạn phải đòi hỏi, một người hiểu khi nào bạn cần một mình, sẵn sàng cùng bạn nghe một bản nhạc yêu thích qua nhiều mùa hè.\n\n-st-",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "Đôi khi bạn chỉ cần một ai đó cùng đi qua những tháng ngày yên ả, bình lặng ở bên nhau, hiểu nhau kể cả khi không nói điều gì, bạn cần một người đứng về phía mình mà không cần bạn phải đòi hỏi, một người hiểu khi nào bạn cần một mình, sẵn sàng cùng bạn nghe một bản nhạc yêu thích qua nhiều mùa hè.\n\n-st-",
+                        "pk": "18053905336975970",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DD6Y0i9RRiE",
+                      "image_versions2": {
+                        "candidates": [
+                          {
+                            "height": 2048,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfYL2_CkhouNVNOBtQnq9lcNAf5Zg6sA4QZVawLp8tJ8aw&oe=68C409CD&_nc_sid=d92198",
+                            "width": 1350
+                          },
+                          {
+                            "height": 1638,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfYP8Uo0dVVus-mgE7XatAX6R2Xpv2knRaEK9T0MiNLRdQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 1080
+                          },
+                          {
+                            "height": 1092,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_p720x720_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_Afby-DCXbmGPkol6hrHxJRnT6UUs2zcaHm6vDUYG_AN-Bg&oe=68C409CD&_nc_sid=d92198",
+                            "width": 720
+                          },
+                          {
+                            "height": 971,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_Afav-pjBr7capvFi9JF2XZtjLfRuZjxdMRCnND8l9Ba-PQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 640
+                          },
+                          {
+                            "height": 728,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_p480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfafOAP9kzfqDaju7uL9VDoyslEbgDA4vDGca5IzepZ4YQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 480
+                          },
+                          {
+                            "height": 485,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_p320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfZBoDbaX2Y0WOlP2JfAYDu4LMsO9dBWB7Et5Xlxb43wTg&oe=68C409CD&_nc_sid=d92198",
+                            "width": 320
+                          },
+                          {
+                            "height": 364,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=dst-jpg_e35_p240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_Afan9Dhdxrv6rerCCPe4b92V4AjgVSdJTJfDEcYBmBJKIQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 240
+                          },
+                          {
+                            "height": 1080,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfaTE-qAs4GrbM897cAK3FAhNaZhEzIBiGQKieH8-R5MIg&oe=68C409CD&_nc_sid=d92198",
+                            "width": 1080
+                          },
+                          {
+                            "height": 750,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s750x750_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_Afb_q7n8kafIz7blipEO-vcrVEbXPH18aS6GyYN6p0e3-Q&oe=68C409CD&_nc_sid=d92198",
+                            "width": 750
+                          },
+                          {
+                            "height": 640,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfaYRCiKyWtBlPuovXPzCIreMfUSeb2aleRtm9eT-N-xiQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 640
+                          },
+                          {
+                            "height": 480,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfZGc60IcJ0wjBsh7B4kpwTJYq6gWEpPlmR_le2V4w0Mmg&oe=68C409CD&_nc_sid=d92198",
+                            "width": 480
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_AfZuqxfUUMx7J-SuGSrbrnEIl4u1rGhDw-h8t1FW72hqLQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 320
+                          },
+                          {
+                            "height": 240,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_Afbdbs9zTk-D4XA-wBEmr9x12UgjUwcBf3JSgEs0_IebKg&oe=68C409CD&_nc_sid=d92198",
+                            "width": 240
+                          },
+                          {
+                            "height": 150,
+                            "url": "https://instagram.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/471238062_9639641639384098_6610720591227020304_n.jpg?stp=c0.349.1350.1350a_dst-jpg_e35_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM1MHgyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-10.fna.fbcdn.net&_nc_cat=110&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=016rzWapqSAQ7kNvwEAf2Ea&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyOTI0MjQyMjA2MjQyMjE0OA%3D%3D.3-ccb7-5&oh=00_Afa-GSCVHshjAPMP2aF-NkWx-xb66u-I3A7oxosrl-rVBQ&oe=68C409CD&_nc_sid=d92198",
+                            "width": 150
+                          }
+                        ]
+                      },
+                      "original_height": 2048,
+                      "original_width": 1350,
+                      "accessibility_caption": "No photo description available.",
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 1,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 12,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1734938503,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTI5MjQyNDIyMDYyNDIyMTQ4In0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3529242422062422148",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            },
+            {
+              "node": {
+                "thread_items": [
+                  {
+                    "post": {
+                      "pk": "3527910318283580911",
+                      "id": "3527910318283580911_65349095089",
+                      "user": {
+                        "friendship_status": null,
+                        "pk": "65349095089",
+                        "profile_pic_url": "https://instagram.fsgn5-5.fna.fbcdn.net/v/t51.2885-19/432797377_7553852034636032_8573603289103782766_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fsgn5-5.fna.fbcdn.net&_nc_cat=108&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=9ZBBk1WwsXsQ7kNvwGudeAh&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEBAAAA&ccb=7-5&oh=00_AfalMEoFhRXu0fKX-6iFe0AbQLKuLs2DI2syalr9zOy2-A&oe=68C434C3&_nc_sid=d92198",
+                        "username": "lee.mylink",
+                        "id": "65349095089",
+                        "full_name": "Linh Linh",
+                        "transparency_label": null,
+                        "transparency_product": null,
+                        "transparency_product_enabled": false,
+                        "is_verified": false,
+                        "text_post_app_is_private": false,
+                        "has_onboarded_to_text_post_app": true
+                      },
+                      "text_post_app_info": {
+                        "show_header_follow": false,
+                        "is_spoiler_media": false,
+                        "is_markup": false,
+                        "custom_feed_preview_info": null,
+                        "link_preview_attachment": null,
+                        "linked_inline_media": null,
+                        "special_effects_enabled_str": "",
+                        "text_fragments": {
+                          "fragments": [
+                            {
+                              "fragment_type": "plaintext",
+                              "link_fragment": null,
+                              "mention_fragment": null,
+                              "plaintext": "• Nhà văn Murakami Haruki đã từng nói:\n“Con người ta không phải là dần dần trở nên già đi, mà là trở nên già đi chỉ trong nháy mắt“. Con người trở nên già đi, không phải bắt đầu từ nếp nhăn đầu tiên, hay cọng tóc bạc đầu tiên, mà là bắt đầu từ ngay cái thời khắc buông bỏ chính mình. Chỉ có những ai không từ bỏ chính mình, mới có thể sống thành người không sợ già, và cũng sẽ không thấy mình già đi.",
+                              "tag_fragment": null,
+                              "linkified_web_url": null,
+                              "styling_info": null
+                            }
+                          ]
+                        },
+                        "reshare_count": null,
+                        "direct_reply_count": 0,
+                        "repost_count": 0,
+                        "quote_count": 0,
+                        "share_info": {
+                          "quoted_attachment_author_attribution_allowed": true,
+                          "quoted_attachment_post_unavailable": false,
+                          "quoted_attachment_post": null,
+                          "quoted_post": null,
+                          "reposted_post": null
+                        },
+                        "reply_to_author": null,
+                        "reply_control": "everyone",
+                        "private_reply_partner": null,
+                        "self_thread_count": 0,
+                        "tag_header": null,
+                        "root_post_author": null,
+                        "pinned_post_info": {
+                          "is_pinned_to_parent_post": false,
+                          "is_pinned_to_profile": false
+                        },
+                        "related_trends_info": null,
+                        "is_reply": false,
+                        "is_post_unavailable": false,
+                        "post_unavailable_reason": null,
+                        "hush_info": null
+                      },
+                      "is_paid_partnership": null,
+                      "audio": null,
+                      "caption": {
+                        "text": "• Nhà văn Murakami Haruki đã từng nói:\n“Con người ta không phải là dần dần trở nên già đi, mà là trở nên già đi chỉ trong nháy mắt“. Con người trở nên già đi, không phải bắt đầu từ nếp nhăn đầu tiên, hay cọng tóc bạc đầu tiên, mà là bắt đầu từ ngay cái thời khắc buông bỏ chính mình. Chỉ có những ai không từ bỏ chính mình, mới có thể sống thành người không sợ già, và cũng sẽ không thấy mình già đi.",
+                        "pk": "18036083294375318",
+                        "has_translation": true
+                      },
+                      "caption_is_edited": false,
+                      "transcription_data": null,
+                      "carousel_media": null,
+                      "code": "DD1p74oumXv",
+                      "image_versions2": {
+                        "candidates": [
+                          {
+                            "height": 2048,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfbaGhF48IAg7Mu1QeNYrcomVJyYpHCSQN9NyAwuG2A9sQ&oe=68C437F3&_nc_sid=d92198",
+                            "width": 1362
+                          },
+                          {
+                            "height": 1624,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_Afb1mf47i8ZnmpddtgXhWHzrz3elmF0HmCqc2hn7UQ-uAw&oe=68C437F3&_nc_sid=d92198",
+                            "width": 1080
+                          },
+                          {
+                            "height": 1083,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_p720x720_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_Afa9iLN_U7RYgDlLBhrb-wHQlQamobm8CmYMNtquAufNRA&oe=68C437F3&_nc_sid=d92198",
+                            "width": 720
+                          },
+                          {
+                            "height": 962,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfYzo0N5HVEsubn7jaKwHmFLqZef82OKF1ftKLBLvkBLwA&oe=68C437F3&_nc_sid=d92198",
+                            "width": 640
+                          },
+                          {
+                            "height": 722,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_p480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_Afbm8fHJZMhrqRM7rPAFdUus4rQ5st2ebOyc-6vKfw6Fug&oe=68C437F3&_nc_sid=d92198",
+                            "width": 480
+                          },
+                          {
+                            "height": 481,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_p320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfZYJFx5j_Mcy6JSyshhCAuxzQi7AL1rP_Jh0IjgWgwUlA&oe=68C437F3&_nc_sid=d92198",
+                            "width": 320
+                          },
+                          {
+                            "height": 361,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=dst-jpg_e35_p240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfaRHjry-CCsIm-wuvTEqeK7ydFKqQkak283bMZ5IPuxeg&oe=68C437F3&_nc_sid=d92198",
+                            "width": 240
+                          },
+                          {
+                            "height": 1080,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfavZ8offQYIN-UwF_DffEmMYKwNWkI0FRo-eAxE3rDI0A&oe=68C437F3&_nc_sid=d92198",
+                            "width": 1080
+                          },
+                          {
+                            "height": 750,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s750x750_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfYLa6BclIdD4U-kWH8YlMk67A0rXTv6wRBMkTj1aj-_rQ&oe=68C437F3&_nc_sid=d92198",
+                            "width": 750
+                          },
+                          {
+                            "height": 640,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s640x640_sh0.08_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfaQPm8tdnqu_qdhULwKmik8Xqz7NSzhfiGrkMXAYz70VA&oe=68C437F3&_nc_sid=d92198",
+                            "width": 640
+                          },
+                          {
+                            "height": 480,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s480x480_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfYji7LSgzu1FnUJyA8ZIckwps4ymNoJ4rvpBK8-e0ywZQ&oe=68C437F3&_nc_sid=d92198",
+                            "width": 480
+                          },
+                          {
+                            "height": 320,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfavSRiQAHrhRngH9PNoS84SmncFBDZRJTu6KOfi9aLeEg&oe=68C437F3&_nc_sid=d92198",
+                            "width": 320
+                          },
+                          {
+                            "height": 240,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s240x240_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfYPHLmtH464Poe1frN7fF3SFnNaaBmJe2vTK5TI-mZQIQ&oe=68C437F3&_nc_sid=d92198",
+                            "width": 240
+                          },
+                          {
+                            "height": 150,
+                            "url": "https://instagram.fsgn5-3.fna.fbcdn.net/v/t39.30808-6/471161327_9628722900475972_7026357680408135610_n.jpg?stp=c0.343.1362.1362a_dst-jpg_e35_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InRocmVhZHMuRkVFRC5pbWFnZV91cmxnZW4uMTM2MngyMDQ4LnNkci5mMzA4MDguZGVmYXVsdF9pbWFnZS5jMiJ9&_nc_ht=instagram.fsgn5-3.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2QE5RogoJ1hfu5HpPe3o1AlAugXrMMNuKhl17Aix1jtOvPUKvfb2e_hcWr-StW9t3wM&_nc_ohc=qUPh8g6L7XcQ7kNvwHu6nv6&_nc_gid=HizOac0X5jNYcBwCLteMHg&edm=AA3DLpEAAAAA&ccb=7-5&ig_cache_key=MzUyNzkxMDMxODI4MzU4MDkxMQ%3D%3D.3-ccb7-5&oh=00_AfY6H8lCivGvBi2BVdS_oBUDok9IxC8YWyPnbgVVKJXYyQ&oe=68C437F3&_nc_sid=d92198",
+                            "width": 150
+                          }
+                        ]
+                      },
+                      "original_height": 2048,
+                      "original_width": 1362,
+                      "accessibility_caption": "No photo description available.",
+                      "video_versions": null,
+                      "has_audio": null,
+                      "media_type": 1,
+                      "caption_add_on": null,
+                      "giphy_media_info": null,
+                      "media_overlay_info": null,
+                      "sharing_friction_info": {
+                        "should_have_sharing_friction": false,
+                        "sharing_friction_payload": null
+                      },
+                      "like_count": 17,
+                      "metaPlace": null,
+                      "meta_place": null,
+                      "gen_ai_detection_method": null,
+                      "taken_at": 1734779704,
+                      "organic_tracking_token": "eyJ2ZXJzaW9uIjo1LCJwYXlsb2FkIjp7ImlzX2FuYWx5dGljc190cmFja2VkIjp0cnVlLCJ1dWlkIjoiYzhhYzdiMzNmMGY5NDdjOWFhODY3YTI3ZjRlNWY5NGMzNTI3OTEwMzE4MjgzNTgwOTExIn0sInNpZ25hdHVyZSI6IiJ9",
+                      "logging_info_token": null,
+                      "like_and_view_counts_disabled": false
+                    },
+                    "__typename": "XDTThreadItem"
+                  }
+                ],
+                "id": "3527910318283580911",
+                "__typename": "XDTThread"
+              },
+              "__typename": "XDTUserTextPostsResponseEdge",
+              "cursor": ""
+            }
+          ],
+          "page_info": {
+            "end_cursor": null,
+            "has_next_page": false,
+            "has_previous_page": false,
+            "start_cursor": null
+          }
+        },
+        "viewer": {
+          "user": null
+        },
+        "proxy": {
+          "id": "4b907f3d-fe2a-11ec-ab82-02420a1f1c94",
+          "proxy": "http://thachproxy.ddns.net:11421",
+          "credential": "younet:Awq7sJXaE9xCUYWy",
+          "status": "ACTIVE"
+        }
+      },
+      "crawlerType": "api"
+    }
+  }
+]
