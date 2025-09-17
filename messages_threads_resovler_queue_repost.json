@@ -1,0 +1,3302 @@
+[
+  {
+    "source": {
+      "id": "tr_65440339462",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@knh150412",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "65440339462",
+      "is_first_crawled": true,
+      "username": "knh150412"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66379671487",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@pwo.ljnh",
+      "startedCrawling": "2025-08-26T15:10:07.010Z",
+      "default_data_duration": "2024-08-26T15:10:07.010Z",
+      "id_social": "66379671487",
+      "is_first_crawled": true,
+      "username": "pwo.ljnh"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66839107786",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-04-29T12:34:48Z",
+      "from_date": "1745930088",
+      "to_date": "1756240349",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@thanhta173",
+      "startedCrawling": "2025-08-26T20:32:29.044Z",
+      "default_data_duration": "2024-08-26T20:32:29.044Z",
+      "id_social": "66839107786",
+      "is_first_crawled": false,
+      "username": "thanhta173"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_21499126307",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@callmebixingai",
+      "startedCrawling": "2025-08-26T15:10:07.019Z",
+      "default_data_duration": "2024-08-26T15:10:07.019Z",
+      "id_social": "21499126307",
+      "is_first_crawled": true,
+      "username": "callmebixingai"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_6306358378",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@prince.hatelove1512",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "6306358378",
+      "is_first_crawled": true,
+      "username": "prince.hatelove1512"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_53209850772",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@_dylis",
+      "startedCrawling": "2025-08-26T15:10:07.024Z",
+      "default_data_duration": "2024-08-26T15:10:07.024Z",
+      "id_social": "53209850772",
+      "is_first_crawled": true,
+      "username": "_dylis"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_69084529100",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@anhtr_204",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "69084529100",
+      "is_first_crawled": true,
+      "username": "anhtr_204"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_49138717745",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@chota_nawab_47_",
+      "startedCrawling": "2025-08-26T15:10:07.012Z",
+      "default_data_duration": "2024-08-26T15:10:07.012Z",
+      "id_social": "49138717745",
+      "is_first_crawled": true,
+      "username": "chota_nawab_47_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75060818903",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@hiphopneverdie2228",
+      "startedCrawling": "2025-08-26T15:10:07.020Z",
+      "default_data_duration": "2024-08-26T15:10:07.020Z",
+      "id_social": "75060818903",
+      "is_first_crawled": true,
+      "username": "hiphopneverdie2228"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_63560968296",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703218",
+      "to_date": "1756239218",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@_mingxiang20_",
+      "startedCrawling": "2025-08-26T20:13:38.701Z",
+      "default_data_duration": "2024-08-26T20:13:38.701Z",
+      "id_social": "63560968296",
+      "is_first_crawled": true,
+      "username": "_mingxiang20_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_62469995743",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@oyasumi.phvy_",
+      "startedCrawling": "2025-08-26T20:20:05.028Z",
+      "default_data_duration": "2024-08-26T20:20:05.028Z",
+      "id_social": "62469995743",
+      "is_first_crawled": true,
+      "username": "oyasumi.phvy_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_40887696430",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@cobetinhquai",
+      "startedCrawling": "2025-08-26T20:20:05.024Z",
+      "default_data_duration": "2024-08-26T20:20:05.024Z",
+      "id_social": "40887696430",
+      "is_first_crawled": true,
+      "username": "cobetinhquai"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_7845581063",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@joas6902",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "7845581063",
+      "is_first_crawled": true,
+      "username": "joas6902"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_68083197396",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-05-31T16:26:34Z",
+      "from_date": "1748708794",
+      "to_date": "1756240162",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@phamathy",
+      "startedCrawling": "2025-08-26T20:29:22.457Z",
+      "default_data_duration": "2024-08-26T20:29:22.457Z",
+      "id_social": "68083197396",
+      "is_first_crawled": false,
+      "username": "phamathy"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75549299885",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@anhduuctran_19",
+      "startedCrawling": "2025-08-26T20:20:05.027Z",
+      "default_data_duration": "2024-08-26T20:20:05.027Z",
+      "id_social": "75549299885",
+      "is_first_crawled": true,
+      "username": "anhduuctran_19"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_67942708329",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-01-06T08:02:24Z",
+      "from_date": "1736150544",
+      "to_date": "1756236995",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@ex_bamboo",
+      "startedCrawling": "2025-08-26T19:36:35.745Z",
+      "default_data_duration": "2024-08-26T19:36:35.745Z",
+      "id_social": "67942708329",
+      "is_first_crawled": false,
+      "username": "ex_bamboo"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_50935030587",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@w.vungf",
+      "startedCrawling": "2025-08-26T20:20:05.020Z",
+      "default_data_duration": "2024-08-26T20:20:05.020Z",
+      "id_social": "50935030587",
+      "is_first_crawled": true,
+      "username": "w.vungf"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_67042380053",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@trqahh.ig",
+      "startedCrawling": "2025-08-26T15:10:07.019Z",
+      "default_data_duration": "2024-08-26T15:10:07.018Z",
+      "id_social": "67042380053",
+      "is_first_crawled": true,
+      "username": "trqahh.ig"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_52354370000",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@giapvanhuynh7",
+      "startedCrawling": "2025-08-26T20:20:05.016Z",
+      "default_data_duration": "2024-08-26T20:20:05.016Z",
+      "id_social": "52354370000",
+      "is_first_crawled": true,
+      "username": "giapvanhuynh7"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_70866689041",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724702847",
+      "to_date": "1756238847",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@wait.tea.and.coffee",
+      "startedCrawling": "2025-08-26T20:07:27.796Z",
+      "default_data_duration": "2024-08-26T20:07:27.796Z",
+      "id_social": "70866689041",
+      "is_first_crawled": true,
+      "username": "wait.tea.and.coffee"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_70851178494",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-29T19:39:43.249Z",
+      "from_date": "1753817983",
+      "to_date": "1756237366",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@yoriee208",
+      "startedCrawling": "2025-08-26T19:42:46.315Z",
+      "default_data_duration": "2024-08-26T19:42:46.315Z",
+      "id_social": "70851178494",
+      "is_first_crawled": false,
+      "username": "yoriee208"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_44522238260",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@nqzt._",
+      "startedCrawling": "2025-08-26T15:10:07.024Z",
+      "default_data_duration": "2024-08-26T15:10:07.024Z",
+      "id_social": "44522238260",
+      "is_first_crawled": true,
+      "username": "nqzt._"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_64058941830",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724698210",
+      "to_date": "1756234210",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@thuysagg_",
+      "startedCrawling": "2025-08-26T18:50:10.718Z",
+      "default_data_duration": "2024-08-26T18:50:10.718Z",
+      "id_social": "64058941830",
+      "is_first_crawled": true,
+      "username": "thuysagg_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_47666348211",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@tcuatcua_",
+      "startedCrawling": "2025-08-26T20:20:05.035Z",
+      "default_data_duration": "2024-08-26T20:20:05.035Z",
+      "id_social": "47666348211",
+      "is_first_crawled": true,
+      "username": "tcuatcua_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_52450822137",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@urihyeokie_1802",
+      "startedCrawling": "2025-08-26T15:10:07.022Z",
+      "default_data_duration": "2024-08-26T15:10:07.022Z",
+      "id_social": "52450822137",
+      "is_first_crawled": true,
+      "username": "urihyeokie_1802"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_34705794519",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@ohbabyumakemecrazy",
+      "startedCrawling": "2025-08-26T20:20:05.025Z",
+      "default_data_duration": "2024-08-26T20:20:05.025Z",
+      "id_social": "34705794519",
+      "is_first_crawled": true,
+      "username": "ohbabyumakemecrazy"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_67593108696",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-05-22T05:30:33Z",
+      "from_date": "1747891833",
+      "to_date": "1756239032",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@q_uynht_rang",
+      "startedCrawling": "2025-08-26T20:10:32.516Z",
+      "default_data_duration": "2024-08-26T20:10:32.516Z",
+      "id_social": "67593108696",
+      "is_first_crawled": false,
+      "username": "q_uynht_rang"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_63441709693",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-27T10:52:48Z",
+      "from_date": "1753613568",
+      "to_date": "1756235508",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@hoan6fuc",
+      "startedCrawling": "2025-08-26T19:11:48.657Z",
+      "default_data_duration": "2024-08-26T19:11:48.657Z",
+      "id_social": "63441709693",
+      "is_first_crawled": false,
+      "username": "hoan6fuc"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_47666348211",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@tcuatcua_",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "47666348211",
+      "is_first_crawled": true,
+      "username": "tcuatcua_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75513091195",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@nam.le512",
+      "startedCrawling": "2025-08-26T15:10:07.020Z",
+      "default_data_duration": "2024-08-26T15:10:07.020Z",
+      "id_social": "75513091195",
+      "is_first_crawled": true,
+      "username": "nam.le512"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_64939919881",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2024-12-16T20:39:14Z",
+      "from_date": "1734381554",
+      "to_date": "1756240349",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@tiramisu_uuu137",
+      "startedCrawling": "2025-08-26T20:32:29.064Z",
+      "default_data_duration": "2024-08-26T20:32:29.064Z",
+      "id_social": "64939919881",
+      "is_first_crawled": false,
+      "username": "tiramisu_uuu137"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66379671487",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@pwo.ljnh",
+      "startedCrawling": "2025-08-26T20:20:05.019Z",
+      "default_data_duration": "2024-08-26T20:20:05.019Z",
+      "id_social": "66379671487",
+      "is_first_crawled": true,
+      "username": "pwo.ljnh"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66080240443",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-06-28T12:53:11Z",
+      "from_date": "1751115191",
+      "to_date": "1756234583",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@batbunchakemrau_",
+      "startedCrawling": "2025-08-26T18:56:23.351Z",
+      "default_data_duration": "2024-08-26T18:56:23.351Z",
+      "id_social": "66080240443",
+      "is_first_crawled": false,
+      "username": "batbunchakemrau_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_59478571738",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@chand___0_",
+      "startedCrawling": "2025-08-26T15:10:07.011Z",
+      "default_data_duration": "2024-08-26T15:10:07.011Z",
+      "id_social": "59478571738",
+      "is_first_crawled": true,
+      "username": "chand___0_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_4576901305",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@duyenthoi9z",
+      "startedCrawling": "2025-08-26T15:10:07.024Z",
+      "default_data_duration": "2024-08-26T15:10:07.024Z",
+      "id_social": "4576901305",
+      "is_first_crawled": true,
+      "username": "duyenthoi9z"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_69702990438",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@wrbhc_nhgg_bongg",
+      "startedCrawling": "2025-08-26T15:10:07.022Z",
+      "default_data_duration": "2024-08-26T15:10:07.022Z",
+      "id_social": "69702990438",
+      "is_first_crawled": true,
+      "username": "wrbhc_nhgg_bongg"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_67570817342",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-02-09T18:13:03Z",
+      "from_date": "1739124783",
+      "to_date": "1756220826",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@my.thaolee",
+      "startedCrawling": "2025-08-26T15:07:06.764Z",
+      "default_data_duration": "2024-08-26T15:07:06.764Z",
+      "id_social": "67570817342",
+      "is_first_crawled": false,
+      "username": "my.thaolee"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_14122219",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@jodyleewilhelm",
+      "startedCrawling": "2025-08-26T15:10:07.022Z",
+      "default_data_duration": "2024-08-26T15:10:07.022Z",
+      "id_social": "14122219",
+      "is_first_crawled": true,
+      "username": "jodyleewilhelm"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_63817552515",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@_nhemiuoi_",
+      "startedCrawling": "2025-08-26T15:10:07.020Z",
+      "default_data_duration": "2024-08-26T15:10:07.020Z",
+      "id_social": "63817552515",
+      "is_first_crawled": true,
+      "username": "_nhemiuoi_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_63468157450",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-03-21T06:12:23Z",
+      "from_date": "1742537543",
+      "to_date": "1756240533",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@cunnef.97",
+      "startedCrawling": "2025-08-26T20:35:33.573Z",
+      "default_data_duration": "2024-08-26T20:35:33.573Z",
+      "id_social": "63468157450",
+      "is_first_crawled": false,
+      "username": "cunnef.97"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75697242239",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@lephamquynhanh25",
+      "startedCrawling": "2025-08-26T20:20:05.022Z",
+      "default_data_duration": "2024-08-26T20:20:05.022Z",
+      "id_social": "75697242239",
+      "is_first_crawled": true,
+      "username": "lephamquynhanh25"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_74103846142",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@bnt_yhx",
+      "startedCrawling": "2025-08-26T20:20:05.033Z",
+      "default_data_duration": "2024-08-26T20:20:05.033Z",
+      "id_social": "74103846142",
+      "is_first_crawled": true,
+      "username": "bnt_yhx"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_60482559563",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@suahanhphuc",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "60482559563",
+      "is_first_crawled": true,
+      "username": "suahanhphuc"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_63406908890",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-28T19:07:10Z",
+      "from_date": "1753729630",
+      "to_date": "1756237552",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@quan.leanh_",
+      "startedCrawling": "2025-08-26T19:45:52.119Z",
+      "default_data_duration": "2024-08-26T19:45:52.119Z",
+      "id_social": "63406908890",
+      "is_first_crawled": false,
+      "username": "quan.leanh_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66548796502",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-06-28T03:24:45Z",
+      "from_date": "1751081085",
+      "to_date": "1756240349",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@czm.kwnd_",
+      "startedCrawling": "2025-08-26T20:32:29.084Z",
+      "default_data_duration": "2024-08-26T20:32:29.084Z",
+      "id_social": "66548796502",
+      "is_first_crawled": false,
+      "username": "czm.kwnd_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_63077063378",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-26T18:44:17Z",
+      "from_date": "1753555457",
+      "to_date": "1756232908",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@elenabbi_",
+      "startedCrawling": "2025-08-26T18:28:28.511Z",
+      "default_data_duration": "2024-08-26T18:28:28.510Z",
+      "id_social": "63077063378",
+      "is_first_crawled": false,
+      "username": "elenabbi_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_65706498764",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-01-22T19:03:33Z",
+      "from_date": "1737572613",
+      "to_date": "1756231522",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@wbao.chauz128",
+      "startedCrawling": "2025-08-26T18:05:22.200Z",
+      "default_data_duration": "2024-08-26T18:05:22.200Z",
+      "id_social": "65706498764",
+      "is_first_crawled": false,
+      "username": "wbao.chauz128"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_71524017935",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-26T21:12:34Z",
+      "from_date": "1753564354",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@kakao.tobiee",
+      "startedCrawling": "2025-08-26T15:10:07.031Z",
+      "default_data_duration": "2024-08-26T15:10:07.031Z",
+      "id_social": "71524017935",
+      "is_first_crawled": false,
+      "username": "kakao.tobiee"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_1423106806",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@_ogustino",
+      "startedCrawling": "2025-08-26T20:20:05.036Z",
+      "default_data_duration": "2024-08-26T20:20:05.036Z",
+      "id_social": "1423106806",
+      "is_first_crawled": true,
+      "username": "_ogustino"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_7860608967",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@nhat.nguyen1125",
+      "startedCrawling": "2025-08-26T15:10:07.024Z",
+      "default_data_duration": "2024-08-26T15:10:07.024Z",
+      "id_social": "7860608967",
+      "is_first_crawled": true,
+      "username": "nhat.nguyen1125"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_70894426504",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-05-26T07:35:47Z",
+      "from_date": "1748244947",
+      "to_date": "1756240349",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@hseoi123",
+      "startedCrawling": "2025-08-26T20:32:29.100Z",
+      "default_data_duration": "2024-08-26T20:32:29.100Z",
+      "id_social": "70894426504",
+      "is_first_crawled": false,
+      "username": "hseoi123"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75846588285",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@lee.anhduc1989",
+      "startedCrawling": "2025-08-26T20:20:05.034Z",
+      "default_data_duration": "2024-08-26T20:20:05.034Z",
+      "id_social": "75846588285",
+      "is_first_crawled": true,
+      "username": "lee.anhduc1989"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_69165564519",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-29T23:31:45.869Z",
+      "from_date": "1753831905",
+      "to_date": "1756220808",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@shiryu_mwa",
+      "startedCrawling": "2025-08-26T15:06:48.967Z",
+      "default_data_duration": "2024-08-26T15:06:48.967Z",
+      "id_social": "69165564519",
+      "is_first_crawled": false,
+      "username": "shiryu_mwa"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_69968308443",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-03-01T23:52:33Z",
+      "from_date": "1740873153",
+      "to_date": "1756240349",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@nnguyen_anh",
+      "startedCrawling": "2025-08-26T20:32:29.099Z",
+      "default_data_duration": "2024-08-26T20:32:29.099Z",
+      "id_social": "69968308443",
+      "is_first_crawled": false,
+      "username": "nnguyen_anh"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_65674731677",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724704349",
+      "to_date": "1756240349",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@athu.0611",
+      "startedCrawling": "2025-08-26T20:32:29.080Z",
+      "default_data_duration": "2024-08-26T20:32:29.080Z",
+      "id_social": "65674731677",
+      "is_first_crawled": true,
+      "username": "athu.0611"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_60088852191",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@madelyncornell_",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "60088852191",
+      "is_first_crawled": true,
+      "username": "madelyncornell_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_46082713405",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@chat_lieu_vo_anh",
+      "startedCrawling": "2025-08-26T15:10:07.011Z",
+      "default_data_duration": "2024-08-26T15:10:07.011Z",
+      "id_social": "46082713405",
+      "is_first_crawled": true,
+      "username": "chat_lieu_vo_anh"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_48419980680",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@d.linh______",
+      "startedCrawling": "2025-08-26T20:20:05.025Z",
+      "default_data_duration": "2024-08-26T20:20:05.025Z",
+      "id_social": "48419980680",
+      "is_first_crawled": true,
+      "username": "d.linh______"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_74199993303",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@kiki.galleryyy",
+      "startedCrawling": "2025-08-26T20:20:05.035Z",
+      "default_data_duration": "2024-08-26T20:20:05.035Z",
+      "id_social": "74199993303",
+      "is_first_crawled": true,
+      "username": "kiki.galleryyy"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66531267182",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@miss_chum22",
+      "startedCrawling": "2025-08-26T15:10:07.022Z",
+      "default_data_duration": "2024-08-26T15:10:07.022Z",
+      "id_social": "66531267182",
+      "is_first_crawled": true,
+      "username": "miss_chum22"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_305128954",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@elvieteedivinagracia",
+      "startedCrawling": "2025-08-26T20:20:05.027Z",
+      "default_data_duration": "2024-08-26T20:20:05.027Z",
+      "id_social": "305128954",
+      "is_first_crawled": true,
+      "username": "elvieteedivinagracia"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_66816019953",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-29T18:40:50.687Z",
+      "from_date": "1753814450",
+      "to_date": "1756236995",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@hienphanvan2003",
+      "startedCrawling": "2025-08-26T19:36:35.752Z",
+      "default_data_duration": "2024-08-26T19:36:35.752Z",
+      "id_social": "66816019953",
+      "is_first_crawled": false,
+      "username": "hienphanvan2003"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_62863639737",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-05-11T21:20:55Z",
+      "from_date": "1746998455",
+      "to_date": "1756240533",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@lpnxlfy",
+      "startedCrawling": "2025-08-26T20:35:33.585Z",
+      "default_data_duration": "2024-08-26T20:35:33.585Z",
+      "id_social": "62863639737",
+      "is_first_crawled": false,
+      "username": "lpnxlfy"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_44074552170",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@_elpulg",
+      "startedCrawling": "2025-08-26T20:20:05.025Z",
+      "default_data_duration": "2024-08-26T20:20:05.024Z",
+      "id_social": "44074552170",
+      "is_first_crawled": true,
+      "username": "_elpulg"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_72727134719",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@shuly_luoii",
+      "startedCrawling": "2025-08-26T15:10:07.023Z",
+      "default_data_duration": "2024-08-26T15:10:07.023Z",
+      "id_social": "72727134719",
+      "is_first_crawled": true,
+      "username": "shuly_luoii"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75335611411",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@chuyencontre",
+      "startedCrawling": "2025-08-26T15:10:07.019Z",
+      "default_data_duration": "2024-08-26T15:10:07.019Z",
+      "id_social": "75335611411",
+      "is_first_crawled": true,
+      "username": "chuyencontre"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_76081273237",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@ngocnguyen.7263",
+      "startedCrawling": "2025-08-26T15:10:07.019Z",
+      "default_data_duration": "2024-08-26T15:10:07.019Z",
+      "id_social": "76081273237",
+      "is_first_crawled": true,
+      "username": "ngocnguyen.7263"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_71350055647",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": "2025-07-29T11:34:35Z",
+      "from_date": "1753788875",
+      "to_date": "1756236809",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@hac_amtien",
+      "startedCrawling": "2025-08-26T19:33:29.842Z",
+      "default_data_duration": "2024-08-26T19:33:29.842Z",
+      "id_social": "71350055647",
+      "is_first_crawled": false,
+      "username": "hac_amtien"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_69601594596",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@mhan.fla",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "69601594596",
+      "is_first_crawled": true,
+      "username": "mhan.fla"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_60088852191",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@madelyncornell_",
+      "startedCrawling": "2025-08-26T20:20:05.034Z",
+      "default_data_duration": "2024-08-26T20:20:05.034Z",
+      "id_social": "60088852191",
+      "is_first_crawled": true,
+      "username": "madelyncornell_"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_73250710691",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@diemmychaungoc",
+      "startedCrawling": "2025-08-26T15:10:07.022Z",
+      "default_data_duration": "2024-08-26T15:10:07.022Z",
+      "id_social": "73250710691",
+      "is_first_crawled": true,
+      "username": "diemmychaungoc"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_6306358378",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@prince.hatelove1512",
+      "startedCrawling": "2025-08-26T20:20:05.035Z",
+      "default_data_duration": "2024-08-26T20:20:05.035Z",
+      "id_social": "6306358378",
+      "is_first_crawled": true,
+      "username": "prince.hatelove1512"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_74199993303",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@kiki.galleryyy",
+      "startedCrawling": "2025-08-26T15:10:07.021Z",
+      "default_data_duration": "2024-08-26T15:10:07.021Z",
+      "id_social": "74199993303",
+      "is_first_crawled": true,
+      "username": "kiki.galleryyy"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_72350019683",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724703605",
+      "to_date": "1756239605",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@caderdouble",
+      "startedCrawling": "2025-08-26T20:20:05.030Z",
+      "default_data_duration": "2024-08-26T20:20:05.030Z",
+      "id_social": "72350019683",
+      "is_first_crawled": true,
+      "username": "caderdouble"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  },
+  {
+    "source": {
+      "id": "tr_75715754288",
+      "retries": 0,
+      "delay_time_rules": [
+        {
+          "lte": 720,
+          "delay": 5
+        },
+        {
+          "lte": 1440,
+          "delay": 24
+        },
+        {
+          "lte": 999999999,
+          "delay": 48
+        }
+      ],
+      "last_data_date": null,
+      "from_date": "1724685007",
+      "to_date": "1756221007",
+      "platform": 10,
+      "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
+      "link": "threads.net/@lephuc070307",
+      "startedCrawling": "2025-08-26T15:10:07.018Z",
+      "default_data_duration": "2024-08-26T15:10:07.018Z",
+      "id_social": "75715754288",
+      "is_first_crawled": true,
+      "username": "lephuc070307"
+    },
+    "data": {
+      "crawlerType": "api",
+      "data": null,
+      "errors": [
+        {
+          "message": "Non-existing ID",
+          "code": 100,
+          "path": [],
+          "severity": "",
+          "description": "This ID does not exist."
+        }
+      ]
+    }
+  }
+]
