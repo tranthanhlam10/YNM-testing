@@ -596,6 +596,19 @@ Parse detail 2 mention
 6. ynm-cl-news-parsed-details-2-mentions-service-testing
 
 
+
+auto-parser-staging-high-priority-classifier
+
+auto-parser-staging-high-priority-browser-crawler
+
+auto-parser-staging-high-priority-http-crawler
+
+auto-parser-staging-article-parser (Đợi pod scale lên)
+
+auto-parser-staging-error-article-handler
+
+ynm-cl-news-parsed-details-2-mentions-service-staging
+
 OPEN AI
 ynm-cl-news-category-link-by-openai-service-testing
 
