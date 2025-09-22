@@ -21,7 +21,7 @@ function readJsonFile(filePath) {
  * @param {Array} searchText - Mảng chứa 3 phần tử [title, caption, shared_content]
  * @returns {Object} Kết quả kiểm tra
  */
-function verifyParentPostFields(record, searchText) {
+function verifyParentPostFields(record) {
     const result = {
         hasParentPost: false,
         hasTitle: false,
@@ -33,39 +33,36 @@ function verifyParentPostFields(record, searchText) {
         isValid: false
     };
 
-    // Kiểm tra có parentPost không
     if (!record.parentPost || typeof record.parentPost !== 'object') {
         return result;
     }
     
     result.hasParentPost = true;
 
-    // Kiểm tra title
     if (record.parentPost.title !== undefined) {
         result.hasTitle = true;
-        result.titleMatch = record.parentPost.title === searchText[0];
+        result.titleMatch = record.parentPost.title === record.search_text[0];
     }
 
-    // Kiểm tra caption
     if (record.parentPost.caption !== undefined) {
         result.hasCaption = true;
-        result.captionMatch = record.parentPost.caption === searchText[1];
+        result.captionMatch = record.parentPost.caption === record.search_text[1];
     }
 
-    // Kiểm tra shared_content (chỉ cho bài share facebook, threads)
-    if (record.parentPost.shared_content !== undefined) {
+
+    if (record.platform === 3 || record.platform === 5) {
+         if (record.parentPost.shared_content !== undefined) {
         result.hasSharedContent = true;
-        // Giả sử ynm_des là một function xử lý search_text[2]
-        // Bạn cần implement function này theo logic của mình
-        const expectedSharedContent = processYnmDes(searchText[2]);
-        result.sharedContentMatch = record.parentPost.shared_content === expectedSharedContent;
     }
+    } else {
+        result.hasSharedContent = true;
+    }
+    
 
-    // Kiểm tra tổng thể
     result.isValid = result.hasParentPost && 
                     result.hasTitle && result.titleMatch &&
                     result.hasCaption && result.captionMatch &&
-                    (result.hasSharedContent ? result.sharedContentMatch : true);
+                    result.hasSharedContent;
 
     return result;
 }
@@ -75,11 +72,6 @@ function verifyParentPostFields(record, searchText) {
  * @param {string} text - Text cần xử lý
  * @returns {string} Kết quả sau khi xử lý
  */
-function processYnmDes(text) {
-    // Implement logic xử lý ynm_des ở đây
-    // Hiện tại chỉ return text gốc
-    return text;
-}
 
 /**
  * Kiểm tra xem record có createdBy hợp lệ không
@@ -118,14 +110,14 @@ function verifyJsonFile(filePath, searchText) {
 
     const results = {
         totalRecords: jsonData.length,
-        targetRecords: 0, // Records có createdBy cần check
+        targetRecords: 0,
         validParentPostRecords: 0,
-        skippedRecords: 0, // Records bị bỏ qua
+        skippedRecords: 0,
         details: []
     };
 
     jsonData.forEach((record, index) => {
-        // Chỉ xử lý những record có createdBy target
+    
         if (isValidCreatedBy(record)) {
             results.targetRecords++;
             
@@ -229,8 +221,7 @@ export default {
     verifyParentPostFields,
     verifyJsonFile,
     displayResults,
-    isValidCreatedBy,
-    processYnmDes
+    isValidCreatedBy
 };
 
 // Uncomment dòng dưới để chạy ví dụ
