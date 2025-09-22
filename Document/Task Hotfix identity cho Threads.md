@@ -4,7 +4,11 @@
 
 TR_PROXY_CUA_LAMTT
 TR_KEYWORD_POST_NO_COOKIE_CRAWLER
+
+TR_HASHTAG_POST_NO_COOKIE_CRAWLER
 TR_SOURCE_POST_NO_COOKIE_CRAWLER
+TR_SOURCE_REPLY_NO_COOKIE_CRAWLER
+TR_REPOST_NO_COOKIE_CRAWLER
 ## Luồng Hastag Keyword
 
 
@@ -39,7 +43,7 @@ export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_KEYWORD_POST_CRAWLER
 export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_KEYWORD_POST_CRAWLER
-export CRAWLER_CONFIG_PROXY_NO_COOKIE_CRAWLER_TYPE=TR_SOURCE_POST_NO_COOKIE_CRAWLER
+export CRAWLER_CONFIG_PROXY_NO_COOKIE_CRAWLER_TYPE=TR_UNAUTHORIZED_CRAWLER
  
 export CRAWLER_CONFIG_PAGING_ENABLE=true
  
@@ -103,7 +107,7 @@ export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_HASHTAG_POST_CRAWLER
 export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_HASHTAG_POST_CRAWLER
-export CRAWLER_CONFIG_PROXY_NO_COOKIE_CRAWLER_TYPE=TR_SOURCE_POST_NO_COOKIE_CRAWLER
+export CRAWLER_CONFIG_PROXY_NO_COOKIE_CRAWLER_TYPE=TR_IDENTITY_CRAWLER
  
 export CRAWLER_CONFIG_PAGING_ENABLE=true
  
@@ -154,7 +158,7 @@ export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.source_posts_no_cookie.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_SOURCE_REPLY_POST_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_IDENTITY_CRAWLER
 export CRAWLER_CONFIG_PAGING_ENABLE=true
  
 export BUILDER_ENABLE=true
@@ -165,7 +169,7 @@ export CRAWLER_ENABLE=true
 export CRAWLER_BATCH_SIZE=1
 export CRAWLER_CONCURRENCY=10
  
-export RESOLVER_ENABLE=false
+export RESOLVER_ENABLE=true
 export RESOLVER_BATCH_SIZE=1
 export RESOLVER_CONCURRENCY=10
 export RESOLVER_MAX_RETRIES=3
@@ -200,7 +204,7 @@ export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.source_replies_no_cookie.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_UNAUTHORIZED_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_IDENTITY_CRAWLER
 export CRAWLER_CONFIG_PAGING_ENABLE=true
  
 export BUILDER_ENABLE=true
@@ -259,10 +263,24 @@ export CRAWLER_ENABLE=true
 export CRAWLER_BATCH_SIZE=1
 export CRAWLER_CONCURRENCY=10
  
-export RESOLVER_ENABLE=false
+export RESOLVER_ENABLE=true
 export RESOLVER_BATCH_SIZE=1
 export RESOLVER_CONCURRENCY=1
 export RESOLVER_MAX_RETRIES=3
+
+
+export REDIS_CACHE_HOST=192.168.0.170
+export REDIS_CACHE_PORT=6390
+export REDIS_CACHE_DB=1
+export REDIS_CACHE_USERNAME=data_ynm_crawler
+export REDIS_CACHE_PASSWORD=cQXf21j9LU5fm5V205MD
+ 
+ 
+export REDIS_POST_USERNAME=data_ynm_crawler_use_cache_post
+export REDIS_POST_PASSWORD=FAr7xW52hqP6
+export REDIS_POST_HOST=192.168.0.170
+export REDIS_POST_PORT=6390
+export REDIS_POST_DATABASE=12
  
 yarn start --scope=@ynm/cl-tr-repost-crawler-service
 
@@ -271,7 +289,7 @@ yarn start --scope=@ynm/cl-tr-repost-crawler-service
 
 ynmpdp-5370-staging-ynm-crawler-empty
 kubectl get pods -n crawler-staging | grep ynmpdp-5370-staging-ynm-crawler-empty
-kubectl exec -it ynmpdp-5370-staging-ynm-crawler-empty-789b647566-5bn2j -n crawler-staging -- sh
+kubectl exec -it ynmpdp-5370-staging-ynm-crawler-empty-d895f5fd4-ks6dx -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
 
 
@@ -279,8 +297,15 @@ kubectl config use-context lamtt-k8s-ovh
 // Câu SQL update crawler_type
 
 UPDATE ynm_proxies.proxies
-SET crawler_type = 'TR_SOURCE_REPLY_NO_COOKIE_CRAWLER'
-WHERE crawler_type = 'TR_SOURCE_POST_NO_COOKIE_CRAWLER';
+SET crawler_type = 'TR_KEYWORD_POST_NO_COOKIE_CRAWLER'
+WHERE crawler_type = 'TR_SOURCE_REPLY_NO_COOKIE_CRAWLER';
+LIMIT 10
+
+
+UPDATE ynm_proxies.proxies
+SET crawler_type = 'TR_KEYWORD_POST_NO_COOKIE_CRAWLER'
+WHERE crawler_type = 'TR_UNAUTHORIZED_CRAWLER'
+LIMIT 20;
 
 
 # Mục tiêu của task
@@ -498,3 +523,11 @@ Ví dụ threads keyword:
 
 Hiện tại đã gắng field mapping_id vào source -> Nếu lỗi thì tránh gọi lại, phí token 
 
+# Task Improve auto parser - Publish article urls to exchange
+
+Statusful Set: pusblish-url-to-exchange-staging-auto-parser
+Script: node scripts/parseRawArticleContents.js
+
+kubectl get pods -n crawler-staging | grep pusblish-url-to-exchange-staging-auto-parser
+kubectl exec -it pusblish-url-to-exchange-staging-auto-parser-0 -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh
