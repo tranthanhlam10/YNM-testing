@@ -4,7 +4,11 @@
 
 TR_PROXY_CUA_LAMTT
 TR_KEYWORD_POST_NO_COOKIE_CRAWLER
+
+TR_HASHTAG_POST_NO_COOKIE_CRAWLER
 TR_SOURCE_POST_NO_COOKIE_CRAWLER
+TR_SOURCE_REPLY_NO_COOKIE_CRAWLER
+TR_REPOST_NO_COOKIE_CRAWLER
 ## Luồng Hastag Keyword
 
 
@@ -293,8 +297,15 @@ kubectl config use-context lamtt-k8s-ovh
 // Câu SQL update crawler_type
 
 UPDATE ynm_proxies.proxies
-SET crawler_type = 'TR_SOURCE_REPLY_NO_COOKIE_CRAWLER'
-WHERE crawler_type = 'TR_SOURCE_POST_NO_COOKIE_CRAWLER';
+SET crawler_type = 'TR_KEYWORD_POST_NO_COOKIE_CRAWLER'
+WHERE crawler_type = 'TR_SOURCE_REPLY_NO_COOKIE_CRAWLER';
+LIMIT 10
+
+
+UPDATE ynm_proxies.proxies
+SET crawler_type = 'TR_KEYWORD_POST_NO_COOKIE_CRAWLER'
+WHERE crawler_type = 'TR_UNAUTHORIZED_CRAWLER'
+LIMIT 20;
 
 
 # Mục tiêu của task
