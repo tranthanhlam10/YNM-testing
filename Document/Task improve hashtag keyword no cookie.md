@@ -46,7 +46,7 @@ kubectl exec -it ynmpdp-5120-tr-hashtag-keyword-dup-testing-ynm-crawler-empm6xjc
 ## Các queue cần lưu ý của luồng hashtag keyword
 
 
-cl.(mentions_2_solr_mentions|posts_2_solr_tr_posts|tr.identities_finished_sources|tr.keyword_posts_no_cookie_crawling_sources|tr.keyword_posts_no_cookie_crawling_requests|tr.keyword_posts_no_cookie_crawled_sources|tr.hashtag_posts_no_cookie_crawling_sources|tr.hashtag_posts_no_cookie_crawling_requests|tr.hashtag_posts_no_cookie_crawled_sources)
+cl.(mentions_2_solr_mentions|tr.keyword_posts_finished_sources|posts_2_solr_tr_posts|tr.identities_finished_sources|tr.keyword_posts_no_cookie_crawling_sources|tr.keyword_posts_no_cookie_crawling_requests|tr.keyword_posts_no_cookie_crawled_sources|tr.hashtag_posts_no_cookie_crawling_sources|tr.hashtag_posts_no_cookie_crawling_requests|tr.hashtag_posts_no_cookie_crawled_sources)
 
 
 ## Tìm flow để verify lại API identity 

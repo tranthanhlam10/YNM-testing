@@ -106,17 +106,17 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.mentions_2_solr_mentions.TrangHK";
+const queueName = "testing.cl.posts_2_solr_yt_posts";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP, 
-  stagingDomain, 
+  testHTTP, 
+  testDomain, 
   queueName, 
   userName, 
-  stagingPassword,
-  100
+  testPassword,
+  300
 );
