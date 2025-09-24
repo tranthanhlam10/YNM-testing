@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs';
-import path from 'path';
+import path  from 'path';
 
 /**
  * Đọc file JSON và trả về mảng dữ liệu
@@ -28,8 +28,12 @@ function verifyParentPostFields(record) {
         hasTitle: false,
         hasCaption: false,
         hasSharedContent: false,
+        titleMatch: false,
+        captionMatch: false,
+        sharedContentMatch: false,
         isValid: false
     };
+
     if (!record.parentPost || typeof record.parentPost !== 'object') {
         return result;
     }
@@ -38,16 +42,16 @@ function verifyParentPostFields(record) {
 
     if (record.parentPost.title !== undefined) {
         result.hasTitle = true;
-        //result.titleMatch = record.parentPost.title === record.search_text[0];
+        result.titleMatch = record.parentPost.title === record.search_text[0];
     }
 
     if (record.parentPost.caption !== undefined) {
         result.hasCaption = true;
-        //result.captionMatch = record.parentPost.caption === record.search_text[1];
+        result.captionMatch = record.parentPost.caption === record.search_text[1];
     }
 
 
-    if (record.platform === 1 || record.platform === 10) {
+    if (record.platform === 3 || record.platform === 5) {
         if (record.parentPost.shared_content !== undefined) {
             result.hasSharedContent = true;
         }
@@ -56,55 +60,13 @@ function verifyParentPostFields(record) {
     }
 
 
-
-    // result.isValid = result.hasParentPost &&
-    //     result.hasTitle && result.titleMatch &&
-    //     result.hasCaption && result.captionMatch &&
-    //     result.hasSharedContent;
-
-
     result.isValid = result.hasParentPost &&
-        result.hasTitle &&
-        result.hasCaption &&
+        result.hasTitle && result.titleMatch &&
+        result.hasCaption && result.captionMatch &&
         result.hasSharedContent;
 
-
     return result;
 }
-
-
-function verifyMentionPostShare(record) {
-    const result = {
-        hasNoCaption: false,
-        hasNoSharedContent: false,
-        isValid: false
-    };
-
-    // Kiểm tra caption ở root - KHÔNG có caption = pass
-    if (record.caption === undefined || record.caption === null || record.caption === '') {
-        console.log(record.caption)
-        result.hasNoCaption = true;
-    }
-
-    // Kiểm tra shared_content ở root 
-    if (record.platform === 1 || record.platform === 10) {
-        // Với Facebook/Threads - cần check shared_content
-        if (record.shared_content === undefined || record.shared_content === null || record.shared_content === '') {
-            result.hasNoSharedContent = true;
-        }
-    } else {
-        // Với platform khác (TikTok, YouTube...) - không cần check shared_content
-        result.hasNoSharedContent = true;
-    }
-
-    // Pass nếu KHÔNG có caption và KHÔNG có shared_content
-    result.isValid = result.hasNoCaption && result.hasNoSharedContent;
-    console.log(result);    
-    return result;
-
-}
-
-
 
 /**
  * Function giả lập xử lý ynm_des - bạn cần implement theo logic thực tế
@@ -127,23 +89,20 @@ function verifyMentionPostShare(record) {
  * @returns {string} createdBy - e.g. "FacebookCrawlPostByKeywords"
  */
 function getCreatedBy(scriptPath) {
+    // Lấy tên file và thư mục cha
     const parsed = path.parse(scriptPath);
     const fileName = parsed.name; // e.g. "crawl_post_by_keywords"
     const parentDir = path.basename(path.dirname(scriptPath)); // e.g. "facebookV3"
-    
-    // Domain = bỏ số version (facebookV3 -> facebook, youtubeV2 -> youtube)
-    // Regex mới: xóa V + số, hoặc chỉ số, và WithNextCrawlTime
-    const domain = parentDir
-        .replace(/V\d+/gi, "") // Xóa V3, V4, V2, etc.
-        .replace(/\d+/gi, "") // Xóa các số còn lại
-        .replace(/WithNextCrawlTime/gi, ""); // Xóa WithNextCrawlTime
-    
+
+    // Domain = bỏ số version (facebookV3 -> facebook)
+    const domain = parentDir.replace(/[0-9]/gi, "").replace(/WithNextCrawlTime/gi, "");
+
     // Convert fileName snake_case -> PascalCase
     const pascal = fileName
         .split("_")
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join("");
-    
+
     // Gắn lại Domain (PascalCase) + Script
     return domain.charAt(0).toUpperCase() + domain.slice(1) + pascal;
 }
@@ -151,13 +110,13 @@ function getCreatedBy(scriptPath) {
 
 
 function isValidCreatedBy(record) {
-    let validCreatedBy = [
+      let validCreatedBy = [
         "ThreadsKeywordPostNoCookieCrawlingLoader",
         "ThreadsHashtagPostNoCookieCrawlingLoader",
         "ThreadsSourceReplyNoCookieCrawlingLoader",
         "ThreadsRepostNoCookieCrawlingLoader",
         "ThreadsSourcePostNoCookieCrawlingLoader",
-        "ThreadsKeywordPostCrawlingLoader",
+         "ThreadsKeywordPostCrawlingLoader",
         "ThreadsHashtagPostCrawlingLoader",
         "ThreadsSourceReplyCrawlingLoader",
         "ThreadsRepostCrawlingLoader",
@@ -199,7 +158,7 @@ function isValidCreatedBy(record) {
     ];
 
     oldScripts.forEach(s => {
-        validCreatedBy.push(getCreatedBy(s));
+        validCreatedBy.push( getCreatedBy(s) ); 
     });
 
 
@@ -214,7 +173,7 @@ function isValidCreatedBy(record) {
  * @param {Array} searchText - Mảng chứa [title, caption, shared_content]
  * @returns {Object} Kết quả tổng hợp
  */
-function verifyJsonFile(filePath) {
+function verifyJsonFile(filePath, searchText) {
     const jsonData = readJsonFile(filePath);
 
     if (!Array.isArray(jsonData)) {
@@ -222,17 +181,15 @@ function verifyJsonFile(filePath) {
         return null;
     }
 
-    // if (!Array.isArray(searchText) || searchText.length < 3) {
-    //     console.error('searchText phải là mảng có ít nhất 3 phần tử');
-    //     return null;
-    // }
+    if (!Array.isArray(searchText) || searchText.length < 3) {
+        console.error('searchText phải là mảng có ít nhất 3 phần tử');
+        return null;
+    }
 
     const results = {
         totalRecords: jsonData.length,
-        targetCommentReplyRecords: 0,
-        targetPostShareRecords: 0,
+        targetRecords: 0,
         validParentPostRecords: 0,
-        validPostShareRecords: 0,
         skippedRecords: 0,
         details: []
     };
@@ -240,52 +197,25 @@ function verifyJsonFile(filePath) {
     jsonData.forEach((record, index) => {
 
         if (isValidCreatedBy(record)) {
-            if (record.mention_type === 2) {
-                results.targetCommentReplyRecords++;
+            results.targetRecords++;
 
-                const recordResult = {
-                    index: index,
-                    createdBy: record.createdBy,
-                    checked: true,
-                    id: record.id,
-                    parentPostVerification: verifyParentPostFields(record)
-                };
+            const recordResult = {
+                index: index,
+                createdBy: record.createdBy,
+                checked: true,
+                id: record.id,
+                parentPostVerification: verifyParentPostFields(record, searchText)
+            };
 
-                if (recordResult.parentPostVerification.isValid) {
-                    results.validParentPostRecords++;
-                }
-
-                results.details.push(recordResult);
-            } else {
-                results.targetPostShareRecords++;
-                // //console.log(`Record ${index} là post/share, createdBy hợp lệ: ${record.createdBy}`);
-                // results.details.push({
-                //     index: index,
-                //     createdBy: record.createdBy,
-                //     checked: true,
-                //     parentPostVerification: null,
-                //     reason: 'record là post/share hợp lệ, không cần kiểm tra parentPost'
-                // });
-                const recordResult = {
-                    index: index,
-                    createdBy: record.createdBy,
-                    checked: true,
-                    id: record.id,
-                    postShareVerification: verifyMentionPostShare(record)
-                };
-
-                if (recordResult.postShareVerification.isValid) {
-                    results.validPostShareRecords++;
-                }
-
-                results.details.push(recordResult);
-
+            if (recordResult.parentPostVerification.isValid) {
+                results.validParentPostRecords++;
             }
-        } else {
 
-            //Bỏ qua record này
+            results.details.push(recordResult);
+        } else {
+            // Bỏ qua record này
             results.skippedRecords++;
-            results.details.push({
+            const unVerifyRecords = results.details.push({
                 index: index,
                 createdBy: record.createdBy,
                 checked: false,
@@ -313,58 +243,31 @@ function displayResults(results) {
 
     console.log('=== KẾT QUẢ KIỂM TRA ===');
     console.log(`Tổng số record: ${results.totalRecords}`);
-    console.log(`Số record comment/reply cần kiểm tra (target createdBy): ${results.targetCommentReplyRecords}`);
-    console.log(`Số record post/share cần kiểm tra (target createdBy): ${results.targetPostShareRecords}`);
+    console.log(`Số record cần kiểm tra (target createdBy): ${results.targetRecords}`);
     console.log(`Số record bỏ qua: ${results.skippedRecords}`);
-    console.log(`Số record reply/comment parentPost hợp lệ: ${results.validParentPostRecords}`);
-    console.log(`Số record post/share hợp lệ: ${results.validPostShareRecords}`);
+    console.log(`Số record có parentPost hợp lệ: ${results.validParentPostRecords}`);
     console.log('');
 
-    // Hiển thị chi tiết các record cho p
+    // Hiển thị chi tiết các record target không hợp lệ
     const invalidTargetRecords = results.details.filter(detail =>
-    (detail.checked &&
+        detail.checked &&
         detail.parentPostVerification &&
-        !detail.parentPostVerification.isValid)
+        !detail.parentPostVerification.isValid
     );
 
     if (invalidTargetRecords.length > 0) {
-        console.log('=== CHI TIẾT RECORDS REPLY/COMMENT KHÔNG HỢP LỆ ===');
+        console.log('=== CHI TIẾT RECORDS KHÔNG HỢP LỆ ===');
         invalidTargetRecords.forEach(detail => {
             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
             console.log(`  - createdBy: ${detail.createdBy}`);
             console.log(`  - parentPost exists: ${detail.parentPostVerification.hasParentPost}`);
-            console.log(`  - title exists: ${detail.parentPostVerification.hasTitle}`);
-            console.log(`  - caption exists: ${detail.parentPostVerification.hasCaption}`);
-            console.log(`  - shared_content exists: ${detail.parentPostVerification.hasSharedContent}`);
+            console.log(`  - title match: ${detail.parentPostVerification.titleMatch}`);
+            console.log(`  - caption match: ${detail.parentPostVerification.captionMatch}`);
+            console.log(`  - shared_content match: ${detail.parentPostVerification.sharedContentMatch}`);
             console.log('');
         });
     }
-
-
-
-    const invalidPostShareRecords = results.details.filter(detail =>
-
-    (detail.checked &&
-        detail.postShareVerification &&
-        !detail.postShareVerification.isValid)
-    );
-
-    if (invalidPostShareRecords.length > 0) {
-        console.log('=== CHI TIẾT RECORDS POST SHARE KHÔNG HỢP LỆ ===');
-        invalidPostShareRecords.forEach(detail => {
-            console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
-            console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
-            console.log(`  - createdBy: ${detail.createdBy}`);
-            // console.log(`  - title exists: ${detail.postShareVerification.hasNoTitle}`);
-            console.log(`  - caption no exists: ${detail.postShareVerification.hasNoCaption}`);
-            console.log(`  - shared_content no exists: ${detail.postShareVerification.hasNoSharedContent}`);
-            console.log('');
-        });
-    }
-
-
-
 
     // Tóm tắt records bỏ qua
     const skippedByCreatedBy = {};
@@ -383,11 +286,10 @@ function displayResults(results) {
 
 // Ví dụ sử dụng
 function main() {
-    //const filePath = 'Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_mentions_2_solr_mentions_LamTT_2025-09-24T09-47-12-030Z.json'; // Thay đổi đường dẫn file của bạn
-    const filePath = "Verification_Scripts/testFile.json"
+    const filePath = 'Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_mentions_2_solr_mentions_TrangHK_2025-09-22T09-26-19-812Z.json'; // Thay đổi đường dẫn file của bạn
     const searchText = ['title_text', 'caption_text', 'shared_content_text'];
 
-    const results = verifyJsonFile(filePath);
+    const results = verifyJsonFile(filePath, searchText);
     displayResults(results);
 }
 
@@ -398,7 +300,6 @@ export default {
     verifyJsonFile,
     displayResults,
     isValidCreatedBy
-
 };
 
 // Uncomment dòng dưới để chạy ví dụ
