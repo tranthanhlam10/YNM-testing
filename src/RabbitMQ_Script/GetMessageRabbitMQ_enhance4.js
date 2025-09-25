@@ -350,7 +350,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.tr.source_replies_no_cookie_crawled_sources";
+const queueName = "testing.cl.posts_2_solr_yt_comments";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -358,12 +358,12 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - tự động detect và fetch tất cả messages
 peekAllMessagesInBatches(
-  stagingHTTP, 
-  stagingDomain, 
+  testHTTP, 
+  testDomain, 
   queueName, 
   userName, 
-  stagingPassword,
-  500 // Batch size
+  testPassword,
+  1000 // Batch size
 ).then(result => {
   if (result.success) {
     console.log(`\n🎊 SUCCESS! Processed ${result.processedMessages}/${result.totalMessages} messages.`);

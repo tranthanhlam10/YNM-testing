@@ -155,7 +155,7 @@ function isValidCreatedBy(record) {
     });
 
 
-    console.log(validCreatedBy);    
+   // console.log(validCreatedBy);    
 
     return validCreatedBy.includes(record.createdBy);
 }
@@ -222,6 +222,58 @@ function verifyJsonFile(filePath) {
 /**
  * Hàm hiển thị kết quả một cách dễ đọc
  * @param {Object} results - Kết quả từ verifyJsonFile
+//  */
+// function displayResults(results) {
+//     if (!results) {
+//         console.log('Không có kết quả để hiển thị');
+//         return;
+//     }
+
+//     console.log('=== KẾT QUẢ KIỂM TRA ===');
+//     console.log(`Tổng số record: ${results.totalRecords}`);
+//     console.log(`Số record cần kiểm tra (target createdBy): ${results.targetRecords}`);
+//     console.log(`Số record bỏ qua: ${results.skippedRecords}`);
+//     console.log(`Số record có parentPost hợp lệ: ${results.validPostRecords}`);
+//     console.log('');
+
+//     // Hiển thị chi tiết các record target không hợp lệ
+//     const invalidTargetRecords = results.details.filter(detail =>
+//         detail.checked &&
+//         detail.postVerification &&
+//         !detail.postVerification.isValid
+//     );
+
+//     if (invalidTargetRecords.length > 0) {
+//         console.log('=== CHI TIẾT RECORDS KHÔNG HỢP LỆ ===');
+//         invalidTargetRecords.forEach(detail => {
+//             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
+//             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
+//             // console.log(`  - createdBy: ${detail.createdBy}`);
+//             console.log(`  - title match: ${detail.postVerification.titleMatch}`);
+//             console.log(`  - caption match: ${detail.postVerification.captionMatch}`);
+//             console.log(`  - shared_content match: ${detail.postVerification.sharedContentMatch}`);
+//             console.log('');
+//         });
+//     }
+
+//     // Tóm tắt records bỏ qua
+//     const skippedByCreatedBy = {};
+//     results.details.filter(detail => !detail.checked).forEach(detail => {
+//         const createdBy = detail.createdBy || 'null';
+//         skippedByCreatedBy[createdBy] = (skippedByCreatedBy[createdBy] || 0) + 1;
+//     });
+
+//     if (Object.keys(skippedByCreatedBy).length > 0) {
+//         console.log('=== RECORDS BỎ QUA THEO CREATEDBY ===');
+//         Object.entries(skippedByCreatedBy).forEach(([createdBy, count]) => {
+//             console.log(`${createdBy}: ${count} records`);
+//         });
+//     }
+// }
+
+/**
+ * Hàm hiển thị kết quả một cách dễ đọc
+ * @param {Object} results - Kết quả từ verifyJsonFile
  */
 function displayResults(results) {
     if (!results) {
@@ -233,8 +285,45 @@ function displayResults(results) {
     console.log(`Tổng số record: ${results.totalRecords}`);
     console.log(`Số record cần kiểm tra (target createdBy): ${results.targetRecords}`);
     console.log(`Số record bỏ qua: ${results.skippedRecords}`);
-    console.log(`Số record có parentPost hợp lệ: ${results.validPostRecords}`);
+    console.log(`Số record có post hợp lệ: ${results.validPostRecords}`);
     console.log('');
+
+    // === THÊM PHẦN GOM NHÓM CREATEDBY HỢP LỆ ===
+    const validCreatedByGroups = {};
+
+    // Gom nhóm các records đã check (có createdBy hợp lệ)
+    results.details.filter(detail => detail.checked).forEach(detail => {
+        const createdBy = detail.createdBy || 'undefined';
+        
+        if (!validCreatedByGroups[createdBy]) {
+            validCreatedByGroups[createdBy] = {
+                total: 0,
+                valid: 0,
+                invalid: 0
+            };
+        }
+        
+        validCreatedByGroups[createdBy].total++;
+        
+        if (detail.postVerification && detail.postVerification.isValid) {
+            validCreatedByGroups[createdBy].valid++;
+        } else {
+            validCreatedByGroups[createdBy].invalid++;
+        }
+    });
+
+    // Hiển thị thống kê theo createdBy
+    if (Object.keys(validCreatedByGroups).length > 0) {
+        console.log('=== THỐNG KÊ THEO CREATEDBY ĐÃ KIỂM TRA ===');
+        Object.entries(validCreatedByGroups).forEach(([createdBy, stats]) => {
+            const percentage = stats.total > 0 ? ((stats.valid / stats.total) * 100).toFixed(1) : '0.0';
+            console.log(`${createdBy}:`);
+            console.log(`  - Tổng: ${stats.total} records`);
+            console.log(`  - Hợp lệ: ${stats.valid} records (${percentage}%)`);
+            console.log(`  - Không hợp lệ: ${stats.invalid} records`);
+            console.log('');
+        });
+    }
 
     // Hiển thị chi tiết các record target không hợp lệ
     const invalidTargetRecords = results.details.filter(detail =>
@@ -248,7 +337,10 @@ function displayResults(results) {
         invalidTargetRecords.forEach(detail => {
             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
-            // console.log(`  - createdBy: ${detail.createdBy}`);
+            console.log(`  - createdBy: ${detail.createdBy}`);
+            console.log(`  - has title: ${detail.postVerification.hasTitle}`);
+            console.log(`  - has caption: ${detail.postVerification.hasCaption}`);
+            console.log(`  - has shared_content: ${detail.postVerification.hasSharedContent}`);
             console.log(`  - title match: ${detail.postVerification.titleMatch}`);
             console.log(`  - caption match: ${detail.postVerification.captionMatch}`);
             console.log(`  - shared_content match: ${detail.postVerification.sharedContentMatch}`);
@@ -269,11 +361,24 @@ function displayResults(results) {
             console.log(`${createdBy}: ${count} records`);
         });
     }
+
+    // === TỔNG KẾT CREATEDBY ĐÃ KIỂM TRA ===
+    const allCheckedCreatedBy = Object.keys(validCreatedByGroups);
+
+    console.log('\n=== DANH SÁCH TẤT CẢ CREATEDBY ĐÃ KIỂM TRA ===');
+    console.log(`Tổng số loại createdBy đã kiểm tra: ${allCheckedCreatedBy.length}`);
+    allCheckedCreatedBy.sort().forEach((createdBy, index) => {
+        const stats = validCreatedByGroups[createdBy];
+        const percentage = ((stats.valid / stats.total) * 100).toFixed(1);
+        console.log(`${index + 1}. ${createdBy} - ${stats.valid}/${stats.total} (${percentage}%)`);
+    });
 }
+
+
 
 // Ví dụ sử dụng
 function main() {
-    const filePath = 'Data_get_from_rabbitMQ_by_scripts/post_GetLatestPriorityChannelsVideosByApi.json'; 
+    const filePath = 'Data_get_from_rabbitMQ_by_scripts/post_FacebookGetLatestHashtagPosts.json'; 
 
     const results = verifyJsonFile(filePath);
     displayResults(results);

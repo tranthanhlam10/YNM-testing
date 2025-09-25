@@ -305,6 +305,83 @@ function verifyJsonFile(filePath) {
  * Hàm hiển thị kết quả một cách dễ đọc
  * @param {Object} results - Kết quả từ verifyJsonFile
  */
+// function displayResults(results) {
+//     if (!results) {
+//         console.log('Không có kết quả để hiển thị');
+//         return;
+//     }
+
+//     console.log('=== KẾT QUẢ KIỂM TRA ===');
+//     console.log(`Tổng số record: ${results.totalRecords}`);
+//     console.log(`Số record comment/reply cần kiểm tra (target createdBy): ${results.targetCommentReplyRecords}`);
+//     console.log(`Số record post/share cần kiểm tra (target createdBy): ${results.targetPostShareRecords}`);
+//     console.log(`Số record bỏ qua: ${results.skippedRecords}`);
+//     console.log(`Số record reply/comment parentPost hợp lệ: ${results.validParentPostRecords}`);
+//     console.log(`Số record post/share hợp lệ: ${results.validPostShareRecords}`);
+//     console.log('');
+
+//     // Hiển thị chi tiết các record cho p
+//     const invalidTargetRecords = results.details.filter(detail =>
+//     (detail.checked &&
+//         detail.parentPostVerification &&
+//         !detail.parentPostVerification.isValid)
+//     );
+
+//     if (invalidTargetRecords.length > 0) {
+//         console.log('=== CHI TIẾT RECORDS REPLY/COMMENT KHÔNG HỢP LỆ ===');
+//         invalidTargetRecords.forEach(detail => {
+//             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
+//             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
+//             console.log(`  - createdBy: ${detail.createdBy}`);
+//             console.log(`  - parentPost exists: ${detail.parentPostVerification.hasParentPost}`);
+//             console.log(`  - title exists: ${detail.parentPostVerification.hasTitle}`);
+//             console.log(`  - caption exists: ${detail.parentPostVerification.hasCaption}`);
+//             console.log(`  - shared_content exists: ${detail.parentPostVerification.hasSharedContent}`);
+//             console.log('');
+//         });
+//     }
+
+
+
+//     const invalidPostShareRecords = results.details.filter(detail =>
+
+//     (detail.checked &&
+//         detail.postShareVerification &&
+//         !detail.postShareVerification.isValid)
+//     );
+
+//     if (invalidPostShareRecords.length > 0) {
+//         console.log('=== CHI TIẾT RECORDS POST SHARE KHÔNG HỢP LỆ ===');
+//         invalidPostShareRecords.forEach(detail => {
+//             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
+//             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
+//             console.log(`  - createdBy: ${detail.createdBy}`);
+//             // console.log(`  - title exists: ${detail.postShareVerification.hasNoTitle}`);
+//             console.log(`  - caption no exists: ${detail.postShareVerification.hasNoCaption}`);
+//             console.log(`  - shared_content no exists: ${detail.postShareVerification.hasNoSharedContent}`);
+//             console.log('');
+//         });
+//     }
+
+
+
+
+//     // Tóm tắt records bỏ qua
+//     const skippedByCreatedBy = {};
+//     results.details.filter(detail => !detail.checked).forEach(detail => {
+//         const createdBy = detail.createdBy || 'null';
+//         skippedByCreatedBy[createdBy] = (skippedByCreatedBy[createdBy] || 0) + 1;
+//     });
+
+//     if (Object.keys(skippedByCreatedBy).length > 0) {
+//         console.log('=== RECORDS BỎ QUA THEO CREATEDBY ===');
+//         Object.entries(skippedByCreatedBy).forEach(([createdBy, count]) => {
+//             console.log(`${createdBy}: ${count} records`);
+//         });
+//     }
+// }
+
+
 function displayResults(results) {
     if (!results) {
         console.log('Không có kết quả để hiển thị');
@@ -320,11 +397,84 @@ function displayResults(results) {
     console.log(`Số record post/share hợp lệ: ${results.validPostShareRecords}`);
     console.log('');
 
-    // Hiển thị chi tiết các record cho p
+    // === THÊM PHẦN GOM NHÓM CREATEDBY HỢP LỆ ===
+    const validCreatedByGroups = {
+        commentReply: {},
+        postShare: {}
+    };
+
+    // Gom nhóm các records đã check (có createdBy hợp lệ)
+    results.details.filter(detail => detail.checked).forEach(detail => {
+        const createdBy = detail.createdBy;
+        
+        if (detail.parentPostVerification) {
+            // Đây là comment/reply record
+            if (!validCreatedByGroups.commentReply[createdBy]) {
+                validCreatedByGroups.commentReply[createdBy] = {
+                    total: 0,
+                    valid: 0,
+                    invalid: 0
+                };
+            }
+            validCreatedByGroups.commentReply[createdBy].total++;
+            
+            if (detail.parentPostVerification.isValid) {
+                validCreatedByGroups.commentReply[createdBy].valid++;
+            } else {
+                validCreatedByGroups.commentReply[createdBy].invalid++;
+            }
+            
+        } else if (detail.postShareVerification) {
+            // Đây là post/share record
+            if (!validCreatedByGroups.postShare[createdBy]) {
+                validCreatedByGroups.postShare[createdBy] = {
+                    total: 0,
+                    valid: 0,
+                    invalid: 0
+                };
+            }
+            validCreatedByGroups.postShare[createdBy].total++;
+            
+            if (detail.postShareVerification.isValid) {
+                validCreatedByGroups.postShare[createdBy].valid++;
+            } else {
+                validCreatedByGroups.postShare[createdBy].invalid++;
+            }
+        }
+    });
+
+    // Hiển thị thống kê theo createdBy
+    console.log('=== THỐNG KÊ THEO CREATEDBY HỢP LỆ ===');
+    
+    if (Object.keys(validCreatedByGroups.commentReply).length > 0) {
+        console.log('\n--- COMMENT/REPLY RECORDS ---');
+        Object.entries(validCreatedByGroups.commentReply).forEach(([createdBy, stats]) => {
+            const percentage = ((stats.valid / stats.total) * 100).toFixed(1);
+            console.log(`${createdBy}:`);
+            console.log(`  - Tổng: ${stats.total} records`);
+            console.log(`  - Hợp lệ: ${stats.valid} records (${percentage}%)`);
+            console.log(`  - Không hợp lệ: ${stats.invalid} records`);
+        });
+    }
+
+    if (Object.keys(validCreatedByGroups.postShare).length > 0) {
+        console.log('\n--- POST/SHARE RECORDS ---');
+        Object.entries(validCreatedByGroups.postShare).forEach(([createdBy, stats]) => {
+            const percentage = ((stats.valid / stats.total) * 100).toFixed(1);
+            console.log(`${createdBy}:`);
+            console.log(`  - Tổng: ${stats.total} records`);
+            console.log(`  - Hợp lệ: ${stats.valid} records (${percentage}%)`);
+            console.log(`  - Không hợp lệ: ${stats.invalid} records`);
+        });
+    }
+
+    console.log('');
+
+    // Hiển thị chi tiết các record không hợp lệ
     const invalidTargetRecords = results.details.filter(detail =>
-    (detail.checked &&
-        detail.parentPostVerification &&
-        !detail.parentPostVerification.isValid)
+        (detail.checked &&
+            detail.parentPostVerification &&
+            !detail.parentPostVerification.isValid)
     );
 
     if (invalidTargetRecords.length > 0) {
@@ -341,13 +491,10 @@ function displayResults(results) {
         });
     }
 
-
-
     const invalidPostShareRecords = results.details.filter(detail =>
-
-    (detail.checked &&
-        detail.postShareVerification &&
-        !detail.postShareVerification.isValid)
+        (detail.checked &&
+            detail.postShareVerification &&
+            !detail.postShareVerification.isValid)
     );
 
     if (invalidPostShareRecords.length > 0) {
@@ -356,15 +503,11 @@ function displayResults(results) {
             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
             console.log(`  - createdBy: ${detail.createdBy}`);
-            // console.log(`  - title exists: ${detail.postShareVerification.hasNoTitle}`);
             console.log(`  - caption no exists: ${detail.postShareVerification.hasNoCaption}`);
             console.log(`  - shared_content no exists: ${detail.postShareVerification.hasNoSharedContent}`);
             console.log('');
         });
     }
-
-
-
 
     // Tóm tắt records bỏ qua
     const skippedByCreatedBy = {};
@@ -379,14 +522,23 @@ function displayResults(results) {
             console.log(`${createdBy}: ${count} records`);
         });
     }
+
+    // === TỔNG KẾT CREATEDBY HỢP LỆ ===
+    const allValidCreatedBy = new Set([
+        ...Object.keys(validCreatedByGroups.commentReply),
+        ...Object.keys(validCreatedByGroups.postShare)
+    ]);
+
+    console.log('\n=== DANH SÁCH TẤT CẢ CREATEDBY HỢP LỆ ĐÃ KIỂM TRA ===');
+    console.log(`Tổng số loại createdBy hợp lệ: ${allValidCreatedBy.size}`);
+    Array.from(allValidCreatedBy).sort().forEach((createdBy, index) => {
+        console.log(`${index + 1}. ${createdBy}`);
+    });
 }
 
 // Ví dụ sử dụng
 function main() {
-    //const filePath = 'Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_mentions_2_solr_mentions_LamTT_2025-09-24T09-47-12-030Z.json'; // Thay đổi đường dẫn file của bạn
-    const filePath = "Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_mentions_2_solr_mentions_LamTT_2025-09-25T03-40-59-977Z/all_messages.json"
-    const searchText = ['title_text', 'caption_text', 'shared_content_text'];
-
+    const filePath = "Data_get_from_rabbitMQ_by_scripts/mentions_FacebookGetLatestHashtagPosts.json"
     const results = verifyJsonFile(filePath);
     displayResults(results);
 }
