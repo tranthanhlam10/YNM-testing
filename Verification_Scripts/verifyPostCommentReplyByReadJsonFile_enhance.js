@@ -378,7 +378,7 @@ function displayResults(results) {
 
 // Ví dụ sử dụng
 function main() {
-    const filePath = 'Data_get_from_rabbitMQ_by_scripts/post_FacebookGetLatestHashtagPosts.json'; 
+    const filePath = 'Data_get_from_rabbitMQ_by_scripts/posts_YoutubePostFromCrisisKeyword.json'; 
 
     const results = verifyJsonFile(filePath);
     displayResults(results);

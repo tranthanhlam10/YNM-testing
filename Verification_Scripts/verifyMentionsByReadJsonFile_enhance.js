@@ -162,6 +162,7 @@ function isValidCreatedBy(record) {
         "ThreadsSourceReplyCrawlingLoader",
         "ThreadsRepostCrawlingLoader",
         "ThreadsSourcePostCrawlingLoader",
+        "YoutubePostFromCrisisKeywordCrawlingLoader"
 
     ];
 
@@ -300,86 +301,6 @@ function verifyJsonFile(filePath) {
 
     return results;
 }
-
-/**
- * Hàm hiển thị kết quả một cách dễ đọc
- * @param {Object} results - Kết quả từ verifyJsonFile
- */
-// function displayResults(results) {
-//     if (!results) {
-//         console.log('Không có kết quả để hiển thị');
-//         return;
-//     }
-
-//     console.log('=== KẾT QUẢ KIỂM TRA ===');
-//     console.log(`Tổng số record: ${results.totalRecords}`);
-//     console.log(`Số record comment/reply cần kiểm tra (target createdBy): ${results.targetCommentReplyRecords}`);
-//     console.log(`Số record post/share cần kiểm tra (target createdBy): ${results.targetPostShareRecords}`);
-//     console.log(`Số record bỏ qua: ${results.skippedRecords}`);
-//     console.log(`Số record reply/comment parentPost hợp lệ: ${results.validParentPostRecords}`);
-//     console.log(`Số record post/share hợp lệ: ${results.validPostShareRecords}`);
-//     console.log('');
-
-//     // Hiển thị chi tiết các record cho p
-//     const invalidTargetRecords = results.details.filter(detail =>
-//     (detail.checked &&
-//         detail.parentPostVerification &&
-//         !detail.parentPostVerification.isValid)
-//     );
-
-//     if (invalidTargetRecords.length > 0) {
-//         console.log('=== CHI TIẾT RECORDS REPLY/COMMENT KHÔNG HỢP LỆ ===');
-//         invalidTargetRecords.forEach(detail => {
-//             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
-//             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
-//             console.log(`  - createdBy: ${detail.createdBy}`);
-//             console.log(`  - parentPost exists: ${detail.parentPostVerification.hasParentPost}`);
-//             console.log(`  - title exists: ${detail.parentPostVerification.hasTitle}`);
-//             console.log(`  - caption exists: ${detail.parentPostVerification.hasCaption}`);
-//             console.log(`  - shared_content exists: ${detail.parentPostVerification.hasSharedContent}`);
-//             console.log('');
-//         });
-//     }
-
-
-
-//     const invalidPostShareRecords = results.details.filter(detail =>
-
-//     (detail.checked &&
-//         detail.postShareVerification &&
-//         !detail.postShareVerification.isValid)
-//     );
-
-//     if (invalidPostShareRecords.length > 0) {
-//         console.log('=== CHI TIẾT RECORDS POST SHARE KHÔNG HỢP LỆ ===');
-//         invalidPostShareRecords.forEach(detail => {
-//             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
-//             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
-//             console.log(`  - createdBy: ${detail.createdBy}`);
-//             // console.log(`  - title exists: ${detail.postShareVerification.hasNoTitle}`);
-//             console.log(`  - caption no exists: ${detail.postShareVerification.hasNoCaption}`);
-//             console.log(`  - shared_content no exists: ${detail.postShareVerification.hasNoSharedContent}`);
-//             console.log('');
-//         });
-//     }
-
-
-
-
-//     // Tóm tắt records bỏ qua
-//     const skippedByCreatedBy = {};
-//     results.details.filter(detail => !detail.checked).forEach(detail => {
-//         const createdBy = detail.createdBy || 'null';
-//         skippedByCreatedBy[createdBy] = (skippedByCreatedBy[createdBy] || 0) + 1;
-//     });
-
-//     if (Object.keys(skippedByCreatedBy).length > 0) {
-//         console.log('=== RECORDS BỎ QUA THEO CREATEDBY ===');
-//         Object.entries(skippedByCreatedBy).forEach(([createdBy, count]) => {
-//             console.log(`${createdBy}: ${count} records`);
-//         });
-//     }
-// }
 
 
 function displayResults(results) {
@@ -538,7 +459,7 @@ function displayResults(results) {
 
 // Ví dụ sử dụng
 function main() {
-    const filePath = "Data_get_from_rabbitMQ_by_scripts/mentions_FacebookGetLatestHashtagPosts.json"
+    const filePath = "Data_get_from_rabbitMQ_by_scripts/mentions_YoutubePostFromCrisisKeyword.json"
     const results = verifyJsonFile(filePath);
     displayResults(results);
 }
