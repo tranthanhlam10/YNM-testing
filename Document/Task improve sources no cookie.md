@@ -699,7 +699,7 @@ Các cases cần check khi đẩy qua luồng extension:
   "to_date": "1751529785",
   "platform": 10,
   "createdBy": "ThreadsRepostNoCookieCrawlingLoader",
-  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z"
+  "repost_no_cookie_last_date": "2025-06-30T02:45:52.000Z",
   "link": "threads.net/@misthyyyy",
   "startedCrawling": "2025-07-03T08:03:05.897Z",
   "id_social": "63098113013",

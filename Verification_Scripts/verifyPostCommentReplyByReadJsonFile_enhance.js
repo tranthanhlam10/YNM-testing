@@ -45,7 +45,7 @@ function verifyPosts(record) {
 
 
     if (record.platform === 3 || record.platform === 10) {
-        if (record.parentPost.shared_content !== undefined) {
+        if (record.shared_content !== undefined) {
             result.hasSharedContent = true;
         }
     } else {
@@ -114,6 +114,8 @@ function isValidCreatedBy(record) {
         "ThreadsSourceReplyCrawlingLoader",
         "ThreadsRepostCrawlingLoader",
         "ThreadsSourcePostCrawlingLoader",
+        "PageWebCommentCrawlingLoader",
+        "HighPriorityNewsDetailSourcesCrawlingLoader"
 
     ];
 
@@ -378,7 +380,7 @@ function displayResults(results) {
 
 // Ví dụ sử dụng
 function main() {
-    const filePath = 'Data_get_from_rabbitMQ_by_scripts/posts_YoutubePostFromCrisisKeyword.json'; 
+    const filePath = 'Data_get_from_rabbitMQ_by_scripts/posts_TiktokHashtagNew.json'; 
 
     const results = verifyJsonFile(filePath);
     displayResults(results);
