@@ -22,7 +22,7 @@ function readJsonFile(filePath) {
  * @param {Array} searchText - Mảng chứa 3 phần tử [title, caption, shared_content]
  * @returns {Object} Kết quả kiểm tra
  */
-function verifyParentPostFields(record) {
+function verifyLoaderFields(record) {
     const result = {
         hasParentPost: false,
         hasTitle: false,
@@ -34,24 +34,19 @@ function verifyParentPostFields(record) {
         isValid: false
     };
 
-    if (!record.parentPost || typeof record.parentPost !== 'object') {
-        return result;
-    }
 
-    result.hasParentPost = true;
 
-    if (record.parentPost.title !== undefined) {
-        result.hasTitle = true;
-        result.titleMatch = record.parentPost.title === record.search_text[0];
-    }
+    // if (record.parentPost.title !== undefined) {
+    //     result.hasTitle = true;
+    //     result.titleMatch = record.parentPost.title === record.search_text[0];
+    // }
 
-    if (record.parentPost.caption !== undefined) {
+    if (record.caption !== undefined) {
         result.hasCaption = true;
-        result.captionMatch = record.parentPost.caption === record.search_text[1];
     }
 
 
-    if (record.platform === 3 || record.platform === 5) {
+    if (record.platform === 3 || record.platform === 10) {
         if (record.parentPost.shared_content !== undefined) {
             result.hasSharedContent = true;
         }
@@ -60,9 +55,8 @@ function verifyParentPostFields(record) {
     }
 
 
-    result.isValid = result.hasParentPost &&
-        result.hasTitle && result.titleMatch &&
-        result.hasCaption && result.captionMatch &&
+    result.isValid =
+        result.hasCaption &&
         result.hasSharedContent;
 
     return result;
@@ -83,31 +77,6 @@ function verifyParentPostFields(record) {
  */
 
 
-/**
- * Convert script path -> createdBy
- * @param {string} scriptPath - e.g. "scripts/facebookV3/crawl_post_by_keywords.js"
- * @returns {string} createdBy - e.g. "FacebookCrawlPostByKeywords"
- */
-function getCreatedBy(scriptPath) {
-    // Lấy tên file và thư mục cha
-    const parsed = path.parse(scriptPath);
-    const fileName = parsed.name; // e.g. "crawl_post_by_keywords"
-    const parentDir = path.basename(path.dirname(scriptPath)); // e.g. "facebookV3"
-
-    // Domain = bỏ số version (facebookV3 -> facebook)
-    const domain = parentDir.replace(/[0-9]/gi, "").replace(/WithNextCrawlTime/gi, "");
-
-    // Convert fileName snake_case -> PascalCase
-    const pascal = fileName
-        .split("_")
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join("");
-
-    // Gắn lại Domain (PascalCase) + Script
-    return domain.charAt(0).toUpperCase() + domain.slice(1) + pascal;
-}
-
-
 
 function isValidCreatedBy(record) {
       let validCreatedBy = [
@@ -121,48 +90,9 @@ function isValidCreatedBy(record) {
         "ThreadsSourceReplyCrawlingLoader",
         "ThreadsRepostCrawlingLoader",
         "ThreadsSourcePostCrawlingLoader",
+        "YoutubePostFromCrisisKeywordCrawlingLoader"
 
     ];
-
-    const oldScripts = [
-        "scripts/facebookV3/get_latest_group_posts.js",
-        "scripts/facebookV3/get_latest_priority_group_posts.js",
-        "scripts/facebookV3/get_latest_crisis_group_posts.js",
-        "scripts/facebookV3/get_latest_priority_close_group_posts.js",
-        "scripts/facebookV3/crawl_post_by_keywords.js",
-        "scripts/facebookV4/get_latest_hashtag_posts.js",
-        "scripts/facebookV4/get_latest_hashtag_posts_crisis.js",
-        "scripts/facebookV3/crawl_post_by_keywords_crisis.js",
-        "scripts/commentsV3/crawl_url_comments.js",
-        "scripts/commentsV3/crawl_reviews.js",
-        "scripts/forumV3/get_posts.js",
-        "scripts/forumV3/get_posts_prev.js",
-        "scripts/articlesV3WithNextCrawlTime/crawlYoutubeDetails.js",
-        "scripts/youtubeV2/get_latest_top_50_trending.js",
-        "scripts/youtubeV3/monitoring_priority_channel.js",
-        "scripts/youtubeV3/monitoring_priority_video.js",
-        "scripts/youtubeV3/monitoring_channel.js",
-        "scripts/youtubeV3/monitoring_video.js",
-        "scripts/youtubeV3/get_latest_priority_channels_videos_by_api.js",
-        "scripts/youtubeV3/get_latest_priority_videos_comments_by_api.js",
-        "scripts/youtubeV2/get_latest_priority_channels_info.js",
-        "scripts/youtubeV2/get_latest_priority_comments_replies.js",
-        "scripts/youtubeV2/get_latest_priority_channels_info_monthly.js",
-        "scripts/youtubeV2/get_latest_potential_channels_info.js",
-        "scripts/tiktok/get_latest_user_posts.js",
-        "scripts/tiktok/get_latest_priority_user_posts.js",
-        "scripts/tiktok/get_latest_user_posts_SL.js",
-        "scripts/tiktok/get_latest_post_comments.js",
-        "scripts/tiktok/get_latest_priority_post_comments.js",
-        "scripts/tiktok/get_latest_post_comments_SL.js",
-    ];
-
-    oldScripts.forEach(s => {
-        validCreatedBy.push( getCreatedBy(s) ); 
-    });
-
-
-    //console.log(validCreatedBy);    
 
     return validCreatedBy.includes(record.createdBy);
 }
@@ -173,7 +103,7 @@ function isValidCreatedBy(record) {
  * @param {Array} searchText - Mảng chứa [title, caption, shared_content]
  * @returns {Object} Kết quả tổng hợp
  */
-function verifyJsonFile(filePath, searchText) {
+function verifyJsonFile(filePath) {
     const jsonData = readJsonFile(filePath);
 
     if (!Array.isArray(jsonData)) {
@@ -181,15 +111,10 @@ function verifyJsonFile(filePath, searchText) {
         return null;
     }
 
-    if (!Array.isArray(searchText) || searchText.length < 3) {
-        console.error('searchText phải là mảng có ít nhất 3 phần tử');
-        return null;
-    }
-
     const results = {
         totalRecords: jsonData.length,
         targetRecords: 0,
-        validParentPostRecords: 0,
+        validLoaderRecords: 0,
         skippedRecords: 0,
         details: []
     };
@@ -204,27 +129,24 @@ function verifyJsonFile(filePath, searchText) {
                 createdBy: record.createdBy,
                 checked: true,
                 id: record.id,
-                parentPostVerification: verifyParentPostFields(record, searchText)
+                loaderVerification: verifyLoaderFields(record)
             };
 
-            if (recordResult.parentPostVerification.isValid) {
-                results.validParentPostRecords++;
+            if (recordResult.loaderVerification.isValid) {
+                results.validLoaderRecords++;
             }
 
             results.details.push(recordResult);
         } else {
             // Bỏ qua record này
             results.skippedRecords++;
-            const unVerifyRecords = results.details.push({
+                results.details.push({
                 index: index,
                 createdBy: record.createdBy,
                 checked: false,
-                parentPostVerification: null,
+                loaderVerification: null,
                 reason: 'createdBy không thuộc target list'
             });
-
-            // console.log(`Bỏ qua record ${index} với createdBy: ${record.createdBy}`); // Log lý do bỏ qua
-            // console.log (unVerifyRecords);
         }
     });
 
@@ -245,14 +167,51 @@ function displayResults(results) {
     console.log(`Tổng số record: ${results.totalRecords}`);
     console.log(`Số record cần kiểm tra (target createdBy): ${results.targetRecords}`);
     console.log(`Số record bỏ qua: ${results.skippedRecords}`);
-    console.log(`Số record có parentPost hợp lệ: ${results.validParentPostRecords}`);
+    console.log(`Số record loader hợp lệ: ${results.validLoaderRecords}`);
     console.log('');
+
+    // === THÊM PHẦN GOM NHÓM CREATEDBY HỢP LỆ ===
+    const validCreatedByGroups = {};
+
+    // Gom nhóm các records đã check (có createdBy hợp lệ)
+    results.details.filter(detail => detail.checked).forEach(detail => {
+        const createdBy = detail.createdBy || 'undefined';
+        
+        if (!validCreatedByGroups[createdBy]) {
+            validCreatedByGroups[createdBy] = {
+                total: 0,
+                valid: 0,
+                invalid: 0
+            };
+        }
+        
+        validCreatedByGroups[createdBy].total++;
+        
+        if (detail.loaderVerification && detail.loaderVerification.isValid) {
+            validCreatedByGroups[createdBy].valid++;
+        } else {
+            validCreatedByGroups[createdBy].invalid++;
+        }
+    });
+
+    // Hiển thị thống kê theo createdBy
+    if (Object.keys(validCreatedByGroups).length > 0) {
+        console.log('=== THỐNG KÊ THEO CREATEDBY HỢP LỆ ===');
+        Object.entries(validCreatedByGroups).forEach(([createdBy, stats]) => {
+            const percentage = stats.total > 0 ? ((stats.valid / stats.total) * 100).toFixed(1) : '0.0';
+            console.log(`${createdBy}:`);
+            console.log(`  - Tổng: ${stats.total} records`);
+            console.log(`  - Hợp lệ: ${stats.valid} records (${percentage}%)`);
+            console.log(`  - Không hợp lệ: ${stats.invalid} records`);
+            console.log('');
+        });
+    }
 
     // Hiển thị chi tiết các record target không hợp lệ
     const invalidTargetRecords = results.details.filter(detail =>
         detail.checked &&
-        detail.parentPostVerification &&
-        !detail.parentPostVerification.isValid
+        detail.loaderVerification &&
+        !detail.loaderVerification.isValid
     );
 
     if (invalidTargetRecords.length > 0) {
@@ -261,10 +220,10 @@ function displayResults(results) {
             console.log(`Record ${detail.index}: KHÔNG HỢP LỆ`);
             console.log(`Record có id ${detail.id}: KHÔNG HỢP LỆ`);
             console.log(`  - createdBy: ${detail.createdBy}`);
-            console.log(`  - parentPost exists: ${detail.parentPostVerification.hasParentPost}`);
-            console.log(`  - title match: ${detail.parentPostVerification.titleMatch}`);
-            console.log(`  - caption match: ${detail.parentPostVerification.captionMatch}`);
-            console.log(`  - shared_content match: ${detail.parentPostVerification.sharedContentMatch}`);
+            console.log(`  - has caption: ${detail.loaderVerification.hasCaption}`);
+            console.log(`  - has shared_content: ${detail.loaderVerification.hasSharedContent}`);
+            console.log(`  - caption match: ${detail.loaderVerification.captionMatch}`);
+            console.log(`  - shared_content match: ${detail.loaderVerification.sharedContentMatch}`);
             console.log('');
         });
     }
@@ -282,21 +241,30 @@ function displayResults(results) {
             console.log(`${createdBy}: ${count} records`);
         });
     }
+
+    // === TỔNG KẾT CREATEDBY HỢP LỆ ===
+    const allValidCreatedBy = Object.keys(validCreatedByGroups);
+
+    console.log('\n=== DANH SÁCH TẤT CẢ CREATEDBY HỢP LỆ ĐÃ KIỂM TRA ===');
+    console.log(`Tổng số loại createdBy hợp lệ: ${allValidCreatedBy.length}`);
+    allValidCreatedBy.sort().forEach((createdBy, index) => {
+        const stats = validCreatedByGroups[createdBy];
+        const percentage = ((stats.valid / stats.total) * 100).toFixed(1);
+        console.log(`${index + 1}. ${createdBy} - ${stats.valid}/${stats.total} (${percentage}%)`);
+    });
 }
 
 // Ví dụ sử dụng
 function main() {
     const filePath = 'Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_mentions_2_solr_mentions_TrangHK_2025-09-22T09-26-19-812Z.json'; // Thay đổi đường dẫn file của bạn
-    const searchText = ['title_text', 'caption_text', 'shared_content_text'];
 
-    const results = verifyJsonFile(filePath, searchText);
+    const results = verifyJsonFile(filePath);
     displayResults(results);
 }
 
 // Export các hàm để sử dụng ở nơi khác
 export default {
     readJsonFile,
-    verifyParentPostFields,
     verifyJsonFile,
     displayResults,
     isValidCreatedBy
