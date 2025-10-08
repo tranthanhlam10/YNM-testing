@@ -1,4 +1,3 @@
-// Cách 2: Sử dụng ES modules (cần thêm "type": "module" vào package.json)
 import fs from 'fs';
 import axios from 'axios';
 
@@ -139,10 +138,10 @@ async function getQueueInfo(
 
 
 async function main() {
-    const messageLimit = 50;
-    const jsonFilePath= 'messages_peek_crawled_sources_fail.json';
+    const messageLimit = 1000;
+    const jsonFilePath= 'Data_get_from_rabbitMQ_by_scripts/Data_test_parent_Post_07_010/post_TiktokHashtagKeyword_ThuyPN.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'testing.cl.news.article_urls_from_crisis_keyword_by_api_crawled_sources';
+    const queueName = 'testing.cl.posts_2_solr_tt_posts';
     const username = 'lamtt';
     const password = 'lamtt';
     const vhost = '/';

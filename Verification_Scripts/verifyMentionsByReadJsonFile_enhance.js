@@ -166,8 +166,11 @@ function isValidCreatedBy(record) {
         "PageWebCommentCrawlingLoader",
         "HighPriorityNewsDetailSourcesCrawlingLoader",
         "TiktokTagPostCrawlingLoader",
-        "ThreadsPostCommentCrawlingLoader"
-
+        "ThreadsPostCommentCrawlingLoader",
+        "YoutubeCrawlYoutubeDetails",
+        "YoutubeGetLatestPriorityVideosCommentsByApi",
+        "ThreadsReplyPostCrawlingLoader",
+        "InstagramGetLatestUserPosts"
     ];
 
     const oldScripts = [
@@ -463,7 +466,7 @@ function displayResults(results) {
 
 // Ví dụ sử dụng
 function main() {
-    const filePath = "Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_mentions_2_solr_mentions_LamTT_2025-10-01T07-50-53-340Z.json"
+    const filePath = "Data_get_from_rabbitMQ_by_scripts/mentions_InstagramGetLastestUserPost_ThuyPN.json"
     const results = verifyJsonFile(filePath);
     displayResults(results);
 }

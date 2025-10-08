@@ -449,7 +449,7 @@ crawler_type IN ( 'YT_TOKEN_CUA_LAMTT', '1_YT_TOKEN_CUA_LAMTT'  )
   "keyword_info": {
     "id": 1,
     "type": "CRISIS_TRACKING",
-    "keyword": "TIN NÓNG: TRUMP "BẬT ĐÈN XANH"",
+    "keyword": "Barca",
     "action": "POST",
     "expiry_date": "2025-12-31T16:59:59.000Z",
     "last_crawl_cursor": null,

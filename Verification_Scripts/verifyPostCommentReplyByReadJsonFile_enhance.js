@@ -115,7 +115,10 @@ function isValidCreatedBy(record) {
         "ThreadsRepostCrawlingLoader",
         "ThreadsSourcePostCrawlingLoader",
         "PageWebCommentCrawlingLoader",
-        "HighPriorityNewsDetailSourcesCrawlingLoader"
+        "HighPriorityNewsDetailSourcesCrawlingLoader",
+        "YoutubeCrawlYoutubeDetails",
+        "YoutubeGetLatestPriorityVideosCommentsByApi"
+
 
     ];
 
@@ -343,9 +346,9 @@ function displayResults(results) {
             console.log(`  - has title: ${detail.postVerification.hasTitle}`);
             console.log(`  - has caption: ${detail.postVerification.hasCaption}`);
             console.log(`  - has shared_content: ${detail.postVerification.hasSharedContent}`);
-            console.log(`  - title match: ${detail.postVerification.titleMatch}`);
-            console.log(`  - caption match: ${detail.postVerification.captionMatch}`);
-            console.log(`  - shared_content match: ${detail.postVerification.sharedContentMatch}`);
+            // console.log(`  - title match: ${detail.postVerification.titleMatch}`);
+            // console.log(`  - caption match: ${detail.postVerification.captionMatch}`);
+            // console.log(`  - shared_content match: ${detail.postVerification.sharedContentMatch}`);
             console.log('');
         });
     }
@@ -380,7 +383,7 @@ function displayResults(results) {
 
 // Ví dụ sử dụng
 function main() {
-    const filePath = 'Data_get_from_rabbitMQ_by_scripts/posts_TiktokHashtagNew.json'; 
+    const filePath = 'Data_get_from_rabbitMQ_by_scripts/comment_YoutubeCommnetAPI_ThuyPN.json'; 
 
     const results = verifyJsonFile(filePath);
     displayResults(results);
