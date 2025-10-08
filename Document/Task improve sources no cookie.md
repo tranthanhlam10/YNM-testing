@@ -818,6 +818,40 @@ tr_67160513497
 
 
 
+{
+  "id": "69772749184",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": null,
+  "from_date": "1719993787",
+  "to_date": "1751682691",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
+  "link": "threads.com/@kymaduongquanlam",
+  "id_social": "69772749184",
+  "username": "kymaduongquanlam"
+}
+
+
+
+
 
 f:1750687428
 t:1751032355 (thằng này chính là last data date luôn )
