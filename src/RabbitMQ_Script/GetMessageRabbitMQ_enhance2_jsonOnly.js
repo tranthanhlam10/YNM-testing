@@ -106,7 +106,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queueName = "ynm.auto_parser.high_priority_article_urls_crawled_by_http_crawler";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';

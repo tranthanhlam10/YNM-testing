@@ -21,6 +21,11 @@ kubectl config use-context lamtt-k8s-local
 yt|article_posts|tt_post|tt_com|fb_post|tr.post|testing.posts.comments.queuecualamtt
 
 
+yt|article_posts|tt_post|tt_com|fb_post|tr.post|testing.posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tt.tag_posts|cl.tr.reply_posts|tr_replies|youtube
+
+
+
 ## Luồng mới 
 - Post:
 
