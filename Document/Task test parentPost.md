@@ -26,6 +26,9 @@ cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.
 
 
 
+
+
+
 ## Luồng mới 
 - Post:
 
@@ -542,7 +545,62 @@ Parse detail 2 mention
 
 
 
+
+
+
+
 ### Tổng hợp những cases cần report cho Đồng
 - Threads Source Post/Reply/Repost bị lỗi redis 
 - Loader facebook bị lỗi
 - Loader tiktok không load được message vào queue cl.tt.tag_posts_crawling_sources
+
+
+
+
+### Task check nhanh lại chỗ identity_name:
+ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-container
+kubectl get pods -n crawler-staging | grep ynmpdp-5564-hot-fix-identity-name
+kubectl exec -it ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-coldkw5 -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh
+
+// Câu lệnh query
+
+FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV3/get_latest_group_posts.js
+
+FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV4/get_latest_hashtag_posts.js
+
+
+
+
+### Những luồng chạy phải chạy lại ở testing
+
+- Youtube:
++ 1 Luồng cũ: Crawl Detail -> Pass, YoutubeGetLatestPriorityVideosCommentsByApi -> Testing DONE
++ 1 Luồng mới: Youtube Crisis Keyword -> Pass
+
+- News
++ Luồng cũ:
++ Luồng mới: parsed Detail -> Hiện đã lấy đúng nhưng không có createdBy
+
+- Threads:
++ Luồng Post: Hiện tại đã lưu đung -> Pass
++ Luồng comment: HIện tại đang sai ngay chỗ Threads Replies, còn luồng Threads comment và sub comment đã lưu đúng -> Fixed
++ Reply Crawl Post: Hiện tại đã đúng, nhưng nó bị đúng như Threads Replies -> Link các replies đang trùng nhau -> Fixed
+
+- Facebook:
++ Luồng cũ: FacebookGetLatestGroupPosts và FacebookCrawlPostByKeywords -> Hiện tại luồng Group Post đã đúng -> Testing DONE
++ Luồng mới: FB Page Post -> Hiện tại chạy chưa có mentions , FB PageWebComment -> Testing DONE
+
+- Tiktok:
++ Luồng cũ: TiktokGetLatestUserPosts và TiktokGetLatestPostComments (Hiện tại chưa chạy được-Hbua thì chạy được bình thường)
++ Luồng mới: Hashtag/Keyword -> DONE
+
+
+- Forums
++ ForumGetPosts: Hiện tại đã chạy đúng yêu cầu -> Chỉ là do ở thread_url chưa có schema nên chưa chạy được case có caption
++ ForumGetPostPrev: Hiện chưa chạy được có mentions -> nhưng cũng tương tự như luồng ở trên
+
+
+- Reviews:
++ CommentsCrawlUrlComments -> Hiện tại chưa có mentions
++ CommentsCrawlReviews -> Hiện tại đã có mention của concung
