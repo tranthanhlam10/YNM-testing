@@ -560,17 +560,49 @@ Parse detail 2 mention
 ### Task check nhanh lại chỗ identity_name:
 ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-container
 kubectl get pods -n crawler-staging | grep ynmpdp-5564-hot-fix-identity-name
-kubectl exec -it ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-coldkw5 -n crawler-staging -- sh
+kubectl exec -it ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-con2q2m -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
 
 // Câu lệnh query
 
 FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV3/get_latest_group_posts.js
 
+FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV3/get_latest_group_posts.js
+
+
+
+
+Query load FB Group:  Query {
+  solrVersion: 302,
+  parameters: 
+   [ 'q=*%3A*',
+     'fl=id%2Cid_social%2Cpost_updated_at%2Cpost_last_date%2Ccategory%2Cpriority%2Cfb_user_type%2Cplatform%2Cclosed_group%2Cis_kol',
+     'fq=fb_user_type:3',
+     'fq=language:1',
+     'fq=-last_status:4',
+     'rows=5000',
+     'cursorMark=*',
+     'fq=next_crawl_time:%5B*%20TO%20NOW%5D',
+     'sort=next_crawl_time%20asc,id%20asc',
+     'fq=-closed_group:true' ] }
+
+
+
+ {
+        "id":"fb_1057884050920041",
+        "post_updated_at":1760500744,
+        "next_crawl_time":{"set":"2025-10-11T11:59:04.370Z"},
+        "post_last_date":"2024-06-13T17:58:56Z",
+        "fb_user_type":3,
+        "priority":1,
+        "id_social":"1057884050920041",
+        "platform":1}
+
+
 FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV4/get_latest_hashtag_posts.js
 
 
-
+FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV4/get_latest_hashtag_posts.js
 
 ### Những luồng chạy phải chạy lại ở testing
 
