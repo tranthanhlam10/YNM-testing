@@ -3,7 +3,7 @@ shdiy-8164-parent-post-testing-ynm-crawler-empty
 
 
 kubectl get pods -n crawler-testing | grep shdiy-8164-parent-post-testing-ynm-crawler-empty
-kubectl exec -it shdiy-8164-parent-post-testing-ynm-crawler-empty-69fb94b4d89gql -n crawler-testing -- sh
+kubectl exec -it shdiy-8164-parent-post-testing-ynm-crawler-empty-6d9c48bd7wpdxj -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -13,7 +13,7 @@ Deployment: old-crawler-shdiy-8164-parent-post-testing-empty-container
 
 
 kubectl get pods -n crawler-testing | grep old-crawler-shdiy-8164-parent-post-testing-empty-container
-kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containerlhtzc -n crawler-testing -- sh
+kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containertd2jx -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -212,7 +212,55 @@ script: node scripts/articlesV3WithNextCrawlTime/crawlYoutubeDetails.js
 -> Đang bị lỗi Mongo -> Hiện đã được fix
 -> Check luồng này thử 
 
+{
+  "id": "3c25d8c2-60f3-53b8-a619-f36f0a754a55",
+  "link": "https://youtube.com/watch?v=3Tiwaq_BxQs",
+  "domain": "youtube.com",
+  "id_source": "UCeP4Yv3s4RvS0-6d9OInRMw",
+  "id_reference": null,
+  "id_parent_comment": null,
+  "views": 186506,
+  "likes": 6400,
+  "comments": 193,
+  "shares": 0,
+  "rating_score": 0,
+  "engagement_total": 6593,
+  "engagement_s_c": 193,
+  "identity": "UCeP4Yv3s4RvS0-6d9OInRMw",
+  "identity_name": "Real Civil Engineer",
+  "platform": 7,
+  "mention_type": 1,
+  "mention_type_details": 1,
+  "title": "Engineering a 1,000,000 VOLT AXE to mine coal! - YouTube",
+  "search_text": [
+    "Engineering a 1,000,000 VOLT AXE to mine coal! - YouTube",
+    "Engineering a 1,000,000 VOLT AXE to mine coal!<br> <br>"
+  ],
+  "sound": [],
+  "effect": [],
+  "attachment": "{\"media_src\":\"https://i.ytimg.com/vi/3Tiwaq_BxQs/hqdefault.jpg\"}",
+  "link_shared": null,
+  "link_shared_domain": null,
+  "source_type": null,
+  "created_date": "2025-09-25T16:00:08.000Z",
+  "updated_at": "2025-10-17T09:05:59.203Z",
+  "shard": "20250925",
+  "createdBy": "YoutubeCrawlYoutubeDetails"
+}
 
+
+
+{
+  "id": "3c25d8c2-60f3-53b8-a619-f36f0a754a55",
+  "id_source": "UCeP4Yv3s4RvS0-6d9OInRMw",
+  "id_social": "3Tiwaq_BxQs",
+  "title": "Engineering a 1,000,000 VOLT AXE to mine coal! - YouTube",
+  "priority": 1,
+  "source_type": null,
+  "created_date": "2025-09-25T16:00:08.000Z",
+  "caption": "Engineering a 1,000,000 VOLT AXE to mine coal!<br> <br>",
+  "createdBy": "YoutubeCrawlYoutubeDetails"
+}
   
 
 
@@ -567,7 +615,11 @@ kubectl config use-context lamtt-k8s-ovh
 
 FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV3/get_latest_group_posts.js
 
-FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV3/get_latest_group_posts.js
+COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV3/get_latest_group_posts.js
+
+
+
+
 
 
 
@@ -603,6 +655,15 @@ FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV4/g
 
 
 FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV4/get_latest_hashtag_posts.js
+
+
+
+
+COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 PROXY_URI=http://proxy-manager-staging.sl-staging node scripts/facebookV4/get_latest_hashtag_posts.js
+
+
+Câu lệnh chạy mới:
+COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 HTTP_WORKER_PROXY_URI=http://proxy-manager-staging.sl-staging node scripts/facebookV4/get_latest_hashtag_posts.js
 
 ### Những luồng chạy phải chạy lại ở testing
 
