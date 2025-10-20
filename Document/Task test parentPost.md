@@ -13,7 +13,7 @@ Deployment: old-crawler-shdiy-8164-parent-post-testing-empty-container
 
 
 kubectl get pods -n crawler-testing | grep old-crawler-shdiy-8164-parent-post-testing-empty-container
-kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containertd2jx -n crawler-testing -- sh
+kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containergt94f -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
