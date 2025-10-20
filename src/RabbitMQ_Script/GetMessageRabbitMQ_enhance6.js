@@ -447,7 +447,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.posts.comments.queuecualamtt";
+const queueName = "testing.cl.mentions_2_solr_mentions_LamTT";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -461,7 +461,7 @@ peekAllMessagesInBatches(
   userName, 
   testPassword,
   1000, // Batch size - số messages mỗi lần fetch
-  5     // Concurrency - số workers chạy song song (1-10)
+  10     // Concurrency - số workers chạy song song (1-10)
         // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
         // Nhưng 5 workers chạy đồng thời => NHANH GẤP 5 LẦN!
 ).then(result => {

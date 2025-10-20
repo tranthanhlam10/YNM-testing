@@ -3,7 +3,7 @@ shdiy-8164-parent-post-testing-ynm-crawler-empty
 
 
 kubectl get pods -n crawler-testing | grep shdiy-8164-parent-post-testing-ynm-crawler-empty
-kubectl exec -it shdiy-8164-parent-post-testing-ynm-crawler-empty-69fb94b4d89gql -n crawler-testing -- sh
+kubectl exec -it shdiy-8164-parent-post-testing-ynm-crawler-empty-6d9c48bd7wpdxj -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -13,12 +13,20 @@ Deployment: old-crawler-shdiy-8164-parent-post-testing-empty-container
 
 
 kubectl get pods -n crawler-testing | grep old-crawler-shdiy-8164-parent-post-testing-empty-container
-kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containerlhtzc -n crawler-testing -- sh
+kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containergt94f -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
 // Câu regex để check posts 
 yt|article_posts|tt_post|tt_com|fb_post|tr.post|testing.posts.comments.queuecualamtt
+
+
+yt|article_posts|tt_post|tt_com|fb_post|tr.post|testing.posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tt.tag_posts|cl.tr.reply_posts|tr_replies|youtube
+
+
+
+
 
 
 ## Luồng mới 
@@ -204,7 +212,55 @@ script: node scripts/articlesV3WithNextCrawlTime/crawlYoutubeDetails.js
 -> Đang bị lỗi Mongo -> Hiện đã được fix
 -> Check luồng này thử 
 
+{
+  "id": "3c25d8c2-60f3-53b8-a619-f36f0a754a55",
+  "link": "https://youtube.com/watch?v=3Tiwaq_BxQs",
+  "domain": "youtube.com",
+  "id_source": "UCeP4Yv3s4RvS0-6d9OInRMw",
+  "id_reference": null,
+  "id_parent_comment": null,
+  "views": 186506,
+  "likes": 6400,
+  "comments": 193,
+  "shares": 0,
+  "rating_score": 0,
+  "engagement_total": 6593,
+  "engagement_s_c": 193,
+  "identity": "UCeP4Yv3s4RvS0-6d9OInRMw",
+  "identity_name": "Real Civil Engineer",
+  "platform": 7,
+  "mention_type": 1,
+  "mention_type_details": 1,
+  "title": "Engineering a 1,000,000 VOLT AXE to mine coal! - YouTube",
+  "search_text": [
+    "Engineering a 1,000,000 VOLT AXE to mine coal! - YouTube",
+    "Engineering a 1,000,000 VOLT AXE to mine coal!<br> <br>"
+  ],
+  "sound": [],
+  "effect": [],
+  "attachment": "{\"media_src\":\"https://i.ytimg.com/vi/3Tiwaq_BxQs/hqdefault.jpg\"}",
+  "link_shared": null,
+  "link_shared_domain": null,
+  "source_type": null,
+  "created_date": "2025-09-25T16:00:08.000Z",
+  "updated_at": "2025-10-17T09:05:59.203Z",
+  "shard": "20250925",
+  "createdBy": "YoutubeCrawlYoutubeDetails"
+}
 
+
+
+{
+  "id": "3c25d8c2-60f3-53b8-a619-f36f0a754a55",
+  "id_source": "UCeP4Yv3s4RvS0-6d9OInRMw",
+  "id_social": "3Tiwaq_BxQs",
+  "title": "Engineering a 1,000,000 VOLT AXE to mine coal! - YouTube",
+  "priority": 1,
+  "source_type": null,
+  "created_date": "2025-09-25T16:00:08.000Z",
+  "caption": "Engineering a 1,000,000 VOLT AXE to mine coal!<br> <br>",
+  "createdBy": "YoutubeCrawlYoutubeDetails"
+}
   
 
 
@@ -537,7 +593,107 @@ Parse detail 2 mention
 
 
 
+
+
+
+
 ### Tổng hợp những cases cần report cho Đồng
 - Threads Source Post/Reply/Repost bị lỗi redis 
 - Loader facebook bị lỗi
 - Loader tiktok không load được message vào queue cl.tt.tag_posts_crawling_sources
+
+
+
+
+### Task check nhanh lại chỗ identity_name:
+ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-container
+kubectl get pods -n crawler-staging | grep ynmpdp-5564-hot-fix-identity-name
+kubectl exec -it ynmpdp-5564-hot-fix-identity-name-staging-crawler-empty-con2q2m -n crawler-staging -- sh
+kubectl config use-context lamtt-k8s-ovh
+
+// Câu lệnh query
+
+FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV3/get_latest_group_posts.js
+
+COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV3/get_latest_group_posts.js
+
+
+
+
+
+
+
+
+Query load FB Group:  Query {
+  solrVersion: 302,
+  parameters: 
+   [ 'q=*%3A*',
+     'fl=id%2Cid_social%2Cpost_updated_at%2Cpost_last_date%2Ccategory%2Cpriority%2Cfb_user_type%2Cplatform%2Cclosed_group%2Cis_kol',
+     'fq=fb_user_type:3',
+     'fq=language:1',
+     'fq=-last_status:4',
+     'rows=5000',
+     'cursorMark=*',
+     'fq=next_crawl_time:%5B*%20TO%20NOW%5D',
+     'sort=next_crawl_time%20asc,id%20asc',
+     'fq=-closed_group:true' ] }
+
+
+
+ {
+        "id":"fb_1057884050920041",
+        "post_updated_at":1760500744,
+        "next_crawl_time":{"set":"2025-10-11T11:59:04.370Z"},
+        "post_last_date":"2024-06-13T17:58:56Z",
+        "fb_user_type":3,
+        "priority":1,
+        "id_social":"1057884050920041",
+        "platform":1}
+
+
+FB_API_ENDPOINT=http://fbgraph-staging.younetmedia.com node scripts/facebookV4/get_latest_hashtag_posts.js
+
+
+FB_API_ENDPOINT=http://fbgraph-vinfast-staging.crawler-staging:80 node scripts/facebookV4/get_latest_hashtag_posts.js
+
+
+
+
+COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 PROXY_URI=http://proxy-manager-staging.sl-staging node scripts/facebookV4/get_latest_hashtag_posts.js
+
+
+Câu lệnh chạy mới:
+COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 HTTP_WORKER_PROXY_URI=http://proxy-manager-staging.sl-staging node scripts/facebookV4/get_latest_hashtag_posts.js
+
+### Những luồng chạy phải chạy lại ở testing
+
+- Youtube:
++ 1 Luồng cũ: Crawl Detail -> Pass, YoutubeGetLatestPriorityVideosCommentsByApi -> Testing DONE
++ 1 Luồng mới: Youtube Crisis Keyword -> Pass
+
+- News
++ Luồng cũ:
++ Luồng mới: parsed Detail -> Hiện đã lấy đúng nhưng không có createdBy
+
+- Threads:
++ Luồng Post: Hiện tại đã lưu đung -> Pass
++ Luồng comment: HIện tại đang sai ngay chỗ Threads Replies, còn luồng Threads comment và sub comment đã lưu đúng -> Fixed
++ Reply Crawl Post: Hiện tại đã đúng, nhưng nó bị đúng như Threads Replies -> Link các replies đang trùng nhau -> Fixed
+
+- Facebook:
++ Luồng cũ: FacebookGetLatestGroupPosts và FacebookCrawlPostByKeywords -> Hiện tại luồng Group Post đã đúng -> Testing DONE
++ Luồng mới: FB Page Post -> Hiện tại chạy chưa có mentions , FB PageWebComment -> Testing DONE
+
+- Tiktok:
++ Luồng cũ: TiktokGetLatestUserPosts và TiktokGetLatestPostComments (Hiện tại chưa chạy được-Hbua thì chạy được bình thường)
++ Luồng mới: Hashtag/Keyword -> DONE
+
+
+- Forums
++ ForumGetPosts: Hiện tại đã chạy đúng yêu cầu -> Chỉ là do ở thread_url chưa có schema nên chưa chạy được case có caption
++ ForumGetPostPrev: Hiện chưa chạy được có mentions -> nhưng cũng tương tự như luồng ở trên
+
+
+- Reviews:
++ CommentsCrawlUrlComments -> Hiện tại chưa có mentions
++ CommentsCrawlReviews -> Hiện tại đã có mention của concung
