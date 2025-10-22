@@ -17,6 +17,10 @@ Output:
 
 
 
+- Cách đơn giản để query tho UUID
+{"_id": UUID("f673a12c-1c5c-5b22-a4ba-22483df14b54")}
+
+
 
 
 
@@ -138,6 +142,22 @@ Input:
 + Solr: article_urls
 + Mongo: articles
 
+Điều kiện đi crawl:
+ filter: {
+      "id_source": "(shopee.vn lazada.vn tiki.vn)"
+    }
+    sorters: [
+      {
+        "name": "id",
+        "order": "asc"
+      }
+    ]
+    fields: [
+      "link",
+      "id_source"
+    ]
+
+
 
 5) Eci To Socialheat Pusher: ynm-eci-to-sh-pusher-service-staging
 Deployment:
@@ -149,6 +169,7 @@ Output:
 
 
 -> 2 phần 4 và 5 này chỉ cần check lại bug chỗ ECI, phải đập xuống hết 3 collections
+Hiện tại thì thấy đã đạp xuống 3 collection, nhưng mà cần phải validate lại các fields xem lưu đúng chưa
 
 + Message mẫu:
 {
@@ -164,6 +185,8 @@ Output:
 "created_date": "2022-07-12T00:22:50.366Z"
 }
 
+
+
 social_listening_product_items|eci-pi-to-article-posts|eci-pi-to-mentions|eci-pi-to-article-urls
 
 
@@ -178,6 +201,8 @@ Input:
 + MySQL: monitor_keywords_v2
 Output:
 + Queue: staging.cl.news.article_urls
+
+
 
 
 
