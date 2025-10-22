@@ -724,7 +724,8 @@ yarn testing:web-comment
   "platform": 1,
   "createdBy": "PageWebCommentCrawlingLoader",
   "title": "Hôm nay 12/09/2025",
-  "created_date": "2025-09-12T13:21:39Z"
+  "created_date": "2025-09-12T13:21:39Z",
+  "caption": "LamTT -test"
 }
 
 

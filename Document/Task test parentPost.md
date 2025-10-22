@@ -18,15 +18,20 @@ kubectl config use-context lamtt-k8s-local
 
 
 // Câu regex để check posts 
-yt|article_posts|tt_post|tt_com|fb_post|tr.post|testing.posts.comments.queuecualamtt
+yt|article_posts|tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamtt
 
 
-yt|article_posts|tt_post|tt_com|fb_post|tr.post|testing.posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
+yt|article_posts|tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
 cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tt.tag_posts|cl.tr.reply_posts|tr_replies|youtube
 
 
 
+tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tt.tag_posts|cl.tr.reply_posts|tr_replies|youtube
 
+
+//staging
+staging.posts.comments.queuecualamtt|mentions_2_solr_mentions
 
 
 ## Luồng mới 
@@ -561,6 +566,11 @@ Parse detail 2 mention
 4. auto-parser-testing-article-parser  -> Chạy này 
 5. auto-parser-testing-error-article-handler
 6. ynm-cl-news-parsed-details-2-mentions-service-testing
+
+
+
+auto-parser-staging-high-priority-http-crawler
+auto-parser-staging-article-parser
 
 
 {
