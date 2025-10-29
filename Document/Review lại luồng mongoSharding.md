@@ -11,29 +11,38 @@ Output:
 + Mongo: articles
 
 - Những điều cần check lại
-+ Thử cases transaction nó sẽ comsume nhiều message hay là lấy từng message đi
-+ Kiểm tra xem các giá trị được lưu vào 3 collection có đúng k (id, ngày tạo, ngày crawl)
-+ Kiểm tra nếu lỗi thì transaction này sẽ xử lý như thế nào
++ Thử cases transaction nó sẽ comsume nhiều message hay là lấy từng message đi -> DONE
++ Kiểm tra xem các giá trị được lưu vào 3 collection có đúng k (id, ngày tạo, ngày crawl) -> Hiện tại ngày tạo cũng đã chính xác với yêu cầu
++ Kiểm tra nếu lỗi thì transaction này sẽ xử lý như thế nào 
 
 
 
 - Cách đơn giản để query tho UUID
 {"_id": UUID("f673a12c-1c5c-5b22-a4ba-22483df14b54")}
 
+Luồng crawl để  cl.news.article_urls có nhiều message: ynm-cl-news-article-url-service-staging
 
 
 
 
-2) News Crawling Loader: ynm-cl-news-crawling-loader-service-staging -> Chỗ  này có thay đổi là Huy sửa load hết các source đầy đủ
+2) News Crawling Loader: ynm-cl-news-crawling-loader-service-staging -> Chỗ  này có thay đổi là Huy sửa load hết các source đầy đủ ->DONE
+
+Chỗ này chỉ cần confirm lại các bug của chị Ngân nữa là đủ
+
 Deployment:
 + ynm-cl-news-crawling-loader-service-staging
 Input:
 + Mongo: articles
 Output:
-+ Queue: high_priority_detail_url_info/normal_priority_detail_url_info/crisis_detail_url_info (Bật stateful set auto-parser-staging-high-priority-classifier/auto-parser-staging-normal-priority-classifier/auto-parser-staging-crisis-classifier để đẩy qua luồng auto parser)
++ Queue: high_priority_detail_url_info/normal_priority_detail_url_info/crisis_detail_url_info (Bật stateful set auto-parser-staging-high-priority-classifier/auto-parser-staging-normal-priority-classifier/auto-parser-staging-crisis-classifier) ->  để đẩy qua luồng auto parser)
+
+auto-parser-staging-high-priority-classifier
+auto-parser-staging-normal-priority-classifier
+auto-parser-staging-crisis-classifier
+
 
 + Câu regex tìm kiếm queue
-high_priority_detail_url_info|normal_priority_detail_url_info|crisis_detail_url_info 
+high_priority_detail_url_info|normal_priority_detail_url_info|crisis_detail_url_info|cl.news.articles_finished_sources
 
 
 
@@ -124,7 +133,7 @@ Câu query:
 
 
 
-3) News Source Updater: ynm-cl-news-source-updater-service-staging
+3) News Source Updater: ynm-cl-news-source-updater-service-staging -> DONE
 Deployment:
 + ynm-cl-news-source-updater-service-staging
 Input:
@@ -133,6 +142,14 @@ Output:
 + Mongo: articles
 
 -> Hình như chỗ này chỉ cập nhật ngày crawl và status
+  {
+    "id": "dd369fd2-bd3d-5390-95e4-c1630447b983",
+    "title": "Kỳ 3: Những dòng kênh bị \"bức tử\"",
+    "crawled_date": "2025-10-24T03:49:38.353Z",
+    "status": 2,
+    "createdBy": "HighPriorityNewsDetailSourcesCrawlingLoader"
+  }
+
 
 
 4) Eci To Socialheat Loader: ynm-eci-to-sh-loader-service-staging
@@ -193,7 +210,7 @@ social_listening_product_items|eci-pi-to-article-posts|eci-pi-to-mentions|eci-pi
 
 
 
-6) Youtube Crawl Search Bar: crawler-staging-youtube-search-crisis-keywords-search-bar
+6) Youtube Crawl Search Bar: crawler-staging-youtube-search-crisis-keywords-search-bar -> DONE
 Deployment:
 + crawler-staging-youtube-search-crisis-keywords-search-bar
 + crawler-staging-youtube-search-brand-campain-keywords-search-bar
@@ -202,14 +219,28 @@ Input:
 Output:
 + Queue: staging.cl.news.article_urls
 
+- Hiện tại luồng Youtube search bar khi crawl đã đẩy được mesage lên queue staging.cl.news.article_urls
+{
+  "id": "4650dee9-3d9e-5325-b47c-fc57cb7a13a4",
+  "platform": 7,
+  "id_category": 0,
+  "id_source": "youtube.com",
+  "link": "https://www.youtube.com/watch?v=dOnYmd_wA5Q",
+  "title": "Nâng mức giảm trừ gia cảnh: Hàng triệu gia đình có thêm khoản chi tiêu",
+  "views_avg": 0,
+  "priority": 1,
+  "status": 1,
+  "failed_type": 1,
+  "count_failed": 0,
+  "crawled_date": "1970-01-01T00:00:00Z",
+  "createdBy": "YoutubeSearchBarCrawlingLoader"
+}
 
 
 
 
 
-
-
-7) Youtube Crawl Detail: crawler-staging-youtube-crawl-detail
+7) Youtube Crawl Detail: crawler-staging-youtube-crawl-detail -> DONE
 Deployment:
 + crawler-staging-youtube-crawl-detail-crisis
 + crawler-staging-youtube-crawl-detail
@@ -218,6 +249,31 @@ Input:
 Output:
 + Solr: mentions/youtube_posts/identities
 + Redis: identities
+
+- Phần này load từ article-> đi crawl mentions, sau đó update xuống mention và youtube_posts
+
+{
+  "_id": "UUID('1a4888c8-9bb6-5acc-a3a8-67fadca31af8')",
+  "count_failed": 1,
+  "crawled_date": "2025-10-24T07:51:05.000+00:00",
+  "created_date": "2025-10-23T09:21:55.150+00:00",
+  "error_codes": [
+    1
+  ],
+  "failed_type": 1,
+  "id_category": "0",
+  "id_source": "youtube.com",
+  "link": "https://www.youtube.com/watch?v=XdF0h4skkIY",
+  "next_crawl_time": "2025-10-24T08:51:05.604+00:00",
+  "platform": 7,
+  "priority": 1,
+  "status": 1,
+  "title": "Tiktok | (cre:tịtok) #duet #xuhuongyoutube #nzaa #xuhướng #thinhhanh",
+  "views_avg": 0,
+  "parse_type": 2
+}
+
+
 
 
 -> Phần 6-7 này phải chạy được là được

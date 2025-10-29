@@ -447,7 +447,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.news.article_urls";
+const queueName = "high_priority_detail_url_info";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
