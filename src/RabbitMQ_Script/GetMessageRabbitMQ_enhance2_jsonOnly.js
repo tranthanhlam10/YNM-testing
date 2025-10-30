@@ -111,6 +111,7 @@ const queueName1 = "testing.cl.mentions_2_solr_mentions_LamTT";
 const queueName2 = "testing.cl.posts_2_solr_tr_posts";
 const queue_name3 = "testing.cl.tr.keyword_posts_no_cookie_crawled_sources"; 
 const queue_name4 = "testing.cl.tr.reply_posts_crawling_sources"
+const queue_name5 = "app.socialheat.crawl_keyword.results_LamTT";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -119,7 +120,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP, 
   testDomain, 
-  queue_name4, 
+  queueName1, 
   userName, 
   testPassword,
   2100

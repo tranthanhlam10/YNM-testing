@@ -139,9 +139,9 @@ async function getQueueInfo(
 
 async function main() {
     const messageLimit = 1000;
-    const jsonFilePath= 'Data_get_from_rabbitMQ_by_scripts/Data_test_parent_Post_07_010/post_TiktokHashtagKeyword_ThuyPN.json';
+    const jsonFilePath= 'Data_get_from_rabbitMQ_by_scripts/replyCrawlPost_1.json';
     const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'testing.cl.posts_2_solr_tt_posts';
+    const queueName = 'testing.cl.tr.reply_posts_crawling_sources';
     const username = 'lamtt';
     const password = 'lamtt';
     const vhost = '/';
