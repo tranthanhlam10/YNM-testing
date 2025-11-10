@@ -107,7 +107,7 @@ const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
 const queueName = "testing.cl.replies_2_solr_tr_replies";
-const queueName1 = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queueName1 = "staging.cl.mentions_2_solr_mentions_LamTT";
 const queueName2 = "testing.cl.posts_2_solr_tr_posts";
 const queue_name3 = "testing.cl.tr.keyword_posts_no_cookie_crawled_sources"; 
 const queue_name4 = "testing.cl.tr.reply_posts_crawling_sources"
@@ -118,10 +118,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  testHTTP, 
-  testDomain, 
+  stagingHTTP, 
+  stagingDomain, 
   queueName1, 
   userName, 
-  testPassword,
+  stagingPassword,
   2100
 );

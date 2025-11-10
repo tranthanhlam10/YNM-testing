@@ -707,3 +707,99 @@ COMMON_API_ENDPOINT=http://ynm-cl-common-service-staging.crawler-staging:9010 HT
 - Reviews:
 + CommentsCrawlUrlComments -> Hiện tại chưa có mentions
 + CommentsCrawlReviews -> Hiện tại đã có mention của concung
+
+
+
+## Những điều cần lưu ý khi check parentPost
+- Deploy được parentPost lên Staging → Đã nhắn deploy cho team data
+    - Facebook → **DONE Staging**
+        - 1 Luồng fb cũ → Đã chạy luồng group post → Hiện tại đã đúng với yêu cầu
+        - Page post → Hiện tại đã chạy done ở testing →
+        - Page web comment → Hiện tại đã chạy done ở testing
+    - Youtube
+        - Luồng top 50 → HIện tại đã chạy done ở testing → Hiện tại ttile đã đáp ứng đúng yêu cầu → **DONE**
+        - Luồng comment → Hiện tại đã chạy xong ở testing
+            - Luồng API → Hiện tại title đã đáp ứng đúng yêu cầu
+            - Luồng Comment Reply: Hiện chưa chạy được, đang báo lỗi proxy
+        - Luồng Keyword new → Hiện tại đã crawl đúng yêu cầu → Hiện tại title đã đáp ứng đúng yêu cầu → **DONE**
+        - Luồng crawl detail → Hiện tại chưa có mentions → Hiện tại title đã đáp ứng đúng yêu cầu
+    - Threads → **DONE Staging**
+        - Luồng hashtag/keyword → Hiện tại đã đúng với yêu cầu → Chỉ cần check luồng source reply là đc → DONE
+        - Luồng source reply → HIện tại đã chạy done ở testing  → **DONE**
+        - Reply Crawl Post →  HIện tại đã chạy done ở testing → **DONE**
+        - Luồng cmt → Hiện tại đã chạy done ở testing → **DONE**
+    - Tiktok → **DONE Staging**
+        - Chạy 1 luồng tag post
+        - Chạy 1 luồng cmt cũ → Hiện tại đã đúng yêu cầu
+    - News →> **DONE Staging**
+        - Parse detail → Hiện tại đã chạy done ở testing → **DONE**
+    - IG
+        - Post → Hiện tại đã chạy done ở testing
+        - Comment → Hiện tại đã đúng với yêu cầu
+    - Review → **DONE Staging**
+        - Comment → Hiện tại đã chạy done ở testing → **DONE**
+        - Review →**DONE**
+    - Forum → Cần confirm lại với Đồng (Hiện tại bài posts đầu tiên là đang lấy mentions_type bằng 2) → Hiện tại đã chạy done ở testing → Bị vướng lỗi caption null
+
+
+
+### List ra những luồng chạy có nhiều comment và post
+
+1. Facebook:
+Luồng cũ: ở luồng cũ fb thì không có luồng cmt
+- group-posts - node scripts/facebookV3/get_latest_group_posts.js
+Wiki: Hiện tại luồng này không có wiki
+- crawl-post-by-keywords - node scripts/facebookV3/crawl_post_by_keywords.js
+Wiki: Hiện tại luồng này không có wiki
+
+Luồng mới:
+- Facebook Post - @ynm/cl-fb-post-crawler-service
+Wiki: Hiện tại luồng này không có wiki
+- Facebook Web Comment - @ynm/cl-fb-web-comment-crawler-service
+Wiki: https://wiki.younetco.com/pages/viewpage.action?pageId=178880731
+
+2. Threads
+Ở Threads chỉ có luồng mới
+- Threads Keyword Post - @ynm/cl-tr-keyword-post-crawler-service
+Wiki: https://wiki.younetco.com/display/FB/%5BThreads%5D+Keyword+Flow
+Wiki: https://wiki.younetco.com/pages/viewpage.action?pageId=186908982
+- Threads Comment - @ynm/cl-tr-comment-crawler-service
+Wiki: https://wiki.younetco.com/pages/viewpage.action?pageId=155811848
+- Threads Reply - @ynm/cl-tr-source-reply-crawler-service
+Wiki: https://wiki.younetco.com/display/FB/%5BThreads%5D+Get+reply+from+source
+Wiki: https://wiki.younetco.com/pages/viewpage.action?pageId=192020612
+
+3. Tiktok
+Luồng cũ:
+- tiktok-get-latest-post-comments - node scripts/tiktok/get_latest_post_comments.js
+Wiki: Hiện tại luồng này không có wiki
+- tiktok-get-latest-user-posts - node scripts/tiktok/get_latest_user_posts.js
+Wiki: Hiện tại luồng này không có wiki
+
+
+Luồng mới: Luông mới tiktok thì không có luồng crawl comment
+- Tiktok Keyword Post - @ynm/cl-tt-keyword-post-crawler-service
+Wiki: https://wiki.younetco.com/display/FB/Tiktok+Keyword+Post+Documents
+- Tiktok Tag Post    - @ynm/cl-tt-tag-post-crawler-service
+Wiki: https://wiki.younetco.com/display/FB/Tiktok+Hashtag+Post+Documents
+
+
+4. Youtube
+Luồng cũ:
+- youtube-top-trendng - node scripts/youtubeV2/get_latest_top_50_trending.js
+Wiki: https://wiki.younetco.com/display/FB/%5BYoutube%5D+Get+Latest+Trending+Posts+By+Youtube+API
+- youtube-api-get-latest-priority-channels-videos-by-api - node scripts/youtubeV3/get_latest_priority_channels_videos_by_api.js
+Wiki: Hiện tại luồng này không có wiki
+- youtube-api-get-latest-priority-videos-comments-by-api - node scripts/youtubeV3/get_latest_priority_videos_comments_by_api.js
+Wiki: https://wiki.younetco.com/display/FB/%5BYoutube%5D+Get+Latest+Comments+From+Post+By+Youtube+API
+
+
+Luồng mới: Luồng mới yt thì không có luồng crawl cmt
+- Youtube Keyword Post  - @ynm/cl-yt-post-from-keyword-crawler-service
+Wiki: https://wiki.younetco.com/display/FB/%5BYoutube%5D+Keyword+Management
+
+5. Instagram (IG chỉ có 2 luồng này)
+- instagram-get-latest-user-posts -> node scripts/instagram/get_latest_user_posts.js
+Wiki: Hiện tại luồng này không có wiki
+- instagram-get-latest-post-comments -> node scripts/instagram/get_latest_post_comments.js
+Wiki: Hiện tại luồng này không có wiki
