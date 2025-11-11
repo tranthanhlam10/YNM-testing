@@ -803,3 +803,7 @@ Wiki: https://wiki.younetco.com/display/FB/%5BYoutube%5D+Keyword+Management
 Wiki: Hiện tại luồng này không có wiki
 - instagram-get-latest-post-comments -> node scripts/instagram/get_latest_post_comments.js
 Wiki: Hiện tại luồng này không có wiki
+
+
+-> Những đầu việc cần làm khi đi qua các môi trường
+

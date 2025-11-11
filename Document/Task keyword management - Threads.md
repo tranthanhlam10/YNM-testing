@@ -705,3 +705,38 @@ yarn testing:tr-reply-post
 
   18349625383091985
 ]
+
+
+
+## Những luồng cần kiểm tra khi đi lên các môi trường
+
+tr-key -> Tìm kiếm keyword
+
+tr-has -> Tìm kiếm hashtag
+
+
+- Keyword: Có cookie và không cookie
+    - Deployment: ynm-cl-tr-keyword-post-service-staging → DONE (Nhưng vẫn chưa detect được nguyên nhân tại sao chưa đẩy vào mention)
+    - Deployment: ynm-cl-tr-keyword-post-no-cookie-service-staging → DONE
+- Keword-Crisis: Có cookie và không cookie
+    - Deployment: ynm-cl-tr-keyword-post-crisis-service-staging → DONE
+    - Deployment: ynm-cl-tr-keyword-post-crisis-nc-service-staging → DONE
+- Hashtag: Có cookie và không có cookie
+    - Deployment: ynm-cl-tr-hashtag-post-service-testing →DONE
+    - Deployment: ynm-cl-tr-hashtag-post-no-cookie-service-staging → DONE → Chỗ này nếu không có tag_id thì không crawl được
+- Hashtag-Crisis: Có cookie và không có cookie
+    - Deployment: ynm-cl-tr-hashtag-post-crisis-service-staging → DONE
+    - Deployment: ynm-cl-tr-hashtag-post-crisis-nc-service-staging → DONE
+- Reply Crawl Post
+    - ynm-cl-tr-reply-post-hashtag-keyword-service-staging → DONE
+    - ynm-cl-tr-reply-post-service-staging → DONE
+
+Những hạng mục cần kiểm tra cho các luồng:
+
+1. Kiểm tra xem config (bindings, exchange, tên queue …) đã đúng hay chưa
+    1. Hình như những luồng crisis đang binding vô những queue không crisis → DONE
+    2. Hiện tại những luồng hashtag chỉ nhận những keyword có dấu # → Dù đã config đúng routing key → Hiện bên app chưa làm chỗ này
+    3. Luồng keyword/hashtag crisis → khi crawl xong lại đẩy message về queue crawled của luồng non - crisis
+2. Kiểm tra thử luồng đó có đi crawl được hay không khi push message → DONE
+3. Kiểm tra luồng đó có đẩy qua reply crawl post khi có reply hay không
+4. Kiểm tra luồng đó có đẩy qua queue finished source của App sau khi crawl xong hay không
