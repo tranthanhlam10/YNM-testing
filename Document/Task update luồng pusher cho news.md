@@ -42,3 +42,7 @@ Loại bỏ domain chứa id_source không mong muốn: mặc định ['duhoc.cn
 
 
 
+Chạy migrate collection article
+data-migrate-staging-6c7f959fc7-9kzpw
+
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --fields=id,id_category,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*

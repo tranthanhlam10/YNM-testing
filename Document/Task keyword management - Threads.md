@@ -6,7 +6,7 @@
 
 ynmpdp-5464-threads-keyword-management-testing-ynm-crawler-empt
 kubectl get pods -n crawler-testing | grep ynmpdp-5464-threads-keyword-management
-kubectl exec -it ynmpdp-5464-threads-keyword-management-testing-ynm-crawlermmxbx -n crawler-testing -- sh
+kubectl exec -it ynmpdp-5464-threads-keyword-management-testing-ynm-crawlervbz9g -n crawler-testing -- sh
 
 Nghiên cứu lại cách thêm keyword của bên app
 
@@ -34,6 +34,9 @@ SELECT * FROM `keywords` WHERE id = 7819
 // Câu regex đúng
 ^(?:[\w-]+\.)*(?:cl\.(?:tr\.(?:hashtag|keyword|reply)_posts(?:_hashtag_keyword)?(?:_no_cookie)?_(?:crawling(?:_(?:requests|sources(?:_next_page)?))|crawled_sources)|reply_posts_hashtag_keyword_crawling(?:_(?:requests|sources(?:_next_page)?))?|reply_posts_hashtag_keyword_crawled_sources|resolved_(?:source|data)|posts_2_solr_tr_posts|mentions_2_solr_mentions|identities_2_solr_identities|identities_2_redis_identities|replies_2_solr_tr_replies)|app\.socialheat\.crawl_keyword\.results)$|app.socialheat.crawl_keyword.results_LamTT|cl.tr.keyword_posts_crawling_sources_next_pages|cl.tr.hashtag_posts_crawling_sources_next_pages
 
+
+// Câu regex được cập nhật mới nhât 
+^(?:[\w-]+\.)*(?:cl\.(?:tr\.(?:hashtag|keyword|reply)_posts(?:_hashtag_keyword)?(?:_no_cookie)?_(?:crawling(?:_(?:requests|sources(?:_next_page)?))|crawled_sources)|reply_posts_hashtag_keyword_crawling(?:_(?:requests|sources(?:_next_page)?))?|reply_posts_hashtag_keyword_crawled_sources|resolved_(?:source|data)|posts_2_solr_tr_posts|mentions_2_solr_mentions|identities_2_solr_identities|identities_2_redis_identities|replies_2_solr_tr_replies)|app\.socialheat\.crawl_keyword\.results)$|app.socialheat.crawl_keyword.results_LamTT|cl.tr.keyword_posts_crawling_sources_next_pages|cl.tr.hashtag_posts_crawling_sources_next_pages|reply_posts_hashtag_keyword|LamTT|cl.tr.hashtag_posts_crisis|cl.tr.keyword_posts_crisis
 
 1. Hashtag
 
@@ -235,13 +238,18 @@ export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.reply_posts_hashtag_keyword_c
 export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.reply_post_hashtag_keyword
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.reply_posts_hashtag_keyword_crawled_sources
+
 export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.reply_post_hashtag_keyword.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_ROUTING_KEY=cl.10.*.*.reply_post_hashtag_keyword.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
 export CRAWLER_CONFIG_PAGING_ENABLE=true
-export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_REPLY_POSTS_CRAWLER
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_REPLY_POSTS_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_FOLLOWERS_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_UNAUTHORIZED_CRAWLER
+
+
+
+export CRAWLER_CONFIG_CREATED_BY=ThreadsReplyPostHashtagKeywordCrawlingLoader
 
 
 export BUILDER_ENABLE=true
@@ -251,8 +259,8 @@ export BUILDER_CONCURRENCY=1
  
 
 export CRAWLER_ENABLE=true
-export CRAWLER_BATCH_SIZE=1
-export CRAWLER_CONCURRENCY=1
+export CRAWLER_BATCH_SIZE=5
+export CRAWLER_CONCURRENCY=5
  
 export RESOLVER_ENABLE=true
 export RESOLVER_BATCH_SIZE=1
@@ -373,7 +381,7 @@ export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.keyword_posts
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.keyword_posts_crawled_sources
  
-export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.keyword_posts.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_REPLY_BY_REPLY_CRAWLER
@@ -444,10 +452,10 @@ export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.hashtag_posts
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.hashtag_posts_crawled_sources
  
-export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.hashtag_posts.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
-export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_REPLY_BY_REPLY_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_SOURCE_REPLY_POST_CRAWLER
 export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_UNAUTHORIZED_CRAWLER
 export CRAWLER_CONFIG_PAGING_ENABLE=true
 
@@ -472,7 +480,7 @@ export RESOLVER_ENABLE=true
 export RESOLVER_BATCH_SIZE=1
 export RESOLVER_CONCURRENCY=1
 export RESOLVER_MAX_RETRIES=10
-export RESOLVER_MAX_PAGE=5
+export RESOLVER_MAX_PAGE=10
  
 export REDIS_POST_HOST=192.168.1.103
 export REDIS_POST_PORT=6390
@@ -487,26 +495,16 @@ yarn testing:tr-hashtag
 
 
 - Reply crawl post cũ: 
-export HTTP_PORT=9030
- 
+export HTTP_PORT=9040
 export GRPC_PORT=9031
- 
 export RABBIT_HEARTBEAT=10
- 
 export LOG_LEVEL=info
- 
 export LOG_LOG_STASH_HOST=51.222.44.17
- 
 export LOG_LOG_STASH_PORT=31658
  
- 
- 
 export MYSQL_DEFAULT_CONNECTION_PORT=3306
- 
 export MYSQL_DEFAULT_CONNECTION_DATABASE=monitoring_master
- 
 export MYSQL_DEFAULT_NEWS_PORT=3306
- 
 export MYSQL_DEFAULT_NEWS_DATABASE=monitoring_master
  
  
@@ -515,68 +513,41 @@ export MYSQL_DEFAULT_NEWS_DATABASE=monitoring_master
  
  
 export TR_GRAPH_SERVICE_ENDPOINT=https://www.threads.net/graphql/query
- 
 export TR_GRAPH_SERVICE_TIMEOUT=60000
- 
 export TR_GRAPH_SERVICE_MAX_RETRIES=10
- 
 export TR_GRAPH_SERVICE_DELAY_TIMEOUT=3000
- 
 export CRAWLER_CONFIG_CRAWLING_ROUTING_KEY=cl.10.*.*.reply-post-detail
- 
 export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.reply_posts_crawling_sources
- 
 export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.reply_posts_crawling_requests
- 
 export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.reply_post
- 
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
- 
 export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.reply_posts_crawled_sources
  
 export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.tr.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.reply_post.next_page
- 
 export CRAWLER_CONFIG_RESOLVED_DATA_ROUTING_KEY=cl.10.*.*.reply_post.next_page
- 
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
- 
 export CRAWLER_CONFIG_PAGING_ENABLE=true
  
  
-export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_SOURCE_REPLY_POST_CRAWLER
- 
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_POTENTIAL_IDENTITY_CRAWLER
- 
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=TR_FOLLOWERS_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_UNAUTHORIZED_CRAWLER
 export CRAWLER_CONFIG_CREATED_BY=ThreadsReplyPostCrawlingLoader
- 
 export BUILDER_ENABLE=true
- 
 export BUILDER_MAX_MSG_IN_QUEUE=5000
- 
 export BUILDER_BATCH_SIZE=1
- 
 export BUILDER_CONCURRENCY=1
- 
 
- 
+export CRAWLER_CONFIG_CREATED_BY=ThreadsReplyPostCrawlingLoader
+
 export CRAWLER_ENABLE=true
- 
 export CRAWLER_BATCH_SIZE=1
- 
 export CRAWLER_CONCURRENCY=1
  
- 
- 
 export RESOLVER_ENABLE=true
- 
 export RESOLVER_BATCH_SIZE=1
- 
 export RESOLVER_CONCURRENCY=1
- 
 export RESOLVER_MAX_RETRIES=10
-
-
 
 export REDIS_POST_HOST=192.168.1.103
 export REDIS_POST_PORT=6390
@@ -584,9 +555,8 @@ export REDIS_POST_USERNAME=data_crawler_use_cache_post
 export REDIS_POST_PASSWORD=RHTkP9M79at6
 export REDIS_POST_DB=12
 
- 
 export REDIS_DB=3
- 
+
 yarn testing:tr-reply-post
 
 
@@ -632,11 +602,65 @@ yarn testing:tr-reply-post
     "is_critical": 0,
     "crawling_type": "brand_tracking",
     "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": null,
+    "id_last_crawling": 90254,
+    "tag_id": "18276896743093264"
+  },
+   {
+    "id_keyword": 30949,
+    "keyword": "Olympia",
+    "id_platform": 10,
+    "id_process": 359,
+    "is_critical": 0,
+    "crawling_type": "brand_tracking",
+    "source": "graph",
     "is_first_crawl": 1,
     "last_data_date": null,
     "id_last_crawling": 90254,
     "tag_id": null
   },
+  {
+    "id_keyword": 30949,
+    "keyword": "phuongly",
+    "id_platform": 10,
+    "id_process": 359,
+    "is_critical": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": null,
+    "id_last_crawling": 90254,
+    "tag_id": null
+  },
+    {
+    "id_keyword": 30949,
+    "keyword": "Phương Ly Em Xinh Say Hi",
+    "id_platform": 10,
+    "id_process": 359,
+    "is_critical": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": null,
+    "id_last_crawling": 90254,
+    "tag_id": null
+  },
+  {
+    "id_keyword": 30949,
+    "keyword": "B Ray Anh Trai Say Hi",
+    "id_platform": 10,
+    "id_process": 359,
+    "is_critical": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": null,
+    "id_last_crawling": 90254,
+    "tag_id": null
+  }
+
+
   {
     "id_keyword": 30910,
     "keyword": "jjjjkkkkhhhhhvnvnvv",
@@ -663,4 +687,56 @@ yarn testing:tr-reply-post
     "id_last_crawling": 90212,
     "tag_id": null
   }
+
+ {
+    "id_keyword": 30922,
+    "keyword": "Anh trai say hi",
+    "id_platform": 10,
+    "id_process": 355,
+    "is_critical": 0,
+    "crawling_type": "brand_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": null,
+    "id_last_crawling": 90212,
+    "tag_id": "18349625383091985"
+  }
+
+
+  18349625383091985
 ]
+
+
+
+## Những luồng cần kiểm tra khi đi lên các môi trường
+
+tr-key -> Tìm kiếm keyword
+
+tr-has -> Tìm kiếm hashtag
+
+
+- Keyword: Có cookie và không cookie
+    - Deployment: ynm-cl-tr-keyword-post-service-staging → DONE (Nhưng vẫn chưa detect được nguyên nhân tại sao chưa đẩy vào mention)
+    - Deployment: ynm-cl-tr-keyword-post-no-cookie-service-staging → DONE
+- Keword-Crisis: Có cookie và không cookie
+    - Deployment: ynm-cl-tr-keyword-post-crisis-service-staging → DONE
+    - Deployment: ynm-cl-tr-keyword-post-crisis-nc-service-staging → DONE
+- Hashtag: Có cookie và không có cookie
+    - Deployment: ynm-cl-tr-hashtag-post-service-testing →DONE
+    - Deployment: ynm-cl-tr-hashtag-post-no-cookie-service-staging → DONE → Chỗ này nếu không có tag_id thì không crawl được
+- Hashtag-Crisis: Có cookie và không có cookie
+    - Deployment: ynm-cl-tr-hashtag-post-crisis-service-staging → DONE
+    - Deployment: ynm-cl-tr-hashtag-post-crisis-nc-service-staging → DONE
+- Reply Crawl Post
+    - ynm-cl-tr-reply-post-hashtag-keyword-service-staging → DONE
+    - ynm-cl-tr-reply-post-service-staging → DONE
+
+Những hạng mục cần kiểm tra cho các luồng:
+
+1. Kiểm tra xem config (bindings, exchange, tên queue …) đã đúng hay chưa
+    1. Hình như những luồng crisis đang binding vô những queue không crisis → DONE
+    2. Hiện tại những luồng hashtag chỉ nhận những keyword có dấu # → Dù đã config đúng routing key → Hiện bên app chưa làm chỗ này
+    3. Luồng keyword/hashtag crisis → khi crawl xong lại đẩy message về queue crawled của luồng non - crisis
+2. Kiểm tra thử luồng đó có đi crawl được hay không khi push message → DONE
+3. Kiểm tra luồng đó có đẩy qua reply crawl post khi có reply hay không
+4. Kiểm tra luồng đó có đẩy qua queue finished source của App sau khi crawl xong hay không

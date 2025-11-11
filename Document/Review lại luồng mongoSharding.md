@@ -1,5 +1,31 @@
 # Mongo
 
+# Tổng quan của luồng chạy
+
+
+- Loader: ynm-cl-news-crawling-loader-service-staging
+Chị muốn crawl loại nào chỉ cần enable loại đó:
++ BLOG_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
++ HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
++ HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
++ NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
++ NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
+
+Sau khi load nó sẽ đẩy lên những queue sau đây:
+high_priority_detail_url_info|normal_priority_detail_url_info|crisis_detail_url_info|cl.news.articles_finished_sources
+
+- Crawler: ynm-cl-news-article-url-service-staging -> Chỗ này chị scale lên là nó sẽ đi crawl rồi push xuống queue cl.news.article_urls
+
+- Pusher: ynm-cl-data-pusher-news-service-staging -> Scale deployment này sẽ chạy pusher của news, consume từ queue cl.news.article_urls
+
+- Source Updater -> Scale deployment này để bật updater
+
+Còn về luồng migrate thì chị chạy script được gắn với description của task này: https://jira.younetco.com/browse/YNMPDP-4994
+
+
+
+
+## Chi tiết của từng services
 
 1) News Data pusher: ynm-cl-data-pusher-news-service-staging
 Deployment:

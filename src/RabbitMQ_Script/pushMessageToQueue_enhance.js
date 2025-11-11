@@ -139,11 +139,11 @@ async function getQueueInfo(
 
 async function main() {
     const messageLimit = 1000;
-    const jsonFilePath= 'Data_get_from_rabbitMQ_by_scripts/replyCrawlPost.json';
-    const rabbitmqHost = 'rabbitmq-testing.ynm.local';
-    const queueName = 'testing.cl.tr.reply_posts_crawling_sources';
+    const jsonFilePath= 'Data_get_from_rabbitMQ_by_scripts/Data_Threads_Keywords_Management/replyCrawlPost.json';
+    const rabbitmqHost = 'rabbitmq-staging.younetmedia.com';
+    const queueName = 'staging.cl.tr.reply_posts_crawling_sources';
     const username = 'lamtt';
-    const password = 'lamtt';
+    const password = 'vYoWn4KCmDYpvuFiqovWbF';
     const vhost = '/';
 
   
