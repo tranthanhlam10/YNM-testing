@@ -303,3 +303,71 @@ Output:
 
 
 -> Phần 6-7 này phải chạy được là được
+
+
+
+## Tổng hợp những thông tin:
+- Loader: 
+1. Deployment
+
+ynm-cl-news-crawling-loader-service-staging
+Chị muốn crawl loại nào chỉ cần enable loại đó:
++ BLOG_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
++ HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
++ HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
++ NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
++ NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
+
+2. Luồng chạy 
+Load các message từ collection articles ở mongo lên các queue 
+high_priority_detail_url_info|normal_priority_detail_url_info
+
+- Đi crawl detail
+1. Deployment
+
+Sau khi load lên được các queue ở loader thì bật các deployment/stateful set sau:
+auto-parser-testing-high-priority-classifier (bật chỗ này là được)
+auto-parser-testing-high-priority-browser-crawler
+auto-parser-testing-high-priority-http-crawler (bật chỗ này là được)
+auto-parser-testing-article-parser (bật chỗ này là được)
+auto-parser-testing-error-article-handler
+ynm-cl-news-parsed-details-2-mentions-service-testing (bật chỗ này là đc)
+
+2. Luồng chạy 
+Luồng crawl detail sẽ consume các message từ các queue loader, sau đó xử lý và đẩy xuống queue:
+
++ ynm.auto_parser.high_priority_article_urls_crawled_by_http_crawler (do service auto-parser-testing-high-priority-classifier xử lý)
++ Sau đó khi bật auto-parser-testing-high-priority-http-crawler thì sẽ push message xuốgn queue ynm.auto_parser.raw_article_contents
++ Tiếp tục thì bật service auto-parser-testing-article-parser để phân rã data raw và push xuống queue parsed_detail_output
++ Cuối cùng khi bật luồng ynm-cl-news-parsed-details-2-mentions-service-testing thì sẽ đẩy qua các queue sau:
+
+
+article_titles
+cl.news.article_posts
+cl.news.article_crawl_reviews
+parsed_details_to_mentions
+
+- Source Updater:
+1. Deployment
+ynm-cl-news-source-updater-service-testing
+
+2. Luồng chạy 
+Consume từ queue article_titles sau đó update xuống collection articles ở mongo 
+
+
+- Đi crawl link
+
+Detail nằm ở wiki này: https://wiki.younetco.com/display/FB/%5BNews%5D%5BNew+Crawler%5D+Process+Of+Crawling+Article+Urls+By+First+Page
+
+Tóm gọi lại là sẽ load các cate lên đi crawl, sau khi qua các queue:
+cl.news.article_urls_crawling_sources 
+cl.news.article_urls_crawling_requests
+cl.news.article_urls_crawled_sources
+
+Sau khi crawl xong sẽ push vào queue cl.news.article_urls
+
+
+- Pusher: 
+ynm-cl-data-pusher-news-service-staging  
+Scale deployment này sẽ chạy pusher của news, consume từ queue cl.news.article_urls
+

@@ -59,12 +59,18 @@ data-migrate-testing-6f9b4d9cbd-h9xz4
 node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --fields=id,id_category,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
 
 
+
+// script moi
+
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --fields=id,id_category,hash_link,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
+
+
 kubectl config use-context lamtt-k8s-local
 kubectl get pods -n sl-testing | grep data-migrate-testing
 kubectl exec -it data-migrate-testing-6f9b4d9cbd-h9xz4 -n sl-testing -- sh
 
 
-
+env | grep MONGO
 export MONGODB_HOST=mongos-router.ynm.local
 export MONGODB_PORT=27017
 export MONGODB_USER=ynm_crawler_testing
@@ -96,7 +102,7 @@ platform: 3
 
 kubectl config use-context lamtt-k8s-ovh
 kubectl get pods -n sl-staging | grep data-migrate-staging
-kubectl exec -it data-migrate-staging-6c7f959fc7-47585 -n sl-staging -- sh
+kubectl exec -it data-migrate-staging-649c6868d5-9rvmp -n sl-staging -- sh
 
 
 
@@ -108,3 +114,53 @@ MONGODB_DATABASE=ynm_crawler_staging
 MONGODB_USERNAME=ynm_crawler_staging
 
 export MONGODB_PASSWORD=saJgNJW8v6FRh8
+
+
+
+## Data test mẫu
+
+Solr:
+
+article_urls
+
+{
+  "id": "2d9b6769-5b40-5ff2-9578-f8ba577c1201",
+  "id_category": "0",
+  "id_source": "znews.vn",
+  "link": "https://znews.vn/aqua-city-cua-novaland-duoc-hoan-tat-go-vuong-phap-ly-post1561909.html",
+  "title": "znews.vn › Kinh doanh",
+  "views_avg": 0,
+  "priority": 1,
+  "status": 1,
+  "failed_type": 1,
+  "count_failed": 0,
+  "crawled_date": "1970-01-01T00:00:00Z",
+  "platform": 3,
+  "_version_": 1837860763613528000,
+  "next_crawl_time": "2025-07-17T02:50:07.098Z",
+  "created_date": "2025-07-17T02:50:07.098Z"
+}
+
+
+article_titles
+
+{
+  "id": "c24274bf-eca8-5e8e-8232-f26a2551b803",
+  "id_category": "0",
+  "id_source": "znews.vn",
+  "link": "https://znews.vn/aqua-city-cua-novaland-duoc-hoan-tat-go-vuong-phap-ly-post1561909.html",
+  "title": "znews.vn › Kinh doanh",
+  "views_avg": 0,
+  "priority": 1,
+  "status": 1,
+  "failed_type": 1,
+  "count_failed": 0,
+  "crawled_date": "1970-01-01T00:00:00Z",
+  "platform": 3,
+  "next_crawl_time": "2025-07-17T02:50:07.098Z",
+  "created_date": "2025-07-17T02:50:07.098Z",
+  "hash_link": "2d9b6769-5b40-5ff2-9578-f8ba577c1201",
+  "_version_": 1837866088383119400
+}
+
+

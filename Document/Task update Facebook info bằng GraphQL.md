@@ -11,6 +11,10 @@
 
 # Câu lệnh chạy và các thông tin liên quan đến task
 
+identity schema:
+id id_social mapping_id is_personal page_id platform link shard domain is_kol fullname first_name middle_name last_name gender fb_user_type category friend_count subscriber_count birthday_day birthday_month birthday_year id_city current_city fb_account hometown phone email address interested country zip_code relationship_status job_level education_level industry closed_group is_private language avatar post_updated_at post_last_date reply_updated_at reply_last_date repost_updated_at repost_last_date engagement_updated_at info_updated_at last_crawl_followers next_crawl_time reply_next_crawl_time repost_next_crawl_time priority created_date updated_at last_status error_message commercial_rate tt_user_id post_no_cookie_last_date  reply_no_cookie_last_date repost_no_cookie_last_date
+
+
 - Queue
 cl.fb.identity_graphql_identities_crawling_sources
 cl.fb.identity_graphql_identities_crawling_requests
@@ -23,12 +27,17 @@ cl.identities_finished_sources
 ^cl\.(fb\.)?(identity_graphql_identities_(crawling_sources|crawling_requests|crawled_sources)|identities_finished_sources|resolved_source)$
 
 
+// Câu migrate chuẩn
+
+cl.fb.identity_graphql_identities_|cl.fb.identities_finished_sources
+
+
 - Câu lệnh chạy deployment
 
 ynmpdp-5105-testing-ynm-crawler-empty
 kubectl config use-context lamtt-k8s-local
 kubectl get pods -n crawler-testing | grep ynmpdp-5105-testing-ynm-crawler-empty
-kubectl exec -it ynmpdp-5105-testing-ynm-crawler-empty-66449c4ff6-x2smt -n crawler-testing -- sh
+kubectl exec -it ynmpdp-5105-testing-ynm-crawler-empty-5f86b57b9b-tbn2z -n crawler-testing -- sh
 
 
 - Câu lệnh chạy các services
@@ -256,3 +265,4 @@ Bước 9: Đẩy updated identity lên queue → Kết thúc
 Crawled Source → Check Error → [Retry / Process] → Detect Language → Get Subscriber → Extract Info → Build Update → Push Queue
 
 
+## Data test 

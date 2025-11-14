@@ -122,8 +122,8 @@ function matchesCondition(item, condition) {
 async function example3() {
     try {
         await filterJSONFile(
-            'messages_peek.json',
-            item => item.createdBy === 'ThreadsKeywordPostNoCookieCrawlingLoader',
+            'Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_fb_page.json',
+            item => item.createdBy === 'GroupGraphQLProfileCrawlingLoader',
             'output.json' // Lưu kết quả vào file mới
         );
     } catch (error) {
