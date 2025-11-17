@@ -36,7 +36,7 @@ SELECT * FROM `keywords` WHERE id = 7819
 
 
 // Câu regex được cập nhật mới nhât 
-^(?:[\w-]+\.)*(?:cl\.(?:tr\.(?:hashtag|keyword|reply)_posts(?:_hashtag_keyword)?(?:_no_cookie)?_(?:crawling(?:_(?:requests|sources(?:_next_page)?))|crawled_sources)|reply_posts_hashtag_keyword_crawling(?:_(?:requests|sources(?:_next_page)?))?|reply_posts_hashtag_keyword_crawled_sources|resolved_(?:source|data)|posts_2_solr_tr_posts|mentions_2_solr_mentions|identities_2_solr_identities|identities_2_redis_identities|replies_2_solr_tr_replies)|app\.socialheat\.crawl_keyword\.results)$|app.socialheat.crawl_keyword.results_LamTT|cl.tr.keyword_posts_crawling_sources_next_pages|cl.tr.hashtag_posts_crawling_sources_next_pages|reply_posts_hashtag_keyword|LamTT|cl.tr.hashtag_posts_crisis|cl.tr.keyword_posts_crisis
+^(?:[\w-]+\.)*(?:cl\.(?:tr\.(?:hashtag|keyword|reply)_posts(?:_hashtag_keyword)?(?:_no_cookie)?_(?:crawling(?:_(?:requests|sources(?:_next_page)?))|crawled_sources)|reply_posts_hashtag_keyword_crawling(?:_(?:requests|sources(?:_next_page)?))?|reply_posts_hashtag_keyword_crawled_sources|resolved_(?:source|data)|posts_2_solr_tr_posts|mentions_2_solr_mentions|identities_2_solr_identities|identities_2_redis_identities|replies_2_solr_tr_replies)|app\.socialheat\.crawl_keyword\.results)$|app.socialheat.crawl_keyword.results_LamTT|cl.tr.keyword_posts_crawling_sources_next_pages|cl.tr.hashtag_posts_crawling_sources_next_pages|reply_posts_hashtag_keyword|LamTT|cl.tr.hashtag_posts_crisis|cl.tr.keyword_posts_crisis|cl.tr.keyword_posts_critical|cl.tr.hashtag_posts_critical
 
 1. Hashtag
 
@@ -730,6 +730,32 @@ tr-has -> Tìm kiếm hashtag
 - Reply Crawl Post
     - ynm-cl-tr-reply-post-hashtag-keyword-service-staging → DONE
     - ynm-cl-tr-reply-post-service-staging → DONE
+
+- Crisis Critical:
+
+
+// Keyword
+ynm-cl-tr-keyword-post-crisis-nc-service-staging
+
+ynm-cl-tr-keyword-post-crisis-service-staging
+
+ynm-cl-tr-keyword-post-critical-nc-service-staging -> Hiện tại config queue đã đúng -> Hiện tại đã crawl đúng với yêu cầu 
+
+ynm-cl-tr-keyword-post-critical-service-staging -> Hiện tại config queue đã đúng
+
+ynm-cl-tr-keyword-post-no-cookie-service-staging
+
+ynm-cl-tr-keyword-post-service-staging
+
+
+// Hashtag
+1. ynm-cl-tr-hashtag-post-crisis-nc-service-staging
+2. ynm-cl-tr-hashtag-post-crisis-service-staging
+3. ynm-cl-tr-hashtag-post-critical-nc-service-staging -> Hiện tại config queue đã đúng
+4. ynm-cl-tr-hashtag-post-critical-service-staging -> Hiện tại config queue đã đúng
+5. ynm-cl-tr-hashtag-post-no-cookie-service-staging
+6. ynm-cl-tr-hashtag-post-service-staging
+
 
 Những hạng mục cần kiểm tra cho các luồng:
 
