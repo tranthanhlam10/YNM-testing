@@ -19,7 +19,7 @@ async function peekMessagesAndSaveToJSON(method, domain, queueName, userName, pa
         count: count,       
         encoding: 'auto',
         ackmode: 'reject_requeue_true',
-        truncate: 500000
+        truncate: 500000000
       },
       timeout: 30000000,
       headers: {
@@ -107,21 +107,21 @@ const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
 const queueName = "testing.cl.replies_2_solr_tr_replies";
-const queueName1 = "staging.cl.mentions_2_solr_mentions_LamTT";
-const queueName2 = "testing.cl.posts_2_solr_tr_posts";
-const queue_name3 = "testing.cl.tr.keyword_posts_no_cookie_crawled_sources"; 
-const queue_name4 = "testing.cl.tr.reply_posts_crawling_sources"
-const queue_name5 = "app.socialheat.crawl_keyword.results_LamTT";
+const queueName1 = "testing.cl.fb.identity_graphql_identities_crawling_sources";
+const queueName2 = "testing.cl.fb.identity_graphql_identities_crawling_requests";
+const queue_name3 = "testing.cl.fb.identity_graphql_identities_crawled_sources"; 
+const queue_name4 = "testing.cl.fb.identities_finished_sources"
+const queue_name5 = "staging.cl.news.article_urls.NganLTK";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP, 
-  stagingDomain, 
-  queueName1, 
+  testHTTP, 
+  testDomain, 
+  queue_name4, 
   userName, 
-  stagingPassword,
-  2100
+  testPassword,
+  100
 );
