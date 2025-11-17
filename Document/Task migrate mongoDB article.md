@@ -64,6 +64,9 @@ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=arti
 
 node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --fields=id,id_category,hash_link,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
 
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --shard:shard2 --fields=id,id_category,hash_link,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
+
+shards=shard2
 
 kubectl config use-context lamtt-k8s-local
 kubectl get pods -n sl-testing | grep data-migrate-testing
