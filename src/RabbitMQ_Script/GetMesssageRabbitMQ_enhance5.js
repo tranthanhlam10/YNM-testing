@@ -324,15 +324,15 @@ function processBatchMessages(messages, batchNumber, workerId) {
         }
         
         // Thêm metadata
-        payload._message_metadata = {
-          properties: message.properties || {},
-          routing_key: message.routing_key || '',
-          exchange: message.exchange || '',
-          message_count: message.message_count || 0,
-          batch_number: batchNumber,
-          worker_id: workerId,
-          message_index: i + 1
-        };
+        // payload._message_metadata = {
+        //   properties: message.properties || {},
+        //   routing_key: message.routing_key || '',
+        //   exchange: message.exchange || '',
+        //   message_count: message.message_count || 0,
+        //   batch_number: batchNumber,
+        //   worker_id: workerId,
+        //   message_index: i + 1
+        // };
         
         payloads.push(payload);
       } else {
@@ -440,7 +440,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.mentions_2_solr_mentions";
+const queueName = "app.socialheat.crawl_keyword.results_LamTT";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -448,11 +448,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  testHTTP, 
-  testDomain, 
+  stagingHTTP, 
+  stagingDomain, 
   queueName, 
   userName, 
-  testPassword,
+  stagingPassword,
   1000, // Batch size - số messages mỗi lần fetch
   5     // Concurrency - số workers chạy song song (1-10)
         // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự

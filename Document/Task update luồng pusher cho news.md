@@ -78,7 +78,7 @@ yarn start --scope=@ynm/cl-data-pusher-service
 kubectl config use-context lamtt-k8s-ovh
 kubectl get pods -n crawler-staging | grep fix-news-pusher-staging-ynm-crawler-empty
 
-kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-698c8dd8d4-vxlpk -n crawler-staging -- sh
+kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-84d674df48-zgzv6 -n crawler-staging -- sh
 
 
 
@@ -112,6 +112,10 @@ export MONGO_NEWS_DATABASE=ynm_crawler_staging
 port MONGO_NEWS_REPLICA_SET=rs0
  
 yarn start --scope=@ynm/eci-to-sh-pusher-service
+
+
+
+
 
 
 

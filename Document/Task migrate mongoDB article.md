@@ -34,8 +34,14 @@ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_titles --sourc
 Artitcles Urls: node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_urls --source=article_urls --fields=id,link,created_date,title --cursorMark=*
 
 
-Artitcles Titles: node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_titles --source=article_titles --fields=id --cursorMark=*
 
+ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_urls --source=article_urls  --shard=shard5 --fields=id,link,created_date,title --cursorMark=*
+
+
+Artitcles Titles: node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_titles --source=article_titles --fields=id,status --cursorMark=*
+
+
+ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_titles --shard=shard5 --source=article_titles --fields=id --cursorMark=*
 
 Update/Load theo batch, mỗi batch là 500, có lưu lại cursor
 
@@ -61,6 +67,10 @@ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=arti
 
 
 // script moi
+
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --shard=shard5 --fields=id,id_category,hash_link,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
+
+
 
 node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=article_titles --fields=id,id_category,hash_link,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
 
@@ -105,7 +115,7 @@ platform: 3
 
 kubectl config use-context lamtt-k8s-ovh
 kubectl get pods -n sl-staging | grep data-migrate-staging
-kubectl exec -it data-migrate-staging-649c6868d5-9rvmp -n sl-staging -- sh
+kubectl exec -it data-migrate-staging-786f48bbf7-6tmsh -n sl-staging -- sh
 
 
 
@@ -118,6 +128,20 @@ MONGODB_USERNAME=ynm_crawler_staging
 
 export MONGODB_PASSWORD=saJgNJW8v6FRh8
 
+
+
+
+1. Script chạy cuối cùng:
+
+Artitcles Titles:
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_titles --source=article_titles --fields=id,status --cursorMark=*
+
+Article_urls:
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_urls --source=article_urls --fields=id,link,created_date,title --cursorMark=*
+
+
+Article_Crawling:
+node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=article_crawling --source=article_titles --fields=id,id_category,hash_link,platform,link,title,id_source,status,parse_type,error_codes,failed_type,count_failed,views_avg,published_date,created_date,crawled_date,next_crawl_time,priority,type --query="created_date:[NOW-365DAYS TO *]" --cursorMark=*
 
 
 ## Data test mẫu
