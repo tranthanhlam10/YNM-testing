@@ -54,6 +54,8 @@ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=arti
 ## Chạy pusher cho news
 
 
+// News pusher
+
 export HTTP_PORT=9999
 
 export LOG_LEVEL=debug
@@ -70,7 +72,7 @@ export POST_2_SOLR_IG_POST_ENABLE=false
 
 export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
 export MONGO_NEWS_DATABASE=ynm_crawler_staging
-port MONGO_NEWS_REPLICA_SET=rs0
+export MONGO_NEWS_REPLICA_SET=rs0
 
 yarn start --scope=@ynm/cl-data-pusher-service
 
@@ -78,12 +80,12 @@ yarn start --scope=@ynm/cl-data-pusher-service
 kubectl config use-context lamtt-k8s-ovh
 kubectl get pods -n crawler-staging | grep fix-news-pusher-staging-ynm-crawler-empty
 
-kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-84d674df48-zgzv6 -n crawler-staging -- sh
+kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-6d65cdd7d9-bwf2z -n crawler-staging -- sh
 
 
 
 
-ECI:
+ECI -> DONE 
 
 export HTTP_PORT=8080
  
@@ -109,11 +111,131 @@ export PRODUCT_ITEMS_TO_MENTIONS_PUSHER_ENABLE=false
  
 export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
 export MONGO_NEWS_DATABASE=ynm_crawler_staging
-port MONGO_NEWS_REPLICA_SET=rs0
+export MONGO_NEWS_REPLICA_SET=rs0
  
 yarn start --scope=@ynm/eci-to-sh-pusher-service
 
 
+
+
+
+// Loader news -> DONE
+
+export HTTP_PORT=9990
+export GRPC_PORT=9011
+     
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+     
+export RABBIT_HEARTBEAT=10
+   
+export MYSQL_DEFAULT_CONNECTION_DATABASE=ynm_crawling_loaders
+export MYSQL_NEWS_CONNECTION_DATABASE=crawling
+export MYSQL_NEWS_APP_CONNECTION_DATABASE=monitoring_master
+   
+export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
+export MONGO_NEWS_DATABASE=ynm_crawler_staging
+export MONGO_NEWS_REPLICA_SET=rs0
+ 
+export BLOG_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=high_priority_detail_url_info
+export BLOG_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=20000
+export BLOG_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
+export BLOG_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
+export BLOG_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+  
+export HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=high_priority_detail_url_info
+export HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=20000
+export HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
+export HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
+export HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
+ 
+export HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=high_priority_detail_url_info
+export HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=20000
+export HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
+export HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
+export HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+  
+export NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=high_priority_detail_url_info
+export NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=20000
+export NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
+export NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
+export NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
+  
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=normal_priority_detail_url_info
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=10000
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+   
+NODE_OPTIONS="--max-old-space-size=6144" yarn start --scope=@ynm/cl-news-crawling-loader-service
+
+
+
+
+
+// Loader ECI -> DONE
+
+
+export HTTP_PORT=8090
+ 
+export LOG_LEVEL=debug
+ 
+export ARTICLE_POSTS_CACHING_LOADER_CYCLE="*/10 * * * *"
+export ARTICLE_POSTS_CACHING_LOADER_DATA_LOAD_BATCH_SIZE=1000
+export ARTICLE_POSTS_CACHING_LOADER_ENABLE=false
+ 
+export ARTICLE_URLS_UPDATING_LOADER_CYCLE="*/10 * * * *"
+export ARTICLE_URLS_UPDATING_LOADER_DATA_LOAD_BATCH_SIZE=1000
+export ARTICLE_URLS_UPDATING_LOADER_ENABLE=true
+ 
+export PRODUCT_ITEMS_LOADER_INPUT_QUEUE="social_listening_product_items"
+export PRODUCT_ITEMS_LOADER_EXCHANGE="eci_pi.to.sh"
+export PRODUCT_ITEMS_LOADER_ARTICLE_POSTS_QUEUE="eci-pi-to-article-posts"
+export PRODUCT_ITEMS_LOADER_MENTIONS_QUEUE="eci-pi-to-mentions"
+export PRODUCT_ITEMS_LOADER_ARTICLE_URLS_QUEUE="eci-pi-to-article-urls"
+export PRODUCT_ITEMS_LOADER_BATCH_SIZE=1000
+export PRODUCT_ITEMS_LOADER_PREFETCH_MESSAGES=5000
+export PRODUCT_ITEMS_LOADER_ENABLE=true
+ 
+export MYSQL_CONNECTION_DATABASE="ynm_crawling_loaders"
+ 
+export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
+export MONGO_NEWS_DATABASE=ynm_crawler_staging
+export MONGO_NEWS_REPLICA_SET=rs0
+ 
+yarn start --scope=@ynm/eci-to-sh-loader-service
+
+
+
+// Updater -> DONE
+
+export HTTP_PORT=9980
+export GRPC_PORT=9011
+    
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+    
+export RABBIT_HEARTBEAT=10
+  
+export MYSQL_DEFAULT_CONNECTION_DATABASE=ynm_crawling_loaders
+export MYSQL_NEWS_CONNECTION_DATABASE=crawling
+export MYSQL_NEWS_APP_CONNECTION_DATABASE=monitoring_master
+  
+export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
+export MONGO_NEWS_DATABASE=ynm_crawler_staging
+export MONGO_NEWS_REPLICA_SET=rs0
+  
+export ARTICLE_TITLE_UPDATER_INPUT_QUEUE=article_titles
+export ARTICLE_TITLE_UPDATER_BATCH_SIZE=500
+export ARTICLE_TITLE_UPDATER_CONCURRENCY=1
+export ARTICLE_TITLE_UPDATER_PREFETCH_MESSAGES=1000
+export ARTICLE_TITLE_UPDATER_ENABLE=true
+  
+yarn start --scope=@ynm/cl-news-source-updater-service
 
 
 

@@ -4,7 +4,7 @@ const lngDetector = new LanguageDetect();
 // OR
 // const lngDetector = new (require('languagedetect'));
  
-console.log(lngDetector.detect(`🫶🫶🫶`));
+console.log(lngDetector.detect(`Lô cốc chỉ từ #50🌿 em gl ạ`));
  
 /*
   [ [ 'english', 0.5969230769230769 ],

@@ -111,17 +111,17 @@ const queueName1 = "testing.cl.fb.identity_graphql_identities_crawling_sources";
 const queueName2 = "testing.cl.fb.identity_graphql_identities_crawling_requests";
 const queue_name3 = "testing.cl.fb.identity_graphql_identities_crawled_sources"; 
 const queue_name4 = "testing.cl.fb.identities_finished_sources"
-const queue_name5 = "app.socialheat.crawl_keyword.results.TrangHK";
+const queue_name5 = "staging.cl.news.article_urls";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  testHTTP, 
-  testDomain, 
-  queue_name4, 
+  stagingHTTP, 
+  stagingDomain, 
+  queue_name5, 
   userName, 
-  testPassword,
-  2000
+  stagingPassword,
+  500
 );
