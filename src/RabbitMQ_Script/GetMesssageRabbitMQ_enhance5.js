@@ -324,15 +324,15 @@ function processBatchMessages(messages, batchNumber, workerId) {
         }
         
         // Thêm metadata
-        payload._message_metadata = {
-          properties: message.properties || {},
-          routing_key: message.routing_key || '',
-          exchange: message.exchange || '',
-          message_count: message.message_count || 0,
-          batch_number: batchNumber,
-          worker_id: workerId,
-          message_index: i + 1
-        };
+        // payload._message_metadata = {
+        //   properties: message.properties || {},
+        //   routing_key: message.routing_key || '',
+        //   exchange: message.exchange || '',
+        //   message_count: message.message_count || 0,
+        //   batch_number: batchNumber,
+        //   worker_id: workerId,
+        //   message_index: i + 1
+        // };
         
         payloads.push(payload);
       } else {
@@ -440,7 +440,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.mentions_2_solr_mentions";
+const queueName = "testing.cl.fb.identity_graphql_identities_crawled_sources";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -453,7 +453,7 @@ peekAllMessagesInBatches(
   queueName, 
   userName, 
   testPassword,
-  1000, // Batch size - số messages mỗi lần fetch
+  500, // Batch size - số messages mỗi lần fetch
   5     // Concurrency - số workers chạy song song (1-10)
         // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
         // Nhưng 5 workers chạy đồng thời => NHANH GẤP 5 LẦN!

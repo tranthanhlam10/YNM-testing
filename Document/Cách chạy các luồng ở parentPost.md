@@ -641,6 +641,12 @@ export RESOLVER_CONCURRENCY=1
    
 yarn testing:tr-reply-crawler
 
+
+
+
+tr_repl|tranghk|cl.tr.posts_comment|cl.tr.posts_sub_comment
+
+
 ## Facebook
 
 

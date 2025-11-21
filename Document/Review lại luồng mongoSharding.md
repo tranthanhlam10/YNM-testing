@@ -371,3 +371,8 @@ Sau khi crawl xong sẽ push vào queue cl.news.article_urls
 ynm-cl-data-pusher-news-service-staging  
 Scale deployment này sẽ chạy pusher của news, consume từ queue cl.news.article_urls
 
+
+
+
+
+## 

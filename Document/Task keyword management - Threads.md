@@ -735,26 +735,28 @@ tr-has -> Tìm kiếm hashtag
 
 
 // Keyword
-ynm-cl-tr-keyword-post-crisis-nc-service-staging
-
-ynm-cl-tr-keyword-post-crisis-service-staging
-
-ynm-cl-tr-keyword-post-critical-nc-service-staging -> Hiện tại config queue đã đúng -> Hiện tại đã crawl đúng với yêu cầu 
-
-ynm-cl-tr-keyword-post-critical-service-staging -> Hiện tại config queue đã đúng
-
-ynm-cl-tr-keyword-post-no-cookie-service-staging
-
-ynm-cl-tr-keyword-post-service-staging
+ynm-cl-tr-keyword-post-crisis-nc-service-staging  -> 10
+ynm-cl-tr-keyword-post-crisis-service-staging ->  10/10
+ynm-cl-tr-keyword-post-critical-nc-service-staging ->  10/10
+ynm-cl-tr-keyword-post-critical-service-staging  -> 10
+ynm-cl-tr-keyword-post-no-cookie-service-staging > 10
+ynm-cl-tr-keyword-post-service-staging  ->  10/10
 
 
 // Hashtag
-1. ynm-cl-tr-hashtag-post-crisis-nc-service-staging
-2. ynm-cl-tr-hashtag-post-crisis-service-staging
-3. ynm-cl-tr-hashtag-post-critical-nc-service-staging -> Hiện tại config queue đã đúng
-4. ynm-cl-tr-hashtag-post-critical-service-staging -> Hiện tại config queue đã đúng
-5. ynm-cl-tr-hashtag-post-no-cookie-service-staging
-6. ynm-cl-tr-hashtag-post-service-staging
+ynm-cl-tr-hashtag-post-crisis-nc-service-staging -> 10
+ynm-cl-tr-hashtag-post-crisis-service-staging -> 10/10
+ynm-cl-tr-hashtag-post-critical-nc-service-staging  -> 10
+ynm-cl-tr-hashtag-post-critical-service-staging -> 10/10
+ynm-cl-tr-hashtag-post-no-cookie-service-staging -> 10/10
+ynm-cl-tr-hashtag-post-service-staging -> 10/10
+
+
+
+
+### Luồng không có id_last_crawling
+- Reply
+- 
 
 
 Những hạng mục cần kiểm tra cho các luồng:
