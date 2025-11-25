@@ -834,3 +834,26 @@ id id_social mapping_id is_personal page_id platform link shard domain is_kol fu
 
 
 
+## Câu lệnh chạy mongo bằng terminal
+
+
+mongosh
+
+
+mongosh mongodb://qc_lamtt:hk233ASNOFe4ahs@192.168.1.108:27017/socialheat_testing?authSource=socialheat_testing
+
+
+// Câu lệnh query find đơn gianr
+db.identity_last_mentions.find().limit(5).pretty()
+
+
+// Cách sử dụng câu aggregations ở mongo
+db.identity_last_mentions.aggregate([ { $group: { _id: "$platform", count: { $sum: 1 } } } ])
+
+
+// Câu query thứ nhất của đều kiện phân trang
+db.identity_last_mentions.find({ last_crawl_followers: { $exists: false },platform:7 }).count()
+
+// Câu lệnh query đơn giản
+{ platform: 7,  last_crawl_followers: { $exists: false }  }
+{ last_mention_in_topic: -1 }
