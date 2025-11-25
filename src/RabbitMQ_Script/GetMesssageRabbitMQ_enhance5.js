@@ -440,7 +440,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.fb.identity_graphql_identities_crawled_sources";
+const queueName = "testing.cl.fb.identities_finished_sources";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';

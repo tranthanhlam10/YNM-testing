@@ -111,7 +111,7 @@ const queueName1 = "testing.cl.fb.identity_graphql_identities_crawling_sources";
 const queueName2 = "testing.cl.fb.identity_graphql_identities_crawling_requests";
 const queue_name3 = "testing.cl.fb.identity_graphql_identities_crawled_sources"; 
 const queue_name4 = "testing.cl.fb.identities_finished_sources"
-const queue_name5 = "staging.cl.news.article_urls";
+const queue_name5 = "staging.cl.fb.identities_finished_sources";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';

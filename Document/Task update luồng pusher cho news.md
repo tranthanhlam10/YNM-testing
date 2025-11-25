@@ -53,8 +53,40 @@ node scripts/solr2mongo/migrate_solr_to_mongodb.js --dest=articles --source=arti
 
 ## Chạy pusher cho news
 
+Câu lệnh chạy:
+kubectl config use-context lamtt-k8s-ovh
+kubectl get pods -n crawler-staging | grep fix-news-pusher-staging-ynm-crawler-empty
 
-// News pusher
+kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-6d65cdd7d9-bwf2z -n crawler-staging -- sh
+
+- Deployment chạy để có data:
+
+Những luồng chạy để có data bên news
+
+
+
+ynm-cl-news-article-url-service-staging
+
+ynm-cl-news-crisis-hashtag-service
+ynm-cl-news-crisis-hashtag-by-api-service
+ynm-cl-news-crisis-keyword-service
+ynm-cl-news-crisis-keyword-by-api-service
+ynm-cl-news-critical-hashtag-service
+ynm-cl-news-critical-hashtag-by-api-service
+ynm-cl-news-critical-keyword-service
+ynm-cl-news-critical-keyword-by-api-service
+ynm-cl-news-hashtag-service
+ynm-cl-news-hashtag-by-api-service
+ynm-cl-news-keyword-service
+ynm-cl-news-keyword-by-api-service
+ynm-cl-news-category-link-by-openai-service
+ynm-cl-news-article-url-service
+ynm-cl-news-crisis-keyword-service
+ynm-cl-news-keyword-service
+ynm-cl-news-parsed-details-2-mentions-service
+
+
+// News pusher -> DONE
 
 export HTTP_PORT=9999
 
@@ -77,15 +109,16 @@ export MONGO_NEWS_REPLICA_SET=rs0
 yarn start --scope=@ynm/cl-data-pusher-service
 
 
-kubectl config use-context lamtt-k8s-ovh
-kubectl get pods -n crawler-staging | grep fix-news-pusher-staging-ynm-crawler-empty
-
-kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-6d65cdd7d9-bwf2z -n crawler-staging -- sh
 
 
 
 
-ECI -> DONE 
+
+ECI -> DONE Staging
+
+ynm-eci-to-sh-pusher-service-staging
+
+
 
 export HTTP_PORT=8080
  
@@ -175,8 +208,9 @@ NODE_OPTIONS="--max-old-space-size=6144" yarn start --scope=@ynm/cl-news-crawlin
 
 
 
-// Loader ECI -> DONE
+// Loader ECI -> DONE Staging
 
+ynm-eci-to-sh-loader-service-staging
 
 export HTTP_PORT=8090
  
@@ -209,7 +243,7 @@ yarn start --scope=@ynm/eci-to-sh-loader-service
 
 
 
-// Updater -> DONE
+// Updater -> DONE Staging
 
 export HTTP_PORT=9980
 export GRPC_PORT=9011
