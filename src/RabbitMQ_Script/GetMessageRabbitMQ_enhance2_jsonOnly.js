@@ -106,12 +106,12 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.replies_2_solr_tr_replies";
-const queueName1 = "testing.cl.fb.identity_graphql_identities_crawling_sources";
-const queueName2 = "testing.cl.fb.identity_graphql_identities_crawling_requests";
-const queue_name3 = "testing.cl.fb.identity_graphql_identities_crawled_sources"; 
-const queue_name4 = "testing.cl.fb.identities_finished_sources"
-const queue_name5 = "staging.cl.fb.identities_finished_sources";
+const queueName = "staging.cl.tr.hashtag_posts_no_cookie_crawled_sources";
+const queueName1 = "staging.cl.tr.reply_posts_hashtag_keyword_crawling_sources";
+const queueName2 = "staging.cl.mentions_2_solr_mentions_LamTT";
+const queue_name3 = "app.socialheat.crawl_keyword.results_LamTT"; 
+const queue_name4 = "staging.cl.fb.identities_finished_sources"
+const queue_name5 = "staging.cl.mentions_2_solr_mentions_LamTT";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -123,5 +123,5 @@ peekMessagesAndSaveToJSON(
   queue_name5, 
   userName, 
   stagingPassword,
-  500
+  100
 );
