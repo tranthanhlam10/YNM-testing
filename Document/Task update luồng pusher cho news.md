@@ -57,15 +57,29 @@ Câu lệnh chạy:
 kubectl config use-context lamtt-k8s-ovh
 kubectl get pods -n crawler-staging | grep fix-news-pusher-staging-ynm-crawler-empty
 
-kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-6d65cdd7d9-bwf2z -n crawler-staging -- sh
+
+
+
+kubectl get pods -n crawler-staging | grep ynmpdp-5637-staging-ynm-crawler-empty
+kubectl exec -it ynmpdp-5637-staging-ynm-crawler-empty-55f8b9dfc5-vb9r2 -n crawler-staging -- sh
+
+
+- Những đều cần chạy để  có data 
 
 - Deployment chạy để có data:
 
-Những luồng chạy để có data bên news
+Luồng đi first page: ynm-cl-news-article-url-service-staging
+Luồng loader của first page: ynm-cl-news-crawling-loader-service-staging 
 
 
 
-ynm-cl-news-article-url-service-staging
+REVIEW_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+NEWS_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+BLOG_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+ECOM_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+NEWS_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+
+
 
 ynm-cl-news-crisis-hashtag-service
 ynm-cl-news-crisis-hashtag-by-api-service
@@ -84,6 +98,39 @@ ynm-cl-news-article-url-service
 ynm-cl-news-crisis-keyword-service
 ynm-cl-news-keyword-service
 ynm-cl-news-parsed-details-2-mentions-service
+
+
+// Luồng crawler first page
+
+
+export HTTP_PORT=9998
+  
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.news.article_urls_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.news.article_urls_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.news.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.news.article_urls_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.news.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls.next_page
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=ARTICLE_URL_CRAWLER
+  
+export BUILDER_ENABLE=true
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+  
+export CRAWLER_ENABLE=true
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=1
+  
+export RESOLVER_ENABLE=true
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+  
+export LOG_LEVEL=debug
+  
+yarn start --scope=@ynm/cl-news-article-url-crawler-service
+
 
 
 // News pusher -> DONE
@@ -200,7 +247,7 @@ export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=normal_p
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=10000
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
-export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
    
 NODE_OPTIONS="--max-old-space-size=6144" yarn start --scope=@ynm/cl-news-crawling-loader-service
 
