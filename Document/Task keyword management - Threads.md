@@ -36,7 +36,7 @@ SELECT * FROM `keywords` WHERE id = 7819
 
 
 // Câu regex được cập nhật mới nhât 
-^(?:[\w-]+\.)*(?:cl\.(?:tr\.(?:hashtag|keyword|reply)_posts(?:_hashtag_keyword)?(?:_no_cookie)?_(?:crawling(?:_(?:requests|sources(?:_next_page)?))|crawled_sources)|reply_posts_hashtag_keyword_crawling(?:_(?:requests|sources(?:_next_page)?))?|reply_posts_hashtag_keyword_crawled_sources|resolved_(?:source|data)|posts_2_solr_tr_posts|mentions_2_solr_mentions|identities_2_solr_identities|identities_2_redis_identities|replies_2_solr_tr_replies)|app\.socialheat\.crawl_keyword\.results)$|app.socialheat.crawl_keyword.results_LamTT|cl.tr.keyword_posts_crawling_sources_next_pages|cl.tr.hashtag_posts_crawling_sources_next_pages|reply_posts_hashtag_keyword|LamTT|cl.tr.hashtag_posts_crisis|cl.tr.keyword_posts_crisis|cl.tr.keyword_posts_critical|cl.tr.hashtag_posts_critical
+^(?:[\w-]+\.)*(?:cl\.(?:tr\.(?:hashtag|keyword|reply)_posts(?:_hashtag_keyword)?(?:_no_cookie)?_(?:crawling(?:_(?:requests|sources(?:_next_page)?))|crawled_sources)|reply_posts_hashtag_keyword_crawling(?:_(?:requests|sources(?:_next_page)?))?|reply_posts_hashtag_keyword_crawled_sources|resolved_(?:source|data)|posts_2_solr_tr_posts|mentions_2_solr_mentions|identities_2_solr_identities|identities_2_redis_identities|replies_2_solr_tr_replies)|app\.socialheat\.crawl_keyword\.results)$|app.socialheat.crawl_keyword.results_LamTT|cl.tr.keyword_posts_crawling_sources_next_pages|cl.tr.hashtag_posts_crawling_sources_next_pages|reply_posts_hashtag_keyword|cl.tr.hashtag_posts_crisis|cl.tr.keyword_posts_crisis|cl.tr.keyword_posts_critical|cl.tr.hashtag_posts_critical
 
 1. Hashtag
 

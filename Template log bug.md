@@ -13,3 +13,13 @@
 7. Additional Information
 
 NOTE
+
+
+// Thông tin testing
+
+Testing timeline:
+Done test cases: 5/12/2025
+Start testing: 8/12/2025
+Done local:  10/12/2025
+Done testing:  12/12/2025
+Done staging:  16/12/2025

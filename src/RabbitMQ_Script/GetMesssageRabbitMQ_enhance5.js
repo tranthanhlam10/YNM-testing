@@ -440,7 +440,7 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.news.article_urls_crawling_sources";
+const queueName = "testing.cl.comments_2_solr_yt_comments";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -448,11 +448,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  stagingHTTP, 
-  stagingDomain, 
+  testHTTP, 
+  testDomain, 
   queueName, 
   userName, 
-  stagingPassword,
+  testPassword,
   500, // Batch size - số messages mỗi lần fetch
   5     // Concurrency - số workers chạy song song (1-10)
         // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
