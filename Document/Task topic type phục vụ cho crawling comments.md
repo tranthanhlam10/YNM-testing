@@ -116,7 +116,6 @@ cursor
 last_status
 error_message
 video_id
-_version_
 is_kol
 engagement_updated_at
 next_crawl_time
@@ -144,7 +143,6 @@ cursor
 last_status
 error_message
 video_id
-_version_
 is_kol
 engagement_updated_at
 next_crawl_time
@@ -211,7 +209,6 @@ engagement_updated_at
 is_auto_engagement
 next_crawl_time
 error_message
-_version_
 post_type
 crawled_by
 caption
@@ -237,7 +234,6 @@ last_status
 next_crawl_time
 post_created_date
 error_message
-_version_
 caption
 shared_content
 topic_types
@@ -783,8 +779,8 @@ ynm-cl-tr-reply-crisis-service-testing
 
 1. Youtube -> Hiện tại đã có đẩy đủ ở topic_type ở các luồng comt
 
-youtube-api-monitoring-priority-video
-youtube-api-get-latest-priority-videos-comments-by-api 
+youtube-api-monitoring-priority-video -> Hiện tại đã load đúng yêu cầu
+youtube-api-get-latest-priority-videos-comments-by-api -> Hiện tại đã crawl đúng yêu cầu
 
 -> Queue nay moi la queue day vao youtube comment: testing.cl.posts_2_solr_yt_comments
 
@@ -797,16 +793,31 @@ youtube-api-get-latest-priority-comments-replies
 Những luồng cần phải check
 
 tr-loader
-ynm-cl-tr-crawling-loader-service-staging
+ynm-cl-tr-crawling-loader-service-staging -> Hiện tại đã load đúng yêu cầu 
 
 
+
+// Hiện tại các luồng crawl comment và sub comment đã đúng yêu cầu
 1. Comment
-ynm-cl-tr-comment-crisis-service-staging
-ynm-cl-tr-comment-priority-service-staging
-ynm-cl-tr-comment-service-staging
+ynm-cl-tr-comment-crisis-service-staging -> Chỉ cần chạy 1 luồng trên này là được
+ynm-cl-tr-comment-priority-service-staging -> Chỉ cần chạy 1 luồng trên này là được
+ynm-cl-tr-comment-service-staging -> Chỉ cần chạy 1 luồng trên này là được
 
 2. Sub comment
 
-ynm-cl-tr-reply-service-staging
-ynm-cl-tr-reply-priority-service-staging
-ynm-cl-tr-reply-crisis-service-staging
+ynm-cl-tr-reply-service-staging -> Chỉ cần chạy 1 luồng trên này là được
+ynm-cl-tr-reply-priority-service-staging -> Chỉ cần chạy 1 luồng trên này là được
+ynm-cl-tr-reply-crisis-service-staging -> Chỉ cần chạy 1 luồng trên này là được
+
+
+
+## Note
+Cách chạy của Threads Comment và Threads Sub Comment:
+
++ Hiện tại đang có 3 luồng Normal, Crisis, Priority (Có 3 loaders khác nhau)
+
++ Nhưng khi load lên thì created_by vẫn là của Normal (ThreadsCommentSubCommentCrawlingLoader và ThreadsPostCommentCrawlingLoader)
+
++ Dù cho điều kiện load có khác nhau
+
+Từ trước đến giờ luồng vẫn chạy như vậy, và đã chạy được hơn 7 tháng theo hotfix của anh Tân
