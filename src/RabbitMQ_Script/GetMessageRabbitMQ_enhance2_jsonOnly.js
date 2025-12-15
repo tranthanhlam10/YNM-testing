@@ -109,8 +109,8 @@ const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 const queueName = "testing.cl.comments_2_solr_yt_comments";
 const queueName1 = "youtube.post.crawled_source";
 const queueName2 = "staging.cl.mentions_2_solr_mentions_LamTT";
-const queue_name3 = "testing.cl.replies_2_solr_tr_replies"; 
-const queue_name4 = "testing.cl.tr.posts_sub_comment_crawling_sources"
+const queue_name3 = "staging.cl.tr.keyword_posts_crawling_sources"; 
+const queue_name4 = "staging.cl.news.article_urls";
 const queue_name5 = "staging.cl.tr.hashtag_posts_critical_crawling_sources";
 
 const userName = 'lamtt'; 
@@ -118,10 +118,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP, 
-  stagingDomain, 
-  queue_name5                                                                                                                                                                                                                                                                                                                                                                   , 
-  userName, 
+  stagingHTTP,
+  stagingDomain,
+  queue_name4,
+  userName,
   stagingPassword,
-  700
+  300
 );

@@ -1,0 +1,199 @@
+# Task merge source updater
+
+## Cách chạy
+
+// Câu regex trên RabbitMQ
+cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl.fb.fb_posts_finished_sources|article_titles|cl.news.category_links_finished_sources|cl.tr.potential_identities_finished_sources|cl.tr.identities_finished_sources|cl.tr.posts_finished_sources|cl.tr.posts_by_topic_finished_sources|cl.tr.replies_finished_sources|cl.summary_mentions_finished_sources|cl.tt.identities_finished_sources|cl.tt.posts_info_finished_sources
+
+
+// Câu lệnh ở k8s
+ynmpdp-5066-2-testing-ynm-crawler-empty
+
+kubectl get pods -n crawler-testing | grep ynmpdp-5066-2-testing-ynm-crawler-empty
+kubectl exec -it hotfix-remove-crawl-reply-post-staging-ynm-crawler-empty-78pwds -n crawler-testing -- sh
+
+kubectl config use-context lamtt-k8s-local
+
+// Khiêm 
+
+# * Facebook *
+FB_POST_ENABLE=false
+FB_POST_MAX_WAITING_TIME=60
+FB_POST_PREFETCH_MESSAGES=1000
+FB_POST_BATCH_SIZE=100
+ 
+FB_IDENTITIES_ENABLE=false
+FB_IDENTITIES_MAX_WAITING_TIME=60
+FB_IDENTITIES_PREFETCH_MESSAGES=1000
+FB_IDENTITIES_BATCH_SIZE=100
+ 
+ENGAGEMENTS_BY_TOPIC_ENABLE=false
+ENGAGEMENTS_BY_TOPIC_MAX_WAITING_TIME=60
+ENGAGEMENTS_BY_TOPIC_PREFETCH_MESSAGES=1000
+ENGAGEMENTS_BY_TOPIC_BATCH_SIZE=100
+ 
+# * Threads *
+TR_KEYWORD_ENABLE=false
+TR_KEYWORD_MAX_WAITING_TIME=60
+TR_KEYWORD_PREFETCH_MESSAGES=1000
+TR_KEYWORD_BATCH_SIZE=100
+ 
+TR_HASHTAG_ENABLE=false
+TR_HASHTAG_MAX_WAITING_TIME=60
+TR_HASHTAG_PREFETCH_MESSAGES=1000
+TR_HASHTAG_BATCH_SIZE=100
+ 
+POTENTIAL_IDENTITIES_ENABLE=false
+POTENTIAL_IDENTITIES_MAX_WAITING_TIME=60
+POTENTIAL_IDENTITIES_PREFETCH_MESSAGES=1000
+POTENTIAL_IDENTITIES_BATCH_SIZE=100
+ 
+TR_IDENTITIES_ENABLE=false
+TR_IDENTITIES_MAX_WAITING_TIME=60
+TR_IDENTITIES_PREFETCH_MESSAGES=1000
+TR_IDENTITIES_BATCH_SIZE=100
+ 
+TR_POSTS_ENABLE=false
+TR_POSTS_MAX_WAITING_TIME=60
+TR_POSTS_PREFETCH_MESSAGES=1000
+TR_POSTS_BATCH_SIZE=100
+ 
+TR_POSTS_BY_TOPIC_ENABLE=false
+TR_POSTS_BY_TOPIC_MAX_WAITING_TIME=60
+TR_POSTS_BY_TOPIC_PREFETCH_MESSAGES=1000
+TR_POSTS_BY_TOPIC_BATCH_SIZE=100
+ 
+TR_REPLIES_ENABLE=false
+TR_REPLIES_MAX_WAITING_TIME=60
+TR_REPLIES_PREFETCH_MESSAGES=1000
+TR_REPLIES_BATCH_SIZE=100
+ 
+# * News *
+ARTICLE_TITLE_UPDATER_ENABLE=false
+ARTICLE_TITLE_UPDATER_MAX_WAITING_TIME=60
+ARTICLE_TITLE_UPDATER_PREFETCH_MESSAGES=1000
+ARTICLE_TITLE_UPDATER_BATCH_SIZE=100
+ 
+CATEGORY_LINK_UPDATER_ENABLE=false
+CATEGORY_LINK_UPDATER_MAX_WAITING_TIME=60
+CATEGORY_LINK_UPDATER_PREFETCH_MESSAGES=1000
+CATEGORY_LINK_UPDATER_BATCH_SIZE=100
+ 
+# * TikTok *
+TT_IDENTITIES_ENABLE=false
+TT_IDENTITIES_MAX_WAITING_TIME=60
+TT_IDENTITIES_PREFETCH_MESSAGES=1000
+TT_IDENTITIES_BATCH_SIZE=100
+ 
+TT_POSTS_ENABLE=false
+TT_POSTS_MAX_WAITING_TIME=60
+TT_POSTS_PREFETCH_MESSAGES=1000
+TT_POSTS_BATCH_SIZE=100
+ 
+TRANSCRIPT_ENABLE=false
+TRANSCRIPT_MAX_WAITING_TIME=60
+TRANSCRIPT_PREFETCH_MESSAGES=1000
+TRANSCRIPT_BATCH_SIZE=100
+ 
+yarn testing --scope=@ynm/cl-source-updater-service
+
+
+
+// Đồng
+
+
+export HTTP_PORT=9997
+export GRPC_PORT=9011
+export LOG_LEVEL=debug
+    
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+    
+export RABBIT_HEARTBEAT=10
+   
+export IDENTITIES_INPUT_EXCHANGE=cl.resolved_source
+export IDENTITIES_ROUTING_KEY=cl.*.identities
+export IDENTITIES_INPUT_QUEUE=cl.identities_finished_sources
+export IDENTITIES_BATCH_SIZE=1
+export IDENTITIES_PREFETCH_MESSAGES=1000
+export IDENTITIES_MAX_WAITING_TIME=60
+export IDENTITIES_ENABLE=true
+   
+ 
+export FB_POST_INPUT_EXCHANGE=cl.resolved_source
+export FB_POST_ROUTING_KEY=cl.1.posts
+export FB_POST_INPUT_QUEUE=cl.fb.fb_posts_finished_sources
+export FB_POST_MAX_WAITING_TIME=60
+export FB_POST_BATCH_SIZE=1
+export FB_POST_PREFETCH_MESSAGES=1000
+export FB_POST_ENABLE=true
+ 
+ 
+export TR_POSTS_INPUT_EXCHANGE=cl.resolved_source
+export TR_POSTS_ROUTING_KEY=cl.10.posts
+export TR_POSTS_INPUT_QUEUE=cl.tr.posts_finished_sources
+export TR_POSTS_MAX_WAITING_TIME=60
+export TR_POSTS_BATCH_SIZE=1
+export TR_POSTS_PREFETCH_MESSAGES=1000
+export TR_POSTS_ENABLE=true
+ 
+ 
+export TR_POSTS_BY_TOPIC_INPUT_EXCHANGE=cl.resolved_source
+export TR_POSTS_BY_TOPIC_ROUTING_KEY=cl.10.posts_by_topic
+export TR_POSTS_BY_TOPIC_INPUT_QUEUE=cl.tr.posts_by_topic_finished_sources
+export TR_POSTS_BY_TOPIC_MAX_WAITING_TIME=60
+export TR_POSTS_BY_TOPIC_BATCH_SIZE=1
+export TR_POSTS_BY_TOPIC_PREFETCH_MESSAGES=1000
+export TR_POSTS_BY_TOPIC_ENABLE=true
+ 
+ 
+export TR_KEYWORD_INPUT_EXCHANGE=cl.resolved_source
+export TR_KEYWORD_ROUTING_KEY=cl.10.keyword_posts
+export TR_KEYWORD_INPUT_QUEUE=cl.tr.keyword_posts_finished_sources
+export TR_KEYWORD_MAX_WAITING_TIME=60
+export TR_KEYWORD_BATCH_SIZE=1
+export TR_KEYWORD_PREFETCH_MESSAGES=1000
+export TR_KEYWORD_ENABLE=true
+ 
+ 
+export TR_KEYWORD_INPUT_EXCHANGE=cl.resolved_source
+export TR_KEYWORD_ROUTING_KEY=cl.10.replies
+export TR_KEYWORD_INPUT_QUEUE=cl.tr.keyword_posts_finished_sources
+export TR_KEYWORD_MAX_WAITING_TIME=60
+export TR_KEYWORD_BATCH_SIZE=1
+export TR_KEYWORD_PREFETCH_MESSAGES=1000
+export TR_KEYWORD_ENABLE=true
+ 
+ 
+export TT_POSTS_INPUT_EXCHANGE=cl.resolved_source
+export TT_POSTS_ROUTING_KEY=cl.9.posts
+export TT_POSTS_INPUT_QUEUE=cl.tt.posts_info_finished_sources
+export TT_POSTS_MAX_WAITING_TIME=60
+export TT_POSTS_BATCH_SIZE=1
+export TT_POSTS_PREFETCH_MESSAGES=1000
+export TT_POSTS_ENABLE=true
+ 
+ 
+export TT_KEYWORD_INPUT_EXCHANGE=cl.resolved_source
+export TT_KEYWORD_ROUTING_KEY=cl.2.keyword
+export TT_KEYWORD_INPUT_QUEUE=cl.tt.keyword_posts_finished_sources
+export TT_KEYWORD_MAX_WAITING_TIME=60
+export TT_KEYWORD_BATCH_SIZE=1
+export TT_KEYWORD_PREFETCH_MESSAGES=1000
+export TT_KEYWORD_ENABLE=true
+ 
+ 
+export TT_TRENDING_INPUT_EXCHANGE=cl.resolved_source
+export TT_TRENDING_ROUTING_KEY=cl.9.posts_trending
+export TT_TRENDING_INPUT_QUEUE=cl.tt.ads_posts_finished_sources
+export TT_TRENDING_MAX_WAITING_TIME=60
+export TT_TRENDING_BATCH_SIZE=1
+export TT_TRENDING_PREFETCH_MESSAGES=1000
+export TT_TRENDING_ENABLE=true
+ 
+   
+export REDIS_MAX_RETRIES_PER_REQUEST=null
+   
+NODE_ENV=staging yarn start --scope=@ynm/cl-source-updater-service
