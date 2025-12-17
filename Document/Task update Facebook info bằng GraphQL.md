@@ -79,7 +79,7 @@ NODE_ENV=testing yarn start --scope=@ynm/cl-fb-crawling-loader-service
 
 export HTTP_PORT=9010
  
-export LOG_LEVEL=error
+export LOG_LEVEL=debug
  
 export FB_GRAPH_SERVICE_ENDPOINT=https://www.facebook.com/api
  
