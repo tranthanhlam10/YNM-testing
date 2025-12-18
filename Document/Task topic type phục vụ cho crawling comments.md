@@ -181,7 +181,6 @@ caption_updated_at
 is_auto_engagement
 next_crawl_time
 error_message
-_version_
 post_type
 crawled_by
 topic_types
