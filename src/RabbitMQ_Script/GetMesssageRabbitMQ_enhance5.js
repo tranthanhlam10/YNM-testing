@@ -440,7 +440,11 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.comments_2_solr_yt_comments";
+const queueName = "staging.cl.mentions_2_solr_mentions_LamTT";
+const queueName1 = "staging.cl.posts_2_solr_tr_posts";
+const queueName2 = "staging.cl.tr.keyword_posts_crisis_crawling_sources";
+
+
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -448,22 +452,26 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  testHTTP, 
-  testDomain, 
-  queueName, 
-  userName, 
-  testPassword,
+  stagingHTTP,
+  stagingDomain,
+  queueName2,
+  userName,
+  stagingPassword,
   500, // Batch size - số messages mỗi lần fetch
-  5     // Concurrency - số workers chạy song song (1-10)
-        // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
-        // Nhưng 5 workers chạy đồng thời => NHANH GẤP 5 LẦN!
-).then(result => {
-  if (result.success) {
-    console.log(`\n🎊 SUCCESS! Processed ${result.processedMessages}/${result.totalMessages} messages in ${result.totalTime}s.`);
-    console.log(`📁 Check folder: ${result.outputDir}`);
-  } else {
-    console.error(`💥 FAILED: ${result.error}`);
-  }
-}).catch(error => {
-  console.error('💥 Unexpected error:', error);
-});
+  5 // Concurrency - số workers chạy song song (1-10)
+  // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
+  // Nhưng 5 workers chạy đồng thời => NHANH GẤP 5 LẦN!
+)
+  .then((result) => {
+    if (result.success) {
+      console.log(
+        `\n🎊 SUCCESS! Processed ${result.processedMessages}/${result.totalMessages} messages in ${result.totalTime}s.`
+      );
+      console.log(`📁 Check folder: ${result.outputDir}`);
+    } else {
+      console.error(`💥 FAILED: ${result.error}`);
+    }
+  })
+  .catch((error) => {
+    console.error("💥 Unexpected error:", error);
+  });
