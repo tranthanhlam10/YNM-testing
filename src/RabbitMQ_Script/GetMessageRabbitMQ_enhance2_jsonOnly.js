@@ -113,10 +113,11 @@ const queue_name3 = "testing.cl.news.category_links_finished_sources";
 const queue_name4 = "testing.cl.fb.engagements_by_topic_finished_sources";
 const queue_name5 = "testing.cl.identities_finished_sources";
 const queue_name6 = "testing.cl.summary_mentions_finished_sources";
+const queue_name7 = "testing.cl.tt.identities_finished_sources";
 
 
 
-const queue_name7 = "staging.cl.tr.keyword_posts_crisis_no_cookie_crawling_sources";
+//const queue_name7 = "staging.cl.tr.keyword_posts_crisis_no_cookie_crawling_sources";
 
 
 const userName = 'lamtt'; 
@@ -124,10 +125,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP,
-  stagingDomain,
-  queue_name7,
+  testHTTP,
+  testDomain,
+  queueName2,
   userName,
-  stagingPassword,
-  500
+  testPassword,
+  1000
 );
