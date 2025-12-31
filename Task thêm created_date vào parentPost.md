@@ -32,7 +32,7 @@ cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.
 
 
 tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
-cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tt.tag_posts|cl.tr.reply_posts|tr_replies|youtube
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tr.reply_posts|tr_replies|youtube
 
 
 
@@ -4848,3 +4848,88 @@ node scripts/commentsV3/crawl_url_comments.js
   }
 ]
 
+
+
+## Những luồng cần chạy lại ở testing
+
+// Câu query ở các queue 
+tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|tr.source|cl.tr.source_replies|review|thread
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tr.reply_posts|tr_replies|youtube
+
+1. Threads
+
+- Luồng comment -> DONE
+ynm-cl-tr-comment-service-testing 
+- Luồng reply -> DONE
+ynm-cl-tr-reply-service-testing
+- Luồng reply crawl post
+ynm-cl-tr-reply-post-service-testing
+- Luồng source reply
+ynm-cl-tr-source-reply-no-cookie-service-testing
+
+2. Youtube
+
+- Get lastest comment reply -> Chỗ này có thêm load post_created_date lên
+
+//Load Souce
+node scripts/youtubeV3/monitoring_priority_video.js
+
+crawler-testing-youtube-api-monitoring-priority-video
+ 
+//Crawl Comment -> Hiện tại đã đúng với yêu cầu
+node scripts/youtubeV3/get_latest_priority_videos_comments_by_api.js
+
+crawler-testing-youtube-api-get-latest-priority-videos-comments-by-api
+
+
+//Crawl Replies -> Hiện tại đã chạy đúng yêu cầu
+node scripts/youtubeV2/get_latest_priority_comments_replies.js
+
+crawler-testing-youtube-api-get-latest-priority-comments-replies
+
+3. Facebook
+
+- Facebook comment
+- Facebook page web comment
+
+ynm-cl-fb-page-web-cmt-service-testing
+
+4. News (Không cần check)
+
+- Parse detail (Luồng này thì không có reply)
+
+5. Tiktok
+
+- Tiktok commnet
+
+tiktok-get-latest-post-comments
+
+crawler-testing-tiktok-get-latest-post-comments
+
+node scripts/tiktok/get_latest_post_comments.js
+
+6. Instagram
+
+- instagram-get-latest-post-comments
+
+crawler-testing-instagram-get-latest-post-comments
+
+node scripts/instagram/get_latest_post_comments.js
+
+
+IG_API_ENDPOINT=http://graph-instagram-api-testing.ynm.local/ node scripts/instagram/get_latest_post_comments.js
+
+7. Forum
+
+- get-posts
+- get-posts-pre
+
+8. Reviews
+
+
+- news-crawl-reviews
+export SOLR_MASTER_HOST=http://solrmaster-testing.ynm.local 
+node scripts/commentsV3/crawl_reviews.js -f ECOM
+
+- url-comment
+node scripts/commentsV3/crawl_url_comments.js

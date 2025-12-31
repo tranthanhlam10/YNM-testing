@@ -24,7 +24,7 @@ cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl
 
 
 // Câu regex mới nhất
-cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl.fb.fb_posts_finished_sources|article_titles|cl.news.category_links_finished_sources|cl.tr.potential_identities_finished_sources|cl.tr.identities_finished_sources|cl.tr.posts_finished_sources|cl.tr.posts_by_topic_finished_sources|cl.tr.replies_finished_sources|cl.summary_mentions_finished_sources|cl.tt.identities_finished_sources|cl.tt.posts_info_finished_sources|testing.cl.identities_finished_sources
+cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl.fb.fb_posts_finished_sources|article_titles|cl.news.category_links_finished_sources|cl.tr.potential_identities_finished_sources|cl.tr.identities_finished_sources|cl.tr.posts_finished_sources|cl.tr.posts_by_topic_finished_sources|cl.tr.replies_finished_sources|cl.summary_mentions_finished_sources|cl.tt.identities_finished_sources|cl.tt.posts_info_finished_sources|cl.identities_finished_sources
 
 
 // Câu lệnh ở k8s
@@ -1079,3 +1079,92 @@ export LOG_LEVEL=debug
 yarn start --scope=@ynm/cl-news-article-url-crawler-service
 
 
+
+
+
+## Những deployment cần chạy ở Staging
+
+
+cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl.fb.fb_posts_finished_sources|article_titles|cl.news.category_links_finished_sources|cl.tr.potential_identities_finished_sources|cl.tr.identities_finished_sources|cl.tr.posts_finished_sources|cl.tr.posts_by_topic_finished_sources|cl.tr.replies_finished_sources|cl.summary_mentions_finished_sources|cl.tt.identities_finished_sources|cl.tt.posts_info_finished_sources|cl.identities_finished_sources
+
+1. Threads
+cl.tr.post_engagement_|tr.source_posts|cl.tr.posts_comment|cl.tr.potential_identities|cl.tr.posts_sub_comment
+
+
+- Engagement to topic
+staging.cl.tr.posts_by_topic_finished_sources
+
+cl.tr.post_engagement_
+ynm-cl-tr-post-engagement-by-topic-service-staging
+
+
+- Identity -> Đã chạy thành công
+staging.cl.identities_finished_sources
+
+ cl.tr.source_
+ynm-cl-tr-source-post-no-cookie-service-staging
+
+- Post -> Đã chạy thành công
+staging.cl.tr.posts_finished_sources
+
+cl.tr.posts_comment
+ynm-cl-tr-comment-service-staging
+
+
+- Reply -> Đã chạy thành công
+staging.cl.tr.replies_finished_sources
+
+cl.tr.posts_sub_comment
+ynm-cl-tr-reply-service-staging
+
+
+- Potential
+staging.cl.tr.potential_identities_finished_sources
+
+cl.tr.potential_identities
+ynm-cl-tr-potential-identity-service-staging
+
+
+
+
+2. Facebook
+cl.fb.engagement|cl.fb.graph_engagements|cl.fb.identity_graphql|cl.fb.page_web
+
+- Engagement to topic
+staging.cl.fb.engagements_by_topic_finished_sources
+
+cl.fb.engagement|cl.fb.graph_engagements
+ynm-cl-fb-graph-engagement-by-topic-staging -> Hiện tại đang bị lỗi không đẩy qua queue crawled source
+
+
+
+- Identity (Page/group)
+staging.cl.identities_finished_sources
+
+cl.fb.identity_graphql
+ynm-cl-fb-identity-graphql-service-staging
+
+
+- Post
+staging.cl.fb.fb_posts_finished_sources
+
+cl.fb.page_web
+ynm-cl-fb-page-web-rep-cmt-service-staging -> Tại sao luồng page web comment Facebook -> khi mà finished source lại báo thiếu field id_source
+
+
+
+3. Tiktok
+
+
+
+4. News
+- Article_titles -> Không cập nhật xuống mongo, nhưng mà đã có release redis
+
+article_titles 
+
+
+- Category link
+staging.cl.news.category_links_finished_sources
+
+staging.cl.news.article_urls
+ynm-cl-news-article-url-service-staging

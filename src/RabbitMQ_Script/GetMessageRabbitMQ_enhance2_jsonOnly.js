@@ -113,7 +113,7 @@ const queue_name3 = "testing.cl.replies_2_solr_tr_replies";
 const queue_name4 = "testing.cl.posts_2_solr_yt_comments";
 const queue_name5 = "testing.cl.identities_finished_sources";
 const queue_name6 = "testing.cl.summary_mentions_finished_sources";
-const queue_name7 = "testing.cl.tt.identities_finished_sources";
+const queue_name7 = "staging.cl.identities_finished_sources";
 
 
 
@@ -127,7 +127,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queueName1,
+  queue_name3,
   userName,
   testPassword,
   1000
