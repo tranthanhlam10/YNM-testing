@@ -1154,7 +1154,15 @@ ynm-cl-fb-page-web-rep-cmt-service-staging -> Tại sao luồng page web comment
 
 
 3. Tiktok
+- Identity
+staging.cl.identities_finished_sources
 
+
+- Transcript
+staging.cl.tt.posts_info_finished_sources
+
+
+- Post 
 
 
 4. News
