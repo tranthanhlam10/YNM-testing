@@ -27,6 +27,10 @@ cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl
 cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl.fb.fb_posts_finished_sources|article_titles|cl.news.category_links_finished_sources|cl.tr.potential_identities_finished_sources|cl.tr.identities_finished_sources|cl.tr.posts_finished_sources|cl.tr.posts_by_topic_finished_sources|cl.tr.replies_finished_sources|cl.summary_mentions_finished_sources|cl.tt.identities_finished_sources|cl.tt.posts_info_finished_sources|cl.identities_finished_sources
 
 
+// Câu Regex mới nhất
+cl.fb.engagements_by_topic_finished_sources|cl.fb.identities_finished_sources|cl.fb.fb_posts_finished_sources|article_titles|cl.news.category_links_finished_sources|cl.tr.potential_identities_finished_sources|cl.tr.identities_finished_sources|cl.tr.posts_finished_sources|cl.tr.posts_by_topic_finished_sources|cl.tr.replies_finished_sources|cl.summary_mentions_finished_sources|cl.tt.identities_finished_sources|cl.tt.posts_info_finished_sources|cl.identities_finished_sources|identities_2_solr
+
+
 // Câu lệnh ở k8s
 ynmpdp-5066-2-testing-ynm-crawler-empty
 

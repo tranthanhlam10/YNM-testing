@@ -4945,3 +4945,102 @@ crawler-testing-news-crawl-url-comments
 // Câu regex RabbitMQ mới nhất
 
 cl.tr.posts_comment|cl.tr.posts_sub_comment|cl.tr.source_replies|reply_post|l.fb.page_web_comments|.posts.*comment_crawl|youtube.post|LamTT|tr_replies|tr_posts|yt_comment|comment_priority_
+
+
+
+
+## Những luồng cần chạy lại ở staging
+
+// Câu query ở các queue 
+tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|tr.source|cl.tr.source_replies|review|thread
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tr.reply_posts|tr_replies|youtube
+
+1. Threads
+
+- Luồng comment 
+ynm-cl-tr-comment-service
+- Luồng reply 
+ynm-cl-tr-reply-service
+- Luồng reply crawl post
+ynm-cl-tr-reply-post-service
+- Luồng source reply
+ynm-cl-tr-source-reply-no-cookie-service
+
+2. Youtube
+
+- Get lastest comment reply -> Chỗ này có thêm load post_created_date lên
+
+//Load Souce
+node scripts/youtubeV3/monitoring_priority_video.js
+
+crawler-staging-youtube-api-monitoring-priority-video
+ 
+//Crawl Comment -> Hiện tại đã đúng với yêu cầu
+node scripts/youtubeV3/get_latest_priority_videos_comments_by_api.js -> DONE
+
+crawler-staging-youtube-api-get-latest-priority-videos-comments-by-api
+
+
+//Crawl Replies -> Hiện tại đã chạy đúng yêu cầu -> DONE
+node scripts/youtubeV2/get_latest_priority_comments_replies.js
+
+crawler-staging-youtube-api-get-latest-priority-comments-replies -> DONE
+
+3. Facebook
+
+- Facebook comment
+- Facebook page web comment -> DONE
+
+ynm-cl-fb-page-web-cmt-service-staging
+
+4. News (Không cần check)
+
+- Parse detail (Luồng này thì không có reply)
+
+5. Tiktok
+
+- Tiktok commnet
+
+tiktok-get-latest-post-comments
+
+crawler-staging-tiktok-get-latest-post-comments
+
+node scripts/tiktok/get_latest_post_comments.js
+
+6. Instagram 
+
+- instagram-get-latest-post-comments -> DONE
+
+crawler-staging-instagram-get-latest-post-comments
+
+node scripts/instagram/get_latest_post_comments.js
+
+
+IG_API_ENDPOINT=http://graph-instagram-api-testing.ynm.local/ node scripts/instagram/get_latest_post_comments.js
+
+7. Forum
+
+- get-posts
+crawler-testing-forums-get-posts -> Chỗ này lên Staging chạy lại
+
+crawler-testing-forums-get-posts-prev -> Chỗ này lên Staging chạy lại
+
+- get-posts-pre
+
+8. Reviews
+
+
+- news-crawl-reviews -> DONE
+export SOLR_MASTER_HOST=http://solrmaster-testing.ynm.local 
+node scripts/commentsV3/crawl_reviews.js -f ECOM
+
+crawler-testing-news-crawl-reviews
+
+- url-comment -> Chỗ này lên Staging chạy lại
+node scripts/commentsV3/crawl_url_comments.js
+crawler-testing-news-crawl-url-comments
+
+
+// Câu regex RabbitMQ mới nhất
+
+cl.tr.posts_comment|cl.tr.posts_sub_comment|cl.tr.source_replies|reply_post|l.fb.page_web_comments|.posts.*comment_crawl|youtube.post|LamTT|tr_replies|tr_posts|yt_comment|comment_priority_
