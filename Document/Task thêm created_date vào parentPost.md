@@ -4955,7 +4955,7 @@ cl.tr.posts_comment|cl.tr.posts_sub_comment|cl.tr.source_replies|reply_post|l.fb
 tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|tr.source|cl.tr.source_replies|review|thread
 cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tr.reply_posts|tr_replies|youtube
 
-1. Threads
+1. Threads -> DONE
 
 - Luồng comment 
 ynm-cl-tr-comment-service
@@ -4966,16 +4966,16 @@ ynm-cl-tr-reply-post-service
 - Luồng source reply
 ynm-cl-tr-source-reply-no-cookie-service
 
-2. Youtube
+2. Youtube -> DONE
 
 - Get lastest comment reply -> Chỗ này có thêm load post_created_date lên
 
-//Load Souce
+//Load Souce -> DONE
 node scripts/youtubeV3/monitoring_priority_video.js
 
 crawler-staging-youtube-api-monitoring-priority-video
  
-//Crawl Comment -> Hiện tại đã đúng với yêu cầu
+//Crawl Comment -> Hiện tại đã đúng với yêu cầu -> DONE
 node scripts/youtubeV3/get_latest_priority_videos_comments_by_api.js -> DONE
 
 crawler-staging-youtube-api-get-latest-priority-videos-comments-by-api
@@ -4986,7 +4986,7 @@ node scripts/youtubeV2/get_latest_priority_comments_replies.js
 
 crawler-staging-youtube-api-get-latest-priority-comments-replies -> DONE
 
-3. Facebook
+3. Facebook -> DONE
 
 - Facebook comment
 - Facebook page web comment -> DONE
@@ -5007,7 +5007,7 @@ crawler-staging-tiktok-get-latest-post-comments
 
 node scripts/tiktok/get_latest_post_comments.js
 
-6. Instagram 
+6. Instagram -> DONE
 
 - instagram-get-latest-post-comments -> DONE
 
