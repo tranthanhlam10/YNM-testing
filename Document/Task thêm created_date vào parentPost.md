@@ -32,7 +32,7 @@ cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.
 
 
 tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
-cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tr.reply_posts|tr_replies|youtube
+cl.fb.page_posts|cl.fb.page_web_comments|mentions_LamTT|cl.tr.posts_comment_|cl.tr.posts_sub_comment_|cl.tr.reply_posts|tr_replies|youtube|cl.tr.source_replies
 
 
 

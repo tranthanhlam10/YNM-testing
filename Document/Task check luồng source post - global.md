@@ -3,19 +3,25 @@
 
 ## Scope
 
-
+- Chỉ cần test đúng config:
++ Tên queue có tiền tố <env>.<country_code>
++ Redis cache dó tiền tố <country_code>
++ Có lưu lại country_code ở Post/Mention sau khi crawl
 
 ## Cách chạy
-
+// Chạy script
 kubectl get pods -n crawler-testing | grep ynmshgysg-44-testing-ynm-crawler-empty
 kubectl exec -it  ynmshgysg-44-testing-ynm-crawler-empty-8679566dd6-4x4tb -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
-
+//regex queue
 cl.fb.page_posts_|cl.fb.user_posts_|cl.fb.group_posts_
 
+cl.fb_posts_2_solr_fb_posts|cl.identities_finished_sources|posts_2_solr_fb_posts|cl.mentions_2_solr_mentions|cl.fb.page_posts_|cl.fb.user_posts_|cl.fb.group_posts_
 
+
+// Câu lệnh chạy
 1. Token
 
 

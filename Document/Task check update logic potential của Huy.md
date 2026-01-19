@@ -178,6 +178,14 @@ Câu query ở Solr
   "createdBy": "ThreadsPotentialIdentityCrawlingLoader"
 }
 
+{
+  "id": "tr_75975882741",
+  "last_status": 0,
+  "last_crawl_followers": "2026-01-08T04:09:24.369Z",
+  "subscriber_count": 1000,
+  "createdBy": "ThreadsPotentialIdentityCrawlingLoader"
+}
+tr_75975882741
 
 {
     "id": "tr_74855610003",
@@ -336,6 +344,18 @@ fb_100000000155924
     "identity_join_date": "2025-04-02T11:49:57.000Z",
     "createdBy": "TiktokQualifiedUserInfoCrawlingLoader"
   },
+
+
+{
+    "id": "tt_MS4wLjABAAAAilkU_xOSkFEgrMrRoaaeQt_G4ImmsksxXvzPK9pLK2Uv-K9qTC3YrDw20xjpAx_X",
+    "last_status": 0,
+    "platform": 9,
+    "identity_join_date": "2025-04-02T11:49:57.000Z",
+    "createdBy": "TiktokQualifiedUserInfoCrawlingLoader"
+  }
+
+
+
   {
     "id": "tt_MS4wLjABAAAACZQ-c3HMAOjGJ7K_rG1sOZFbOP9FvnPhlZnHbHDFKlsp4CWWCcg4yoiAmq-dc_3P",
     "last_status": 0,
@@ -425,6 +445,15 @@ fb_100000000155924
   "last_status": 0,
   "createdBy": "UserProfileJoinDateCrawlingLoader",
   "identity_join_date": "2010-03-13T23:50:47.000Z"
+}
+
+fb_100004106388360
+
+{
+  "id": "fb_100004106388360", 
+  "last_status": 0,
+  "createdBy": "UserProfileJoinDateCrawlingLoader",
+  "identity_join_date": "2011-03-13T23:50:47.000Z"
 }
 
 // Có value là null
