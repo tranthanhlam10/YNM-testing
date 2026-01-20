@@ -38,7 +38,7 @@ ynmpdp-5782-testing-ynm-crawler-empty
 
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5782-testing-ynm-crawler-empty
-kubectl exec -it  ynmpdp-5782-testing-ynm-crawler-empty-648bcf7b4d-tw2rr -n crawler-testing -- sh
+kubectl exec -it  ynmpdp-5782-testing-ynm-crawler-empty-7fc8c7f69b-jl5x8 -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -180,4 +180,77 @@ fb_103185561152714
       "mapping_id": "fb_100044595182195"
     }
   ]
+}
+
+
+// Message loader chuẩn
+
+
+{
+  "id": "1437159613256256",
+  "retries": 0,
+  "closed_group": false,
+  "type": 2,
+  "priority": 1,
+  "delay_time_rules": [],
+  "platform": 1,
+  "createdBy": "PageGraphQLProfileCrawlingLoader",
+  "mapping_id": "fb_100044595182195",
+  "is_personal": false,
+  "fullname": "Hoàng Dũng",
+  "subscriber_count": 609991,
+  "current_city": "Hanoi",
+  "language": 1,
+  "domain": "facebook.com",
+  "avatar": "https://scontent-atl3-3.xx.fbcdn.net/v/t39.30808-1/506671516_1271057334390761_6834376204037453782_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=108&ccb=1-7&_nc_sid=f907e8&_nc_ohc=adNsm7tJHCsQ7kNvwE48Bei&_nc_oc=Adl-Z2Jxpuzqb9B5GQ7lB1Sy-orJ6JGq7R28tC6uGwGTdpE0IM71hSgHiNV5s7oJnVcLUW9_1jLyJGq4V6YSMd4I&_nc_ad=z-m&_nc_cid=0&_nc_zt=24&_nc_ht=scontent-atl3-3.xx&oh=00_Afcu2DjlEpiaiS38QGoAd5KCck5x79tEPrKkSpWmxavtZQ&oe=68EAB411",
+  "country_code": "VN",
+  "created_date": "2026-01-19T07:45:00.000Z"
+}
+
+
+// Message pusher chuẩn
+
+{
+  "identities": [
+    {
+      "id": "fb_100044595182195",
+      "fullname": "Hoàng Dũng",
+      "platform": 1,
+      "id_social": "100044595182195",
+      "domain": "facebook.com",
+      "created_date": "2026-01-19T07:45:00.000Z",
+      "mapping_id": "fb_1437159613256256",
+      "country_code": "VN",
+      "is_personal": false,
+      "fb_user_type": 1,
+      "createdBy": "PageGraphQLProfileCrawlingLoader"
+    }
+  ]
+}
+
+
+// Message updater chuẩn
+
+{
+  "id": "fb_1437159613256256",
+  "fullname": "Hoàng Dũng",
+  "subscriber_count": 610000,
+  "current_city": "Hanoi",
+  "avatar": "https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-1/506671516_1271057334390761_6834376204037453782_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=108&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=oGCqoDOjL5cQ7kNvwFjzxEL&_nc_oc=AdnSVNtkt2ju0XpHjpkrbsLncOhQjwSeU24JYJdbaghEfNdYe9-tBkDyOOjEuUisMRU&_nc_zt=24&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=_c7yCFw0UDaGBbGpofVEzA&oh=00_Afqyc8_tqtFjhDR4WEHKKws_hPondHF7ZRxDgeYHtyrLcg&oe=6973D011",
+  "updated_at": "2026-01-19T10:06:07.121Z",
+  "gender": 1,
+  "education_level": 0,
+  "job_level": 0,
+  "id_social": "1437159613256256",
+  "platform": 1,
+  "id_city": 0,
+  "birthday_year": 0,
+  "domain": "facebook.com",
+  "info_updated_at": "2026-01-19T10:06:07.121Z",
+  "last_status": 0,
+  "country_code": "VN",
+  "created_date": "2026-01-19T07:45:00.000Z",
+  "mapping_id": "fb_100044595182195",
+  "is_personal": false,
+  "createdBy": "PageGraphQLProfileCrawlingLoader"
 }
