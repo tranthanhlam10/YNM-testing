@@ -446,3 +446,20 @@ yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service
   }
 
 
+## Những deployment cần check lại ở testing
+
+
+- Hashtag
+ynm-cl-news-crisis-hashtag-service-testing
+ynm-cl-news-critical-hashtag-service-testing
+ynm-cl-news-hashtag-service-testing
+
+- Keyword
+
+ynm-cl-news-crisis-keyword-service-testing
+ynm-cl-news-critical-keyword-service-testing
+ynm-cl-news-keyword-service-testing
+
+
+-> Hiện tại cần check lại vấn đề performance
+

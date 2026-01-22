@@ -441,8 +441,8 @@ const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
 const queueName = "testing.cl.identities_finished_sources_LamTT";
-const queueName1 = "testing.cl.posts_2_solr_fb_posts_LamTT";
-const queueName2 = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queueName1 = "testing.cl.identities_2_solr_identities_LamTT";
+const queueName2 = "testing.cl.identities_2_redis_identities_LamTT";
 const queueName3 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
 const queueName4 = "mentions_luannx_comment";
 const queueName5 = "staging.cl.mentions_2_solr_mentions_LamTT";
@@ -458,11 +458,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  stagingHTTP,
-  stagingDomain,
-  queueName4,
+  testHTTP,
+  testDomain,
+  queueName2,
   userName,
-  stagingPassword,
+  testPassword,
   500, // Batch size - số messages mỗi lần fetch
   20 // Concurrency - số workers chạy song song (1-10)
   // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự

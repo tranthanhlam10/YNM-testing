@@ -254,3 +254,21 @@ fb_103185561152714
   "is_personal": false,
   "createdBy": "PageGraphQLProfileCrawlingLoader"
 }
+
+
+## Những deployment cần chạy lại ở testing
+
+
+ynm-cl-fb-identity-graphql-service-testing
+
+Regex queue ở testing:
+identity_graph|cl.identities_finished_sources_LamTT|identities_2_solr_identities_LamTT|identities_2_redis_identities_LamTT
+
+
+## Những deployment cần chạy lại ở staging
+
+
+ynm-cl-fb-identity-graphql-service-staging
+
+Regex queue ở testing:
+identity_graph|cl.identities_finished_sources_LamTT|identities_2_solr_identities_LamTT|identities_2_redis_identities_LamTT

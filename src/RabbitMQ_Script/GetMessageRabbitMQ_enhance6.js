@@ -331,29 +331,29 @@ function processBatchMessages(messages, batchNumber, workerId) {
         }
         
         // Thêm metadata
-        payload._message_metadata = {
-          properties: message.properties || {},
-          routing_key: message.routing_key || '',
-          exchange: message.exchange || '',
-          message_count: message.message_count || 0,
-          batch_number: batchNumber,
-          worker_id: workerId,
-          message_index: i + 1
-        };
+        // payload._message_metadata = {
+        //   properties: message.properties || {},
+        //   routing_key: message.routing_key || '',
+        //   exchange: message.exchange || '',
+        //   message_count: message.message_count || 0,
+        //   batch_number: batchNumber,
+        //   worker_id: workerId,
+        //   message_index: i + 1
+        // };
         
         payloads.push(payload);
       } else {
         payloads.push({
-          _no_payload: true,
-          _message_metadata: {
-            properties: message.properties || {},
-            routing_key: message.routing_key || '',
-            exchange: message.exchange || '',
-            message_count: message.message_count || 0,
-            batch_number: batchNumber,
-            worker_id: workerId,
-            message_index: i + 1
-          }
+          _no_payload: true
+          // _message_metadata: {
+          //   properties: message.properties || {},
+          //   routing_key: message.routing_key || '',
+          //   exchange: message.exchange || '',
+          //   message_count: message.message_count || 0,
+          //   batch_number: batchNumber,
+          //   worker_id: workerId,
+          //   message_index: i + 1
+          // }
         });
       }
     } catch (err) {
@@ -447,17 +447,27 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "staging.cl.tt.posts_info_finished_sources";
+const queueName = "testing.cl.identities_2_redis_identities_LamTT";
+const queueName1 = "testing.cl.identities_2_solr_identities_LamTT";
+const queueName2 = "testing.cl.identities_finished_sources_LamTT";
+
+const queueName3 = "staging.cl.identities_2_redis_identities_LamTT";
+const queueName4 = "staging.cl.identities_2_solr_identities_LamTT";
+const queueName5 = "staging.cl.identities_finished_sources_LamTT";
+
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
+
+
+
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queueName,
+  queueName5,
   userName,
   stagingPassword,
   1000, // Batch size - số messages mỗi lần fetch

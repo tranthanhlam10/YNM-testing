@@ -5044,3 +5044,12 @@ crawler-testing-news-crawl-url-comments
 // Câu regex RabbitMQ mới nhất
 
 cl.tr.posts_comment|cl.tr.posts_sub_comment|cl.tr.source_replies|reply_post|l.fb.page_web_comments|.posts.*comment_crawl|youtube.post|LamTT|tr_replies|tr_posts|yt_comment|comment_priority_
+
+
+// Câu lệnh query monitor_script_status cho luồng YT
+
+'scripts/youtubeV3/monitoring_priority_video.js'                 : 1035,
+'scripts/youtubeV3/get_latest_priority_videos_comments_by_api.js' : 1036,
+'scripts/youtubeV2/get_latest_priority_comments_replies.js': 1031,
+
+SELECT * FROM `monitor_script_status` WHERE script_code IN (1035, 1035, 1031);
