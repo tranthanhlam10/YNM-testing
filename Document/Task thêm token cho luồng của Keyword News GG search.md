@@ -461,5 +461,78 @@ ynm-cl-news-critical-keyword-service-testing
 ynm-cl-news-keyword-service-testing
 
 
--> Hiện tại cần check lại vấn đề performance
+-> Hiện tại cần check lại vấn đề performance -> Hiện tại vấn đề performance đã giải quyết được 1 chút
 
+Hướng giải quyết: Huy chỉ blocked lại proxy (Nhưng 5p nhả ra), còn token thì luôn để active
+
+## Những deployment cần check lại ở testing
+
+
+- Hashtag
+ynm-cl-news-crisis-hashtag-service-staging
+ynm-cl-news-critical-hashtag-service-staging
+ynm-cl-news-hashtag-service-staging
+
+- Keyword
+
+ynm-cl-news-crisis-keyword-service-staging
+ynm-cl-news-critical-keyword-service-staging
+ynm-cl-news-keyword-service-staging
+
+Câu lệnh regex rabbit MQ
+parsed_detail_output|(testing|staging|production).cl.mentions_2_solr_mentions$|(testing|staging|production).cl.news.(article_urls_from_crisis_keyword|article_posts$|article_crawled_reviews$|article_urls$|monitor_sources$)|cl.news.(http.|browser.)?posts_from_keyword_url|cl.news.article_urls_LamTT
+
+- Cấu hình khi chạy đo lường trên Staging
+
+Concurrency: 25
+Token 600
+Proxy: 300
+
+- Câu query Proxy/Token ở mySQL
+
+
+SELECT * FROM `proxies` WHERE crawler_type = "NEWS_ARTICLE_URL_FROM_CRISIS_KEYWORD_CRAWLER"
+SELECT * FROM `proxies` WHERE crawler_type = "NEWS_ARTICLE_URL_FROM_CRISIS_KEYWORD_CRAWLER" AND status = "ACTIVE"
+
+SELECT * FROM `tokens` WHERE crawler_type = "NEWS_ARTICLE_URL_FROM_CRISIS_KEYWORD_CRAWLER"
+SELECT * FROM `tokens` WHERE crawler_type = "NEWS_ARTICLE_URL_FROM_CRISIS_KEYWORD_CRAWLER" AND status = "ACTIVE"
+
+
+Cảm giác như chạy 25 concurrency không đám ứng được yêu cầu :) web trả không kịp response
+
+/*
+RequestError: Timeout awaiting 'request' for 45000ms
+
+  at ClientRequest.<anonymous>
+     /app/node_modules/got-cjs/dist/source/core/index.js:802:68
+
+  at Object.onceWrapper
+     events.js:520:26
+
+  at ClientRequest.emit
+     events.js:412:35
+
+  at ClientRequest.origin.emit
+     /app/node_modules/@szmarczak/http-timer/dist/source/index.js:43:20
+
+  at ClientRequest.request.emit
+     /app/node_modules/got-scraping/dist/hooks/fix-decompress.js:76:20
+
+  at emitErrorNT
+     internal/streams/destroy.js:106:8
+
+  at emitErrorCloseNT
+     internal/streams/destroy.js:74:3
+
+  at processTicksAndRejections
+     internal/process/task_queues.js:82:21
+
+  at Timeout.timeoutHandler [as _onTimeout]
+     /app/node_modules/got-cjs/dist/source/core/timed-out.js:49:25
+
+  at listOnTimeout
+     internal/timers.js:559:11
+
+  at processTimers
+     internal/timers.js:500:7
+*/

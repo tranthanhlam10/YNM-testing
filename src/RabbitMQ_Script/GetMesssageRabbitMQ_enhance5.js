@@ -446,8 +446,9 @@ const queueName2 = "testing.cl.identities_2_redis_identities_LamTT";
 const queueName3 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
 const queueName4 = "mentions_luannx_comment";
 const queueName5 = "staging.cl.mentions_2_solr_mentions_LamTT";
-const queueName6 = "staging.cl.replies_2_solr_tr_replies";
-const queueName7 = "staging.cl.posts_2_solr_fb_posts";
+const queueName6 = "testing.cl.news.article_urls";
+const queueName7 = "testing.cl.news.article_urls_LamTT";
+const queueName8 = "testing.cl.fb.fb_posts_finished_sources"
 
 
 
@@ -460,7 +461,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   testHTTP,
   testDomain,
-  queueName2,
+  queueName6,
   userName,
   testPassword,
   500, // Batch size - số messages mỗi lần fetch
