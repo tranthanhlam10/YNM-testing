@@ -140,9 +140,9 @@ async function getQueueInfo(
 async function main() {
     const messageLimit = 1000;
     const jsonFilePath =
-      "Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_tr_keyword_posts_crisis_no_cookie_crawling_sources_2025-12-19T10-10-24-130Z.json";
+      "Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_news_article_urls_2026-01-29T07-56-30-661Z.json";
     const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
-    const queueName = "staging.cl.tr.hashtag_posts_no_cookie_crawling_sources";
+    const queueName = "staging.cl.news.article_urls";
     const username = 'lamtt';
     const password = "vYoWn4KCmDYpvuFiqovWbF";
     const vhost = '/';

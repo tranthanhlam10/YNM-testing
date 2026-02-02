@@ -22,7 +22,7 @@
 ynmpdp-5755-testing-ynm-crawler-empty
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5755-testing-ynm-crawler-empty
-kubectl exec -it ynmpdp-5755-testing-ynm-crawler-empty-56989c64dc-zntfr -n crawler-testing -- sh
+kubectl exec -it ynmpdp-5755-testing-ynm-crawler-empty-74f6cdff8f-qc9f5 -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
 
@@ -637,7 +637,7 @@ NODE_ENV=testing yarn start --scope=@ynm/cl-fb-identity-graphql-crawler-service
       "created_date": "2026-01-09T04:40:52.972Z"
   }
 
-- Crawl 1 user được gọi là type event
+- Crawl 1 user được gọi là type event -> DONE
 
 {
       "id": "1433172075056690",
@@ -650,6 +650,14 @@ NODE_ENV=testing yarn start --scope=@ynm/cl-fb-identity-graphql-crawler-service
       "fullname": "Crawl type event",
       "domain": "facebook.com",
       "created_date": "2026-01-09T04:40:52.972Z"
+}
+
+{
+  "id": "fb_1433172075056690",
+  "fb_user_type": 4,
+  "error_message": "IdentityNotSupportedException",
+  "last_status": 1,
+  "createdBy": "UnknownGraphQLProfileCrawlingLoader"
 }
 
 -> Tất nhiên nếu là type event thì sẽ không detect được

@@ -114,7 +114,8 @@ const queue_name4 = "staging.cl.mentions_2_solr_mentions_LamTT";
 const queue_name5 = "staging.cl.tr.reposts_no_cookie_crawling_sources";
 const queue_name6 = "staging.cl.tr.source_replies_no_cookie_crawling_sources";
 const queue_name7 = "staging.cl.identities_finished_sources";
-
+const queue_name8 = "staging.cl.news.article_urls";
+const queue_name9 = "testing.cl.news.article_urls";
 
 
 
@@ -126,10 +127,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  testHTTP,
-  testDomain,
-  queueName2,
+  stagingHTTP,
+  stagingDomain,
+  queue_name8,
   userName,
-  testPassword,
+  stagingPassword,
   1000
 );
