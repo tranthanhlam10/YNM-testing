@@ -684,7 +684,26 @@ FB_PAGE_POST_CRAWLER
 - Xem mention, posts, identity có crawl đúng với yêu cầu hay không (mention và identity có field TH - country của nước được crawl)
 - Nếu như chạy số lượng nhiều thì có bị nghẽn gì không, có báo lỗi gì đặc biệt hay không
 
++ ynm-cl-fb-user-post-service-testing
++ ynm-cl-fb-page-post-service-testing
++ ynm-cl-fb-group-post-service-testing
+
++ ynm-cl-fb-user-post-service-staging
++ ynm-cl-fb-page-post-service-staging
++ ynm-cl-fb-group-post-service-staging
 
 
 
 
+ynm-cl-fb-group-comment-service-staging
+ynm-cl-fb-page-comment-service-staging
+
+
+
+FB_GROUP_COMMENT_CRAWLER
+FB_PAGE_COMMENT_CRAWLER
+FB_USER_POST_CRAWLER
+FB_PAGE_POST_CRAWLER
+FB_GROUP_POST_CRAWLER
+
+FB_KEYWORD_POST_CRISIS_CRAWLER

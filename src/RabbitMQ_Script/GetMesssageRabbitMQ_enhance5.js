@@ -440,15 +440,17 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.identities_finished_sources_LamTT";
-const queueName1 = "testing.cl.identities_2_solr_identities_LamTT";
-const queueName2 = "testing.cl.identities_2_redis_identities_LamTT";
+const queueName = "staging.cl.identities_finished_sources_LamTT";
+const queueName1 = "staging.cl.identities_2_solr_identities_LamTT";
+const queueName2 = "staging.cl.identities_2_redis_identities_LamTT";
 const queueName3 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
 const queueName4 = "mentions_luannx_comment";
 const queueName5 = "staging.cl.mentions_2_solr_mentions_LamTT";
 const queueName6 = "staging.cl.news.article_urls_LamTT";
 const queueName7 = "testing.cl.news.article_urls_LamTT";
-const queueName8 = "testing.cl.fb.fb_posts_finished_sources"
+const queueName8 = "staging.cl.fb.group_posts_crawling_requests";
+const queueName9 = "staging.cl.fb.user_posts_crawling_requests";
+const queueName10 = "staging.cl.fb.page_posts_crawling_requests";
 
 
 
@@ -461,7 +463,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queueName6,
+  queueName1,
   userName,
   stagingPassword,
   500, // Batch size - số messages mỗi lần fetch

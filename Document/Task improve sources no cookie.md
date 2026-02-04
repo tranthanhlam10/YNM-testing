@@ -740,7 +740,8 @@ Các cases cần check khi đẩy qua luồng extension:
   "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
   "link": "threads.com/@maidora.maidora",
   "id_social": "63454508403",
-  "username": "maidora.maidora"
+  "username": "maidora.maidora",
+     "country_code": "VN"
 }
 
 
@@ -813,7 +814,8 @@ tr_67160513497
   "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
   "link": "threads.com/@miule5791",
   "id_social": "63472089649",
-  "username": "miule5791"
+  "username": "miule5791",
+   "country_code": "VN"
 }
 
 

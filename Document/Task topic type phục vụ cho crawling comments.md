@@ -98,6 +98,8 @@ post_type
 caption
 shared_content
 topic_types
+country_code
+
 
 
 2. youtube_posts
