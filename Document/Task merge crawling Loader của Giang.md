@@ -39,3 +39,920 @@
 - Tắt mySQL
 - Tắt Redis
 - Tắt mongo
+
+
+4. Các services khác
+- Crawler -> Hiện tại luồng crawl đã lấy đúng yêu cầu
+- Updater
+- Puser
+
+
+## Cách chạy
+
+- K8s
+
+ynmpdp-5740-merge-crawling-loader-v2-testing-ynm-crawler-empty
+kubectl get pods -n crawler-testing | grep ynmpdp-5740-
+kubectl exec -it ynmpdp-5740-merge-crawling-loader-v2-testing-ynm-crawler-e26pdz -n crawler-testing -- sh
+
+kubectl config use-context lamtt-k8s-local
+
+
+- Redis: 
+
+*Câu lệnh xóa key*
+- Chọn DB
+select 1
+
+- Kiểm tra key
+Keys Threads*
+
+- Xóa keys theo keyword
+EVAL "for _,k in ipairs(redis.call('keys','TH_PagePostCrawlingLoader')) do redis.call('del',k) end" 0
+
+
+- Số lượng key lớn
+SCAN 0 MATCH *URL*
+
+*DB 1*
+
+
+// Facebook
+UserEngagementCrawlingLoader
+PageEngagementCrawlingLoader
+GroupEngagementCrawlingLoader
+
+UserSocialiftEngagementCrawlingLoader
+PageSocialiftEngagementCrawlingLoader
+GroupSocialiftEngagementCrawlingLoader
+
+UserSocialtrendEngagementCrawlingLoader
+PageSocialtrendEngagementCrawlingLoader
+GroupSocialtrendEngagementCrawlingLoader
+
+UnknownProfileCrawlingLoader
+GroupTypeCrawlingLoader
+UserMonthlyProfileCrawlingLoader
+PageMonthlyProfileCrawlingLoader
+GroupMonthlyProfileCrawlingLoader
+
+UserSocialiftProfileCrawlingLoader
+PageSocialiftProfileCrawlingLoader
+PageGraphqlProfileCrawlingLoader
+GroupSocialiftProfileCrawlingLoader
+UserProfileJoinDateCrawlingLoader
+GroupGraphqlProfileCrawlingLoader
+
+UserPostCrawlingLoader
+UserPriorityPostCrawlingLoader
+UserSocialheatPostCrawlingLoader
+UserSocialiftPostCrawlingLoader
+
+PagePostCrawlingLoader
+PagePost1CrawlingLoader
+PagePriorityPostCrawlingLoader
+PageCrisisPostCrawlingLoader
+PageWebPostCrawlingLoader
+PageWebPostPriorityCrawlingLoader
+
+GroupPostCrawlingLoader
+GroupPriorityPostCrawlingLoader
+GroupCrisisPostCrawlingLoader
+GroupClosedPostCrawlingLoader
+GroupClosedPriorityPostCrawlingLoader
+GroupWebPostCrawlingLoader
+GroupWebPostPriorityCrawlingLoader
+
+FollowerCrawlingLoader
+
+UserEngagementByIdCrawlingLoader
+PageEngagementByIdCrawlingLoader
+GroupEngagementByIdCrawlingLoader
+EngagementByTopicCrawlingLoader
+
+KeywordPostCrisisCrawlingLoader
+KeywordPostNonCrisisCrawlingLoader
+HashtagPostCrisisCrawlingLoader
+HashtagPostNonCrisisCrawlingLoader
+
+SharePostHighPriorityCrawlingLoader
+SharePostPriorityCrawlingLoader
+SharePostCrawlingLoader
+
+
+// Tiktok
+TiktokPostCrawlingLoader
+TiktokPostSlCrawlingLoader
+TiktokPriorityPostCrawlingLoader
+TiktokPostInfoCrawlingLoader
+TiktokPostInfoStCrawlingLoader
+TiktokPostCommentCrawlingLoader
+TiktokPriorityPostCommentCrawlingLoader
+TiktokPostCommentSlCrawlingLoader
+TiktokUserInfoCrawlingLoader
+TiktokQualifiedUserInfoCrawlingLoader
+TiktokUserInfoSlCrawlingLoader
+TiktokSubCommentCrawlingLoader
+TiktokTagPostCrawlingLoader
+TiktokCrisisTagPostCrawlingLoader
+TiktokKeywordPostCrawlingLoader
+TiktokCrisisKeywordPostCrawlingLoader
+TiktokAdsPostCrawlingLoader
+
+
+
+// Threads
+ThreadsSourcePostCrawlingLoader
+ThreadsSourcePostNoCookieCrawlingLoader
+ThreadsSourcePostAutoCrisisCrawlingLoader
+ThreadsSourcePostAutoCrisisNoCookieCrawlingLoader
+SourceReplyCrawlingLoader
+SourceReplyNoCookieCrawlingLoader
+ThreadsKeywordPostCrawlingLoader
+ThreadsKeywordPostNoCookieCrawlingLoader
+ThreadsHashtagPostCrawlingLoader
+ThreadsHashtagPostNoCookieCrawlingLoader
+PostCommentCrawlingLoader
+PriorityPostCommentCrawlingLoader
+CrisisPostCommentCrawlingLoader
+CommentSubCommentCrawlingLoader
+PriorityCommentSubCommentCrawlingLoader
+CrisisCommentSubCommentCrawlingLoader
+RepostCrawlingLoader
+RepostNoCookieCrawlingLoader
+PostEngagementByTopicCrawlingLoader
+ThreadsPotentialIdentityCrawlingLoader
+ThreadsIdentityCrawlingLoader
+ThreadsFollowersCrawlingLoader
+
+
+
+// News
+BlogDetailSourcesCrawlingLoader
+DetailSourcesCrawlingLoader
+HighPriorityEcomReviewDetailSourcesCrawlingLoader
+HighPriorityNewsDetailSourcesCrawlingLoader
+NonCategoryNewsDetailSourcesCrawlingLoader
+NormalPriorityNewsDetailSourcesCrawlingLoader
+
+BingCrisisKeywordCrawlingLoader
+CocCocCrisisKeywordCrawlingLoader
+GoogleCrisisKeywordCrawlingLoader
+GoogleKeywordCrawlingLoader
+YahooCrisisKeywordCrawlingLoader
+
+NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader
+
+BlogArticleUrlByFirstPageCrawlingLoader
+EcomArticleUrlByFirstPageCrawlingLoader
+NewsArticleUrlByFirstPageCrawlingLoader
+ReviewArticleUrlByFirstPageCrawlingLoader
+
+
+
+// Tiktok
+
+TiktokPostCrawlingLoader
+TiktokPostSlCrawlingLoader
+TiktokPriorityPostCrawlingLoader
+TiktokPostInfoCrawlingLoader
+TiktokPostInfoStCrawlingLoader
+TiktokPostCommentCrawlingLoader
+TiktokPriorityPostCommentCrawlingLoader
+TiktokPostCommentSlCrawlingLoader
+TiktokUserInfoCrawlingLoader
+TiktokQualifiedUserInfoCrawlingLoader
+TiktokUserInfoSlCrawlingLoader
+TiktokSubCommentCrawlingLoader
+TiktokTagPostCrawlingLoader
+TiktokCrisisTagPostCrawlingLoader
+TiktokKeywordPostCrawlingLoader
+TiktokCrisisKeywordPostCrawlingLoader
+TiktokAdsPostCrawlingLoader
+
+
+
+- Regex rabbitMQ
+
+// Câu lệnh 1
+
+(cl\.fb\.user_engagements_crawling_sources|cl\.fb\.page_engagements_crawling_sources|cl\.fb\.group_engagements_crawling_sources|cl\.fb\.engagement_by_id_crawling_sources|cl\.fb\.engagement_by_topic_crawling_sources|cl\      b\.unknown_identity_crawling_sources|cl\.fb\.group_identity_crawling_sources|cl\.fb\.user_identities_crawling_sources|cl\.fb\.page_identities_crawling_sources|cl\.fb\.group_identities_crawling_sources|cl\.fb\.user_iden      ty_crawling_sources|cl\.fb\.page_identity_crawling_sources|cl\.fb\.identity_graphql_identities_crawling_sources|cl\.fb\.user_identity_join_dates_crawling_sources|cl\.fb\.followers_crawling_sources|cl\.fb\.user_posts_cr      ling_sources|cl\.fb\.user_posts_auto_crisis_crawling_sources|cl\.fb\.user_posts_priority_crawling_sources|cl\.fb\.user_posts_socialheat_crawling_sources|cl\.fb\.user_posts_socialift_crawling_sources|cl\.fb\.page_posts_      awling_sources|cl\.fb\.page_posts_auto_crisis_crawling_sources|cl\.fb\.page_web_posts_crawling_sources|cl\.fb\.page_posts_priority_crawling_sources|cl\.fb\.page_posts_crisis_crawling_sources|cl\.fb\.group_posts_crawlin      sources|cl\.fb\.group_posts_auto_crisis_crawling_sources|cl\.fb\.group_web_posts_crawling_sources|cl\.fb\.group_posts_crisis_crawling_sources|cl\.fb\.group_posts_closed_crawling_sources|cl\.fb\.keyword_posts_crisis_cra      ing_sources|cl\.fb\.keyword_posts_non_crisis_crawling_sources|cl\.fb\.hashtag_posts_crisis_crawling_sources|cl\.fb\.hashtag_posts_non_crisis_crawling_sources|cl\.fb\.share_posts_high_priority_crawling_sources|cl\.fb\.s      re_posts_priority_crawling_sources|cl\.fb\.share_priority_crawling_sources|cl\.fb\.user_comments_crawling_sources|cl\.fb\.page_web_comments_crawling_sources|cl\.fb\.page_comments_crawling_sources|cl\.fb\.page_comments_      isis_crawling_sources|cl\.fb\.page_comments_priority_crawling_sources|cl\.fb\.page_comments_socialift_crawling_sources|cl\.fb\.page_comments_socialtrend_crawling_sources|cl\.fb\.group_web_comments_crawling_sources|cl\.      \.group_comments_crawling_sources|cl\.fb\.group_comments_priority_crawling_sources|cl\.fb\.group_comments_socialtrend_crawling_sources|cl\.fb\.closed_group_comments_crawling_sources|cl\.fb\.group_comments_closed_crisis      rawling_sources|cl\.tr\.source_posts_crawling_sources|cl\.tr\.source_posts_no_cookie_crawling_sources|cl\.tr\.source_posts_auto_crisis_crawling_sources|cl\.tr\.source_posts_auto_crisis_no_cookie_crawling_sources|cl\.tr      source_replies_crawling_sources|cl\.tr\.source_replies_no_cookie_crawling_sources|cl\.tr\.keyword_posts_crawling_sources|cl\.tr\.keyword_posts_no_cookie_crawling_sources|cl\.tr\.hashtag_posts_crawling_sources|cl\.tr\.h      htag_posts_no_cookie_crawling_sources|cl\.tr\.posts_comment_crawling_sources|cl\.tr\.posts_sub_comment_crawling_sources|cl\.tr\.reposts_crawling_sources|cl\.tr\.reposts_no_cookie_crawling_sources|cl\.tr\.post_engagemen      by_topic_crawling_sources|cl\.tr\.potential_identities_crawling_sources|cl\.tr\.identities_crawling_sources|cl\.tr\.followers_crawling_sources|cl\.tt\.posts_crawling_sources|cl\.tt\.posts_sl_crawling_sources|cl\.tt\.pr      rity_posts_crawling_sources|cl\.tt\.posts_info_crawling_sources|cl\.tt\.posts_info_st_crawling_sources|cl\.tt\.posts_comment_crawling_sources|cl\.tt\.priority_posts_comment_crawling_sources|cl\.tt\.sl_posts_comment_cra      ing_sources|cl\.tt\.user_info_crawling_sources|cl\.tt\.qualified_user_info_crawling_sources|cl\.tt\.user_info_sl_crawling_sources|cl\.tt\.sub_comment_crawling_sources|cl\.tt\.tag_posts_crawling_sources|cl\.tt\.crisis_t      _posts_crawling_sources|cl\.tt\.keyword_posts_crawling_sources|cl\.tt\.crisis_keyword_posts_crawling_sources|cl\.tt\.ads_posts_crawling_sources|high_priority_detail_url_info|detail_url_info|crisis_detail_url_info|norma      priority_detail_url_info|cl\.news\.crisis_keyword\.crawling_sources|cl\.news\.article_urls_from_crisis_keyword_crawling_sources|cl\.news\.article_urls_from_keyword_crawling_sources|cl\.news\.article_urls_from_crisis_ke      ord_by_api_crawling_sources|cl\.news\.article_urls_crawling_sources|ynm-cl-yt-crawling-loader-service-staging|ynm-cl-tt-crawling-loader-service-staging|ynm-cl-tr-crawling-loader-service-staging|ynm-cl-fb-crawling-loade      service-staging|ynm-cl-news-crawling-loader-service-staging)
+
+
+
+// Câu lệnh 2 
+
+(cl.fb.user_engagements_crawling_sources|cl.fb.page_engagements_crawling_sources|cl.fb.group_engagements_crawling_sources|cl.fb.engagement_by_id_crawling_sources|cl.fb.engagement_by_topic_crawling_sources|cl.fb.unknown
+     dentity_crawling_sources|cl.fb.group_identity_crawling_sources|cl.fb.user_identities_crawling_sources|cl.fb.page_identities_crawling_sources|cl.fb.group_identities_crawling_sources|cl.fb.user_identity_crawling_sources|
+     .fb.page_identity_crawling_sources|cl.fb.identity_graphql_identities_crawling_sources|cl.fb.user_identity_join_dates_crawling_sources|cl.fb.followers_crawling_sources|cl.fb.user_posts_crawling_sources|cl.fb.user_posts_
+     to_crisis_crawling_sources|cl.fb.user_posts_priority_crawling_sources|cl.fb.user_posts_socialheat_crawling_sources|cl.fb.user_posts_socialift_crawling_sources|cl.fb.page_posts_crawling_sources|cl.fb.page_posts_auto_cri
+     s_crawling_sources|cl.fb.page_web_posts_crawling_sources|cl.fb.page_posts_priority_crawling_sources|cl.fb.page_posts_crisis_crawling_sources|cl.fb.group_posts_crawling_sources|cl.fb.group_posts_auto_crisis_crawling_sou
+     es|cl.fb.group_web_posts_crawling_sources|cl.fb.group_posts_crisis_crawling_sources|cl.fb.group_posts_closed_crawling_sources|cl.fb.keyword_posts_crisis_crawling_sources|cl.fb.keyword_posts_non_crisis_crawling_sources|
+     .fb.hashtag_posts_crisis_crawling_sources|cl.fb.hashtag_posts_non_crisis_crawling_sources|cl.fb.share_posts_high_priority_crawling_sources|cl.fb.share_posts_priority_crawling_sources|cl.fb.share_priority_crawling_sourc
+     |cl.fb.user_comments_crawling_sources|cl.fb.page_web_comments_crawling_sources|cl.fb.page_comments_crawling_sources|cl.fb.page_comments_crisis_crawling_sources|cl.fb.page_comments_priority_crawling_sources|cl.fb.page_c
+     ments_socialift_crawling_sources|cl.fb.page_comments_socialtrend_crawling_sources|cl.fb.group_web_comments_crawling_sources|cl.fb.group_comments_crawling_sources|cl.fb.group_comments_priority_crawling_sources|cl.fb.gro
+     _comments_socialtrend_crawling_sources|cl.fb.closed_group_comments_crawling_sources|cl.fb.group_comments_closed_crisis_crawling_sources|cl.tr.source_posts_crawling_sources|cl.tr.source_posts_no_cookie_crawling_sources|
+     .tr.source_posts_auto_crisis_crawling_sources|cl.tr.source_posts_auto_crisis_no_cookie_crawling_sources|cl.tr.source_replies_crawling_sources|cl.tr.source_replies_no_cookie_crawling_sources|cl.tr.keyword_posts_crawling
+     ources|cl.tr.keyword_posts_no_cookie_crawling_sources|cl.tr.hashtag_posts_crawling_sources|cl.tr.hashtag_posts_no_cookie_crawling_sources|cl.tr.posts_comment_crawling_sources|cl.tr.posts_sub_comment_crawling_sources|cl
+     r.reposts_crawling_sources|cl.tr.reposts_no_cookie_crawling_sources|cl.tr.post_engagement_by_topic_crawling_sources|cl.tr.potential_identities_crawling_sources|cl.tr.identities_crawling_sources|cl.tr.followers_crawling
+     ources|cl.tt.posts_crawling_sources|cl.tt.posts_sl_crawling_sources|cl.tt.priority_posts_crawling_sources|cl.tt.posts_info_crawling_sources|cl.tt.posts_info_st_crawling_sources|cl.tt.posts_comment_crawling_sources|cl.t
+     priority_posts_comment_crawling_sources|cl.tt.sl_posts_comment_crawling_sources|cl.tt.user_info_crawling_sources|cl.tt.qualified_user_info_crawling_sources|cl.tt.user_info_sl_crawling_sources|cl.tt.sub_comment_crawling
+     ources|cl.tt.tag_posts_crawling_sources|cl.tt.crisis_tag_posts_crawling_sources|cl.tt.keyword_posts_crawling_sources|cl.tt.crisis_keyword_posts_crawling_sources|cl.tt.ads_posts_crawling_sources|high_priority_detail_url
+     nfo|detail_url_info|crisis_detail_url_info|normal_priority_detail_url_info|cl.news.crisis_keyword.crawling_sources|cl.news.article_urls_from_crisis_keyword_crawling_sources|cl.news.article_urls_from_keyword_crawling_so
+     ces|cl.news.article_urls_from_crisis_keyword_by_api_crawling_sources|cl.news.article_urls_crawling_sources|ynm-cl-yt-crawling-loader-service-staging|ynm-cl-tt-crawling-loader-service-staging|ynm-cl-tr-crawling-loader-s
+     vice-staging|ynm-cl-fb-crawling-loader-service-staging|ynm-cl-news-crawling-loader-service-staging)
+
+1. Facebook
+
+cl.fb.user_engagements_crawling_sources
+cl.fb.page_engagements_crawling_sources
+cl.fb.group_engagements_crawling_sources
+cl.fb.engagement_by_id_crawling_sources
+cl.fb.engagement_by_topic_crawling_sources
+cl.fb.unknown_identity_crawling_sources
+cl.fb.group_identity_crawling_sources
+cl.fb.user_identities_crawling_sources
+cl.fb.page_identities_crawling_sources
+cl.fb.group_identities_crawling_sources
+cl.fb.user_identity_crawling_sources
+cl.fb.page_identity_crawling_sources
+cl.fb.identity_graphql_identities_crawling_sources
+cl.fb.user_identity_join_dates_crawling_sources
+cl.fb.followers_crawling_sources
+cl.fb.user_posts_crawling_sources
+cl.fb.user_posts_auto_crisis_crawling_sources
+cl.fb.user_posts_priority_crawling_sources
+cl.fb.user_posts_socialheat_crawling_sources
+cl.fb.user_posts_socialift_crawling_sources
+cl.fb.page_posts_crawling_sources
+cl.fb.page_posts_auto_crisis_crawling_sources
+cl.fb.page_web_posts_crawling_sources
+cl.fb.page_posts_priority_crawling_sources
+cl.fb.page_posts_crisis_crawling_sources
+cl.fb.group_posts_crawling_sources
+cl.fb.group_posts_auto_crisis_crawling_sources
+cl.fb.group_web_posts_crawling_sources
+cl.fb.group_posts_crisis_crawling_sources
+cl.fb.group_posts_closed_crawling_sources
+cl.fb.keyword_posts_crisis_crawling_sources
+cl.fb.keyword_posts_non_crisis_crawling_sources
+cl.fb.hashtag_posts_crisis_crawling_sources
+cl.fb.hashtag_posts_non_crisis_crawling_sources
+cl.fb.share_posts_high_priority_crawling_sources
+cl.fb.share_posts_priority_crawling_sources
+cl.fb.share_priority_crawling_sources
+cl.fb.user_comments_crawling_sources
+cl.fb.page_web_comments_crawling_sources
+cl.fb.page_comments_crawling_sources
+cl.fb.page_comments_crisis_crawling_sources
+cl.fb.page_comments_priority_crawling_sources
+cl.fb.page_comments_socialift_crawling_sources
+cl.fb.page_comments_socialtrend_crawling_sources
+cl.fb.group_web_comments_crawling_sources
+cl.fb.group_comments_crawling_sources
+cl.fb.group_comments_priority_crawling_sources
+cl.fb.group_comments_socialtrend_crawling_sources
+cl.fb.closed_group_comments_crawling_sources
+cl.fb.group_comments_closed_crisis_crawling_sources
+
+
+2. Threads
+
+
+cl.tr.source_posts_crawling_sources
+cl.tr.source_posts_no_cookie_crawling_sources
+cl.tr.source_posts_auto_crisis_crawling_sources
+cl.tr.source_posts_auto_crisis_no_cookie_crawling_sources
+cl.tr.source_replies_crawling_sources
+cl.tr.source_replies_no_cookie_crawling_sources
+
+cl.tr.keyword_posts_crawling_sources
+cl.tr.keyword_posts_no_cookie_crawling_sources
+cl.tr.hashtag_posts_crawling_sources
+cl.tr.hashtag_posts_no_cookie_crawling_sources
+
+cl.tr.posts_comment_crawling_sources
+cl.tr.posts_sub_comment_crawling_sources
+cl.tr.reposts_crawling_sources
+cl.tr.reposts_no_cookie_crawling_sources
+
+cl.tr.post_engagement_by_topic_crawling_sources
+cl.tr.potential_identities_crawling_sources
+cl.tr.identities_crawling_sources
+cl.tr.followers_crawling_sources
+
+
+
+3. Youtube -> Hiện tại không có queue nào cần loader lên
+
+
+
+4. Tiktok
+
+cl.tt.posts_crawling_sources
+cl.tt.posts_sl_crawling_sources
+cl.tt.priority_posts_crawling_sources
+cl.tt.posts_info_crawling_sources
+cl.tt.posts_info_st_crawling_sources
+cl.tt.posts_comment_crawling_sources
+cl.tt.priority_posts_comment_crawling_sources
+cl.tt.sl_posts_comment_crawling_sources
+cl.tt.user_info_crawling_sources
+cl.tt.qualified_user_info_crawling_sources
+cl.tt.user_info_sl_crawling_sources
+cl.tt.sub_comment_crawling_sources
+cl.tt.tag_posts_crawling_sources
+cl.tt.crisis_tag_posts_crawling_sources
+cl.tt.keyword_posts_crawling_sources
+cl.tt.crisis_keyword_posts_crawling_sources
+cl.tt.ads_posts_crawling_sources
+
+5. News
+
+high_priority_detail_url_info
+detail_url_info
+crisis_detail_url_info
+normal_priority_detail_url_info
+cl.news.crisis_keyword.crawling_sources
+cl.news.article_urls_from_crisis_keyword_crawling_sources
+cl.news.article_urls_from_keyword_crawling_sources
+cl.news.article_urls_from_crisis_keyword_by_api_crawling_sources
+cl.news.article_urls_crawling_sources
+
+
+
+- Crawling-loader cũ
+
+ynm-cl-yt-crawling-loader-service-staging
+ynm-cl-tt-crawling-loader-service-staging
+ynm-cl-tr-crawling-loader-service-staging
+ynm-cl-fb-crawling-loader-service-staging
+ynm-cl-news-crawling-loader-service-staging
+
+
+
+- mySQL
+
+*crawling_loader*
+
+// Facebook
+USER_ENGAGEMENT_CRAWLING_LOADER
+PAGE_ENGAGEMENT_CRAWLING_LOADER
+GROUP_ENGAGEMENT_CRAWLING_LOADER
+
+USER_SOCIALIFT_ENGAGEMENT_CRAWLING_LOADER
+PAGE_SOCIALIFT_ENGAGEMENT_CRAWLING_LOADER
+GROUP_SOCIALIFT_ENGAGEMENT_CRAWLING_LOADER
+
+USER_SOCIALTREND_ENGAGEMENT_CRAWLING_LOADER
+PAGE_SOCIALTREND_ENGAGEMENT_CRAWLING_LOADER
+GROUP_SOCIALTREND_ENGAGEMENT_CRAWLING_LOADER
+
+UNKNOWN_PROFILE_CRAWLING_LOADER
+GROUP_TYPE_CRAWLING_LOADER
+USER_MONTHLY_PROFILE_CRAWLING_LOADER
+PAGE_MONTHLY_PROFILE_CRAWLING_LOADER
+GROUP_MONTHLY_PROFILE_CRAWLING_LOADER
+
+USER_SOCIALIFT_PROFILE_CRAWLING_LOADER
+PAGE_SOCIALIFT_PROFILE_CRAWLING_LOADER
+PAGE_GRAPHQL_PROFILE_CRAWLING_LOADER
+GROUP_SOCIALIFT_PROFILE_CRAWLING_LOADER
+USER_PROFILE_JOIN_DATE_CRAWLING_LOADER
+GROUP_GRAPHQL_PROFILE_CRAWLING_LOADER
+
+USER_POST_CRAWLING_LOADER
+USER_PRIORITY_POST_CRAWLING_LOADER
+USER_SOCIALHEAT_POST_CRAWLING_LOADER
+USER_SOCIALIFT_POST_CRAWLING_LOADER
+
+PAGE_POST_CRAWLING_LOADER
+PAGE_POST_1_CRAWLING_LOADER
+PAGE_PRIORITY_POST_CRAWLING_LOADER
+PAGE_CRISIS_POST_CRAWLING_LOADER
+PAGE_WEB_POST_CRAWLING_LOADER
+PAGE_WEB_POST_PRIORITY_CRAWLING_LOADER
+
+GROUP_POST_CRAWLING_LOADER
+GROUP_PRIORITY_POST_CRAWLING_LOADER
+GROUP_CRISIS_POST_CRAWLING_LOADER
+GROUP_CLOSED_POST_CRAWLING_LOADER
+GROUP_CLOSED_PRIORITY_POST_CRAWLING_LOADER
+GROUP_WEB_POST_CRAWLING_LOADER
+GROUP_WEB_POST_PRIORITY_CRAWLING_LOADER
+
+FOLLOWER_CRAWLING_LOADER
+
+USER_ENGAGEMENT_BY_ID_CRAWLING_LOADER
+PAGE_ENGAGEMENT_BY_ID_CRAWLING_LOADER
+GROUP_ENGAGEMENT_BY_ID_CRAWLING_LOADER
+ENGAGEMENT_BY_TOPIC_CRAWLING_LOADER
+
+KEYWORD_POST_CRISIS_CRAWLING_LOADER
+KEYWORD_POST_NON_CRISIS_CRAWLING_LOADER
+HASHTAG_POST_CRISIS_CRAWLING_LOADER
+HASHTAG_POST_NON_CRISIS_CRAWLING_LOADER
+
+SHARE_POST_HIGH_PRIORITY_CRAWLING_LOADER
+SHARE_POST_PRIORITY_CRAWLING_LOADER
+SHARE_POST_CRAWLING_LOADER
+
+
+// Tiktok
+TIKTOK_POST_CRAWLING_LOADER
+TIKTOK_POST_SL_CRAWLING_LOADER
+TIKTOK_PRIORITY_POST_CRAWLING_LOADER
+TIKTOK_POST_INFO_CRAWLING_LOADER
+TIKTOK_POST_INFO_ST_CRAWLING_LOADER
+TIKTOK_POST_COMMENT_CRAWLING_LOADER
+TIKTOK_PRIORITY_POST_COMMENT_CRAWLING_LOADER
+TIKTOK_POST_COMMENT_SL_CRAWLING_LOADER
+TIKTOK_USER_INFO_CRAWLING_LOADER
+TIKTOK_QUALIFIED_USER_INFO_CRAWLING_LOADER
+TIKTOK_USER_INFO_SL_CRAWLING_LOADER
+TIKTOK_SUB_COMMENT_CRAWLING_LOADER
+TIKTOK_TAG_POST_CRAWLING_LOADER
+TIKTOK_CRISIS_TAG_POST_CRAWLING_LOADER
+TIKTOK_KEYWORD_POST_CRAWLING_LOADER
+TIKTOK_CRISIS_KEYWORD_POST_CRAWLING_LOADER
+TIKTOK_ADS_POST_CRAWLING_LOADER
+
+
+// News
+BLOG_DETAIL_SOURCES_CRAWLING_LOADER
+DETAIL_SOURCES_CRAWLING_LOADER
+HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER
+HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER
+NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER
+NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER
+
+BING_CRISIS_KEYWORD_CRAWLING_LOADER
+COC_COC_CRISIS_KEYWORD_CRAWLING_LOADER
+GOOGLE_CRISIS_KEYWORD_CRAWLING_LOADER
+GOOGLE_KEYWORD_CRAWLING_LOADER
+YAHOO_CRISIS_KEYWORD_CRAWLING_LOADER
+
+NEWS_ARTICLE_URL_FROM_CRISIS_KEYWORD_BY_API_CRAWLING_LOADER
+
+BLOG_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER
+ECOM_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER
+NEWS_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER
+REVIEW_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER
+
+
+// Threads
+
+THREADS_SOURCE_POST_CRAWLING_LOADER
+THREADS_SOURCE_POST_NO_COOKIE_CRAWLING_LOADER
+THREADS_SOURCE_POST_AUTO_CRISIS_CRAWLING_LOADER
+THREADS_SOURCE_POST_AUTO_CRISIS_NO_COOKIE_CRAWLING_LOADER
+
+SOURCE_REPLY_CRAWLING_LOADER
+SOURCE_REPLY_NO_COOKIE_CRAWLING_LOADER
+
+THREADS_KEYWORD_POST_CRAWLING_LOADER
+THREADS_KEYWORD_POST_NO_COOKIE_CRAWLING_LOADER
+
+THREADS_HASHTAG_POST_CRAWLING_LOADER
+THREADS_HASHTAG_POST_NO_COOKIE_CRAWLING_LOADER
+
+POST_COMMENT_CRAWLING_LOADER
+PRIORITY_POST_COMMENT_CRAWLING_LOADER
+CRISIS_POST_COMMENT_CRAWLING_LOADER
+
+COMMENT_SUB_COMMENT_CRAWLING_LOADER
+PRIORITY_COMMENT_SUB_COMMENT_CRAWLING_LOADER
+CRISIS_COMMENT_SUB_COMMENT_CRAWLING_LOADER
+
+REPOST_CRAWLING_LOADER
+REPOST_NO_COOKIE_CRAWLING_LOADER
+
+POST_ENGAGEMENT_BY_TOPIC_CRAWLING_LOADER
+
+THREADS_POTENTIAL_IDENTITY_CRAWLING_LOADER
+THREADS_IDENTITY_CRAWLING_LOADER
+THREADS_FOLLOWERS_CRAWLING_LOADER
+
+
+
+// Tiktok
+
+
+TIKTOK_POST_CRAWLING_LOADER
+TIKTOK_POST_SL_CRAWLING_LOADER
+TIKTOK_PRIORITY_POST_CRAWLING_LOADER
+TIKTOK_POST_INFO_CRAWLING_LOADER
+TIKTOK_POST_INFO_ST_CRAWLING_LOADER
+TIKTOK_POST_COMMENT_CRAWLING_LOADER
+TIKTOK_PRIORITY_POST_COMMENT_CRAWLING_LOADER
+TIKTOK_POST_COMMENT_SL_CRAWLING_LOADER
+TIKTOK_USER_INFO_CRAWLING_LOADER
+TIKTOK_QUALIFIED_USER_INFO_CRAWLING_LOADER
+TIKTOK_USER_INFO_SL_CRAWLING_LOADER
+TIKTOK_SUB_COMMENT_CRAWLING_LOADER
+TIKTOK_TAG_POST_CRAWLING_LOADER
+TIKTOK_CRISIS_TAG_POST_CRAWLING_LOADER
+TIKTOK_KEYWORD_POST_CRAWLING_LOADER
+TIKTOK_CRISIS_KEYWORD_POST_CRAWLING_LOADER
+TIKTOK_ADS_POST_CRAWLING_LOADER
+
+
+
+- Câu lệnh chạy
+
+#Facebook
+
+export USER_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+export PAGE_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+export GROUP_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+
+export USER_SOCIALIFT_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+export PAGE_SOCIALIFT_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+export GROUP_SOCIALIFT_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+
+export USER_SOCIALTREND_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+export PAGE_SOCIALTREND_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+export GROUP_SOCIALTREND_ENGAGEMENT_CRAWLING_LOADER_ENABLE=false
+
+export UNKNOWN_PROFILE_CRAWLING_LOADER_ENABLE=false
+export GROUP_TYPE_CRAWLING_LOADER_ENABLE=false
+export USER_MONTHLY_PROFILE_CRAWLING_LOADER_ENABLE=false
+export PAGE_MONTHLY_PROFILE_CRAWLING_LOADER_ENABLE=false
+export GROUP_MONTHLY_PROFILE_CRAWLING_LOADER_ENABLE=false
+
+export USER_SOCIALIFT_PROFILE_CRAWLING_LOADER_ENABLE=false
+export PAGE_SOCIALIFT_PROFILE_CRAWLING_LOADER_ENABLE=false
+export PAGE_GRAPHQL_PROFILE_CRAWLING_LOADER_ENABLE=false
+export GROUP_SOCIALIFT_PROFILE_CRAWLING_LOADER_ENABLE=false
+export USER_PROFILE_JOIN_DATE_CRAWLING_LOADER_ENABLE=false
+export GROUP_GRAPHQL_PROFILE_CRAWLING_LOADER_ENABLE=false
+
+export USER_POST_CRAWLING_LOADER_ENABLE=false
+export USER_PRIORITY_POST_CRAWLING_LOADER_ENABLE=false
+export USER_SOCIALHEAT_POST_CRAWLING_LOADER_ENABLE=false
+export USER_SOCIALIFT_POST_CRAWLING_LOADER_ENABLE=false
+
+export PAGE_POST_CRAWLING_LOADER_ENABLE=false
+export PAGE_POST_1_CRAWLING_LOADER_ENABLE=false
+export PAGE_PRIORITY_POST_CRAWLING_LOADER_ENABLE=false
+export PAGE_CRISIS_POST_CRAWLING_LOADER_ENABLE=false
+export PAGE_WEB_POST_CRAWLING_LOADER_ENABLE=false
+export PAGE_WEB_POST_PRIORITY_CRAWLING_LOADER_ENABLE=false
+
+export GROUP_POST_CRAWLING_LOADER_ENABLE=true
+export GROUP_PRIORITY_POST_CRAWLING_LOADER_ENABLE=false
+export GROUP_CRISIS_POST_CRAWLING_LOADER_ENABLE=false
+export GROUP_CLOSED_POST_CRAWLING_LOADER_ENABLE=false
+export GROUP_CLOSED_PRIORITY_POST_CRAWLING_LOADER_ENABLE=false
+export GROUP_WEB_POST_CRAWLING_LOADER_ENABLE=false
+export GROUP_WEB_POST_PRIORITY_CRAWLING_LOADER_ENABLE=false
+
+export FOLLOWER_CRAWLING_LOADER_ENABLE=false
+
+export USER_ENGAGEMENT_BY_ID_CRAWLING_LOADER_ENABLE=false
+export PAGE_ENGAGEMENT_BY_ID_CRAWLING_LOADER_ENABLE=false
+export GROUP_ENGAGEMENT_BY_ID_CRAWLING_LOADER_ENABLE=false
+export ENGAGEMENT_BY_TOPIC_CRAWLING_LOADER_ENABLE=false
+
+export KEYWORD_POST_CRISIS_CRAWLING_LOADER_ENABLE=false
+export KEYWORD_POST_NON_CRISIS_CRAWLING_LOADER_ENABLE=false
+export HASHTAG_POST_CRISIS_CRAWLING_LOADER_ENABLE=false
+export HASHTAG_POST_NON_CRISIS_CRAWLING_LOADER_ENABLE=false
+
+export SHARE_POST_HIGH_PRIORITY_CRAWLING_LOADER_ENABLE=false
+export SHARE_POST_PRIORITY_CRAWLING_LOADER_ENABLE=false
+export SHARE_POST_CRAWLING_LOADER_ENABLE=false
+
+#Tiktok
+
+export TIKTOK_POST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_POST_SL_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_PRIORITY_POST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_POST_INFO_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_POST_INFO_ST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_POST_COMMENT_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_PRIORITY_POST_COMMENT_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_POST_COMMENT_SL_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_USER_INFO_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_QUALIFIED_USER_INFO_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_USER_INFO_SL_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_SUB_COMMENT_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_TAG_POST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_CRISIS_TAG_POST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_KEYWORD_POST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_CRISIS_KEYWORD_POST_CRAWLING_LOADER_ENABLE=false
+export TIKTOK_ADS_POST_CRAWLING_LOADER_ENABLE=false
+
+
+#Threads
+
+export THREADS_SOURCE_POST_CRAWLING_LOADER_ENABLE=false
+export THREADS_SOURCE_POST_NO_COOKIE_CRAWLING_LOADER_ENABLE=false
+export THREADS_SOURCE_POST_AUTO_CRISIS_CRAWLING_LOADER_ENABLE=false
+export THREADS_SOURCE_POST_AUTO_CRISIS_NO_COOKIE_CRAWLING_LOADER_ENABLE=false
+export SOURCE_REPLY_CRAWLING_LOADER_ENABLE=false
+export SOURCE_REPLY_NO_COOKIE_CRAWLING_LOADER_ENABLE=false
+export THREADS_KEYWORD_POST_CRAWLING_LOADER_ENABLE=false
+export THREADS_KEYWORD_POST_NO_COOKIE_CRAWLING_LOADER_ENABLE=false
+export THREADS_HASHTAG_POST_CRAWLING_LOADER_ENABLE=false
+export THREADS_HASHTAG_POST_NO_COOKIE_CRAWLING_LOADER_ENABLE=false
+export POST_COMMENT_CRAWLING_LOADER_ENABLE=false
+export PRIORITY_POST_COMMENT_CRAWLING_LOADER_ENABLE=false
+export CRISIS_POST_COMMENT_CRAWLING_LOADER_ENABLE=false
+export COMMENT_SUB_COMMENT_CRAWLING_LOADER_ENABLE=false
+export PRIORITY_COMMENT_SUB_COMMENT_CRAWLING_LOADER_ENABLE=false
+export CRISIS_COMMENT_SUB_COMMENT_CRAWLING_LOADER_ENABLE=false
+
+
+
+export REPOST_CRAWLING_LOADER_CYCLE='*/100 * * * *'
+export REPOST_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK='1'
+export REPOST_CRAWLING_LOADER_MAX_MSG_IN_QUEUE='50000'
+export REPOST_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE='10'
+export REPOST_CRAWLING_LOADER_DEFAULT_DATA_DURATION='10days'
+export REPOST_CRAWLING_LOADER_ENABLE=false
+
+
+
+
+
+export REPOST_NO_COOKIE_CRAWLING_LOADER_CYCLE='*/10 * * * *'
+export REPOST_NO_COOKIE_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=45
+export REPOST_NO_COOKIE_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=77
+export REPOST_NO_COOKIE_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=7
+export REPOST_NO_COOKIE_CRAWLING_LOADER_DEFAULT_DATA_DURATION='1months'
+export REPOST_NO_COOKIE_CRAWLING_LOADER_ENABLE=false
+
+
+export POST_ENGAGEMENT_BY_TOPIC_CRAWLING_LOADER_ENABLE=false
+
+
+export THREADS_POTENTIAL_IDENTITY_CRAWLING_LOADER_CYCLE='*/1 * * * *'
+export THREADS_POTENTIAL_IDENTITY_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=90
+export THREADS_POTENTIAL_IDENTITY_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=444
+export THREADS_POTENTIAL_IDENTITY_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=55
+export THREADS_POTENTIAL_IDENTITY_CRAWLING_LOADER_ENABLE=false
+export THREADS_IDENTITY_CRAWLING_LOADER_ENABLE=false
+export THREADS_FOLLOWERS_CRAWLING_LOADER_ENABLE=false
+
+
+#News
+
+export BLOG_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
+export DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
+export HIGH_PRIORITY_ECOM_REVIEW_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+export HIGH_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+export NON_CATEGORY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+export BING_CRISIS_KEYWORD_CRAWLING_LOADER_ENABLE=false
+export COC_COC_CRISIS_KEYWORD_CRAWLING_LOADER_ENABLE=false
+export GOOGLE_CRISIS_KEYWORD_CRAWLING_LOADER_ENABLE=false
+export GOOGLE_KEYWORD_CRAWLING_LOADER_ENABLE=false
+export YAHOO_CRISIS_KEYWORD_CRAWLING_LOADER_ENABLE=false
+export NEWS_ARTICLE_URL_FROM_CRISIS_KEYWORD_BY_API_CRAWLING_LOADER_ENABLE=false
+export BLOG_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE=true
+export ECOM_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE=true
+export NEWS_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE=true
+export REVIEW_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE=true
+
+
+
+NODE_ENV=testing yarn start --scope=@ynm/cl-crawling-loader-service
+
+
+
+
+
+## Note
+
+
+Initialized the current monitoring script {"id":"SOURCE_REPLY_NO_COOKIE_CRAWLING_LOADER","country":"VN","cursor":"*"}
+
+
+
+
+// Những config cần phải test cho data loader
+
+export PAGE_POST_CRAWLING_LOADER_CYCLE="0 */24 * * *" -> Config này đã đúng
+export PAGE_POST_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=100 -> 7
+export PAGE_POST_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=77 -> Config này đã đúng
+export PAGE_POST_CRAWLING_LOADER_DEFAULT_DATA_DURATION="12months"
+
+
+
+
+
+1. Crawler
+
+export HTTP_PORT=9995
+export LOG_LEVEL=debug
+ 
+export MYSQL_NEWS_CONNECTION_DATABASE=crawling
+ 
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tr.reposts_no_cookie_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tr.reposts_no_cookie_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tr.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tr.reposts_no_cookie_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.10.*.*.reposts_no_cookie.next_page
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+ 
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_UNAUTHORIZED_CRAWLER
+export CRAWLER_CONFIG_PAGING_ENABLE=false
+ 
+export BUILDER_ENABLE=true
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+ 
+export CRAWLER_ENABLE=true
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=1
+
+export RESOLVER_ENABLE=true
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+export RESOLVER_MAX_RETRIES=3
+ 
+yarn start --scope=@ynm/cl-tr-repost-crawler-service
+
+
+2. Loader nước ngoài
+
+
+export REDIS_KEY_PREFIX='TH_'
+
+export HTTP_PORT=9997
+export GRPC_PORT=9011
+export LOG_LEVEL=debug
+    
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+    
+export RABBIT_HEARTBEAT=10
+
+export GROUP_POST_CRAWLING_LOADER_ENABLE=true
+export GROUP_POST_CRAWLING_LOADER_COUNTRY=TH
+export GROUP_POST_CRAWLING_LOADER_OUTPUT_QUEUE=cl.fb.group_posts_crawling_sources
+export GROUP_POST_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=5000
+export GROUP_POST_CRAWLING_LOADER_CYCLE="0 */24 * * *"
+export GROUP_POST_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=100
+export GROUP_POST_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=10
+export GROUP_POST_CRAWLING_LOADER_DEFAULT_DATA_DURATION="12months"
+
+export GROUP_POST_CRAWLING_LOADER_FILTERS_0_FB_USER_TYPE=3
+
+NODE_ENV=testing_th yarn start --scope=@ynm/cl-fb-crawling-loader-service
+
+
+
+
+
+
+
+
+export REDIS_KEY_PREFIX='TH_'
+ 
+export HTTP_PORT=9997
+export GRPC_PORT=9011
+export LOG_LEVEL=debug
+    
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+    
+export RABBIT_HEARTBEAT=10
+  
+export PAGE_POST_CRAWLING_LOADER_ENABLE=true
+export PAGE_POST_CRAWLING_LOADER_COUNTRY=TH
+export PAGE_POST_CRAWLING_LOADER_OUTPUT_QUEUE=cl.fb.page_posts_crawling_sources
+export PAGE_POST_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=5000
+  
+export PAGE_POST_CRAWLING_LOADER_FILTERS_0_FB_USER_TYPE=2
+  
+NODE_ENV=testing_th yarn start --scope=@ynm/cl-crawling-loader-service
+
+
+
+
+export REDIS_KEY_PREFIX='TH_'
+ 
+export HTTP_PORT=9997
+export GRPC_PORT=9011
+export LOG_LEVEL=debug
+   
+export LOG_LEVEL=debug
+export LOG_LOG_STASH_HOST=51.222.44.17
+export LOG_LOG_STASH_PORT=31658
+export LOG_LOG_STASH_ENABLE=false
+   
+export RABBIT_HEARTBEAT=10
+ 
+export USER_POST_CRAWLING_LOADER_ENABLE=true
+export USER_POST_CRAWLING_LOADER_COUNTRY=TH
+export USER_POST_CRAWLING_LOADER_OUTPUT_QUEUE=cl.fb.user_posts_crawling_sources
+export USER_POST_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=5000
+export USER_POST_CRAWLING_LOADER_CYCLE="0 */24 * * *"
+export USER_POST_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=100
+export USER_POST_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=10
+export USER_POST_CRAWLING_LOADER_DEFAULT_DATA_DURATION="12months"
+ 
+export USER_POST_CRAWLING_LOADER_FILTERS_0_FB_USER_TYPE=1
+ 
+NODE_ENV=testing_th yarn start --scope=@ynm/cl-crawling-loader-service
+
+
+## Updater
+
+
+export IDENTITIES_ENABLE=true
+
+# * Facebook *
+export FB_POST_ENABLE=true
+export FB_POST_MAX_WAITING_TIME=1
+export FB_POST_PREFETCH_MESSAGES=1000
+export FB_POST_BATCH_SIZE=100
+
+export ENGAGEMENTS_BY_TOPIC_ENABLE=true
+export ENGAGEMENTS_BY_TOPIC_MAX_WAITING_TIME=1
+export ENGAGEMENTS_BY_TOPIC_PREFETCH_MESSAGES=1000
+export ENGAGEMENTS_BY_TOPIC_BATCH_SIZE=100
+
+# * News *
+export ARTICLE_TITLE_UPDATER_ENABLE=true
+export ARTICLE_TITLE_UPDATER_MAX_WAITING_TIME=1
+export ARTICLE_TITLE_UPDATER_PREFETCH_MESSAGES=1000
+export ARTICLE_TITLE_UPDATER_BATCH_SIZE=100
+
+export CATEGORY_LINK_UPDATER_ENABLE=true
+export CATEGORY_LINK_UPDATER_MAX_WAITING_TIME=1
+export CATEGORY_LINK_UPDATER_PREFETCH_MESSAGES=1000
+export CATEGORY_LINK_UPDATER_BATCH_SIZE=100
+
+# * Threads *
+export POTENTIAL_IDENTITIES_ENABLE=true
+export POTENTIAL_IDENTITIES_MAX_WAITING_TIME=1
+export POTENTIAL_IDENTITIES_PREFETCH_MESSAGES=1000
+export POTENTIAL_IDENTITIES_BATCH_SIZE=100
+
+export TR_POSTS_ENABLE=true
+export TR_POSTS_MAX_WAITING_TIME=1
+export TR_POSTS_PREFETCH_MESSAGES=1000
+export TR_POSTS_BATCH_SIZE=100
+
+export TR_POSTS_BY_TOPIC_ENABLE=true
+export TR_POSTS_BY_TOPIC_MAX_WAITING_TIME=1
+export TR_POSTS_BY_TOPIC_PREFETCH_MESSAGES=1000
+export TR_POSTS_BY_TOPIC_BATCH_SIZE=100
+
+export TR_REPLIES_ENABLE=true
+export TR_REPLIES_MAX_WAITING_TIME=1
+export TR_REPLIES_PREFETCH_MESSAGES=1000
+export TR_REPLIES_BATCH_SIZE=100
+
+# * Tiktok *
+export TT_POSTS_ENABLE=true
+export TT_POSTS_MAX_WAITING_TIME=1
+export TT_POSTS_PREFETCH_MESSAGES=1000
+export TT_POSTS_BATCH_SIZE=100
+
+export TRANSCRIPT_ENABLE=true
+export TRANSCRIPT_MAX_WAITING_TIME=1
+export TRANSCRIPT_PREFETCH_MESSAGES=1000
+export TRANSCRIPT_BATCH_SIZE=100
+
+
+yarn testing --scope=@ynm/cl-source-updater-service
+
+
+
+
+## Pusher
+
+
+export POST_2_SOLR_FB_POST_ENABLE=true
+export POST_2_SOLR_TR_POST_ENABLE=true
+export REPLY_2_SOLR_TR_REPLY_ENABLE=true
+export POST_2_SOLR_TT_POST_ENABLE=true
+export MENTION_2_SOLR_MENTION_ENABLE=true
+
+export PROFILE_2_REDIS_IDENTITY_ENABLE=true
+export PROFILE_2_SOLR_IDENTITY_ENABLE=true
+export POST_2_SOLR_YT_POST_ENABLE=true
+
+export CATEGORY_LINK_2_MYSQL_MONITOR_NEWS_CATEGORY_PUSHER_ENABLE=true
+export ARTICLE_POST_2_SOLR_ARTICLE_POST_ENABLE=true
+export ARTICLE_CRAWL_REVIEW_2_SOLR_ARTICLE_CRAWL_REVIEW_ENABLE=true
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_ENABLE=true
+export ARTICLE_URL_2_SOLR_ARTICLE_URL_ENABLE=true
+export ARTICLE_2_MONGO_ARTICLE_PUSHER_ENABLE=true
+
+export NEWS_COMMENT_2_SOLR_NEWS_COMMENT_ENABLE=true
+export COMMENT_2_SOLR_YT_COMMENT_ENABLE=true
+export POST_2_SOLR_IG_POST_ENABLE=true
+
+
+NODE_ENV=testing yarn start --scope=@ynm/cl-data-pusher-service
