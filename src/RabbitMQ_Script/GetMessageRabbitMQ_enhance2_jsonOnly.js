@@ -109,14 +109,15 @@ const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 const queueName = "staging.cl.identities_finished_sources_LamTT";
 const queueName1 = "staging.cl.identities_2_solr_identities_LamTT";
 const queueName2 = "staging.cl.identities_2_redis_identities_LamTT";
-const queue_name3 = "testing.cl.news.article_urls_from_crisis_keyword_crawling_requests"; 
+const queue_name3 =  "testing.cl.ig.keyword_posts_web_crisis_crawled_sources"; 
 const queue_name4 = "staging.cl.mentions_2_solr_mentions_LamTT";
 const queue_name5 = "staging.cl.tr.reposts_no_cookie_crawling_sources";
 const queue_name6 = "staging.cl.tr.source_replies_no_cookie_crawling_sources";
 const queue_name7 = "staging.cl.identities_finished_sources";
-const queue_name8 = "staging.cl.news.article_urls";
-const queue_name9 = "testing.cl.news.article_urls";
-const queue_name10 = "staging.cl.mentions_2_solr_mentions_LamTT";
+const queue_name8 = "testing.cl.identities_2_solr_identities_LamTT";
+const queue_name9 = "testing.cl.posts_2_solr_ig_posts_LamTT";
+const queue_name10 = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queue_name11 = "testing.cl.ig.identity_countries_crawling_sources";
 
 
 
@@ -128,10 +129,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP,
-  stagingDomain,
-  queueName1,
+  testHTTP,
+  testDomain,
+  queue_name9,
   userName,
-  stagingPassword,
+  testPassword,
   1000
 );
