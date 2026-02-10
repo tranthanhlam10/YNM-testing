@@ -741,3 +741,14 @@ export TOKEN_CONFIGS_TT_API_CRAWLER_CRISIS_HASHTAG_MAX_NUMBER_TOKEN=10
 }
 
 
+
+## Những việc cần check lại ở testing
+
+Kiểm tra lại deployment: 
+ynm-token-manager-service-testing
+
+- Những case cần phải check
++ Kiểm tra lại token manager có hoạt động được hay không
++ Chạy thử các config xem có lỗi gì không
++ Kiểm tra lại các luồng sử dụng devices cũ có hoạt động được không
++ Kiểm tra lại các luồng sử dụng token có hoạt động hay không

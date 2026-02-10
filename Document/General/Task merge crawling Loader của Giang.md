@@ -956,3 +956,16 @@ export POST_2_SOLR_IG_POST_ENABLE=true
 
 
 NODE_ENV=testing yarn start --scope=@ynm/cl-data-pusher-service
+
+
+## Những việc cần check lại ở testing
+
+ynm-cl-fb-crawling-loader-service-testing
+
+ynm-cl-tr-crawling-loader-service-testing
+
+ynm-cl-tt-crawling-loader-service-testing
+
+ynm-cl-news-crawling-loader-service-testing
+
+ynm-cl-yt-crawling-loader-service-testing
