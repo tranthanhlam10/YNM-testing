@@ -1,15 +1,17 @@
-ynmpdp-5768-staging-ynm-crawler-empty
+# Task Linh Tinh
 
+## 1. Crawler Staging Service (`ynmpdp-5768`)
+**Pod Name**: `ynmpdp-5768-staging-ynm-crawler-empty`
+
+### Kubernetes Commands
+```bash
 kubectl get pods -n crawler-staging | grep ynmpdp-5768-staging-ynm-crawler-empty
 kubectl exec -it ynmpdp-5768-staging-ynm-crawler-empty-bbc49fc48-6gzsj -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
+```
 
-
-
-Scope
-
-- Chỉ thay đổi loader của luồng identity từ load bằng id_social
-
+### Configuration
+```bash
 export HTTP_PORT=9998
 export GRPC_PORT=9011
    
@@ -28,53 +30,62 @@ export THREADS_IDENTITY_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
 export THREADS_IDENTITY_CRAWLING_LOADER_ENABLE=true
    
 export MYSQL_DEFAULT_CONNECTION_DATABASE=ynm_crawling_loaders
-
    
 export REDIS_DB=1
 export REDIS_MAX_RETRIES_PER_REQUEST=null
-   
+```
+
+### Start Command
+```bash
 yarn start --scope=@ynm/cl-tr-crawling-loader-service
+```
 
+---
 
+## 2. Crawler Empty Container (`ynmpdp-5772`)
+**Deployment**: `ynmpdp-5772-staging-crawler-empty-container`
 
-
-
-
-
-Deployment: ynmpdp-5772-staging-crawler-empty-container
-
-Script: concurrently --kill-others "node --max_old_space_size=8000 --stack-size=1500 services.js" "node scripts/youtubeV2/get_latest_potential_channels_info.js"
-
-
+### Commands
+```bash
 kubectl get pods -n crawler-staging | grep ynmpdp-5772-staging-crawler-empty-container
 kubectl exec -it ynmpdp-5772-staging-crawler-empty-container-f9d989596-zsfgs -n crawler-staging -- sh
-
 kubectl config use-context lamtt-k8s-ovh
+```
 
+### Services Script
+```bash
+concurrently --kill-others "node --max_old_space_size=8000 --stack-size=1500 services.js" "node scripts/youtubeV2/get_latest_potential_channels_info.js"
+```
 
-Scope: Chỉ thay đổi lúc nào cũng update xuống Redis không phân biệt value của identity đó có field id hay không
+---
 
--> Hiện tại theo cách xử lý của Huy là HUy vừa cập nhật subscriber_count và cập nhật id luôn cho record trên Redis
+## 3. Development Notes & Status
 
+### Scope
+- Chỉ thay đổi loader của luồng identity từ load bằng `id_social`.
+- Chỉ thay đổi lúc nào cũng update xuống Redis không phân biệt value của identity đó có field id hay không.
+- -> Hiện tại theo cách xử lý của Huy là Huy vừa cập nhật `subscriber_count` và cập nhật `id` luôn cho record trên Redis.
 
+### Identity Processing Status
+- `UC6Cefqz6INITmRVhb6i7AEg` -> Không có id -> **DONE**
+- `UCHZhgItQp2FwGt2uN88a4dw` -> Có id -> **DONE**
+- `UC6o8QcbiZQBBGVRDzgaQ4GQ` -> {} -> **DONE**
+- `UCETfNRb8j8OEiKwf3DYdjAQ` -> Null -> **DONE**
 
-UC6Cefqz6INITmRVhb6i7AEg -> Không có id -> DONE
-UCHZhgItQp2FwGt2uN88a4dw -> Có id -> DONE
-UC6o8QcbiZQBBGVRDzgaQ4GQ -> {} -> DONE
-UCETfNRb8j8OEiKwf3DYdjAQ -> Null -> DONE
+---
 
+## 4. Source Updater Service (Khiêm's Fix - `ynmpdp-5066`)
+**Pod**: `ynmpdp-5066-staging-ynm-crawler-empty`
 
-
-// Bản fix updater của Khiêm
-
-
-
+### Commands
+```bash
 kubectl get pods -n crawler-staging | grep ynmpdp-5066-staging-ynm-crawler-empty
 kubectl exec -it ynmpdp-5066-staging-ynm-crawler-empty-c76d6656d-8kl2f -n crawler-staging -- sh
 kubectl config use-context lamtt-k8s-ovh
+```
 
-
-
+### Configuration
+```bash
 export HTTP_PORT=9997
 export GRPC_PORT=9011
 export LOG_LEVEL=debug
@@ -172,20 +183,19 @@ export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
 export MONGO_SOCIAL_HEAT_ENABLE=true
 export MONGO_SOCIAL_HEAT_DATABASE=socialheat_staging
 export MONGO_SOCIAL_AUTH_SOURCE=socialheat_staging
+```
 
-# --- Start Command ---
+### Start Command
+```bash
 NODE_ENV=staging yarn start --scope=@ynm/cl-source-updater-service
+```
 
+---
 
+## 5. Alternative Source Updater Config
+*(Additional configuration set)*
 
-
-
-
-
-
-
-///
-
+```bash
 export HTTP_PORT=9876
 export LOG_LEVEL=debug
  
@@ -271,12 +281,10 @@ export TRANSCRIPT_MAX_WAITING_TIME=1
 export TRANSCRIPT_PREFETCH_MESSAGES=1000
 export TRANSCRIPT_BATCH_SIZE=100
 
-
 export MYSQL_DEFAULT_CONNECTION_DATABASE=ynm_crawling_loaders
 export MYSQL_APP_TOPIC_ENGAGEMENT_CONNECTION_DATABASE=monitoring_app
 export MYSQL_NEWS_APP_CONNECTION_DATABASE=monitoring_master
 export MYSQL_NEWS_CONNECTION_DATABASE=crawling
-
 
 export MONGO_NEWS_ENABLE=true
 export MONGO_NEWS_DATABASE=ynm_crawler_staging
@@ -285,6 +293,9 @@ export MONGO_NEWS_AUTH_SOURCE=ynm_crawler_staging
 export MONGO_SOCIAL_HEAT_ENABLE=true
 export MONGO_SOCIAL_HEAT_DATABASE=socialheat_staging
 export MONGO_SOCIAL_AUTH_SOURCE=socialheat_staging
+```
 
- 
+### Start Command
+```bash
 NODE_ENV=staging yarn start --scope=@ynm/cl-source-updater-service
+```

@@ -451,7 +451,9 @@ const queueName = "testing.cl.identities_2_redis_identities_LamTT";
 const queueName1 = "testing.cl.identities_2_solr_identities_LamTT";
 const queueName2 = "testing.cl.identities_finished_sources_LamTT";
 const queueName7 = "testing.cl.mentions_2_solr_mentions_LamTT";
-const queue_name8 = "testing.cl.ig.keyword_posts_web_crisis_crawled_sources";
+const queueName8 = "testing.cl.posts_2_solr_ig_posts_LamTT";
+const queueName9 = "testing.cl.ig.identity_countries_crawling_sources";
+const queueName10 = "app.socialheat.crawl_keyword.results_LamTT";
 
 const queueName3 = "staging.cl.identities_2_redis_identities_LamTT";
 const queueName4 = "staging.cl.identities_2_solr_identities_LamTT";
@@ -469,7 +471,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   testHTTP,
   testDomain,
-  queue_name8,
+  queueName10,
   userName,
   testPassword,
   1000, // Batch size - số messages mỗi lần fetch
