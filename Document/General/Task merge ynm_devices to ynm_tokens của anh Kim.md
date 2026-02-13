@@ -752,3 +752,10 @@ ynm-token-manager-service-testing
 + Chạy thử các config xem có lỗi gì không
 + Kiểm tra lại các luồng sử dụng devices cũ có hoạt động được không
 + Kiểm tra lại các luồng sử dụng token có hoạt động hay không
+
+
+1. Tiktok
+ynm-cl-tt-keyword-by-mob-api-service-testing
+
+2. Threads
+ynm-cl-tr-keyword-

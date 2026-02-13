@@ -960,12 +960,16 @@ NODE_ENV=testing yarn start --scope=@ynm/cl-data-pusher-service
 
 ## Những việc cần check lại ở testing
 
-ynm-cl-fb-crawling-loader-service-testing
+1. ynm-cl-fb-crawling-loader-service-testing -> DONE
 
-ynm-cl-tr-crawling-loader-service-testing
+2. ynm-cl-tr-crawling-loader-service-testing -> DONE
 
-ynm-cl-tt-crawling-loader-service-testing
+3. ynm-cl-tt-crawling-loader-service-testing -> DONE
 
-ynm-cl-news-crawling-loader-service-testing
+4. ynm-cl-news-crawling-loader-service-testing -> DONE
 
-ynm-cl-yt-crawling-loader-service-testing
+5. ynm-cl-yt-crawling-loader-service-testing -> DONE
+
+
+6. luồng loader nước ngoài -> DONE
+ynm-cl-fb-crawling-loader-service-th-testing
