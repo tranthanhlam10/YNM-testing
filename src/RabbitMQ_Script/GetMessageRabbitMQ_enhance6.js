@@ -451,9 +451,9 @@ const queueName = "testing.cl.identities_2_redis_identities_LamTT";
 const queueName1 = "testing.cl.identities_2_solr_identities_LamTT";
 const queueName2 = "testing.cl.identities_finished_sources_LamTT";
 const queueName7 = "testing.cl.mentions_2_solr_mentions_LamTT";
-const queueName8 = "testing.cl.posts_2_solr_ig_posts_LamTT";
-const queueName9 = "testing.cl.ig.identity_countries_crawling_sources";
-const queueName10 = "app.socialheat.crawl_keyword.results_LamTT";
+const queueName8 = "staging.cl.identities_2_solr_identities_LamTT";
+const queueName9 = "staging.cl.identities_finished_sources_LamTT";
+const queueName10 = "staging.cl.mentions_2_solr_mentions_LamTT";
 
 const queueName3 = "staging.cl.identities_2_redis_identities_LamTT";
 const queueName4 = "staging.cl.identities_2_solr_identities_LamTT";
@@ -469,13 +469,13 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  testHTTP,
-  testDomain,
-  queueName10,
+  stagingHTTP,
+  stagingDomain,
+  queueName8,
   userName,
-  testPassword,
-  1000, // Batch size - số messages mỗi lần fetch
-  10 // Concurrency - số workers chạy song song (1-10)
+  stagingPassword,
+  500, // Batch size - số messages mỗi lần fetch
+  20 // Concurrency - số workers chạy song song (1-10)
   // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
   // Nhưng 5 workers chạy đồng thời => NHANH GẤP 5 LẦN!
 )
