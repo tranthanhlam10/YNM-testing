@@ -759,3 +759,58 @@ ynm-cl-tt-keyword-by-mob-api-service-testing
 
 2. Threads
 ynm-cl-tr-keyword-
+
+
+## Những việc cần check lại ở staging
+
+Kiểm tra lại deployment: 
+ynm-token-manager-service-staging
+
+- Những case cần phải check
++ Kiểm tra lại các field có được migrate/tạo đúng không -> Hiện tại đã tạo đúng với yêu cầu
++ Kiểm tra lại token manager có hoạt động được hay không -> Hiện tại token manager đã hoạt động bình thường
++ Chạy thử các config xem có lỗi gì không -> Hiện tại config đã đúng với yêu cầu
++ Kiểm tra lại các luồng sử dụng devices cũ có hoạt động được không -> Hiện tại các luồng sử dụng devices cũ đã hoạt động bình thường
++ Kiểm tra lại các luồng sử dụng token có hoạt động hay không -> Đang bị lỗi
+
+
+1. Tiktok
+ynm-cl-tt-keyword-by-mob-api-service-staging
+
+2. Threads
+ynm-cl-tr-keyword-
+
+
+tr-source
+
+
+{
+  "id": "63454508403",
+  "retries": 0,
+  "delay_time_rules": [
+    {
+      "lte": 720,
+      "delay": 4
+    },
+    {
+      "lte": 1440,
+      "delay": 12
+    },
+    {
+      "lte": 2160,
+      "delay": 18
+    },
+    {
+      "lte": 999999999,
+      "delay": 32
+    }
+  ],
+  "last_data_date": "2025-05-01T08:03:07.662Z",
+  "from_date": "1719993787",
+  "to_date": "1751529787",
+  "platform": 10,
+  "createdBy": "ThreadsSourceReplyCrawlingLoader",
+  "link": "threads.com/@maidora.maidora",
+  "id_social": "63454508403",
+  "username": "maidora.maidora"
+}

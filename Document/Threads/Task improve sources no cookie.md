@@ -740,8 +740,7 @@ Các cases cần check khi đẩy qua luồng extension:
   "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
   "link": "threads.com/@maidora.maidora",
   "id_social": "63454508403",
-  "username": "maidora.maidora",
-     "country_code": "VN"
+  "username": "maidora.maidora"
 }
 
 

@@ -973,3 +973,24 @@ NODE_ENV=testing yarn start --scope=@ynm/cl-data-pusher-service
 
 6. luồng loader nước ngoài -> DONE
 ynm-cl-fb-crawling-loader-service-th-testing
+
+
+
+## Những việc cần check lại ở staging
+
+1. ynm-cl-fb-crawling-loader-service-staging -> 
+
+2. ynm-cl-tr-crawling-loader-service-staging -> 
+
+3. ynm-cl-tt-crawling-loader-service-staging -> 
+
+4. ynm-cl-news-crawling-loader-service-staging -> 
+
+5. ynm-cl-yt-crawling-loader-service-staging -> 
+
+
+6. luồng loader nước ngoài -> 
+ynm-cl-fb-crawling-loader-service-th-staging
+
+
+-> Hiện tại đang bị sai CI/CD, nên đang check ở DB 3 -> Hiện tại Giang đã chỉnh lại CI/CID
