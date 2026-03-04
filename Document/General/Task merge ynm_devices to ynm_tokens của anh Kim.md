@@ -771,17 +771,18 @@ ynm-token-manager-service-staging
 + Kiểm tra lại token manager có hoạt động được hay không -> Hiện tại token manager đã hoạt động bình thường
 + Chạy thử các config xem có lỗi gì không -> Hiện tại config đã đúng với yêu cầu
 + Kiểm tra lại các luồng sử dụng devices cũ có hoạt động được không -> Hiện tại các luồng sử dụng devices cũ đã hoạt động bình thường
-+ Kiểm tra lại các luồng sử dụng token có hoạt động hay không -> Đang bị lỗi
++ Kiểm tra lại các luồng sử dụng token có hoạt động hay không -> Hiện tại các luồng sử dụng token đã hoạt động bình thường
 
 
 1. Tiktok
-ynm-cl-tt-keyword-by-mob-api-service-staging
+ynm-cl-tt-keyword-by-mob-api-service-staging -> DONE
 
 2. Threads
-ynm-cl-tr-keyword-
+ynm-cl-tr-keyword-  -> DONE
 
 
-tr-source
+
+tr-source -> DONE
 
 
 {
@@ -814,3 +815,6 @@ tr-source
   "id_social": "63454508403",
   "username": "maidora.maidora"
 }
+
+
+Note: Phải build các token mới cho các luồng global

@@ -115,6 +115,7 @@ const queue_name5 = "staging.cl.posts_2_solr_ig_posts_LamTT";
 
 const queue_name6 = "staging.cl.ig.posts_crawling_sources";
 const queue_name7 = "staging.cl.identities_finished_sources";
+const queue_name8 = "app.socialheat.crawling.fb_post_url_LamTT"
 
 
 
@@ -126,10 +127,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP,
-  stagingDomain,
-  queue_name4,
+  testHTTP,
+  testDomain,
+  queue_name8,
   userName,
-  stagingPassword,
+  testPassword,
   1000
 );
