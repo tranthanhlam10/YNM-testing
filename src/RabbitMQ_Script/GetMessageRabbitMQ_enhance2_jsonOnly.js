@@ -115,7 +115,9 @@ const queue_name5 = "staging.cl.posts_2_solr_ig_posts_LamTT";
 
 const queue_name6 = "staging.cl.ig.posts_crawling_sources";
 const queue_name7 = "staging.cl.identities_finished_sources";
-const queue_name8 = "app.socialheat.crawling.fb_post_url_LamTT"
+const queue_name8 = "app.socialheat.crawling.fb_post_url_LamTT";
+const queue_name9 = "testing.cl.fb.article_urls_from_keyword_crawling_requests";
+const queue_name10 = "testing.cl.fb.article_urls_from_keyword_crawling_sources";
 
 
 
