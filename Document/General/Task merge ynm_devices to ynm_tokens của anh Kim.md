@@ -111,7 +111,7 @@ yarn dev:proxy
 
 export HTTP_PORT=9999
  
-# builder
+#builder
 export BUILDER_ENABLE=true
 export BUILDER_MAX_MSG_IN_QUEUE=5000
 export BUILDER_BATCH_SIZE=1
@@ -127,7 +127,7 @@ export RESOLVER_IS_BATCH=true
  
 #Queue
 export CRAWLER_CONFIG_CRAWLING_SOURCE_EXCHANGE=keyword.crawl.dispatch
-export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tt.posts_from_keyword_by_mobile_api_crawling_sources1
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tt.posts_from_keyword_by_mobile_api_crawling_sources
 export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=km.9_keyword.crawler1
 export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tt.posts_from_keyword_by_mobile_api_crawling_requests
 export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tt.crawled_source
