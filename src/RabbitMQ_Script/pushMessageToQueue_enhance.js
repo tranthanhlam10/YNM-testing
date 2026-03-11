@@ -140,9 +140,9 @@ async function getQueueInfo(
 async function main() {
     const messageLimit = 1000;
     const jsonFilePath =
-      "Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_mentions_2_solr_mentions_2026-03-09T10-28-55-117Z.json";
+      "Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_fb_article_urls_from_keyword_crawling_sources_2026-03-04T08-55-31-067Z.json";
     const rabbitmqHost = "rabbitmq-testing.ynm.local";
-    const queueName = "testing.cl.mentions_2_solr_mentions";
+    const queueName = "testing.cl.fb.article_urls_from_keyword_crawling_sources";
     const username = 'lamtt';
     const password = "lamtt";
     const vhost = '/';

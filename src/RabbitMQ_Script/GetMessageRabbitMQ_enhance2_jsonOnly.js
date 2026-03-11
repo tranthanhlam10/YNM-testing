@@ -127,6 +127,9 @@ const queue_name12 = "app.socialheat.crawl_keyword.results_LamTT";
 const queue_name13 = "testing.cl.fb.crisis_media_download";
 const queue_name14 = "testing.cl.fb.user_identity_countries_crawling_sources";
 const queue_name15 = "testing.cl.mentions_2_solr_mentions";
+const queue_name16 = "testing.cl.tt.posts_from_keyword_by_mobile_api_crawling_sources";
+const queue_name17 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
+const queue_name18 = "testing.cl.fb.user_identity_countries_crawling_sources";
 
 
 const userName = 'lamtt'; 
@@ -136,7 +139,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name15,
+  queue_name18,
   userName,
   testPassword,
   1000

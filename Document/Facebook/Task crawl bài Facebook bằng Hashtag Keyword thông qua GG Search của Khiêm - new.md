@@ -27,14 +27,14 @@ ynmpdp-5774-2-testing-ynm-crawler-empty
 
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5774-2-testing-ynm-crawler-empty
-kubectl exec -it ynmpdp-5774-2-testing-ynm-crawler-empty-64fff9b76b-jmjdj -n crawler-testing -- sh
+kubectl exec -it ynmpdp-5774-2-testing-ynm-crawler-empty-64fff9b76b-8xvdv -n crawler-testing -- sh
 
 kubectl config use-context lamtt-k8s-local
 
 
 2. Queue 
 
-cl.fb.article_urls_from_keyword_crawling_sources|cl.fb.article_urls_from_keyword_crawling_requests|cl.fb.article_urls_from_keyword_crawled_sources|cl.fb.article_urls_from_keyword_crawling_sources_next_pages|cl.fb.article_urls_from_critical_keyword_crawling_sources|cl.fb.article_urls_from_critical_keyword_crawling_requests|cl.fb.article_urls_from_critical_keyword_crawled_sources|cl.fb.article_urls_from_critical_keyword_crawling_sources_next_pages|cl.fb.article_urls_from_crisis_keyword_crawling_sources|cl.fb.article_urls_from_crisis_keyword_crawling_requests|cl.fb.article_urls_from_crisis_keyword_crawled_sources|cl.fb.article_urls_from_crisis_keyword_crawling_sources_next_pages|app.socialheat.crawling.fb_post_url|app.socialheat.crawl_keyword.results
+cl.fb.article_urls_from_keyword_crawling_sources|cl.fb.article_urls_from_keyword_crawling_requests|cl.fb.article_urls_from_keyword_crawled_sources|cl.fb.article_urls_from_keyword_crawling_sources_next_pages|cl.fb.article_urls_from_critical_keyword_crawling_sources|cl.fb.article_urls_from_critical_keyword_crawling_requests|cl.fb.article_urls_from_critical_keyword_crawled_sources|cl.fb.article_urls_from_critical_keyword_crawling_sources_next_pages|cl.fb.article_urls_from_crisis_keyword_crawling_sources|cl.fb.article_urls_from_crisis_keyword_crawling_requests|cl.fb.article_urls_from_crisis_keyword_crawled_sources|cl.fb.article_urls_from_crisis_keyword_crawling_sources_next_pages|app.socialheat.crawling.fb_post_url|app.socialheat.crawl_keyword.results|temp.crawling.fb_post_url
 
 3. Proxy/Token
 
@@ -284,7 +284,7 @@ yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service
 
 {
   "id_keyword": 12345,
-  "keyword": "iphone 16",
+  "keyword": "iphone 17",
   "id_platform": 1,
   "id_process": 987,
   "is_critical": 1,
@@ -383,6 +383,71 @@ yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service
 }
 
 
+{
+  "id_keyword": 12345,
+  "keyword": "Ronaldo",
+  "id_platform": 1,
+  "id_process": 987,
+  "is_critical": 1,
+  "crawling_type": "brand_tracking",
+  "source": "graph",
+  "is_first_crawl": 1,
+  "last_data_date": "2025-12-01T10:20:30Z",
+  "id_last_crawling": 5566,
+  "tag_id": "",
+  "country": "vn"
+}
+
+
+{
+  "id_keyword": 12345,
+  "keyword": "Hòa Minzy",
+  "id_platform": 1,
+  "id_process": 987,
+  "is_critical": 1,
+  "crawling_type": "brand_tracking",
+  "source": "graph",
+  "is_first_crawl": 1,
+  "last_data_date": "2025-12-01T10:20:30Z",
+  "id_last_crawling": 5566,
+  "tag_id": "",
+  "country": "vn"
+}
+
+
+{
+  "id_keyword": 12345,
+  "keyword": "Bạn trai Hòa Minzy",
+  "id_platform": 1,
+  "id_process": 987,
+  "is_critical": 1,
+  "crawling_type": "brand_tracking",
+  "source": "graph",
+  "is_first_crawl": 1,
+  "last_data_date": "2025-12-01T10:20:30Z",
+  "id_last_crawling": 5566,
+  "tag_id": "",
+  "country": "vn"
+}
+
+
+{
+  "id_keyword": 12345,
+  "keyword": "Ronaldo",
+  "id_platform": 1,
+  "id_process": 987,
+  "is_critical": 1,
+  "crawling_type": "brand_tracking",
+  "source": "graph",
+  "is_first_crawl": 1,
+  "last_data_date": "2025-12-01T10:20:30Z",
+  "id_last_crawling": 5566,
+  "tag_id": "",
+  "country": "vn"
+}
+
+
+
 
 ## Cases
 
@@ -402,8 +467,8 @@ yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service
 
 - Cases:
 + Đã format cho link post và video -> DONE
-+ Crawl nhiều page
-+ Tại sao có 1 số keyword không crawl được URL
++ Crawl nhiều page -> DONE
++ Tại sao có 1 số keyword không crawl được URL -> Đã fix
 
 
 
@@ -437,3 +502,66 @@ ynm-cl-fb-url-critical-keyword-service-testing
 - Những keyword crawl không được bài nào:
 
 VFMVSF
+c2 ngo doc
+AIA VN
+thtruefomula
+aptaclub
+
+
+
+
+{
+  "id_keyword": 12345,
+  "keyword": "thtruefomula",
+  "id_platform": 1,
+  "id_process": 987,
+  "is_critical": 1,
+  "crawling_type": "brand_tracking",
+  "source": "graph",
+  "is_first_crawl": 1,
+  "last_data_date": "2025-12-01T10:20:30Z",
+  "id_last_crawling": 5566,
+  "tag_id": "",
+  "country": "vn"
+}
+
+
+### Những việc cần check ở staging
+
+
+- Cases:
++ Đã format cho link post và video -> DONE
++ Crawl nhiều page -> DONE
++ Tại sao có 1 số keyword không crawl được URL -> Đã fix
+
+
+
+ynm-cl-fb-url-hashtag-service-staging
+
+
+ynm-cl-fb-url-keyword-service-staging
+
+
+ynm-cl-fb-url-crisis-hashtag-service-staging
+
+
+ynm-cl-fb-url-crisis-keyword-service-staging
+
+
+ynm-cl-fb-url-critical-hashtag-service-staging
+
+
+ynm-cl-fb-url-critical-keyword-service-staging
+
+
+
+
+
+
+
+
+
+
+
+
+
