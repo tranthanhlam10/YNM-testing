@@ -137,30 +137,40 @@ async function getQueueInfo(
 }
 
 
+const queue_name1 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
+const queue_name2 = "testing.cl.fb.keyword_posts_crisis_crawling_sources";
+
+
 async function main() {
     const messageLimit = 1000;
     const jsonFilePath =
-      "Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_fb_article_urls_from_keyword_crawling_sources_2026-03-04T08-55-31-067Z.json";
+      "Data_get_from_rabbitMQ_by_scripts/data_crisis_image_local/messages_testing_cl_fb_user_identity_countries_crawling_sources_2026-03-10T09-34-36-742Z.json";
     const rabbitmqHost = "rabbitmq-testing.ynm.local";
-    const queueName = "testing.cl.fb.article_urls_from_keyword_crawling_sources";
+
+
+    const queue_name1 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
+    const queue_name2 = "testing.cl.fb.keyword_posts_crisis_crawling_sources";
+    const queue_name3 = "cl.fb.keyword_posts_crisis_no_token_crawling_sources";
+    const queue_name4 = "testing.cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources";
+    const queue_name5 = "cl.fb.keyword_posts_crisis_no_token_crawling_sources";
+    const queue_name6 = "testing.cl.fb.user_identity_countries_crawling_sources";
+
+
     const username = 'lamtt';
     const password = "lamtt";
     const vhost = '/';
-
-
-  
   for(let i = 0; i < 1; i++) {
     try {
       await getQueueInfo( 
         rabbitmqHost, 
-        queueName, 
+        queue_name6, 
         username,
         password,
         vhost,);
       
       const count = await pushMessagesToRabbitMQ(jsonFilePath, 
         rabbitmqHost, 
-        queueName, 
+        queue_name6, 
         username,
         password,
         vhost,

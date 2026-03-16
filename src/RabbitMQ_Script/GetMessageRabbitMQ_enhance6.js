@@ -461,6 +461,7 @@ const queueName5 = "staging.cl.identities_finished_sources_LamTT";
 
 
 const queue_name12 = "app.socialheat.crawl_keyword.results_LamTT";
+const queue_name13 = "testing.cl.identities_2_solr_identities_LamTT";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -471,11 +472,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  stagingHTTP,
-  stagingDomain,
+  testHTTP,
+  testDomain,
   queue_name12,
   userName,
-  stagingPassword,
+  testPassword,
   500, // Batch size - số messages mỗi lần fetch
   20 // Concurrency - số workers chạy song song (1-10)
   // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự

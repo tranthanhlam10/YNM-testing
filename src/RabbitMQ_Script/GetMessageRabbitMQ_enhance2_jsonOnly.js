@@ -111,7 +111,7 @@ const queueName1 = "staging.cl.identities_2_solr_identities_LamTT";
 const queueName2 = "staging.cl.identities_2_redis_identities_LamTT";
 const queue_name3 =  "testing.cl.ig.keyword_posts_web_crisis_crawled_sources"; 
 const queue_name4 = "testing.cl.mentions_2_solr_mentions_LamTT";
-const queue_name5 = "staging.cl.posts_2_solr_ig_posts_LamTT";
+const queue_name5 = "staging.cl.posts_2_solr_fb_posts_LamTT";
 
 const queue_name6 = "staging.cl.ig.posts_crawling_sources";
 const queue_name7 = "staging.cl.identities_finished_sources";
@@ -130,6 +130,16 @@ const queue_name15 = "testing.cl.mentions_2_solr_mentions";
 const queue_name16 = "testing.cl.tt.posts_from_keyword_by_mobile_api_crawling_sources";
 const queue_name17 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
 const queue_name18 = "testing.cl.fb.user_identity_countries_crawling_sources";
+const queue_name19 = "testing.cl.tt.crisis_media_download";
+const queue_name20 = "rnd.socialheat.llm.image_extraction_LinhH";  
+const queue_name21 = "rnd.socialheat.llm.summary_input";  
+const queue_name22 = "summry_LinhH";  
+const queue_name23 = "testing.cl.fb.engagement_by_topic_crisis_image_crawling_source";  
+const queue_name24 = "testing.cl.fb.crisis_media_download";  
+const queue_name25 = "rnd.socialheat.llm.image_extraction";  
+const queue_name26 = "testing.cl.posts_2_solr_fb_posts_LamTT";
+const queue_name27 = "staging.cl.posts_2_solr_ig_posts_LamTT";  
+
 
 
 const userName = 'lamtt'; 
@@ -139,7 +149,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name18,
+  queue_name25,
   userName,
   testPassword,
   1000
