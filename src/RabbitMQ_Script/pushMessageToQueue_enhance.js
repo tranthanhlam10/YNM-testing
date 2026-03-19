@@ -144,8 +144,8 @@ const queue_name2 = "testing.cl.fb.keyword_posts_crisis_crawling_sources";
 async function main() {
     const messageLimit = 1000;
     const jsonFilePath =
-      "Document/data_test_tiktok_staging_2.json";
-    const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
+      "Data_get_from_rabbitMQ_by_scripts/data_crisis_image_local/messages_summry_LinhH_2026-03-11T10-00-16-324Z.json";
+    const rabbitmqHost = "rabbitmq-testing.ynm.local";
 
 
     const queue_name1 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
@@ -160,23 +160,23 @@ async function main() {
     const queue_name9 = "staging.cl.fb.hashtag_posts_critical_crawling_sources";
     const queue_name10 = "staging.cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_sources";
     const queue_name11 = "staging.cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources";
-
+    const queue_name12 = "testing.cl.mentions_2_solr_mentions";
 
     const username = 'lamtt';
-    const password = "vYoWn4KCmDYpvuFiqovWbF";
+    const password = "lamtt";
     const vhost = '/';
   for(let i = 0; i < 1; i++) {
     try {
       await getQueueInfo( 
         rabbitmqHost, 
-        queue_name11, 
+        queue_name12, 
         username,
         password,
         vhost,);
       
       const count = await pushMessagesToRabbitMQ(jsonFilePath, 
         rabbitmqHost, 
-        queue_name11, 
+        queue_name12, 
         username,
         password,
         vhost,

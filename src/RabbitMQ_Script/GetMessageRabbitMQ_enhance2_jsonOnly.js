@@ -141,6 +141,14 @@ const queue_name26 = "testing.cl.posts_2_solr_fb_posts_LamTT";
 const queue_name27 = "staging.cl.posts_2_solr_ig_posts_LamTT";  
 const queue_name28 = "rnd.socialheat.llm.image_extraction_error"
 
+const queue_name29 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name30 = "testing.cl.yt.article_urls_from_keyword_crawling_sources";
+const queue_name31 = "testing.cl.yt.article_urls_from_keyword_crawling_requests";
+const queue_name32 = "testing.cl.yt.article_urls_from_keyword_crawled_sources";
+const queue_name33 = "app.socialheat.crawl_keyword.results_LamTT_Youtube";
+
+
+
 
 
 const userName = 'lamtt'; 
@@ -150,7 +158,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name24,
+  queue_name4,
   userName,
   testPassword,
   1000

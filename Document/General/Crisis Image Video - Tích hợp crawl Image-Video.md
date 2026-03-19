@@ -108,7 +108,7 @@ kubectl config use-context lamtt-k8s-local
 
 2. RabbitMQ
 
-cl.fb.keyword_posts_crisis_no_token_crawling_sources|app.socialheat.crawl_keyword.results|cl.fb.user_identity_countries_crawling_sources|cl.fb.page_identity_countries_crawling_sources|cl.fb.group_identity_countries_crawling_sources|cl.fb.engagement_by_topic_crawling_sources|cl.fb.crisis_media_download|cl.fb.hashtag_posts_critical_crawling_sources|cl.fb.hashtag_posts_critical_crawling_requests|cl.fb.hashtag_posts_critical_crawled_sources|cl.fb.user_identity_countries_crawling_requests|cl.fb.user_identity_countries_crawled_sources|cl.fb.graph_engagement_by_topic_crawling_requests|cl.fb.graph_engagements_by_topic_crawled_sources|cl.tt.posts_from_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_keyword_by_mobile_api_crawled_sources|cl.tt.crisis_media_download|cl.mentions_2_solr_mentions_LamTT|cl.posts_2_solr_fb_posts_LamTT|cl.posts_2_solr_tt_posts_LamTT|cl.identities_2_solr_identities_LamTT|cl.identities_2_redis_identities_LamTT|fb.identity_countries_crawling_sources|testing.cl.posts_2_solr_tt_posts_thutt|cl.fb.engagement_by_topic_crisis_image_crawling_source|cl.fb.engagement_by_topic_crisis_image_crawling_source|cl.fb.graph_engagement_by_topic_crisis_image_crawling_requests|cl.fb.graph_engagement_by_topic_crisis_image_crawled_sources|rnd.socialheat.llm.image_extraction|image.download_to_minio|cl.fb.keyword_posts_crisis_crawled_sources|cl.fb.keyword_posts_crisis_crawling_requests|cl.fb.keyword_posts_crisis_crawling_sources|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawled_sources|cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_critical_keyword_by_mobile_api_crawled_sources
+cl.fb.keyword_posts_crisis_no_token_crawling_sources|app.socialheat.crawl_keyword.results|cl.fb.user_identity_countries_crawling_sources|cl.fb.page_identity_countries_crawling_sources|cl.fb.group_identity_countries_crawling_sources|cl.fb.engagement_by_topic_crawling_sources|cl.fb.crisis_media_download|cl.fb.hashtag_posts_critical_crawling_sources|cl.fb.hashtag_posts_critical_crawling_requests|cl.fb.hashtag_posts_critical_crawled_sources|cl.fb.user_identity_countries_crawling_requests|cl.fb.user_identity_countries_crawled_sources|cl.fb.graph_engagement_by_topic_crawling_requests|cl.fb.graph_engagements_by_topic_crawled_sources|cl.tt.posts_from_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_keyword_by_mobile_api_crawled_sources|cl.tt.crisis_media_download|cl.mentions_2_solr_mentions_LamTT|cl.posts_2_solr_fb_posts_LamTT|cl.posts_2_solr_tt_posts_LamTT|cl.identities_2_solr_identities_LamTT|cl.identities_2_redis_identities_LamTT|fb.identity_countries_crawling_sources|testing.cl.posts_2_solr_tt_posts_thutt|cl.fb.engagement_by_topic_crisis_image_crawling_source|cl.fb.engagement_by_topic_crisis_image_crawling_source|cl.fb.graph_engagement_by_topic_crisis_image_crawling_requests|cl.fb.graph_engagement_by_topic_crisis_image_crawled_sources|rnd.socialheat.llm.image_extraction|image.download_to_minio|cl.fb.keyword_posts_crisis_crawled_sources|cl.fb.keyword_posts_crisis_crawling_requests|cl.fb.keyword_posts_crisis_crawling_sources|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawled_sources|cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_critical_keyword_by_mobile_api_crawled_sources|cl.tt.user_identity_countries_crawling_sources
 
 
 3. MinIO
@@ -613,11 +613,11 @@ yarn start --scope=@ynm/cl-data-pusher-service
 
     {
     "id_keyword": 32738,
-    "keyword": "Sơn Tùng",
+    "keyword": "",
     "id_platform": 1,
     "id_process": 2855,
     "is_critical": 0,
-    "is_analyze": 1,
+    "is_analyze": 0,
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 0,
@@ -1023,6 +1023,8 @@ crawler-fb-testing-crawl-post-by-keywords-crisis -> DONE
 ## List lại các cases ở staging
 
 
+FB_PAGE_COMMENT_SOCIALIFT_CRAWLER
+
 
 staging
 
@@ -1045,7 +1047,7 @@ ynm-cl-data-pusher-mention-service
 
 - Luồng cũ
 
-crawler-fb-testing-crawl-post-by-keywords-crisis
+crawler-fb-staging-crawl-post-by-keywords-crisis
 
 1. Luồng FB cũ
 

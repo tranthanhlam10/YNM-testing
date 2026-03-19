@@ -21,7 +21,7 @@ function generateUUIDv5(input, namespace) {
 }
  
 // Example usagetiktok
-const url = "instagram.com/p/DUBVUumjFVW/";
+const url = "https://youtube.com/watch?v=JlS4hKJ02GI";
 const namespace = "6ba7b811-9dad-11d1-80b4-00c04fd430c8"; // Namespace for URL (RFC 4122)
  
 const uuid = generateUUIDv5(url, namespace);
