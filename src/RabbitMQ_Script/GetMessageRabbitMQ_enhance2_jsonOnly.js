@@ -139,6 +139,7 @@ const queue_name24 = "testing.cl.fb.crisis_media_download";
 const queue_name25 = "rnd.socialheat.llm.image_extraction";  
 const queue_name26 = "testing.cl.posts_2_solr_fb_posts_LamTT";
 const queue_name27 = "staging.cl.posts_2_solr_ig_posts_LamTT";  
+const queue_name28 = "rnd.socialheat.llm.image_extraction_error"
 
 
 
@@ -149,7 +150,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name25,
+  queue_name24,
   userName,
   testPassword,
   1000

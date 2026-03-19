@@ -982,6 +982,7 @@ Note:
 
 - Facebook
 
+
 ynm-cl-fb-keyword-post-crisis-images-service (download img svc) -> DONE
 
 
@@ -990,15 +991,12 @@ ynm-cl-fb-keyword-post-crisis-service -> DONE (Chạy is_analyze = 1, không x�
 fb-hashtag-post-critical
 
 
-FB_PAGE_IDENTITY_CRAWLER
-
-
-FB_USER_IDENTITY_JOIN_DATE_CRAWLER
-
 ynm-cl-fb-user-identity-country-service (detect country) -> Hiện tại chỗ này chưa chạy xả được
 
 
 ynm-cl-fb-graph-engagement-by-crisis-imgs (crawl detail) -> DONE
+
++ Luồng engagement thì không có xả
 
 - Tiktok
 
@@ -1026,6 +1024,29 @@ crawler-fb-testing-crawl-post-by-keywords-crisis -> DONE
 
 
 
+staging
+
+- Luồng mới
++ fb
+ynm-cl-fb-keyword-post-crisis-images-service (download img svc)
+ynm-cl-fb-keyword-post-crisis-service
+ynm-cl-fb-keyword-post-critical-service
+ynm-cl-fb-user-identity-country-service (detect country)
+ynm-cl-fb-graph-engagement-by-crisis-imgs (crawl detail)
+
++ tt
+ynm-cl-tt-crisis-images-kw-mobi-api-service (download img svc)
+
+ynm-cl-tt-crisis-keyword-by-mob-api-service
+ynm-cl-tt-critical-keyword-by-mob-api-service
+
++ data-pusher
+ynm-cl-data-pusher-mention-service
+
+- Luồng cũ
+
+crawler-fb-testing-crawl-post-by-keywords-crisis
+
 1. Luồng FB cũ
 
 
@@ -1035,17 +1056,38 @@ crawler-fb-testing-crawl-post-by-keywords-crisis -> DONE
 2. Luồng FB mới
 
 
+FB_GROUP_POST_CRAWLER
+
 - Kiểm tra luồng xả
-- Kiểm tra detect langage
-- Kiểm tra engagement
++ chạy 1 luồng bật xả, bật detect country -> Keyword crisis -> DONE
++ chạy 1 luồng bật xả, không bật detect country -> Hashtag crisis -> DONE
+
+
+Note: Nếu như identity đó đã có country_code, thì post và mentions cũng có country code
+
+- Kiểm tra detect country -> DONE
++ bật xả luồng detect country 
+
+
+- Kiểm tra engagement -> DONE
++ Bật bình thường
 
 
 3. Luồng tiktok
 - Kiểm tra luồng xả xem có vừa đẩy qua mentions, vừa đẩy qua download hay không
-
++ Chạy 1 luồng xả -> DONE
++ Chạy 1 luồng không xả -> DONE
 
 4. Luồng download fb
 
 - Kiểm tra xem có upload 
 
 
+5. Update keyword cho App
+
+Hiện tại đã update được số lượng bài post crawl về
+
+
+Câu regex mới nhất:
+
+cl.fb.keyword_posts_crisis_no_token_crawling_sources|app.socialheat.crawl_keyword.results|cl.fb.user_identity_countries_crawling_sources|cl.fb.page_identity_countries_crawling_sources|cl.fb.group_identity_countries_crawling_sources|cl.fb.engagement_by_topic_crawling_sources|cl.fb.crisis_media_download|cl.fb.hashtag_posts_critical_crawling_sources|cl.fb.hashtag_posts_critical_crawling_requests|cl.fb.hashtag_posts_critical_crawled_sources|cl.fb.user_identity_countries_crawling_requests|cl.fb.user_identity_countries_crawled_sources|cl.fb.graph_engagement_by_topic_crawling_requests|cl.fb.graph_engagements_by_topic_crawled_sources|cl.tt.posts_from_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_keyword_by_mobile_api_crawled_sources|cl.tt.crisis_media_download|cl.mentions_2_solr_mentions_LamTT|cl.posts_2_solr_fb_posts_LamTT|cl.posts_2_solr_tt_posts_LamTT|cl.identities_2_solr_identities_LamTT|cl.identities_2_redis_identities_LamTT|fb.identity_countries_crawling_sources|testing.cl.posts_2_solr_tt_posts_thutt|cl.fb.engagement_by_topic_crisis_image_crawling_source|cl.fb.engagement_by_topic_crisis_image_crawling_source|cl.fb.graph_engagement_by_topic_crisis_image_crawling_requests|cl.fb.graph_engagement_by_topic_crisis_image_crawled_sources|rnd.socialheat.llm.image_extraction|image.download_to_minio|cl.fb.keyword_posts_crisis_crawled_sources|cl.fb.keyword_posts_crisis_crawling_requests|cl.fb.keyword_posts_crisis_crawling_sources|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_crisis_keyword_by_mobile_api_crawled_sources|cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources|cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_requests|cl.tt.posts_from_critical_keyword_by_mobile_api_crawled_sources
