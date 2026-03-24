@@ -146,6 +146,7 @@ const queue_name30 = "testing.cl.yt.article_urls_from_keyword_crawling_sources";
 const queue_name31 = "testing.cl.yt.article_urls_from_keyword_crawling_requests";
 const queue_name32 = "testing.cl.yt.article_urls_from_keyword_crawled_sources";
 const queue_name33 = "app.socialheat.crawl_keyword.results_LamTT_Youtube";
+const queue_name34 = "app.socialheat.crawling.fb_post_url_LamTT";
 
 
 
@@ -158,7 +159,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name4,
+  queue_name34,
   userName,
   testPassword,
   1000

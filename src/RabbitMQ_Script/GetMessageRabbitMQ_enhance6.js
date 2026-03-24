@@ -472,6 +472,10 @@ const queue_name13 = "testing.cl.identities_2_solr_identities_LamTT";
 const queue_name14 = "app.socialheat.crawl_keyword.results_LamTT";
 const queue_name15 = "staging.cl.fb.user_identity_countries_crawling_sources";
 const queue_name16 = "rnd.socialheat.llm.image_extraction_LamTT";
+const queue_name17 = "app.socialheat.crawl_keyword.results_LamTT_Youtube";
+const queue_name18 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name19 = "rnd.socialheat.llm.image_extraction_LamTT";
+const queue_name20 = "staging.cl.mentions_2_solr_mentions";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -486,7 +490,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queue_name16,
+  queue_name20,
   userName,
   stagingPassword,
   500, // Batch size - số messages mỗi lần fetch

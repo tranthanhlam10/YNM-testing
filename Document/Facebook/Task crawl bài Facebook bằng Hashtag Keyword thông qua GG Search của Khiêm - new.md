@@ -555,6 +555,8 @@ ynm-cl-fb-url-critical-keyword-service-staging
 
 
 
+Note: Hiện tại chỗ country_code của luồng bên App đang set country_code là VN
+
 
 
 
