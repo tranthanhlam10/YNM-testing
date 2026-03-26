@@ -404,11 +404,9 @@ yarn start --scope=@ynm/cl-data-pusher-service
     "id_platform": 1,
     "id_process": 2919,
     "is_critical": 0,
-    "is_analyze": 0,
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 0,
-    "last_data_date": "2026-03-05T13:53:00.000Z",
     "id_last_crawling": 104945,
     "tag_id": null,
     "country": "VN"
@@ -490,7 +488,7 @@ yarn start --scope=@ynm/cl-data-pusher-service
     "id_platform": 1,
     "id_process": 2919,
     "is_critical": 0,
-    "is_analyze": 1,
+    "is_analyze": 0,
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 0,
@@ -526,11 +524,11 @@ yarn start --scope=@ynm/cl-data-pusher-service
 
   {
     "id_keyword": 34321,
-    "keyword": "Hoa hậu Tiểu Vy",
+    "keyword": "Neymar",
     "id_platform": 1,
     "id_process": 2911,
     "is_critical": 0,
-    "is_analyze": 1,
+    "is_analyze": 0,
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 0,
@@ -751,7 +749,23 @@ testing.cl.posts_2_solr_tt_posts
     "id_platform": 1,
     "id_process": 2955,
     "is_critical": 1,
-    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "last_data_date": "2026-03-10T06:29:00.000Z",
+    "id_last_crawling": 97217,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+  {
+    "id_keyword": 32700,
+    "keyword": "Hoa Hậu tiểu vy",
+    "id_platform": 1,
+    "id_process": 2955,
+    "is_critical": 1,
+    "is_analyze": 0,
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 1,
@@ -763,17 +777,32 @@ testing.cl.posts_2_solr_tt_posts
 
 
 
+ {
+    "id_keyword": 32700,
+    "keyword": "Hoa hậu Thanh Thủy",
+    "id_platform": 1,
+    "id_process": 2955,
+    "is_critical": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": "2026-03-10T06:29:00.000Z",
+    "id_last_crawling": 97217,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+
   {
     "id_keyword": 32700,
-    "keyword": "#GaiXinh",
+    "keyword": "Gai",
     "id_platform": 1,
     "id_process": 2955,
     "is_critical": 1,
-    "is_analyze": 1,
     "crawling_type": "crisis_tracking",
     "source": "graph",
-    "is_first_crawl": 1,
-    "last_data_date": "2026-03-10T06:29:00.000Z",
+    "is_first_crawl": 0,
     "id_last_crawling": 97217,
     "tag_id": null,
     "country": "VN"

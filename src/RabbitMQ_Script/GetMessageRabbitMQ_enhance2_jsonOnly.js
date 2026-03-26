@@ -150,7 +150,11 @@ const queue_name34 = "app.socialheat.crawling.fb_post_url_LamTT";
 const queue_name35 = "staging.cl.mentions_2_solr_mentions";
 const queue_name36 = "staging.cl.mentions_2_solr_mentions_LamTT";
 const queue_name37 = "staging.cl.tt.crisis_media_download";
-
+const queue_name38 = "staging.cl.fb.crisis_media_download";
+const queue_name39 = "staging.cl.fb.group_identity_countries_crawling_sources";
+const queue_name40 = "staging.cl.fb.page_identity_countries_crawling_sources";
+const queue_name41 = "staging.cl.fb.user_identity_countries_crawling_sources";
+const queue_name42 = "staging.cl.fb.engagement_by_topic_crisis_image_crawling_source";
 
 
 const userName = 'lamtt'; 
@@ -160,7 +164,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   stagingHTTP,
   stagingDomain,
-  queue_name37,
+  queue_name36,
   userName,
   stagingPassword,
   1000

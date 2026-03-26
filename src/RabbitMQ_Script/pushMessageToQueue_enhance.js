@@ -143,7 +143,7 @@ async function getQueueInfo(
 async function main() {
     const messageLimit = 23000;
     const jsonFilePath =
-      "Document/TestData/data_test_fb_keyword_cu_3.json";
+      "Document/TestData/data_test_keyword_youtube_5.json";
     const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
     const rabbitmqHostTesting = "rabbitmq-testing.ynm.local";
 
@@ -168,6 +168,9 @@ async function main() {
     const queue_name15 = "staging.cl.mentions_2_solr_mentions";
     
     const queue_name16 = "staging.cl.yt.article_urls_from_keyword_crawling_sources";
+    const queue_name17 = "staging.cl.fb.keyword_posts_crisis_crawling_sources";
+
+
 
 
     const username = 'lamtt';
@@ -177,14 +180,14 @@ async function main() {
     try {
       await getQueueInfo( 
         rabbitmqHost, 
-        queue_name3, 
+        queue_name16, 
         username,
         password,
         vhost,);
       
       const count = await pushMessagesToRabbitMQ(jsonFilePath, 
         rabbitmqHost, 
-        queue_name3, 
+        queue_name16, 
         username,
         password,
         vhost,
