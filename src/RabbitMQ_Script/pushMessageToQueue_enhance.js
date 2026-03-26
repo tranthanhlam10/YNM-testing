@@ -137,15 +137,15 @@ async function getQueueInfo(
 }
 
 
-const queue_name1 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
-const queue_name2 = "testing.cl.fb.keyword_posts_crisis_crawling_sources";
+
 
 
 async function main() {
     const messageLimit = 23000;
     const jsonFilePath =
-      "Document/data_luannx_mentions_staging.json";
+      "Document/TestData/data_test_fb_keyword_cu_3.json";
     const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
+    const rabbitmqHostTesting = "rabbitmq-testing.ynm.local";
 
 
     const queue_name1 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
@@ -166,6 +166,9 @@ async function main() {
     const queue_name13 = "testing.cl.yt.article_urls_from_keyword_crawling_sources";
     const queue_name14 = "app.socialheat.crawling.fb_post_url";
     const queue_name15 = "staging.cl.mentions_2_solr_mentions";
+    
+    const queue_name16 = "staging.cl.yt.article_urls_from_keyword_crawling_sources";
+
 
     const username = 'lamtt';
     const password = "vYoWn4KCmDYpvuFiqovWbF";
@@ -174,14 +177,14 @@ async function main() {
     try {
       await getQueueInfo( 
         rabbitmqHost, 
-        queue_name15, 
+        queue_name3, 
         username,
         password,
         vhost,);
       
       const count = await pushMessagesToRabbitMQ(jsonFilePath, 
         rabbitmqHost, 
-        queue_name15, 
+        queue_name3, 
         username,
         password,
         vhost,

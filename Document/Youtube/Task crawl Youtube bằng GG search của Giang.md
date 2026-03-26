@@ -183,9 +183,13 @@ Output:
   https://www.google.com.vn/search?hl=en&ie=UTF-8&lr=lang_vi&num=10&oe=UTF-8&q=BUDWEISER%20GENfest%20site%3A%28youtube.com%29&sa=N&start=0&tbs=lr%3Alang_1vi%2Ccdr%3A1%2Ccd_min%3A3%2F18%2F2026&udm=7
 
 
-## Những việc cần phải check ở Redis
+## Những việc cần phải check ở Testing
 
 
 deployment: ynm-cl-ytb-url-keyword
 
 
+## Những việc cần phải check ở Staging
+
+
+deployment: ynm-cl-ytb-url-keyword
