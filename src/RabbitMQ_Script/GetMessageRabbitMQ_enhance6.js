@@ -490,11 +490,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  stagingHTTP,
-  stagingDomain,
-  queue_name22,
+  testHTTP,
+  testDomain,
+  queueName7,
   userName,
-  stagingPassword,
+  testPassword,
   500, // Batch size - số messages mỗi lần fetch
   20 // Concurrency - số workers chạy song song (1-10)
   // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự

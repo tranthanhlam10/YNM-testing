@@ -556,6 +556,148 @@ yarn start --scope=@ynm/cl-data-pusher-service
   }
 
 
+   {
+    "id_keyword": 32736,
+    "keyword": "Trump",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": "2026-03-05T13:53:00.000Z",
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+{
+    "id_keyword": 32736,
+    "keyword": "Donald Trump",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+  {
+    "id_keyword": 32736,
+    "keyword": "#LebronJames",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+{
+    "id_keyword": 32736,
+    "keyword": "#NBA",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+  
+
+
+  
+  {
+    "id_keyword": 32736,
+    "keyword": "Iran",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+   {
+    "id_keyword": 32736,
+    "keyword": "Donald Trump",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",1,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+  {
+    "id_keyword": 32736,
+    "keyword": "Lebron James",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+  {
+    "id_keyword": 32736,
+    "keyword": "Kevin Durant",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 0,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+  {
+    "id_keyword": 32736,
+    "keyword": "Fox news",
+    "id_platform": 1,
+    "id_process": 2855,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 0,
+    "last_data_date": "2026-03-05T13:53:00.000Z",
+    "id_last_crawling": 97361,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
 
   {
     "id_keyword": 32736,

@@ -157,15 +157,23 @@ const queue_name41 = "staging.cl.fb.user_identity_countries_crawling_sources";
 const queue_name42 = "staging.cl.fb.engagement_by_topic_crisis_image_crawling_source";
 
 
+// gg maps
+const queue_name43 = "testing.cl.news.ggmaps_crawling_sources"; 
+const queue_name44 = "testing.cl.news.ggmaps_crawling_requests";
+const queue_name45 = "testing.cl.news.ggmaps_crawled_sources";
+const queue_name46 = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queue_name47 = "cl.news.article_posts_finished_sources";
+
+
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP,
-  stagingDomain,
-  queue_name36,
+  testHTTP,
+  testDomain,
+  queue_name46 ,
   userName,
-  stagingPassword,
+  testPassword,
   1000
 );
