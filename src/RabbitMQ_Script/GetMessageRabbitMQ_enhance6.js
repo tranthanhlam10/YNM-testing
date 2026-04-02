@@ -478,6 +478,8 @@ const queue_name19 = "rnd.socialheat.llm.image_extraction_LamTT";
 const queue_name20 = "staging.cl.mentions_2_solr_mentions";
 const queue_name21 = "rnd.socialheat.llm.image_extraction";
 const queue_name22 = "staging.cl.fb.crisis_media_download";
+const queue_name23 = "rnd.socialheat.llm.image_extraction"
+const queue_name24 = "rnd.socialheat.llm.summary_input";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -490,11 +492,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 // Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
 peekAllMessagesInBatches(
-  testHTTP,
-  testDomain,
-  queueName7,
+  stagingHTTP,
+  stagingDomain,
+  queueName10,
   userName,
-  testPassword,
+  stagingPassword,
   500, // Batch size - số messages mỗi lần fetch
   20 // Concurrency - số workers chạy song song (1-10)
   // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự

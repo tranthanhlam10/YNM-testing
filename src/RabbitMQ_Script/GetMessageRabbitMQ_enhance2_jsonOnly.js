@@ -163,6 +163,7 @@ const queue_name44 = "testing.cl.news.ggmaps_crawling_requests";
 const queue_name45 = "testing.cl.news.ggmaps_crawled_sources";
 const queue_name46 = "testing.cl.mentions_2_solr_mentions_LamTT";
 const queue_name47 = "cl.news.article_posts_finished_sources";
+const queue_name48 = "app.socialheat.crawling.yt_post_url_LamTT";
 
 
 const userName = 'lamtt'; 

@@ -142,8 +142,7 @@ async function getQueueInfo(
 
 async function main() {
     const messageLimit = 23000;
-    const jsonFilePath =
-      "Document/TestData/data_test_keyword_youtube_5.json";
+    const jsonFilePath = "TestData/data_test_improve_tiktok.json";
     const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
     const rabbitmqHostTesting = "rabbitmq-testing.ynm.local";
 
@@ -180,14 +179,14 @@ async function main() {
     try {
       await getQueueInfo( 
         rabbitmqHost, 
-        queue_name16, 
+        queue_name10, 
         username,
         password,
         vhost,);
       
       const count = await pushMessagesToRabbitMQ(jsonFilePath, 
         rabbitmqHost, 
-        queue_name16, 
+        queue_name10, 
         username,
         password,
         vhost,

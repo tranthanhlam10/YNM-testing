@@ -1008,7 +1008,7 @@ testing.cl.posts_2_solr_tt_posts
 
   {
     "id_keyword": 32700,
-    "keyword": "Hoa hau",
+    "keyword": "Trần Hà Linh",
     "id_platform": 9,
     "id_process": 2955,
     "is_critical": 1,
@@ -1016,11 +1016,26 @@ testing.cl.posts_2_solr_tt_posts
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 1,
-    "last_data_date": "2026-03-10T06:29:00.000Z",
     "id_last_crawling": 97217,
     "tag_id": null,
     "country": "VN"
   }
+
+  {
+    "id_keyword": 32700,
+    "keyword": "Tin tức",
+    "id_platform": 9,
+    "id_process": 2955,
+    "is_critical": 1,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "id_last_crawling": 97217,
+    "tag_id": null,
+    "country": "VN"
+  }
+  
 
 
 
