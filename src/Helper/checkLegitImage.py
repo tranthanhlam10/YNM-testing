@@ -11,9 +11,8 @@ def bytes_to_ndarray(image_bytes: bytes) -> np.ndarray:
 
 
 def main() -> None:
-    image_name = "o0I6IAB6RLAuAtDp7FaNfGgfk4yEwEmgcmikBp~tplv-tiktokx-origin.image"
-    image_name2 = "oABfAUly3FW69EyFQpEDtFfKQcIpgg1dBcWKLR~tplv-tiktokx-360p.webp"
-    image_path = Path(image_name2)
+    image_name = "TestData/oABfAUly3FW69EyFQpEDtFfKQcIpgg1dBcWKLR~tplv-tiktokx-360p.webp"
+    image_path = Path(image_name)
 
     if not image_path.exists():
         print(f"Image file not found: {image_path.resolve()}")

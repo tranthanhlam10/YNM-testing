@@ -1216,6 +1216,7 @@ staging
 ynm-cl-fb-keyword-post-crisis-images-service (download img svc)
 ynm-cl-fb-keyword-post-crisis-service
 ynm-cl-fb-keyword-post-critical-service
+ynm-cl-fb-hashtag-post-critical-service
 ynm-cl-fb-user-identity-country-service (detect country)
 ynm-cl-fb-graph-engagement-by-crisis-imgs (crawl detail)
 
