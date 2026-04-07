@@ -1013,3 +1013,39 @@ Keys Threads*
 
 - Xóa keys theo keyword
 EVAL "for _,k in ipairs(redis.call('keys','Threads*')) do redis.call('del',k) end" 0
+
+
+## Schema của article post
+
+
+id
+id_category
+id_social
+title
+id_source
+country_code
+id_channel
+updated_date
+platform
+shard
+link
+status
+state
+count_failed
+curr_page
+options
+published_date
+last_have_data_date
+end_page
+state_reach
+reach_updated_date
+views_count
+views_lasted
+priority
+likes_count
+likes_lasted
+shares_count
+shares_lasted
+comments_count
+next_time_crawl
+caption

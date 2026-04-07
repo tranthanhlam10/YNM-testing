@@ -119,10 +119,9 @@ Output:
 ## Data test
 
 
-
 {
     "id_keyword": 37009,
-    "keyword": "Messi",
+    "keyword": "Bầu cử",
     "id_platform": 7,
     "id_process": 3058,
     "is_critical": 0,
@@ -130,7 +129,6 @@ Output:
     "crawling_type": "campaign_tracking",
     "source": "graph",
     "is_first_crawl": 1,
-    "last_data_date": "2026-03-19T02:42:02.000Z",
     "id_last_crawling": 114599,
     "tag_id": null,
     "country": "VN"
@@ -142,7 +140,7 @@ Output:
 
   {
     "id_keyword": 37009,
-    "keyword": "Neymar",
+    "keyword": "World cup",
     "id_platform": 7,
     "id_process": 3058,
     "is_critical": 0,
@@ -150,7 +148,6 @@ Output:
     "crawling_type": "campaign_tracking",
     "source": "graph",
     "is_first_crawl": 1,
-    "last_data_date": "2026-03-19T02:42:02.000Z",
     "id_last_crawling": 114599,
     "tag_id": null,
     "country": "VN"
@@ -168,12 +165,59 @@ Output:
     "crawling_type": "campaign_tracking",
     "source": "graph",
     "is_first_crawl": 1,
-    "last_data_date": "2026-03-19T02:42:02.000Z",
     "id_last_crawling": 114599,
     "tag_id": null,
     "country": "VN"
   }
 
+  {
+    "id_keyword": 37009,
+    "keyword": "Hoa hậu Thanh Thủy",
+    "id_platform": 7,
+    "id_process": 3058,
+    "is_critical": 0,
+    "is_analyze": 0,
+    "crawling_type": "campaign_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "id_last_crawling": 114599,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+  {
+    "id_keyword": 37009,
+    "keyword": "Hoa hậu Tiểu Vy",
+    "id_platform": 7,
+    "id_process": 3058,
+    "is_critical": 0,
+    "is_analyze": 0,
+    "crawling_type": "campaign_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "id_last_crawling": 114599,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+  {
+    "id_keyword": 37009,
+    "keyword": "Messi",
+    "id_platform": 7,
+    "id_process": 3058,
+    "is_critical": 0,
+    "is_analyze": 0,
+    "crawling_type": "campaign_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "id_last_crawling": 114599,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+  
 
 
   https://www.google.com/search?sa=X&sca_esv=23f0f744d103c75c&rlz=1C5CHFA_enVN1065VN1065&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKp0UJuhqwKhR0QUhF54-6jIYFfWbU_Clyew-1Wh7zkL7GXEIyGmuNECR0N8Mieh0vrmfTMXwDe3hTlp9jq84DbGimhZEFOPkJpE7ldXQsFG0Dj0-Ufs0SzVjYvsfRD_fUAXWktgW-3-UpOKhiR5QyzWlu-ZjTDDYd9MnNOrUiASmBdxMBjMxL9SPXXhEetd1co-L2AyA&q=Ronaldo+site:(youtube.com)&ved=2ahUKEwijhefrz62TAxXs2zQHHXmjAe8QtKgLegQIExAB&biw=1455&bih=822&dpr=

@@ -164,6 +164,7 @@ const queue_name45 = "testing.cl.news.ggmaps_crawled_sources";
 const queue_name46 = "testing.cl.mentions_2_solr_mentions_LamTT";
 const queue_name47 = "cl.news.article_posts_finished_sources";
 const queue_name48 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name49 = "testing.cl.news.news_comments";
 
 
 const userName = 'lamtt'; 
@@ -173,7 +174,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name46 ,
+  queue_name46,
   userName,
   testPassword,
   1000

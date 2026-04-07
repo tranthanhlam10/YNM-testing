@@ -378,18 +378,20 @@ async function createFinalOutput(allPayloads, expectedTotal, outputDir, queueNam
     console.log('\n📝 Creating final output file...');
     
     // Tạo file tổng hợp
-    const finalOutput = {
-      metadata: {
-        queue_name: queueName,
-        total_expected: expectedTotal,
-        total_processed: allPayloads.length,
-        processing_complete: allPayloads.length >= expectedTotal,
-        processed_at: new Date().toISOString(),
-        processing_time_seconds: parseFloat(totalTime),
-        output_directory: outputDir
-      },
-      messages: allPayloads
-    };
+    // const finalOutput = {
+    //   metadata: {
+    //     queue_name: queueName,
+    //     total_expected: expectedTotal,
+    //     total_processed: allPayloads.length,
+    //     processing_complete: allPayloads.length >= expectedTotal,
+    //     processed_at: new Date().toISOString(),
+    //     processing_time_seconds: parseFloat(totalTime),
+    //     output_directory: outputDir
+    //   },
+    //   messages: allPayloads
+    // };
+
+    const finalOutput = allPayloads;
     
     await fs.writeFile(
       `${outputDir}/all_messages.json`,
