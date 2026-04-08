@@ -8,4 +8,4 @@ function youtubeToUUID(url) {
 }
 
 // Test
-console.log(youtubeToUUID('https://youtube.com/watch?v=ueTOODJBKBo'));
+console.log(youtubeToUUID('https://youtube.com/watch?v=rULk3AcS0SE'));

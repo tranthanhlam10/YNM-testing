@@ -204,7 +204,7 @@ Output:
 
   {
     "id_keyword": 37009,
-    "keyword": "Messi",
+    "keyword": "Hòa Minzy",
     "id_platform": 7,
     "id_process": 3058,
     "is_critical": 0,
@@ -236,4 +236,63 @@ deployment: ynm-cl-ytb-url-keyword
 ## Những việc cần phải check ở Staging
 
 
+Hiện tại flow sẽ là:
+1. Crawl được HTML
+2. Bulld ra các artilces (Từ các article đó -> check dup ở Redis DB)
+3. Nếu như articles đó tồn tại thì không xử lý
+4. Nếu như article đó không tồn tại thì đưa vào xử lý tiếp (build crawling url/build unique url)
+5. Kết thúc process
+
 deployment: ynm-cl-ytb-url-keyword
+
+missing-cache-ytb-mention-staging-ynm-crawler-empty
+
+
+
+            - name: CRAWLER_CONFIG_PROXY_CRAWLER_TYPE
+              value: IG_KEYWORD_POST_WEB_CRISIS_CRAWLER
+            - name: CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE
+              value: YT_ARTICLE_URL_FROM_CRISIS_KEYWORD_CRAWLER_LAMTT
+
+
+export LOG_LEVEL=debug
+export GOOGLE_SEARCH_CONFIG_SITES=youtube.com
+export GOOGLE_SEARCH_CONFIG_TYPE_OF_SEARCH=7
+export GOOGLE_SEARCH_CONFIG_LOCATION=''
+export REDIS_CACHE_ENABLE=true
+export CRAWLER_CONFIG_CRAWLING_SOURCE_EXCHANGE=keyword.crawl.dispatch
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.yt.article_urls_from_keyword_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=km.7__keyword.crawler
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.yt.article_urls_from_keyword_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.yt.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.yt.article_urls_from_keyword_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.7.*.*.article_urls_from_keyword
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.7.*.*.article_urls_from_keyword.next_page
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+export CRAWLER_CONFIG_RESOLVED_URL_EXCHANGE=app.socialheat.crawling
+
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=IG_KEYWORD_POST_WEB_CRISIS_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=YT_ARTICLE_URL_FROM_CRISIS_KEYWORD_CRAWLER_LAMTT
+export CRAWLER_CONFIG_MAX_CRAWLED_PAGES=3
+export CRAWLER_CONFIG_EXCLUDE_DOMAINS=apple,google,messenger,pinterest,wikipedia
+export CRAWLER_CONFIG_EXCLUDE_EXTENSIONS=pdf,doc,docx,xls,xlsx,ppt,pptx,pps
+
+export CRAWLER_CONFIG_CREATED_BY=YoutubeArticleUrlFromKeywordCrawlingLoader
+
+export CRAWLER_CONFIG_DEFAULT_DATA_DURATION=12months
+export CRAWLER_CONFIG_PAGING_ENABLE=true
+export CRAWLER_CONFIG_PRIORITY_LIMIT=1000
+export CRAWLER_CONFIG_VALID_PLATFORMS=7
+export BUILDER_ENABLE=true
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+export CRAWLER_ENABLE=true
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=15
+export RESOLVER_ENABLE=true
+
+export CRAWLER_CONFIG_RESOLVED_URL_EXCHANGE=app.socialheat.crawling
+export CRAWLER_CONFIG_RESOLVED_URL_ROUTING_KEY=crawling.yt_post_url
+
+yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service

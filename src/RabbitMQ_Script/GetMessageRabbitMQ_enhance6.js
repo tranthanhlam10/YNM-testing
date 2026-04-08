@@ -482,6 +482,7 @@ const queue_name21 = "rnd.socialheat.llm.image_extraction";
 const queue_name22 = "staging.cl.fb.crisis_media_download";
 const queue_name23 = "rnd.socialheat.llm.image_extraction"
 const queue_name24 = "rnd.socialheat.llm.summary_input";
+const queue_name25 = "app.socialheat.crawling.yt_post_url_LamTT";
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
@@ -496,7 +497,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queueName10,
+  queue_name25,
   userName,
   stagingPassword,
   500, // Batch size - số messages mỗi lần fetch
