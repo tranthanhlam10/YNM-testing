@@ -177,7 +177,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name51,
+  queue_name46,
   userName,
   testPassword,
   1000
