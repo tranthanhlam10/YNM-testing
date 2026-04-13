@@ -458,6 +458,7 @@ const queue_name22 = "staging.cl.fb.crisis_media_download";
 const queue_name23 = "rnd.socialheat.llm.image_extraction";
 const queue_name24 = "rnd.socialheat.llm.summary_input";
 const queue_name25 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name26 = "normal_priority_detail_url_info";
 
 const userName = 'lamtt';
 const testPassword = 'lamtt';
@@ -467,13 +468,13 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 // Run
 // ============================================================
 peekAllMessagesInBatches(
-  stagingHTTP,
-  stagingDomain,
-  queue_name25,
+  testHTTP,
+  testDomain,
+  queue_name26,
   userName,
-  stagingPassword,
+  testPassword,
   500,  // Batch size
-  20    // Concurrency
+  3    // Concurrency
 )
   .then((result) => {
     if (result.success) {
