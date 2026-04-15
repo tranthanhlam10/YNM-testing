@@ -217,6 +217,39 @@ Output:
     "country": "VN"
   }
 
+
+
+    {
+    "id_keyword": 37009,
+    "keyword": "Blv Anh Quân",
+    "id_platform": 7,
+    "id_process": 3058,
+    "is_critical": 0,
+    "is_analyze": 0,
+    "crawling_type": "campaign_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "id_last_crawling": 114599,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
+      {
+    "id_keyword": 37009,
+    "keyword": "Blv Mai Anh Tài",
+    "id_platform": 7,
+    "id_process": 3058,
+    "is_critical": 0,
+    "is_analyze": 0,
+    "crawling_type": "campaign_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "id_last_crawling": 114599,
+    "tag_id": null,
+    "country": "VN"
+  }
+
   
 
 

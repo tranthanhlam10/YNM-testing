@@ -310,7 +310,42 @@ concurrently --kill-others "node --max_old_space_size=8000 --stack-size=1500 ser
 1. Queue mentions
 
 
-
+{
+        "id": "d40b56c6-4d2f-51b0-a92d-bc5bbd07b79e",
+        "link": "https://vnexpress.net/ba-rac-roi-cua-ham-chung-cu-khi-xe-may-dien-tang-nhanh-5060089.html#5ceb3125d80b6eb5",
+        "domain": "vnexpress.net",
+        "id_source": "vnexpress.net",
+        "id_reference": "f073a560-f5b2-555a-96e6-b90c7e0a0354",
+        "id_parent_comment": "0d5eb89f-d49b-575f-9d0c-27b5a2e94c30",
+        "views": 0,
+        "likes": 0,
+        "comments": 0,
+        "shares": 0,
+        "rating_score": 0,
+        "engagement_total": 0,
+        "engagement_s_c": 0,
+        "identity": "e8745ed6715e8e65",
+        "identity_name": "alibaD",
+        "platform": 3,
+        "mention_type": 2,
+        "mention_type_details": 2,
+        "title": "Ba vấn đề của xe máy điện với hầm chung cư",
+        "search_text": [
+          "Ba vấn đề của xe máy điện với hầm chung cư",
+          "Hạ tầng phải đáp ứng thì mới được sử dụng, bạn láy trực thăng đến Chung cư rồi bảo họ phải xây bãi đáp cho bạn hả !?"
+        ],
+        "sound": [],
+        "effect": [],
+        "attachment": "{\"parent_info\":{\"link\":\"vnexpress.net/ba-rac-roi-cua-ham-chung-cu-khi-xe-may-dien-tang-nhanh-5060089.html\",\"title\":\"Ba vấn đề của xe máy điện với hầm chung cư\"}}",
+        "link_shared": null,
+        "link_shared_domain": null,
+        "source_type": null,
+        "created_date": "2026-04-13T03:44:25.000Z",
+        "updated_at": "2026-04-13T13:00:00.171Z",
+        "shard": "20260413",
+        "createdBy": "VnexpressCrawlUrlComments",
+        "country_code": "VN"
+      }
 
 
 

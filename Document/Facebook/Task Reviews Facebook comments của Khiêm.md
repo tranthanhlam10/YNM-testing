@@ -14,9 +14,8 @@ Dẫn đến không đủ số lượng comments không đầy đủ như mong m
 
 Hiện tại dev sẽ thay đổi param ở API crawler -> thành limit 500
 
-3 posts - 500 comments / requests -> Mỗi 1 post tối đa là 500 cmts
+3 posts - 500 comments / requests -> Mỗi 1 post/page trả tối đa là 500 cmts
 
-Ngoài ra không thay đổi
 
 Resolve - parser - mapping data không thây đổi
 
@@ -53,15 +52,44 @@ kubectl config use-context lamtt-k8s-local
 2. Rabbit MQ
 
 
-cl.fb.group_comments_numerous_crawling_sources|cl.fb.group_comments_numerous_crawling_requests|cl.fb.group_comments_numerous_crawled_sources|cl.mentions_2_solr_mentions_LamTT|identities_2_solr_identities|identities_2_redis_identities
+cl.fb.group_comments_numerous_crawling_sources|cl.fb.group_comments_numerous_crawling_reqests|cl.fb.group_comments_numerous_crawled_sources|cl.mentions_2_solr_mentions_LamTT|identities_2_solr_identities_LamTT|identities_2_redis_identities_LamTT|testing.cl.fb.group_comments_crawling_sources
 
 
 
 3. Message loader
 
+ynm-cl-fb-crawling-loader-service-testing
 
 
-
+{
+    "id": "535844485428888_1299415749071754",
+    "id_source": "fb_1299415749071754",
+    "retries": 0,
+    "type": 3,
+    "delay_time_rules": [
+        {
+            "lte": 168,
+            "delay": 18
+        },
+        {
+            "lte": 336,
+            "delay": 48
+        },
+        {
+            "lte": 999999999,
+            "delay": 720
+        }
+    ],
+    "last_data_date": "2026-02-22T02:14:31Z",
+    "from_date": "1771726471",
+    "to_date": "1773831081",
+    "platform": 1,
+    "createdBy": "GroupNumerousCommentCrawlingLoader",
+    "title": "xyz",
+    "created_date": "2026-02-22T02:14:33Z",
+    "shared_content": "xyzt",
+    "country_code": "VN"
+}
 
 
 # Script run
@@ -87,7 +115,7 @@ export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=FB_GROUP_COMMENT_NUMEROUS_CRAWLER
 export BUILDER_ENABLE='true'
 export BUILDER_WAIT_FOR_BATCH='false'
 export BUILDER_BATCH_SIZE='3'
-export BUILDER_DATA_LIMIT='1000'
+export BUILDER_DATA_LIMIT='500'
 export BUILDER_CONCURRENCY='1'
  
 export CRAWLER_ENABLE='true'

@@ -168,6 +168,7 @@ const queue_name49 = "testing.cl.news.news_comments";
 const queue_name50 = "normal_priority_detail_url_info";
 const queue_name51 = "ynm.auto_parser.normal_priority_article_urls_crawled_by_http_crawler";
 const queue_name52 = "testing.cl.news.article_posts";
+const queue_name53 = "testing.cl.mentions_2_solr_mentions_LamTT_2";
 
 
 const userName = 'lamtt'; 
@@ -177,7 +178,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekMessagesAndSaveToJSON(
   testHTTP,
   testDomain,
-  queue_name46,
+  queue_name53,
   userName,
   testPassword,
   1000
