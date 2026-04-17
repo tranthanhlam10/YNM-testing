@@ -39,7 +39,7 @@ Nếu article post / article review (nếu có) không có giá trị ở field 
 
 1. RabbitMQ
 
-(high|normal)_priority_detail_url_info(_global)?$|ynm.auto_parser(_global)?.(high|normal)_priority_article_urls_crawled_by_(browser|http)_crawler$|ynm.auto_parser(_global)?.error_article_urls$|ynm.auto_parser(_global)?.raw_article_contents$|parsed_detail_output$|(dev|testing|staging|production).cl.mentions_2_solr_mentions$|(dev|testing|staging|production).cl.news.(article_posts|article_crawl_reviews)$|cl.mentions_2_solr_mentions_LamTT|staging.cl.news.article_posts_LamTT
+(high|normal)_priority_detail_url_info(_global)?$|ynm.auto_parser(_global)?.(high|normal)_priority_article_urls_crawled_by_(browser|http)_crawler$|ynm.auto_parser(_global)?.error_article_urls$|ynm.auto_parser(_global)?.raw_article_contents$|parsed_detail_output$|(dev|testing|staging|production).cl.mentions_2_solr_mentions$|(dev|testing|staging|production).cl.news.(article_posts|article_crawl_reviews)$|cl.mentions_2_solr_mentions_LamTT|staging.cl.news.article_posts_LamTT|cl.news.article_urls_LamTT
 
 
 2. K8s

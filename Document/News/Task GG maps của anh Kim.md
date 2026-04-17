@@ -71,11 +71,10 @@ Crawling Loader: GoogleMapsReviewsCrawlingLoader
 
 
 ## Rabbit 
+cl.news.ggmaps_crawling_sources|cl.news.ggmaps_crawling_sources_next_pages|cl.news.ggmaps_crawling_requests|cl.news.ggmaps_crawled_sources|cl.mentions_2_solr_mentions_LamTT|cl.news.article_posts_finished_sources
 
- cl.news.ggmaps_crawling_sources|cl.news.ggmaps_crawling_sources_next_pages|cl.news.ggmaps_crawling_requests|cl.news.ggmaps_crawled_sources|cl.mentions_2_solr_mentions_LamTT|cl.news.article_posts_finished_sources
 
-
- cl.news.article_post_from_ggmaps_crawling_sources|cl.news.article_post_from_ggmaps_crawling_requests|cl.news.article_post_from_ggmaps_crawled_sources|cl.mentions_2_solr_mentions_LamTT|cl.news.article_posts_finished_sources|
+ cl.news.article_post_from_ggmaps_crawling_sources|cl.news.article_post_from_ggmaps_crawling_requests|cl.news.article_post_from_ggmaps_crawled_sources|cl.mentions_2_solr_mentions_LamTT|cl.news.article_posts_finished_sources|cl.news.ggmaps_finished_sources
 
 
 ## Câu lệnh chạy
@@ -109,6 +108,7 @@ export CRAWLING_ENABLE=true
 export RESOLVER_ENABLE=true
 
 export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TR_REPLY_BY_REPLY_ST_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=LAMTT_FAIL_TOKEN
 
 export CRAWLER_CONFIG_MAX_CRAWLED_DAY=3
 export CRAWLER_CONFIG_NEXT_TIME_CRAWL=1
@@ -366,7 +366,7 @@ mention_type_detail: đang lấy bằng 2 -> Hiện tại đã lấy đúng yêu
 
 
 {
-    "id": "ChIJ8dYGdsEudTERAEPpi-RL9PQ",
+    "id": "9e38cc40-496a-552c-b41d-5914d95dc83f",
     "title": "Hồ Chí Minh Đại học Bách Khoa",
     "id_source": "https://www.google.com/maps/place/H%E1%BB%93+Ch%C3%AD+Minh+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+B%C3%A1ch+Khoa/@10.7712345,106.6555378,18.07z/data=!4m15!1m8!3m7!1s0x31752ec031363df5:0x705978e7a9bca5c8!2zxJAuIEzhu68gR2lhLCBQaMO6IFRo4buNLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!3b1!8m2!3d10.770769!4d106.6554942!16s%2Fg%2F1vppq06g!3m5!1s0x31752ec17606d6f1:0xf4f44be48be94300!8m2!3d10.7724592!4d106.6575122!16s%2Fg%2F11vzy8s3g1!5m2!1e1!1e4?hl=vi&entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D",
     "platform": 5,
@@ -515,6 +515,34 @@ source-updater -> DONE
 
 
 
+## Fix lại case token bị block quá nhiều
+
+- Dev hiện tại đang làm theo kiểu round rubin
+
+Mỗi request sẽ gọi 1 token lần lượt, nếu token nào bị block thì sẽ bỏ qua token đó và chuyển sang token tiếp theo
+
+ggmaps-fake-block-staging-ynm-crawler-empty
+
+
+NEWS_ARTICLE_POST_GOOGLE_MAPS_REVIEWS_CRAWLER
+
+
+SELECT * FROM `tokens` WHERE crawler_type = "NEWS_ARTICLE_POST_GOOGLE_MAPS_REVIEWS_CRAWLER" AND status = "ACTIVE" ORDER BY `tokens`.`last_used` ASC
+
+
+Câu lệnh chạy: 
+
+export HTTP_PORT=7689
+export BUILDER_ENABLE=true
+export CRAWLING_ENABLE=true
+export RESOLVER_ENABLE=true
+
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=ARTICLE_URL_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=NEWS_ARTICLE_POST_GOOGLE_MAPS_REVIEWS_CRAWLER
+
+export CRAWLER_CONFIG_MAX_CRAWLED_DAY=3
+export CRAWLER_CONFIG_NEXT_TIME_CRAWL=1
+yarn start --scope @ynm/cl-news-article-post-from-ggmaps-crawler-service
 
 
 
@@ -524,5 +552,23 @@ source-updater -> DONE
 
 
 
+{
+  "id": "b3c7d912-84fa-4e02-a93c-6d17f28eb541",
+  "title": "Highlands Coffee Lotte Lê Đại Hành",
+  "id_source": "maps.google.com",
+  "platform": 5,
+  "link": "https://www.google.com/maps/place/Highlands+Coffee+Lotte+L%C3%AA+%C4%90%E1%BA%A1i+H%C3%A0nh/@10.7620118,106.6378757,3858m/data=!3m1!1e3!4m12!1m2!2m1!1sHighlands+Coffee!3m8!1s0x31752f3fe9b43253:0x14dd041c57cdfed7!8m2!3d10.7620118!4d106.6569301!9m1!1b1!15sChBIaWdobGFuZHMgQ29mZmVlIgOIAQFaEiIQaGlnaGxhbmRzIGNvZmZlZZIBC2NvZmZlZV9zaG9w4AEA!16s%2Fg%2F11yv0mgkpp?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D",
+  "retries": 0,
+  "curr_page": 0,
+  "status": 1,
+  "next_crawl_time": "2026-03-30T04:30:44.929Z",
+  "createdBy": "GoogleMapsReviewsCrawlingLoader",
+  "id_social": "!1s0x31752f3fe9b43253:0x14dd041c57cdfed7",
+  "next_cursor": null,
+  "hash_link": "",
+  "isFullPage": true,
+  "end_page": 1
+}
 
 
+ggmaps|cl.mentions_2_solr_mentions_LamTT|cl.news.article_posts_finished_sources|cl.news.ggmaps_finished_sources

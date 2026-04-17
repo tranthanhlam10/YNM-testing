@@ -464,6 +464,7 @@ const queue_name28 = "staging.cl.mentions_2_solr_mentions_LamTT";
 const queue_name29 = "app.socialheat.crawling.yt_post_url_LamTT";
 const queue_name30 = "staging.cl.news.article_posts_LamTT";
 const queue_name31 = "high_priority_detail_url_info";
+const queue_name32 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
 
 const userName = 'lamtt';
 const testPassword = 'lamtt';
@@ -475,7 +476,7 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queue_name31,
+  queue_name32,
   userName,
   stagingPassword,
   500,  // Batch size
