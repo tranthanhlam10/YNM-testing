@@ -137,28 +137,59 @@ async function getQueueInfo(
 }
 
 
-async function main() {
-    const messageLimit = 1000;
-    const jsonFilePath= 'Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_news_article_urls_NganLTK_2025-11-14T08-48-05-570Z.json';
-    const rabbitmqHost = 'rabbitmq-staging.younetmedia.com';
-    const queueName = 'staging.cl.news.article_urls';
-    const username = 'lamtt';
-    const password = 'vYoWn4KCmDYpvuFiqovWbF';
-    const vhost = '/';
 
-  
+
+
+async function main() {
+    const messageLimit = 23000;
+    const jsonFilePath = "TestData/data_test_ggmaps.json";
+    const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
+    const rabbitmqHostTesting = "rabbitmq-testing.ynm.local";
+
+
+    const queue_name1 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
+    const queue_name2 = "testing.cl.fb.keyword_posts_crisis_crawling_sources";
+    const queue_name3 = "cl.fb.keyword_posts_crisis_no_token_crawling_sources";
+    const queue_name4 = "testing.cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources";
+    const queue_name5 = "cl.fb.keyword_posts_crisis_no_token_crawling_sources";
+    const queue_name6 = "testing.cl.fb.user_identity_countries_crawling_sources";
+
+    const queue_name7 = "cl.fb.keyword_posts_crisis_no_token_crawling_sources";
+    const queue_name8 = "staging.cl.fb.keyword_posts_crisis_crawling_sources";
+    const queue_name9 = "staging.cl.fb.hashtag_posts_critical_crawling_sources";
+    const queue_name10 = "staging.cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_sources";
+    const queue_name11 = "staging.cl.tt.posts_from_critical_keyword_by_mobile_api_crawling_sources";
+    const queue_name12 = "testing.cl.mentions_2_solr_mentions";
+    
+
+    const queue_name13 = "testing.cl.yt.article_urls_from_keyword_crawling_sources";
+    const queue_name14 = "app.socialheat.crawling.fb_post_url";
+    const queue_name15 = "staging.cl.mentions_2_solr_mentions";
+    
+    const queue_name16 = "staging.cl.yt.article_urls_from_keyword_crawling_sources";
+    const queue_name17 = "staging.cl.fb.keyword_posts_crisis_crawling_sources";
+    const queue_name18 = "staging.cl.news.article_post_from_ggmaps_crawling_sources";
+    const queue_name19 = "app.socialheat.crawling.fb_post_url"; 
+
+
+
+
+    const username = 'lamtt';
+    const password = "vYoWn4KCmDYpvuFiqovWbF";
+    const testingPassword = "lamtt";
+    const vhost = '/';
   for(let i = 0; i < 1; i++) {
     try {
       await getQueueInfo( 
         rabbitmqHost, 
-        queueName, 
+        queue_name18, 
         username,
         password,
         vhost,);
       
       const count = await pushMessagesToRabbitMQ(jsonFilePath, 
         rabbitmqHost, 
-        queueName, 
+        queue_name18, 
         username,
         password,
         vhost,

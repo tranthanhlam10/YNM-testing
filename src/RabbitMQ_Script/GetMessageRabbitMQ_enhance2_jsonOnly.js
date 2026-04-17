@@ -106,22 +106,80 @@ const stagingHTTP = 'https';
 const testDomain = 'rabbitmq-testing.ynm.local';
 const stagingDomain = 'rabbitmq-staging.younetmedia.com';
 
-const queueName = "testing.cl.replies_2_solr_tr_replies";
-const queueName1 = "testing.cl.fb.identity_graphql_identities_crawling_sources";
-const queueName2 = "testing.cl.fb.identity_graphql_identities_crawling_requests";
-const queue_name3 = "testing.cl.fb.identity_graphql_identities_crawled_sources"; 
-const queue_name4 = "testing.cl.fb.identities_finished_sources"
-const queue_name5 = "staging.cl.fb.identities_finished_sources";
+const queueName = "staging.cl.identities_finished_sources_LamTT";
+const queueName1 = "staging.cl.identities_2_solr_identities_LamTT";
+const queueName2 = "staging.cl.identities_2_redis_identities_LamTT";
+const queue_name3 =  "testing.cl.ig.keyword_posts_web_crisis_crawled_sources"; 
+const queue_name4 = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queue_name5 = "staging.cl.posts_2_solr_fb_posts_LamTT";
+
+const queue_name6 = "staging.cl.ig.posts_crawling_sources";
+const queue_name7 = "staging.cl.identities_finished_sources";
+const queue_name8 = "app.socialheat.crawling.fb_post_url_LamTT";
+const queue_name9 = "testing.cl.fb.article_urls_from_keyword_crawling_requests";
+const queue_name10 = "testing.cl.fb.article_urls_from_keyword_crawling_sources";
+
+
+
+
+const queue_name11 = "cl.fb.keyword_posts_crisis_no_token_crawling_sources";
+const queue_name12 = "app.socialheat.crawl_keyword.results_LamTT";
+const queue_name13 = "testing.cl.fb.crisis_media_download";
+const queue_name14 = "testing.cl.fb.user_identity_countries_crawling_sources";
+const queue_name15 = "testing.cl.mentions_2_solr_mentions";
+const queue_name16 = "testing.cl.tt.posts_from_keyword_by_mobile_api_crawling_sources";
+const queue_name17 = "testing.cl.fb.hashtag_posts_critical_crawling_sources";
+const queue_name18 = "testing.cl.fb.user_identity_countries_crawling_sources";
+const queue_name19 = "testing.cl.tt.crisis_media_download";
+const queue_name20 = "rnd.socialheat.llm.image_extraction_LinhH";  
+const queue_name21 = "rnd.socialheat.llm.summary_input";  
+const queue_name22 = "summry_LinhH";  
+const queue_name23 = "testing.cl.fb.engagement_by_topic_crisis_image_crawling_source";  
+const queue_name24 = "testing.cl.fb.crisis_media_download";  
+const queue_name25 = "rnd.socialheat.llm.image_extraction";  
+const queue_name26 = "testing.cl.posts_2_solr_fb_posts_LamTT";
+const queue_name27 = "staging.cl.posts_2_solr_ig_posts_LamTT";  
+const queue_name28 = "rnd.socialheat.llm.image_extraction_error"
+
+const queue_name29 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name30 = "testing.cl.yt.article_urls_from_keyword_crawling_sources";
+const queue_name31 = "testing.cl.yt.article_urls_from_keyword_crawling_requests";
+const queue_name32 = "testing.cl.yt.article_urls_from_keyword_crawled_sources";
+const queue_name33 = "app.socialheat.crawl_keyword.results_LamTT_Youtube";
+const queue_name34 = "app.socialheat.crawling.fb_post_url_LamTT";
+const queue_name35 = "staging.cl.mentions_2_solr_mentions";
+const queue_name36 = "staging.cl.mentions_2_solr_mentions_LamTT";
+const queue_name37 = "staging.cl.tt.crisis_media_download";
+const queue_name38 = "staging.cl.fb.crisis_media_download";
+const queue_name39 = "staging.cl.fb.group_identity_countries_crawling_sources";
+const queue_name40 = "staging.cl.fb.page_identity_countries_crawling_sources";
+const queue_name41 = "staging.cl.fb.user_identity_countries_crawling_sources";
+const queue_name42 = "staging.cl.fb.engagement_by_topic_crisis_image_crawling_source";
+
+
+// gg maps
+const queue_name43 = "testing.cl.news.ggmaps_crawling_sources"; 
+const queue_name44 = "testing.cl.news.ggmaps_crawling_requests";
+const queue_name45 = "testing.cl.news.ggmaps_crawled_sources";
+const queue_name46 = "testing.cl.mentions_2_solr_mentions_LamTT";
+const queue_name47 = "cl.news.article_posts_finished_sources";
+const queue_name48 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name49 = "testing.cl.news.news_comments";
+const queue_name50 = "normal_priority_detail_url_info";
+const queue_name51 = "ynm.auto_parser.normal_priority_article_urls_crawled_by_http_crawler";
+const queue_name52 = "testing.cl.news.article_posts";
+const queue_name53 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
+
 
 const userName = 'lamtt'; 
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP, 
-  stagingDomain, 
-  queue_name5, 
-  userName, 
+  stagingHTTP,
+  stagingDomain,
+  queue_name53,
+  userName,
   stagingPassword,
-  500
+  1000
 );

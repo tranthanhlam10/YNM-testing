@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { promises as fs } from 'fs';
+import crypto from 'crypto';
 
 async function peekAllMessagesInBatches(method, domain, queueName, userName, passWord, batchSize = 500, concurrency = 3) {
   try {
     console.log('🔍 Getting queue information...');
     
-    // Get queue info to know total message count
     const queueInfo = await getQueueInfo(method, domain, queueName, userName, passWord);
     if (!queueInfo.success) {
       throw new Error(`Failed to get queue info: ${queueInfo.error}`);
@@ -25,24 +25,21 @@ async function peekAllMessagesInBatches(method, domain, queueName, userName, pas
     const encodedQueueName = encodeURIComponent(queueName);
     const url = `${method}://${domain}/api/queues/%2F/${encodedQueueName}/get`;
     
-    // Tạo thư mục để lưu kết quả
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     const baseDir = 'Data_get_from_rabbitMQ_by_scripts';
     const outputDir = `${baseDir}/messages_${queueName.replace(/[^a-zA-Z0-9]/g, '_')}_${timestamp}`;
     await fs.mkdir(outputDir, { recursive: true });
     
-    // Tính tổng số messages mỗi worker sẽ fetch (để tránh trùng)
     const messagesPerWorker = Math.ceil(totalMessages / concurrency);
     
     console.log(`📋 Each worker will fetch approximately ${messagesPerWorker} messages`);
     
-    // Concurrent processing - mỗi worker fetch tuần tự nhưng workers chạy song song
     const result = await processConcurrentlySequential(
-      url, 
-      userName, 
-      passWord, 
-      totalMessages, 
-      batchSize, 
+      url,
+      userName,
+      passWord,
+      totalMessages,
+      batchSize,
       concurrency,
       messagesPerWorker,
       outputDir
@@ -50,7 +47,8 @@ async function peekAllMessagesInBatches(method, domain, queueName, userName, pas
     
     console.log(`\n🎯 PROCESSING COMPLETED`);
     console.log(`📊 Expected messages: ${totalMessages}`);
-    console.log(`✅ Processed messages: ${result.allPayloads.length}`);
+    console.log(`✅ Unique messages after dedup: ${result.allPayloads.length}`);
+    console.log(`🔁 Duplicates removed: ${result.dupCount}`);
     console.log(`📦 Total batches: ${result.totalBatches}`);
     console.log(`⏱️  Total time: ${result.totalTime}s`);
     console.log(`⚡ Speed: ${(result.allPayloads.length / result.totalTime).toFixed(0)} messages/sec`);
@@ -60,13 +58,13 @@ async function peekAllMessagesInBatches(method, domain, queueName, userName, pas
       return { success: true, totalMessages: 0, processedMessages: 0, outputDir };
     }
     
-    // Tạo file tổng hợp
-    await createFinalOutput(result.allPayloads, totalMessages, outputDir, queueName, result.totalTime);
+    await createFinalOutput(result.allPayloads, totalMessages, outputDir, queueName, result.totalTime, result.dupCount);
     
     return {
       success: true,
       totalMessages: totalMessages,
       processedMessages: result.allPayloads.length,
+      dupCount: result.dupCount,
       totalBatches: result.totalBatches,
       totalTime: result.totalTime,
       outputDir
@@ -79,16 +77,24 @@ async function peekAllMessagesInBatches(method, domain, queueName, userName, pas
   }
 }
 
+// Hash toàn bộ nội dung message để dedup
+function hashMessage(msg) {
+  // Loại bỏ metadata do mình tự gắn vào (nếu có) trước khi hash
+  const { _message_metadata, ...content } = msg;
+  return crypto
+    .createHash('md5')
+    .update(JSON.stringify(content))
+    .digest('hex');
+}
+
 async function processConcurrentlySequential(url, userName, passWord, totalMessages, batchSize, concurrency, messagesPerWorker, outputDir) {
   const startTime = Date.now();
   const allPayloads = [];
   const errors = [];
   let totalBatches = 0;
   
-  // Tạo array để track progress của từng worker
   const workerProgress = Array(concurrency).fill(0);
   
-  // Worker function - mỗi worker fetch tuần tự một số lượng messages nhất định
   const worker = async (workerId) => {
     const workerMessages = [];
     let workerBatchCount = 0;
@@ -113,7 +119,6 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
         if (!batchResult.success) {
           console.error(`[Worker ${workerId}] ❌ Batch ${workerBatchCount} failed:`, batchResult.error.message);
           
-          // Log error nhưng KHÔNG break - retry vô hạn
           errors.push({
             workerId,
             batchNumber: workerBatchCount,
@@ -121,11 +126,10 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
             timestamp: new Date().toISOString()
           });
           
-          // Retry vô hạn với exponential backoff
           const retryDelay = Math.min(30000, 2000 * Math.pow(1.5, errors.filter(e => e.workerId === workerId).length));
           console.log(`[Worker ${workerId}] 🔄 Retrying in ${(retryDelay/1000).toFixed(1)}s... (infinite retry enabled)`);
           await new Promise(resolve => setTimeout(resolve, retryDelay));
-          continue; // Retry same batch
+          continue;
         }
         
         if (batchResult.messages.length === 0) {
@@ -133,10 +137,8 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
           break;
         }
         
-        // Process messages
         const batchPayloads = processBatchMessages(batchResult.messages, globalBatchNum, workerId);
         
-        // Lưu batch file
         await fs.writeFile(
           `${outputDir}/worker${workerId}_batch_${workerBatchCount.toString().padStart(3, '0')}.json`,
           JSON.stringify(batchPayloads, null, 2)
@@ -146,20 +148,17 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
         fetchedCount += batchResult.messages.length;
         workerProgress[workerId - 1] = fetchedCount;
         
-        // Show progress
         const totalFetched = workerProgress.reduce((a, b) => a + b, 0);
         const overallProgress = ((totalFetched / totalMessages) * 100).toFixed(1);
         
         console.log(`[Worker ${workerId}] ✅ Batch ${workerBatchCount} done: ${batchResult.messages.length} messages`);
         console.log(`[Worker ${workerId}] 📈 Worker progress: ${fetchedCount}/${messagesPerWorker} | Overall: ${totalFetched}/${totalMessages} (${overallProgress}%)`);
         
-        // Kiểm tra nếu đã đủ messages cho worker này
         if (fetchedCount >= messagesPerWorker) {
           console.log(`[Worker ${workerId}] ✅ Target reached!`);
           break;
         }
         
-        // Small delay
         await new Promise(resolve => setTimeout(resolve, 300));
         
       } catch (batchError) {
@@ -171,11 +170,10 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
           timestamp: new Date().toISOString()
         });
         
-        // Retry vô hạn với exponential backoff
         const retryDelay = Math.min(30000, 2000 * Math.pow(1.5, errors.filter(e => e.workerId === workerId).length));
         console.log(`[Worker ${workerId}] 🔄 Retrying in ${(retryDelay/1000).toFixed(1)}s... (infinite retry enabled)`);
         await new Promise(resolve => setTimeout(resolve, retryDelay));
-        continue; // Retry same batch
+        continue;
       }
     }
     
@@ -189,25 +187,39 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
     };
   };
   
-  // Chạy tất cả workers song song
   console.log(`\n🚀 Starting ${concurrency} workers...\n`);
   const workerPromises = [];
   for (let i = 1; i <= concurrency; i++) {
     workerPromises.push(worker(i));
   }
   
-  // Đợi tất cả workers hoàn thành
   const workerResults = await Promise.all(workerPromises);
   
-  // Tổng hợp kết quả
+  // Tổng hợp + dedup bằng content hash
+  const seen = new Set();
+  let dupCount = 0;
+
   for (const result of workerResults) {
-    allPayloads.push(...result.messages);
     totalBatches += result.batchCount;
+    for (const msg of result.messages) {
+      const key = hashMessage(msg);
+      if (!seen.has(key)) {
+        seen.add(key);
+        allPayloads.push(msg);
+      } else {
+        dupCount++;
+      }
+    }
+  }
+
+  if (dupCount > 0) {
+    console.log(`\n🔁 Dedup: removed ${dupCount} duplicate messages (kept ${allPayloads.length} unique)`);
+  } else {
+    console.log(`\n✅ No duplicates found`);
   }
   
   const totalTime = ((Date.now() - startTime) / 1000).toFixed(2);
   
-  // Log summary
   console.log(`\n📊 WORKER SUMMARY:`);
   workerResults.forEach(r => {
     console.log(`   Worker ${r.workerId}: ${r.messageCount} messages in ${r.batchCount} batches`);
@@ -225,6 +237,7 @@ async function processConcurrentlySequential(url, userName, passWord, totalMessa
     allPayloads,
     totalBatches,
     totalTime,
+    dupCount,
     errors,
     workerResults
   };
@@ -321,40 +334,18 @@ function processBatchMessages(messages, batchNumber, workerId) {
           try {
             payload = JSON.parse(message.payload);
           } catch (parseErr) {
-            payload = { 
+            payload = {
               _raw_payload: message.payload,
-              _parse_error: true 
+              _parse_error: true
             };
           }
         } else {
           payload = message.payload;
         }
         
-        // Thêm metadata
-        // payload._message_metadata = {
-        //   properties: message.properties || {},
-        //   routing_key: message.routing_key || '',
-        //   exchange: message.exchange || '',
-        //   message_count: message.message_count || 0,
-        //   batch_number: batchNumber,
-        //   worker_id: workerId,
-        //   message_index: i + 1
-        // };
-        
         payloads.push(payload);
       } else {
-        payloads.push({
-          _no_payload: true
-          // _message_metadata: {
-          //   properties: message.properties || {},
-          //   routing_key: message.routing_key || '',
-          //   exchange: message.exchange || '',
-          //   message_count: message.message_count || 0,
-          //   batch_number: batchNumber,
-          //   worker_id: workerId,
-          //   message_index: i + 1
-          // }
-        });
+        payloads.push({ _no_payload: true });
       }
     } catch (err) {
       console.error(`❌ Error processing message ${i + 1} in batch ${batchNumber}:`, err.message);
@@ -373,24 +364,10 @@ function processBatchMessages(messages, batchNumber, workerId) {
   return payloads;
 }
 
-async function createFinalOutput(allPayloads, expectedTotal, outputDir, queueName, totalTime) {
+async function createFinalOutput(allPayloads, expectedTotal, outputDir, queueName, totalTime, dupCount) {
   try {
     console.log('\n📝 Creating final output file...');
     
-    // Tạo file tổng hợp
-    // const finalOutput = {
-    //   metadata: {
-    //     queue_name: queueName,
-    //     total_expected: expectedTotal,
-    //     total_processed: allPayloads.length,
-    //     processing_complete: allPayloads.length >= expectedTotal,
-    //     processed_at: new Date().toISOString(),
-    //     processing_time_seconds: parseFloat(totalTime),
-    //     output_directory: outputDir
-    //   },
-    //   messages: allPayloads
-    // };
-
     const finalOutput = allPayloads;
     
     await fs.writeFile(
@@ -398,11 +375,11 @@ async function createFinalOutput(allPayloads, expectedTotal, outputDir, queueNam
       JSON.stringify(finalOutput, null, 2)
     );
     
-    // Tạo file summary
     const summary = {
       queue_name: queueName,
       total_expected: expectedTotal,
       total_processed: allPayloads.length,
+      duplicates_removed: dupCount,
       success_rate: ((allPayloads.length / expectedTotal) * 100).toFixed(2) + '%',
       processing_complete: allPayloads.length >= expectedTotal,
       processing_time_seconds: parseFloat(totalTime),
@@ -431,6 +408,7 @@ async function createFinalOutput(allPayloads, expectedTotal, outputDir, queueNam
     console.log(`📊 Summary: ${outputDir}/summary.json`);
     console.log(`\n📈 STATISTICS:`);
     console.log(`✅ Valid messages: ${summary.statistics.valid_messages}`);
+    console.log(`🔁 Duplicates removed: ${dupCount}`);
     console.log(`⚠️ Parse errors: ${summary.statistics.messages_with_parse_errors}`);
     console.log(`❌ Processing errors: ${summary.statistics.messages_with_errors}`);
     console.log(`🚫 No payload: ${summary.statistics.messages_without_payload}`);
@@ -442,7 +420,9 @@ async function createFinalOutput(allPayloads, expectedTotal, outputDir, queueNam
   }
 }
 
+// ============================================================
 // Configuration
+// ============================================================
 const testHTTP = 'http';
 const stagingHTTP = 'https';
 
@@ -456,18 +436,13 @@ const queueName7 = "testing.cl.mentions_2_solr_mentions_LamTT";
 const queueName8 = "staging.cl.identities_2_solr_identities_LamTT";
 const queueName9 = "staging.cl.identities_finished_sources_LamTT";
 const queueName10 = "staging.cl.mentions_2_solr_mentions_LamTT";
-
 const queueName3 = "staging.cl.identities_2_redis_identities_LamTT";
 const queueName4 = "staging.cl.identities_2_solr_identities_LamTT";
 const queueName5 = "staging.cl.identities_finished_sources_LamTT";
-
-
 const queueName11 = "staging.cl.fb.crisis_media_download";
-const queueName12 = "staging.cl.tt.crisis_media_download"; 
+const queueName12 = "staging.cl.tt.crisis_media_download";
 const queueName13 = "staging.cl.posts_2_solr_fb_posts_LamTT";
 const queueName14 = "staging.cl.posts_2_solr_tt_posts_LamTT";
-
-
 
 const queue_name12 = "app.socialheat.crawl_keyword.results_LamTT";
 const queue_name13 = "testing.cl.identities_2_solr_identities_LamTT";
@@ -480,36 +455,37 @@ const queue_name19 = "rnd.socialheat.llm.image_extraction_LamTT";
 const queue_name20 = "staging.cl.mentions_2_solr_mentions";
 const queue_name21 = "rnd.socialheat.llm.image_extraction";
 const queue_name22 = "staging.cl.fb.crisis_media_download";
-const queue_name23 = "rnd.socialheat.llm.image_extraction"
+const queue_name23 = "rnd.socialheat.llm.image_extraction";
 const queue_name24 = "rnd.socialheat.llm.summary_input";
 const queue_name25 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name26 = "normal_priority_detail_url_info";
+const queue_name27 = "testing.cl.fb.group_comments_crawling_sources";
+const queue_name28 = "staging.cl.mentions_2_solr_mentions_LamTT";
+const queue_name29 = "app.socialheat.crawling.yt_post_url_LamTT";
+const queue_name30 = "staging.cl.news.article_posts_LamTT";
+const queue_name31 = "high_priority_detail_url_info";
+const queue_name32 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
 
-const userName = 'lamtt'; 
+const userName = 'lamtt';
 const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
-
-
-
-
-
-// Usage - với concurrent processing (KHÔNG BỊ TRÙNG)
+// ============================================================
+// Run
+// ============================================================
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queue_name25,
+  queue_name32,
   userName,
   stagingPassword,
-  500, // Batch size - số messages mỗi lần fetch
-  20 // Concurrency - số workers chạy song song (1-10)
-  // VD: 10000 messages, 5 workers => mỗi worker fetch 2000 messages tuần tự
-  // Nhưng 5 workers chạy đồng thời => NHANH GẤP 5 LẦN!
+  500,  // Batch size
+  5    // Concurrency
 )
   .then((result) => {
     if (result.success) {
-      console.log(
-        `\n🎊 SUCCESS! Processed ${result.processedMessages}/${result.totalMessages} messages in ${result.totalTime}s.`
-      );
+      console.log(`\n🎊 SUCCESS! Processed ${result.processedMessages}/${result.totalMessages} unique messages in ${result.totalTime}s.`);
+      console.log(`🔁 Duplicates removed: ${result.dupCount}`);
       console.log(`📁 Check folder: ${result.outputDir}`);
     } else {
       console.error(`💥 FAILED: ${result.error}`);

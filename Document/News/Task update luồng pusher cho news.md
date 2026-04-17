@@ -57,15 +57,46 @@ Câu lệnh chạy:
 kubectl config use-context lamtt-k8s-ovh
 kubectl get pods -n crawler-staging | grep fix-news-pusher-staging-ynm-crawler-empty
 
-kubectl exec -it fix-news-pusher-staging-ynm-crawler-empty-6d65cdd7d9-bwf2z -n crawler-staging -- sh
+- Câu lệnh chạy bằng mongosh:
+mongosh mongodb://ynm_crawler_staging:saJgNJW8v6FRh7@15.235.43.253:27017,15.235.43.254:27017/ynm_crawler_staging?authSource=ynm_crawler_staging
+
+// Câu lệnh query find đơn gianr
+db.identity_last_mentions.find().limit(5).pretty()
+
+
+// Cách sử dụng câu aggregations ở mongo
+db.identity_last_mentions.aggregate([ { $group: { _id: "$platform", count: { $sum: 1 } } } ])
+
+
+// Câu query thứ nhất của đều kiện phân trang
+db.identity_last_mentions.find({ last_crawl_followers: { $exists: false },platform:7 }).count()
+
+// Câu lệnh query đơn giản
+{ platform: 7,  last_crawl_followers: { $exists: false }  }
+{ last_mention_in_topic: -1 }
+
+
+
+kubectl get pods -n crawler-staging | grep ynmpdp-5637-staging-ynm-crawler-empty
+kubectl exec -it ynmpdp-5637-staging-ynm-crawler-empty-776fd77955-58tkq -n crawler-staging -- sh
+
+
+- Những đều cần chạy để  có data 
 
 - Deployment chạy để có data:
 
-Những luồng chạy để có data bên news
+Luồng đi first page: ynm-cl-news-article-url-service-staging
+Luồng loader của first page: ynm-cl-news-crawling-loader-service-staging 
 
 
 
-ynm-cl-news-article-url-service-staging
+REVIEW_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+NEWS_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+BLOG_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+ECOM_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+NEWS_ARTICLE_URL_BY_FIRST_PAGE_CRAWLING_LOADER_ENABLE
+
+
 
 ynm-cl-news-crisis-hashtag-service
 ynm-cl-news-crisis-hashtag-by-api-service
@@ -86,7 +117,45 @@ ynm-cl-news-keyword-service
 ynm-cl-news-parsed-details-2-mentions-service
 
 
-// News pusher -> DONE
+// Luồng crawler first page
+
+
+export HTTP_PORT=9998
+  
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.news.article_urls_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.news.article_urls_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.news.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.news.article_urls_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls.next_page
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=ARTICLE_URL_CRAWLER
+  
+export BUILDER_ENABLE=true
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+  
+export CRAWLER_ENABLE=true
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=1
+  
+export RESOLVER_ENABLE=true
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+  
+export LOG_LEVEL=debug
+  
+yarn start --scope=@ynm/cl-news-article-url-crawler-service
+
+
+
+// News pusher -> DONE (Hiện tại đã update thành công xuống mongo)
+
+- Article của luồng first page đã push được xuống mongo thành 
+- Artilce của luồng news proxy đã push được sống mongo thành công 
+- Article của luồng news api đã được push vào mongo thành công
+- Monitor source cũng update thành công
 
 export HTTP_PORT=9999
 
@@ -98,6 +167,16 @@ export ARTICLE_2_MONGO_ARTICLE_PUSHER_CONCURRENCY=5
 export ARTICLE_2_MONGO_ARTICLE_PUSHER_PREFETCH_MESSAGES=5000
 export ARTICLE_2_MONGO_ARTICLE_PUSHER_MAX_WAITING_TIME=1
 
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_BATCH_SIZE=20
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_CONCURRENCY=5
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_ENABLE=true
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_INPUT_EXCHANGE=cl.resolved_data
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_INPUT_QUEUE=cl.news.monitor_sources
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_PREFETCH_MESSAGES=1000
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_ROUTING_KEY=cl.3.monitor_sources
+export SOURCE_2_MYSQL_MONITOR_SOURCE_PUSHER_MAX_WAITING_TIME=60
+
+
 export POST_2_SOLR_YT_COMMENT_ENABLE=false
 export POST_2_SOLR_IG_POST_ENABLE=false
 
@@ -107,10 +186,6 @@ export MONGO_NEWS_DATABASE=ynm_crawler_staging
 export MONGO_NEWS_REPLICA_SET=rs0
 
 yarn start --scope=@ynm/cl-data-pusher-service
-
-
-
-
 
 
 
@@ -200,7 +275,7 @@ export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_OUTPUT_QUEUE=normal_p
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_MSG_IN_QUEUE=10000
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_DATA_LOAD_BATCH_SIZE=500
 export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_MAX_WAITING_MESSAGE_IN_QUEUE_CHECK=60
-export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=true
+export NORMAL_PRIORITY_NEWS_DETAIL_SOURCES_CRAWLING_LOADER_ENABLE=false
    
 NODE_OPTIONS="--max-old-space-size=6144" yarn start --scope=@ynm/cl-news-crawling-loader-service
 
@@ -272,10 +347,134 @@ export ARTICLE_TITLE_UPDATER_ENABLE=true
 yarn start --scope=@ynm/cl-news-source-updater-service
 
 
+- Câu lệnh chạy của các luồng keyword news
+// Keyword thường
 
+export HTTP_PORT=9990
+export GRPC_PORT=9011
+  
+export GOT_SCRAPING_SERVICE_TIMEOUT=45000
+export GOT_SCRAPING_SERVICE_MAX_RETRIES=3
+  
+export CRAWLER_CONFIG_CRAWLING_SOURCE_EXCHANGE=keyword.crawl.dispatch
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.news.article_urls_from_crisis_keyword_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=km.3_keyword.crawler-crisis
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.news.article_urls_from_crisis_keyword_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.news.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.news.article_urls_from_crisis_keyword_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls_from_crisis_keyword
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls_from_crisis_keyword.next_page
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=NEWS_CRISIS_KEYWORD_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=""
+export CRAWLER_CONFIG_PAGING_ENABLE=true
+export CRAWLER_CONFIG_CREATED_BY=NewsArticleUrlFromCrisisKeywordCrawlingLoader
+export CRAWLER_CONFIG_DETAULT_DATA_DURATION=3days
+export CRAWLER_CONFIG_MAX_CRAWLED_PAGES=1
+export CRAWLER_CONFIG_PRIORITY_LIMIT=3
+  
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+export BUILDER_ENABLE=true
+      
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=1
+export CRAWLER_ENABLE=true
+     
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+export RESOLVER_MAX_RETRIES=3
+export RESOLVER_ENABLE=true
+  
+export LOG_LEVEL=debug
+  
+export RABBIT_HEARTBEAT=10
+  
+export GOOGLE_SEARCH_CONFIG_TYPE_OF_SEARCH=nws
+  
+yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service
+
+
+// Keyword API
+
+export HTTP_PORT=9996
+export GRPC_PORT=9011
+ 
+export GOOGLE_CUSTOM_SEARCH_SERVICE_TIMEOUT=45000
+export GOOGLE_CUSTOM_SEARCH_SERVICE_MAX_RETRIES=3
+ 
+export CRAWLER_CONFIG_CRAWLING_SOURCE_EXCHANGE=keyword.crawl.dispatch
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.news.article_urls_from_crisis_keyword_by_api_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_SOURCE_ROUTING_KEY=km.3_keyword.crawler-crisis
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.news.article_urls_from_crisis_keyword_by_api_crawling_requests
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.news.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.news.article_urls_from_crisis_keyword_by_api_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls_from_crisis_keyword_by_api
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.3.*.*.article_urls_from_crisis_keyword_by_api.next_page
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=""
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=LAMTT_PROXY
+export CRAWLER_CONFIG_PAGING_ENABLE=true
+export CRAWLER_CONFIG_CREATED_BY=NewsArticleUrlFromCrisisKeywordByApiCrawlingLoader
+export CRAWLER_CONFIG_DETAULT_DATA_DURATION=3days
+export CRAWLER_CONFIG_MAX_CRAWLED_PAGES=1
+export CRAWLER_CONFIG_PRIORITY_LIMIT=3
+ 
+export BUILDER_BATCH_SIZE=1
+export BUILDER_CONCURRENCY=1
+export BUILDER_ENABLE=false
+      
+export CRAWLER_BATCH_SIZE=1
+export CRAWLER_CONCURRENCY=1
+export CRAWLER_ENABLE=true
+     
+export RESOLVER_BATCH_SIZE=1
+export RESOLVER_CONCURRENCY=1
+export RESOLVER_MAX_RETRIES=3
+export RESOLVER_ENABLE=true
+  
+export LOG_LEVEL=debug
+  
+export RABBIT_HEARTBEAT=10
+  
+yarn start --scope=@ynm/cl-news-article-url-from-keyword-crawler-service
 
 
 ## Dữ liệu của data pusher
+
+
+
+- Monitor source:
+{
+  "monitor_sources": [
+    {
+      "domain": "thoitrangthammy.com",
+      "name": "thoitrangthammy.com",
+      "type": "NEWS",
+      "priority": 10,
+      "max_connection": 10,
+      "pattern": null,
+      "pattern_login": 0,
+      "views_avg": 0,
+      "views_avg_cat": 0,
+      "createdBy": "NewsArticleUrlFromKeywordByApiCrawlingLoader"
+    },
+    {
+      "domain": "doanhnhanvn.com",
+      "name": "doanhnhanvn.com",
+      "type": "NEWS",
+      "priority": 10,
+      "max_connection": 10,
+      "pattern": null,
+      "pattern_login": 0,
+      "views_avg": 0,
+      "views_avg_cat": 0,
+      "createdBy": "NewsArticleUrlFromKeywordByApiCrawlingLoader"
+    }
+  ]
+}
 
 {"insertedCount":0,"matchedCount":0,"modifiedCount":0,"deletedCount":0,"upsertedCount":64,"upsertedIds":{"0":"c449f830-19e4-5e63-8091-aeec8a27ede6","1":"8cfd4c67-ad0f-51f5-8f35-9f86db4413da","2":"a4273c63-af80-558f-a89d-a8dee20c4d23","3":"8da66a46-7bb4-5f04-8bb5-d18f8988b4b9","4":"bb145b5d-d3bb-551f-92ae-e3aca8b73eae","5":"e747c108-830e-5581-938d-abe7b3b64992","6":"308499b1-80c3-57ca-950a-f0467cef20a5","7":"1f13ba5b-5988-5140-a33c-b1d4c4bc16ca","8":"579893ec-e1f0-5cfd-a124-1cdf9677e866","9":"a897a6ea-51c7-5133-9c13-95baa3ae4ee4","10":"5ae2dffd-15d3-5b6b-9c39-5ac0d4640f81","11":"a8e73465-3b52-564c-b897-e9b20ed43fb6","12":"efa6fc4a-cb92-59f9-84f0-bdda87bb12d6","13":"48f05af0-ed9f-5a78-80ea-397668066822","14":"997e27aa-bb28-5a74-a15c-0cfa5fc61369","15":"21e3cff4-c714-5fe3-a24d-cba45f564e8e","16":"233385e5-9122-5d3d-b1ed-47745496ff07","17":"fb920592-1552-5ab8-aeb5-4e8bd065a534","18":"ee63dcf0-14bf-58cc-9fd5-3c2ae40a2d34","19":"6b855b5f-a23f-524a-b0b6-53b57b6d4344","20":"dbd7f78f-30ac-51d3-a34a-a90e32437642","21":"07993d0e-f761-5474-b2a2-ae7b2cb52401","22":"c9576dde-e8a9-5482-84ce-3ab312e6759a","23":"dd8f18ba-766a-5940-9e37-943d17f84a83","24":"c44d8146-39e6-5608-b1cd-f4b717734d29","25":"e1aef74f-944a-575c-8ef2-6cba869bebeb","26":"9e004abb-81c4-51e4-9e69-52952abb5bcb","27":"285ee786-ce33-5b0c-a610-59f62b766040","28":"15a1ff7a-8a74-50a4-9a15-d34a0af0c3ba","29":"594edb68-7bf3-5ad3-ba39-279076b36e71","30":"2f5858af-51ed-5aa5-a7bf-f6fbf971ee16","31":"b1f8f53b-019e-5f13-8aaf-7f0040701f67","32":"3c8ccbec-2747-52ad-b1ca-136a24f6761b","33":"575c961c-dc07-5ccb-87dc-d7c164fac4fd","34":"a73eb86b-61b3-5f2f-a7ce-392cc1cb132c","35":"a23c8fc1-f045-5661-b867-718f349df7c1","36":"cc71a670-0147-5cfb-9a9c-d55e95496284","37":"d189e06a-2324-55c1-84d8-45f4f045923d","38":"373b0275-6ef6-5211-bb5d-a4281c4135ec","39":"18677f68-bb92-5ad5-8086-ddded091ecde","40":"c78c83d8-9f5e-5393-b87e-750c0b30dd36","41":"e42569b2-8cab-5519-9c49-1fbdddb059b7","42":"453030e1-c8b6-5264-9947-fe649c79dbfd","43":"74697178-fd68-5b5b-b8e3-f0e0320e86a5","44":"4cfc7cb1-604f-5676-b145-515d32b495bb","45":"db2f0af0-aa85-5cb9-b9fe-ab2380e86e8f","46":"ecd95163-54bb-5e51-8479-22caf112216a","47":"7c4c30a4-86ab-5b43-baac-4dcdf747b05a","48":"56297295-643e-5c63-8265-a3887214b79b","49":"b6a16e86-b753-541d-99d8-d5bf0c2b57b5","50":"700e9209-caaa-5427-af06-dea328f30049","51":"8107976b-5c4e-58e2-a6a5-8e18f69a9082","52":"3e92aced-e181-56ae-be51-acc12c950217","53":"f4a65bac-407b-5514-843e-c272625ed37e","54":"fa8136c3-88c1-5f54-b64d-d7f03a6ac6c7","55":"a86fbdd1-d45e-579a-9737-5a20e04c31af","56":"795e827c-df8e-50a2-a3bc-60e359d9f999","57":"e70912dd-c2cf-53d8-b8cf-16f7b9ee4352","58":"339915db-3047-5f18-8517-e4eae514c0ca","59":"47db0666-051b-5e9b-a192-2662abed349c","60":"b6e1a813-63c7-55b6-b747-aa045e90aa25","61":"00f3a306-a4d4-5a8e-8aeb-129f843109d1","62":"e6fbfb10-6a55-54ce-bc9f-0dbda5f8f01b","63":"60d8a8e2-7e25-57f7-89c4-5ee7c4fae00b"},"insertedIds":{}}
 

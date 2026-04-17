@@ -813,7 +813,8 @@ tr_67160513497
   "createdBy": "ThreadsSourceReplyNoCookieCrawlingLoader",
   "link": "threads.com/@miule5791",
   "id_social": "63472089649",
-  "username": "miule5791"
+  "username": "miule5791",
+   "country_code": "VN"
 }
 
 

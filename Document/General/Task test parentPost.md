@@ -17,8 +17,8 @@ kubectl exec -it old-crawler-shdiy-8164-parent-post-testing-empty-containergt94f
 kubectl config use-context lamtt-k8s-local
 
 
-// Câu regex để check posts 
-yt|article_posts|tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamtt
+// Câu regex để st|tr.post|posts.comments.queuecualamttcheck posts 
+yt|article_posts|tt_post|tt_com|fb_po
 
 
 yt|article_posts|tt_post|tt_com|fb_post|tr.post|posts.comments.queuecualamt|fb_comments|ynm.auto_parser|news.comment|review|thread
