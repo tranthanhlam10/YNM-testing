@@ -48,24 +48,47 @@ cl.tt.post_transcripts_crawling_sources|rnd.socialheat.llm.summary_input
 
 Message mà bên app đẩy qua
 
-
+{
+"id_classification_request": "1",
+"transcriptTrackingId": "1",
+"id_topic": "120306",
+"mentions": [
+    {
+     "id": "f485070e-877d-59cd-a54b-c2b91d551fb1",
+     "link": "tiktok.com/@MS4wLjABAAAAWuL0RsJ6KcaB1gdrDaFazyFtOLbANiX4696KbGG4sxRtdCAOrgEWIpeQrjuH8XYt/video/7548652337800203527",
+     "platform": 9,
+     "mention_type": 1,
+     "id_social": "7548652337800203527",
+     "search_text": [
+        "",
+        "Toàn cảnh full màn Cầu Hôn lãng mạn của anh Linh chị Viên Vibi . Đi xem Online mấy bà ơi 🤣 #cauhon #Vienvibi"
+     ],
+     "created_date": "2025-09-11T02:26:29Z"
+    }
+]
+}
 
 
 
 
 4. Redis
 
-
+Không quan trọng
 
 
 5. Proxy/token
 
-
-
-
+TT_POST_TRANSCRIPT_CRAWLER
 
 6. Câu lệnh chạy
 
+id
+link
+platform
+mention_type
+id_social
+search_text
+created_date
 
 
 id,link,platform,mention_type,id_social,search_text,created_date
