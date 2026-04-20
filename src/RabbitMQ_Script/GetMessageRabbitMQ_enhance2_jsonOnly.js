@@ -169,6 +169,7 @@ const queue_name50 = "normal_priority_detail_url_info";
 const queue_name51 = "ynm.auto_parser.normal_priority_article_urls_crawled_by_http_crawler";
 const queue_name52 = "testing.cl.news.article_posts";
 const queue_name53 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
+const queue_name54 = "rnd.socialheat.llm.summary_input";
 
 
 const userName = 'lamtt'; 
@@ -176,10 +177,10 @@ const testPassword = 'lamtt';
 const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 
 peekMessagesAndSaveToJSON(
-  stagingHTTP,
-  stagingDomain,
-  queue_name53,
+  testHTTP,
+  testDomain,
+  queue_name54,
   userName,
-  stagingPassword,
+  testPassword,
   1000
 );
