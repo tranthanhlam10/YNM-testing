@@ -23,7 +23,7 @@
 ynmpdp-5947-testing-ynm-crawler-empty
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5947-testing-ynm-crawler-empty
-kubectl exec -it ynmpdp-5947-testing-ynm-crawler-empty-d9dc7d9c4-4q5z4 -n crawler-testing -- sh
+kubectl exec -it ynmpdp-5947-testing-ynm-crawler-empty-c86c767b5-8hc4j -n crawler-testing -- sh
 
 kubectl config use-context lamtt-k8s-local
 
@@ -31,7 +31,7 @@ kubectl config use-context lamtt-k8s-local
 2. Queue
 
 
-cl.tt.post_transcripts_crawling_sources|rnd.socialheat.llm.summary_input
+cl.tt.post_transcripts_crawling_sources|rnd.socialheat.llm.summary_input|rnd.socialheat.llm.summary_output
 
 
 
@@ -107,6 +107,11 @@ export COMMON_CONFIG_CRAWLED_SOURCE_QUEUE="rnd.socialheat.llm.summary_input"
 export COMMON_CONFIG_RESOLVED_SOURCE_EXCHANGE="rnd.socialheat.llm.summary_output"
 export COMMON_CONFIG_MAX_RETRIES=10
 export COMMON_CONFIG_PROXY_CRAWLER_TYPE="TT_POST_TRANSCRIPT_CRAWLER"
+export TT_GRAPH_SERVICE_TIMEOUT=45000
+export COMMON_CONFIG_ENABLE_INFINITE_RETRY_ON_UNKNOWN_ERROR=true
+export COMMON_CONFIG_SLEEP_TIME_BETWEEN_RETRIES=1000
+
+
  
 export CRAWLER_BATCH_SIZE=1
 export CRAWLER_CONCURRENCY=1
@@ -117,7 +122,97 @@ export LOG_LEVEL=debug
 yarn start --scope=@ynm/cl-tt-post-transcript-crawler-service
 
 
+## Check thêm hotfix ở tiktok identity của Huy
 
+Scope: Lúc trước lỗi thì service bị đứng, sau 30s thì sẽ restart theo cơ chế của Rabbit
+Hướng giải quyết: Huy sẽ sửa dụng timeout native để timeout, nếu như request quá thời gian timeout thì sẽ ném lỗi và sẽ retry lại theo số lần retry đã cấu hình
+
+
+ynmpdp-5970-staging-ynm-crawler-empty
+
+kubectl get pods -n crawler-testing | grep ynmpdp-5970-staging-ynm-crawler-empty
+kubectl exec -it ynmpdp-5970-staging-ynm-crawler-empty-5b546657f7-2569z -n crawler-testing -- sh
+
+kubectl config use-context lamtt-k8s-ovh
+
+(dev|testing|staging|production).cl.tt.(identities|identity_countries)_(crawled|crawling)|(dev|testing|staging|production).cl.identities_finished_sources
+
+
+- Câu lệnh chạy detect country
+
+export HTTP_PORT=9999
+  
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tt.identity_countries_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tt.identity_countries_crawling_requests
+  
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tt.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tt.identity_countries_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.9.*.*.identity_countries
+  
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.9.*.*.identity_countries
+  
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+ 
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_IDENTITY_COUNTRY_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=""
+export TT_GRAPH_SERVICE_TIMEOUT=45000
+ 
+export CRAWLER_CONFIG_POST_LIMIT=10
+  
+export BUILDER_ENABLE=true
+export BUILDER_CONCURRENCY=1
+  
+export CRAWLER_ENABLE=true
+export CRAWLER_CONCURRENCY=1
+  
+export RESOLVER_ENABLE=true
+export RESOLVER_CONCURRENCY=1
+  
+export LOG_LEVEL=debug
+  
+yarn start --scope=@ynm/cl-tt-identity-crawler-service
+
+- Câu lệnh chạy của luồng identity info
+
+
+export HTTP_PORT=9998
+  
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tt.identities_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tt.identities_crawling_requests
+  
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tt.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tt.identities_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.9.*.*.identities
+  
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.9.*.*.identities
+  
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+ 
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_IDENTITY_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=""
+export TT_GRAPH_SERVICE_TIMEOUT=45000
+ 
+export CRAWLER_CONFIG_POST_LIMIT=10
+  
+export BUILDER_ENABLE=true
+export BUILDER_CONCURRENCY=1
+  
+export CRAWLER_ENABLE=true
+export CRAWLER_CONCURRENCY=1
+  
+export RESOLVER_ENABLE=true
+export RESOLVER_CONCURRENCY=1
+  
+export LOG_LEVEL=debug
+  
+yarn start --scope=@ynm/cl-tt-identity-crawler-service
+
+## Những việc cần test lại ở testing
+ 
+ 
+ynm-cl-tt-post-transcript-service
 
 
 
