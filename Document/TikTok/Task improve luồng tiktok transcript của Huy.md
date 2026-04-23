@@ -209,6 +209,15 @@ export LOG_LEVEL=debug
   
 yarn start --scope=@ynm/cl-tt-identity-crawler-service
 
+
+
+
+- Những pod cần phải chạy
+
+Deployment:
++ ynm-cl-tt-identity-service
++ ynm-cl-tt-identity-country-service
+
 ## Những việc cần test lại ở testing
  
  
