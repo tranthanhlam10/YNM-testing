@@ -479,11 +479,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queue_name34,
+  queue_name35,
   userName,
   stagingPassword,
-  500,  // Batch size
-  1    // Concurrency
+  300,  // Batch size
+  2    // Concurrency
 )
   .then((result) => {
     if (result.success) {

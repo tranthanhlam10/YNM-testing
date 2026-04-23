@@ -100,12 +100,12 @@ ynm-cl-tt-post-transcript-service-testing
 
 
 
-export HTTP_PORT=9999
+export HTTP_PORT=9898
  
 export COMMON_CONFIG_CRAWLING_SOURCE_QUEUE="cl.tt.post_transcripts_crawling_sources"
 export COMMON_CONFIG_CRAWLED_SOURCE_QUEUE="rnd.socialheat.llm.summary_input"
 export COMMON_CONFIG_RESOLVED_SOURCE_EXCHANGE="rnd.socialheat.llm.summary_output"
-export COMMON_CONFIG_MAX_RETRIES=10
+export COMMON_CONFIG_MAX_RETRIES=5
 export COMMON_CONFIG_PROXY_CRAWLER_TYPE="TT_POST_TRANSCRIPT_CRAWLER"
 export TT_GRAPH_SERVICE_TIMEOUT=45000
 export COMMON_CONFIG_ENABLE_INFINITE_RETRY_ON_UNKNOWN_ERROR=true
@@ -129,6 +129,8 @@ Hướng giải quyết: Huy sẽ sửa dụng timeout native để timeout, n�
 
 
 ynmpdp-5970-staging-ynm-crawler-empty
+ynmpdp-5970-v2-staging-ynm-crawler-empty
+
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5970-staging-ynm-crawler-empty
 kubectl exec -it ynmpdp-5970-staging-ynm-crawler-empty-5b546657f7-2569z -n crawler-testing -- sh
@@ -224,8 +226,12 @@ Deployment:
 ynm-cl-tt-post-transcript-service
 
 
+## Những việc cần test lại ở staging
 
 
++ ynm-cl-tt-post-transcript-service
++ ynm-cl-tt-identity-service
++ ynm-cl-tt-identity-country-service
 
 
 

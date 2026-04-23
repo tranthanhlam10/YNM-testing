@@ -142,7 +142,7 @@ async function getQueueInfo(
 
 async function main() {
     const messageLimit = 23000;
-    const jsonFilePath = "Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_tt_identity_countries_crawling_sources_nganltk_2026-04-22T07-46-12-670Z/all_messages.json";
+    const jsonFilePath = "Data_get_from_rabbitMQ_by_scripts/messages_staging_cl_tt_identity_countries_crawling_sources_nganltk_2026-04-23T04-04-18-190Z/all_messages.json";
     const rabbitmqHost = "rabbitmq-staging.younetmedia.com";
     const rabbitmqHostTesting = "rabbitmq-testing.ynm.local";
 
