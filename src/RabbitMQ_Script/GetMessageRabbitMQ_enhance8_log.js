@@ -23,7 +23,7 @@ const ENVIRONMENTS = {
 };
 
 // Queue muốn peek
-const TARGET_QUEUE = 'staging.cl.tt.identity_countries_crawling_sources.nganltk'; // 👈 Đổi queue
+const TARGET_QUEUE = 'staging.cl.identities_finished_sources_LamTT'; // 👈 Đổi queue
 
 // Tuning
 const BATCH_SIZE  = 300;

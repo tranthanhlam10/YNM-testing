@@ -127,7 +127,7 @@ yarn start --scope=@ynm/cl-tt-post-transcript-crawler-service
 Scope: Lúc trước lỗi thì service bị đứng, sau 30s thì sẽ restart theo cơ chế của Rabbit
 Hướng giải quyết: Huy sẽ sửa dụng timeout native để timeout, nếu như request quá thời gian timeout thì sẽ ném lỗi và sẽ retry lại theo số lần retry đã cấu hình
 
-
+ynmpdp-5970-staging-ynm-crawler-empty
 ynmpdp-5970-staging-ynm-crawler-empty
 ynmpdp-5970-v2-staging-ynm-crawler-empty
 
@@ -192,7 +192,7 @@ export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.9.*.*.identities
   
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
  
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_IDENTITY_CRAWLER
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_POST_TRANSCRIPT_CRAWLER
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=""
 export TT_GRAPH_SERVICE_TIMEOUT=45000
  
@@ -211,6 +211,34 @@ export LOG_LEVEL=debug
   
 yarn start --scope=@ynm/cl-tt-identity-crawler-service
 
+
+Data cần test lại:
+
+
+[
+  {
+    "id": "MS4wLjABAAAATQPMbdGurZNZ2emGLSBzhWfjINUpVKR6KBQ1FpX2taZN2xFtOWHbwcjch5X2tX4f",
+    "platform": 9,
+    "fullname": "YUuu°",
+    "created_date": "2026-04-18T19:48:26.272Z",
+    "retries": 0,
+    "createdBy": "TiktokUserMonthlyCrawlingLoader",
+    "mentions": [],
+    "posts": [],
+    "is_analyze": 0
+  },
+  {
+    "id": "MS4wLjABAAAAu7c-2hmHqA4PspgKH7WSMe486KCaZmf8aSDiUQWS4FAa0P-v8hUdtM1_MhLVHbh5",
+    "platform": 9,
+    "fullname": "Mr.Fabulous-DJ FM Chicago",
+    "created_date": "2026-04-18T19:48:26.272Z",
+    "retries": 0,
+    "createdBy": "TiktokUserMonthlyCrawlingLoader",
+    "mentions": [],
+    "posts": [],
+    "is_analyze": 0
+  }
+]
 
 
 
