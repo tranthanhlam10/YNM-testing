@@ -257,7 +257,16 @@ ynm-cl-tt-post-transcript-service
 ## Những việc cần test lại ở staging
 
 
-+ ynm-cl-tt-post-transcript-service
+ynm-cl-tt-post-transcript-service
+- Crawl 1 bài bình thường
+- Crawl nhiều bài
+- Crawl bài bị xóa, crawl bài bị ẩn
+- Kiểm tra thời gian timeout
+
+
+
+
+// 2 deployments này không cần phải check lại
 + ynm-cl-tt-identity-service
 + ynm-cl-tt-identity-country-service....
 
