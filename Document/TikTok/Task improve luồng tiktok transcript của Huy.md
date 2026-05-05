@@ -258,10 +258,10 @@ ynm-cl-tt-post-transcript-service
 
 
 ynm-cl-tt-post-transcript-service
-- Crawl 1 bài bình thường
-- Crawl nhiều bài
-- Crawl bài bị xóa, crawl bài bị ẩn
-- Kiểm tra thời gian timeout
+- Crawl 1 bài bình thường -> DONE
+- Crawl nhiều bài -> DONE
+- Crawl bài bị xóa, crawl bài bị ẩn -> DONE
+- Kiểm tra thời gian timeout -> DONE
 
 
 
