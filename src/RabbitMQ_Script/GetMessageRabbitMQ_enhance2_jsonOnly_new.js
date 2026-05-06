@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'testing.cl.tt.posts_from_crisis_keyword_url_crawling_sources'; // 👈 queue
+const TARGET_QUEUE = 'testing.cl.tt.crisis_media_download'; // 👈 queue
 const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
 // ============================================================
 
