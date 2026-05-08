@@ -4,8 +4,8 @@ import { promises as fs } from 'fs';
 // ============================================================
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
-const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'testing.cl.tt.crisis_media_download'; // 👈 queue
+const ACTIVE_ENV   = 'staging';                                              // 👈 'testing' | 'staging'
+const TARGET_QUEUE = 'staging.cl.tt.identity_countries_crawling_sources'; // 👈 queue
 const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
 // ============================================================
 

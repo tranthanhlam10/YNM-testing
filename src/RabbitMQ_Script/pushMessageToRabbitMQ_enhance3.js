@@ -4,10 +4,10 @@ import axios from 'axios';
 // ============================================================
 // ⚙️  CONFIG — chỉnh 4 dòng này mỗi lần chạy
 // ============================================================
-const ACTIVE_ENV   = 'testing';                                           // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'testing.cl.tt.identity_countries_crawling_sources'; // 👈 queue
+const ACTIVE_ENV   = 'staging';                                           // 👈 'testing' | 'staging'
+const TARGET_QUEUE = 'staging.cl.tt.article_urls_from_crisis_keyword_crawling_sources'; // 👈 queue
 const MESSAGE_LIMIT = 23000;                                              // 👈 số message tối đa
-const JSON_FILE    = 'Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_tt_identity_countries_crawling_sources_2026-04-28T07-57-48-762Z.json'; // 👈 file input
+const JSON_FILE    = 'TestData/data_test_tktok_detail.json'; // 👈 file input
 // ============================================================
 
 const ENVIRONMENTS = {

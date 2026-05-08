@@ -70,6 +70,28 @@ Message mà bên app đẩy qua
 
 
 
+{
+"id_classification_request": "1",
+"transcriptTrackingId": "1",
+"id_topic": "120306",
+"mentions": [
+    {
+     "id": "b96bbbe6-5ddb-5574-a3a6-427f985e877a",
+     "link": "https://www.tiktok.com/@baohatinh/video/7636590521061805320",
+     "platform": 9,
+     "mention_type": 1,
+     "id_social": "7548652337800203527",
+     "search_text": [
+        "",
+        "Toàn cảnh full màn Cầu Hôn lãng mạn của anh Linh chị Viên Vibi . Đi xem Online mấy bà ơi 🤣 #cauhon #Vienvibi"
+     ],
+     "created_date": "2025-09-11T02:26:29Z"
+    }
+]
+}
+
+
+
 
 4. Redis
 
