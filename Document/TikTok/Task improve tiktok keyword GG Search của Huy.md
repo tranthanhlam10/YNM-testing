@@ -20,7 +20,7 @@
 ynmpdp-5898-testing-ynm-crawler-empty
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5898-testing-ynm-crawler-empty
-kubectl exec -it ynmpdp-5898-testing-ynm-crawler-empty-66bcb868f6-vhpl8 -n crawler-testing -- sh
+kubectl exec -it ynmpdp-5898-testing-ynm-crawler-empty-7db868ccf7-tx6x8 -n crawler-testing -- sh
 
 kubectl config use-context lamtt-k8s-local
 
@@ -30,6 +30,10 @@ kubectl config use-context lamtt-k8s-local
 
 
 dev|testing|staging|production).cl.(mentions_2_solr_mentions|posts_2_solr_tt_posts|identities_2_solr_identities|identities_2_redis_identities)$|(dev|testing|staging|production).cl.tt.(article_urls|posts)_from(_crisis|_critical)?_(hashtag|keyword)(_url)?_(crawled|crawling)
+
+
+
+cl.tt.crisis_media_download|.cl.tt.identity_countries_|rnd.socialheat.llm.image_extraction|mentions_LamTT|cl.tt.identities_|cl.identities_2_redis_identities_LamTT
 
 
 3. Loader
@@ -75,7 +79,7 @@ export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.9.*.*.article_urls_from_crisis_keyword.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
 
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_POST_TRANSCRIPT_CRAWLER_LamTT
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_API_CRAWLER_CRISIS_KEYWORD
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=NEWS_ARTICLE_POST_GOOGLE_MAPS_REVIEWS_CRAWLER
 
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=""
@@ -127,7 +131,7 @@ export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.9.*.*.posts_from_crisis_keyw
 export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
 export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.9.*.*.posts_from_crisis_keyword_url.next_page
 export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
-export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE="TT_API_CRAWLER_CRISIS_KEYWORD"
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE="TT_API_CRAWLER"
 export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE="TT_API_CRAWLER_CRISIS_KEYWORD"
 export CRAWLER_CONFIG_PAGING_ENABLE=true
  
@@ -151,6 +155,8 @@ export RABBIT_HEARTBEAT=10
 export REDIS_USERNAME=data_ynm_crawler_use_identity
 export REDIS_PASSWORD=TzdcdL6SCIyFdLM
 export REDIS_DB=3
+
+export RESOLVER_DETECT_LANGUAGE_ENABLE=true
        
 yarn start --scope=@ynm/cl-tt-post-from-url-crawler-service
 
@@ -158,11 +164,49 @@ yarn start --scope=@ynm/cl-tt-post-from-url-crawler-service
 
 - Luồng detect của tiktok
 
+
+
 ynm-cl-tt-identity-country-service
+
+export HTTP_PORT=9999
+  
+export CRAWLER_CONFIG_CRAWLING_SOURCE_QUEUE=cl.tt.identity_countries_crawling_sources
+export CRAWLER_CONFIG_CRAWLING_REQUEST_QUEUE=cl.tt.identity_countries_crawling_requests
+  
+export CRAWLER_CONFIG_CRAWLED_SOURCE_EXCHANGE=cl.tt.crawled_source
+export CRAWLER_CONFIG_CRAWLED_SOURCE_QUEUE=cl.tt.identity_countries_crawled_sources
+export CRAWLER_CONFIG_CRAWLED_SOURCE_ROUTING_KEY=cl.9.*.*.identity_countries
+  
+export CRAWLER_CONFIG_RESOLVED_SOURCE_EXCHANGE=cl.resolved_source
+export CRAWLER_CONFIG_RESOLVED_SOURCE_ROUTING_KEY=cl.9.*.*.identity_countries
+  
+export CRAWLER_CONFIG_RESOLVED_DATA_EXCHANGE=cl.resolved_data
+ 
+export CRAWLER_CONFIG_PROXY_CRAWLER_TYPE=TT_IDENTITY_COUNTRY_CRAWLER
+export CRAWLER_CONFIG_TOKEN_CRAWLER_TYPE=""
+export TT_GRAPH_SERVICE_TIMEOUT=45000
+ 
+export CRAWLER_CONFIG_POST_LIMIT=10
+  
+export BUILDER_ENABLE=true
+export BUILDER_CONCURRENCY=1
+  
+export CRAWLER_ENABLE=true
+export CRAWLER_CONCURRENCY=1
+  
+export RESOLVER_ENABLE=true
+export RESOLVER_CONCURRENCY=1
+
+  
+export LOG_LEVEL=debug
+  
+yarn start --scope=@ynm/cl-tt-identity-crawler-service
 
 
 
 - Luồng download
+
+ynm-cl-tt-crisis-images-kw-mobi-api-service 
 
 
 export HTTP_PORT=7473
@@ -216,4 +260,61 @@ yarn start --scope @ynm/cl-tt-keyword-post-crawler-service
 ## RabbitMQ
 
 testing.cl.tt.crisis_media_download|.cl.tt.identity_countries_|rnd.socialheat.llm.image_extraction
+
+
+
+## Data test mẫu
+
+
+## Những cases cần check lại ở testing
+
+
+- Luồng gg search
+
+Hiện tại luồng GG search đã crawl được thành công urls
+
+
+NEWS_ARTICLE_POST_GOOGLE_MAPS_REVIEWS_CRAWLER_LAMTT
+
++ ynm-cl-tt-url-critical-hashtag-service
++ ynm-cl-tt-url-critical-keyword-service
+
++ ynm-cl-tt-url-crisis-hashtag-service
++ ynm-cl-tt-url-crisis-keyword-service
+
++ ynm-cl-tt-url-hashtag-service
++ ynm-cl-tt-url-keyword-service
+
+- Luồng detail
+
+
+ynm-cl-tt-post-crisis-keyword-url-service-testing
+
+
+
+- Luồng detect language
+
++ ynm-cl-tt-identity-country-service
+
+- Luồng download
+
++ ynm-cl-tt-crisis-images-kw-mobi-api-service
+
+
+
+## Những cases cần check lại ở staging
+
+NEWS_ARTICLE_POST_GOOGLE_MAPS_REVIEWS_CRAWLER_LAMTT
+
+
+
+- ynm-cl-tt-url-crisis-keyword-service
+
+- ynm-cl-tt-post-crisis-keyword-url-service
+
+- ynm-cl-tt-identity-country-service
+
+- ynm-cl-tt-crisis-images-kw-mobi-api-service
+
+
 
