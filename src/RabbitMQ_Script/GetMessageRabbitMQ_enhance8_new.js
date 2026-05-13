@@ -8,9 +8,9 @@ const ENVIRONMENTS = {
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE  = 'staging.cl.tt.identity_countries_crawling_sources.nganltk';
+const TARGET_QUEUE  = 'staging.cl.tt.article_urls_from_crisis_keyword_crawling_requests';
 const BATCH_SIZE    = 300;
-const CONCURRENCY   = 2;
+const CONCURRENCY   = 10;
 
 // Dừng khi không tìm được message mới sau N batch LIÊN TIẾP (tính trên tất cả workers)
 // Tăng nếu queue lớn và dup nhiều, giảm nếu muốn nhanh hơn

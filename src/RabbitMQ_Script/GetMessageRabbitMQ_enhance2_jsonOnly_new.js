@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'staging';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'staging.cl.tt.identity_countries_crawling_sources'; // 👈 queue
+const TARGET_QUEUE = 'rnd.socialheat.llm.image_extraction'; // 👈 queue
 const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
 // ============================================================
 
