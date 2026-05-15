@@ -3,4 +3,4 @@ Data_get_from_rabbitMQ_by_scripts/
 TestData/
 venv/
 serviceAccount.json
-AI_Agents
+Ai_Agents/

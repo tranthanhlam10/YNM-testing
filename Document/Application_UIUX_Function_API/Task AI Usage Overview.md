@@ -127,10 +127,10 @@ https://docs.google.com/spreadsheets/d/1H5kDyGS-8e8ExQgQoKVZK-EgD0VXzmG2JzLZ2J-r
 
 SELECT 
     sum(cost_usd) AS total_cost,
-    sum(input_tokens) AS total_input_tokens,
-    sum(output_tokens) AS total_output_tokens,
+    sum(input_tokens)  + sum(cached_input_tokens) AS total_input_tokens,
+    sum(output_tokens) + + sum(cached_output_tokens) AS total_output_tokens,
     sum(input_tokens + output_tokens) AS total_tokens
-FROM usage_overview_agg
+FROM socialheat.usage_overview_agg
 WHERE billed_at >= toDateTime('2026-04-30 17:00:00', 'UTC') 
   AND billed_at < toDateTime('2026-05-30 17:00:00', 'UTC');
 
@@ -143,7 +143,7 @@ Vậy thì câu query của t có đúng hay không
 
 SELECT
 COUNT (DISTINCT id_classification_request) AS total_unique_ids
-FROM socialheat. usage_overview_agg
+FROM socialheat.usage_overview_agg
 WHERE run_bucket = 'MANUAL'
 AND task_type IN ('ATTRIBUTE_CLASSIFICATION',
 'POST_SPAM_CLASSIFICATION') AND (billed_at ›= toDateTime('2026-04-11 17:00:00', 'UTC')
@@ -195,6 +195,10 @@ LamTT_AI_Usage_CombineRole_1@younetmedia.com/Lam@12345 -> DONE
 - Câu lệnh query
 
 
+--
+
+Tính cho cost_usd
+
 + Câu query chuẩn, tính cho từng department:
 
 
@@ -211,11 +215,15 @@ RankedDepartments AS (
     SELECT
         department_id,
         total_cost,
-        ROW_NUMBER() OVER (ORDER BY total_cost DESC) AS rn
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(department_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
     FROM DepartmentCosts
 )
 SELECT
-    IF(rn <= 20, toString(department_id), 'Others') AS department_group,
+    IF(rn <= 20 AND department_id IS NOT NULL, toString(department_id), 'Others') AS department_group,
     SUM(total_cost) AS final_cost
 FROM RankedDepartments
 GROUP BY department_group
@@ -239,16 +247,19 @@ RankedUsers AS (
     SELECT
         user_id,
         total_cost,
-        ROW_NUMBER() OVER (ORDER BY total_cost DESC) AS rn
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(user_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
     FROM UserCosts
 )
 SELECT
-    IF(rn <= 20, toString(user_id), 'Others') AS user_group,
+    IF(rn <= 20 AND user_id IS NOT NULL, toString(user_id), 'Others') AS user_group,
     SUM(total_cost) AS final_cost
 FROM RankedUsers
 GROUP BY user_group
 ORDER BY user_group = 'Others' ASC, final_cost DESC;
-
 
 + Câu lệnh query theo pie chart
 
@@ -265,16 +276,136 @@ RankedDepartments AS (
     SELECT
         department_id,
         total_cost,
-        ROW_NUMBER() OVER (ORDER BY total_cost DESC) AS rn
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(department_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
     FROM DepartmentCosts
 )
 SELECT
-    IF(rn <= 20, toString(department_id), 'Others') AS department_group,
+    IF(rn <= 20 AND department_id IS NOT NULL, toString(department_id), 'Others') AS department_group,
     SUM(total_cost) AS final_cost,
-    -- Tính phần trăm và làm tròn 2 chữ số thập phân
     ROUND((SUM(total_cost) / SUM(SUM(total_cost)) OVER ()) * 100, 2) AS percentage_cost
 FROM RankedDepartments
 GROUP BY department_group
 ORDER BY department_group = 'Others' ASC, final_cost DESC;
+
+
+
+--
+
+Tính theo cost_usd_after_discount
+
+- 4 Usage
+
+SELECT 
+    sum(cost_usd_after_discount) AS total_cost,
+    sum(input_tokens) AS total_input_tokens,
+    sum(output_tokens) AS total_output_tokens,
+    sum(input_tokens + output_tokens) AS total_tokens
+FROM usage_overview_agg
+WHERE billed_at >= toDateTime('2026-04-30 17:00:00', 'UTC') 
+  AND billed_at < toDateTime('2026-05-30 17:00:00', 'UTC');
+
+
+- Stacked chart by department
+
+WITH DepartmentCosts AS (
+    SELECT
+        department_id,
+        SUM(cost_usd_after_discount) AS total_cost
+    FROM socialheat.usage_overview_agg
+    WHERE billed_at >= toDateTime('2026-04-07 17:00:00', 'UTC')
+      AND billed_at <  toDateTime('2026-05-08 17:00:00', 'UTC')
+    GROUP BY department_id
+),
+RankedDepartments AS (
+    SELECT
+        department_id,
+        total_cost,
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(department_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
+    FROM DepartmentCosts
+)
+SELECT
+    IF(rn <= 20 AND department_id IS NOT NULL, toString(department_id), 'Others') AS department_group,
+    SUM(total_cost) AS final_cost
+FROM RankedDepartments
+GROUP BY department_group
+ORDER BY department_group = 'Others' ASC, final_cost DESC;
+
+
+- Stacked chart by user
+
+
+WITH UserCosts AS (
+    SELECT
+        user_id,
+        SUM(cost_usd_after_discount) AS total_cost
+    FROM socialheat.usage_overview_agg
+    WHERE billed_at >= toDateTime('2026-04-07 17:00:00', 'UTC')
+      AND billed_at <  toDateTime('2026-05-08 17:00:00', 'UTC')
+      AND department_id = 1
+    GROUP BY user_id
+),
+RankedUsers AS (
+    SELECT
+        user_id,
+        total_cost,
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(user_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
+    FROM UserCosts
+)
+SELECT
+    IF(rn <= 20 AND user_id IS NOT NULL, toString(user_id), 'Others') AS user_group,
+    SUM(total_cost) AS final_cost
+FROM RankedUsers
+GROUP BY user_group
+ORDER BY user_group = 'Others' ASC, final_cost DESC;
+
+
+
+
+- Pie chart
+
+
+WITH DepartmentCosts AS (
+    SELECT
+        department_id,
+        SUM(cost_usd_after_discount) AS total_cost
+    FROM socialheat.usage_overview_agg
+    WHERE billed_at >= toDateTime('2026-04-07 17:00:00', 'UTC')
+      AND billed_at <  toDateTime('2026-05-08 17:00:00', 'UTC')
+    GROUP BY department_id
+),
+RankedDepartments AS (
+    SELECT
+        department_id,
+        total_cost,
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(department_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
+    FROM DepartmentCosts
+)
+SELECT
+    IF(rn <= 20 AND department_id IS NOT NULL, toString(department_id), 'Others') AS department_group,
+    SUM(total_cost) AS final_cost,
+    ROUND((SUM(total_cost) / SUM(SUM(total_cost)) OVER ()) * 100, 2) AS percentage_cost
+FROM RankedDepartments
+GROUP BY department_group
+ORDER BY department_group = 'Others' ASC, final_cost DESC;
+
+
+
+
 
 
