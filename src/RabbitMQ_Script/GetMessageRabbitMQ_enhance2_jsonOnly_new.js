@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'cl.eca.load_data_message_queue_industry'; // 👈 queue
+const TARGET_QUEUE = 'testing.cl.pt.category_posts_crawling_sources'; // 👈 queue
 const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
 // ============================================================
 
