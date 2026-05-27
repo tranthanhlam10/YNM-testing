@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'testing.cl.pt.category_posts_crawling_sources'; // 👈 queue
+const TARGET_QUEUE = 'testing.cl.mentions_2_solr_mentions_LamTT'; // 👈 queue
 const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
 // ============================================================
 
