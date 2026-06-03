@@ -128,11 +128,11 @@ https://docs.google.com/spreadsheets/d/1H5kDyGS-8e8ExQgQoKVZK-EgD0VXzmG2JzLZ2J-r
 SELECT 
     sum(cost_usd) AS total_cost,
     sum(input_tokens)  + sum(cached_input_tokens) AS total_input_tokens,
-    sum(output_tokens) + + sum(cached_output_tokens) AS total_output_tokens,
+    sum(output_tokens) + sum(cached_output_tokens) AS total_output_tokens,
     sum(input_tokens + output_tokens) AS total_tokens
-FROM socialheat.usage_overview_agg
-WHERE billed_at >= toDateTime('2026-04-30 17:00:00', 'UTC') 
-  AND billed_at < toDateTime('2026-05-30 17:00:00', 'UTC');
+FROM usage_overview_agg
+WHERE billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC') 
+  AND billed_at < toDateTime('2026-06-02 17:00:00', 'UTC');
 
 
 
@@ -145,11 +145,19 @@ SELECT
 COUNT (DISTINCT id_classification_request) AS total_unique_ids
 FROM socialheat.usage_overview_agg
 WHERE run_bucket = 'MANUAL'
-AND task_type IN ('ATTRIBUTE_CLASSIFICATION',
-'POST_SPAM_CLASSIFICATION') AND (billed_at ›= toDateTime('2026-04-11 17:00:00', 'UTC')
-AND billed_at < toDateTime('2026-05-11 17:00:00', 'UTC'));
+AND (billed_at ›= toDateTime('2026-05-03 17:00:00', 'UTC')
+AND billed_at < toDateTime('2026-06-02 17:00:00', 'UTC'));
 GROUP BY id_classification_request;
 
+
+
+Câu query đúng:
+SELECT
+    COUNT(DISTINCT id_classification_request) AS total_unique_requests
+FROM socialheat.usage_overview_agg
+WHERE run_bucket = 'MANUAL'
+  AND billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC')
+  AND billed_at < toDateTime('2026-06-02 17:00:00', 'UTC');
 
 
 2. Phân quyền 
@@ -268,8 +276,8 @@ WITH DepartmentCosts AS (
         department_id,
         SUM(cost_usd) AS total_cost
     FROM socialheat.usage_overview_agg
-    WHERE billed_at >= toDateTime('2026-04-07 17:00:00', 'UTC')
-      AND billed_at <  toDateTime('2026-05-08 17:00:00', 'UTC')
+    WHERE billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC')
+      AND billed_at <  toDateTime('2026-06-02 17:00:00', 'UTC')
     GROUP BY department_id
 ),
 RankedDepartments AS (
@@ -305,8 +313,8 @@ SELECT
     sum(output_tokens) AS total_output_tokens,
     sum(input_tokens + output_tokens) AS total_tokens
 FROM usage_overview_agg
-WHERE billed_at >= toDateTime('2026-04-30 17:00:00', 'UTC') 
-  AND billed_at < toDateTime('2026-05-30 17:00:00', 'UTC');
+WHERE billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC') 
+  AND billed_at < toDateTime('2026-06-02 17:00:00', 'UTC');
 
 
 - Stacked chart by department
@@ -406,6 +414,94 @@ ORDER BY department_group = 'Others' ASC, final_cost DESC;
 
 
 
+## Bộ query dành cho Staging
+
+1. Chart KPI 
+
+- Tính tổng usd, input token, output token
+
+SELECT 
+    sum(cost_usd) AS total_cost,
+    sum(input_tokens)  + sum(cached_input_tokens) AS total_input_tokens,
+    sum(output_tokens) + sum(cached_output_tokens) AS total_output_tokens,
+    sum(input_tokens + output_tokens) AS total_tokens
+FROM socialheat_staging.usage_overview_agg
+WHERE billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC') 
+  AND billed_at < toDateTime('2026-06-02 17:00:00', 'UTC');
+
+- Tính số lượng request
+
+SELECT
+    COUNT(DISTINCT id_classification_request) AS total_unique_requests
+FROM socialheat_staging.usage_overview_agg
+WHERE run_bucket = 'MANUAL'
+  AND billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC')
+  AND billed_at < toDateTime('2026-06-02 17:00:00', 'UTC');
+
+- Pie chart
+
+WITH DepartmentCosts AS (
+    SELECT
+        department_id,
+        SUM(cost_usd) AS total_cost
+    FROM socialheat_staging.usage_overview_agg
+    WHERE billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC')
+      AND billed_at <  toDateTime('2026-06-02 17:00:00', 'UTC')
+    GROUP BY department_id
+),
+RankedDepartments AS (
+    SELECT
+        department_id,
+        total_cost,
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(department_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
+    FROM DepartmentCosts
+)
+SELECT
+    IF(rn <= 20 AND department_id IS NOT NULL, toString(department_id), 'Others') AS department_group,
+    SUM(total_cost) AS final_cost,
+    ROUND((SUM(total_cost) / SUM(SUM(total_cost)) OVER ()) * 100, 2) AS percentage_cost
+FROM RankedDepartments
+GROUP BY department_group
+ORDER BY department_group = 'Others' ASC, final_cost DESC;
+
+- Chart cost over time
+
+WITH DepartmentCosts AS (
+    SELECT
+        department_id,
+        SUM(cost_usd) AS total_cost
+    FROM socialheat_staging.usage_overview_agg
+    WHERE billed_at >= toDateTime('2026-05-03 17:00:00', 'UTC')
+      AND billed_at <  toDateTime('2026-06-02 17:00:00', 'UTC')
+    GROUP BY department_id
+),
+RankedDepartments AS (
+    SELECT
+        department_id,
+        total_cost,
+        ROW_NUMBER() OVER (
+            ORDER BY
+                if(department_id IS NULL, 1, 0) ASC,
+                total_cost DESC
+        ) AS rn
+    FROM DepartmentCosts
+)
+SELECT
+    IF(rn <= 20 AND department_id IS NOT NULL, toString(department_id), 'Others') AS department_group,
+    SUM(total_cost) AS final_cost
+FROM RankedDepartments
+GROUP BY department_group
+ORDER BY department_group = 'Others' ASC, final_cost DESC;
 
 
+- Email để test phân quyền
 
+LamTT_AI_Usage_Dashboard_Department@gmail.com -> DONE
+
+LamTT_AI_Usage_Dashboard_Company@gmail.com
+
+LamTT_AI_Usage_Dashboard_Combine_Role@gmail.com
