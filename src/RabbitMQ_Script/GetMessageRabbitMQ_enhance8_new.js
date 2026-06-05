@@ -1,16 +1,16 @@
 // ============================================================
 // ⚙️  MASTER CONFIG
 // ============================================================
-const ACTIVE_ENV = 'staging';
+const ACTIVE_ENV = 'testing';
 
 const ENVIRONMENTS = {
   testing: { method: 'http',  domain: 'rabbitmq-testing.ynm.local',          userName: 'lamtt', password: 'lamtt' },
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE  = 'staging.cl.identities_2_redis_identities_LamTT';
-const BATCH_SIZE    = 300;
-const CONCURRENCY   = 10;
+const TARGET_QUEUE = "testing_th.cl.pt.comments_no_cookie_crawling_sources";
+const BATCH_SIZE    = 500;
+const CONCURRENCY   = 5;
 
 // Dừng khi không tìm được message mới sau N batch LIÊN TIẾP (tính trên tất cả workers)
 // Tăng nếu queue lớn và dup nhiều, giảm nếu muốn nhanh hơn

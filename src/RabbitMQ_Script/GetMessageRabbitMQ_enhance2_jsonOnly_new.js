@@ -4,8 +4,8 @@ import { promises as fs } from 'fs';
 // ============================================================
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
-const ACTIVE_ENV   = 'staging';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = 'staging.cl.mentions_2_solr_mentions_LamTT'; // 👈 queue
+const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
+const TARGET_QUEUE = "testing_th.cl.pt.comments_no_cookie_crawled_sources"; // 👈 queue
 const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
 // ============================================================
 

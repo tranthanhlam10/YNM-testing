@@ -1,0 +1,3699 @@
+{
+    "count": 31,
+    "check_pinit": "false",
+    "paging": {
+        "page": 1,
+        "limit": 100,
+        "limit_reply": 5,
+        "limit_hybrid_reply": 500,
+        "defalut": 3,
+        "topic_id": 44098569,
+        "param": "",
+        "type": "",
+        "st": "",
+        "ed": {
+            "min": 2,
+            "max": 1,
+            "total": 0
+        },
+        "parent": "",
+        "expand": [],
+        "topic_status": 1,
+        "topic_type": 1,
+        "max_comments": 31,
+        "chk_best_answer": 0,
+        "author_mid": 4928846,
+        "sess_mid": null
+    },
+    "comments": [
+        {
+            "_id": 118956372,
+            "comment_no": 1,
+            "user": {
+                "mid": 28038,
+                "name": "tea_time",
+                "link": "/profile/28038",
+                "avatar": {
+                    "original": "",
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 1,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178859241
+            },
+            "message": "น่าทานมากค่ะ<img class=\"img-in-emotion\" title=\"อมยิ้ม36\" alt=\"อมยิ้ม36\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley36.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [
+                {
+                    "reply_id": 40132813,
+                    "reply_no": 1,
+                    "comment_no": 1,
+                    "user": {
+                        "mid": 4928846,
+                        "name": "ลูกไหน คือ ลูกเกด",
+                        "link": "/profile/4928846",
+                        "avatar": {
+                            "original": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_o.jpg",
+                            "large": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_l.jpg",
+                            "medium": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_m.jpg",
+                            "small": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_s.jpg"
+                        },
+                        "user_meta": {
+                            "user_type": "id_card",
+                            "verified": false,
+                            "icon": {
+                                "type": "smile"
+                            },
+                            "facebook": {
+                                "id": 110602052308408,
+                                "name": "Pantip.com",
+                                "link": "https://www.facebook.com/pantipdotcom/"
+                            }
+                        },
+                        "pstrust": true,
+                        "id_card": {
+                            "id_card_no": "5c0c74397021c475f6c70e4c3f4424b4e19dcf62",
+                            "date_active": {
+                                "$date": {
+                                    "$numberLong": "1773280951532"
+                                }
+                            },
+                            "status": "active"
+                        }
+                    },
+                    "point": 0,
+                    "message": "ไปลองค่ะ อร่อยยยย",
+                    "status": 1,
+                    "ipv6": "2001:44c8:4900:530f:18b1:d6fe:f400:7eec",
+                    "emotion": {
+                        "sum": 0,
+                        "latest": [],
+                        "like": {
+                            "count": 0
+                        },
+                        "laugh": {
+                            "count": 0
+                        },
+                        "love": {
+                            "count": 0
+                        },
+                        "impress": {
+                            "count": 0
+                        },
+                        "scary": {
+                            "count": 0
+                        },
+                        "surprised": {
+                            "count": 0
+                        }
+                    },
+                    "email_user": false,
+                    "data_utime": "05/22/2026 17:52:46",
+                    "data_addrtitle": "22 พฤษภาคม 2569 เวลา  17:52:46 น.",
+                    "owner_topic": true,
+                    "emo_score": 0,
+                    "good_bad_vote": {
+                        "good_voted": "",
+                        "bad_voted": "",
+                        "point": 0,
+                        "class_score": ""
+                    },
+                    "ref_cmt_no_report": "cmt-1-118956372-1-40132813",
+                    "ref_cmt_report": "$1$IiZaTwiG$2QTxFkWBLnAV6.DfQDvJU0",
+                    "comment_id": 118956372,
+                    "nickname_icon_permission": {
+                        "email": "",
+                        "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                        "google": "",
+                        "apple": "",
+                        "line": "",
+                        "facebook": "",
+                        "member_vip": "",
+                        "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                        "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                        "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+                    },
+                    "member_id": 4928846,
+                    "is_mute": false,
+                    "show_mute_hide_button": false,
+                    "mute_group_class": ""
+                }
+            ],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 09:41:49",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  09:41:49 น.",
+            "created_time": "1779417709",
+            "ref_reply": "$1$1YJEA3zf$qAEoyMzdohcmjWloKIGGy1",
+            "ref_reply_id": "118956372pantip3g",
+            "ref_cmt_no_report": "cmt-1-118956372",
+            "ref_cmt_report": "$1$.HiWMve5$DEXZqu7TERcnV5Z4HaAni0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 28038,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118956390,
+            "comment_no": 2,
+            "user": {
+                "mid": 2933266,
+                "name": "สมาชิกหมายเลข 2933266",
+                "link": "/profile/2933266",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/660/016/000/2933266_17640343452285_o.jpg",
+                    "large": "https://p.ptcdn.info/660/016/000/2933266_17640343452285_l.jpg",
+                    "medium": "https://p.ptcdn.info/660/016/000/2933266_17640343452285_m.jpg",
+                    "small": "https://p.ptcdn.info/660/016/000/2933266_17640343452285_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "sms",
+                    "verified": true,
+                    "icon": {
+                        "type": "mobile"
+                    },
+                    "bloggang": {
+                        "id": "pojai",
+                        "link": "https://pojai.bloggang.com"
+                    }
+                }
+            },
+            "reply_count": 1,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178859269
+            },
+            "message": "ปลาดุกฟูกับต้มยำ ช่างเหมาะกันจริงๆ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [
+                {
+                    "reply_id": 40132831,
+                    "reply_no": 1,
+                    "comment_no": 2,
+                    "user": {
+                        "mid": 4928846,
+                        "name": "ลูกไหน คือ ลูกเกด",
+                        "link": "/profile/4928846",
+                        "avatar": {
+                            "original": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_o.jpg",
+                            "large": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_l.jpg",
+                            "medium": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_m.jpg",
+                            "small": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_s.jpg"
+                        },
+                        "user_meta": {
+                            "user_type": "id_card",
+                            "verified": false,
+                            "icon": {
+                                "type": "smile"
+                            },
+                            "facebook": {
+                                "id": 110602052308408,
+                                "name": "Pantip.com",
+                                "link": "https://www.facebook.com/pantipdotcom/"
+                            }
+                        },
+                        "pstrust": true,
+                        "id_card": {
+                            "id_card_no": "5c0c74397021c475f6c70e4c3f4424b4e19dcf62",
+                            "date_active": {
+                                "$date": {
+                                    "$numberLong": "1773280951532"
+                                }
+                            },
+                            "status": "active"
+                        }
+                    },
+                    "point": 0,
+                    "message": "ขอบคุณที่แวะมาเยี่ยมชมค่ะ",
+                    "status": 1,
+                    "ipv6": "2001:44c8:4900:530f:18b1:d6fe:f400:7eec",
+                    "emotion": {
+                        "sum": 0,
+                        "latest": [],
+                        "like": {
+                            "count": 0
+                        },
+                        "laugh": {
+                            "count": 0
+                        },
+                        "love": {
+                            "count": 0
+                        },
+                        "impress": {
+                            "count": 0
+                        },
+                        "scary": {
+                            "count": 0
+                        },
+                        "surprised": {
+                            "count": 0
+                        }
+                    },
+                    "email_user": false,
+                    "data_utime": "05/22/2026 17:56:05",
+                    "data_addrtitle": "22 พฤษภาคม 2569 เวลา  17:56:05 น.",
+                    "owner_topic": true,
+                    "emo_score": 0,
+                    "good_bad_vote": {
+                        "good_voted": "",
+                        "bad_voted": "",
+                        "point": 0,
+                        "class_score": ""
+                    },
+                    "ref_cmt_no_report": "cmt-2-118956390-1-40132831",
+                    "ref_cmt_report": "$1$dUPKbqaP$sbahTxqv4dH2vD.llqgJX1",
+                    "comment_id": 118956390,
+                    "nickname_icon_permission": {
+                        "email": "",
+                        "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                        "google": "",
+                        "apple": "",
+                        "line": "",
+                        "facebook": "",
+                        "member_vip": "",
+                        "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                        "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                        "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+                    },
+                    "member_id": 4928846,
+                    "is_mute": false,
+                    "show_mute_hide_button": false,
+                    "mute_group_class": ""
+                }
+            ],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 09:43:17",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  09:43:17 น.",
+            "created_time": "1779417797",
+            "ref_reply": "$1$DOq8d1TD$FFRvzZd3DetClluO/vSwz/",
+            "ref_reply_id": "118956390pantip3g",
+            "ref_cmt_no_report": "cmt-2-118956390",
+            "ref_cmt_report": "$1$.kIMmzfv$SHkhS2NwTfFXSjtGqqNRf0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 2933266,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118956545,
+            "comment_no": 3,
+            "user": {
+                "mid": 204472,
+                "name": "อัมปาจุม",
+                "link": "/profile/204472",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/416/008/000/204472_1776524037767_o.jpg",
+                    "large": "https://p.ptcdn.info/416/008/000/204472_1776524037767_l.jpg",
+                    "medium": "https://p.ptcdn.info/416/008/000/204472_1776524037767_m.jpg",
+                    "small": "https://p.ptcdn.info/416/008/000/204472_1776524037767_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 1,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178859471
+            },
+            "message": "เต็มสิบเลยค่ะ ดูดีน่าอร่อยมากกกก<br />\n<img class=\"img-in-post\" src=\"https://f.ptcdn.info/583/085/000/m1gab65qihQBBYA71N7-o.gif\" data-image=\"img:370x300\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [
+                {
+                    "reply_id": 40132832,
+                    "reply_no": 1,
+                    "comment_no": 3,
+                    "user": {
+                        "mid": 4928846,
+                        "name": "ลูกไหน คือ ลูกเกด",
+                        "link": "/profile/4928846",
+                        "avatar": {
+                            "original": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_o.jpg",
+                            "large": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_l.jpg",
+                            "medium": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_m.jpg",
+                            "small": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_s.jpg"
+                        },
+                        "user_meta": {
+                            "user_type": "id_card",
+                            "verified": false,
+                            "icon": {
+                                "type": "smile"
+                            },
+                            "facebook": {
+                                "id": 110602052308408,
+                                "name": "Pantip.com",
+                                "link": "https://www.facebook.com/pantipdotcom/"
+                            }
+                        },
+                        "pstrust": true,
+                        "id_card": {
+                            "id_card_no": "5c0c74397021c475f6c70e4c3f4424b4e19dcf62",
+                            "date_active": {
+                                "$date": {
+                                    "$numberLong": "1773280951532"
+                                }
+                            },
+                            "status": "active"
+                        }
+                    },
+                    "point": 0,
+                    "message": "ขอบคุณที่แวะมาเยี่ยมชมค่ะ",
+                    "status": 1,
+                    "ipv6": "2001:44c8:4900:530f:18b1:d6fe:f400:7eec",
+                    "emotion": {
+                        "sum": 1,
+                        "latest": [
+                            {
+                                "mid": 204472,
+                                "name": "อัมปาจุม",
+                                "link": "/profile/204472",
+                                "emotion": "ถูกใจ"
+                            }
+                        ],
+                        "like": {
+                            "count": 1
+                        },
+                        "laugh": {
+                            "count": 0
+                        },
+                        "love": {
+                            "count": 0
+                        },
+                        "impress": {
+                            "count": 0
+                        },
+                        "scary": {
+                            "count": 0
+                        },
+                        "surprised": {
+                            "count": 0
+                        }
+                    },
+                    "email_user": false,
+                    "data_utime": "05/22/2026 17:56:28",
+                    "data_addrtitle": "22 พฤษภาคม 2569 เวลา  17:56:28 น.",
+                    "owner_topic": true,
+                    "emo_score": 1,
+                    "good_bad_vote": {
+                        "good_voted": "",
+                        "bad_voted": "",
+                        "point": 0,
+                        "class_score": ""
+                    },
+                    "ref_cmt_no_report": "cmt-3-118956545-1-40132832",
+                    "ref_cmt_report": "$1$vaSa2u7p$raNouVIBdZ2BwbW3YYT5l.",
+                    "comment_id": 118956545,
+                    "nickname_icon_permission": {
+                        "email": "",
+                        "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                        "google": "",
+                        "apple": "",
+                        "line": "",
+                        "facebook": "",
+                        "member_vip": "",
+                        "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                        "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                        "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+                    },
+                    "member_id": 4928846,
+                    "is_mute": false,
+                    "show_mute_hide_button": false,
+                    "mute_group_class": ""
+                }
+            ],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 09:54:57",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  09:54:57 น.",
+            "created_time": "1779418497",
+            "ref_reply": "$1$QZdsO/H4$sZPjHwovVXdvpD5Ln4zwH/",
+            "ref_reply_id": "118956545pantip3g",
+            "ref_cmt_no_report": "cmt-3-118956545",
+            "ref_cmt_report": "$1$dfg.NS8d$fnaqRug3wua6bKLmETQK7.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 204472,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118956553,
+            "comment_no": 4,
+            "user": {
+                "mid": 9127399,
+                "name": "สมาชิกหมายเลข 9127399",
+                "link": "/profile/9127399",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": false,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178859481
+            },
+            "message": "ปลาดุกฟูดูน่าทานมากเลยค่ะ ถ้าไปแถวนั้นจะแวะลองแน่นอนค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 09:55:15",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  09:55:15 น.",
+            "created_time": "1779418515",
+            "ref_reply": "$1$PcCmsK61$ku0HnwTdZbdGexwIrZEEn.",
+            "ref_reply_id": "118956553pantip3g",
+            "ref_cmt_no_report": "cmt-4-118956553",
+            "ref_cmt_report": "$1$iUtvgQp5$8pu4taQyPJWPCmTCL7j7j0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 9127399,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118957079,
+            "comment_no": 5,
+            "user": {
+                "mid": 686839,
+                "name": "ฌบี้",
+                "link": "/profile/686839",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/701/016/000/686839_17663909141792_o.jpg",
+                    "large": "https://p.ptcdn.info/701/016/000/686839_17663909141792_l.jpg",
+                    "medium": "https://p.ptcdn.info/701/016/000/686839_17663909141792_m.jpg",
+                    "small": "https://p.ptcdn.info/701/016/000/686839_17663909141792_s.jpg"
+                },
+                "user_meta": {
+                    "bloggang": {
+                        "id": "rsszly",
+                        "link": "http://rsszly.bloggang.com"
+                    },
+                    "facebook": {
+                        "id": 110602052308408,
+                        "link": "https://www.facebook.com/pantipdotcom/",
+                        "name": "Pantip.com"
+                    },
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "user_type": "id_card",
+                    "verified": true
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178860196
+            },
+            "message": "น่ากินมาก ๆ ค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 10:37:05",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  10:37:05 น.",
+            "created_time": "1779421025",
+            "ref_reply": "$1$Tx6e1b1Z$Z2PmuOoHp2iSL1PSjNmUc0",
+            "ref_reply_id": "118957079pantip3g",
+            "ref_cmt_no_report": "cmt-5-118957079",
+            "ref_cmt_report": "$1$qhO2E92N$JLq3Z52po2z8y.95lqg9b1",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 686839,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118957177,
+            "comment_no": 6,
+            "user": {
+                "mid": 1400377,
+                "name": "สมาชิกหมายเลข 1400377",
+                "link": "/profile/1400377",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "icon": {
+                        "type": "mobile"
+                    },
+                    "user_type": "sms",
+                    "verified": true,
+                    "facebook": {
+                        "id": 110602052308408,
+                        "name": "Pantip.com",
+                        "link": "https://www.facebook.com/pantipdotcom/"
+                    }
+                },
+                "pstrust": true,
+                "sms": {
+                    "pt": 202,
+                    "mobile": "0824880040",
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1398861843000"
+                        }
+                    },
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178860322
+            },
+            "message": "น่าสนใจ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 10:44:04",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  10:44:04 น.",
+            "created_time": "1779421444",
+            "ref_reply": "$1$aqAx1HtX$TtWYgK8/rgE4P5CNUEcUB0",
+            "ref_reply_id": "118957177pantip3g",
+            "ref_cmt_no_report": "cmt-6-118957177",
+            "ref_cmt_report": "$1$sFegEVFe$2d1lL9qPncOQJ8ACEIBXd1",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 1400377,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118957508,
+            "comment_no": 7,
+            "user": {
+                "mid": 2586575,
+                "name": "นานา สาระแน",
+                "link": "/profile/2586575",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/601/016/000/2586575_17606196157810_o.png",
+                    "large": "https://p.ptcdn.info/601/016/000/2586575_17606196157810_l.jpg",
+                    "medium": "https://p.ptcdn.info/601/016/000/2586575_17606196157810_m.jpg",
+                    "small": "https://p.ptcdn.info/601/016/000/2586575_17606196157810_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "google": {
+                        "id": "106554049667488148191",
+                        "link": null,
+                        "name": "i love volleyball thailand."
+                    }
+                },
+                "pstrust": true,
+                "id_card": {
+                    "id_card_no": "54b0f4963407f56377befa9e09eca714451ab97b",
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1737964623115"
+                        }
+                    },
+                    "status": "active"
+                },
+                "sms": {
+                    "pt": 202,
+                    "mobile": "0894082160",
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1589213765381"
+                        }
+                    },
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178860768
+            },
+            "message": "ผัดหอยลายน่าทานจังเลยค่ะ<img class=\"img-in-emotion\" title=\"นานาเยี่ยม\" alt=\"นานาเยี่ยม\" src=\"https://ptcdn.info/emoticons/pantip_toy/nana/nana23.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 11:06:52",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  11:06:52 น.",
+            "created_time": "1779422812",
+            "ref_reply": "$1$YfQWwpzw$cDhJ1E5L79Whve1IAEX1q0",
+            "ref_reply_id": "118957508pantip3g",
+            "ref_cmt_no_report": "cmt-7-118957508",
+            "ref_cmt_report": "$1$QaEKYy83$2WfqlGHoN3THpbcvoder3/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 2586575,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118957515,
+            "comment_no": 8,
+            "user": {
+                "mid": 373052,
+                "name": "โลกยังหมุนอยู่",
+                "link": "/profile/373052",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "line": {
+                        "id": "Ub579322c4562b0f884f5d46613be408c",
+                        "link": "https://profile.line-scdn.net/0hn9qh8sh1MRZMESU02RVOQXBUP3s7PzdeNH95IDtEbHJjKH4TcXUseWpDOyE0J3NDcnd8c2gVaiVo",
+                        "name": "ANN🌿"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178860777
+            },
+            "message": "น่าทานมากค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 11:07:22",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  11:07:22 น.",
+            "created_time": "1779422842",
+            "ref_reply": "$1$Ile2lIqw$av3ciMCnXBRPoDxgYwoFX1",
+            "ref_reply_id": "118957515pantip3g",
+            "ref_cmt_no_report": "cmt-8-118957515",
+            "ref_cmt_report": "$1$1vtLY9VD$FIOshNJqBC9O1EieaTmZA1",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 373052,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118957691,
+            "comment_no": 9,
+            "user": {
+                "mid": 527042,
+                "name": "ToR_GerRarD",
+                "link": "/profile/527042",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/338/014/000/527042_16537903703017_o.jpg",
+                    "large": "https://p.ptcdn.info/338/014/000/527042_16537903703017_l.jpg",
+                    "medium": "https://p.ptcdn.info/338/014/000/527042_16537903703017_m.jpg",
+                    "small": "https://p.ptcdn.info/338/014/000/527042_16537903703017_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178861005
+            },
+            "message": "ผมก็ชอบปลาดุกฟูครับ มีป้าเอามาขายแถวบ้านด้วย <img class=\"img-in-emotion\" title=\"อมยิ้ม05\" alt=\"อมยิ้ม05\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley05.png\" /><img class=\"img-in-emotion\" title=\"อมยิ้ม36\" alt=\"อมยิ้ม36\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley36.png\" /><img class=\"img-in-emotion\" title=\"พาพันขอบคุณ\" alt=\"พาพันขอบคุณ\" src=\"https://ptcdn.info/emoticons/pantip_toy/papan/papan-13.png\" /><img class=\"img-in-emotion\" title=\"เพี้ยนขอบคุณ\" alt=\"เพี้ยนขอบคุณ\" src=\"https://ptcdn.info/emoticons/pantip_toy/pien2/thanks.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 11:19:01",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  11:19:01 น.",
+            "created_time": "1779423541",
+            "ref_reply": "$1$OMJA1fCk$LMuQFmNmquGAYF.22qL/90",
+            "ref_reply_id": "118957691pantip3g",
+            "ref_cmt_no_report": "cmt-9-118957691",
+            "ref_cmt_report": "$1$K9B92tkW$rD8wYJu/91Xik4IqtTkNm0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 527042,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118957748,
+            "comment_no": 10,
+            "user": {
+                "mid": 8826302,
+                "name": "Goijheng",
+                "link": "/profile/8826302",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/432/016/000/8826302_17516797860121_o.jpg",
+                    "large": "https://p.ptcdn.info/432/016/000/8826302_17516797860121_l.jpg",
+                    "medium": "https://p.ptcdn.info/432/016/000/8826302_17516797860121_m.jpg",
+                    "small": "https://p.ptcdn.info/432/016/000/8826302_17516797860121_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "registered",
+                    "verified": false,
+                    "icon": {
+                        "type": "registered"
+                    },
+                    "google": {
+                        "id": "110278702617418223492",
+                        "link": null,
+                        "name": "noi lumpang"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178861069
+            },
+            "message": "<img class=\"img-in-emotion\" title=\"อมยิ้ม05\" alt=\"อมยิ้ม05\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley05.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": true,
+            "data_ip_email": "223.24.130.58",
+            "data_utime": "05/22/2026 11:23:08",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  11:23:08 น.",
+            "created_time": "1779423788",
+            "ref_reply": "$1$eVp9mkq1$sFHxjyBxoogBiA6hKeOwW.",
+            "ref_reply_id": "118957748pantip3g",
+            "ref_cmt_no_report": "cmt-10-118957748",
+            "ref_cmt_report": "$1$Su1dIBWA$1veFcsNVbkSKiNspzVDn0/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 8826302,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118958409,
+            "comment_no": 11,
+            "user": {
+                "mid": 1457,
+                "name": "เด็กบูรพา",
+                "link": "/profile/1457",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/225/008/000/1457_7512625080_E82150C8-1233-4604-9FBC-562566CF46A5_o.jpg",
+                    "large": "https://p.ptcdn.info/225/008/000/1457_7512625080_E82150C8-1233-4604-9FBC-562566CF46A5_l.jpg",
+                    "medium": "https://p.ptcdn.info/225/008/000/1457_7512625080_E82150C8-1233-4604-9FBC-562566CF46A5_m.jpg",
+                    "small": "https://p.ptcdn.info/225/008/000/1457_7512625080_E82150C8-1233-4604-9FBC-562566CF46A5_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "bloggang": {
+                        "link": "http://buraphaboy.bloggang.com",
+                        "id": "buraphaboy"
+                    },
+                    "line": {
+                        "id": "U1f413c98971032da9a263af9fad31f9b",
+                        "link": "https://profile.line-scdn.net/0h89_quoZCZxZiCE2QOxIYQV5NaXsVJmFeGmcuIk5bOSdNPHQUDDwuJ0YJPXVKbSBGXmsrcRcLbC9K",
+                        "name": "เด็กบูรพา"
+                    },
+                    "facebook": {
+                        "id": 110602052308408,
+                        "link": "https://www.facebook.com/pantipdotcom/",
+                        "name": "Pantip.com"
+                    },
+                    "apple": {
+                        "id": "000965.4ffa14b94431465b897887f2b844048a.1652",
+                        "link": null,
+                        "name": null
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178861962
+            },
+            "message": "ของชอบเลย",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 12:15:33",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  12:15:33 น.",
+            "created_time": "1779426933",
+            "ref_reply": "$1$9D/hNVWD$VZD/igKQsSyME7tqnl/v0.",
+            "ref_reply_id": "118958409pantip3g",
+            "ref_cmt_no_report": "cmt-11-118958409",
+            "ref_cmt_report": "$1$M5g/brDT$t9414s4.QcI8fGE8xdmYc1",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 1457,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118958648,
+            "comment_no": 12,
+            "user": {
+                "mid": 8767902,
+                "name": "Kugakung",
+                "link": "/profile/8767902",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": false,
+                    "icon": {
+                        "type": "smile"
+                    }
+                },
+                "pstrust": true,
+                "id_card": {
+                    "id_card_no": "d584df9d8b35e5ee4b22bdcd57062fa840c11ccd",
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1747820405229"
+                        }
+                    },
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178862277
+            },
+            "message": "น่ากินครับ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 12:35:29",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  12:35:29 น.",
+            "created_time": "1779428129",
+            "ref_reply": "$1$FseG4cZx$q8CCdlT.Zkoe.iikReO0Z/",
+            "ref_reply_id": "118958648pantip3g",
+            "ref_cmt_no_report": "cmt-12-118958648",
+            "ref_cmt_report": "$1$HI3blpnw$bZy1xNv0bSsYqjYJCRvas/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 8767902,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118958715,
+            "comment_no": 13,
+            "user": {
+                "mid": 690985,
+                "name": "สาวโรงงานชั้นสิบแปด",
+                "link": "/profile/690985",
+                "avatar": {
+                    "original": "http://p.ptcdn.info/540/000/000/690985_3478592992_-1--1-JPG_o.jpg",
+                    "large": "https://p.ptcdn.info/540/000/000/690985_3478592992_-1--1-JPG_l.jpg",
+                    "medium": "https://p.ptcdn.info/540/000/000/690985_3478592992_-1--1-JPG_m.jpg",
+                    "small": "https://p.ptcdn.info/540/000/000/690985_3478592992_-1--1-JPG_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "facebook": {
+                        "id": 110602052308408,
+                        "link": "https://www.facebook.com/pantipdotcom/",
+                        "name": "Pantip.com"
+                    }
+                },
+                "pstrust": true,
+                "id_card": {
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1355936400000"
+                        }
+                    },
+                    "id_card_no": "e506d95ab37a6567062210cedc26a89d7cec2579",
+                    "status": "active"
+                }
+            },
+            "reply_count": 1,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178862361
+            },
+            "message": "ทอดได้ฟูสวยจริงๆค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [
+                {
+                    "reply_id": 40132826,
+                    "reply_no": 1,
+                    "comment_no": 13,
+                    "user": {
+                        "mid": 4928846,
+                        "name": "ลูกไหน คือ ลูกเกด",
+                        "link": "/profile/4928846",
+                        "avatar": {
+                            "original": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_o.jpg",
+                            "large": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_l.jpg",
+                            "medium": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_m.jpg",
+                            "small": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_s.jpg"
+                        },
+                        "user_meta": {
+                            "user_type": "id_card",
+                            "verified": false,
+                            "icon": {
+                                "type": "smile"
+                            },
+                            "facebook": {
+                                "id": 110602052308408,
+                                "name": "Pantip.com",
+                                "link": "https://www.facebook.com/pantipdotcom/"
+                            }
+                        },
+                        "pstrust": true,
+                        "id_card": {
+                            "id_card_no": "5c0c74397021c475f6c70e4c3f4424b4e19dcf62",
+                            "date_active": {
+                                "$date": {
+                                    "$numberLong": "1773280951532"
+                                }
+                            },
+                            "status": "active"
+                        }
+                    },
+                    "point": 0,
+                    "message": "ฟู สวย กรอบ น่าทานค่ะ",
+                    "status": 1,
+                    "ipv6": "2001:44c8:4900:530f:18b1:d6fe:f400:7eec",
+                    "emotion": {
+                        "sum": 1,
+                        "latest": [
+                            {
+                                "mid": 690985,
+                                "name": "สาวโรงงานชั้นสิบแปด",
+                                "link": "/profile/690985",
+                                "emotion": "ถูกใจ"
+                            }
+                        ],
+                        "like": {
+                            "count": 1
+                        },
+                        "laugh": {
+                            "count": 0
+                        },
+                        "love": {
+                            "count": 0
+                        },
+                        "impress": {
+                            "count": 0
+                        },
+                        "scary": {
+                            "count": 0
+                        },
+                        "surprised": {
+                            "count": 0
+                        }
+                    },
+                    "email_user": false,
+                    "data_utime": "05/22/2026 17:55:02",
+                    "data_addrtitle": "22 พฤษภาคม 2569 เวลา  17:55:02 น.",
+                    "owner_topic": true,
+                    "emo_score": 1,
+                    "good_bad_vote": {
+                        "good_voted": "",
+                        "bad_voted": "",
+                        "point": 0,
+                        "class_score": ""
+                    },
+                    "ref_cmt_no_report": "cmt-13-118958715-1-40132826",
+                    "ref_cmt_report": "$1$AJNDuGW0$gsJdoyBezpiVcl8XXEkSP0",
+                    "comment_id": 118958715,
+                    "nickname_icon_permission": {
+                        "email": "",
+                        "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                        "google": "",
+                        "apple": "",
+                        "line": "",
+                        "facebook": "",
+                        "member_vip": "",
+                        "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                        "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                        "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+                    },
+                    "member_id": 4928846,
+                    "is_mute": false,
+                    "show_mute_hide_button": false,
+                    "mute_group_class": ""
+                }
+            ],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 12:39:44",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  12:39:44 น.",
+            "created_time": "1779428384",
+            "ref_reply": "$1$8DdW70Uf$upw6xsD4WzbggKG9t39Lm.",
+            "ref_reply_id": "118958715pantip3g",
+            "ref_cmt_no_report": "cmt-13-118958715",
+            "ref_cmt_report": "$1$//sJk3qT$Kwt0lnB6DHdY9t0joiYVu0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 690985,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118959010,
+            "comment_no": 14,
+            "user": {
+                "mid": 482094,
+                "name": "mpsupap",
+                "link": "/profile/482094",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "sms",
+                    "verified": true,
+                    "icon": {
+                        "type": "mobile"
+                    },
+                    "bloggang": {
+                        "link": "http://chaturaputpitak.bloggang.com",
+                        "id": "chaturaputpitak"
+                    }
+                },
+                "pstrust": true,
+                "sms": {
+                    "pt": 482094,
+                    "mobile": 2302777,
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1333126800000"
+                        }
+                    },
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178862732
+            },
+            "message": "น่าทานค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 13:00:00",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  13:00:00 น.",
+            "created_time": "1779429600",
+            "ref_reply": "$1$/b58k.ql$3dZT64LZeSoegYKuGMuDX1",
+            "ref_reply_id": "118959010pantip3g",
+            "ref_cmt_no_report": "cmt-14-118959010",
+            "ref_cmt_report": "$1$q6WzRBMU$5eEdXCQbHryR4svPdKnrD/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 482094,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118959213,
+            "comment_no": 15,
+            "user": {
+                "mid": 583765,
+                "name": "มั่นใจในความมั่นคง",
+                "link": "/profile/583765",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "bloggang": {
+                        "link": "http://jayja.bloggang.com",
+                        "id": "jayja"
+                    },
+                    "google": {
+                        "id": "117410124629214924671",
+                        "link": null,
+                        "name": "karnchawan thamarongpatana"
+                    }
+                }
+            },
+            "reply_count": 1,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178863018
+            },
+            "message": "ผัดหอยลายน่ากินจังค่ะ ชอบความเข้มข้นของซอสผัดนี้จัง",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [
+                {
+                    "reply_id": 40132821,
+                    "reply_no": 1,
+                    "comment_no": 15,
+                    "user": {
+                        "mid": 4928846,
+                        "name": "ลูกไหน คือ ลูกเกด",
+                        "link": "/profile/4928846",
+                        "avatar": {
+                            "original": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_o.jpg",
+                            "large": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_l.jpg",
+                            "medium": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_m.jpg",
+                            "small": "https://p.ptcdn.info/044/016/000/4928846_17330599678452_s.jpg"
+                        },
+                        "user_meta": {
+                            "user_type": "id_card",
+                            "verified": false,
+                            "icon": {
+                                "type": "smile"
+                            },
+                            "facebook": {
+                                "id": 110602052308408,
+                                "name": "Pantip.com",
+                                "link": "https://www.facebook.com/pantipdotcom/"
+                            }
+                        },
+                        "pstrust": true,
+                        "id_card": {
+                            "id_card_no": "5c0c74397021c475f6c70e4c3f4424b4e19dcf62",
+                            "date_active": {
+                                "$date": {
+                                    "$numberLong": "1773280951532"
+                                }
+                            },
+                            "status": "active"
+                        }
+                    },
+                    "point": 0,
+                    "message": "เจ้มจ้นมาก<img class=\"img-in-emotion\" title=\"เพี้ยนเผือก\" alt=\"เพี้ยนเผือก\" src=\"https://ptcdn.info/emoticons/pantip_toy/pien/pien019.png\" />",
+                    "status": 1,
+                    "ipv6": "2001:44c8:4900:530f:18b1:d6fe:f400:7eec",
+                    "emotion": {
+                        "sum": 1,
+                        "latest": [
+                            {
+                                "mid": 583765,
+                                "name": "มั่นใจในความมั่นคง",
+                                "link": "/profile/583765",
+                                "emotion": "ถูกใจ"
+                            }
+                        ],
+                        "like": {
+                            "count": 1
+                        },
+                        "laugh": {
+                            "count": 0
+                        },
+                        "love": {
+                            "count": 0
+                        },
+                        "impress": {
+                            "count": 0
+                        },
+                        "scary": {
+                            "count": 0
+                        },
+                        "surprised": {
+                            "count": 0
+                        }
+                    },
+                    "email_user": false,
+                    "data_utime": "05/22/2026 17:54:03",
+                    "data_addrtitle": "22 พฤษภาคม 2569 เวลา  17:54:03 น.",
+                    "owner_topic": true,
+                    "emo_score": 1,
+                    "good_bad_vote": {
+                        "good_voted": "",
+                        "bad_voted": "",
+                        "point": 0,
+                        "class_score": ""
+                    },
+                    "ref_cmt_no_report": "cmt-15-118959213-1-40132821",
+                    "ref_cmt_report": "$1$i3iHduXd$QL9o.FeXoK3EjuRz/rhrg0",
+                    "comment_id": 118959213,
+                    "nickname_icon_permission": {
+                        "email": "",
+                        "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                        "google": "",
+                        "apple": "",
+                        "line": "",
+                        "facebook": "",
+                        "member_vip": "",
+                        "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                        "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                        "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+                    },
+                    "member_id": 4928846,
+                    "is_mute": false,
+                    "show_mute_hide_button": false,
+                    "mute_group_class": ""
+                }
+            ],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 13:17:45",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  13:17:45 น.",
+            "created_time": "1779430665",
+            "ref_reply": "$1$Iz.r8uA2$eqEACyhb0uxwq8O0a6Zq0/",
+            "ref_reply_id": "118959213pantip3g",
+            "ref_cmt_no_report": "cmt-15-118959213",
+            "ref_cmt_report": "$1$CWCRLuuC$uf93yZjIbfQu7QM2uI29L0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 583765,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118959718,
+            "comment_no": 16,
+            "user": {
+                "mid": 273186,
+                "name": "เจ้านายกบ",
+                "link": "/profile/273186",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/311/007/000/273186_9715901561_b27ac5b16fde6f4655b71b14d829d744_o.jpg",
+                    "large": "https://p.ptcdn.info/311/007/000/273186_9715901561_b27ac5b16fde6f4655b71b14d829d744_l.jpg",
+                    "medium": "https://p.ptcdn.info/311/007/000/273186_9715901561_b27ac5b16fde6f4655b71b14d829d744_m.jpg",
+                    "small": "https://p.ptcdn.info/311/007/000/273186_9715901561_b27ac5b16fde6f4655b71b14d829d744_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178863790
+            },
+            "message": "😺",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 13:59:39",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  13:59:39 น.",
+            "created_time": "1779433179",
+            "ref_reply": "$1$OZ7z2FvS$TSHGo9uG6wgZ6oQEQOgNL0",
+            "ref_reply_id": "118959718pantip3g",
+            "ref_cmt_no_report": "cmt-16-118959718",
+            "ref_cmt_report": "$1$hnIA35z8$6E9FId026kyxkmD9D5nUg.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 273186,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118959995,
+            "comment_no": 17,
+            "user": {
+                "mid": 649876,
+                "name": "รวย&amp;นิว",
+                "link": "/profile/649876",
+                "avatar": {
+                    "original": "http://p.ptcdn.info/003/000/000/649876_3380261173_----14_o.jpg",
+                    "large": "https://p.ptcdn.info/003/000/000/649876_3380261173_----14_l.jpg",
+                    "medium": "https://p.ptcdn.info/003/000/000/649876_3380261173_----14_m.jpg",
+                    "small": "https://p.ptcdn.info/003/000/000/649876_3380261173_----14_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178864204
+            },
+            "message": "น่ากินค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 14:22:57",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  14:22:57 น.",
+            "created_time": "1779434577",
+            "ref_reply": "$1$q/mW9iMp$9dgIHNC2/ruifiHrBmrZb.",
+            "ref_reply_id": "118959995pantip3g",
+            "ref_cmt_no_report": "cmt-17-118959995",
+            "ref_cmt_report": "$1$NIVL0FnD$1Zo/iGBHxkpiBHJNpdK1c/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 649876,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118960223,
+            "comment_no": 18,
+            "user": {
+                "mid": 291988,
+                "name": "แมวสีเทาตุ่น",
+                "link": "/profile/291988",
+                "avatar": {
+                    "original": "http://p.ptcdn.info/055/000/000/291988_7635161745_yogurting-021_o.gif",
+                    "large": "https://p.ptcdn.info/055/000/000/291988_7635161745_yogurting-021_l.jpg",
+                    "medium": "https://p.ptcdn.info/055/000/000/291988_7635161745_yogurting-021_m.jpg",
+                    "small": "https://p.ptcdn.info/055/000/000/291988_7635161745_yogurting-021_s.jpg"
+                },
+                "user_meta": {
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "user_type": "id_card",
+                    "verified": true
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178864489
+            },
+            "message": "น่าทานทุกอย่างเลยค่ะ เห็นแล้วหิว<br />\n<img class=\"img-in-emotion\" title=\"หิว\" alt=\"หิว\" src=\"https://ptcdn.info/emoticons/pantip_toy/catcity/catcity031.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 14:41:03",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  14:41:03 น.",
+            "created_time": "1779435663",
+            "ref_reply": "$1$YDv2lPBN$RIt/CtENoP.c18gKZXdPJ/",
+            "ref_reply_id": "118960223pantip3g",
+            "ref_cmt_no_report": "cmt-18-118960223",
+            "ref_cmt_report": "$1$d61jq5aL$f46eBLHuY1OzCbjHsi5xf.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 291988,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118960553,
+            "comment_no": 19,
+            "user": {
+                "mid": 342269,
+                "name": "Neverforever",
+                "link": "/profile/342269",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/348/012/000/342269_15837557812621_o.jpg",
+                    "large": "https://p.ptcdn.info/348/012/000/342269_15837557812621_l.jpg",
+                    "medium": "https://p.ptcdn.info/348/012/000/342269_15837557812621_m.jpg",
+                    "small": "https://p.ptcdn.info/348/012/000/342269_15837557812621_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178864965
+            },
+            "message": "<img class=\"img-in-emotion\" title=\"อมยิ้ม05\" alt=\"อมยิ้ม05\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley05.png\" /><img class=\"img-in-emotion\" title=\"อมยิ้ม04\" alt=\"อมยิ้ม04\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley04.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 15:10:24",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  15:10:24 น.",
+            "created_time": "1779437424",
+            "ref_reply": "$1$r1nKwQ6K$dqaxItLKIfhO1Ow.ylLfx.",
+            "ref_reply_id": "118960553pantip3g",
+            "ref_cmt_no_report": "cmt-19-118960553",
+            "ref_cmt_report": "$1$bxNI/HQt$gpCHSHepoigtPqmoveSwI.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 342269,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118962539,
+            "comment_no": 20,
+            "user": {
+                "mid": 330462,
+                "name": "Piano Classic",
+                "link": "/profile/330462",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                },
+                "pstrust": true,
+                "id_card": {
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1174755600000"
+                        }
+                    },
+                    "id_card_no": "7b8f97f192e13c45d6eabf09793b53e3d94b955b",
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178867737
+            },
+            "message": "ฟูจริงๆ น่าทานมากค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 18:07:39",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  18:07:39 น.",
+            "created_time": "1779448059",
+            "ref_reply": "$1$3Tc/cyFe$w5C/M6dEgZ2FqW4.qJLpH/",
+            "ref_reply_id": "118962539pantip3g",
+            "ref_cmt_no_report": "cmt-20-118962539",
+            "ref_cmt_report": "$1$mMGNGo/F$nX9hglADgKRFZamo62goF1",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 330462,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118962563,
+            "comment_no": 21,
+            "user": {
+                "mid": 8649476,
+                "name": "Aelin of the Wildfire",
+                "link": "/profile/8649476",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/199/016/000/8649476_17408249704207_o.jpg",
+                    "large": "https://p.ptcdn.info/199/016/000/8649476_17408249704207_l.jpg",
+                    "medium": "https://p.ptcdn.info/199/016/000/8649476_17408249704207_m.jpg",
+                    "small": "https://p.ptcdn.info/199/016/000/8649476_17408249704207_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": false,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178867770
+            },
+            "message": "น่ากินหลายอย่างเลยค่ะ <img class=\"img-in-emotion\" title=\"หิว\" alt=\"หิว\" src=\"https://ptcdn.info/emoticons/pantip_toy/catcity/catcity031.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 18:10:11",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  18:10:11 น.",
+            "created_time": "1779448211",
+            "ref_reply": "$1$WFognzNX$2ENjxyRRsXYGLAkS279xH1",
+            "ref_reply_id": "118962563pantip3g",
+            "ref_cmt_no_report": "cmt-21-118962563",
+            "ref_cmt_report": "$1$0pr0MOKg$XgaDe91fsFeaCUp8wSrOf0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 8649476,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118962774,
+            "comment_no": 22,
+            "user": {
+                "mid": 149589,
+                "name": "จินดาหรา",
+                "link": "/profile/149589",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/479/015/000/149589_17063213967995_o.jpg",
+                    "large": "https://p.ptcdn.info/479/015/000/149589_17063213967995_l.jpg",
+                    "medium": "https://p.ptcdn.info/479/015/000/149589_17063213967995_m.jpg",
+                    "small": "https://p.ptcdn.info/479/015/000/149589_17063213967995_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178868043
+            },
+            "message": "น่าอร่อยทุกเมนูเลยค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 18:31:02",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  18:31:02 น.",
+            "created_time": "1779449462",
+            "ref_reply": "$1$EBm1Lost$5jLj53tAzW6k6.cNnmtXa.",
+            "ref_reply_id": "118962774pantip3g",
+            "ref_cmt_no_report": "cmt-22-118962774",
+            "ref_cmt_report": "$1$XIXkTj.V$JfX.hXnFqS5qPKo10T196/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 149589,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118963383,
+            "comment_no": 23,
+            "user": {
+                "mid": 8705152,
+                "name": "สมาชิกหมายเลข 8705152",
+                "link": "/profile/8705152",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "registered",
+                    "verified": false,
+                    "icon": {
+                        "type": "registered"
+                    },
+                    "google": {
+                        "id": "112251305602932376495",
+                        "link": null,
+                        "name": "Poom"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178868861
+            },
+            "message": "<img class=\"img-in-emotion\" title=\"อมยิ้ม05\" alt=\"อมยิ้ม05\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley05.png\" /><img class=\"img-in-emotion\" title=\"อมยิ้ม36\" alt=\"อมยิ้ม36\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley36.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": true,
+            "data_ip_email": "2001:44c8:41e0:2d69",
+            "data_utime": "05/22/2026 19:42:31",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  19:42:31 น.",
+            "created_time": "1779453751",
+            "ref_reply": "$1$iin6FOF2$5yuzB1iMnq6FaMGXe2luo.",
+            "ref_reply_id": "118963383pantip3g",
+            "ref_cmt_no_report": "cmt-23-118963383",
+            "ref_cmt_report": "$1$6eY87Ix5$pvy.cz0lu8ftDc8rA2oOn/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 8705152,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118963839,
+            "comment_no": 24,
+            "user": {
+                "mid": 634894,
+                "name": "เด็กกรุ้มกริ่ม",
+                "link": "/profile/634894",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/330/016/000/634894_17465835656614_o.jpg",
+                    "large": "https://p.ptcdn.info/330/016/000/634894_17465835656614_l.jpg",
+                    "medium": "https://p.ptcdn.info/330/016/000/634894_17465835656614_m.jpg",
+                    "small": "https://p.ptcdn.info/330/016/000/634894_17465835656614_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178869508
+            },
+            "message": "ของชอบเลย",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 20:39:14",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  20:39:14 น.",
+            "created_time": "1779457154",
+            "ref_reply": "$1$KfAXpRtK$wYm/vK9J/ityrBLXMzDdU/",
+            "ref_reply_id": "118963839pantip3g",
+            "ref_cmt_no_report": "cmt-24-118963839",
+            "ref_cmt_report": "$1$CPwGAhy3$i81L.bEZ1WsGdw6QBWgS3/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 634894,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118964519,
+            "comment_no": 25,
+            "user": {
+                "mid": 4999920,
+                "name": "LifeLearning",
+                "link": "/profile/4999920",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/707/012/000/4999920_15928027335978_o.jpg",
+                    "large": "https://p.ptcdn.info/707/012/000/4999920_15928027335978_l.jpg",
+                    "medium": "https://p.ptcdn.info/707/012/000/4999920_15928027335978_m.jpg",
+                    "small": "https://p.ptcdn.info/707/012/000/4999920_15928027335978_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "facebook": {
+                        "id": 110602052308408,
+                        "name": "Pantip.com",
+                        "link": "https://www.facebook.com/pantipdotcom/"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178870484
+            },
+            "message": "ชอบดุกฟู ไข่เจียว ผัดหอยค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/22/2026 21:53:08",
+            "data_addrtitle": "22 พฤษภาคม 2569 เวลา  21:53:08 น.",
+            "created_time": "1779461588",
+            "ref_reply": "$1$.AGAbjRe$v.bpipTzwdibAqcHOXwSD/",
+            "ref_reply_id": "118964519pantip3g",
+            "ref_cmt_no_report": "cmt-25-118964519",
+            "ref_cmt_report": "$1$CylJYPBF$bhzE7hbDlgbJzaQqoxOHd.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 4999920,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118965631,
+            "comment_no": 26,
+            "user": {
+                "mid": 126045,
+                "name": "สุโก้ย",
+                "link": "/profile/126045",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/311/012/000/126045_15826354286170_o.jpg",
+                    "large": "https://p.ptcdn.info/311/012/000/126045_15826354286170_l.jpg",
+                    "medium": "https://p.ptcdn.info/311/012/000/126045_15826354286170_m.jpg",
+                    "small": "https://p.ptcdn.info/311/012/000/126045_15826354286170_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": true,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "bloggang": {
+                        "link": "http://doye.bloggang.com",
+                        "id": "doye"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178872011
+            },
+            "message": "หอยลายน่ากินมากกกก",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/23/2026 00:25:00",
+            "data_addrtitle": "23 พฤษภาคม 2569 เวลา  00:25:00 น.",
+            "created_time": "1779470700",
+            "ref_reply": "$1$M9f1r4p2$4a3oPzn9.byOc.mrCpnCr1",
+            "ref_reply_id": "118965631pantip3g",
+            "ref_cmt_no_report": "cmt-26-118965631",
+            "ref_cmt_report": "$1$OXncDDSO$YxY/NWgKwiULotk2bW.lY.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 126045,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118965811,
+            "comment_no": 27,
+            "user": {
+                "mid": 66694,
+                "name": "hydra",
+                "link": "/profile/66694",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/747/012/000/66694_15940322738532_o.jpg",
+                    "large": "https://p.ptcdn.info/747/012/000/66694_15940322738532_l.jpg",
+                    "medium": "https://p.ptcdn.info/747/012/000/66694_15940322738532_m.jpg",
+                    "small": "https://p.ptcdn.info/747/012/000/66694_15940322738532_s.jpg"
+                },
+                "user_meta": {
+                    "bloggang": {
+                        "link": "http://turbgal.bloggang.com",
+                        "id": "turbgal"
+                    },
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "user_type": "id_card",
+                    "verified": true
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178872262
+            },
+            "message": "น่าอร่อย",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/23/2026 01:11:27",
+            "data_addrtitle": "23 พฤษภาคม 2569 เวลา  01:11:27 น.",
+            "created_time": "1779473487",
+            "ref_reply": "$1$nXxO/VBx$GhJlnfiloFY4HyYCMLz851",
+            "ref_reply_id": "118965811pantip3g",
+            "ref_cmt_no_report": "cmt-27-118965811",
+            "ref_cmt_report": "$1$FWuHt0aQ$YL43Ehos.5BhlHKTBnDxq1",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 66694,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118966590,
+            "comment_no": 28,
+            "user": {
+                "mid": 5203421,
+                "name": "โบตั๋น สีฟ้า",
+                "link": "/profile/5203421",
+                "avatar": {
+                    "original": "https://p.ptcdn.info/408/008/000/5203421_1775098755314_o.jpg",
+                    "large": "https://p.ptcdn.info/408/008/000/5203421_1775098755314_l.jpg",
+                    "medium": "https://p.ptcdn.info/408/008/000/5203421_1775098755314_m.jpg",
+                    "small": "https://p.ptcdn.info/408/008/000/5203421_1775098755314_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "id_card",
+                    "verified": false,
+                    "icon": {
+                        "type": "smile"
+                    },
+                    "google": {
+                        "id": "116499657914552631911",
+                        "link": "https://plus.google.com/116499657914552631911",
+                        "name": "ทํากินกัน Channel"
+                    },
+                    "facebook": {
+                        "id": 110602052308408,
+                        "link": "https://www.facebook.com/pantipdotcom/",
+                        "name": "Pantip.com"
+                    },
+                    "bloggang": {
+                        "id": "nipajaja",
+                        "link": "https://nipajaja.bloggang.com"
+                    },
+                    "world_id": {
+                        "id": "0x0051db7fca1a5e40fad7f6c2e78e3dd999cc762091e8f723c791a83f9ccb0d1f",
+                        "link": null,
+                        "name": null
+                    }
+                },
+                "pstrust": true,
+                "id_card": {
+                    "id_card_no": "d9d5e9157be5b6dd50456b892c46b2a97711f954",
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1747709318919"
+                        }
+                    },
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178873300
+            },
+            "message": "<img class=\"img-in-emotion\" title=\"อมยิ้ม36\" alt=\"อมยิ้ม36\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley36.png\" /><img class=\"img-in-emotion\" title=\"อมยิ้ม36\" alt=\"อมยิ้ม36\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley36.png\" /><img class=\"img-in-emotion\" title=\"อมยิ้ม05\" alt=\"อมยิ้ม05\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley05.png\" /><img class=\"img-in-emotion\" title=\"อมยิ้ม05\" alt=\"อมยิ้ม05\" src=\"https://ptcdn.info/emoticons/pantip_toy/smiley/smiley05.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/23/2026 05:44:10",
+            "data_addrtitle": "23 พฤษภาคม 2569 เวลา  05:44:10 น.",
+            "created_time": "1779489850",
+            "ref_reply": "$1$eTTb1vAh$hrKmlvg2nLsvZG4NNW56H/",
+            "ref_reply_id": "118966590pantip3g",
+            "ref_cmt_no_report": "cmt-28-118966590",
+            "ref_cmt_report": "$1$9rbhAlHI$Sfkc8AH6mxn.Rp1NfI29d/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 5203421,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118967215,
+            "comment_no": 29,
+            "user": {
+                "mid": 397520,
+                "name": "ยัยตัวร้ายกับนายมะพร้าว",
+                "link": "/profile/397520",
+                "avatar": {
+                    "original": "http://p.ptcdn.info/009/000/000/397520_6150823966_A11935655-2_o.gif",
+                    "large": "https://p.ptcdn.info/009/000/000/397520_6150823966_A11935655-2_l.jpg",
+                    "medium": "https://p.ptcdn.info/009/000/000/397520_6150823966_A11935655-2_m.jpg",
+                    "small": "https://p.ptcdn.info/009/000/000/397520_6150823966_A11935655-2_s.jpg"
+                },
+                "user_meta": {
+                    "user_type": "sms",
+                    "verified": true,
+                    "icon": {
+                        "type": "mobile"
+                    },
+                    "world_id": {
+                        "id": "0x093e7cb96396f595d0174e7f4887b075f595ccd7d86aa8f1c1e993db79a123cd",
+                        "link": null,
+                        "name": null
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178874112
+            },
+            "message": "น่าทานมาก <img class=\"img-in-emotion\" title=\"เพี้ยนขอบคุณ\" alt=\"เพี้ยนขอบคุณ\" src=\"https://ptcdn.info/emoticons/pantip_toy/pien2/thanks.png\" />",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/23/2026 07:37:46",
+            "data_addrtitle": "23 พฤษภาคม 2569 เวลา  07:37:46 น.",
+            "created_time": "1779496666",
+            "ref_reply": "$1$quaEBgTk$YAVnQKE27Hqbpu6vnH1px1",
+            "ref_reply_id": "118967215pantip3g",
+            "ref_cmt_no_report": "cmt-29-118967215",
+            "ref_cmt_report": "$1$Z9e.46NI$orCu0RK9WbfUiF9HXc3nT.",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 397520,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118973176,
+            "comment_no": 30,
+            "user": {
+                "mid": 586052,
+                "name": "เหมย กุย",
+                "link": "/profile/586052",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "sms",
+                    "verified": true,
+                    "icon": {
+                        "type": "mobile"
+                    }
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178882294
+            },
+            "message": "น่าทานทุกเมนูค่ะ",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/23/2026 17:15:34",
+            "data_addrtitle": "23 พฤษภาคม 2569 เวลา  17:15:34 น.",
+            "created_time": "1779531334",
+            "ref_reply": "$1$YUMe6UBl$F4gbZQAYsOK8yXLCZCee5.",
+            "ref_reply_id": "118973176pantip3g",
+            "ref_cmt_no_report": "cmt-30-118973176",
+            "ref_cmt_report": "$1$ZrNpHDAn$WoeOILogqSZpTqmZbmk/J/",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 586052,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        },
+        {
+            "_id": 118973320,
+            "comment_no": 31,
+            "user": {
+                "mid": 7632509,
+                "name": "สมาชิกหมายเลข 7632509",
+                "link": "/profile/7632509",
+                "avatar": {
+                    "large": "https://ptcdn.info/images/avatar_member_default.png",
+                    "medium": "https://ptcdn.info/images/avatar_member_default.png",
+                    "small": "https://ptcdn.info/images/avatar_member_default.png"
+                },
+                "user_meta": {
+                    "user_type": "sms",
+                    "verified": true,
+                    "icon": {
+                        "type": "mobile"
+                    }
+                },
+                "pstrust": true,
+                "sms": {
+                    "pt": 202,
+                    "mobile": "0619295142",
+                    "date_active": {
+                        "$date": {
+                            "$numberLong": "1699393077349"
+                        }
+                    },
+                    "status": "active"
+                }
+            },
+            "reply_count": 0,
+            "point": 0,
+            "action_id": {
+                "$ref": "action",
+                "$id": 178882509
+            },
+            "message": "แพปลาดุกฟูสวยงามเลย",
+            "status": 1,
+            "emotion": {
+                "sum": 0,
+                "latest": [],
+                "like": {
+                    "count": 0
+                },
+                "laugh": {
+                    "count": 0
+                },
+                "love": {
+                    "count": 0
+                },
+                "impress": {
+                    "count": 0
+                },
+                "scary": {
+                    "count": 0
+                },
+                "surprised": {
+                    "count": 0
+                }
+            },
+            "replies": [],
+            "emo_score": 0,
+            "good_bad_vote": {
+                "good_voted": "",
+                "bad_voted": "",
+                "point": 0,
+                "class_score": ""
+            },
+            "topic_status": 1,
+            "email_user": false,
+            "data_utime": "05/23/2026 17:30:50",
+            "data_addrtitle": "23 พฤษภาคม 2569 เวลา  17:30:50 น.",
+            "created_time": "1779532250",
+            "ref_reply": "$1$NuSphVyz$5GVuT9/0QCEgNR8X/h0kj0",
+            "ref_reply_id": "118973320pantip3g",
+            "ref_cmt_no_report": "cmt-31-118973320",
+            "ref_cmt_report": "$1$QX7vjZfM$vqA/lsjKotd37.J22VcNj0",
+            "first_reply": 1,
+            "last_reply": 5,
+            "nickname_icon_permission": {
+                "email": "",
+                "world_id": "https://ptcdn.info/icon/privilege/ic-pri-world.png",
+                "google": "",
+                "apple": "",
+                "line": "",
+                "facebook": "",
+                "member_vip": "",
+                "sms": "https://ptcdn.info/icon/privilege/ic-pri-phone.png",
+                "id_card": "https://ptcdn.info/icon/privilege/ic-pri-cid.png",
+                "organization": "https://ptcdn.info/icon/privilege/ic-pri-org.png"
+            },
+            "member_id": 7632509,
+            "is_ignore": false,
+            "give_point": {
+                "total": 0,
+                "display_total": "0",
+                "has_more": false,
+                "latest": [],
+                "point_given": 0
+            },
+            "type": "",
+            "is_mute": false,
+            "show_mute_hide_button": false,
+            "mute_group_class": ""
+        }
+    ]
+}
