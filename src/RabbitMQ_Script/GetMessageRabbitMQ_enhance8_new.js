@@ -8,7 +8,7 @@ const ENVIRONMENTS = {
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE = "testing_th.cl.pt.comments_no_cookie_crawling_sources";
+const TARGET_QUEUE = "cl.pt.posts_finished_sources";
 const BATCH_SIZE    = 500;
 const CONCURRENCY   = 5;
 

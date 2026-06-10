@@ -30,7 +30,7 @@ Thông tin topic:
 |---|---|---|---|
 | Root comment được emit | 100/100 | 31/31 | Pass |
 | Reply được emit | 0/1 | 5/5 | Đã fix |
-| `id_source` | Thiếu | Có đủ 36/36 | Đã fix |
+| `id_source` | Thiếu | Có đủ field nhưng map bằng author identity | Fail |
 | `source_type` | Thiếu | Có đủ, giá trị `1` | Đã fix |
 | `search_text` | Thiếu | Có đủ 36/36 | Fix một phần, còn raw HTML |
 | `created_date` root comment | Thiếu | Có đủ và đúng 31/31 | Đã fix |
@@ -39,7 +39,7 @@ Thông tin topic:
 | `id_parent_comment` reply | Thiếu | Có đủ 5/5 | Đã fix, nhưng khác cách diễn đạt trên wiki |
 | Identity output | Chưa kiểm | Có đủ 36/36 author occurrences | Pass một phần, thiếu `shard` |
 
-Kết luận: dev đã fix phần lớn bug chính, đặc biệt đã crawl/map reply. Tuy nhiên chưa thể kết luận mapping hoàn toàn đúng vì vẫn còn lỗi timestamp/shard của reply, raw HTML trong `search_text`, Identity thiếu `shard`, và một số field khác wiki cần xác nhận.
+Kết luận: dev đã fix phần lớn bug chính, đặc biệt đã crawl/map reply. Tuy nhiên chưa thể kết luận mapping hoàn toàn đúng vì `id_source` đang bị map nhầm thành identity của người comment, ngoài các lỗi timestamp/shard của reply, raw HTML trong `search_text`, Identity thiếu `shard`, và một số field khác wiki cần xác nhận.
 
 ---
 
@@ -55,7 +55,7 @@ Kiểm tra tự động trên 31 root comments:
 | `shard` | Ngày từ `data_utime`, format `YYYYMMDD` | 31/31 đúng |
 | `country_code` | `th` | 31/31 đúng |
 | `id_social` | `comment._id` | 31/31 đúng |
-| `id_source` | `user.mid` | 31/31 đúng |
+| `id_source` | `id_source` của source/post chứa comment, ở topic này là `pt_4928846` | 0/31 đúng; actual lấy `user.mid` |
 | `identity` | `pt_{user.mid}` | 31/31 đúng |
 | `identity_name` | `user.name` | 31/31 đúng |
 | `mention_type` | `2` | 31/31 đúng |
@@ -69,7 +69,7 @@ Ví dụ comment no. 1:
 | Field | Input | Output |
 |---|---|---|
 | `_id` / `id_social` | `118956372` | `118956372` |
-| `user.mid` / `id_source` | `28038` | `"28038"` |
+| Parent source `id_source` / `id_source` | `pt_4928846` | `"28038"` - sai, đây là MID của commenter |
 | `identity` | user `28038` | `pt_28038` |
 | `data_utime` | `05/22/2026 09:41:49` | `2026-05-22T02:41:49.000Z` |
 | `shard` | ngày 22/05/2026 | `20260522` |
@@ -84,13 +84,14 @@ Các field sau mapping đúng 5/5:
 
 - `id_social = reply_id`
 - Phần path xác định reply có đúng `comment{comment_no}-{reply_no}`
-- `id_source = reply.user.mid`
 - `identity = pt_{reply.user.mid}`
 - `identity_name = reply.user.name`
 - `id_parent_comment` trỏ đúng UUID của parent mention
 - `search_text` có nội dung reply
 - `mention_type = 2`
 - `source_type = 1`
+
+`id_source` sai 5/5 replies: expected là `id_source` của source/post chứa comment (`pt_4928846`), nhưng actual lấy `reply.user.mid`. `id_source` và `identity` chỉ tình cờ giống nhau khi chính chủ source là người comment/reply.
 
 Lưu ý: chỉ phần suffix/path của reply đúng. Giá trị link hoàn chỉnh vẫn sai vì có tiền tố `//`, được phân tích ở mục 5.1.
 
@@ -251,7 +252,7 @@ Duplicate identity có thể không gây sai dữ liệu nếu Redis upsert theo
 ### Đã fix
 
 - Emit đầy đủ 31 root comments và 5 replies.
-- Bổ sung `id_source`, `source_type`, `search_text`, `created_date` cho root comments.
+- Bổ sung field `id_source`, `source_type`, `search_text`, `created_date` cho root comments, nhưng giá trị `id_source` còn sai.
 - Bổ sung `id_parent_comment` và quan hệ reply -> parent mention đúng.
 - Identity mapping đúng các field đang có.
 
@@ -259,6 +260,7 @@ Duplicate identity có thể không gây sai dữ liệu nếu Redis upsert theo
 
 | Mức độ | Vấn đề |
 |---|---|
+| High | `id_source` sai 36/36 mentions: đang lấy identity của commenter/replier thay vì source của parent post (`pt_4928846`) |
 | High | 5/5 replies thiếu `created_date` và có `shard = 19700101` |
 | High | Link sai 36/36 records, bao gồm 31 root comments và 5 replies; tiền tố `//` làm UUID khác canonical link |
 | Medium | 12/36 `search_text` còn raw HTML, trái wiki note |
