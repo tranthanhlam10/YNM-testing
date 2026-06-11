@@ -141,3 +141,13 @@ LEFT JOIN (
 WHERE cqc.platform = "facebook"
   AND cqc.country = "VN"
 
+
+
+
+
+
+## Những việc cần check ở testing
+
+Deployment:
+
+
