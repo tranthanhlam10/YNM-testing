@@ -4,9 +4,9 @@ import { promises as fs } from 'fs';
 // ============================================================
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
-const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "rnd.socialheat.llm.image_extraction"; // 👈 queue
-const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
+const ACTIVE_ENV   = 'staging';                                              // 👈 'testing' | 'staging'
+const TARGET_QUEUE = "rnd.socialheat.llm.summary_input_LamTT"; // 👈 queue
+const MSG_COUNT    = 1073;                                                   // 👈 số message cần lấy
 // ============================================================
 
 const ENVIRONMENTS = {
