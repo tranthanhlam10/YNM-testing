@@ -8,7 +8,7 @@ const ENVIRONMENTS = {
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE = "cl.eca.product_items_crawled_sources";
+const TARGET_QUEUE = "app.eci.sync_title_miss";
 const BATCH_SIZE    = 500;
 const CONCURRENCY   = 5;
 

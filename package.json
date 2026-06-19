@@ -1,9 +1,13 @@
 {
+  "scripts": {
+    "test:hashTitle": "node --experimental-strip-types hashTitle.test.ts"
+  },
   "dependencies": {
     "amqplib": "^0.10.7",
     "axios": "^1.7.7",
     "csv-write-stream": "^2.0.0",
     "emoji-regex": "^10.4.0",
+    "farmhash": "^5.0.1",
     "https-proxy-agent": "^7.0.6",
     "languagedetect": "^2.0.0",
     "papaparse": "^5.5.3",
