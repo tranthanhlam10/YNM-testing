@@ -52,7 +52,7 @@ function runHashTitleTests(): void {
   testHashAlwaysReturns16HexCharacters();
   testHashIgnoresWhitespaceAndEmojis();
   testLogHashForTitle(
-    "Núm bọc cần Analog tay cầm PS4/P4PLUS/PS5/XBOX/Pro Controller Silicone Bảo vệ Cover Controller nắp dạ quang 2 đầu",
+    "( Hộp 10 ống) Collagen Dạng Nước - Beauty Collagen Shot Nature’s Way",
   );
 
   console.log('hashTitle tests passed');
