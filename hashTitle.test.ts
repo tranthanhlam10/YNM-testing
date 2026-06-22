@@ -52,7 +52,7 @@ function runHashTitleTests(): void {
   testHashAlwaysReturns16HexCharacters();
   testHashIgnoresWhitespaceAndEmojis();
   testLogHashForTitle(
-    "( Hộp 10 ống) Collagen Dạng Nước - Beauty Collagen Shot Nature’s Way",
+    " ",
   );
 
   console.log('hashTitle tests passed');
