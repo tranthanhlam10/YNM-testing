@@ -45,15 +45,19 @@ function testLogHashForTitle(title: string): void {
   console.log('Hash:', hash);
 }
 
+function getTitleFromCommandLine(): string {
+  const title = process.argv.slice(2).join(' ').trim();
+
+  return title || 'Sản phẩm A';
+}
+
 function runHashTitleTests(): void {
   testNormalizeTextRemovesSpacesAndNewlines();
   testNormalizeTextRemovesEmojis();
   testNormalizeTextUsesNfkcUnicodeNormalization();
   testHashAlwaysReturns16HexCharacters();
   testHashIgnoresWhitespaceAndEmojis();
-  testLogHashForTitle(
-    " ",
-  );
+  testLogHashForTitle(getTitleFromCommandLine());
 
   console.log('hashTitle tests passed');
 }
