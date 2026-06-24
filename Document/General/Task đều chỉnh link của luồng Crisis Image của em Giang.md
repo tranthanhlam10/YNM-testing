@@ -610,6 +610,24 @@ tt-crisis-keyword-
   }
 
 
+
+  {
+    "id_keyword": 32700,
+    "keyword": "Tiểu Vy",
+    "id_platform": 9,
+    "id_process": 2955,
+    "is_critical": 0,
+    "is_analyze": 1,
+    "crawling_type": "crisis_tracking",
+    "source": "graph",
+    "is_first_crawl": 1,
+    "last_data_date": "2026-03-10T06:29:00.000Z",
+    "id_last_crawling": 97217,
+    "tag_id": null,
+    "country": "VN"
+  }
+
+
   ## Những cases cần check lại ở testing
 
 ynm-cl-fb-keyword-post-crisis-images-service
@@ -619,3 +637,7 @@ ynm-cl-tt-crisis-images-kw-mobi-api-service
 
 
 ynm-cl-tt-crisis-keyword-by-mob-api-srv-testing
+
+
+
+ynm-cl-fb-keyword-post-critical
