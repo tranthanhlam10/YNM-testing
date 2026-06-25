@@ -376,7 +376,20 @@ app.eci.sync_title_changed|app.eci.sync_title_miss|eca.product_item_histories
   }
 ]
 
+## Những case cần check lại ở Staging
+
+1. Data 
+cl-team-timescaledb-ynm-cl-eca-data-pusher-service
 
 
+2. App
+eca-detect-title-changes
 
+
+3. Note
+Bật loader luồng crawl của tiki
+
+tiki-ynm-cl-eca-crawling-loader-service
+
+Vào statefulset để kím các pod của tiki eci
 
