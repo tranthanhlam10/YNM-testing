@@ -465,6 +465,9 @@ const queue_name29 = "app.socialheat.crawling.yt_post_url_LamTT";
 const queue_name30 = "staging.cl.news.article_posts_LamTT";
 const queue_name31 = "high_priority_detail_url_info";
 const queue_name32 = "staging.cl.mentions_2_solr_mentions_LamTT_2";
+const queue_name33 = "staging.cl.tt.identity_countries_crawling_sources.luannx";
+const queue_name34 = "staging.cl.identities_finished_sources_LamTT";
+const queue_name35 = "staging.cl.tt.identity_countries_crawling_sources.nganltk";
 
 const userName = 'lamtt';
 const testPassword = 'lamtt';
@@ -476,11 +479,11 @@ const stagingPassword = 'vYoWn4KCmDYpvuFiqovWbF';
 peekAllMessagesInBatches(
   stagingHTTP,
   stagingDomain,
-  queue_name32,
+  queue_name35,
   userName,
   stagingPassword,
-  500,  // Batch size
-  5    // Concurrency
+  300,  // Batch size
+  2    // Concurrency
 )
   .then((result) => {
     if (result.success) {
