@@ -5,10 +5,10 @@ import axios from 'axios';
 // ⚙️  CONFIG — chỉnh 4 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                           // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "cl.pt.posts_finished_sources"; // 👈 queue
+const TARGET_QUEUE = "testing.cl.x.posts_from_reply_by_cookie_crawled_sources"; // 👈 queue
 const MESSAGE_LIMIT = 23000;                                              // 👈 số message tối đa
 const JSON_FILE =
-  "Data_get_from_rabbitMQ_by_scripts/messages_testing_th_cl_pt_comments_no_cookie_crawling_sources_2026-06-04T10-27-49-560Z/all_messages.json"; // 👈 file input
+  "/Users/tranthanhlam/YNM-testing/Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_x_posts_from_reply_by_cookie_crawled_sources_2026-06-29T09-18-35-625Z.json"; // 👈 file input
 // ============================================================
 
 const ENVIRONMENTS = {
