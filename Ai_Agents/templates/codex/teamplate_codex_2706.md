@@ -18,7 +18,7 @@ Format kết quả mong muốn:
 5. Bộ testcase phiên bản đã cải thiện nếu cần
 
 Requirement/User story:
-/Users/tranthanhlam/YNM-testing/Ai_Agents/TestPlan/Data local/TestPlan_YNMSHGYSG-829_X_Special_Cases_Article_Space_Broadcast.md
+/Users/tranthanhlam/YNM-testing/Ai_Agents/test_plans/local/x_special_cases_article_space_broadcast/TestPlan_YNMSHGYSG-829_X_Special_Cases_Article_Space_Broadcast.md
 
 Testcase hiện tại:
 https://docs.google.com/spreadsheets/d/1Oe3crx444n49VWyTy1vFq-Mef5ihv5HpZGfb4prieoY/edit?gid=1704880699#gid=1704880699

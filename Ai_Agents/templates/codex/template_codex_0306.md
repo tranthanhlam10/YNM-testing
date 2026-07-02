@@ -5,9 +5,9 @@ Dựa vào việc bạn là QC nhiều kinh nghiệm, bạn hãy đọc từ cá
 
 
 
-Ai_Agents/TestPlan/Data local/Feature_Flow_Detail_Auto_Refill_Token_Renew_Proxies.md
+Ai_Agents/test_plans/local/auto_refill_token_renew_proxies/Feature_Flow_Detail_Auto_Refill_Token_Renew_Proxies.md
 
-Ai_Agents/TestPlan/Data local/TestPlan_Auto_Refill_Token_Renew_Proxies.md
+Ai_Agents/test_plans/local/auto_refill_token_renew_proxies/TestPlan_Auto_Refill_Token_Renew_Proxies.md
 
 
 Và file test case: 

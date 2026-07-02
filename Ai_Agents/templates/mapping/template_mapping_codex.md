@@ -61,4 +61,4 @@ Nếu có chỗ nào cần confirm, thì note lại giúp t nhé
 Đây là file tổng hợp mapping mẫu:
 
 
-Ai_Agents/TestCases/Data local/data_mapping_reaudit_pantip_comment_2026-06-10.md
+Ai_Agents/test_cases/pantip_crawl/data_mapping_reaudit_pantip_comment_2026-06-10.md

@@ -73,4 +73,4 @@ File tương tự:
 
 /Users/tranthanhlam/YNM-testing/Document/ECI/YNMPECA-9240 - QA can hieu va can lam.md
 
-/Users/tranthanhlam/YNM-testing/Ai_Agents/TestPlan/Data local/TestPlan_Auto_Refill_Token_Renew_Proxies.md
+/Users/tranthanhlam/YNM-testing/Ai_Agents/test_plans/local/auto_refill_token_renew_proxies/TestPlan_Auto_Refill_Token_Renew_Proxies.md

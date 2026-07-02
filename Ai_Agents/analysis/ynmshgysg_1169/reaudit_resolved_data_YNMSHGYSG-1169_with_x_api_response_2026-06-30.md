@@ -20,7 +20,7 @@ Mục tiêu round này:
 Report trước:
 
 ```text
-Ai_Agents/phan_tich_issue_by_agents/reaudit_resolved_data_YNMSHGYSG-1169_2026-06-30.md
+Ai_Agents/analysis/ynmshgysg_1169/reaudit_resolved_data_YNMSHGYSG-1169_2026-06-30.md
 ```
 
 ## 2. Kết luận nhanh

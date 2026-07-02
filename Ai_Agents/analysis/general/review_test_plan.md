@@ -22,4 +22,4 @@ Thông tin project/requirement:
 https://jira.younetco.com/browse/YNMSHGYSG-1169
 
 Test Plan hiện tại:
- /Users/tranthanhlam/YNM-testing/Ai_Agents/TestPlan/Data local/TestPlan_YNMSHGYSG-1169_Improve_Crawling_Post_From_Reply_X.md
+ /Users/tranthanhlam/YNM-testing/Ai_Agents/test_plans/local/x_crawling_from_reply/TestPlan_YNMSHGYSG-1169_Improve_Crawling_Post_From_Reply_X.md

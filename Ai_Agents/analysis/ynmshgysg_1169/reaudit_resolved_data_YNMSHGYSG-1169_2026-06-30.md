@@ -19,10 +19,10 @@ Audit bộ dữ liệu raw và các output sau resolve của luồng **X - Crawl
 ### Nguồn requirement đã đối chiếu
 
 - Jira: `https://jira.younetco.com/browse/YNMSHGYSG-1169`
-- Test plan: `Ai_Agents/TestPlan/Data local/TestPlan_YNMSHGYSG-1169_Improve_Crawling_Post_From_Reply_X.md`
+- Test plan: `Ai_Agents/test_plans/local/x_crawling_from_reply/TestPlan_YNMSHGYSG-1169_Improve_Crawling_Post_From_Reply_X.md`
 - Testcases sheet: `https://docs.google.com/spreadsheets/d/1hJkgSEvk-CEvqVl3UZ2gnq1B3S6oQ8Ux2064Z0FKdVU/edit?gid=1704880699#gid=1704880699`
 - Wiki: `https://wiki.younetco.com/pages/viewpage.action?pageId=273755552`
-- Mapping report mẫu: `Ai_Agents/TestCases/Data local/data_mapping_reaudit_pantip_comment_2026-06-10.md`
+- Mapping report mẫu: `Ai_Agents/test_cases/pantip_crawl/data_mapping_reaudit_pantip_comment_2026-06-10.md`
 
 ## 2. Raw data baseline
 

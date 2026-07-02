@@ -20,7 +20,7 @@ https://wiki.younetco.com/pages/viewpage.action?spaceKey=FB&title=X+platform+tec
 3. [TEST PLAN / STRATEGY]:
 (Dán tóm tắt mục tiêu, scope, risk từ Test Plan vào đây để định hướng focus) -> Viết case chủ yếu dựa vào test-plan đã viết
 
-/Users/tranthanhlam/YNM-testing/Ai_Agents/TestPlan/Data local/TestPlan_YNMSHGYSG-1169_Improve_Crawling_Post_From_Reply_X.md
+/Users/tranthanhlam/YNM-testing/Ai_Agents/test_plans/local/x_crawling_from_reply/TestPlan_YNMSHGYSG-1169_Improve_Crawling_Post_From_Reply_X.md
 
 
 ---

@@ -20,4 +20,4 @@ Và các file mentions và identity sau khi crawl được ở đây:
 
 Data_get_from_rabbitMQ_by_scripts/messages_testing_cl_identities_2_redis_identities_LamTT_2026-06-05T03-53-45-077Z.json
 
- file md mapping tương tự đã từng làm trước khi dev fix bug: Ai_Agents/TestCases/Data local/data_mapping_analysis_pantip_crawl_comment.md
+ file md mapping tương tự đã từng làm trước khi dev fix bug: Ai_Agents/test_cases/pantip_crawl/data_mapping_analysis_pantip_crawl_comment.md

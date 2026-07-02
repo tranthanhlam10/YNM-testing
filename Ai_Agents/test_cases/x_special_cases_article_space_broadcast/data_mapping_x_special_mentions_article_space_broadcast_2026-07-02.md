@@ -32,7 +32,7 @@ Resolved output bổ sung:
 
 Requirement tham chiếu:
 
-- `Ai_Agents/TestPlan/Data local/TestPlan_YNMSHGYSG-829_X_Special_Cases_Article_Space_Broadcast.md`
+- `Ai_Agents/test_plans/local/x_special_cases_article_space_broadcast/TestPlan_YNMSHGYSG-829_X_Special_Cases_Article_Space_Broadcast.md`
 - BA rule: Article, Audio Space, Broadcast là special content, expected `mention_type=3`, `mention_type_details=3`, có `link_shared` và metadata trong `search_text`.
 
 ## 2. Kết luận tổng quan
