@@ -221,10 +221,10 @@ Vấn đề ghi nhận từ Jira:
 
 | Nhóm data | Mục đích | Sample/Hint |
 |---|---|---|
-| Direct Article | Verify full article body/search_text/link metadata | Article link `http://x.com/i/article/2030871214206689280`; post `2030872456807023091` |
-| Post share Article | Verify case `is_quoted_status=false` nhưng vẫn cần link_shared | Source/post trong YNMSHGYSG-741 |
-| Audio Space | Verify Space not skipped, content mapping | Các source dạng `x.com/i/spaces/...` |
-| Broadcast/Livestream | Verify broadcast not skipped | Comment có sample `2039252621245268352` |
+| Direct Article | Verify full article body/search_text/link metadata | - Source post: `https://x.com/i/status/2030872456807023091`<br>- Article link/shared object: `https://x.com/i/article/2030871214206689280`<br>- Source id: `x_834671629426794496`<br>- Source: YNMSHGYSG-516/741 |
+| Post share Article | Verify case `is_quoted_status=false` nhưng vẫn cần link_shared | - Source/message id_social: `2036958960201482626` trong YNMSHGYSG-741<br>- Cần crawl lại để confirm `link_shared` article thực tế<br>- Need Confirm raw mới nếu source cũ hết accessible |
+| Audio Space | Verify Space not skipped, content mapping | - Source post: `https://x.com/1581256352072081409/status/2071178103603228743`<br>- Expected `link_shared`: `https://x.com/i/spaces/1nKOLLOvvkWGR`<br>- Expected `mention_type=3`, `mention_type_details=3`<br>- Expected `attachment.type=audio`<br>- Đã thấy trong identity country output 30/06/2026 |
+| Broadcast/Livestream | Verify broadcast not skipped | - Primary sample: `https://x.com/i/status/2039252621245268352` *(source: YNMSHGYSG-741 comment)*<br>- Backup public post: `https://x.com/X/status/1927499737852256365`<br>- Backup direct broadcast: `https://x.com/i/broadcasts/1dGYllmOkOMKX` |
 | Normal text/photo/video | Regression normal post by reply | Lấy source thực từ Testing/Staging |
 | Quote/repost normal | Regression mention_type=3 non-special | Source có `quoted_status_result` |
 | Deleted/unavailable special content | Error handling | Mock raw response tombstone/unavailable |
@@ -399,7 +399,11 @@ Vấn đề ghi nhận từ Jira:
 | Article link | `http://x.com/i/article/2030871214206689280` | YNMSHGYSG-516/741 |
 | Article source id | `x_834671629426794496` | YNMSHGYSG-516/741 |
 | Source message id_social | `2036958960201482626` | YNMSHGYSG-741 |
+| Audio Space post | `https://x.com/1581256352072081409/status/2071178103603228743` | Local identity country output 30/06/2026 |
+| Audio Space link_shared | `https://x.com/i/spaces/1nKOLLOvvkWGR` | Local identity country output 30/06/2026 |
 | Broadcast/livestream sample | `2039252621245268352` | YNMSHGYSG-741 comment |
+| Broadcast/livestream backup post | `https://x.com/X/status/1927499737852256365` | Public X search |
+| Broadcast/livestream backup direct link | `https://x.com/i/broadcasts/1dGYllmOkOMKX` | Public X search |
 | Crawler type | `X_POST_FROM_REPLY_BY_COOKIE_CRAWLER` | YNMSHGYSG-269/829 |
 
 > Lưu ý: Không copy token/cookie/proxy/password từ Jira/log vào test plan hoặc testcase. Khi cần chạy local, dùng secret manager/env của team theo đúng quyền truy cập.
@@ -414,4 +418,3 @@ Vấn đề ghi nhận từ Jira:
 | Dev Owner | Huy Nguyen Vo Quoc | Pending | |
 | BA/PO | Pending | Pending | |
 | QA Lead | Pending | Pending | |
-
