@@ -1,15 +1,15 @@
 // ============================================================
 // ⚙️  MASTER CONFIG
 // ============================================================
-const ACTIVE_ENV = 'testing';
+const ACTIVE_ENV = 'staging';
 
 const ENVIRONMENTS = {
   testing: { method: 'http',  domain: 'rabbitmq-testing.ynm.local',          userName: 'lamtt', password: 'lamtt' },
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE = "app.eci.sync_title_miss";
-const BATCH_SIZE    = 500;
+const TARGET_QUEUE = "staging.cl.replies_2_mongo_x_replies_LamTT";
+const BATCH_SIZE    = 200;
 const CONCURRENCY   = 5;
 
 // Dừng khi không tìm được message mới sau N batch LIÊN TIẾP (tính trên tất cả workers)

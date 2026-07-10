@@ -7,7 +7,8 @@ import axios from 'axios';
 const ACTIVE_ENV   = 'testing';                                           // 👈 'testing' | 'staging'
 const TARGET_QUEUE = "testing.cl.x.posts_from_reply_by_cookie_crawling_sources"; // 👈 queue
 const MESSAGE_LIMIT = 23000;                                              // 👈 số message tối đa
-const JSON_FILE = "TestData/data_test_x_post_from_reply.json"; // 👈 file input
+const JSON_FILE =
+  "Data_get_from_rabbitMQ_by_scripts/test_data_search_text_crawl_from_comment_2026-07-02.json"; // 👈 file input
 // ============================================================
 
 const ENVIRONMENTS = {

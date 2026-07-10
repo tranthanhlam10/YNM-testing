@@ -5,8 +5,8 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "testing.cl.replies_2_mongo_x_replies_LamTT"; // 👈 queue
-const MSG_COUNT    = 1000;                                                   // 👈 số message cần lấy
+const TARGET_QUEUE = "testing.cl.news.article_urls_crawling_requests"; // 👈 queue
+const MSG_COUNT    = 200;                                                   // 👈 số message cần lấy
 // ============================================================
 
 const ENVIRONMENTS = {

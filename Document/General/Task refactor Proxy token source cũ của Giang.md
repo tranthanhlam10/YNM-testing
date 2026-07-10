@@ -82,3 +82,18 @@ crawler-fb-testing-update-engagement-fb-post
 
 
 
+## Những cases cần check lại ở staging
+https://k8s.younetmedia.com/#/search?namespace=crawler-staging&q=fbgraph-staging
+
+
+crawler-fb-staging-update-engagement-page-fb-post-socialift
+
+crawler-fb-staging-update-engagement-group-fb-post-socialift
+
+crawler-fb-staging-update-engagement-user-fb-post-socialift
+
+crawler-fb-staging-update-engagement-fb-post-social-trend
+
+crawler-fb-staging-update-engagement-fb-post
+
+

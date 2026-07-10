@@ -351,7 +351,7 @@ app.eci.sync_title_changed|app.eci.sync_title_miss|eca.product_item_histories
 
 [
   {
-    "product_item_id": "tiki_1640153_1",
+    "product_item_id": "tiki_1640153_1111",
     "crawled_date": "2026-06-22T01:25:48.366Z",
     "crawler_type": "PI_BY_SHOP",
     "source_id": "shopee.vn",
