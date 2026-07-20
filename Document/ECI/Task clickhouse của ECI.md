@@ -73,6 +73,8 @@ Trigger 2 jobs này để chạy
 
 
 https://k8s.ynm.local/#/cronjob/crawler-testing/cronjob-eca-detect-invalid-job-testing?namespace=crawler-testing
+
+
 https://k8s.ynm.local/#/cronjob/crawler-testing/cronjob-eca-ws-ms-calculate-pi-histories-job-testing?namespace=crawler-testing
 
 
