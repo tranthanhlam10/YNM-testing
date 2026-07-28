@@ -5,8 +5,8 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "testing.cl.identities_finished_sources_Linh"; // 👈 queue
-const MSG_COUNT    = 200;                                                   // 👈 số message cần lấy
+const TARGET_QUEUE = "app.eci.trigger.report_synchronization"; // 👈 queue
+const MSG_COUNT    = 10;                                                   // 👈 số message cần lấy
 // ============================================================
 
 const ENVIRONMENTS = {

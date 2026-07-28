@@ -153,7 +153,7 @@ root / qF1ASZOudv
 54.39.243.62 / 30495
 
 Câu lệnh tạo shard: 
-solr/admin/collections?action=CREATESHARD&collection=product_item_weekly&shard=202305
+solr/admin/collections?action=CREATESHARD&collection=product_item_weekly&shard=202629
 
 
 k8s local
