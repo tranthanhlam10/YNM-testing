@@ -4,9 +4,9 @@ import { promises as fs } from 'fs';
 // ============================================================
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
-const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "app.eci.trigger.report_synchronization"; // 👈 queue
-const MSG_COUNT    = 10;                                                   // 👈 số message cần lấy
+const ACTIVE_ENV   = 'staging';                                              // 👈 'testing' | 'staging'
+const TARGET_QUEUE = "rnd.socialheat.llm.image_extraction"; // 👈 queue
+const MSG_COUNT    = 500;                                                   // 👈 số message cần lấy
 // ============================================================
 
 const ENVIRONMENTS = {

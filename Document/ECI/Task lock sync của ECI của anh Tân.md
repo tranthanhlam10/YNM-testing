@@ -30,3 +30,45 @@ Request chuyển status “Synced” khi không còn hash nào trên Redis.
 
 
 1. Queue 
+
+app.eci.trigger.report_synchronization
+
+
+2. k8s
+
+eca-k8s-job-trigger-service
+sl-api-eci
+
+
+## Những PIs cần check
+
+1. Dành cho monthly
+
+industry_id: 1
+
+lazada_13319946121.  202606
+
+
+
+industry_id: 2
+
+lazada_1083958997
+
+
+industry_id: 3
+
+lazada_13328182550.   202606
+
+
+2. Dành cho weekly
+
+
+
+
+lazada_1606921505
+
+tiki_168663291_1
+
+shopee_26552232990
+
+
