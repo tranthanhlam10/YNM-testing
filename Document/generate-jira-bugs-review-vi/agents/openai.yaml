@@ -1,0 +1,4 @@
+interface:
+  display_name: "Tạo bug Jira"
+  short_description: "Tạo bug Jira từ bảng test case"
+  default_prompt: "Dùng $generate-jira-bugs để xem trước các bug Jira từ bảng test case của tôi và chưa tạo issue thật."

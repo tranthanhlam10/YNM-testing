@@ -8,7 +8,7 @@ const ACTIVE_ENV   = 'testing';                                           // �
 const TARGET_QUEUE =
   "testing.cl.tt.posts_from_crisis_keyword_by_mobile_api_crawling_sources"; // 👈 queue
 const MESSAGE_LIMIT = 23000;                                              // 👈 số message tối đa
-const JSON_FILE = "TestData/data_test_tiktok_staging_4.json"; // 👈 file input
+const JSON_FILE = "TestData/data_test_tiktok_4.json"; // 👈 file input
 // ============================================================
 
 const ENVIRONMENTS = {
