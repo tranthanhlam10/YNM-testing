@@ -1,0 +1,614 @@
+[
+  {
+    "id": "TC_JOB_001",
+    "module": "Job Scheduling",
+    "name": "[High] [Positive] Khởi tạo job vào kỳ chốt tuần",
+    "precondition": "Service detect-invalid-record đã deploy trên Testing; QA có thể set dateRun; không có job cùng kỳ đang chạy.",
+    "steps": "1. Set dateRun=2026-08-10 02:00:00+07:00.\n2. Trigger scheduler detect-invalid-record.\n3. Kiểm tra job instance, tham số kỳ chạy và log khởi tạo.\n4. Theo dõi đến khi job hoàn tất.",
+    "data": {"dateRun":"2026-08-10T02:00:00+07:00","dateRunMinus2Days":"2026-08-08","dayOfWeek":"Saturday","expectedJobCount":1},
+    "expected": "- Hệ thống nhận diện dateRun - 2 ngày là Thứ Bảy và tạo đúng 1 job.\n- Job xử lý prevWeek/curWeek đúng kỳ tương ứng.\n- Không tạo job trùng cho cùng một lần scheduler chạy."
+  },
+  {
+    "id": "TC_JOB_002",
+    "module": "Job Scheduling",
+    "name": "[High] [Positive] Khởi tạo job vào kỳ chốt tháng",
+    "precondition": "Service đã deploy; QA có thể set dateRun; ngày dateRun - 2 là ngày cuối tháng nhưng không phải Thứ Bảy.",
+    "steps": "1. Set dateRun=2026-09-02 02:00:00+07:00.\n2. Trigger scheduler.\n3. Kiểm tra điều kiện end-of-month và số job được tạo.\n4. Kiểm tra log start/end.",
+    "data": {"dateRun":"2026-09-02T02:00:00+07:00","dateRunMinus2Days":"2026-08-31","isEndOfMonth":true,"expectedJobCount":1},
+    "expected": "- Hệ thống tạo đúng 1 job vì dateRun - 2 ngày là ngày cuối tháng.\n- Job không bị bỏ qua chỉ vì ngày 31/08/2026 không phải Thứ Bảy.\n- Log thể hiện đúng lý do trigger end-of-month."
+  },
+  {
+    "id": "TC_JOB_003",
+    "module": "Job Scheduling",
+    "name": "[High] [Negative] Không tạo job ngoài kỳ chốt tuần hoặc tháng",
+    "precondition": "Service đã deploy; QA có thể set dateRun; không có manual trigger.",
+    "steps": "1. Set dateRun=2026-08-12 02:00:00+07:00.\n2. Trigger scheduler.\n3. Kiểm tra danh sách job và log.\n4. Query Solr/ClickHouse để xác nhận không có write mới từ lần trigger này.",
+    "data": {"dateRun":"2026-08-12T02:00:00+07:00","dateRunMinus2Days":"2026-08-10","dayOfWeek":"Monday","isEndOfMonth":false},
+    "expected": "- Không tạo detect-invalid-record job.\n- Không có request update/delete Solr.\n- Không có ClickHouse insert do scheduler này.\n- Service không báo lỗi hoặc crash."
+  },
+  {
+    "id": "TC_JOB_004",
+    "module": "Job Scheduling",
+    "name": "[High] [Edge] Chỉ tạo một job khi đồng thời chốt tuần và chốt tháng",
+    "precondition": "QA có thể set dateRun; ngày 31/10/2026 là Thứ Bảy và là ngày cuối tháng.",
+    "steps": "1. Set dateRun=2026-11-02 02:00:00+07:00.\n2. Trigger scheduler một lần.\n3. Đếm số job instance và số lần cùng PI được xử lý.\n4. Kiểm tra số request Solr/ClickHouse.",
+    "data": {"dateRun":"2026-11-02T02:00:00+07:00","dateRunMinus2Days":"2026-10-31","isSaturday":true,"isEndOfMonth":true,"productItemId":"PI-BOTH-TRIGGER-001"},
+    "expected": "- Chỉ có 1 job instance cho kỳ chạy, không tạo 2 job do hai điều kiện cùng đúng.\n- Mỗi PI chỉ được tính lại một lần trong job.\n- Không phát sinh delete/update Solr trùng lặp."
+  },
+  {
+    "id": "TC_JOB_005",
+    "module": "Period Resolution",
+    "name": "[High] [Edge] Bỏ qua toàn bộ Solr khi prevWeek rỗng nhưng vẫn ghi ClickHouse",
+    "precondition": "Test hook cho phép mô phỏng prevWeek=[] tại mốc cutoff; có PI-EMPTY-PREV-001 cần cập nhật abnormal chain.",
+    "steps": "1. Cấu hình period resolver trả prevWeek rỗng.\n2. Trigger detect-invalid-record.\n3. Theo dõi Solr client calls.\n4. Query ClickHouse và kiểm tra CH write log.",
+    "data": {"productItemId":"PI-EMPTY-PREV-001","prevWeek":[],"curWeek":["2026-07-01","2026-07-02"],"clickHouseChange":{"is_abnormal":1}},
+    "expected": "- Không gọi update hoặc delete vào collection product_item_weekly.\n- ClickHouse Pusher vẫn ghi các thay đổi is_abnormal/last_total_sold/last_crawled_date cần thiết.\n- Job hoàn tất an toàn và log nêu rõ Solr bị skip vì prevWeek rỗng."
+  },
+  {
+    "id": "TC_JOB_006",
+    "module": "Configuration",
+    "name": "[High] [Negative] Xử lý an toàn khi thiếu cấu hình weeklyCollection",
+    "precondition": "Có thể chạy service với bản config Testing riêng; chưa có write nào trong run này.",
+    "steps": "1. Bỏ cấu hình detectInvalid.weeklyCollection.\n2. Trigger job có PI cần delete.\n3. Kiểm tra trạng thái job và log.\n4. Query các Solr collection liên quan để bảo đảm không ghi nhầm.",
+    "data": {"configKey":"detectInvalid.weeklyCollection","configValue":null,"productItemId":"PI-CONFIG-001","expectedCollection":"product_item_weekly"},
+    "expected": "- Job không được ghi vào collection mặc định hoặc collection khác một cách im lặng.\n- Có error log chỉ rõ thiếu config.\n- Không có Solr document nào bị update/delete.\n- Trạng thái fail/retry của job là (Need Confirm) theo policy vận hành."
+  },
+  {
+    "id": "TC_PRELOAD_001",
+    "module": "ClickHouse Preloader",
+    "name": "[High] [Positive] Chọn đúng PI có delta_sold âm và chưa abnormal",
+    "precondition": "ClickHouse có PI-PRELOAD-001 trong range job; QA có quyền xem output preloader.",
+    "steps": "1. Insert/chọn record test.\n2. Chạy bước check invalid records.\n3. Capture danh sách product_item_id trả về.\n4. Đối chiếu điều kiện filter.",
+    "data": {"product_item_id":"PI-PRELOAD-001","delta_sold":-10,"is_abnormal":0,"crawled_date":"2026-06-24T10:00:00+07:00"},
+    "expected": "- Output chứa đúng PI-PRELOAD-001.\n- PI được đưa vào Puller để tải histories.\n- Không thay đổi dữ liệu trước khi bước detect/rebuild hoàn tất."
+  },
+  {
+    "id": "TC_PRELOAD_002",
+    "module": "ClickHouse Preloader",
+    "name": "[High] [Negative] Loại PI có delta_sold bằng 0",
+    "precondition": "ClickHouse có PI-DELTA-ZERO-001 trong range và is_abnormal=0.",
+    "steps": "1. Chạy preloader cho range chứa record.\n2. Kiểm tra candidate list.\n3. Kiểm tra Solr/ClickHouse write của PI này.",
+    "data": {"product_item_id":"PI-DELTA-ZERO-001","delta_sold":0,"is_abnormal":0},
+    "expected": "- Candidate list không chứa PI-DELTA-ZERO-001.\n- Không tải histories, không tính lại weekly và không phát sinh write chỉ vì record này."
+  },
+  {
+    "id": "TC_PRELOAD_003",
+    "module": "ClickHouse Preloader",
+    "name": "[High] [Negative] Loại PI có delta_sold dương",
+    "precondition": "ClickHouse có PI-DELTA-POS-001 trong range và is_abnormal=0.",
+    "steps": "1. Chạy preloader.\n2. Kiểm tra candidate list và log changedPiCount.\n3. Kiểm tra không có Solr action cho PI.",
+    "data": {"product_item_id":"PI-DELTA-POS-001","delta_sold":25,"is_abnormal":0},
+    "expected": "- PI-DELTA-POS-001 không được chọn.\n- Không có false positive invalid record.\n- Không phát sinh update/delete Solr cho PI này."
+  },
+  {
+    "id": "TC_PRELOAD_004",
+    "module": "ClickHouse Preloader",
+    "name": "[High] [Negative] Loại PI đã được đánh dấu abnormal",
+    "precondition": "ClickHouse có PI-ALREADY-ABNORMAL-001 với delta_sold âm nhưng is_abnormal=1.",
+    "steps": "1. Chạy preloader.\n2. Kiểm tra candidate list.\n3. Kiểm tra histories Puller và Solr call.",
+    "data": {"product_item_id":"PI-ALREADY-ABNORMAL-001","delta_sold":-30,"is_abnormal":1},
+    "expected": "- PI không được preload vì chỉ nhận is_abnormal=0.\n- Không xử lý lặp lại record đã abnormal.\n- Không phát sinh Solr action mới."
+  },
+  {
+    "id": "TC_PRELOAD_005",
+    "module": "ClickHouse Preloader",
+    "name": "[High] [Positive] Filter chính xác trong dataset hỗn hợp",
+    "precondition": "ClickHouse có 5 PI test cùng date range.",
+    "steps": "1. Nạp dataset hỗn hợp.\n2. Chạy preloader.\n3. Sort và so sánh candidate IDs với expected.\n4. Kiểm tra count log.",
+    "data": {"records":[{"id":"PI-MIX-01","delta_sold":-1,"is_abnormal":0},{"id":"PI-MIX-02","delta_sold":0,"is_abnormal":0},{"id":"PI-MIX-03","delta_sold":10,"is_abnormal":0},{"id":"PI-MIX-04","delta_sold":-5,"is_abnormal":1},{"id":"PI-MIX-05","delta_sold":-99,"is_abnormal":0}],"expectedCandidates":["PI-MIX-01","PI-MIX-05"]},
+    "expected": "- Candidate list chỉ gồm PI-MIX-01 và PI-MIX-05.\n- Không thiếu PI hợp lệ và không nhận PI sai điều kiện.\n- Candidate count=2."
+  },
+  {
+    "id": "TC_PRELOAD_006",
+    "module": "ClickHouse Preloader",
+    "name": "[Medium] [Edge] Không chọn record delta âm nằm ngoài date range",
+    "precondition": "Range job là 15/06/2026-28/06/2026; có record ngay trước và sau range.",
+    "steps": "1. Chạy preloader với range đã cho.\n2. Kiểm tra candidate list.\n3. Kiểm tra query/log có đúng date range.",
+    "data": {"range":{"from":"2026-06-15T00:00:00+07:00","to":"2026-06-28T23:59:59+07:00"},"records":[{"id":"PI-OUT-BEFORE","date":"2026-06-14T23:59:59+07:00","delta_sold":-1,"is_abnormal":0},{"id":"PI-IN-RANGE","date":"2026-06-20T10:00:00+07:00","delta_sold":-1,"is_abnormal":0},{"id":"PI-OUT-AFTER","date":"2026-06-29T00:00:00+07:00","delta_sold":-1,"is_abnormal":0}]},
+    "expected": "- Chỉ PI-IN-RANGE được chọn.\n- Hai record ngoài khoảng không ảnh hưởng job hiện tại.\n- Boundary inclusive/exclusive chính xác tại start/end cần đối chiếu timezone đã chốt (Need Confirm)."
+  },
+  {
+    "id": "TC_PULLER_001",
+    "module": "Histories Puller",
+    "name": "[High] [Positive] Tải histories của candidate trong prevWeek đến curWeek",
+    "precondition": "PI-PULL-001 đã được preloader chọn; ClickHouse có lịch sử ở tuần trước và tuần hiện tại.",
+    "steps": "1. Chạy Puller cho PI-PULL-001.\n2. Capture histories đầu ra.\n3. So sánh product_item_id và crawled_date với input range.",
+    "data": {"product_item_id":"PI-PULL-001","prevWeek":{"from":"2026-06-15","to":"2026-06-21"},"curWeek":{"from":"2026-06-22","to":"2026-06-28"},"dates":["2026-06-16","2026-06-20","2026-06-24","2026-06-27"]},
+    "expected": "- Puller trả đủ 4 histories hợp lệ của PI trong hai tuần.\n- Không trộn histories của PI khác.\n- Dữ liệu đủ để thuật toán so sánh sold xuyên từ prevWeek sang curWeek."
+  },
+  {
+    "id": "TC_PULLER_002",
+    "module": "Histories Puller",
+    "name": "[High] [Negative] Loại history có total_sold bằng hoặc nhỏ hơn 0",
+    "precondition": "PI-PULL-SOLD-001 đã được chọn; có histories total_sold âm, 0 và dương.",
+    "steps": "1. Chạy Puller.\n2. Kiểm tra histories sau filter.\n3. Chạy detector để bảo đảm record bị loại không ảnh hưởng minAllowedSold.",
+    "data": {"product_item_id":"PI-PULL-SOLD-001","histories":[{"date":"2026-06-18","total_sold":-1,"is_abnormal":0},{"date":"2026-06-19","total_sold":0,"is_abnormal":0},{"date":"2026-06-20","total_sold":80,"is_abnormal":0}],"expectedDates":["2026-06-20"]},
+    "expected": "- Chỉ history total_sold=80 được giữ.\n- Record total_sold<=0 không tham gia detect abnormal hoặc rebuild.\n- Job không crash vì giá trị âm/0."
+  },
+  {
+    "id": "TC_PULLER_003",
+    "module": "Histories Puller",
+    "name": "[High] [Negative] Loại history đã is_abnormal=1",
+    "precondition": "PI-PULL-ABN-001 có một history đã abnormal và hai history bình thường.",
+    "steps": "1. Chạy Puller.\n2. So sánh danh sách history trước/sau filter.\n3. Kiểm tra detector không đánh dấu lại record cũ.",
+    "data": {"product_item_id":"PI-PULL-ABN-001","histories":[{"date":"2026-06-18","total_sold":120,"is_abnormal":1},{"date":"2026-06-19","total_sold":80,"is_abnormal":0},{"date":"2026-06-20","total_sold":90,"is_abnormal":0}]},
+    "expected": "- History ngày 18/06 bị loại.\n- Chỉ hai history is_abnormal=0 được dùng cho lần tính hiện tại.\n- Không phát sinh duplicate abnormal insert cho record ngày 18/06."
+  },
+  {
+    "id": "TC_PULLER_004",
+    "module": "Histories Puller",
+    "name": "[Medium] [Edge] Không tải history ngoài prevWeek-curWeek",
+    "precondition": "PI-PULL-RANGE-001 có history trước prevWeek, trong range và sau curWeek.",
+    "steps": "1. Chạy Puller với range 15/06-28/06.\n2. Kiểm tra crawled_date đầu ra.\n3. Kiểm tra weekly calculation chỉ dùng dữ liệu đúng kỳ.",
+    "data": {"product_item_id":"PI-PULL-RANGE-001","range":{"from":"2026-06-15","to":"2026-06-28"},"histories":[{"date":"2026-06-14","total_sold":70},{"date":"2026-06-15","total_sold":80},{"date":"2026-06-28","total_sold":90},{"date":"2026-06-29","total_sold":100}]},
+    "expected": "- History 14/06 và 29/06 không có trong output.\n- History thuộc 15/06 và 28/06 được xử lý theo boundary của implementation.\n- Nếu end boundary không inclusive như ví dụ thì cần Dev xác nhận lại (Need Confirm)."
+  },
+  {
+    "id": "TC_PULLER_005",
+    "module": "Histories Puller",
+    "name": "[High] [Positive] Dùng record curWeek để phát hiện sold giảm của record cũ",
+    "precondition": "PI-CROSS-WEEK-001 có record prevWeek sold cao và record curWeek sold thấp; cả hai chưa abnormal.",
+    "steps": "1. Chạy preloader và Puller.\n2. Xác nhận output chứa cả hai tuần.\n3. Chạy detector.\n4. Kiểm tra record nào bị đánh dấu abnormal.",
+    "data": {"product_item_id":"PI-CROSS-WEEK-001","histories":[{"date":"2026-06-21","week":"prevWeek","total_sold":200,"is_abnormal":0},{"date":"2026-06-22","week":"curWeek","total_sold":90,"is_abnormal":0}]},
+    "expected": "- Puller không chỉ tải prevWeek mà có cả curWeek.\n- Record prevWeek total_sold=200 bị đánh dấu abnormal do lớn hơn mốc sold mới hơn là 90.\n- Record curWeek=90 vẫn hợp lệ."
+  },
+  {
+    "id": "TC_ABNORMAL_001",
+    "module": "Abnormal Detection",
+    "name": "[High] [Positive] Không đánh dấu abnormal khi total_sold tăng dần",
+    "precondition": "PI-ABN-UP-001 có 3 histories hợp lệ; input detector có thể bị sort lại.",
+    "steps": "1. Chạy detector cho PI.\n2. Kiểm tra danh sách abnormal records.\n3. Kiểm tra output valid records.",
+    "data": {"product_item_id":"PI-ABN-UP-001","histories":[{"date":"2026-06-15","total_sold":100},{"date":"2026-06-16","total_sold":110},{"date":"2026-06-17","total_sold":120}]},
+    "expected": "- abnormalRecords rỗng.\n- Cả 3 histories vẫn hợp lệ.\n- total_sold tăng bình thường không bị false positive."
+  },
+  {
+    "id": "TC_ABNORMAL_002",
+    "module": "Abnormal Detection",
+    "name": "[High] [Positive] Không đánh dấu abnormal khi total_sold không đổi",
+    "precondition": "PI-ABN-EQUAL-001 có total_sold=120 trong toàn bộ tuần.",
+    "steps": "1. Chạy detector.\n2. Kiểm tra minAllowedSold và abnormal list.\n3. Chạy rebuild/weekly calculation.",
+    "data": {"product_item_id":"PI-ABN-EQUAL-001","histories":[{"date":"2026-06-15","total_sold":120},{"date":"2026-06-16","total_sold":120},{"date":"2026-06-17","total_sold":120}]},
+    "expected": "- Không record nào bị abnormal vì phép so sánh là >, không phải >=.\n- Rebuild cho delta_sold=0 ở các điểm không tăng.\n- Đây là dữ liệu đầu vào hợp lệ cho BR-01 nếu weekly sold=0 và gmv=0."
+  },
+  {
+    "id": "TC_ABNORMAL_003",
+    "module": "Abnormal Detection",
+    "name": "[High] [Positive] Đánh dấu đúng một record cũ khi sold giảm",
+    "precondition": "PI-ABN-ONE-001 có histories chưa abnormal và total_sold>0.",
+    "steps": "1. Truyền histories vào detector.\n2. Kiểm tra thứ tự sort DESC.\n3. Kiểm tra abnormal và valid lists.",
+    "data": {"product_item_id":"PI-ABN-ONE-001","histories":[{"date":"2026-06-15","total_sold":100},{"date":"2026-06-16","total_sold":80},{"date":"2026-06-17","total_sold":90}]},
+    "expected": "- Record 15/06 total_sold=100 bị abnormal vì lớn hơn minAllowedSold=80 ở thời điểm mới hơn.\n- Record 16/06=80 và 17/06=90 còn hợp lệ.\n- Không đánh dấu nhầm record mới nhất."
+  },
+  {
+    "id": "TC_ABNORMAL_004",
+    "module": "Abnormal Detection",
+    "name": "[High] [Edge] Đánh dấu nhiều record cũ cùng vi phạm",
+    "precondition": "PI-ABN-MULTI-001 có chuỗi sold giảm mạnh ở record mới nhất.",
+    "steps": "1. Chạy detector.\n2. Kiểm tra từng record theo thứ tự DESC.\n3. Đếm abnormal records.",
+    "data": {"product_item_id":"PI-ABN-MULTI-001","histories":[{"date":"2026-06-15","total_sold":150},{"date":"2026-06-16","total_sold":140},{"date":"2026-06-17","total_sold":90}]},
+    "expected": "- Record 15/06=150 và 16/06=140 đều bị abnormal.\n- Record mới nhất 17/06=90 vẫn hợp lệ.\n- abnormal count=2."
+  },
+  {
+    "id": "TC_ABNORMAL_005",
+    "module": "Abnormal Detection",
+    "name": "[High] [Edge] Sort đúng crawled_date DESC khi input bị đảo thứ tự",
+    "precondition": "Có thể gọi detector với input không được sort sẵn.",
+    "steps": "1. Truyền histories theo thứ tự 17/06, 15/06, 16/06.\n2. Chạy detector.\n3. So sánh kết quả với cùng dataset đã sort chuẩn.",
+    "data": {"product_item_id":"PI-ABN-UNSORT-001","inputOrder":[{"date":"2026-06-17","total_sold":90},{"date":"2026-06-15","total_sold":100},{"date":"2026-06-16","total_sold":80}],"expectedAbnormalDate":"2026-06-15"},
+    "expected": "- Detector tự sort theo crawled_date DESC trước khi tính.\n- Chỉ record 15/06 bị abnormal, giống kết quả của input đã sort.\n- Kết quả không phụ thuộc thứ tự record trả về từ database."
+  },
+  {
+    "id": "TC_ABNORMAL_006",
+    "module": "Abnormal Detection",
+    "name": "[High] [Edge] Luôn giữ record mới nhất làm mốc ban đầu",
+    "precondition": "PI-ABN-LATEST-001 có record mới nhất sold thấp nhất.",
+    "steps": "1. Chạy detector.\n2. Kiểm tra record mới nhất.\n3. Kiểm tra hai record cũ.",
+    "data": {"product_item_id":"PI-ABN-LATEST-001","histories":[{"date":"2026-06-15","total_sold":120},{"date":"2026-06-16","total_sold":100},{"date":"2026-06-17","total_sold":50}]},
+    "expected": "- Record mới nhất 17/06=50 không bị abnormal.\n- Hai record cũ 15/06 và 16/06 bị abnormal vì lớn hơn mốc 50.\n- Không trả danh sách valid rỗng nếu vẫn có record mới nhất hợp lệ."
+  },
+  {
+    "id": "TC_ABNORMAL_007",
+    "module": "Abnormal Detection",
+    "name": "[High] [Edge] Phân biệt partial abnormal và all-prevWeek-abnormal",
+    "precondition": "PI-ABN-PARTIAL-001 có một valid record trước và sau record abnormal.",
+    "steps": "1. Chạy detector.\n2. Tách abnormal và valid histories.\n3. Kiểm tra prevWeek valid count sau khi loại abnormal.",
+    "data": {"product_item_id":"PI-ABN-PARTIAL-001","histories":[{"date":"2026-06-15","total_sold":50},{"date":"2026-06-16","total_sold":120},{"date":"2026-06-17","total_sold":80},{"date":"2026-06-18","total_sold":90}]},
+    "expected": "- Chỉ record 16/06=120 bị abnormal.\n- Các record 15/06, 17/06, 18/06 vẫn hợp lệ.\n- PI không bị phân loại nhầm thành all prevWeek records abnormal."
+  },
+  {
+    "id": "TC_ABNORMAL_008",
+    "module": "Abnormal Detection",
+    "name": "[High] [Edge] Không trộn trạng thái giữa nhiều PI trong cùng batch",
+    "precondition": "Batch có hai PI với chuỗi sold khác nhau.",
+    "steps": "1. Chạy detector cho batch.\n2. Group kết quả theo product_item_id.\n3. Kiểm tra abnormal list của từng PI.",
+    "data": {"items":[{"id":"PI-ISO-001","histories":[{"date":"2026-06-15","total_sold":100},{"date":"2026-06-16","total_sold":80}]},{"id":"PI-ISO-002","histories":[{"date":"2026-06-15","total_sold":10},{"date":"2026-06-16","total_sold":20}]}]},
+    "expected": "- PI-ISO-001 đánh dấu record 15/06 abnormal.\n- PI-ISO-002 không có abnormal record.\n- minAllowedSold được reset riêng cho từng PI, không dùng chung giữa hai PI."
+  },
+  {
+    "id": "TC_ABNORMAL_009",
+    "module": "Abnormal Detection",
+    "name": "[Medium] [Edge] Xử lý total_sold rất lớn không overflow",
+    "precondition": "ClickHouse schema chấp nhận giá trị Int64; job chạy trên Testing.",
+    "steps": "1. Insert histories có total_sold gần biên Int64 nhưng vẫn hợp lệ.\n2. Chạy detector và rebuild.\n3. Kiểm tra giá trị ghi lại và log lỗi.",
+    "data": {"product_item_id":"PI-BIG-SOLD-001","histories":[{"date":"2026-06-15","total_sold":9000000000000000},{"date":"2026-06-16","total_sold":8999999999999990}],"expectedDelta":-10},
+    "expected": "- Detector so sánh chính xác và đánh dấu record cũ 15/06 abnormal.\n- Không overflow, đổi dấu hoặc mất precision khi ghi ClickHouse.\n- Job không crash; nếu domain giới hạn thấp hơn thì validation phải fail rõ ràng (Need Confirm)."
+  },
+  {
+    "id": "TC_REBUILD_001",
+    "module": "History Rebuild",
+    "name": "[High] [Positive] Nối lại last sold chain sau khi loại record abnormal ở giữa",
+    "precondition": "PI-REBUILD-001 có một record abnormal nằm giữa hai record valid.",
+    "steps": "1. Chạy detect và loại record 16/06.\n2. Rebuild valid histories theo thời gian tăng dần.\n3. Query ClickHouse sau CH write.\n4. So sánh last fields và delta.",
+    "data": {"product_item_id":"PI-REBUILD-001","histories":[{"date":"2026-06-15","total_sold":50},{"date":"2026-06-16","total_sold":120},{"date":"2026-06-17","total_sold":80},{"date":"2026-06-18","total_sold":90}],"expected":[{"date":"2026-06-17","last_total_sold":50,"last_crawled_date":"2026-06-15","delta_sold":30},{"date":"2026-06-18","last_total_sold":80,"last_crawled_date":"2026-06-17","delta_sold":10}]},
+    "expected": "- Record 16/06 được is_abnormal=1.\n- Record 17/06 trỏ về valid record 15/06 và delta_sold=30.\n- Record 18/06 trỏ về 17/06 và delta_sold=10.\n- Chain không còn tham chiếu record abnormal."
+  },
+  {
+    "id": "TC_REBUILD_002",
+    "module": "History Rebuild",
+    "name": "[High] [Positive] Không thay đổi raw fields ngoài nhóm field được tính lại",
+    "precondition": "Có snapshot đầy đủ PI-REBUILD-RAW-001 trước job.",
+    "steps": "1. Snapshot total_sold, sell_price, price, title, gmv và updated_date.\n2. Chạy job.\n3. Query record sau write.\n4. So sánh field-by-field.",
+    "data": {"product_item_id":"PI-REBUILD-RAW-001","before":{"total_sold":90,"sell_price":15000,"price":20000,"title":"QA Product","gmv":150000,"is_abnormal":0},"allowedChangedFields":["is_abnormal","last_total_sold","last_crawled_date","delta_sold","updated_date"]},
+    "expected": "- Chỉ các field is_abnormal, last_total_sold, last_crawled_date, delta_sold và metadata cập nhật được phép thay đổi.\n- total_sold, price, sell_price, title và raw business data giữ nguyên.\n- Không mất hoặc tạo duplicate history."
+  },
+  {
+    "id": "TC_REBUILD_003",
+    "module": "History Rebuild",
+    "name": "[High] [Positive] Weekly calculation chỉ aggregate prevWeek sau rebuild",
+    "precondition": "PI-WEEK-CALC-001 có valid histories ở prevWeek và curWeek; detector dùng cả hai tuần.",
+    "steps": "1. Chạy detect/rebuild trên range hai tuần.\n2. Capture input của weekly calculator.\n3. So sánh sold/gmv weekly với phép tính tay cho prevWeek.\n4. Kiểm tra curWeek không bị cộng vào document prevWeek.",
+    "data": {"product_item_id":"PI-WEEK-CALC-001","prevWeek":[{"date":"2026-06-20","delta_sold":10,"sell_price":10000}],"curWeek":[{"date":"2026-06-22","delta_sold":20,"sell_price":12000}],"expectedPrevWeek":{"sold":10,"gmv":100000}},
+    "expected": "- curWeek được dùng để detect chain nhưng không được cộng vào weekly document prevWeek.\n- Weekly output prevWeek sold=10, gmv=100000.\n- Không cập nhật nhầm document của curWeek."
+  },
+  {
+    "id": "TC_REBUILD_004",
+    "module": "ClickHouse Pusher",
+    "name": "[High] [Positive] Ghi đúng abnormal và rebuilt histories vào ClickHouse",
+    "precondition": "Detector đã tạo danh sách abnormal và valid changed histories cho PI-CH-WRITE-001.",
+    "steps": "1. Trigger CH Pusher.\n2. Query distributed table theo PI/date.\n3. Dùng FINAL hoặc cơ chế merge đã thống nhất.\n4. Kiểm tra CH write log.",
+    "data": {"product_item_id":"PI-CH-WRITE-001","changes":[{"date":"2026-06-16","is_abnormal":1},{"date":"2026-06-17","last_total_sold":50,"last_crawled_date":"2026-06-15","delta_sold":30}]},
+    "expected": "- ClickHouse phản ánh đúng hai thay đổi sau Merge/FINAL.\n- Không insert thiếu record hoặc sai product_item_id/crawled_date.\n- Log [CH write] applyHistoryInserts có count khớp số changes."
+  },
+  {
+    "id": "TC_REBUILD_005",
+    "module": "History Rebuild",
+    "name": "[High] [Edge] Không tạo delta âm mới sau khi loại abnormal records",
+    "precondition": "PI-REBUILD-NONEG-001 có chain 50,120,80,90 như case partial abnormal.",
+    "steps": "1. Chạy detect/rebuild.\n2. Query toàn bộ valid histories theo date ASC.\n3. Kiểm tra delta_sold của từng cặp liên tiếp.\n4. Chạy preloader lại với cùng range.",
+    "data": {"product_item_id":"PI-REBUILD-NONEG-001","validExpected":[{"total_sold":50},{"total_sold":80},{"total_sold":90}],"expectedDeltas":[30,10]},
+    "expected": "- Chuỗi valid mới không còn delta_sold âm.\n- Preloader rerun không chọn lại PI vì dữ liệu âm đã được sửa.\n- Kết quả ổn định sau Merge/FINAL."
+  },
+  {
+    "id": "TC_BR01_001",
+    "module": "BR-01 Zero Weekly",
+    "name": "[High] [Positive] Xóa weekly Solr doc khi sold=0 và gmv=0",
+    "precondition": "Solr có W252026_PI-BR01-001; PI vẫn còn valid prevWeek records sau rebuild.",
+    "steps": "1. Chuẩn bị total_sold=120 không đổi trong prevWeek.\n2. Chạy job.\n3. Capture piWeeklyDocs và idsToDelete.\n4. Query Solr theo exact ID sau job.",
+    "data": {"product_item_id":"PI-BR01-001","period":"25-2026","solrId":"W252026_PI-BR01-001","histories":[{"date":"2026-06-15","total_sold":120},{"date":"2026-06-16","total_sold":120},{"date":"2026-06-17","total_sold":120}],"weekly":{"sold":0,"gmv":0}},
+    "expected": "- Không record nào bị abnormal.\n- weekly sold=0 và gmv=0 nên ID được thêm vào idsToDelete, không nằm trong docsToUpdate.\n- Solr không còn document W252026_PI-BR01-001 sau commit."
+  },
+  {
+    "id": "TC_BR01_002",
+    "module": "BR-01 Zero Weekly",
+    "name": "[High] [Positive] Update Solr khi sold và gmv đều lớn hơn 0",
+    "precondition": "Solr có document cũ của PI-BR01-002; PI còn valid histories.",
+    "steps": "1. Chạy rebuild/weekly calculation.\n2. Kiểm tra weekly output.\n3. Kiểm tra docsToUpdate và idsToDelete.\n4. Query Solr sau write.",
+    "data": {"product_item_id":"PI-BR01-002","period":"25-2026","weekly":{"sold":20,"gmv":300000},"solrId":"W252026_PI-BR01-002"},
+    "expected": "- Document nằm trong docsToUpdate.\n- ID không nằm trong idsToDelete.\n- Solr document được cập nhật sold=20, gmv=300000 và giữ đúng ID/period."
+  },
+  {
+    "id": "TC_BR01_003",
+    "module": "BR-01 Zero Weekly",
+    "name": "[High] [Edge] Không xóa khi sold=0 nhưng gmv lớn hơn 0",
+    "precondition": "Có thể inject weekly calculator output để kiểm tra nhánh điều kiện; Solr doc tồn tại.",
+    "steps": "1. Truyền weekly doc sold=0, gmv=1000.\n2. Chạy bước phân loại Solr action.\n3. Kiểm tra update/delete calls.\n4. Query Solr.",
+    "data": {"product_item_id":"PI-BR01-003","weekly":{"sold":0,"gmv":1000},"solrId":"W252026_PI-BR01-003"},
+    "expected": "- Điều kiện delete không thỏa vì cần đồng thời sold=0 và gmv=0.\n- Document được update, không bị delete.\n- Log/action count phản ánh 1 update, 0 delete."
+  },
+  {
+    "id": "TC_BR01_004",
+    "module": "BR-01 Zero Weekly",
+    "name": "[High] [Edge] Không xóa khi sold lớn hơn 0 nhưng gmv=0",
+    "precondition": "Có PI sản phẩm miễn phí hoặc test hook trả weekly sold>0, gmv=0; Solr doc tồn tại.",
+    "steps": "1. Truyền weekly doc sold=5, gmv=0.\n2. Chạy phân loại action.\n3. Kiểm tra Solr request và document sau write.",
+    "data": {"product_item_id":"PI-BR01-004","weekly":{"sold":5,"gmv":0},"solrId":"W252026_PI-BR01-004"},
+    "expected": "- Document không bị delete.\n- Solr được update sold=5, gmv=0.\n- Không dùng điều kiện OR thay cho AND."
+  },
+  {
+    "id": "TC_BR01_005",
+    "module": "BR-01 Zero Weekly",
+    "name": "[Medium] [Negative] Không xóa nhầm weekly doc khi aggregate âm",
+    "precondition": "Test hook cho phép tạo weekly aggregate bất thường; Solr doc tồn tại.",
+    "steps": "1. Truyền sold=-1, gmv=-10000.\n2. Chạy phân loại action.\n3. Kiểm tra delete call và error/validation log.",
+    "data": {"product_item_id":"PI-BR01-NEG-001","weekly":{"sold":-1,"gmv":-10000},"solrId":"W252026_PI-BR01-NEG-001"},
+    "expected": "- Không xóa document vì giá trị không đồng thời bằng 0.\n- Hệ thống update hay chặn dữ liệu âm theo rule vận hành cần BA/Dev xác nhận (Need Confirm).\n- Dữ liệu âm phải được log để điều tra, không bị che giấu như zero case."
+  },
+  {
+    "id": "TC_BR02_001",
+    "module": "BR-02 All Abnormal",
+    "name": "[High] [Positive] Xóa Solr khi record prevWeek duy nhất bị abnormal trong lần chạy",
+    "precondition": "Solr có W252026_PI-BR02-001; prevWeek có sold=200 và curWeek có sold=90.",
+    "steps": "1. Chạy job cho PI.\n2. Kiểm tra record prevWeek được đánh dấu abnormal.\n3. Kiểm tra piWeeklyDocs rỗng và ID delete được build.\n4. Query Solr sau commit.",
+    "data": {"product_item_id":"PI-BR02-001","period":"25-2026","histories":[{"date":"2026-06-21","week":"prevWeek","total_sold":200},{"date":"2026-06-22","week":"curWeek","total_sold":90}],"solrId":"W252026_PI-BR02-001"},
+    "expected": "- Record prevWeek=200 bị is_abnormal=1.\n- Không còn valid prevWeek doc để update.\n- Hệ thống build đúng ID và delete W252026_PI-BR02-001 khỏi Solr."
+  },
+  {
+    "id": "TC_BR02_002",
+    "module": "BR-02 All Abnormal",
+    "name": "[High] [Positive] Xóa Solr khi nhiều record prevWeek đều bị abnormal",
+    "precondition": "Solr có doc PI-BR02-002; tất cả prevWeek records cao hơn mốc curWeek.",
+    "steps": "1. Chạy detector.\n2. Kiểm tra abnormal count của prevWeek.\n3. Chạy rebuild/weekly.\n4. Kiểm tra delete Solr.",
+    "data": {"product_item_id":"PI-BR02-002","period":"25-2026","prevWeek":[{"date":"2026-06-20","total_sold":180},{"date":"2026-06-21","total_sold":200}],"curWeek":[{"date":"2026-06-22","total_sold":90}],"solrId":"W252026_PI-BR02-002"},
+    "expected": "- Hai prevWeek records đều bị abnormal trong lần chạy này.\n- piWeeklyDocs không có document cho PI.\n- Solr doc đúng ID bị xóa một lần."
+  },
+  {
+    "id": "TC_BR02_003",
+    "module": "BR-02 All Abnormal",
+    "name": "[High] [Edge] Partial abnormal vẫn update Solr thay vì delete",
+    "precondition": "PI-BR02-003 có cả abnormal và valid prevWeek histories; Solr doc tồn tại.",
+    "steps": "1. Chạy detect/rebuild.\n2. Kiểm tra valid prevWeek count.\n3. Tính weekly sold/gmv.\n4. Kiểm tra Solr action.",
+    "data": {"product_item_id":"PI-BR02-003","histories":[{"date":"2026-06-15","total_sold":50},{"date":"2026-06-16","total_sold":120},{"date":"2026-06-17","total_sold":80},{"date":"2026-06-18","total_sold":90}],"expectedAbnormalDates":["2026-06-16"],"solrId":"W252026_PI-BR02-003"},
+    "expected": "- Chỉ record 16/06 bị abnormal; valid histories vẫn còn.\n- Hệ thống tính lại weekly từ valid histories.\n- Document được update hoặc áp dụng BR-01 theo sold/gmv, không bị xóa theo BR-02."
+  },
+  {
+    "id": "TC_BR02_004",
+    "module": "BR-02 No Original Data",
+    "name": "[High] [Negative] Không xóa Solr khi PI vốn không có record prevWeek",
+    "precondition": "PI-NO-PREV-001 được xử lý do curWeek candidate nhưng original prevWeek history list rỗng.",
+    "steps": "1. Chạy Puller cho PI chỉ có curWeek records.\n2. Chạy detect/rebuild.\n3. Kiểm tra idsToDelete/docsToUpdate.\n4. Theo dõi CH write.",
+    "data": {"product_item_id":"PI-NO-PREV-001","originalPrevWeek":[],"curWeek":[{"date":"2026-06-22","total_sold":90,"delta_sold":-10,"is_abnormal":0}]},
+    "expected": "- Không tạo Solr update/delete vì đây là no original prevWeek data, không phải all records marked abnormal.\n- ClickHouse Pusher vẫn ghi thay đổi hợp lệ nếu có.\n- Không build delete ID cho PI-NO-PREV-001."
+  },
+  {
+    "id": "TC_BR02_005",
+    "module": "BR-02 Idempotency",
+    "name": "[High] [Negative] Record đã abnormal từ trước không được tính là bị đánh dấu trong lần chạy này",
+    "precondition": "PI-OLD-ABN-001 chỉ có prevWeek record is_abnormal=1; không có candidate mới delta âm is_abnormal=0.",
+    "steps": "1. Trigger cùng kỳ job.\n2. Kiểm tra preloader và Puller.\n3. Kiểm tra idsToDelete và Solr calls.",
+    "data": {"product_item_id":"PI-OLD-ABN-001","prevWeek":[{"date":"2026-06-21","total_sold":200,"delta_sold":-110,"is_abnormal":1}],"expectedCandidate":false},
+    "expected": "- PI không được preload lại.\n- Không kết luận all prevWeek records marked abnormal trong lần chạy hiện tại.\n- Không phát sinh Solr delete lặp lại."
+  },
+  {
+    "id": "TC_SOLR_001",
+    "module": "Solr ID Mapping",
+    "name": "[High] [Positive] Build đúng period và Solr document ID chuẩn",
+    "precondition": "prevWeek.weekEnd trả period 25-2026; PI tồn tại trong job.",
+    "steps": "1. Chạy hàm tạo period từ prevWeek.weekEnd.\n2. Chạy buildWeeklyDocId.\n3. So sánh exact string.\n4. Query Solr theo ID.",
+    "data": {"weekNumber":25,"year":2026,"period":"25-2026","product_item_id":"PI-1001","expectedId":"W252026_PI-1001"},
+    "expected": "- Period đúng định dạng WW-YYYY là 25-2026.\n- ID đúng tuyệt đối W252026_PI-1001.\n- Query exact ID chỉ trả document của PI-1001 tại tuần 25/2026."
+  },
+  {
+    "id": "TC_SOLR_002",
+    "module": "Solr ID Mapping",
+    "name": "[High] [Edge] Build ID đúng cho tuần số 01",
+    "precondition": "Có dataset tuần đầu năm; helper week number trả 1.",
+    "steps": "1. Tạo period cho tuần 01/2027.\n2. Build ID cho PI-WEEK01-001.\n3. Kiểm tra ID dùng để update/delete.\n4. Query Solr exact ID.",
+    "data": {"weekNumber":1,"year":2027,"period":"01-2027","product_item_id":"PI-WEEK01-001","expectedId":"W012027_PI-WEEK01-001"},
+    "expected": "- Week number được zero-pad đúng theo định dạng WW.\n- ID expected là W012027_PI-WEEK01-001.\n- Nếu code hiện dùng W12027 thì cần Dev/BA xác nhận canonical ID trước release (Need Confirm)."
+  },
+  {
+    "id": "TC_SOLR_003",
+    "module": "Solr ID Mapping",
+    "name": "[High] [Edge] Build ID đúng tại tuần 53 và giao năm",
+    "precondition": "Calendar helper xác định period 53-2026; Solr có document test.",
+    "steps": "1. Build period và ID.\n2. Chạy delete/update.\n3. Query cả ID tuần 53/2026 và tuần 01/2027 để phát hiện lệch năm.",
+    "data": {"period":"53-2026","product_item_id":"PI-WEEK53-001","expectedId":"W532026_PI-WEEK53-001","wrongId":"W012027_PI-WEEK53-001"},
+    "expected": "- Action dùng đúng W532026_PI-WEEK53-001.\n- Không ghi/xóa document của tuần 01/2027.\n- Year lấy từ period của prevWeek, không lấy nhầm current date."
+  },
+  {
+    "id": "TC_SOLR_004",
+    "module": "Solr Delete Query",
+    "name": "[High] [Positive] Ghép nhiều ID bằng toán tử OR",
+    "precondition": "Solr có 3 documents test trong product_item_weekly.",
+    "steps": "1. Tạo idsToDelete gồm 3 ID.\n2. Capture deleteByQuery string.\n3. Gửi request.\n4. Query lại 3 ID và một control ID.",
+    "data": {"ids":["W252026_PI-DEL-001","W252026_PI-DEL-002","W252026_PI-DEL-003"],"expectedQuery":"id:\"W252026_PI-DEL-001\" OR id:\"W252026_PI-DEL-002\" OR id:\"W252026_PI-DEL-003\"","controlId":"W252026_PI-KEEP-001"},
+    "expected": "- Query dùng OR giữa các ID, không dùng AND.\n- Cả 3 target documents bị xóa.\n- Control document W252026_PI-KEEP-001 vẫn tồn tại."
+  },
+  {
+    "id": "TC_SOLR_005",
+    "module": "Solr Delete Query",
+    "name": "[High] [Negative] Delete theo exact ID không ảnh hưởng document gần giống",
+    "precondition": "Solr có hai ID W252026_PI-1001 và W252026_PI-10010.",
+    "steps": "1. Yêu cầu xóa W252026_PI-1001.\n2. Capture query.\n3. Query lại cả hai document sau commit.",
+    "data": {"deleteId":"W252026_PI-1001","similarId":"W252026_PI-10010"},
+    "expected": "- Chỉ W252026_PI-1001 bị xóa.\n- W252026_PI-10010 không bị ảnh hưởng.\n- Query không dùng wildcard hoặc prefix match."
+  },
+  {
+    "id": "TC_SOLR_006",
+    "module": "Solr Delete Query Security",
+    "name": "[High] [Negative] Escape ký tự đặc biệt trong product_item_id",
+    "precondition": "Test environment cho phép tạo PI ID đặc biệt; có control documents trong collection.",
+    "steps": "1. Tạo PI có ID chứa dấu nháy và chuỗi OR.\n2. Build weekly ID/delete query.\n3. Gửi request có kiểm soát.\n4. Query target và control documents.",
+    "data": {"product_item_id":"PI-SEC-\" OR *:*","period":"25-2026","controlIds":["W252026_PI-SAFE-001","W252026_PI-SAFE-002"]},
+    "expected": "- Ký tự đặc biệt được escape hoặc request bị validation từ chối an toàn.\n- Không biến thành query xóa toàn collection.\n- Control documents vẫn tồn tại.\n- Log không chứa payload nguy hiểm theo cách có thể tái thực thi."
+  },
+  {
+    "id": "TC_SOLR_007",
+    "module": "Solr Delete Chunking",
+    "name": "[High] [Edge] Không gọi delete API khi danh sách ID rỗng",
+    "precondition": "Batch chỉ có docsToUpdate, idsToDelete=[].",
+    "steps": "1. Chạy Solr write step.\n2. Theo dõi số lần gọi deleteByQuery.\n3. Kiểm tra update docs vẫn thực hiện.",
+    "data": {"idsToDelete":[],"docsToUpdate":["W252026_PI-UPD-001"],"expectedDeleteRequests":0},
+    "expected": "- Không gửi delete request rỗng.\n- Update document vẫn chạy bình thường.\n- Log delete docs=0 hoặc skip rõ ràng, không có error."
+  },
+  {
+    "id": "TC_SOLR_008",
+    "module": "Solr Delete Chunking",
+    "name": "[High] [Edge] Gửi một request khi đúng 100 ID",
+    "precondition": "Solr có 100 test documents; giới hạn chunk=100.",
+    "steps": "1. Tạo idsToDelete từ PI-DEL-0001 đến PI-DEL-0100.\n2. Chạy delete.\n3. Đếm request và số clause mỗi query.\n4. Query count documents còn lại.",
+    "data": {"idPattern":"W252026_PI-DEL-%04d","from":1,"to":100,"chunkSize":100,"expectedRequests":1},
+    "expected": "- Chỉ gửi 1 delete request gồm đúng 100 exact IDs.\n- Cả 100 documents bị xóa sau commit.\n- Không bỏ sót hoặc lặp ID."
+  },
+  {
+    "id": "TC_SOLR_009",
+    "module": "Solr Delete Chunking",
+    "name": "[High] [Edge] Chia 101 ID thành hai request 100 và 1",
+    "precondition": "Solr có 101 documents test; có thể capture request payload.",
+    "steps": "1. Tạo 101 IDs.\n2. Chạy delete.\n3. Kiểm tra số request và size từng chunk.\n4. Query lại toàn bộ target IDs.",
+    "data": {"idPattern":"W252026_PI-DEL-%04d","from":1,"to":101,"chunkSize":100,"expectedChunkSizes":[100,1]},
+    "expected": "- Có đúng 2 delete requests với size 100 và 1.\n- Không request nào vượt quá 100 IDs.\n- Tất cả 101 documents bị xóa."
+  },
+  {
+    "id": "TC_SOLR_010",
+    "module": "Solr Delete Chunking",
+    "name": "[Medium] [Edge] Xử lý tối đa 500 delete ID trong một PI batch",
+    "precondition": "Một batch có 500 PI cần delete; Solr đã seed đủ documents.",
+    "steps": "1. Chạy batch 500 PI.\n2. Đếm delete requests.\n3. Kiểm tra mỗi request size.\n4. Query remaining target count và đo duration.",
+    "data": {"piBatchSize":500,"deleteIdCount":500,"chunkSize":100,"expectedRequests":5,"performanceThreshold":"Need Confirm"},
+    "expected": "- Có đúng 5 delete requests, mỗi request 100 IDs.\n- Remaining target count=0.\n- Không timeout/memory spike; SLA cần được Dev/PO chốt trước performance sign-off (Need Confirm)."
+  },
+  {
+    "id": "TC_SOLR_011",
+    "module": "Solr Action Deduplication",
+    "name": "[High] [Edge] Một ID xuất hiện từ nhiều nhánh chỉ bị delete một lần",
+    "precondition": "Test harness tạo cùng weekly ID từ BR-01 và BR-02 trước bước chuẩn hóa idsToDelete.",
+    "steps": "1. Đưa cùng ID vào hai nguồn delete.\n2. Chạy normalize/chunk.\n3. Capture delete query và count clause.\n4. Kiểm tra log docs count.",
+    "data": {"br01Ids":["W252026_PI-DUP-001"],"br02Ids":["W252026_PI-DUP-001"],"expectedUniqueIds":["W252026_PI-DUP-001"]},
+    "expected": "- idsToDelete cuối cùng chỉ có một phần tử.\n- Solr nhận đúng một clause/delete cho ID.\n- Log docs=1, không đếm trùng thành 2."
+  },
+  {
+    "id": "TC_SOLR_012",
+    "module": "Solr Mixed Actions",
+    "name": "[High] [Positive] Xử lý đúng update và delete trong cùng batch",
+    "precondition": "Batch có một PI update, một PI BR-01 delete và một PI BR-02 delete.",
+    "steps": "1. Chạy batch.\n2. Capture docsToUpdate và idsToDelete.\n3. Kiểm tra Solr write/delete calls.\n4. Query cả 3 IDs.",
+    "data": {"actions":[{"id":"W252026_PI-UPD-001","action":"update","sold":10,"gmv":100000},{"id":"W252026_PI-ZERO-001","action":"delete_BR01"},{"id":"W252026_PI-ABN-001","action":"delete_BR02"}]},
+    "expected": "- PI-UPD-001 được update đúng sold/gmv.\n- PI-ZERO-001 và PI-ABN-001 bị delete.\n- Không có ID đồng thời nằm trong update và delete request."
+  },
+  {
+    "id": "TC_SOLR_013",
+    "module": "Solr Collection Routing",
+    "name": "[High] [Positive] Ghi đúng collection product_item_weekly từ config",
+    "precondition": "detectInvalid.weeklyCollection=product_item_weekly; có collection khác product_item_monthly làm control.",
+    "steps": "1. Chạy batch có update và delete.\n2. Capture collection của từng Solr call.\n3. Query weekly và monthly collections.",
+    "data": {"config":{"detectInvalid.weeklyCollection":"product_item_weekly"},"targetId":"W252026_PI-COLLECTION-001","controlCollection":"product_item_monthly"},
+    "expected": "- Mọi weekly update/delete đều gửi tới product_item_weekly.\n- Không có thay đổi trong product_item_monthly hoặc collection khác.\n- Log [Solr write]/[Solr delete] hiển thị đúng collection."
+  },
+  {
+    "id": "TC_BATCH_001",
+    "module": "PI Batch Processing",
+    "name": "[Medium] [Edge] Xử lý đúng batch có chính xác 500 PI",
+    "precondition": "Có 500 candidate PI hợp lệ; batch size được cấu hình 500.",
+    "steps": "1. Trigger job.\n2. Capture số PI của từng batch.\n3. Đếm unique processed IDs.\n4. Kiểm tra Solr/CH writes và job completion.",
+    "data": {"candidateCount":500,"batchSize":500,"expectedBatchSizes":[500]},
+    "expected": "- Có đúng 1 PI batch size=500.\n- 500 unique PI đều được xử lý một lần.\n- Không mất PI cuối batch hoặc tạo batch rỗng."
+  },
+  {
+    "id": "TC_BATCH_002",
+    "module": "PI Batch Processing",
+    "name": "[Medium] [Edge] Chia 501 PI thành batch 500 và 1",
+    "precondition": "Có 501 candidate PI hợp lệ, sort/cursor ổn định.",
+    "steps": "1. Trigger job.\n2. Kiểm tra batch sizes.\n3. So sánh unique processed IDs với input.\n4. Kiểm tra PI thứ 501 có Solr/CH action đúng.",
+    "data": {"candidateCount":501,"batchSize":500,"expectedBatchSizes":[500,1],"lastId":"PI-BATCH-0501"},
+    "expected": "- Có đúng 2 batches size 500 và 1.\n- PI-BATCH-0501 không bị bỏ sót.\n- Không lặp PI giữa hai batch."
+  },
+  {
+    "id": "TC_RERUN_001",
+    "module": "Idempotency",
+    "name": "[High] [Positive] Rerun sau BR-02 không lặp abnormal hoặc Solr delete",
+    "precondition": "Lần chạy đầu của PI-RERUN-001 đã đánh dấu prevWeek record abnormal và xóa Solr doc.",
+    "steps": "1. Chạy lại cùng dateRun/range.\n2. Kiểm tra preloader candidates.\n3. Kiểm tra ClickHouse insert count và Solr delete calls.\n4. Query final state.",
+    "data": {"product_item_id":"PI-RERUN-001","firstRun":{"is_abnormal":1,"solrDeleted":true},"secondRunExpected":{"candidate":false,"solrDeleteRequests":0}},
+    "expected": "- PI không được preload lại vì record đã is_abnormal=1.\n- Không insert duplicate abnormal change.\n- Không gửi Solr delete lần hai.\n- Final state giống sau lần chạy đầu."
+  },
+  {
+    "id": "TC_RERUN_002",
+    "module": "Idempotency",
+    "name": "[High] [Positive] Rerun sau rebuild không tạo lại delta âm",
+    "precondition": "Lần chạy đầu đã rebuild PI-RERUN-002 thành chain delta không âm và update/delete Solr thành công.",
+    "steps": "1. Đợi ClickHouse Merge/FINAL phản ánh row mới.\n2. Rerun cùng range.\n3. Kiểm tra candidate list, changed histories và Solr calls.",
+    "data": {"product_item_id":"PI-RERUN-002","rebuiltDeltas":[30,10],"expectedSecondRunCandidates":0},
+    "expected": "- Không còn delta_sold<0 nên PI không được chọn lại.\n- Không phát sinh CH write hoặc Solr action không cần thiết.\n- Job vẫn hoàn tất thành công."
+  },
+  {
+    "id": "TC_FAIL_001",
+    "module": "Solr Failure Handling",
+    "name": "[High] [Negative] Xử lý timeout khi delete Solr",
+    "precondition": "Có thể mock Solr timeout; batch có 10 IDs cần delete; chưa retry trước đó.",
+    "steps": "1. Mock deleteByQuery timeout.\n2. Chạy batch.\n3. Kiểm tra retry/backoff, job status và log.\n4. Khôi phục Solr và quan sát replay/reconciliation.",
+    "data": {"simulate":"Solr delete timeout","deleteIdCount":10,"timeoutMs":30000,"retryPolicy":"Need Confirm"},
+    "expected": "- Service không crash và không báo delete thành công giả.\n- Log có collection, batch/chunk, id count và error.\n- Retry/backoff, trạng thái job và cơ chế replay cần Dev xác nhận (Need Confirm).\n- Không mất khả năng xác định 10 IDs chưa xóa."
+  },
+  {
+    "id": "TC_FAIL_002",
+    "module": "Partial Chunk Failure",
+    "name": "[High] [Negative] Theo dõi chính xác khi một delete chunk thất bại",
+    "precondition": "Có 250 IDs tạo 3 chunks 100/100/50; mock chunk thứ 2 trả HTTP 500.",
+    "steps": "1. Chạy delete 250 IDs.\n2. Cho chunk 1 success, chunk 2 fail, chunk 3 theo behavior implementation.\n3. Query Solr theo từng chunk.\n4. Kiểm tra job status và log.",
+    "data": {"deleteIdCount":250,"chunkSizes":[100,100,50],"failedChunk":2,"failure":"HTTP 500"},
+    "expected": "- Không đánh dấu toàn bộ 250 IDs là đã xóa thành công.\n- Log chỉ rõ chunk thất bại và IDs/count liên quan.\n- Behavior tiếp tục hay dừng ở chunk 2, cùng cơ chế retry phần thất bại, là (Need Confirm).\n- Có thể reconcile trạng thái thực tế của từng chunk."
+  },
+  {
+    "id": "TC_FAIL_003",
+    "module": "Cross-system Consistency",
+    "name": "[High] [Negative] Xử lý khi Solr thành công nhưng ClickHouse write thất bại",
+    "precondition": "Có thể mock CH insert fail sau Solr action; có PI-CONSIST-001 cần delete và abnormal write.",
+    "steps": "1. Cho Solr delete thành công.\n2. Mock ClickHouse Pusher timeout/fail.\n3. Kiểm tra job status, retry và final state hai hệ thống.\n4. Thực hiện reconciliation theo runbook nếu có.",
+    "data": {"product_item_id":"PI-CONSIST-001","solrAction":"delete success","clickHouseAction":"insert timeout","runbook":"Need Confirm"},
+    "expected": "- Job không được báo success hoàn toàn khi ClickHouse chưa ghi được.\n- Log/metric phân biệt rõ Solr success và CH failure.\n- Cơ chế retry/reconciliation để tránh rerun sai do CH vẫn delta âm cần Dev xác nhận (Need Confirm).\n- Không mất evidence phục hồi document nếu cần."
+  },
+  {
+    "id": "TC_FAIL_004",
+    "module": "Concurrent Job",
+    "name": "[High] [Edge] Hai job cùng kỳ không làm sai hoặc lặp dữ liệu",
+    "precondition": "Test environment cho phép trigger hai detect-invalid-record job cùng dateRun; có 20 PI candidates.",
+    "steps": "1. Trigger đồng thời Job-A và Job-B.\n2. Theo dõi lock/job identity.\n3. Kiểm tra CH inserts, Solr calls và final data.\n4. Đếm duplicate records/actions.",
+    "data": {"dateRun":"2026-08-10T02:00:00+07:00","jobs":["Job-A","Job-B"],"candidateCount":20},
+    "expected": "- Ưu tiên chỉ một job được chạy; job còn lại bị reject/skip bởi concurrency guard.\n- Nếu design cho phép cả hai chạy, final data vẫn idempotent và không delete/update trùng gây lỗi.\n- Cơ chế lock/unique key hiện chưa nêu trong spec, cần xác nhận (Need Confirm)."
+  },
+  {
+    "id": "TC_FAIL_005",
+    "module": "Solr Commit Visibility",
+    "name": "[Medium] [Edge] Document update/delete nhìn thấy trong SLA sau commit",
+    "precondition": "Có thể query trực tiếp Solr leader/replica; batch có 1 update và 1 delete.",
+    "steps": "1. Ghi timestamp trước Solr action.\n2. Chạy update/delete.\n3. Poll exact IDs đến khi thấy final state.\n4. Ghi latency trên leader và replica.",
+    "data": {"updateId":"W252026_PI-COMMIT-UPD","deleteId":"W252026_PI-COMMIT-DEL","pollIntervalMs":500,"visibilitySla":"Need Confirm"},
+    "expected": "- Update và delete đều visible sau commit/soft-commit.\n- Leader và replica hội tụ cùng final state.\n- Visibility SLA và loại commit cần Dev/SRE xác nhận trước release (Need Confirm)."
+  },
+  {
+    "id": "TC_FAIL_006",
+    "module": "Recovery",
+    "name": "[High] [Negative] Có thể phục hồi khi weekly document bị xóa nhầm",
+    "precondition": "Có backup/snapshot hoặc nguồn để rebuild weekly doc; chỉ dùng dữ liệu test.",
+    "steps": "1. Snapshot document W252026_PI-RECOVER-001.\n2. Xóa document có kiểm soát.\n3. Thực hiện restore/rebuild theo runbook.\n4. So sánh toàn bộ field trước/sau.",
+    "data": {"solrId":"W252026_PI-RECOVER-001","before":{"sold":15,"gmv":225000,"period":"25-2026"},"recoveryRunbook":"Need Confirm"},
+    "expected": "- Document được khôi phục đúng ID, period, sold và gmv.\n- Không tạo duplicate document.\n- Nếu chưa có runbook/nguồn restore, case bị Blocked và đây là release risk cần xác nhận (Need Confirm)."
+  },
+  {
+    "id": "TC_LOG_001",
+    "module": "Observability",
+    "name": "[High] [Positive] Log Solr write/delete phản ánh đúng collection và count",
+    "precondition": "Batch có 2 docs update và 3 docs delete; QA truy cập được centralized log.",
+    "steps": "1. Chạy batch.\n2. Tìm log theo jobId.\n3. Đối chiếu collection, docs, changedPiCount và period với request thực tế.",
+    "data": {"jobId":"JOB-9360-LOG-001","collection":"product_item_weekly","updateDocs":2,"deleteDocs":3,"changedPiCount":5,"period":"25-2026"},
+    "expected": "- Có log [Solr write] collection=product_item_weekly docs=2 changedPiCount=5.\n- Có log [Solr delete] collection=product_item_weekly docs=3 period=25-2026.\n- Count không bị đếm trùng và cùng trace được bằng jobId."
+  },
+  {
+    "id": "TC_LOG_002",
+    "module": "Observability",
+    "name": "[High] [Positive] Log ClickHouse write phản ánh đúng số insert",
+    "precondition": "Batch tạo 2 abnormal changes và 4 rebuilt valid changes.",
+    "steps": "1. Chạy CH Pusher.\n2. Tìm log [CH write] applyHistoryInserts.\n3. So sánh count và PI IDs với ClickHouse query.",
+    "data": {"jobId":"JOB-9360-LOG-002","abnormalChanges":2,"rebuiltChanges":4,"expectedHistoryInserts":6},
+    "expected": "- CH write log thể hiện đúng 6 history inserts/changes.\n- Có trace tới jobId/batch để điều tra.\n- Query ClickHouse cho count/final state khớp log."
+  },
+  {
+    "id": "TC_LOG_003",
+    "module": "Observability",
+    "name": "[Medium] [Positive] Log rõ lý do không có Solr action",
+    "precondition": "Có ba scenario: PI không đổi, PI vốn không có prevWeek, và prevWeek toàn job rỗng.",
+    "steps": "1. Chạy từng scenario với jobId riêng.\n2. Tìm log skip/no-action.\n3. Kiểm tra không có Solr client call.\n4. Đối chiếu lý do trong log.",
+    "data": {"scenarios":[{"jobId":"LOG-SKIP-UNCHANGED","reason":"unchanged PI"},{"jobId":"LOG-SKIP-NOPREV","reason":"no original prevWeek"},{"jobId":"LOG-SKIP-EMPTY","reason":"prevWeek empty"}]},
+    "expected": "- Mỗi scenario có lý do skip dễ phân biệt, không chỉ ghi docs=0 chung chung.\n- Không có Solr action.\n- Nếu hiện chưa log reason riêng, cần bổ sung/confirm với Dev để hỗ trợ audit (Need Confirm)."
+  },
+  {
+    "id": "TC_LOG_004",
+    "module": "Security / Logging",
+    "name": "[Medium] [Negative] Error log không làm lộ credential hoặc token",
+    "precondition": "Có thể mock lỗi auth/timeout cho Solr và ClickHouse trên Testing.",
+    "steps": "1. Trigger Solr auth error.\n2. Trigger ClickHouse connection error.\n3. Thu thập application log và centralized log.\n4. Search các secret mẫu.",
+    "data": {"secretMarkers":["solr_password=QaSecret9360","Authorization: Bearer qa-token-9360","clickhouse_password=ChSecret9360"],"expectedMatches":0},
+    "expected": "- Log có error code, host alias, collection/table và jobId đủ debug.\n- Không ghi plaintext password, token hoặc Authorization header.\n- Secret marker match count=0."
+  }
+]
