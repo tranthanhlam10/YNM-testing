@@ -2,102 +2,97 @@
 
 ## 1. Trạng thái review
 
-Gán đúng một trạng thái cho mỗi dòng ứng viên:
+- `READY`: đủ dữ liệu và được chọn bằng tín hiệu rõ ràng.
+- `NEEDS_CLARIFICATION`: có bug tiềm năng nhưng summary, steps, expected, actual, environment hoặc priority còn mơ hồ/thiếu.
+- `SKIP_EXISTING`: đã có Jira key hoặc đã xác nhận có issue tương đương.
+- `INVALID`: thiếu summary/title, expected hoặc actual; không thể dựng draft có nghĩa.
 
-- `READY`: đủ dữ liệu, không có cảnh báo chặn và có thể đưa vào danh sách xin duyệt.
-- `NEEDS_CLARIFICATION`: có bug tiềm năng nhưng Actual Result, Expected Result hoặc bước tái hiện còn mơ hồ. Cho phép preview nhưng chặn tạo thật mặc định.
-- `SKIP_EXISTING`: đã có `BUG ID` hoặc đã xác nhận có issue tương đương.
-- `INVALID`: thiếu ID/title, expected hoặc actual; không tạo draft Jira.
+Không yêu cầu test-case ID hoặc status để một bug đạt `READY`.
 
-Không chuyển `NEEDS_CLARIFICATION` thành `READY` chỉ vì người dùng muốn tạo nhanh. Yêu cầu bổ sung sự thật còn thiếu hoặc xác nhận rõ việc chấp nhận rủi ro.
+## 2. Chọn candidate an toàn
 
-## 2. Rule chặn chất lượng
+- Jira key trống chỉ là điều kiện chống trùng, không phải tín hiệu tạo bug.
+- Chấp nhận candidate khi người dùng chỉ định row/ID, có ready flag hợp lệ, yêu cầu rõ lọc status, hoặc mô tả trực tiếp bug trong chat.
+- Không có tín hiệu chọn: chỉ preview và yêu cầu chọn; không tạo issue.
+- Dùng `--selection-mode candidates` cho trường hợp này; mode bị chặn khi kết hợp với `--create`.
+- `--selection-mode all` chỉ dùng cho bug chat hoặc tập dòng đã được chọn trước.
+- Status trống hoặc không đổi không làm bug invalid.
 
-Đánh dấu `NEEDS_CLARIFICATION` khi gặp một trong các trường hợp:
+## 3. Rule chặn chất lượng
 
-- Actual Result chứa nội dung chưa xác nhận như “cần confirm”, “chưa check”, “chờ kiểm tra”, “TBC”, “không rõ” hoặc “có vẻ”.
-- Actual Result chỉ nói “không đúng”, “bị lỗi” hoặc quá ngắn để dev hiểu hành vi quan sát được.
-- Expected Result và Actual Result giống nhau hoặc không thể phân biệt pass/fail.
-- `STATUS=BUG` nhưng Actual Result nói “đã đúng yêu cầu”, “hoạt động bình thường” hoặc ý tương đương.
+Đánh dấu `NEEDS_CLARIFICATION` khi:
+
+- Actual chứa “cần confirm”, “chưa check”, “chờ kiểm tra”, “đợi dev fix”, “TBC”, “không rõ”, “có vẻ” hoặc tương đương.
+- Actual chỉ nói “lỗi”, “bị lỗi”, “đang lỗi”, “hiện tại đang lỗi”, “không đúng”, “sai” hoặc không đủ để dev hiểu hành vi quan sát được.
+- Expected và Actual giống nhau hoặc mâu thuẫn với việc đây là bug.
 - Steps không đủ để tái hiện và không có ngữ cảnh thay thế rõ ràng.
+- Thiếu environment hoặc priority cần dùng cho ticket.
 
-Không bịa browser, environment, tài khoản, timestamp, response code, log, screenshot hoặc tần suất tái hiện.
+Đánh dấu `INVALID` khi thiếu summary/title, expected hoặc actual. Không bịa browser, environment, account, timestamp, response code, log, screenshot, tần suất hoặc root cause.
 
-## 3. Rule viết summary
+## 4. Rule summary và description
 
-- Summary phải mô tả hành vi lỗi mà người kiểm thử đã quan sát, không mô tả mục tiêu kiểm thử.
-- Ưu tiên `BUG SUMMARY` đã được cung cấp. Nếu không có, rút gọn `ACTUAL RESULT` và thêm `[MODULE/FEATURE]` làm ngữ cảnh khi có.
-- Được thêm trigger hoặc đối tượng từ steps vào summary khi chúng đã được nêu rõ, ví dụ “sau callback hoàn tất”; đây là rút gọn ngữ cảnh tái hiện, không phải suy đoán root cause.
-- Loại bỏ các tiền tố dư như “Hiện tại đang bị bug”, “Bug:” hoặc “Lỗi:”. Giữ nguyên ý nghĩa thực tế.
-- Không dùng nguyên title bắt đầu bằng “Kiểm tra”, “Verify”, “Validate” hoặc các tag `[High]`, `[Positive]`, `[Edge]` làm summary Jira.
-- Không thêm test-case ID, priority, test type hoặc `[BUG]` vào summary mặc định.
-- Không thêm nguyên nhân, tác động, phạm vi, tần suất hoặc kết luận kỹ thuật nếu dữ liệu nguồn chưa chứng minh.
-- Nếu `ACTUAL RESULT` quá mơ hồ để viết một summary có nghĩa, giữ trạng thái `NEEDS_CLARIFICATION`; không tự sáng tác tiêu đề cho đủ đẹp.
+- Summary mô tả triệu chứng, không mô tả mục tiêu kiểm thử.
+- Ưu tiên `BUG SUMMARY`; nếu không có, rút gọn Actual và thêm module đã biết.
+- Được thêm trigger/đối tượng từ steps khi đã xuất hiện rõ trong nguồn.
+- Không thêm root cause, tác động, phạm vi hoặc tần suất nếu chưa có bằng chứng.
+- Đặt Actual trước Expected.
+- Giữ source type, row, URL, test data, test-case ID, module, test type và tester trong `Thông tin nguồn`.
+- Nếu không có testcase, ghi `Không gắn với test case nào`; không hỏi lại chỉ để điền ID.
+- Evidence thiếu là cảnh báo không chặn và phải ghi `Chưa có bằng chứng được cung cấp.`
 
-## 4. Rule nội dung bug
+## 5. Chống trùng
 
-- Giữ `ACTUAL RESULT` là sự thật quan sát được. Chỉ làm sạch câu chữ; không thêm hệ quả kiểu “vì vậy...” nếu nguồn không nêu.
-- Bước tái hiện phải là thao tác thực hiện được. Giữ thứ tự và dữ liệu cần thiết; không trộn expected vào steps.
-- Đặt `Kết quả thực tế` trước `Kết quả mong đợi` để người đọc thấy lỗi nhanh.
-- Giữ test-case ID, test name, module, priority nguồn, test type, người thực hiện, source row và URL trong `Thông tin nguồn`; không đặt toàn bộ metadata ở đầu ticket.
-- `ASSIGNED TO` chỉ là người thực hiện/owner từ nguồn, không phải Jira assignee.
-- Nếu không có evidence, ghi rõ “Chưa có bằng chứng được cung cấp” và phát cảnh báo không chặn.
-- Bỏ hẳn các section không có dữ liệu, ngoại trừ `Bằng chứng` và `Thông tin nguồn`.
-- Dùng đúng thứ tự và heading trong [bug-template.md](bug-template.md).
+- Có `BUG ID`, `Jira Key`, Jira URL hoặc issue tương đương thì `SKIP_EXISTING`.
+- Trong cùng input, phát hiện trùng test-case ID; với bug không có testcase, so sánh fingerprint từ module + summary + actual.
+- Trước khi tạo thật, tìm Jira theo project, summary, module và test-case ID nếu có.
+- Chỉ đề xuất issue có khả năng trùng; không tự gộp.
+- Không retry toàn batch sau thành công một phần.
 
-## 5. Rule cảnh báo không chặn
+## 6. Priority, label và assignee
 
-Cảnh báo nhưng vẫn cho `READY` khi:
+- Map priority đúng giá trị nguồn; không tự nâng/hạ.
+- Có test-case ID → `linked-testcase`; không có → `no-testcase`.
+- Đọc và áp dụng [bug-label-rules.md](bug-label-rules.md) trước khi dựng payload.
+- Bắt buộc có tối thiểu một `sys-*`; chỉ gắn System từ hành vi bug cụ thể, không dựa duy nhất vào tên module rộng.
+- Gắn đúng một `test-*` khi xác định được hoạt động test. Không gắn nhiều test type để “cover cho chắc”.
+- Không suy đoán `rc-*`. Root Cause chưa xác định được phép để trống lúc tạo nhưng phải có cảnh báo `root_cause_pending` và cập nhật trước khi đóng.
+- Chỉ gắn `flow-*` khi có bằng chứng rõ; không dùng Flow thay cho System.
+- Map stage sang `Found In Environment`; không dùng `found-in-*`.
+- Nếu connector không hỗ trợ labels, dùng REST script hoặc báo rõ; không giả vờ đã set.
+- `ASSIGNED TO` chỉ là tester/owner nguồn, không phải Jira assignee nếu chưa có account ID.
 
-- Không có evidence nhưng Actual Result và steps đã rõ.
-- Không có priority; giữ trống thay vì tự suy đoán.
-- Không có environment và bug không phụ thuộc môi trường theo dữ liệu hiện có.
-- Remarks rỗng.
-
-## 6. Chống trùng và gộp bug
-
-- Có `BUG ID` thì luôn `SKIP_EXISTING`.
-- Trùng `TEST CASE ID` trong cùng input thì giữ dòng hợp lệ đầu tiên và báo các dòng sau.
-- Summary giống nhau chưa đủ để kết luận trùng. So sánh component, steps, expected và actual.
-- Chỉ đề xuất gộp khi hành vi lỗi và nguyên nhân quan sát được thực sự giống nhau. Không tự gộp nếu chưa được người dùng duyệt.
-- Không retry toàn batch sau thành công một phần vì sẽ tạo trùng các issue đã thành công.
-
-## 7. Priority và assignee
-
-- Chỉ map priority từ giá trị nguồn đã nhận diện: Critical/Blocker → Highest, High → High, Medium → Medium, Low → Low, Lowest/Trivial → Lowest.
-- Không tự nâng priority dựa trên cách viết title hoặc cảm nhận mức độ nghiêm trọng.
-- `ASSIGNED TO` trong test case chỉ là người thực hiện/owner nguồn. Không map thành Jira assignee nếu chưa có Jira account ID hợp lệ.
-
-## 8. Dữ liệu nhạy cảm
+## 7. Dữ liệu nhạy cảm
 
 - Không đưa password, API token, cookie, access token, private key hoặc session ID vào Jira.
-- Che bớt email, số điện thoại, user ID hoặc dữ liệu khách hàng nếu không cần để tái hiện.
-- Nếu test data có secret thật, thay bằng placeholder và báo người dùng; không sao chép secret vào preview.
-- Không tải attachment lên Jira khi chưa được yêu cầu và xác nhận file mục tiêu.
+- Che email, số điện thoại, user ID và dữ liệu khách hàng không cần thiết.
+- Không tự upload attachment.
 
-## 9. Preview và xác nhận
+## 8. Preview và xác nhận
 
-- Các câu “log thử”, “preview”, “xem thử”, “draft”, “đừng đẩy Jira” không bao giờ là quyền tạo issue.
-- Trước khi xin duyệt, hiển thị project, issue type, tổng số `READY`, tổng `NEEDS_CLARIFICATION`, source row, test-case ID, summary và priority.
-- Câu xác nhận hợp lệ phải thể hiện project và số lượng, ví dụ: “Tôi xác nhận tạo 4 bug vào project QA”.
-- Nếu dữ liệu nguồn thay đổi sau preview, tạo lại preview và xin xác nhận mới.
-- Nếu có hơn 10 ticket, chia batch tối đa 10 và xin duyệt từng batch.
+- “Log thử”, “preview”, “xem thử”, “draft”, “đừng đẩy Jira” không bao giờ là quyền tạo issue.
+- Preview phải hiển thị selection mode/reason, project, issue type, số `READY`, `NEEDS_CLARIFICATION`, `INVALID`, `SKIP_EXISTING`, source row, test-case ID nếu có, summary, priority, `Found In Environment` và labels tách theo Root Cause/System/Test Type/Flow.
+- Xác nhận hợp lệ phải nêu project và số lượng.
+- Nếu nguồn thay đổi, preview lại và xin xác nhận mới.
+- Tối đa 10 issue mỗi batch.
 
-## 10. Tạo issue và lỗi một phần
+## 9. Tạo issue và lỗi một phần
 
-- Kiểm tra auth trước nhưng không coi auth thành công là quyền tạo issue.
-- Tạo tuần tự để giữ kết quả riêng từng test case.
-- Khi một issue thất bại, tiếp tục ghi nhận kết quả các issue còn lại trong batch nhưng không tự retry.
-- Sau batch, báo rõ created, failed, skipped và link issue thành công.
-- Chỉ retry issue thất bại sau khi kiểm tra chưa có key tương ứng trên Jira và người dùng đồng ý.
+- Có auth/connector không đồng nghĩa được phép tạo.
+- Chỉ tạo candidate `READY`, tuần tự từng issue. Candidate `NEEDS_CLARIFICATION` bị bỏ qua mặc định và liệt kê trong `creation_skipped`.
+- Ghi nhận riêng created, failed và skipped; không tự retry.
+- Chỉ retry issue thất bại sau khi kiểm tra chưa có key tương ứng và người dùng đồng ý.
 
-## 11. Ghi ngược Google Sheets
+## 10. Ghi ngược Google Sheets
 
-- Ghi `BUG ID` cần một xác nhận riêng với việc tạo Jira.
-- Đọc lại ô mục tiêu ngay trước khi ghi. Nếu ô đã có giá trị, dừng để tránh ghi đè.
-- Chỉ ghi Jira key hoặc URL trả về từ API thành công.
-- Chỉ cập nhật `BUG STATUS` từ Jira status đã fetch hoặc giá trị người dùng chỉ định; không tự đặt `OPEN`, `DONE` hay `CREATED`.
+- Cần xác nhận riêng với việc tạo Jira.
+- Đọc lại ô Jira key ngay trước khi ghi; có dữ liệu thì dừng.
+- Chỉ ghi key/URL từ issue tạo thành công.
+- Không tự cập nhật `BUG STATUS`.
 
-## 12. Ví dụ cần giữ lại để hỏi
+## 11. Ví dụ phải chặn
 
-Actual Result “Chỗ này cần confirm lại UI với quyền Edit” phải được đánh dấu `NEEDS_CLARIFICATION`. Không biến câu này thành mô tả lỗi cụ thể vì chưa có bằng chứng hành vi thực tế.
+- `Actual: Hiện tại đang lỗi` → `NEEDS_CLARIFICATION`.
+- `Actual: Đang đợi dev fix ẩn field khỏi API` → `NEEDS_CLARIFICATION` nếu chưa mô tả hành vi quan sát được.
+- `STATUS=BUG` nhưng Actual trống → `INVALID`.
+- Không có test-case ID nhưng đủ summary, steps, expected, actual, environment và priority → có thể `READY`.

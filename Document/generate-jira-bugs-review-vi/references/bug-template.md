@@ -1,6 +1,6 @@
 # Template nội dung bug Jira
 
-Dùng template này cho cả preview trong chat và payload Jira. Chỉ hiển thị section có dữ liệu, ngoại trừ `Bằng chứng` và `Thông tin nguồn`.
+Dùng cùng một template cho bug từ test case, exploratory/edge case và bug nhập trực tiếp trong chat. Chỉ hiển thị section có dữ liệu, ngoại trừ `Bằng chứng` và `Thông tin nguồn`.
 
 ## Summary
 
@@ -11,17 +11,17 @@ Dùng template này cho cả preview trong chat và payload Jira. Chỉ hiển t
 Ví dụ:
 
 ```text
-[Callback API] Redis key không bị xóa sau callback hoàn tất
+[Price Monitoring - Export] File XLSX vẫn chứa cột Total Sold
 ```
 
-Không dùng dạng `[BUG][TC_ID] [High] [Positive] Kiểm tra...` vì đó là metadata và mục tiêu kiểm thử, không phải triệu chứng bug.
+Không dùng `[BUG][TC_ID]`, priority, test type hoặc câu mục tiêu kiểm thử như “Kiểm tra...”.
 
 ## Description
 
 ```markdown
 ### Điều kiện tiên quyết
 
-<PRE-CONDITION>
+<PRE-CONDITION nếu có>
 
 ### Các bước tái hiện
 
@@ -39,15 +39,23 @@ Không dùng dạng `[BUG][TC_ID] [High] [Positive] Kiểm tra...` vì đó là 
 
 ### Dữ liệu kiểm thử
 
-<TEST DATA>
+<TEST DATA nếu có>
 
 ### Môi trường
 
-<ENVIRONMENT nếu có>
+<staging/production/local, build/version, browser/OS nếu liên quan>
+
+### Phân loại label
+
+- Found In Environment: <Testing/Staging/Production; đây là custom field, không phải label>
+- Root Cause: <đúng một rc-* hoặc “Chưa xác định — cập nhật trước khi đóng bug”>
+- System: <tối thiểu một sys-*>
+- Test Type: <đúng một test-* nếu xác định được>
+- Flow: <flow-* nếu có bằng chứng rõ>
 
 ### Bằng chứng
 
-<URL log/ảnh/video, hoặc “Chưa có bằng chứng được cung cấp.”>
+<URL log/ảnh/video hoặc “Chưa có bằng chứng được cung cấp.”>
 
 ### Ghi chú
 
@@ -55,21 +63,25 @@ Không dùng dạng `[BUG][TC_ID] [High] [Positive] Kiểm tra...` vì đó là 
 
 ### Thông tin nguồn
 
-- Test case: <TEST CASE ID>
-- Kịch bản kiểm thử: <TEST NAME>
-- Module/Feature: <MODULE/FEATURE>
+- Nguồn nhập: <sheet/file/chat>
+- Test case: <TEST CASE ID hoặc “Không gắn với test case nào”>
+- Kịch bản kiểm thử: <TEST NAME nếu có>
+- Module/Feature: <MODULE/FEATURE nếu có>
 - Priority nguồn: <PRIORITY>
-- Loại kiểm thử: <TEST TYPE>
-- Người thực hiện nguồn: <ASSIGNED TO>
-- Dòng nguồn: <SOURCE ROW>
-- URL nguồn: <SOURCE URL>
+- Loại kiểm thử: <TEST TYPE nếu có>
+- Người thực hiện nguồn: <ASSIGNED TO nếu có>
+- Lý do chọn candidate: <explicit rows/ready flag/status/chat>
+- Dòng nguồn: <SOURCE ROW nếu không phải chat>
+- URL nguồn: <SOURCE URL nếu có>
+- Trạng thái test nguồn: <STATUS nếu có>
 - Trạng thái bug nguồn: <BUG STATUS nếu có>
 ```
 
 ## Jira fields
 
-- `issuetype`: `Bug` nếu người dùng không chỉ định loại khác.
-- `priority`: chỉ map từ priority nguồn theo quality rules.
+- `issuetype`: mặc định `Bug`.
+- `priority`: chỉ map từ giá trị nguồn đã nhận diện.
+- `labels`: thêm taxonomy theo [bug-label-rules.md](bug-label-rules.md), cộng `linked-testcase` nếu có test-case ID hoặc `no-testcase` nếu không có.
+- `Found In Environment`: dùng custom field Jira với một trong `Testing`, `Staging`, `Production`; không gửi `found-in-*` trong labels.
 - `assignee`: không map từ `ASSIGNED TO` nếu chưa có Jira account ID.
-- `labels`: giữ cấu hình của lệnh hoặc project.
-- `description`: dùng Atlassian Document Format khi gọi Jira Cloud API v3.
+- Nếu tool Jira không hỗ trợ label/custom field, không được tuyên bố đã set; dùng REST script hoặc báo rõ giới hạn.

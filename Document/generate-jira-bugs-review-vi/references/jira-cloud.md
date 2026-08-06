@@ -1,8 +1,18 @@
 # Cấu hình và tạo issue Jira Cloud
 
-## Credentials
+## Chọn bề mặt tạo issue
 
-Dùng Atlassian API token riêng với quyền tối thiểu cần thiết. Không lưu token trong skill hoặc file test case. Thiết lập trong shell chạy script:
+Ưu tiên bundled REST script khi cần labels, custom fields hoặc payload Jira Cloud đầy đủ. Có thể dùng Jira connector nếu schema của tool hỗ trợ toàn bộ field cần thiết.
+
+Nếu connector không có `labels` hoặc custom fields:
+
+- Không tuyên bố các field đó đã được tạo.
+- Dùng REST script nếu credentials hợp lệ.
+- Nếu không thể dùng REST, báo rõ giới hạn và xin người dùng quyết định trước khi tạo.
+
+## Credentials cho REST script
+
+Chỉ đọc từ environment:
 
 ```bash
 export JIRA_BASE_URL="https://your-company.atlassian.net"
@@ -10,67 +20,85 @@ export JIRA_EMAIL="your-email@example.com"
 read -s JIRA_API_TOKEN
 export JIRA_API_TOKEN
 export JIRA_PROJECT_KEY="QA"
+export JIRA_FOUND_IN_ENVIRONMENT_FIELD="customfield_12345"
 ```
 
-Token được nhập ẩn. Không dán token vào chat. Với integration phân phối rộng, ưu tiên OAuth 2.0; email và API token chỉ phù hợp cho automation cá nhân nhỏ.
-
-Kiểm tra quyền truy cập mà không tạo issue:
+Không dán token vào chat, file input, log hoặc repository. Kiểm tra auth không tạo issue:
 
 ```bash
 python3 scripts/jira_bug_generator.py --check-auth
 ```
 
-## Xem trước rồi mới tạo
+## Preview
 
-Tạo và review preview trước:
-
-```bash
-python3 scripts/jira_bug_generator.py \
-  --input /duong-dan-tuyet-doi/testcases.xlsx \
-  --project QA \
-  --source-url "https://docs.google.com/spreadsheets/d/.../edit?gid=..." \
-  --output /duong-dan-tuyet-doi/jira-bug-preview.json
-```
-
-Chỉ sau khi người dùng duyệt đúng project, số lượng và các cảnh báo, mới chạy:
+Bug chat hoặc dòng đã chọn trước:
 
 ```bash
 python3 scripts/jira_bug_generator.py \
-  --input /duong-dan-tuyet-doi/testcases.xlsx \
+  --input - \
+  --selection-mode all \
+  --source-kind chat \
+  --project QA
+```
+
+Sheet dùng ready flag:
+
+```bash
+python3 scripts/jira_bug_generator.py \
+  --input testcases.xlsx \
+  --selection-mode ready \
+  --source-kind sheet \
   --project QA \
-  --create --yes \
-  --output /duong-dan-tuyet-doi/jira-bug-results.json
+  --source-url "https://docs.google.com/spreadsheets/d/.../edit?gid=..."
 ```
 
-Script gọi Jira Cloud REST API v3 `POST /rest/api/3/issue`. Trường description dùng Atlassian Document Format.
+## Chống trùng trước khi tạo
 
-Dòng đã có `BUG ID` bị loại trước khi tạo. Sau khi tạo thành công, chỉ ghi issue key trở lại Google Sheet khi người dùng xác nhận riêng và đã đọc lại ô `BUG ID` mục tiêu.
+- Tìm Jira trong đúng project theo exact/near-exact summary.
+- So sánh module, actual, steps và test-case ID nếu có.
+- Issue có khả năng trùng phải được đưa vào preview; không tự gộp hoặc tự bỏ qua nếu chưa chắc chắn.
+- Đọc lại Jira key trong nguồn ngay trước lúc tạo.
 
-## Custom field theo project
+## Tạo thật
 
-Jira có thể từ chối ticket khi màn hình Create yêu cầu custom field. Lấy field ID và allowed value chính xác từ Jira admin hoặc create-field metadata. Chỉ đặt các field bổ sung vào JSON cục bộ:
+Chỉ sau xác nhận có project và số lượng:
 
-```json
-{
-  "customfield_10042": {"value": "Web"},
-  "fixVersions": [{"name": "Next release"}]
-}
+```bash
+python3 scripts/jira_bug_generator.py \
+  --input selected-bugs.json \
+  --selection-mode all \
+  --project QA \
+  --found-in-environment-field customfield_12345 \
+  --create --yes
 ```
 
-Truyền file bằng `--extra-fields`. Không cho phép file này ghi đè `project`, `summary`, `issuetype` hoặc `description`.
+- Tối đa 10 issue `READY` mỗi batch; draft `NEEDS_CLARIFICATION` bị bỏ qua mặc định.
+- `PREVIEW` và `TBD` chỉ là placeholder xem trước; script từ chối tạo issue với các project này.
+- Chỉ tạo draft `READY`; không tự dùng `--allow-quality-warnings`.
+- Tạo tuần tự và giữ kết quả từng issue.
+- Không retry toàn batch sau thành công một phần.
+
+## Labels và custom fields
+
+- Script tự thêm `linked-testcase` hoặc `no-testcase`.
+- Script tự phân loại `sys-*`, `test-*`, `flow-*` và chỉ nhận `rc-*` đã được xác nhận theo [bug-label-rules.md](bug-label-rules.md).
+- `--labels qa,release-x`: thêm labels cấu hình; không cần lặp label theo testcase.
+- `--found-in-environment-field customfield_12345`: ghi `Testing`, `Staging` hoặc `Production` vào custom field tương ứng. Bắt buộc khi dùng REST script để tạo thật.
+- `--extra-fields jira-fields.json`: thêm custom fields nhưng không được ghi đè `project`, `summary`, `issuetype`, `description` hoặc `labels`.
+
+## Ghi ngược Sheet
+
+Việc tạo Jira không tự cấp quyền ghi Sheet. Sau xác nhận riêng:
+
+1. Đọc lại ô Jira key của từng dòng.
+2. Bỏ qua ô đã có giá trị.
+3. Chỉ ghi key/URL của issue tạo thành công.
+4. Không tự cập nhật status hoặc bug status.
 
 ## Xử lý lỗi
 
-- HTTP 400: giữ nguyên error response, kiểm tra field bắt buộc hoặc allowed value; không đoán.
-- HTTP 401: dừng và kiểm tra email/token; không in token.
-- HTTP 403: dừng và báo thiếu quyền Browse Projects hoặc Create Issues.
-- HTTP 404: kiểm tra base URL, project hoặc endpoint; không tự đổi project.
-- HTTP 429: dừng batch, báo rate limit và chỉ retry sau khi người dùng đồng ý.
-- Thành công một phần: không chạy lại toàn batch; chỉ lập danh sách issue thất bại sau khi đối chiếu key đã tạo.
-
-## Tài liệu chính thức
-
-- Create issue và create-field metadata: https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/
-- Jira Cloud REST API v3: https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/
-- Xác thực bằng API token: https://developer.atlassian.com/cloud/jira/service-desk/basic-auth-for-rest-apis/
-- Atlassian Document Format: https://developer.atlassian.com/cloud/jira/platform/apis/document/structure/
+- HTTP 400: báo field/payload bị từ chối; không đoán.
+- HTTP 401/403: dừng và báo lỗi xác thực/quyền.
+- HTTP 404: kiểm tra base URL, project và endpoint.
+- HTTP 429: dừng batch; chỉ retry sau khi người dùng đồng ý.
+- Thành công một phần: chỉ xem xét retry issue thất bại sau khi đối chiếu Jira.
