@@ -610,5 +610,50 @@
     "steps": "1. Trigger Solr auth error.\n2. Trigger ClickHouse connection error.\n3. Thu thập application log và centralized log.\n4. Search các secret mẫu.",
     "data": {"secretMarkers":["solr_password=QaSecret9360","Authorization: Bearer qa-token-9360","clickhouse_password=ChSecret9360"],"expectedMatches":0},
     "expected": "- Log có error code, host alias, collection/table và jobId đủ debug.\n- Không ghi plaintext password, token hoặc Authorization header.\n- Secret marker match count=0."
+  },
+  {
+    "id": "TC_RERUN_003",
+    "module": "Idempotency",
+    "name": "[High] [Positive] PI không thuộc changedProductSet không phát sinh Solr action",
+    "precondition": "PI-9999 nằm trong batch đang xử lý nhưng sau bước detect/rebuild không có record nào đổi is_abnormal, last_total_sold hoặc last_crawled_date; PI-9999 không có trong changedProductSet; Solr đang có document W252026_PI-9999.",
+    "steps": "1. Chuẩn bị histories của PI-9999 không tạo bất kỳ change record nào.\n2. Chạy detect-invalid-record cho batch chứa PI-9999.\n3. Kiểm tra changedProductSet và ClickHouse Pusher input.\n4. Theo dõi toàn bộ Solr update/delete calls của batch.\n5. Query lại W252026_PI-9999 và kiểm tra log skip.",
+    "data": {"product_item_id":"PI-9999","prevWeek":{"week":25,"year":2026,"total_sold":120,"is_abnormal":0},"curWeek":{"week":26,"year":2026,"total_sold":150,"is_abnormal":0},"expectedChangedProductSet":[],"existingSolrDoc":{"id":"W252026_PI-9999","sold":30,"gmv":450000}},
+    "expected": "- PI-9999 không được thêm vào changedProductSet và không có ClickHouse insert/update phát sinh cho PI này.\n- Không có Solr update hoặc delete nào chứa PI-9999.\n- Document W252026_PI-9999 giữ nguyên sold=30, gmv=450000.\n- Nếu cả batch không còn PI thay đổi, log thể hiện `[Solr write] skipped: no weekly docs to update` theo technical spec."
+  },
+  {
+    "id": "TC_BR02_006",
+    "module": "BR-02 All Abnormal",
+    "name": "[High] [Edge] Abnormal ở tuần khác chỉ tạo delete ID của đúng prevWeek",
+    "precondition": "PI-OTHER-WEEK-001 có record được đánh abnormal ở tuần 26/2026 trong lần chạy hiện tại; weekly result của prevWeek 25/2026 sau rebuild có sold=0 và gmv=0 nên cần xóa theo BR-01; Solr có sẵn document của cả tuần 25 và tuần 26.",
+    "steps": "1. Chạy detect/rebuild với recordsToMarkAbnormal chỉ chứa record tuần 26.\n2. Cho bước aggregate prevWeek trả sold=0 và gmv=0.\n3. Capture danh sách delete IDs và deleteByQuery payload.\n4. Query lại hai document tuần 25 và tuần 26 của cùng PI.\n5. Kiểm tra ClickHouse record abnormal và log Solr.",
+    "data": {"product_item_id":"PI-OTHER-WEEK-001","prevWeek":{"week":25,"year":2026,"period":"25-2026","weeklySold":0,"weeklyGmv":0},"recordsToMarkAbnormal":[{"week":26,"year":2026,"is_abnormal":1}],"solrDocsBefore":["W252026_PI-OTHER-WEEK-001","W262026_PI-OTHER-WEEK-001"],"expectedDeleteIds":["W252026_PI-OTHER-WEEK-001"]},
+    "expected": "- Hệ thống chỉ tạo delete ID W252026_PI-OTHER-WEEK-001 theo đúng prevWeek.\n- Không tạo hoặc xóa nhầm ID W262026_PI-OTHER-WEEK-001 chỉ vì abnormal record thuộc tuần 26.\n- Sau job, document tuần 25 không còn tồn tại; document tuần 26 vẫn giữ nguyên.\n- ClickHouse vẫn ghi is_abnormal=1 cho đúng record tuần 26."
+  },
+  {
+    "id": "TC_SOLR_014",
+    "module": "Solr Delete Chunking",
+    "name": "[High] [Edge] Boundary 1 delete ID tạo đúng một request Solr",
+    "precondition": "Batch có chính xác 1 weekly document cần xóa; Solr test double cho phép đếm request và đọc raw query.",
+    "steps": "1. Chuẩn bị deleteIds chỉ có W252026_PI-CHUNK-001.\n2. Gọi hàm xóa Solr.\n3. Capture số request, query và collection.\n4. Query document sau khi request hoàn tất.",
+    "data": {"deleteIds":["W252026_PI-CHUNK-001"],"deleteIdCount":1,"chunkLimit":100,"expectedChunkSizes":[1],"collection":"product_item_weekly"},
+    "expected": "- Tạo đúng 1 delete request đến collection product_item_weekly.\n- Query chỉ chứa đúng một clause id:\"W252026_PI-CHUNK-001\"; không có OR thừa hoặc ID rỗng.\n- Document bị xóa thành công và không phát sinh request thứ hai."
+  },
+  {
+    "id": "TC_SOLR_015",
+    "module": "Solr Delete Chunking",
+    "name": "[High] [Edge] Boundary 99 delete IDs vẫn nằm trong một request Solr",
+    "precondition": "Solr có đủ 99 documents tuần 25/2026; deleteIds không trùng nhau và đều hợp lệ; có thể capture raw query.",
+    "steps": "1. Tạo deleteIds từ PI-CHUNK-001 đến PI-CHUNK-099.\n2. Gọi hàm chia chunk và xóa Solr.\n3. Đếm số request và số clause trong query.\n4. Query lại toàn bộ 99 IDs sau khi hoàn tất.",
+    "data": {"idPattern":"W252026_PI-CHUNK-{001..099}","firstId":"W252026_PI-CHUNK-001","lastId":"W252026_PI-CHUNK-099","deleteIdCount":99,"chunkLimit":100,"expectedChunkSizes":[99]},
+    "expected": "- 99 IDs được giữ trong đúng 1 chunk và tạo đúng 1 delete request.\n- Query có chính xác 99 clause id được nối bằng OR; không thiếu, không trùng ID.\n- Cả W252026_PI-CHUNK-001 và W252026_PI-CHUNK-099 cùng 97 IDs ở giữa đều có numFound=0 sau xóa."
+  },
+  {
+    "id": "TC_BATCH_003",
+    "module": "PI Batch Processing",
+    "name": "[Medium] [Edge] Xử lý 1.001 PI theo ba batch độc lập đến khi hết dữ liệu",
+    "precondition": "ClickHouse có đúng 1.001 candidate PI thỏa is_abnormal=0 và delta_sold<0; batch size cấu hình là 500; mỗi PI tạo một Solr action có thể trace theo batchId.",
+    "steps": "1. Trigger detect-invalid-record với 1.001 candidate PI.\n2. Theo dõi từng lần Preloader lấy dữ liệu và batchId.\n3. Đối chiếu số PI được detect/rebuild/push trong mỗi batch.\n4. Kiểm tra Solr action được thực hiện sau từng batch.\n5. Theo dõi lần đọc kế tiếp trả rỗng và job kết thúc.\n6. Đối chiếu toàn bộ 1.001 PI để tìm thiếu hoặc trùng.",
+    "data": {"candidatePattern":"PI-BATCH-{0001..1001}","candidateCount":1001,"batchSize":500,"expectedProcessingBatchSizes":[500,500,1],"expectedProcessingBatchCount":3,"expectedFinalReadCount":0},
+    "expected": "- Job xử lý đúng 3 batch có kích thước 500, 500 và 1; không load cả 1.001 PI vào một batch.\n- Mỗi batch hoàn tất ClickHouse write và Solr action độc lập trước khi xử lý batch kế tiếp.\n- Sau batch thứ ba, lần đọc tiếp theo trả 0 candidate và vòng lặp kết thúc bình thường.\n- Tổng cộng đúng 1.001 PI được xử lý, không thiếu, không trùng và không có PI bị kẹt do phân trang."
   }
 ]

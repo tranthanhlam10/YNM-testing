@@ -13,6 +13,7 @@ import re
 import sys
 import unicodedata
 import urllib.error
+import urllib.parse
 import urllib.request
 from collections.abc import Iterable
 from pathlib import Path
@@ -20,9 +21,9 @@ from typing import Any
 
 ALIASES = {
     "test_case_id": ["test case id", "case id", "tc id", "test id", "id", "testcase id", "ma testcase", "ma test case"],
-    "title": ["test case", "test case name", "test name", "name", "title", "scenario", "testcase", "ten testcase", "ten test case", "ten chuc nang", "kich ban"],
+    "title": ["test case", "test case name", "test name", "testname", "name", "title", "scenario", "testcase", "ten testcase", "ten test case", "ten chuc nang", "kich ban"],
     "status": ["status", "result", "execution status", "test result", "execution result", "ket qua chay", "ket qua test", "trang thai"],
-    "steps": ["steps", "test steps", "reproduction steps", "steps to reproduce", "procedure", "cac buoc thuc hien", "buoc thuc hien"],
+    "steps": ["step", "steps", "test steps", "reproduction steps", "steps to reproduce", "procedure", "cac buoc thuc hien", "buoc thuc hien"],
     "expected": ["expected", "expected result", "expected outcome", "expected behavior", "ket qua mong doi", "mong doi"],
     "actual": ["actual", "actual result", "actual outcome", "observed result", "actual behavior", "ket qua thuc te", "thuc te"],
     "environment": ["environment", "env", "test environment", "platform", "moi truong", "moi truong test"],
@@ -51,7 +52,7 @@ PRIORITY_MAP = {
     "critical": "Highest",
     "highest": "Highest",
     "high": "High",
-    "major": "High",
+    "major": "Major",
     "medium": "Medium",
     "normal": "Medium",
     "minor": "Low",
@@ -65,10 +66,16 @@ PRIORITY_MAP = {
     "thap": "Low",
 }
 
+DEFAULT_FOUND_IN_ENVIRONMENT = "Testing"
+DEFAULT_PRIORITY = "Major"
+DEFAULT_JIRA_LABEL = "found-in-qc"
+
 CORE_JIRA_FIELDS = {"project", "summary", "issuetype", "description", "labels"}
 CANONICAL_FIELDS = set(ALIASES)
 MAX_CREATE_BATCH = 10
 SELECTION_MODES = {"status", "ready", "all", "candidates"}
+DEFAULT_ISSUE_LINK_TYPE = "Relates"
+ISSUE_KEY_PATTERN = re.compile(r"\b([A-Za-z][A-Za-z0-9_]*-[0-9]+)\b")
 AMBIGUOUS_ACTUAL_MARKERS = (
     "can confirm",
     "chua check",
@@ -139,6 +146,15 @@ FLOW_LABELS = {
     "flow-token-proxy-manager",
 }
 LIFECYCLE_LABELS = {"lc-reopen"}
+DETECTION_SOURCE_LABELS = {DEFAULT_JIRA_LABEL}
+ALLOWED_JIRA_LABELS = (
+    ROOT_CAUSE_LABELS
+    | SYSTEM_LABELS
+    | TEST_TYPE_LABELS
+    | FLOW_LABELS
+    | LIFECYCLE_LABELS
+    | DETECTION_SOURCE_LABELS
+)
 TEST_TYPE_MAP = {
     "functional": "test-functional",
     "function": "test-functional",
@@ -167,6 +183,20 @@ class InputError(ValueError):
 
 class JiraError(RuntimeError):
     """Lỗi khi lời gọi HTTP tới Jira thất bại."""
+
+
+def parse_related_task(value: Any) -> str:
+    text = clean(value)
+    keys = dedupe(match.upper() for match in ISSUE_KEY_PATTERN.findall(text))
+    if not text:
+        raise InputError("Thiếu Jira task liên quan; không tạo hoặc preview bug khi chưa có task")
+    if len(keys) != 1:
+        raise InputError("Related task phải chứa đúng một Jira issue key hoặc URL, ví dụ YNMPECA-9361")
+    return keys[0]
+
+
+def project_from_issue_key(issue_key: str) -> str:
+    return issue_key.rsplit("-", 1)[0].upper()
 
 
 def normalized(value: Any) -> str:
@@ -384,54 +414,75 @@ def build_description(
     label_classification: dict[str, Any],
 ) -> dict[str, Any]:
     content: list[dict[str, Any]] = []
-    add_section(content, "Điều kiện tiên quyết", record["preconditions"])
-    add_section(content, "Các bước tái hiện", record["steps"])
-    add_section(content, "Kết quả thực tế", record["actual"])
-    add_section(content, "Kết quả mong đợi", record["expected"])
-    add_section(content, "Dữ liệu kiểm thử", record["test_data"])
-    add_section(content, "Môi trường", record["environment"])
+    if source_kind == "chat":
+        add_section(content, "Steps to reproduce", record["steps"])
+        add_section(content, "Actual result", record["actual"])
+        add_section(content, "Expected result", record["expected"])
+        add_section(content, "Preconditions", record["preconditions"])
+        add_section(content, "Test data", record["test_data"])
+        add_section(content, "Environment", record["environment"])
+        add_section(content, "Evidence", record["evidence"])
+        add_section(content, "Notes", record["remarks"])
+        return {"type": "doc", "version": 1, "content": content}
+
+    add_section(content, "Preconditions", record["preconditions"])
+    add_section(content, "Steps to reproduce", record["steps"])
+    add_section(content, "Actual result", record["actual"])
+    add_section(content, "Expected result", record["expected"])
+    add_section(content, "Test data", record["test_data"])
+    environment_text = record["environment"] or (
+        f"{label_classification['found_in_environment']} (default because the source did not provide an environment)"
+        if label_classification["found_in_environment"]
+        else ""
+    )
+    add_section(content, "Environment", environment_text)
     label_lines = [
-        f"Found In Environment: {label_classification['found_in_environment'] or 'Chưa xác định'}",
+        f"Found In Environment: {label_classification['found_in_environment'] or 'Not determined'}",
         "Root Cause: " + (
             ", ".join(label_classification["root_cause"])
             if label_classification["root_cause"]
-            else "Chưa xác định — cập nhật trước khi đóng bug"
+            else "Not determined — update before closing the bug"
         ),
-        "System: " + (", ".join(label_classification["system"]) or "Chưa xác định"),
-        "Test Type: " + (", ".join(label_classification["test_type"]) or "Chưa xác định"),
+        "System: " + (", ".join(label_classification["system"]) or "Not determined"),
+        "Test Type: " + (", ".join(label_classification["test_type"]) or "Not determined"),
     ]
     if label_classification["flow"]:
         label_lines.append("Flow: " + ", ".join(label_classification["flow"]))
     if label_classification["lifecycle"]:
         label_lines.append("Lifecycle: " + ", ".join(label_classification["lifecycle"]))
-    add_bullet_section(content, "Phân loại label", label_lines)
-    add_section(content, "Bằng chứng", record["evidence"] or "Chưa có bằng chứng được cung cấp.")
-    add_section(content, "Ghi chú", record["remarks"])
+    if label_classification["operational"]:
+        label_lines.append("Detection Source: " + ", ".join(label_classification["operational"]))
+    add_bullet_section(content, "Label classification", label_lines)
+    add_section(content, "Evidence", record["evidence"] or "No evidence was provided.")
+    add_section(content, "Notes", record["remarks"])
 
     source_lines = []
     effective_source = record["source_type"] or source_kind
-    source_lines.append(f"Nguồn nhập: {effective_source}")
-    source_lines.append(f"Test case: {record['test_case_id'] or 'Không gắn với test case nào'}")
+    source_lines.append(f"Input source: {effective_source}")
+    source_lines.append(f"Test case: {record['test_case_id'] or 'No linked test case'}")
     if record["title"]:
-        source_lines.append(f"Kịch bản kiểm thử: {record['title']}")
+        source_lines.append(f"Test scenario: {record['title']}")
     if record["component"]:
         source_lines.append(f"Module/Feature: {record['component']}")
-    if record["severity"]:
-        source_lines.append(f"Priority nguồn: {record['severity']}")
+    source_lines.append(
+        f"Source priority: {record['severity']}"
+        if record["severity"]
+        else f"Source priority: Not provided — using default {DEFAULT_PRIORITY}"
+    )
     if record["test_type"]:
-        source_lines.append(f"Loại kiểm thử: {record['test_type']}")
+        source_lines.append(f"Test type: {record['test_type']}")
     if record["assigned_to"]:
-        source_lines.append(f"Người thực hiện nguồn: {record['assigned_to']}")
-    source_lines.append(f"Lý do chọn candidate: {record['selection_reason'] or selection_reason}")
+        source_lines.append(f"Source assignee: {record['assigned_to']}")
+    source_lines.append(f"Selection reason: {record['selection_reason'] or selection_reason}")
     if effective_source != "chat":
-        source_lines.append(f"Dòng nguồn: {source_row}")
+        source_lines.append(f"Source row: {source_row}")
     if source_url:
-        source_lines.append(f"URL nguồn: {source_url}")
+        source_lines.append(f"Source URL: {source_url}")
     if record["bug_status"]:
-        source_lines.append(f"Trạng thái bug nguồn: {record['bug_status']}")
+        source_lines.append(f"Source bug status: {record['bug_status']}")
     if record["status"]:
-        source_lines.append(f"Trạng thái test nguồn: {record['status']}")
-    add_bullet_section(content, "Thông tin nguồn", source_lines)
+        source_lines.append(f"Source test status: {record['status']}")
+    add_bullet_section(content, "Source information", source_lines)
     return {"type": "doc", "version": 1, "content": content}
 
 
@@ -453,7 +504,10 @@ def strip_test_title_tags(value: str) -> str:
     return re.sub(r"^(?:\s*\[[^\]]+\])+\s*", "", value).strip()
 
 
-def derive_summary(record: dict[str, str]) -> str:
+def derive_summary(record: dict[str, str], source_kind: str = "file") -> str:
+    if source_kind == "chat":
+        return record["bug_summary"] or record["title"] or record["actual"] or "Hành vi lỗi cần làm rõ"
+
     supplied_summary = record["bug_summary"]
     supplied_normalized = normalized(supplied_summary)
     if supplied_normalized.startswith(("kiem tra", "verify", "validate", "test ")):
@@ -548,6 +602,7 @@ def infer_flow_labels(record: dict[str, str]) -> list[str]:
 def classify_team_labels(
     record: dict[str, str],
     provided_labels: list[str],
+    source_kind: str = "file",
 ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     warnings: list[dict[str, Any]] = []
 
@@ -555,6 +610,12 @@ def classify_team_labels(
         warnings.append({"code": code, "message": message, "blocking": blocking})
 
     raw_labels = dedupe([*provided_labels, *split_labels(record["jira_labels"])])
+    explicit_label_values = dedupe([
+        *raw_labels,
+        *split_labels(record["root_cause_label"]),
+        *split_labels(record["system_labels"]),
+        *split_labels(record["flow_labels"]),
+    ])
     root_values = dedupe([
         *split_labels(record["root_cause_label"]),
         *(label for label in raw_labels if label.startswith("rc-")),
@@ -591,7 +652,11 @@ def classify_team_labels(
     if not system_values:
         systems = infer_system_labels(record)
     if not systems:
-        add_warning("missing_system_label", "Không xác định được System label từ hành vi bug", True)
+        add_warning(
+            "missing_system_label",
+            "Không xác định được System label từ hành vi bug",
+            source_kind != "chat",
+        )
 
     invalid_flow = [label for label in flow_values if label not in FLOW_LABELS]
     flows = [label for label in flow_values if label in FLOW_LABELS]
@@ -627,9 +692,27 @@ def classify_team_labels(
         lifecycle.append("lc-reopen")
     lifecycle = dedupe(lifecycle)
 
-    taxonomy = ROOT_CAUSE_LABELS | SYSTEM_LABELS | TEST_TYPE_LABELS | FLOW_LABELS | LIFECYCLE_LABELS
-    operational = [label for label in raw_labels if label not in taxonomy]
-    found_in_environment = map_found_in_environment(record["environment"])
+    invalid_jira_labels = [label for label in raw_labels if label not in ALLOWED_JIRA_LABELS]
+    if invalid_jira_labels:
+        add_warning(
+            "invalid_jira_label",
+            "Label không thuộc danh sách label của team: " + ", ".join(invalid_jira_labels),
+            True,
+        )
+    operational = [label for label in raw_labels if label in DETECTION_SOURCE_LABELS]
+    if not explicit_label_values:
+        operational = [DEFAULT_JIRA_LABEL]
+        add_warning(
+            "default_label_applied",
+            f"Nguồn không cung cấp label; dùng mặc định {DEFAULT_JIRA_LABEL}",
+            False,
+        )
+
+    found_in_environment = (
+        map_found_in_environment(record["environment"])
+        if record["environment"]
+        else DEFAULT_FOUND_IN_ENVIRONMENT
+    )
     if record["environment"] and not found_in_environment:
         add_warning(
             "unmapped_found_in_environment",
@@ -648,7 +731,7 @@ def classify_team_labels(
     }, warnings
 
 
-def evaluate_quality(record: dict[str, str]) -> tuple[str, list[dict[str, Any]]]:
+def evaluate_quality(record: dict[str, str], source_kind: str = "file") -> tuple[str, list[dict[str, Any]]]:
     warnings: list[dict[str, Any]] = []
 
     def add_warning(code: str, message: str, blocking: bool) -> None:
@@ -657,8 +740,13 @@ def evaluate_quality(record: dict[str, str]) -> tuple[str, list[dict[str, Any]]]
     actual = normalized(record["actual"])
     expected = normalized(record["expected"])
     bug_summary = normalized(record["bug_summary"])
+    is_chat = source_kind == "chat"
     if any(marker in actual for marker in AMBIGUOUS_ACTUAL_MARKERS):
-        add_warning("actual_needs_confirmation", "ACTUAL RESULT chứa nội dung chưa được xác nhận rõ", True)
+        add_warning(
+            "actual_needs_confirmation",
+            "ACTUAL RESULT chứa nội dung chưa được xác nhận rõ",
+            not is_chat,
+        )
     vague_actuals = {
         "loi",
         "bi loi",
@@ -669,22 +757,34 @@ def evaluate_quality(record: dict[str, str]) -> tuple[str, list[dict[str, Any]]]
         "sai",
     }
     if actual in vague_actuals or len(actual) < 10:
-        add_warning("actual_too_vague", "ACTUAL RESULT quá ngắn hoặc chưa mô tả hành vi quan sát được", True)
+        add_warning(
+            "actual_too_vague",
+            "ACTUAL RESULT ngắn; giữ nguyên nội dung tester đã nhập",
+            not is_chat,
+        )
     if actual and expected and actual == expected:
-        add_warning("expected_equals_actual", "EXPECTED RESULT và ACTUAL RESULT giống nhau", True)
+        add_warning("expected_equals_actual", "EXPECTED RESULT và ACTUAL RESULT giống nhau", not is_chat)
     if any(marker in actual for marker in CONTRADICTORY_ACTUAL_MARKERS):
         add_warning("candidate_actual_conflict", "Candidate được chọn nhưng ACTUAL RESULT cho biết hệ thống đang đúng", True)
-    if bug_summary.startswith(("kiem tra", "verify", "validate", "test ")):
+    if not is_chat and bug_summary.startswith(("kiem tra", "verify", "validate", "test ")):
         add_warning("bug_summary_is_test_intent", "BUG SUMMARY đang mô tả mục tiêu kiểm thử; skill sẽ dùng ACTUAL RESULT thay thế", False)
     if not record["steps"]:
         add_warning("missing_steps", "Thiếu TEST STEPS hoặc bước tái hiện tương đương", True)
     if not record["environment"]:
-        add_warning("missing_environment", "Thiếu môi trường kiểm thử", True)
+        add_warning(
+            "default_environment_applied",
+            f"Thiếu môi trường kiểm thử; dùng mặc định {DEFAULT_FOUND_IN_ENVIRONMENT}",
+            False,
+        )
     if not record["severity"]:
-        add_warning("missing_priority", "Thiếu priority/severity; skill sẽ không tự suy đoán", True)
+        add_warning(
+            "default_priority_applied",
+            f"Thiếu priority/severity; dùng mặc định {DEFAULT_PRIORITY}",
+            False,
+        )
     elif normalized(record["severity"]) not in PRIORITY_MAP:
         add_warning("unsupported_priority", "Priority/severity nguồn chưa map được sang Jira", True)
-    if not record["evidence"]:
+    if not is_chat and not record["evidence"]:
         add_warning("missing_evidence", "Không có đường dẫn hoặc URL bằng chứng", False)
 
     review_state = "needs_clarification" if any(item["blocking"] for item in warnings) else "ready"
@@ -704,9 +804,19 @@ def build_preview(
     ready_values: set[str] | None = None,
     source_kind: str = "file",
     found_in_environment_field: str = "",
+    related_task_key: str = "",
+    related_task_input: str = "",
+    issue_link_type: str = DEFAULT_ISSUE_LINK_TYPE,
 ) -> dict[str, Any]:
     if not rows:
         raise InputError("Input không có dòng dữ liệu")
+    if not related_task_key:
+        raise InputError("Thiếu Jira task liên quan; không log bug")
+    task_project = project_from_issue_key(related_task_key)
+    if project.upper() != task_project:
+        raise InputError(
+            f"Project bug {project.upper()} không khớp project của task {related_task_key}: {task_project}"
+        )
     mapping = build_header_map((key for row in rows for key in row), field_map)
     if selection_mode not in SELECTION_MODES:
         raise InputError(f"Selection mode không hợp lệ: {selection_mode}")
@@ -763,7 +873,12 @@ def build_preview(
             errors.append({"source_row": source_row, "test_case_id": record["test_case_id"], "review_state": "invalid", "error": "trùng test-case ID"})
             continue
         missing = []
-        if not record["test_case_id"] and not record["title"] and not record["bug_summary"]:
+        if source_kind == "chat":
+            if not record["title"] and not record["bug_summary"]:
+                missing.append("Testname hoặc Summary")
+            if not record["steps"]:
+                missing.append("steps")
+        elif not record["test_case_id"] and not record["title"] and not record["bug_summary"]:
             missing.append("summary hoặc title")
         if not record["expected"]:
             missing.append("expected")
@@ -775,7 +890,7 @@ def build_preview(
         if identity:
             seen_ids.add(identity)
 
-        fingerprint = normalized(" | ".join((record["component"], derive_summary(record), record["actual"])))
+        fingerprint = normalized(" | ".join((record["component"], derive_summary(record, source_kind), record["actual"])))
         if fingerprint and fingerprint in seen_fingerprints:
             errors.append({
                 "source_row": source_row,
@@ -787,8 +902,8 @@ def build_preview(
         if fingerprint:
             seen_fingerprints.add(fingerprint)
 
-        review_state, quality_warnings = evaluate_quality(record)
-        label_classification, label_warnings = classify_team_labels(record, labels)
+        review_state, quality_warnings = evaluate_quality(record, source_kind)
+        label_classification, label_warnings = classify_team_labels(record, labels, source_kind)
         quality_warnings.extend(label_warnings)
         if any(item["blocking"] for item in quality_warnings):
             review_state = "needs_clarification"
@@ -801,7 +916,7 @@ def build_preview(
 
         fields: dict[str, Any] = {
             "project": {"key": project},
-            "summary": safe_summary(derive_summary(record)),
+            "summary": safe_summary(derive_summary(record, source_kind)),
             "issuetype": {"name": issue_type},
             "description": build_description(
                 record,
@@ -812,7 +927,11 @@ def build_preview(
                 label_classification,
             ),
         }
-        priority = PRIORITY_MAP.get(normalized(record["severity"]))
+        priority = (
+            PRIORITY_MAP.get(normalized(record["severity"]))
+            if record["severity"]
+            else DEFAULT_PRIORITY
+        )
         if priority:
             fields["priority"] = {"name": priority}
         if found_in_environment_field and label_classification["found_in_environment"]:
@@ -825,7 +944,6 @@ def build_preview(
             *label_classification["flow"],
             *label_classification["lifecycle"],
         ]
-        issue_labels.append("linked-testcase" if record["test_case_id"] else "no-testcase")
         issue_labels = list(dict.fromkeys(issue_labels))
         if issue_labels:
             fields["labels"] = issue_labels
@@ -842,6 +960,12 @@ def build_preview(
             "found_in_environment": label_classification["found_in_environment"],
             "label_classification": label_classification,
             "quality_warnings": quality_warnings,
+            "related_task": {
+                "key": related_task_key,
+                "input": related_task_input,
+                "project": project,
+                "link_type": issue_link_type,
+            },
             "payload": {"fields": fields},
         })
 
@@ -857,6 +981,13 @@ def build_preview(
         "quality_warnings": all_quality_warnings,
         "source_url": source_url or None,
         "found_in_environment_field": found_in_environment_field or None,
+        "related_task": {
+            "key": related_task_key,
+            "input": related_task_input,
+            "project": project,
+            "link_type": issue_link_type,
+            "verified": False,
+        },
         "stats": {
             "input_rows": len(rows),
             "drafts": len(drafts),
@@ -925,7 +1056,44 @@ def check_auth() -> dict[str, Any]:
     }
 
 
-def create_issues(drafts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def get_issue_context(issue_key: str) -> dict[str, Any]:
+    encoded_key = urllib.parse.quote(issue_key, safe="")
+    _, issue = jira_request(
+        "GET",
+        f"/rest/api/3/issue/{encoded_key}?fields=project,summary,issuetype,status",
+    )
+    fields = issue.get("fields") or {}
+    project = fields.get("project") or {}
+    project_key = clean(project.get("key")).upper()
+    if not project_key:
+        raise JiraError(f"Không đọc được project của related task {issue_key}")
+    return {
+        "key": clean(issue.get("key")) or issue_key,
+        "project": project_key,
+        "summary": clean(fields.get("summary")),
+        "issue_type": clean((fields.get("issuetype") or {}).get("name")),
+        "status": clean((fields.get("status") or {}).get("name")),
+    }
+
+
+def link_related_issue(bug_key: str, task_key: str, issue_link_type: str) -> bool:
+    status, _ = jira_request(
+        "POST",
+        "/rest/api/3/issueLink",
+        {
+            "type": {"name": issue_link_type},
+            "inwardIssue": {"key": bug_key},
+            "outwardIssue": {"key": task_key},
+        },
+    )
+    return status in {200, 201, 204}
+
+
+def create_issues(
+    drafts: list[dict[str, Any]],
+    related_task_key: str,
+    issue_link_type: str,
+) -> list[dict[str, Any]]:
     base_url, _, _ = jira_credentials()
     results = []
     for draft in drafts:
@@ -933,17 +1101,43 @@ def create_issues(drafts: list[dict[str, Any]]) -> list[dict[str, Any]]:
         try:
             status, data = jira_request("POST", "/rest/api/3/issue", draft["payload"])
             key = data.get("key")
-            results.append({
-                "ok": status == 201 and bool(key),
+            created = status == 201 and bool(key)
+            if not created:
+                results.append({
+                    "ok": False,
+                    "created": False,
+                    "linked": False,
+                    "test_case_id": draft["test_case_id"],
+                    "summary": summary,
+                    "error": "Jira không trả về issue key sau khi tạo bug",
+                })
+                continue
+            result = {
+                "ok": False,
+                "created": True,
+                "linked": False,
                 "test_case_id": draft["test_case_id"],
                 "summary": summary,
                 "id": data.get("id"),
                 "key": key,
                 "url": f"{base_url}/browse/{key}" if key else None,
-            })
+                "related_task_key": related_task_key,
+                "related_task_url": f"{base_url}/browse/{related_task_key}",
+                "link_type": issue_link_type,
+            }
+            try:
+                result["linked"] = link_related_issue(key, related_task_key, issue_link_type)
+                result["ok"] = result["linked"]
+                if not result["linked"]:
+                    result["error"] = "Bug đã tạo nhưng Jira không xác nhận issue link với related task"
+            except (JiraError, InputError) as link_exc:
+                result["error"] = f"Bug đã tạo nhưng link related task thất bại: {link_exc}"
+            results.append(result)
         except (JiraError, InputError) as exc:
             results.append({
                 "ok": False,
+                "created": False,
+                "linked": False,
                 "test_case_id": draft["test_case_id"],
                 "summary": summary,
                 "error": str(exc),
@@ -954,14 +1148,25 @@ def create_issues(drafts: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", help="Đường dẫn CSV, TSV, JSON hoặc XLSX; dùng - để đọc JSON stdin")
-    parser.add_argument("--project", default=os.environ.get("JIRA_PROJECT_KEY"), help="Jira project key")
+    parser.add_argument(
+        "--related-task",
+        help="Jira task key hoặc URL bắt buộc, ví dụ YNMPECA-9361 hoặc https://jira.example.com/browse/YNMPECA-9361",
+    )
+    parser.add_argument(
+        "--project",
+        help="Jira project key tùy chọn; nếu có phải khớp project của related task",
+    )
     parser.add_argument("--issue-type", default="Bug", help="Tên Jira issue type (mặc định: Bug)")
     parser.add_argument("--sheet", help="Tên worksheet XLSX; mặc định là worksheet active")
     parser.add_argument("--include-status", default="bug,failed,fail,error,errored,thất bại,lỗi", help="Các result được chọn, phân cách bằng dấu phẩy")
     parser.add_argument("--selection-mode", choices=sorted(SELECTION_MODES), default="ready", help="Cách chọn candidate: ready (mặc định), status, all hoặc candidates (preview-only)")
     parser.add_argument("--ready-values", default="yes,ready,true,1", help="Các giá trị READY TO JIRA được chọn")
     parser.add_argument("--source-kind", choices=("auto", "sheet", "file", "chat"), default="auto", help="Nguồn input để truy vết")
-    parser.add_argument("--labels", default="generated-by-qc", help="Các Jira label bổ sung, phân cách bằng dấu phẩy")
+    parser.add_argument(
+        "--labels",
+        default="",
+        help="Các Jira label trong allowlist của team, phân cách bằng dấu phẩy; trống sẽ dùng found-in-qc",
+    )
     parser.add_argument("--field-map", help="File JSON map field chuẩn sang header nguồn")
     parser.add_argument("--extra-fields", help="JSON object chứa field Jira bổ sung")
     parser.add_argument(
@@ -997,12 +1202,21 @@ def main() -> int:
             return 0
         if not args.input:
             raise InputError("Bắt buộc có --input, trừ khi dùng --check-auth")
-        if not args.project or not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*", args.project.strip()):
-            raise InputError("Hãy cung cấp Jira project key hợp lệ bằng --project hoặc JIRA_PROJECT_KEY")
+        related_task_input = clean(args.related_task)
+        related_task_key = parse_related_task(related_task_input)
+        project = project_from_issue_key(related_task_key)
+        if args.project:
+            supplied_project = args.project.strip().upper()
+            if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*", supplied_project):
+                raise InputError("--project phải là Jira project key hợp lệ")
+            if supplied_project != project:
+                raise InputError(
+                    f"Project {supplied_project} không khớp project của related task "
+                    f"{related_task_key}: {project}"
+                )
+        issue_link_type = DEFAULT_ISSUE_LINK_TYPE
         if args.create and not args.yes:
             raise InputError("Tạo issue thật cần đồng thời --create và --yes sau khi người dùng xác nhận rõ")
-        if args.create and args.project.strip().upper() in {"PREVIEW", "TBD"}:
-            raise InputError("Project PREVIEW/TBD chỉ dùng để xem trước; hãy cung cấp Jira project key thật")
         if args.found_in_environment_field and not re.fullmatch(r"customfield_[0-9]+", args.found_in_environment_field):
             raise InputError("--found-in-environment-field phải có dạng customfield_<số>")
         if args.create and not args.found_in_environment_field:
@@ -1023,7 +1237,7 @@ def main() -> int:
         statuses = {normalized(value) for value in args.include_status.split(",") if normalized(value)}
         if not statuses:
             raise InputError("--include-status phải có ít nhất một giá trị")
-        labels = [value.strip() for value in args.labels.split(",") if value.strip()]
+        labels = [clean_label(value) for value in args.labels.split(",") if clean_label(value)]
         ready_values = {normalized(value) for value in args.ready_values.split(",") if normalized(value)}
         if not ready_values:
             raise InputError("--ready-values phải có ít nhất một giá trị")
@@ -1033,7 +1247,7 @@ def main() -> int:
             source_kind = args.source_kind
         preview = build_preview(
             rows,
-            args.project.upper(),
+            project,
             args.issue_type,
             statuses,
             labels,
@@ -1044,6 +1258,9 @@ def main() -> int:
             ready_values,
             source_kind,
             args.found_in_environment_field,
+            related_task_key,
+            related_task_input,
+            issue_link_type,
         )
         preview["input_file"] = input_label
         if args.create:
@@ -1065,6 +1282,14 @@ def main() -> int:
                 raise InputError("Không có draft READY để tạo")
             if len(drafts_to_create) > MAX_CREATE_BATCH:
                 raise InputError(f"Một batch chỉ được tạo tối đa {MAX_CREATE_BATCH} issue; hãy chia nhỏ và xin duyệt từng batch")
+            task_context = get_issue_context(related_task_key)
+            if task_context["project"] != project:
+                raise InputError(
+                    f"Project thực tế của task {related_task_key} là {task_context['project']}, "
+                    f"không khớp project suy ra từ issue key: {project}"
+                )
+            preview["related_task"].update(task_context)
+            preview["related_task"]["verified"] = True
             preview["creation_skipped"] = [
                 {
                     "source_row": item["source_row"],
@@ -1076,12 +1301,36 @@ def main() -> int:
                 for item in blocked
                 if not args.allow_quality_warnings
             ]
-            preview["creation_results"] = create_issues(drafts_to_create)
-            preview["stats"]["created"] = sum(1 for item in preview["creation_results"] if item["ok"])
-            preview["stats"]["create_failed"] = sum(1 for item in preview["creation_results"] if not item["ok"])
+            preview["creation_results"] = create_issues(
+                drafts_to_create,
+                related_task_key,
+                issue_link_type,
+            )
+            preview["stats"]["created"] = sum(
+                1 for item in preview["creation_results"] if item.get("created")
+            )
+            preview["stats"]["linked"] = sum(
+                1 for item in preview["creation_results"] if item.get("linked")
+            )
+            preview["stats"]["create_failed"] = sum(
+                1 for item in preview["creation_results"] if not item.get("created")
+            )
+            preview["stats"]["link_failed"] = sum(
+                1
+                for item in preview["creation_results"]
+                if item.get("created") and not item.get("linked")
+            )
             preview["stats"]["skipped_needs_clarification"] = len(preview["creation_skipped"])
         write_result(preview, args.output)
-        return 0 if not args.create or preview["stats"]["create_failed"] == 0 else 2
+        return (
+            0
+            if not args.create
+            or (
+                preview["stats"]["create_failed"] == 0
+                and preview["stats"]["link_failed"] == 0
+            )
+            else 2
+        )
     except (InputError, JiraError) as exc:
         print(f"Lỗi: {exc}", file=sys.stderr)
         return 2

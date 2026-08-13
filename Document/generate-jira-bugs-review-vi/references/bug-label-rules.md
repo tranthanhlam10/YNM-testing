@@ -1,22 +1,36 @@
 # Quy tắc gắn label bug YouNet
 
-Nguồn chuẩn: [QUY ƯỚC ĐÁNH LABEL BUG](https://wiki.younetco.com/pages/viewpage.action?pageId=274915579), page ID `274915579`, version `29`, cập nhật `2026-07-15`.
+Nguồn chuẩn: [QUY ƯỚC ĐÁNH LABEL BUG](https://wiki.younetco.com/pages/viewpage.action?pageId=274915579), page ID `274915579`, version `29`, cập nhật `2026-07-15`; bổ sung vận hành được người dùng xác nhận ngày `2026-08-11`: thiếu label dùng `found-in-qc`.
 
 ## Thứ tự ưu tiên khi tài liệu có nội dung cũ
 
-1. Áp dụng changelog và mục 4.1 mới nhất: môi trường phát hiện bug nằm trong custom field `Found In Environment`; không dùng label `found-in-*`.
-2. Hiểu “Detection Source” còn sót ở mục 5 là dữ liệu môi trường phát hiện bug, không tự tạo thêm label ngoài taxonomy.
+1. Môi trường phát hiện bug nằm trong custom field `Found In Environment`; thiếu môi trường dùng `Testing`.
+2. Khi nguồn không cung cấp bất kỳ label rõ ràng nào, thêm đúng label mặc định `found-in-qc`. Label này không thay thế custom field `Found In Environment`.
 3. Cho phép để trống Root Cause lúc tạo bug khi chưa đủ phân tích theo mục 7.3, nhưng phải cảnh báo và cập nhật trước khi đóng bug.
+4. Chỉ dùng label có trong các bảng allowlist của tài liệu này. Mọi label khác phải bị loại khỏi payload và tạo cảnh báo chặn.
 
 ## Quy trình phân loại
 
-1. Map môi trường nguồn sang đúng một giá trị `Found In Environment`: `Testing`, `Staging` hoặc `Production`. Không đoán khi nguồn chỉ nêu browser/OS mà không nêu stage.
-2. Chọn tối thiểu một System label từ hành vi quan sát được. Cho phép nhiều System label khi bug thực sự ảnh hưởng nhiều hệ thống.
+1. Map môi trường nguồn sang đúng một giá trị `Found In Environment`: `Testing`, `Staging` hoặc `Production`. Nếu nguồn để trống, dùng `Testing`; nếu nguồn có giá trị nhưng không map được thì yêu cầu làm rõ.
+2. Chọn tối thiểu một System label từ hành vi quan sát được cho nguồn Sheet/file. Với nguồn chat, chỉ thêm khi có dấu hiệu rõ; thiếu System không chặn.
 3. Chọn đúng một Test Type label theo hoạt động test đã bắt được bug. Ưu tiên `TEST TYPE` nguồn; không suy ra từ những loại test có thể bắt được bug.
 4. Chỉ thêm Flow label khi source/steps/actual chỉ rõ flow tương ứng. Flow là optional.
 5. Chỉ thêm đúng một Root Cause label khi nguồn có field `ROOT CAUSE`, người dùng xác nhận hoặc Dev/Tech Lead đã phân tích. Không suy Root Cause từ System label, summary hay Actual.
 6. Chỉ thêm `lc-reopen` khi bug thật sự được mở lại sau khi đã fix/closed.
-7. Giữ label truy vết như `generated-by-qc`, `linked-testcase` hoặc `no-testcase`, nhưng không dùng chúng thay cho taxonomy bắt buộc.
+7. Nếu người dùng không nhập label ở `JIRA LABELS`, `ROOT CAUSE`, `SYSTEM LABELS` hoặc `FLOW LABELS`, thêm `found-in-qc`.
+8. Không tự thêm label truy vết `generated-by-qc`, `linked-testcase`, `no-testcase` hoặc label ngoài allowlist.
+
+## Detection Source — label mặc định
+
+| Label | Dùng khi |
+| --- | --- |
+| `found-in-qc` | Nguồn không cung cấp label rõ ràng; dùng làm label mặc định của bug do QC phát hiện |
+
+## Lifecycle — optional
+
+| Label | Dùng khi |
+| --- | --- |
+| `lc-reopen` | Bug thật sự được mở lại sau khi đã fix hoặc đóng |
 
 ## Root Cause — đúng một label khi đã xác nhận
 
@@ -85,10 +99,13 @@ Nếu nguồn chứa nhiều Test Type trái nhau, không chọn hộ; đánh d�
 
 ## Rule chất lượng label
 
-- System không xác định được → cảnh báo chặn `missing_system_label`.
+- System không xác định được → cảnh báo chặn `missing_system_label` với Sheet/file; cảnh báo không chặn với chat.
 - Root Cause chưa có → cảnh báo không chặn `root_cause_pending`; tuyệt đối không thêm `rc-logic` như một default.
 - Root Cause có nhiều hơn một hoặc label không thuộc taxonomy → cảnh báo chặn.
 - Test Type thiếu → cảnh báo không chặn; có nhiều hơn một → cảnh báo chặn.
 - Flow label không thuộc taxonomy → cảnh báo chặn.
+- Bất kỳ Jira label nào không thuộc Root Cause, System, Test Type, Flow, Lifecycle hoặc `found-in-qc` → cảnh báo chặn `invalid_jira_label` và không đưa vào payload.
 - Environment có nội dung nhưng không map được sang ba giá trị Jira → cảnh báo chặn.
+- Environment trống → mặc định `Testing`, không chặn.
+- Label trống → mặc định `found-in-qc`, không chặn.
 - Preview phải hiển thị label theo nhóm để QC review trước khi tạo Jira.

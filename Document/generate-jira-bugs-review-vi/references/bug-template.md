@@ -1,6 +1,8 @@
 # Template nội dung bug Jira
 
-Dùng cùng một template cho bug từ test case, exploratory/edge case và bug nhập trực tiếp trong chat. Chỉ hiển thị section có dữ liệu, ngoại trừ `Bằng chứng` và `Thông tin nguồn`.
+Dùng template đầy đủ cho bug từ test case/Sheet và template tối giản cho bug nhập trực tiếp trong chat. Không tự viết lại nội dung tester đã cung cấp.
+
+Tất cả section heading và nhãn metadata do template sinh ra phải dùng tiếng Anh. Nội dung tester nhập có thể là tiếng Việt hoặc tiếng Anh và phải được giữ nguyên.
 
 ## Summary
 
@@ -16,72 +18,99 @@ Ví dụ:
 
 Không dùng `[BUG][TC_ID]`, priority, test type hoặc câu mục tiêu kiểm thử như “Kiểm tra...”.
 
+Riêng nguồn chat, dùng nguyên `Testname` làm Summary, kể cả khi câu chữ chưa theo format trên. Chỉ trim khoảng trắng và cắt theo giới hạn 255 ký tự của Jira.
+
 ## Description
 
+### Nguồn chat — template tối giản
+
 ```markdown
-### Điều kiện tiên quyết
+### Steps to reproduce
 
-<PRE-CONDITION nếu có>
+<Step>
 
-### Các bước tái hiện
+### Actual result
 
-1. <Bước 1>
-2. <Bước 2>
-3. <Bước 3>
+<Actual Result>
 
-### Kết quả thực tế
+### Expected result
 
-<ACTUAL RESULT, chỉ mô tả điều đã quan sát>
+<Expected Result>
+```
 
-### Kết quả mong đợi
+Đây là ba section bắt buộc. Chỉ thêm Preconditions, Test data, Environment, Evidence hoặc Notes khi tester thực sự nhập; không thêm placeholder `Evidence` hay `Source information` cho chat.
+
+### Nguồn test case/Sheet — template đầy đủ
+
+```markdown
+### Preconditions
+
+<PRE-CONDITION if provided>
+
+### Steps to reproduce
+
+1. <Step 1>
+2. <Step 2>
+3. <Step 3>
+
+### Actual result
+
+<ACTUAL RESULT provided by the tester>
+
+### Expected result
 
 <EXPECTED RESULT>
 
-### Dữ liệu kiểm thử
+### Test data
 
-<TEST DATA nếu có>
+<TEST DATA if provided>
 
-### Môi trường
+### Environment
 
-<staging/production/local, build/version, browser/OS nếu liên quan>
+<staging/production/local, build/version, browser/OS when relevant>
 
-### Phân loại label
+### Label classification
 
-- Found In Environment: <Testing/Staging/Production; đây là custom field, không phải label>
-- Root Cause: <đúng một rc-* hoặc “Chưa xác định — cập nhật trước khi đóng bug”>
-- System: <tối thiểu một sys-*>
-- Test Type: <đúng một test-* nếu xác định được>
-- Flow: <flow-* nếu có bằng chứng rõ>
+- Found In Environment: <Testing/Staging/Production; default to Testing when missing; this is a custom field>
+- Root Cause: <exactly one confirmed rc-* or “Not determined — update before closing the bug”>
+- System: <at least one sys-* when supported by evidence>
+- Test Type: <exactly one test-* when identified>
+- Flow: <flow-* only when supported by evidence>
+- Detection Source: <found-in-qc when no label is provided>
 
-### Bằng chứng
+### Evidence
 
-<URL log/ảnh/video hoặc “Chưa có bằng chứng được cung cấp.”>
+<log/image/video URL or “No evidence was provided.”>
 
-### Ghi chú
+### Notes
 
-<REMARKS nếu có>
+<REMARKS if provided>
 
-### Thông tin nguồn
+### Source information
 
-- Nguồn nhập: <sheet/file/chat>
-- Test case: <TEST CASE ID hoặc “Không gắn với test case nào”>
-- Kịch bản kiểm thử: <TEST NAME nếu có>
-- Module/Feature: <MODULE/FEATURE nếu có>
-- Priority nguồn: <PRIORITY>
-- Loại kiểm thử: <TEST TYPE nếu có>
-- Người thực hiện nguồn: <ASSIGNED TO nếu có>
-- Lý do chọn candidate: <explicit rows/ready flag/status/chat>
-- Dòng nguồn: <SOURCE ROW nếu không phải chat>
-- URL nguồn: <SOURCE URL nếu có>
-- Trạng thái test nguồn: <STATUS nếu có>
-- Trạng thái bug nguồn: <BUG STATUS nếu có>
+- Input source: <sheet/file/chat>
+- Test case: <TEST CASE ID or “No linked test case”>
+- Test scenario: <TEST NAME if provided>
+- Module/Feature: <MODULE/FEATURE if provided>
+- Source priority: <PRIORITY>
+- Test type: <TEST TYPE if provided>
+- Source assignee: <ASSIGNED TO if provided>
+- Selection reason: <explicit rows/ready flag/status/chat>
+- Source row: <SOURCE ROW for non-chat sources>
+- Source URL: <SOURCE URL if provided>
+- Source test status: <STATUS if provided>
+- Source bug status: <BUG STATUS if provided>
 ```
 
 ## Jira fields
 
+- `project`: bắt buộc lấy từ related task (`YNMPECA-9361` → `YNMPECA`); không lấy project độc lập từ tester nếu không khớp task.
+- `related task`: metadata bắt buộc của batch; không có task thì không dựng preview hoặc tạo bug.
+- `issue link`: mỗi bug tạo thật phải có link loại `Relates` với related task. Quan hệ này là issue link, không phải parent/sub-task và không cần chèn vào Description.
 - `issuetype`: mặc định `Bug`.
-- `priority`: chỉ map từ giá trị nguồn đã nhận diện.
-- `labels`: thêm taxonomy theo [bug-label-rules.md](bug-label-rules.md), cộng `linked-testcase` nếu có test-case ID hoặc `no-testcase` nếu không có.
-- `Found In Environment`: dùng custom field Jira với một trong `Testing`, `Staging`, `Production`; không gửi `found-in-*` trong labels.
+- `priority`: map từ giá trị nguồn đã nhận diện; nếu nguồn bỏ trống thì dùng `Major`.
+- `labels`: chỉ thêm label thuộc allowlist trong [bug-label-rules.md](bug-label-rules.md). Nếu nguồn không cung cấp label thì dùng `found-in-qc`.
+- Không tự thêm `generated-by-qc`, `linked-testcase`, `no-testcase` hoặc label ngoài allowlist.
+- `Found In Environment`: dùng custom field Jira với một trong `Testing`, `Staging`, `Production`; nếu nguồn bỏ trống thì dùng `Testing`.
 - `assignee`: không map từ `ASSIGNED TO` nếu chưa có Jira account ID.
 - Nếu tool Jira không hỗ trợ label/custom field, không được tuyên bố đã set; dùng REST script hoặc báo rõ giới hạn.
