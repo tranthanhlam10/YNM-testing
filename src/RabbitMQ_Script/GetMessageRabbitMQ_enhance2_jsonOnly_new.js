@@ -4,23 +4,23 @@ import { promises as fs } from 'fs';
 // ============================================================
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
-const ACTIVE_ENV   = 'staging';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "rnd.socialheat.llm.summary_LinhH"; // 👈 queue
+const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
+const TARGET_QUEUE = "app.socialheat.mentions_to_topic_7_thutt"; // 👈 queue
 const MSG_COUNT    = 500;                                                   // 👈 số message cần lấy
 // ============================================================
 
 const ENVIRONMENTS = {
   testing: {
-    method:   'http',
-    domain:   'rabbitmq-testing.ynm.local',
-    username: 'lamtt',
-    password: 'lamtt',
+    method: "http",
+    domain: "rabbitmq-testing.ynm.local",
+    username: "qc_giangnt1",
+    password: "lvWJAHcLrxQT5GLI",
   },
   staging: {
-    method:   'https',
-    domain:   'rabbitmq-staging.younetmedia.com',
-    username: 'lamtt',
-    password: 'vYoWn4KCmDYpvuFiqovWbF',
+    method: "https",
+    domain: "rabbitmq-staging.younetmedia.com",
+    username: "lamtt",
+    password: "vYoWn4KCmDYpvuFiqovWbF",
   },
 };
 

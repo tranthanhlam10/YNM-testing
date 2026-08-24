@@ -1,5 +1,6 @@
 # Task clickhouse của ECI
 
+Wiki dev: https://wiki.younetco.com/display/FB/%5BECI%5D%5BCLICKHOUSE%5D+%5BPUSHER%5D+Product+Item+Histories+To+Clickhouse
 
 ## Scope
 
