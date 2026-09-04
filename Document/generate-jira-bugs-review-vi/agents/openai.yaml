@@ -1,4 +1,4 @@
 interface:
   display_name: "Log bug Jira"
   short_description: "Log bug Jira relate task đúng project và rule"
-  default_prompt: "Dùng $generate-jira-bugs để tạo preview bug Jira từ Sheet hoặc mô tả của tôi, bắt buộc relate vào task Jira tôi gửi và lấy project từ task."
+  default_prompt: "Dùng $generate-jira-bugs với task và Sheet/bug chat tôi gửi. Chỉ preview compact; chưa tạo Jira hoặc ghi Sheet."

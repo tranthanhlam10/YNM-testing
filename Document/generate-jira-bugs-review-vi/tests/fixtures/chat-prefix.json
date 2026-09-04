@@ -1,0 +1,8 @@
+[
+  {
+    "Testname": "[Medium] [Positive] Không lưu được cấu hình bộ lọc",
+    "Step": "1. Mở màn hình cấu hình\n2. Nhấn Save",
+    "Actual Result": "Hệ thống hiển thị thông báo thành công nhưng tải lại trang không có cấu hình vừa lưu",
+    "Expected Result": "Cấu hình bộ lọc được lưu và vẫn hiển thị sau khi tải lại trang"
+  }
+]

@@ -32,6 +32,8 @@ python3 scripts/jira_bug_generator.py --check-auth
 
 ## Preview
 
+Preview mặc định trả schema compact và tối đa `max_preview_candidates` trong policy. Dùng `--preview-limit` để tăng số candidate hiển thị hoặc `--output-format full` khi cần debug payload Jira/ADF; các tùy chọn này không cấp quyền tạo issue.
+
 Bug chat hoặc dòng đã chọn trước:
 
 ```bash
@@ -58,7 +60,7 @@ python3 scripts/jira_bug_generator.py \
 - Bắt buộc có đúng một task key/URL cho batch; không có task thì không preview hoặc tạo bug.
 - Suy project từ issue key, sau đó đọc task qua `GET /rest/api/3/issue/{key}` để xác minh task tồn tại/đọc được và project thực tế khớp.
 - Tìm Jira trong đúng project theo exact/near-exact summary.
-- So sánh module, actual, steps và test-case ID nếu có.
+- Dùng `--search-duplicates` với Jira enhanced JQL search `/rest/api/3/search/jql` để tìm theo project, Summary, related task và test-case ID nếu có; script chấm điểm và chỉ trả kết quả `possible/strong` để tester review.
 - Issue có khả năng trùng phải được đưa vào preview; không tự gộp hoặc tự bỏ qua nếu chưa chắc chắn.
 - Đọc lại Jira key trong nguồn ngay trước lúc tạo.
 
@@ -72,15 +74,18 @@ python3 scripts/jira_bug_generator.py \
   --selection-mode all \
   --related-task YNMPECA-9361 \
   --found-in-environment-field customfield_12345 \
+  --manifest .ynm-qc-runs/YNMPECA-9361.json \
   --create --yes
 ```
 
 - Script xác minh task trước khi tạo issue đầu tiên.
+- Script luôn chạy duplicate search khi tạo. Nếu tester đã review và vẫn muốn tạo mới, truyền thêm `--allow-possible-duplicates`; `--allow-quality-warnings` không bỏ qua duplicate gate.
+- Run manifest là bắt buộc. Nếu issue đã tạo nhưng bước link lỗi, lần chạy sau dùng cùng manifest và chỉ retry link.
 - Mỗi bug được tạo qua `POST /rest/api/3/issue`, sau đó được link với task qua `POST /rest/api/3/issueLink` và link type `Relates`.
 - `Relates` là issue link cố định theo quy trình hiện tại, không phải parent/sub-task; không tự đổi sang link type khác.
-- Tối đa 10 issue `READY` mỗi batch; draft `NEEDS_CLARIFICATION` bị bỏ qua mặc định.
+- Tối đa `max_create_batch` trong [../config/policies.json](../config/policies.json) (mặc định 10) issue `CREATE_READY` mỗi batch; draft `NEEDS_CLARIFICATION` bị bỏ qua mặc định.
 - Project tự lấy từ related task; `--project` chỉ là đối chiếu tùy chọn và nếu có phải khớp.
-- Chỉ tạo draft `READY`; không tự dùng `--allow-quality-warnings`.
+- `READY_FOR_REVIEW` chỉ dùng cho preview. Chỉ tạo draft `CREATE_READY`; không tự dùng `--allow-quality-warnings`.
 - Tạo tuần tự và giữ kết quả từng issue.
 - Không retry toàn batch sau thành công một phần.
 
@@ -90,17 +95,18 @@ python3 scripts/jira_bug_generator.py \
 - Script tự phân loại `sys-*`, `test-*`, `flow-*` và chỉ nhận `rc-*` đã được xác nhận theo [bug-label-rules.md](bug-label-rules.md). Mọi label phải thuộc allowlist của tài liệu này.
 - `--labels found-in-qc,sys-db`: thêm label cấu hình thuộc allowlist; label ngoài allowlist bị loại và tạo cảnh báo chặn. Nếu không cung cấp label nào, script dùng `found-in-qc`.
 - `--found-in-environment-field customfield_12345`: ghi `Testing`, `Staging` hoặc `Production` vào custom field tương ứng; thiếu môi trường nguồn dùng `Testing`. Bắt buộc khi dùng REST script để tạo thật.
-- Priority nguồn trống được gửi lên Jira với giá trị mặc định `Major`.
+- Priority lấy từ field hợp lệ; nếu trống thì lấy từ metadata prefix Testname; nếu vẫn trống dùng mặc định `Major` theo policy.
 - `--extra-fields jira-fields.json`: thêm custom fields nhưng không được ghi đè `project`, `summary`, `issuetype`, `description` hoặc `labels`.
 
 ## Ghi ngược Sheet
 
 Việc tạo Jira không tự cấp quyền ghi Sheet. Sau xác nhận riêng:
 
-1. Đọc lại ô Jira key của từng dòng.
-2. Bỏ qua ô đã có giá trị.
-3. Chỉ ghi key/URL của issue tạo thành công.
-4. Không tự cập nhật status hoặc bug status.
+1. Dùng `writeback_plan` do script sinh sau create/link.
+2. Đọc lại cả dòng và ô Jira key; so với row fingerprint và expected value trong plan.
+3. Có thay đổi thì báo `WRITEBACK_CONFLICT`, không ghi.
+4. Chỉ ghi key/URL của issue đã create và link thành công.
+5. Không tự cập nhật status hoặc bug status.
 
 ## Xử lý lỗi
 

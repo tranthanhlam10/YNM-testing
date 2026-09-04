@@ -1,15 +1,16 @@
 # Quy tắc chất lượng và an toàn
 
-## 1. Trạng thái review
+## 1. Hai tầng trạng thái
 
-- `READY`: đủ dữ liệu và được chọn bằng tín hiệu rõ ràng.
-- `NEEDS_CLARIFICATION`: có bug tiềm năng nhưng summary, steps, expected, actual hoặc giá trị Environment/Priority đã nhập còn mơ hồ, không hợp lệ.
+- `READY_FOR_REVIEW`: đủ dữ liệu cốt lõi để dựng preview cho tester xem. Trạng thái này không phải quyền tạo Jira.
+- `CREATE_READY`: preview không còn cảnh báo chặn và có thể được đưa vào batch tạo sau xác nhận.
+- `NEEDS_CLARIFICATION`: dựng được preview nhưng còn dữ liệu mơ hồ/không hợp lệ nên mặc định không được tạo.
 - `SKIP_EXISTING`: đã có Jira key hoặc đã xác nhận có issue tương đương.
-- `INVALID`: thiếu summary/title, expected hoặc actual; riêng nguồn chat còn thiếu steps. Không thể dựng draft có nghĩa.
+- `INVALID`: thiếu summary/title, steps, expected hoặc actual. Không thể dựng draft có nghĩa.
 
-Không yêu cầu test-case ID hoặc status để một bug đạt `READY`.
+Không yêu cầu test-case ID hoặc status để một bug đạt `READY_FOR_REVIEW` hay `CREATE_READY`.
 
-Related task là gate ở cấp yêu cầu, không phải chất lượng của riêng một dòng: thiếu task thì dừng toàn bộ trước preview/tạo; không gắn trạng thái `READY` cho candidate nào. Project nhập riêng không khớp task cũng là lỗi input chặn toàn batch.
+Related task là gate ở cấp yêu cầu: thiếu task thì dừng toàn bộ trước preview/tạo; không gắn trạng thái cho candidate nào. Project nhập riêng không khớp task cũng chặn toàn batch.
 
 ## 2. Chọn candidate an toàn
 
@@ -27,29 +28,34 @@ Related task là gate ở cấp yêu cầu, không phải chất lượng của 
 - Actual chứa “cần confirm”, “chưa check”, “chờ kiểm tra”, “đợi dev fix”, “TBC”, “không rõ”, “có vẻ” hoặc tương đương.
 - Actual chỉ nói “lỗi”, “bị lỗi”, “đang lỗi”, “hiện tại đang lỗi”, “không đúng”, “sai” hoặc không đủ để dev hiểu hành vi quan sát được.
 - Expected và Actual giống nhau hoặc mâu thuẫn với việc đây là bug.
+- Actual và Expected có độ tương đồng rất cao thì thêm cảnh báo không chặn để tester review; engine không tự suy luận ngữ nghĩa ngoài các dấu hiệu xác định.
 - Steps không đủ để tái hiện và không có ngữ cảnh thay thế rõ ràng.
 - Environment hoặc Priority có giá trị nhưng không map được sang giá trị Jira hợp lệ.
+- Evidence URL chứa token, session, password hoặc API key trong query string.
 
 Không chặn khi nguồn bỏ trống các trường có default:
 
 - Environment trống → `Found In Environment = Testing` và cảnh báo không chặn `default_environment_applied`.
-- Priority trống → Jira priority `Major` và cảnh báo không chặn `default_priority_applied`.
+- Priority trống → dùng priority prefix hợp lệ nếu có; nếu không có thì `Major`. Cả hai là cảnh báo không chặn.
 - Không có label rõ ràng → label `found-in-qc` và cảnh báo không chặn `default_label_applied`.
 
-Đánh dấu `INVALID` khi thiếu summary/title, expected hoặc actual. Không bịa browser, environment, account, timestamp, response code, log, screenshot, tần suất hoặc root cause.
+Đánh dấu `INVALID` khi thiếu summary/title, steps, expected hoặc actual. Không bịa browser, environment, account, timestamp, response code, log, screenshot, tần suất hoặc root cause.
 
-### Ngoại lệ nhẹ cho nguồn chat
+### Nguồn chat
 
 - Chỉ bắt buộc `Testname/Summary`, `Step`, `Actual Result`, `Expected Result`.
-- Giữ nguyên câu chữ tester nhập; không viết lại Summary theo Actual và không ép Summary phải theo pattern module.
-- Actual ngắn, chứa câu cần confirm hoặc Expected giống Actual chỉ tạo cảnh báo không chặn để tester review.
+- Giữ nguyên câu chữ `Testname` sau khi loại metadata prefix hợp lệ; không viết lại Summary theo Actual và không ép Summary phải theo pattern module.
+- Actual ngắn, chứa câu cần confirm hoặc Expected giống Actual vẫn được dựng `READY_FOR_REVIEW`, nhưng có `creation_state=NEEDS_CLARIFICATION` cho tới khi tester override/bổ sung hoặc xác nhận rõ.
 - Vẫn chặn khi Actual nói rõ hệ thống đang đúng, khi Environment/Priority/label đã nhập không hợp lệ hoặc khi thiếu một trường cốt lõi.
-- Không yêu cầu Evidence, Test Case ID, Module, Test Type, Root Cause, System hoặc Flow để đạt `READY`.
+- Không yêu cầu Evidence, Test Case ID, Module, Test Type, Root Cause, System hoặc Flow để đạt `READY_FOR_REVIEW`.
 
 ## 4. Rule summary và description
 
 - Summary mô tả triệu chứng, không mô tả mục tiêu kiểm thử.
-- Ưu tiên `BUG SUMMARY`; nếu không có, rút gọn Actual và thêm module đã biết.
+- Với Sheet/file, ưu tiên `BUG SUMMARY` mô tả lỗi; nếu không có hoặc là câu mục tiêu test, tạo đề xuất từ Actual và thêm module đã biết.
+- Chỉ áp dụng phép biến đổi xác định trong `summary.py`: bỏ từ mở đầu/lỗi chung chung, chuẩn hóa thuật ngữ theo policy, đưa triệu chứng lên trước trigger và rút gọn cấu trúc ví dụ. Không gọi AI ngoài hoặc tự bổ sung dữ kiện.
+- Preview phải cho biết Summary lấy từ đâu và đã áp dụng phép biến đổi nào; tester review Summary trước khi tạo Jira.
+- Engine phải trả `actual_expected_check` gồm `state`, `reason`, `similarity` và `containment`; không yêu cầu agent tự so sánh lại bằng prompt.
 - Được thêm trigger/đối tượng từ steps khi đã xuất hiện rõ trong nguồn.
 - Không thêm root cause, tác động, phạm vi hoặc tần suất nếu chưa có bằng chứng.
 - Đặt Actual trước Expected.
@@ -57,12 +63,17 @@ Không chặn khi nguồn bỏ trống các trường có default:
 - Giữ source type, row, URL, test data, test-case ID, module, test type và tester trong `Source information`.
 - Nếu không có testcase, ghi `No linked test case`; không hỏi lại chỉ để điền ID.
 - Evidence thiếu là cảnh báo không chặn và phải ghi `No evidence was provided.`
-- Riêng nguồn chat, dùng nguyên `Testname` làm Summary. Description tối thiểu chỉ gồm `Steps to reproduce`, `Actual result`, `Expected result`; không thêm placeholder `Evidence` hoặc `Source information` khi tester không nhập.
+- Nhiều Evidence được giữ thành danh sách có thứ tự và loại trùng theo URL.
+- Branch, Domain và Target URL nằm trong `Affected targets`; không dùng các giá trị này để tự nhân candidate trong MVP.
+- Riêng nguồn chat, dùng `Testname` sau khi loại metadata prefix hợp lệ làm Summary. Description tối thiểu chỉ gồm `Steps to reproduce`, `Actual result`, `Expected result`; không thêm placeholder `Evidence` hoặc `Source information` khi tester không nhập.
 
 ## 5. Chống trùng
 
 - Có `BUG ID`, `Jira Key`, Jira URL hoặc issue tương đương thì `SKIP_EXISTING`.
+- Jira search trả kết quả tương đồng chỉ tạo cảnh báo `possible_duplicate` và chuyển thành `NEEDS_CLARIFICATION`; không tự kết luận duplicate.
+- Chỉ sau xác nhận rõ vẫn tạo mới mới đổi `duplicate_decision=create_new_confirmed`.
 - Trong cùng input, phát hiện trùng test-case ID; với bug không có testcase, so sánh fingerprint từ module + summary + actual.
+- `duplicate_fingerprint` phải được Python chuẩn hóa và hash ổn định; agent không tự ghép fingerprint trong prompt.
 - Trước khi tạo thật, tìm Jira theo project, summary, module và test-case ID nếu có.
 - Chỉ đề xuất issue có khả năng trùng; không tự gộp.
 - Không retry toàn batch sau thành công một phần.
@@ -92,7 +103,7 @@ Không chặn khi nguồn bỏ trống các trường có default:
 
 - “Log thử”, “preview”, “xem thử”, “draft”, “đừng đẩy Jira” không bao giờ là quyền tạo issue.
 - Thiếu related task thì không tạo preview; yêu cầu tester gửi issue key hoặc URL của task.
-- Preview phải hiển thị related task, link type `Relates`, project lấy từ task, selection mode/reason, issue type, số `READY`, `NEEDS_CLARIFICATION`, `INVALID`, `SKIP_EXISTING`, source row, test-case ID nếu có, summary, priority, `Found In Environment` và labels tách theo Root Cause/System/Test Type/Flow.
+- Preview phải hiển thị related task, link type `Relates`, project lấy từ task, selection mode/reason, issue type, số `READY_FOR_REVIEW`, `CREATE_READY`, `NEEDS_CLARIFICATION`, `INVALID`, `SKIP_EXISTING`, source row, test-case ID, Summary đề xuất, nguồn/phép chuẩn hóa Summary, priority source, `Found In Environment` và labels theo nhóm.
 - Xác nhận hợp lệ phải nêu số lượng, project và related task.
 - Nếu nguồn thay đổi, preview lại và xin xác nhận mới.
 - Tối đa 10 issue mỗi batch.
@@ -103,7 +114,7 @@ Không chặn khi nguồn bỏ trống các trường có default:
 - Trước issue đầu tiên, đọc related task để xác minh task tồn tại/đọc được và project thực tế khớp project của bug.
 - Sau mỗi bug được tạo, tạo issue link `Relates` với task bắt buộc.
 - Nếu bề mặt Jira không hỗ trợ tạo issue link, không tạo bug bằng bề mặt đó; chuyển sang REST script hoặc dừng và báo giới hạn.
-- Chỉ tạo candidate `READY`, tuần tự từng issue. Candidate `NEEDS_CLARIFICATION` bị bỏ qua mặc định và liệt kê trong `creation_skipped`.
+- Chỉ tạo candidate `CREATE_READY`, tuần tự từng issue. Candidate `NEEDS_CLARIFICATION` bị bỏ qua mặc định và liệt kê trong `creation_skipped`.
 - Ghi nhận riêng created, linked, create_failed, link_failed và skipped; không tự retry.
 - Nếu bug đã tạo nhưng link thất bại, báo thành công một phần cùng bug key để xử lý link thủ công; tuyệt đối không retry lệnh tạo bug.
 - Chỉ retry issue thất bại sau khi kiểm tra chưa có key tương ứng và người dùng đồng ý.
@@ -120,5 +131,5 @@ Không chặn khi nguồn bỏ trống các trường có default:
 - Với nguồn Sheet/file, `Actual: Hiện tại đang lỗi` → `NEEDS_CLARIFICATION`.
 - Với nguồn Sheet/file, `Actual: Đang đợi dev fix ẩn field khỏi API` → `NEEDS_CLARIFICATION` nếu chưa mô tả hành vi quan sát được.
 - `STATUS=BUG` nhưng Actual trống → `INVALID`.
-- Không có test-case ID, Environment và Priority nhưng đủ summary, steps, expected, actual → có thể `READY` với default `Testing`, `Major`, `found-in-qc`.
-- Với nguồn chat, `Testname`, `Step`, `Actual Result`, `Expected Result` đầy đủ → `READY` kể cả khi thiếu Module, Test Type, Evidence và System; giữ nguyên câu chữ tester nhập.
+- Không có test-case ID, Environment và Priority nhưng đủ summary, steps, expected, actual → có thể `CREATE_READY` với default `Testing`, `Major`, `found-in-qc` nếu không còn cảnh báo chặn khác.
+- Với nguồn chat, `Testname`, `Step`, `Actual Result`, `Expected Result` đầy đủ → `READY_FOR_REVIEW` kể cả khi thiếu Module, Test Type, Evidence và System. Chỉ `CREATE_READY` khi không có cảnh báo chặn.

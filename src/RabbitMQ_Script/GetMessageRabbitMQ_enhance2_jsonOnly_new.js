@@ -5,7 +5,7 @@ import { promises as fs } from 'fs';
 // ⚙️  CONFIG — chỉnh 3 dòng này mỗi lần chạy
 // ============================================================
 const ACTIVE_ENV   = 'testing';                                              // 👈 'testing' | 'staging'
-const TARGET_QUEUE = "app.socialheat.mentions_to_topic_7_thutt"; // 👈 queue
+const TARGET_QUEUE = "eca_shopee_product_item_unify_crawling"; // 👈 queue
 const MSG_COUNT    = 500;                                                   // 👈 số message cần lấy
 // ============================================================
 

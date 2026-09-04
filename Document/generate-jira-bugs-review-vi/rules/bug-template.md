@@ -1,6 +1,6 @@
 # Template nội dung bug Jira
 
-Dùng template đầy đủ cho bug từ test case/Sheet và template tối giản cho bug nhập trực tiếp trong chat. Không tự viết lại nội dung tester đã cung cấp.
+Dùng template đầy đủ cho bug từ test case/Sheet và template tối giản cho bug nhập trực tiếp trong chat. Giữ nguyên nội dung tester trong Description; riêng Summary có thể được rút gọn theo rule bên dưới và phải hiện ở preview để review.
 
 Tất cả section heading và nhãn metadata do template sinh ra phải dùng tiếng Anh. Nội dung tester nhập có thể là tiếng Việt hoặc tiếng Anh và phải được giữ nguyên.
 
@@ -18,7 +18,15 @@ Ví dụ:
 
 Không dùng `[BUG][TC_ID]`, priority, test type hoặc câu mục tiêu kiểm thử như “Kiểm tra...”.
 
-Riêng nguồn chat, dùng nguyên `Testname` làm Summary, kể cả khi câu chữ chưa theo format trên. Chỉ trim khoảng trắng và cắt theo giới hạn 255 ký tự của Jira.
+Với Sheet/file:
+
+- Ưu tiên `BUG SUMMARY` nếu nội dung mô tả lỗi; nếu đây là câu mục tiêu test như “Kiểm tra...”, dùng `Actual result`.
+- Khi tạo từ Actual, được bỏ từ mở đầu chung chung, chuẩn hóa khoảng trắng/cách viết thuật ngữ và đổi câu `Khi A thì B` thành `B khi A`.
+- Có thể rút gọn cấu trúc ví dụ thành triệu chứng + ngữ cảnh, nhưng không thêm nguyên nhân, tác động hay dữ kiện không có trong nguồn.
+- Thêm `[MODULE/FEATURE]` khi có và giới hạn tối đa lấy từ `summary.max_length` trong policy.
+- Draft phải lưu `summary_proposal.source`, `summary_proposal.transformations` và `summary_proposal.review_required=true` để tester review được thay đổi.
+
+Riêng nguồn chat, dùng `Testname` làm Summary. Chỉ loại metadata prefix priority/test type có trong policy, trim khoảng trắng và cắt theo giới hạn cấu hình; giữ nguyên prefix không nhận diện và không thay nội dung bằng Actual.
 
 ## Description
 
@@ -38,7 +46,7 @@ Riêng nguồn chat, dùng nguyên `Testname` làm Summary, kể cả khi câu c
 <Expected Result>
 ```
 
-Đây là ba section bắt buộc. Chỉ thêm Preconditions, Test data, Environment, Evidence hoặc Notes khi tester thực sự nhập; không thêm placeholder `Evidence` hay `Source information` cho chat.
+Đây là ba section bắt buộc. Chỉ thêm Preconditions, Test data, Affected targets, Evidence hoặc Notes khi tester thực sự nhập; không thêm placeholder `Evidence` hay `Source information` cho chat.
 
 ### Nguồn test case/Sheet — template đầy đủ
 
@@ -65,9 +73,12 @@ Riêng nguồn chat, dùng nguyên `Testname` làm Summary, kể cả khi câu c
 
 <TEST DATA if provided>
 
-### Environment
+### Affected targets
 
-<staging/production/local, build/version, browser/OS when relevant>
+- Environment: <Testing/Staging/Production>
+- Branch: <one or more branches if provided>
+- Domain: <one or more domains if provided>
+- URL: <target URL if provided>
 
 ### Label classification
 
@@ -80,7 +91,11 @@ Riêng nguồn chat, dùng nguyên `Testname` làm Summary, kể cả khi câu c
 
 ### Evidence
 
-<log/image/video URL or “No evidence was provided.”>
+- <Screenshot URL>
+- <Log URL>
+- <Video URL>
+
+Nếu không có Evidence, ghi `No evidence was provided.` cho nguồn Sheet/file. Nguồn chat không thêm placeholder khi tester không nhập.
 
 ### Notes
 
@@ -108,7 +123,7 @@ Riêng nguồn chat, dùng nguyên `Testname` làm Summary, kể cả khi câu c
 - `related task`: metadata bắt buộc của batch; không có task thì không dựng preview hoặc tạo bug.
 - `issue link`: mỗi bug tạo thật phải có link loại `Relates` với related task. Quan hệ này là issue link, không phải parent/sub-task và không cần chèn vào Description.
 - `issuetype`: mặc định `Bug`.
-- `priority`: map từ giá trị nguồn đã nhận diện; nếu nguồn bỏ trống thì dùng `Major`.
+- `priority`: ưu tiên field nguồn, sau đó metadata prefix Testname, cuối cùng dùng default `Major` trong policy.
 - `labels`: chỉ thêm label thuộc allowlist trong [bug-label-rules.md](bug-label-rules.md). Nếu nguồn không cung cấp label thì dùng `found-in-qc`.
 - Không tự thêm `generated-by-qc`, `linked-testcase`, `no-testcase` hoặc label ngoài allowlist.
 - `Found In Environment`: dùng custom field Jira với một trong `Testing`, `Staging`, `Production`; nếu nguồn bỏ trống thì dùng `Testing`.

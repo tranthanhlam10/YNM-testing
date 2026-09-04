@@ -1,0 +1,103 @@
+{
+  "defaults": {
+    "found_in_environment": "Testing",
+    "priority": "Major",
+    "jira_label": "found-in-qc",
+    "issue_type": "Bug",
+    "issue_link_type": "Relates",
+    "selection_mode": "ready",
+    "max_create_batch": 10,
+    "max_preview_candidates": 5,
+    "duplicate_max_results": 20,
+    "duplicate_possible_score": 45,
+    "duplicate_strong_score": 75
+  },
+  "selection": {
+    "modes": ["status", "ready", "all", "candidates"],
+    "ready_values": ["yes", "ready", "true", "1"],
+    "bug_statuses": ["bug", "failed", "fail", "error", "errored", "thất bại", "lỗi"]
+  },
+  "environments": {
+    "Testing": ["test", "testing", "qa", "qc", "local", "dev", "development"],
+    "Staging": ["staging", "stage", "uat", "preprod", "pre-prod"],
+    "Production": ["production", "prod", "live"]
+  },
+  "priorities": {
+    "Highest": ["blocker", "critical", "highest", "nghiem trong", "rat cao"],
+    "High": ["high", "cao"],
+    "Major": ["major"],
+    "Medium": ["medium", "normal", "trung binh"],
+    "Low": ["minor", "low", "thap"],
+    "Lowest": ["lowest", "trivial"]
+  },
+  "title_prefixes": {
+    "priority": ["blocker", "critical", "highest", "high", "major", "medium", "normal", "minor", "low", "lowest", "trivial"],
+    "test_metadata": ["bug", "positive", "negative", "boundary", "edge", "edge case", "regression", "integration", "exploratory", "explore", "functional"]
+  },
+  "summary": {
+    "max_length": 255,
+    "generic_openers": ["hiện tại", "hiện tại thì", "thực tế", "kết quả thực tế", "actual", "actual result"],
+    "technical_terms": {
+      "api": "API",
+      "aws": "AWS",
+      "airflow": "Airflow",
+      "clickhouse": "ClickHouse",
+      "k8s": "K8s",
+      "kubernetes": "Kubernetes",
+      "rabbitmq": "RabbitMQ",
+      "redis": "Redis",
+      "solr": "Solr",
+      "ui": "UI"
+    }
+  },
+  "test_types": {
+    "test-functional": ["functional", "function", "chuc nang", "positive"],
+    "test-regression": ["regression", "hoi quy"],
+    "test-boundary": ["boundary", "boundary value", "edge", "edge case", "gia tri bien"],
+    "test-negative": ["negative", "invalid data", "du lieu khong hop le"],
+    "test-integration": ["integration", "tich hop"],
+    "test-exploratory": ["exploratory", "explore", "tu do"]
+  },
+  "labels": {
+    "detection_source": ["found-in-qc"],
+    "lifecycle": ["lc-reopen"],
+    "root_cause": ["rc-requirement", "rc-design-db", "rc-design-system", "rc-design-nonfunctional", "rc-logic", "rc-validation", "rc-data", "rc-config", "rc-integration", "rc-release", "rc-process", "rc-external-api", "rc-infra", "rc-assumption", "rc-document"],
+    "system": ["sys-crawling-auto", "sys-crawling-manual", "sys-crawling-adhoc", "sys-transform", "sys-ai", "sys-frontend", "sys-api", "sys-db", "sys-security", "sys-performance", "sys-infra"],
+    "flow": ["flow-source-load", "flow-source-build", "flow-auth", "flow-fetch", "flow-transform", "flow-pagination", "flow-pusher", "flow-updater", "flow-token-proxy-manager"]
+  },
+  "inference": {
+    "system": {
+      "sys-transform": ["transform", "mapping", "map field", "normalize data", "chuan hoa du lieu"],
+      "sys-ai": ["ai", "ml", "model", "prompt", "inference", "scoring"],
+      "sys-frontend": ["ui", "ux", "giao dien", "hien thi", "client", "browser", "mobile", "responsive", "button", "filter", "panel", "sidebar", "modal", "dropdown", "chip", "badge"],
+      "sys-api": ["api", "request", "response", "endpoint", "contract", "http", "status code", "timeout"],
+      "sys-db": ["database", "db", "schema", "index", "constraint", "migration", "query", "sql"],
+      "sys-security": ["security", "bao mat", "auth", "authentication", "authorization", "permission", "role", "phan quyen", "data exposure", "lo du lieu"],
+      "sys-performance": ["performance", "hieu nang", "slow", "latency", "high load", "memory", "cham"],
+      "sys-infra": ["infra", "server", "network", "ci cd", "cloud resource", "ha tang", "k8s", "kubernetes", "pod", "scale pod"]
+    },
+    "flow": {
+      "flow-source-load": ["load source config", "source config fail", "sai config url", "sai config param"],
+      "flow-source-build": ["build url", "build request", "mapping param dau vao", "map param dau vao"],
+      "flow-auth": ["expired credential", "token het han", "sai token", "thieu token", "sai proxy", "thieu proxy", "sai cookie"],
+      "flow-fetch": ["call api fail", "api timeout", "response sai format", "raw response"],
+      "flow-transform": ["mapping sai field", "map sai field", "transform sai", "xu ly data sai"],
+      "flow-pagination": ["next page", "has more", "pagination", "phan trang", "miss data", "duplicate data"],
+      "flow-pusher": ["insert fail", "insert loi", "duplicate trong db", "missing data trong db"],
+      "flow-updater": ["update fail sau crawling", "update sai sau crawling", "update thieu sau crawling"],
+      "flow-token-proxy-manager": ["token proxy manager", "service token", "service proxy"]
+    },
+    "crawling": ["crawl", "crawling", "crawler", "scrape", "scraping", "thu thap du lieu nguon ngoai"],
+    "crawling_adhoc": ["adhoc", "one time", "tam thoi", "debug script", "script debug"],
+    "crawling_manual": ["manual crawl", "crawl manual", "trigger thu cong", "admin tool", "tool admin"]
+  },
+  "quality": {
+    "ambiguous_actual_markers": ["can confirm", "chua check", "cho kiem tra", "cho confirm", "can kiem tra lai", "khong ro", "co ve", "dang doi dev", "doi dev fix", "cho dev fix", "need dev fix", "tbc"],
+    "contradictory_actual_markers": ["da dung yeu cau", "hoat dong binh thuong", "dung nhu mong doi"],
+    "vague_actuals": ["loi", "bi loi", "dang loi", "hien tai dang loi", "hien tai bi loi", "hien tai dang bi loi", "khong dung", "sai"],
+    "minimum_actual_length": 10,
+    "comparison_stop_words": ["a", "an", "and", "có", "của", "được", "hệ", "is", "là", "the", "thống", "to", "và"],
+    "negation_markers": ["không", "chưa", "cannot", "can't", "cant", "not", "failed", "missing"],
+    "actual_expected_high_overlap_threshold": 0.85
+  }
+}

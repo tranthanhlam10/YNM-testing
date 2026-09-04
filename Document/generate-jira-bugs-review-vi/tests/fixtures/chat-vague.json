@@ -1,0 +1,8 @@
+[
+  {
+    "Testname": "[Medium] [Positive] Log rõ lý do không có Solr action",
+    "Step": "1. Chạy scenario",
+    "Actual Result": "Hiện tại đang bị lỗi",
+    "Expected Result": "Không có Solr action"
+  }
+]

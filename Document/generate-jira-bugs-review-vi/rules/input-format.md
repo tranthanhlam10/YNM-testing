@@ -20,6 +20,8 @@ Chuẩn hóa khoảng trắng, dấu câu, dấu tiếng Việt và chữ hoa/th
 
 ## Schema chuẩn
 
+Nguồn máy chuẩn là [../config/bug-candidate.schema.json](../config/bug-candidate.schema.json). Header alias và field được phép override phải lấy từ file này; bảng dưới đây chỉ giải thích cho người review.
+
 | Trường | Header thường gặp | Bắt buộc |
 | --- | --- | --- |
 | `bug_summary` | `BUG SUMMARY`, `Bug Title`, `Jira Summary`, `Tiêu đề bug` | Summary hoặc title |
@@ -31,8 +33,11 @@ Chuẩn hóa khoảng trắng, dấu câu, dấu tiếng Việt và chữ hoa/th
 | `expected` | `EXPECTED RESULT`, `Expected Outcome` | Có |
 | `actual` | `ACTUAL RESULT`, `Observed Result` | Có |
 | `environment` | `ENVIRONMENT`, `Test Environment`, `Platform` | Không; trống dùng `Testing` |
-| `severity` | `PRIORITY`, `Severity`, `Impact`, `Mức độ` | Không; trống dùng `Major` |
-| `evidence` | `EVIDENCE`, `Screenshot`, `Log`, `Video`, `Attachment` | Không |
+| `branch` | `BRANCH`, `Git Branch`, `Source Branch` | Không |
+| `domain` | `DOMAIN`, `Market`, `Country` | Không; có thể nhập nhiều giá trị |
+| `target_url` | `TARGET URL`, `Environment URL`, `Base URL` | Không |
+| `severity` | `PRIORITY`, `Severity`, `Impact`, `Mức độ` | Không; trống dùng prefix hợp lệ rồi default `Major` |
+| `evidence` | `EVIDENCE`, `Screenshot`, `Log`, `Video`, `Attachment` | Không; hỗ trợ nhiều dòng/link |
 | `test_case_id` | `TEST CASE ID`, `TC ID`, `Test ID` | Không |
 | `test_type` | `TEST TYPE`, `Loại kiểm thử` | Không |
 | `root_cause_label` | `ROOT CAUSE`, `Root Cause Label`, `Nguyên nhân gốc` | Không; chỉ điền khi đã xác nhận |
@@ -80,13 +85,30 @@ Khi người dùng gửi link test case/Sheet và yêu cầu log bug, yêu cầu
 
 Với `source-kind=chat`, bốn trường `Testname`, `Step`, `Actual Result`, `Expected Result` là đủ cho nội dung bug; yêu cầu vẫn phải có related task ở cấp batch. Các trường bug còn lại không bắt buộc và dùng default `Testing`, `Major`, `found-in-qc`.
 
+Các target/evidence tùy chọn trong chat:
+
+```text
+Environment: Testing
+Branch: feat/priority-loader
+Domain: VN, TH
+Target URL: https://testing.example.com
+Evidence:
+- Screenshot: https://drive.google.com/...
+- Log: https://drive.google.com/...
+```
+
+Branch và Domain có thể chứa nhiều giá trị, nhưng MVP không tự tạo mọi tổ hợp. `Environment` phải map về đúng một stage để đạt `CREATE_READY`; nếu nhập nhiều stage, preview vẫn hiển thị nhưng yêu cầu tester chọn một stage hoặc yêu cầu tách bug rõ ràng.
+
 ## Summary và priority
 
 - Summary mặc định: `[MODULE/FEATURE] TRIỆU CHỨNG LỖI`.
-- Ưu tiên `BUG SUMMARY`; nếu không có, rút gọn `ACTUAL RESULT` mà không suy đoán root cause.
+- Ưu tiên `BUG SUMMARY` mô tả lỗi; nếu trống hoặc chỉ là mục tiêu test, đề xuất từ `ACTUAL RESULT`; cuối cùng mới fallback về `TEST NAME`.
+- Summary đề xuất từ Actual chỉ được bỏ từ đệm, chuẩn hóa thuật ngữ trong policy và sắp xếp lại trigger/triệu chứng đã có trong nguồn; không suy đoán root cause.
 - Không đưa `[BUG]`, test-case ID, priority hoặc test type vào summary.
-- Riêng nguồn chat, giữ nguyên `Testname` làm Summary; không thêm Module, không thay bằng Actual và không loại câu mở đầu do tester nhập.
-- Map priority: Critical/Blocker → Highest, High → High, Major → Major, Medium → Medium, Low → Low, Lowest/Trivial → Lowest; trống → Major.
+- Riêng nguồn chat, dùng `Testname` làm Summary; chỉ loại metadata prefix được khai báo trong policy, không thêm Module và không thay phần nội dung còn lại bằng Actual.
+- Priority lấy theo thứ tự: field `PRIORITY/Severity` hợp lệ → priority prefix trong Testname → default `Major`.
+- Prefix test metadata như `[Positive]`, `[Negative]`, `[Boundary]` được bỏ khỏi Summary và chỉ map sang test type nếu có trong policy. Prefix không nhận diện được phải được giữ nguyên.
+- Giới hạn độ dài, từ mở đầu chung chung và cách viết thuật ngữ đọc từ `summary` trong [../config/policies.json](../config/policies.json), không hardcode lại trong script.
 
 ## Map môi trường và label
 
@@ -108,8 +130,44 @@ File JSON map field chuẩn sang header nguồn chính xác. Ví dụ:
   "steps": "Các bước thực hiện",
   "expected": "Kết quả mong đợi",
   "actual": "Kết quả thực tế",
-  "environment": "Môi trường",
+    "environment": "Môi trường",
+    "branch": "Nhánh test",
+    "domain": "Thị trường",
+    "target_url": "Link môi trường",
   "severity": "Mức độ",
   "bug_id": "Jira Key"
 }
 ```
+
+## Override từng dòng
+
+`--overrides` nhận JSON object có tối đa ba section. Override chỉ tác động bản preview/payload, không sửa file nguồn:
+
+```json
+{
+  "defaults": {
+    "environment": "testing"
+  },
+  "test_case_ids": {
+    "TC-001": {
+      "actual": "Thông báo Save successful nhưng dữ liệu không được lưu"
+    }
+  },
+  "rows": {
+    "12": {
+      "severity": "High",
+      "evidence": "https://drive.google.com/..."
+    }
+  }
+}
+```
+
+Thứ tự ưu tiên là `defaults` → `test_case_ids` → `rows`; cấu hình cụ thể hơn ghi đè cấu hình trước. Source row tính theo bảng có header ở dòng 1, nên data đầu tiên là row `2`. Chỉ field nằm trong `x-row-override-fields` của canonical schema được sửa; không cho override `bug_id`, status chọn dòng, related task hoặc project.
+
+## Google Sheet adapter và writeback
+
+- Agent đọc metadata và map đúng `gid` sang tên tab trước khi đọc dữ liệu.
+- Script nhận dữ liệu đã đọc, tạo `source_locator` gồm spreadsheet ID, gid, tab, source row, ô BUG ID và row fingerprint.
+- Sau khi Jira bug đã được tạo và link task, script sinh `writeback_plan`; script không tự gọi MCP.
+- Agent chỉ thực hiện plan sau xác nhận riêng, phải đọc lại toàn bộ dòng và ô BUG ID. Nếu fingerprint hoặc giá trị ô thay đổi, dừng với `WRITEBACK_CONFLICT`.
+- Chỉ ghi Jira key/URL vào `BUG ID`; không tự đổi STATUS hoặc BUG STATUS.

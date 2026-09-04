@@ -1,14 +1,14 @@
 // ============================================================
 // ⚙️  MASTER CONFIG
 // ============================================================
-const ACTIVE_ENV = 'staging';
+const ACTIVE_ENV = 'testing';
 
 const ENVIRONMENTS = {
   testing: { method: 'http',  domain: 'rabbitmq-testing.ynm.local',          userName: 'lamtt', password: 'lamtt' },
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE = "staging.cl.replies_2_mongo_x_replies_LamTT";
+const TARGET_QUEUE = "eca_shopee_product_item_unify_crawling";
 const BATCH_SIZE    = 200;
 const CONCURRENCY   = 5;
 

@@ -1,6 +1,8 @@
 # Quy tắc gắn label bug YouNet
 
-Nguồn chuẩn: [QUY ƯỚC ĐÁNH LABEL BUG](https://wiki.younetco.com/pages/viewpage.action?pageId=274915579), page ID `274915579`, version `29`, cập nhật `2026-07-15`; bổ sung vận hành được người dùng xác nhận ngày `2026-08-11`: thiếu label dùng `found-in-qc`.
+Nguồn nghiệp vụ: [QUY ƯỚC ĐÁNH LABEL BUG](https://wiki.younetco.com/pages/viewpage.action?pageId=274915579), page ID `274915579`, version `29`, cập nhật `2026-07-15`; bổ sung vận hành được người dùng xác nhận ngày `2026-08-11`: thiếu label dùng `found-in-qc`.
+
+Nguồn máy duy nhất dùng để validate và tạo payload là [../config/policies.json](../config/policies.json). Khi wiki thay đổi, cập nhật config và unit test trước; bảng trong tài liệu này dùng cho người review và không được script parse trực tiếp.
 
 ## Thứ tự ưu tiên khi tài liệu có nội dung cũ
 
@@ -66,7 +68,7 @@ Nguồn chuẩn: [QUY ƯỚC ĐÁNH LABEL BUG](https://wiki.younetco.com/pages/v
 | `sys-db` | Schema, index, constraint, migration hoặc query DB |
 | `sys-security` | Auth, permission, role, security hoặc data exposure |
 | `sys-performance` | Slow response, high load, memory hoặc hiệu năng |
-| `sys-infra` | Server, network, CI/CD hoặc cloud resource |
+| `sys-infra` | Server, network, CI/CD, Kubernetes/K8s, pod, scale pod hoặc cloud resource |
 
 Không tự gắn một System label chỉ vì tên module chứa từ khóa rộng; ưu tiên title, steps, expected và actual của bug cụ thể.
 
