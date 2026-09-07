@@ -11,8 +11,11 @@ SKILL_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SKILL_ROOT / "scripts"))
 
 from jira_bug_skill.common import InputError, JiraError  # noqa: E402
+from jira_bug_skill.config import JIRA_API_VERSION, JIRA_DEPLOYMENT, JIRA_DESCRIPTION_FORMAT  # noqa: E402
+from jira_bug_skill.description_renderer import render_adf, render_wiki  # noqa: E402
 from jira_bug_skill.duplicates import accept_duplicate_risk, attach_duplicate_results, classify_duplicate_issues  # noqa: E402
-from jira_bug_skill.jira_client import create_issues, search_duplicate_issues  # noqa: E402
+from jira_bug_skill.jira_adapter import JiraAdapter  # noqa: E402
+from jira_bug_skill.jira_client import check_auth, create_issues, get_issue_context, search_duplicate_issues  # noqa: E402
 from jira_bug_skill.manifest import RunManifest  # noqa: E402
 from jira_bug_skill.sheet_adapter import build_writeback_plan, validate_writeback_snapshot  # noqa: E402
 from jira_bug_skill.workflow import build_preview  # noqa: E402
@@ -67,12 +70,10 @@ class TargetAndEvidenceTests(unittest.TestCase):
         self.assertEqual(draft["target_metadata"]["branches"], ["feat/a", "release/b"])
         self.assertEqual(draft["target_metadata"]["domains"], ["VN", "TH"])
         self.assertEqual(len(draft["evidence_items"]), 2)
-        headings = [
-            node["content"][0]["text"] for node in draft["payload"]["fields"]["description"]["content"]
-            if node["type"] == "heading"
-        ]
-        self.assertIn("Affected targets", headings)
-        self.assertIn("Evidence", headings)
+        description = draft["payload"]["fields"]["description"]
+        self.assertIsInstance(description, str)
+        self.assertIn("h3. Affected targets", description)
+        self.assertIn("h3. Evidence", description)
 
     def test_sensitive_evidence_url_blocks_creation(self):
         draft = preview([chat_row(Evidence="https://example.com/log?access_token=secret")])["drafts"][0]
@@ -120,8 +121,78 @@ class DuplicateTests(unittest.TestCase):
             results = search_duplicate_issues([draft], "YNMPECA-9361")
         self.assertTrue(results[draft["candidate_id"]])
         path = request.call_args.args[1]
-        self.assertIn("/rest/api/3/search/jql?", path)
+        self.assertIn("/rest/api/2/search?", path)
         self.assertIn("jql=", path)
+
+
+class JiraServerIntegrationTests(unittest.TestCase):
+    def test_team_profile_uses_jira_server_v2_and_wiki(self):
+        self.assertEqual(JIRA_DEPLOYMENT, "server")
+        self.assertEqual(JIRA_API_VERSION, "2")
+        self.assertEqual(JIRA_DESCRIPTION_FORMAT, "wiki")
+
+    def test_server_and_cloud_adapters_build_correct_endpoints(self):
+        server = JiraAdapter("server", "2", "wiki")
+        cloud = JiraAdapter("cloud", "3", "adf")
+        self.assertEqual(server.issue_path("YNMPECA-1"), "/rest/api/2/issue/YNMPECA-1")
+        self.assertEqual(server.search_path(), "/rest/api/2/search")
+        self.assertEqual(server.issue_link_path(), "/rest/api/2/issueLink")
+        self.assertEqual(cloud.issue_path("YNMPECA-1"), "/rest/api/3/issue/YNMPECA-1")
+        self.assertEqual(cloud.search_path(), "/rest/api/3/search/jql")
+
+    def test_description_renderers_support_server_and_cloud(self):
+        sections = [
+            {"heading": "Actual result", "kind": "text", "value": "API trả lỗi 500"},
+            {"heading": "Evidence", "kind": "bullets", "values": ["Log: https://example.com/log"]},
+        ]
+        wiki = render_wiki(sections)
+        adf = render_adf(sections)
+        self.assertIn("h3. Actual result", wiki)
+        self.assertIn("* Log: https://example.com/log", wiki)
+        self.assertEqual(adf["type"], "doc")
+        self.assertEqual(adf["version"], 1)
+
+    def test_wiki_compact_preview_keeps_user_bullets_as_text(self):
+        draft = preview([chat_row(**{
+            "Expected Result": "- Pod scale thành công\n- Loader tiếp tục chạy",
+        })])["drafts"][0]
+        from jira_bug_skill.presentation import compact_description
+
+        compact = compact_description(draft["payload"]["fields"]["description"])
+        self.assertEqual(
+            compact["expected_result"],
+            "- Pod scale thành công\n- Loader tiếp tục chạy",
+        )
+
+    def test_check_auth_reads_server_info_and_myself_over_v2(self):
+        with patch(
+            "jira_bug_skill.jira_client.jira_request",
+            side_effect=[
+                (200, {"deploymentType": "Server", "version": "9.12.2"}),
+                (200, {"name": "lamtt", "displayName": "Lam Tran"}),
+            ],
+        ) as request:
+            result = check_auth()
+        self.assertTrue(result["ok"])
+        self.assertEqual(result["jira"]["detected_version"], "9.12.2")
+        self.assertEqual(result["username"], "lamtt")
+        self.assertEqual(request.call_args_list[0].args[1], "/rest/api/2/serverInfo")
+        self.assertEqual(request.call_args_list[1].args[1], "/rest/api/2/myself")
+
+    def test_read_task_uses_server_v2_issue_endpoint(self):
+        issue = {
+            "key": "YNMPECA-9361",
+            "fields": {
+                "project": {"key": "YNMPECA"},
+                "summary": "Task",
+                "issuetype": {"name": "Task"},
+                "status": {"name": "Open"},
+            },
+        }
+        with patch("jira_bug_skill.jira_client.jira_request", return_value=(200, issue)) as request:
+            result = get_issue_context("YNMPECA-9361")
+        self.assertEqual(result["project"], "YNMPECA")
+        self.assertIn("/rest/api/2/issue/YNMPECA-9361?", request.call_args.args[1])
 
 
 class ManifestTests(unittest.TestCase):

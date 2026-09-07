@@ -6,7 +6,7 @@
 - `CREATE_READY`: preview không còn cảnh báo chặn và có thể được đưa vào batch tạo sau xác nhận.
 - `NEEDS_CLARIFICATION`: dựng được preview nhưng còn dữ liệu mơ hồ/không hợp lệ nên mặc định không được tạo.
 - `SKIP_EXISTING`: đã có Jira key hoặc đã xác nhận có issue tương đương.
-- `INVALID`: thiếu summary/title, steps, expected hoặc actual. Không thể dựng draft có nghĩa.
+- `INVALID`: Sheet/file thiếu summary/title, steps, expected hoặc actual; hoặc chat không có cả summary/title lẫn actual nên không thể dựng draft có nghĩa.
 
 Không yêu cầu test-case ID hoặc status để một bug đạt `READY_FOR_REVIEW` hay `CREATE_READY`.
 
@@ -39,11 +39,13 @@ Không chặn khi nguồn bỏ trống các trường có default:
 - Priority trống → dùng priority prefix hợp lệ nếu có; nếu không có thì `Major`. Cả hai là cảnh báo không chặn.
 - Không có label rõ ràng → label `found-in-qc` và cảnh báo không chặn `default_label_applied`.
 
-Đánh dấu `INVALID` khi thiếu summary/title, steps, expected hoặc actual. Không bịa browser, environment, account, timestamp, response code, log, screenshot, tần suất hoặc root cause.
+Đánh dấu `INVALID` với Sheet/file khi thiếu summary/title, steps, expected hoặc actual. Với chat, giữ draft ở `NEEDS_CLARIFICATION` nếu còn summary/title hoặc actual; không cho tạo cho tới khi đủ dữ liệu. Không bịa browser, environment, account, timestamp, response code, log, screenshot, tần suất, Steps, Expected hoặc root cause.
 
 ### Nguồn chat
 
-- Chỉ bắt buộc `Testname/Summary`, `Step`, `Actual Result`, `Expected Result`.
+- `Testname/Summary`, `Step`, `Actual Result`, `Expected Result` là bộ tối thiểu để xét `CREATE_READY`.
+- Chat thiếu trường vẫn được parse thành `READY_FOR_REVIEW` + `NEEDS_CLARIFICATION` nếu còn Summary/Testname hoặc Actual. Mỗi trường thiếu phải có cảnh báo chặn rõ ràng.
+- Parser xác định chạy trước và không gọi model. Nếu tầng agent đề xuất nội dung còn thiếu, phải ghi rõ là nội dung đề xuất và yêu cầu tester xác nhận; không ghi thẳng vào payload tạo Jira.
 - Giữ nguyên câu chữ `Testname` sau khi loại metadata prefix hợp lệ; không viết lại Summary theo Actual và không ép Summary phải theo pattern module.
 - Actual ngắn, chứa câu cần confirm hoặc Expected giống Actual vẫn được dựng `READY_FOR_REVIEW`, nhưng có `creation_state=NEEDS_CLARIFICATION` cho tới khi tester override/bổ sung hoặc xác nhận rõ.
 - Vẫn chặn khi Actual nói rõ hệ thống đang đúng, khi Environment/Priority/label đã nhập không hợp lệ hoặc khi thiếu một trường cốt lõi.
@@ -64,6 +66,9 @@ Không chặn khi nguồn bỏ trống các trường có default:
 - Nếu không có testcase, ghi `No linked test case`; không hỏi lại chỉ để điền ID.
 - Evidence thiếu là cảnh báo không chặn và phải ghi `No evidence was provided.`
 - Nhiều Evidence được giữ thành danh sách có thứ tự và loại trùng theo URL.
+- Nội dung log/JSON/query/command/stack trace paste trực tiếp phải nằm trong `Diagnostic data`, không giả làm Evidence URL.
+- Diagnostic data được che secret trước khi dựng preview/payload. Việc đã che được báo bằng `sensitive_diagnostic_redacted` nhưng không chặn tạo vì payload không còn secret.
+- Diagnostic data vượt `max_items`, `max_item_chars` hoặc `max_total_chars` bị cắt theo policy và có cảnh báo `diagnostic_data_truncated`; compact preview chỉ hiển thị excerpt theo `preview_max_chars` để giới hạn token.
 - Branch, Domain và Target URL nằm trong `Affected targets`; không dùng các giá trị này để tự nhân candidate trong MVP.
 - Riêng nguồn chat, dùng `Testname` sau khi loại metadata prefix hợp lệ làm Summary. Description tối thiểu chỉ gồm `Steps to reproduce`, `Actual result`, `Expected result`; không thêm placeholder `Evidence` hoặc `Source information` khi tester không nhập.
 
@@ -88,6 +93,7 @@ Không chặn khi nguồn bỏ trống các trường có default:
 - Gắn đúng một `test-*` khi xác định được hoạt động test. Không gắn nhiều test type để “cover cho chắc”.
 - Không suy đoán `rc-*`. Root Cause chưa xác định được phép để trống lúc tạo nhưng phải có cảnh báo `root_cause_pending` và cập nhật trước khi đóng.
 - Chỉ gắn `flow-*` khi có bằng chứng rõ; không dùng Flow thay cho System.
+- Mỗi label trong preview phải kèm provenance: `explicit_argument`, `source_field`, `prefix`, `keyword`, `derived` hoặc `default`. Label suy từ keyword phải nêu field và marker hỗ trợ.
 - Map stage sang `Found In Environment`; nếu nguồn không có stage thì dùng `Testing`.
 - `found-in-qc` là label mặc định khi nguồn không cung cấp label; đây không thay thế custom field `Found In Environment`.
 - Nếu connector không hỗ trợ labels, dùng REST script hoặc báo rõ; không giả vờ đã set.
@@ -96,6 +102,7 @@ Không chặn khi nguồn bỏ trống các trường có default:
 ## 7. Dữ liệu nhạy cảm
 
 - Không đưa password, API token, cookie, access token, private key hoặc session ID vào Jira.
+- Python phải che các giá trị nhạy cảm trong Diagnostic data trước khi lưu vào draft, compact preview hoặc Jira payload; không giữ raw secret trong output trung gian.
 - Che email, số điện thoại, user ID và dữ liệu khách hàng không cần thiết.
 - Không tự upload attachment.
 

@@ -8,6 +8,7 @@ from typing import Any
 
 from .common import InputError, clean, normalized
 from .config import ALIASES, CANONICAL_FIELDS, ROW_OVERRIDE_FIELDS
+from .chat_parser import parse_chat_text
 
 
 def parse_json_rows(data: Any) -> list[dict[str, Any]]:
@@ -34,6 +35,18 @@ def read_json_stdin() -> list[dict[str, Any]]:
         return parse_json_rows(json.load(sys.stdin))
     except json.JSONDecodeError as exc:
         raise InputError(f"JSON stdin không hợp lệ: {exc}") from exc
+
+
+def read_stdin_rows(source_kind: str) -> tuple[list[dict[str, Any]], str]:
+    raw = sys.stdin.read()
+    try:
+        return parse_json_rows(json.loads(raw)), "json"
+    except json.JSONDecodeError as exc:
+        if source_kind not in {"chat", "auto"}:
+            raise InputError(f"JSON stdin không hợp lệ: {exc}") from exc
+    if not clean(raw):
+        raise InputError("Chat stdin không có nội dung")
+    return [parse_chat_text(raw)], "raw_chat"
 
 
 def read_csv(path: Path) -> list[dict[str, Any]]:
@@ -111,7 +124,9 @@ def build_header_map(headers: Any, explicit: dict[str, Any]) -> dict[str, str]:
     return mapping
 
 
-def _clean_canonical_value(field: str, value: Any) -> str:
+def _clean_canonical_value(field: str, value: Any) -> Any:
+    if field == "diagnostic_data" and isinstance(value, (list, dict)):
+        return value
     if isinstance(value, list) and field in {"evidence", "branch", "domain"}:
         rendered = []
         for item in value:
@@ -125,7 +140,7 @@ def _clean_canonical_value(field: str, value: Any) -> str:
     return clean(value)
 
 
-def canonical_record(row: dict[str, Any], mapping: dict[str, str]) -> dict[str, str]:
+def canonical_record(row: dict[str, Any], mapping: dict[str, str]) -> dict[str, Any]:
     return {
         field: _clean_canonical_value(field, row.get(mapping[field], "")) if field in mapping else ""
         for field in ALIASES
@@ -150,7 +165,7 @@ def validate_overrides(overrides: dict[str, Any]) -> None:
                 raise InputError("Override chứa field không được sửa: " + ", ".join(sorted(unknown_fields)))
 
 
-def apply_row_overrides(record: dict[str, str], source_row: int, overrides: dict[str, Any]) -> tuple[dict[str, str], list[str]]:
+def apply_row_overrides(record: dict[str, Any], source_row: int, overrides: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
     if not overrides:
         return record, []
     applied: list[str] = []
@@ -164,7 +179,7 @@ def apply_row_overrides(record: dict[str, str], source_row: int, overrides: dict
         patches.append((f"row:{row_key}", overrides["rows"][row_key]))
     for source, patch in patches:
         for field, value in patch.items():
-            result[field] = clean(value)
+            result[field] = _clean_canonical_value(field, value)
         if patch:
             applied.append(source)
     return result, applied

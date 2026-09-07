@@ -8,9 +8,11 @@ import urllib.parse
 import urllib.request
 from typing import Any
 
+from . import __version__
 from .common import InputError, JiraError, clean
 from .config import DUPLICATE_MAX_RESULTS
 from .duplicates import build_duplicate_jql, classify_duplicate_issues
+from .jira_adapter import JIRA_ADAPTER
 from .manifest import RunManifest
 
 
@@ -36,7 +38,7 @@ def jira_request(method: str, path: str, payload: dict[str, Any] | None = None) 
             "Accept": "application/json",
             "Content-Type": "application/json",
             "Authorization": f"Basic {credentials}",
-            "User-Agent": "ynm-qc-jira-bugs-skill/2.4",
+            "User-Agent": f"ynm-qc-jira-bugs-skill/{__version__}",
         },
     )
     try:
@@ -55,10 +57,22 @@ def jira_request(method: str, path: str, payload: dict[str, Any] | None = None) 
 
 
 def check_auth() -> dict[str, Any]:
-    _, profile = jira_request("GET", "/rest/api/3/myself")
+    _, server_info = jira_request("GET", JIRA_ADAPTER.server_info_path())
+    detected_deployment = clean(server_info.get("deploymentType"))
+    if detected_deployment and detected_deployment.casefold() != JIRA_ADAPTER.deployment:
+        raise JiraError(
+            f"Jira deployment thực tế là {detected_deployment}, không khớp config {JIRA_ADAPTER.deployment}"
+        )
+    _, profile = jira_request("GET", JIRA_ADAPTER.myself_path())
     return {
         "ok": True,
+        "jira": {
+            **JIRA_ADAPTER.metadata(),
+            "detected_deployment": detected_deployment,
+            "detected_version": clean(server_info.get("version")),
+        },
         "account_id": profile.get("accountId"),
+        "username": profile.get("name") or profile.get("key"),
         "display_name": profile.get("displayName"),
         "email": profile.get("emailAddress"),
     }
@@ -66,7 +80,7 @@ def check_auth() -> dict[str, Any]:
 
 def get_issue_context(issue_key: str) -> dict[str, Any]:
     encoded_key = urllib.parse.quote(issue_key, safe="")
-    _, issue = jira_request("GET", f"/rest/api/3/issue/{encoded_key}?fields=project,summary,issuetype,status")
+    _, issue = jira_request("GET", f"{JIRA_ADAPTER.issue_path(encoded_key)}?fields=project,summary,issuetype,status")
     fields = issue.get("fields") or {}
     project_key = clean((fields.get("project") or {}).get("key")).upper()
     if not project_key:
@@ -81,7 +95,7 @@ def get_issue_context(issue_key: str) -> dict[str, Any]:
 
 
 def link_related_issue(bug_key: str, task_key: str, issue_link_type: str) -> bool:
-    status, _ = jira_request("POST", "/rest/api/3/issueLink", {
+    status, _ = jira_request("POST", JIRA_ADAPTER.issue_link_path(), {
         "type": {"name": issue_link_type},
         "inwardIssue": {"key": bug_key},
         "outwardIssue": {"key": task_key},
@@ -91,7 +105,7 @@ def link_related_issue(bug_key: str, task_key: str, issue_link_type: str) -> boo
 
 def issue_has_link(issue_key: str, target_key: str) -> bool:
     encoded_key = urllib.parse.quote(issue_key, safe="")
-    _, issue = jira_request("GET", f"/rest/api/3/issue/{encoded_key}?fields=issuelinks")
+    _, issue = jira_request("GET", f"{JIRA_ADAPTER.issue_path(encoded_key)}?fields=issuelinks")
     fields = issue.get("fields") or {}
     linked_keys: set[str] = set()
     for link in fields.get("issuelinks") or []:
@@ -116,7 +130,7 @@ def search_duplicate_issues(drafts: list[dict[str, Any]], related_task_key: str)
             "fields": "summary,status,description,issuelinks,labels",
             "maxResults": DUPLICATE_MAX_RESULTS,
         })
-        _, data = jira_request("GET", f"/rest/api/3/search/jql?{query}")
+        _, data = jira_request("GET", f"{JIRA_ADAPTER.search_path()}?{query}")
         results[draft["candidate_id"]] = classify_duplicate_issues(
             draft, data.get("issues") or [], related_task_key,
         )
@@ -147,7 +161,7 @@ def create_issues(
             if not key:
                 if manifest:
                     manifest.update(candidate_id, state="creating", last_error="")
-                status, data = jira_request("POST", "/rest/api/3/issue", draft["payload"])
+                status, data = jira_request("POST", JIRA_ADAPTER.issue_path(), draft["payload"])
                 key = clean(data.get("key"))
                 if status != 201 or not key:
                     if manifest:

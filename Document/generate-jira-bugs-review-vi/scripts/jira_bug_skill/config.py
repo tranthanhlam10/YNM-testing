@@ -30,6 +30,17 @@ CANONICAL_FIELDS = set(PROPERTIES)
 ROW_OVERRIDE_FIELDS = set(SCHEMA["x-row-override-fields"])
 
 DEFAULTS = POLICIES["defaults"]
+JIRA = POLICIES["jira"]
+JIRA_DEPLOYMENT = str(JIRA["deployment"]).casefold()
+JIRA_API_VERSION = str(JIRA["api_version"])
+JIRA_DESCRIPTION_FORMAT = str(JIRA["description_format"]).casefold()
+DIAGNOSTICS = POLICIES["diagnostics"]
+DIAGNOSTIC_ALLOWED_TYPES = set(DIAGNOSTICS["allowed_types"])
+DIAGNOSTIC_MAX_ITEMS = int(DIAGNOSTICS["max_items"])
+DIAGNOSTIC_MAX_ITEM_CHARS = int(DIAGNOSTICS["max_item_chars"])
+DIAGNOSTIC_MAX_TOTAL_CHARS = int(DIAGNOSTICS["max_total_chars"])
+DIAGNOSTIC_PREVIEW_MAX_CHARS = int(DIAGNOSTICS["preview_max_chars"])
+DIAGNOSTIC_SENSITIVE_KEYS = tuple(str(value).casefold() for value in DIAGNOSTICS["sensitive_keys"])
 DEFAULT_FOUND_IN_ENVIRONMENT = DEFAULTS["found_in_environment"]
 DEFAULT_PRIORITY = DEFAULTS["priority"]
 DEFAULT_JIRA_LABEL = DEFAULTS["jira_label"]
@@ -91,6 +102,25 @@ def validate_runtime_config() -> None:
         raise RuntimeError("Default priority không tồn tại trong priority policy")
     if DEFAULT_JIRA_LABEL not in ALLOWED_JIRA_LABELS:
         raise RuntimeError("Default Jira label không nằm trong allowlist")
+    supported_jira_profiles = {
+        ("server", "2", "wiki"),
+        ("cloud", "3", "adf"),
+    }
+    jira_profile = (JIRA_DEPLOYMENT, JIRA_API_VERSION, JIRA_DESCRIPTION_FORMAT)
+    if jira_profile not in supported_jira_profiles:
+        raise RuntimeError(
+            "Jira config không hỗ trợ; dùng server/api v2/wiki hoặc cloud/api v3/adf"
+        )
+    if not DIAGNOSTIC_ALLOWED_TYPES or "text" not in DIAGNOSTIC_ALLOWED_TYPES:
+        raise RuntimeError("diagnostics.allowed_types phải chứa text")
+    if DIAGNOSTIC_MAX_ITEMS < 1:
+        raise RuntimeError("diagnostics.max_items phải lớn hơn 0")
+    if not 1 <= DIAGNOSTIC_PREVIEW_MAX_CHARS <= DIAGNOSTIC_MAX_ITEM_CHARS:
+        raise RuntimeError("diagnostics.preview_max_chars phải từ 1 đến max_item_chars")
+    if DIAGNOSTIC_MAX_ITEM_CHARS > DIAGNOSTIC_MAX_TOTAL_CHARS:
+        raise RuntimeError("diagnostics.max_item_chars không được lớn hơn max_total_chars")
+    if not DIAGNOSTIC_SENSITIVE_KEYS:
+        raise RuntimeError("diagnostics.sensitive_keys không được rỗng")
     if MAX_CREATE_BATCH < 1:
         raise RuntimeError("max_create_batch phải lớn hơn 0")
     if not 1 <= MAX_PREVIEW_CANDIDATES <= MAX_CREATE_BATCH:

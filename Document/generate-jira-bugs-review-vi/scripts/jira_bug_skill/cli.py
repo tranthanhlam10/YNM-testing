@@ -19,13 +19,29 @@ from .jira_client import check_auth, create_issues, get_issue_context, search_du
 from .manifest import RunManifest
 from .presentation import compact_preview
 from .sheet_adapter import build_writeback_plan
-from .sources import load_object, read_json_stdin, read_rows
+from .sources import load_object, read_rows, read_stdin_rows
 from .workflow import build_preview
+
+
+NON_OVERRIDEABLE_WARNING_CODES = {
+    "possible_duplicate",
+    "missing_steps",
+    "missing_chat_summary",
+    "missing_chat_expected",
+    "missing_chat_actual",
+}
+
+
+def quality_warnings_are_overrideable(draft: dict[str, Any]) -> bool:
+    return not any(
+        warning.get("blocking") and warning.get("code") in NON_OVERRIDEABLE_WARNING_CODES
+        for warning in draft.get("quality_warnings") or []
+    )
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Xem trước hoặc tạo bug Jira từ Sheet, file hay chat")
-    parser.add_argument("--input", help="CSV, TSV, JSON, XLSX; dùng - cho JSON stdin")
+    parser.add_argument("--input", help="CSV, TSV, JSON, XLSX; dùng - cho JSON hoặc chat thô qua stdin")
     parser.add_argument("--related-task", help="Jira task key hoặc URL bắt buộc")
     parser.add_argument("--project", help="Project tùy chọn để đối chiếu với related task")
     parser.add_argument("--issue-type", default=DEFAULT_ISSUE_TYPE)
@@ -112,13 +128,18 @@ def main() -> int:
         if args.allow_possible_duplicates and not args.create:
             raise InputError("--allow-possible-duplicates chỉ dùng khi tạo thật sau xác nhận")
 
+        source_kind = args.source_kind
+        if source_kind == "auto":
+            source_kind = "sheet" if args.source_url else ("chat" if args.input == "-" else "file")
+
         if args.input == "-":
-            rows = read_json_stdin()
+            rows, input_mode = read_stdin_rows(source_kind)
             input_label = "stdin"
         else:
             path = Path(args.input).expanduser().resolve()
             rows = read_rows(path, args.sheet)
             input_label = str(path)
+            input_mode = path.suffix.casefold().lstrip(".")
         field_map = load_object(args.field_map, "field map")
         row_overrides = load_object(args.overrides, "row overrides")
         extra_fields = load_object(args.extra_fields, "extra fields")
@@ -129,10 +150,6 @@ def main() -> int:
             raise InputError("--include-status phải có ít nhất một giá trị")
         if not ready_values:
             raise InputError("--ready-values phải có ít nhất một giá trị")
-        source_kind = args.source_kind
-        if source_kind == "auto":
-            source_kind = "sheet" if args.source_url else ("chat" if args.input == "-" else "file")
-
         preview = build_preview(
             rows=rows, project=project, issue_type=args.issue_type,
             include_statuses=statuses, labels=labels, field_map=field_map,
@@ -145,6 +162,7 @@ def main() -> int:
             source_sheet_name=args.source_sheet_name,
         )
         preview["input_file"] = input_label
+        preview["input_mode"] = input_mode
         preview["batch_limit"] = args.batch_limit
 
         if args.search_duplicates or args.create:
@@ -160,7 +178,7 @@ def main() -> int:
             blocked = [item for item in preview["drafts"] if item["creation_state"] == "needs_clarification"]
             overrideable_blocked = [
                 item for item in blocked
-                if not any(warning.get("code") == "possible_duplicate" for warning in item["quality_warnings"])
+                if quality_warnings_are_overrideable(item)
             ]
             drafts_to_create = create_ready + overrideable_blocked if args.allow_quality_warnings else create_ready
             if not drafts_to_create:

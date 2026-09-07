@@ -6,8 +6,10 @@ from .common import InputError, normalized, project_from_issue_key
 from .comparison import analyze_actual_expected
 from .config import CORE_JIRA_FIELDS, DEFAULT_ISSUE_LINK_TYPE, DEFAULT_READY_VALUES, DEFAULT_SELECTION_MODE, SELECTION_MODES
 from .content import build_description, parse_title_metadata, resolve_priority
+from .diagnostics import parse_diagnostic_items
 from .evidence import evidence_warnings, parse_evidence_items
 from .identity import build_candidate_id, build_duplicate_fingerprint, payload_hash as compute_payload_hash
+from .jira_adapter import JIRA_ADAPTER
 from .policy import classify_team_labels, evaluate_quality
 from .sheet_adapter import build_source_locator
 from .sources import apply_row_overrides, build_header_map, canonical_record, validate_overrides
@@ -67,6 +69,30 @@ def build_preview(
     for source_row, row in enumerate(rows, start=2):
         record = canonical_record(row, mapping)
         record, applied_overrides = apply_row_overrides(record, source_row, row_overrides)
+        chat_extraction = row.get("__chat_extraction") if source_kind == "chat" else None
+        if source_kind == "chat" and not isinstance(chat_extraction, dict):
+            extracted_fields = {
+                field: {
+                    "source": "structured_input",
+                    "confidence": "high",
+                    "source_field": mapping[field],
+                }
+                for field in mapping
+                if record.get(field)
+            }
+            required_presence = {
+                "summary": bool(record["title"] or record["bug_summary"]),
+                "steps": bool(record["steps"]),
+                "expected": bool(record["expected"]),
+                "actual": bool(record["actual"]),
+            }
+            chat_extraction = {
+                "parser": "structured/v1",
+                "input_mode": "structured",
+                "fields": extracted_fields,
+                "missing_fields": [field for field, present in required_presence.items() if not present],
+                "needs_ai_fallback": not all(required_presence.values()),
+            }
         status = normalized(record["status"])
         ready_value = normalized(record["ready_to_jira"])
         if selection_mode == "status":
@@ -92,8 +118,11 @@ def build_preview(
         for field in ("steps", "expected", "actual"):
             if not record[field]:
                 missing.append(field)
-        if missing:
+        if missing and source_kind != "chat":
             errors.append({"source_row": source_row, "test_case_id": record["test_case_id"], "review_state": "invalid", "creation_state": "invalid", "error": f"thiếu dữ liệu bắt buộc: {', '.join(missing)}"})
+            continue
+        if missing and not (record["title"] or record["bug_summary"] or record["actual"]):
+            errors.append({"source_row": source_row, "test_case_id": record["test_case_id"], "review_state": "invalid", "creation_state": "invalid", "error": "chat không có Summary/Testname hoặc Actual để tạo draft"})
             continue
 
         identity = normalized(record["test_case_id"])
@@ -124,10 +153,22 @@ def build_preview(
             bool(title_metadata["priority"]),
             actual_expected_check,
         )
+        if source_kind == "chat":
+            missing_warning_map = {
+                "Testname hoặc Summary": ("missing_chat_summary", "Thiếu Testname hoặc Summary; cần tester bổ sung trước khi tạo Jira"),
+                "expected": ("missing_chat_expected", "Thiếu Expected result; skill không tự suy luận và cần tester bổ sung"),
+                "actual": ("missing_chat_actual", "Thiếu Actual result; cần tester mô tả hành vi đã quan sát"),
+            }
+            for missing_field in missing:
+                if missing_field in missing_warning_map:
+                    code, message = missing_warning_map[missing_field]
+                    warnings.append({"code": code, "message": message, "blocking": True})
         label_classification, label_warnings = classify_team_labels(record, labels, source_kind, title_metadata["test_type"])
         warnings.extend(label_warnings)
         evidence_items = parse_evidence_items(record["evidence"])
         warnings.extend(evidence_warnings(evidence_items))
+        diagnostic_items, diagnostic_warnings = parse_diagnostic_items(record["diagnostic_data"])
+        warnings.extend(diagnostic_warnings)
         priority, priority_source = resolve_priority(record, title_metadata)
         if record["severity"] and title_metadata["priority"] and priority and title_metadata["priority"] != priority:
             warnings.append({"code": "priority_prefix_conflict", "message": f"Priority trong field ({priority}) khác prefix Testname ({title_metadata['priority']}); ưu tiên field", "blocking": False})
@@ -143,6 +184,7 @@ def build_preview(
             "description": build_description(
                 record, source_row, source_url, source_kind, computed_reason,
                 label_classification, priority, priority_source, target_metadata, evidence_items,
+                diagnostic_items,
             ),
         }
         if priority:
@@ -197,6 +239,8 @@ def build_preview(
             "found_in_environment": label_classification["found_in_environment"],
             "target_metadata": target_metadata,
             "evidence_items": evidence_items,
+            "diagnostic_items": diagnostic_items,
+            "chat_extraction": chat_extraction or {},
             "source_locator": source_locator,
             "label_classification": label_classification,
             "quality_warnings": warnings,
@@ -221,6 +265,7 @@ def build_preview(
         "quality_warnings": all_warnings,
         "source_url": source_url or None,
         "found_in_environment_field": found_in_environment_field or None,
+        "jira": JIRA_ADAPTER.metadata(),
         "related_task": {"key": related_task_key, "input": related_task_input, "project": project, "link_type": issue_link_type, "verified": False},
         "duplicate_search": {"checked": False, "candidates_with_matches": 0},
         "stats": {

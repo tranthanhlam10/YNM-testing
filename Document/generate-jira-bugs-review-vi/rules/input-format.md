@@ -6,7 +6,7 @@
 - CSV/TSV: dùng UTF-8 hoặc UTF-8 BOM.
 - JSON: dùng mảng top-level hoặc object chứa `testCases`, `test_cases`, `cases`, `rows` hay `data`.
 - XLSX: dòng không trống đầu tiên là header.
-- Chat: chuyển một bug thành một JSON object theo schema tối giản rồi dùng `--input - --selection-mode all --source-kind chat`.
+- Chat: có thể truyền JSON hoặc paste chat thô trực tiếp qua stdin bằng `--input - --selection-mode all --source-kind chat`. Parser xác định chạy trước; không cần model để nhận diện các heading phổ biến.
 
 Chuẩn hóa khoảng trắng, dấu câu, dấu tiếng Việt và chữ hoa/thường trước khi map header. Cột trống hoàn toàn được bỏ qua.
 
@@ -38,6 +38,7 @@ Nguồn máy chuẩn là [../config/bug-candidate.schema.json](../config/bug-can
 | `target_url` | `TARGET URL`, `Environment URL`, `Base URL` | Không |
 | `severity` | `PRIORITY`, `Severity`, `Impact`, `Mức độ` | Không; trống dùng prefix hợp lệ rồi default `Major` |
 | `evidence` | `EVIDENCE`, `Screenshot`, `Log`, `Video`, `Attachment` | Không; hỗ trợ nhiều dòng/link |
+| `diagnostic_data` | `DIAGNOSTIC DATA`, `Debug Data`, `Technical Log`, `Code Snippet`, `Stack Trace` | Không; dành cho nội dung kỹ thuật paste trực tiếp |
 | `test_case_id` | `TEST CASE ID`, `TC ID`, `Test ID` | Không |
 | `test_type` | `TEST TYPE`, `Loại kiểm thử` | Không |
 | `root_cause_label` | `ROOT CAUSE`, `Root Cause Label`, `Nguyên nhân gốc` | Không; chỉ điền khi đã xác nhận |
@@ -72,6 +73,20 @@ Khi người dùng gửi link test case/Sheet và yêu cầu log bug, yêu cầu
 
 ## Ví dụ bug từ chat
 
+Tester có thể nhập trực tiếp:
+
+```text
+Name: Scale pod báo lỗi khi đang chạy test
+Step:
+1. Chạy loader
+2. Vào K8s để scale pod
+Actual Result: Hệ thống báo "Cant scale this pod"
+Expected Result: Pod được scale thành công
+Environment: Staging
+```
+
+Hoặc truyền JSON như trước:
+
 ```json
 [
   {
@@ -83,7 +98,11 @@ Khi người dùng gửi link test case/Sheet và yêu cầu log bug, yêu cầu
 ]
 ```
 
-Với `source-kind=chat`, bốn trường `Testname`, `Step`, `Actual Result`, `Expected Result` là đủ cho nội dung bug; yêu cầu vẫn phải có related task ở cấp batch. Các trường bug còn lại không bắt buộc và dùng default `Testing`, `Major`, `found-in-qc`.
+Với `source-kind=chat`, bốn trường `Testname/Summary`, `Step`, `Actual Result`, `Expected Result` là đủ cho nội dung bug; yêu cầu vẫn phải có related task ở cấp batch. Các trường bug còn lại không bắt buộc và dùng default `Testing`, `Major`, `found-in-qc`.
+
+Nếu chat thiếu một trong bốn trường cốt lõi nhưng còn `Testname/Summary` hoặc `Actual Result`, parser vẫn trả draft để tester review. Draft mang `creation_state=NEEDS_CLARIFICATION` và liệt kê trường thiếu; không thể tạo Jira cho đến khi bổ sung. Parser không tự sinh Steps hay Expected. Chỉ khi chat không có cả Summary/Testname lẫn Actual thì input mới là `INVALID`.
+
+Mỗi draft chat có `chat_extraction`: `parser`, `input_mode`, nguồn và độ tin cậy của từng field, danh sách field thiếu và cờ `needs_ai_fallback`. Cờ này chỉ gợi ý cần người/agent hỗ trợ; Python không âm thầm gọi API AI. Nội dung do AI đề xuất, nếu có ở tầng agent, phải được đánh dấu và tester xác nhận trước khi tạo.
 
 Các target/evidence tùy chọn trong chat:
 
@@ -97,6 +116,26 @@ Evidence:
 - Log: https://drive.google.com/...
 ```
 
+Nội dung kỹ thuật paste trực tiếp không đưa vào `Evidence`. Agent map thành `Diagnostic Data`, có thể là chuỗi, object hoặc danh sách object:
+
+```json
+"Diagnostic Data": [
+  {
+    "type": "query",
+    "name": "Solr query",
+    "language": "text",
+    "content": "q=mode:normal"
+  },
+  {
+    "type": "log",
+    "name": "Loader log",
+    "content": "INFO loader is running in normal mode"
+  }
+]
+```
+
+Các type hỗ trợ gồm `log`, `json`, `query`, `command`, `code`, `request`, `response`, `stacktrace`, `text`. Chuỗi có triple backtick hoặc Jira `{code}` được tách thành code item. Không đưa lại raw secret đã bị engine che vào phần khác của bug.
+
 Branch và Domain có thể chứa nhiều giá trị, nhưng MVP không tự tạo mọi tổ hợp. `Environment` phải map về đúng một stage để đạt `CREATE_READY`; nếu nhập nhiều stage, preview vẫn hiển thị nhưng yêu cầu tester chọn một stage hoặc yêu cầu tách bug rõ ràng.
 
 ## Summary và priority
@@ -106,6 +145,7 @@ Branch và Domain có thể chứa nhiều giá trị, nhưng MVP không tự t�
 - Summary đề xuất từ Actual chỉ được bỏ từ đệm, chuẩn hóa thuật ngữ trong policy và sắp xếp lại trigger/triệu chứng đã có trong nguồn; không suy đoán root cause.
 - Không đưa `[BUG]`, test-case ID, priority hoặc test type vào summary.
 - Riêng nguồn chat, dùng `Testname` làm Summary; chỉ loại metadata prefix được khai báo trong policy, không thêm Module và không thay phần nội dung còn lại bằng Actual.
+- Environment chỉ được lấy từ field/heading/câu chat tường minh; không đọc Environment từ prefix Summary. Ví dụ `[Staging] API lỗi` vẫn dùng default `Testing` nếu tester không nhập môi trường riêng.
 - Priority lấy theo thứ tự: field `PRIORITY/Severity` hợp lệ → priority prefix trong Testname → default `Major`.
 - Prefix test metadata như `[Positive]`, `[Negative]`, `[Boundary]` được bỏ khỏi Summary và chỉ map sang test type nếu có trong policy. Prefix không nhận diện được phải được giữ nguyên.
 - Giới hạn độ dài, từ mở đầu chung chung và cách viết thuật ngữ đọc từ `summary` trong [../config/policies.json](../config/policies.json), không hardcode lại trong script.
@@ -156,7 +196,12 @@ File JSON map field chuẩn sang header nguồn chính xác. Ví dụ:
   "rows": {
     "12": {
       "severity": "High",
-      "evidence": "https://drive.google.com/..."
+      "evidence": "https://drive.google.com/...",
+      "diagnostic_data": {
+        "type": "log",
+        "name": "Loader log",
+        "content": "ERROR cannot scale pod"
+      }
     }
   }
 }

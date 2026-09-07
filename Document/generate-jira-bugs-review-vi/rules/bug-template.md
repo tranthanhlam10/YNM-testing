@@ -4,6 +4,8 @@ Dùng template đầy đủ cho bug từ test case/Sheet và template tối gi�
 
 Tất cả section heading và nhãn metadata do template sinh ra phải dùng tiếng Anh. Nội dung tester nhập có thể là tiếng Việt hoặc tiếng Anh và phải được giữ nguyên.
 
+Template bên dưới mô tả nội dung logic. Runtime hiện tại render các section thành Jira Server wiki markup (`h3.`, `*`) theo cấu hình integration.
+
 ## Summary
 
 ```text
@@ -46,7 +48,7 @@ Riêng nguồn chat, dùng `Testname` làm Summary. Chỉ loại metadata prefix
 <Expected Result>
 ```
 
-Đây là ba section bắt buộc. Chỉ thêm Preconditions, Test data, Affected targets, Evidence hoặc Notes khi tester thực sự nhập; không thêm placeholder `Evidence` hay `Source information` cho chat.
+Đây là ba section bắt buộc. Chỉ thêm Preconditions, Test data, Diagnostic data, Affected targets, Evidence hoặc Notes khi tester thực sự nhập; không thêm placeholder `Evidence`, `Diagnostic data` hay `Source information` cho chat.
 
 ### Nguồn test case/Sheet — template đầy đủ
 
@@ -73,6 +75,12 @@ Riêng nguồn chat, dùng `Testname` làm Summary. Chỉ loại metadata prefix
 
 <TEST DATA if provided>
 
+### Diagnostic data
+
+#### <Log/query/request name>
+
+<code block đã che secret>
+
 ### Affected targets
 
 - Environment: <Testing/Staging/Production>
@@ -96,6 +104,8 @@ Riêng nguồn chat, dùng `Testname` làm Summary. Chỉ loại metadata prefix
 - <Video URL>
 
 Nếu không có Evidence, ghi `No evidence was provided.` cho nguồn Sheet/file. Nguồn chat không thêm placeholder khi tester không nhập.
+
+`Diagnostic data` khác `Evidence`: nội dung log/JSON/query/command/stack trace paste trực tiếp nằm trong code block; URL ảnh, video hoặc log nằm trong Evidence. Runtime Jira Server render diagnostic bằng `{code:<language>}` và không đưa raw secret vào payload.
 
 ### Notes
 

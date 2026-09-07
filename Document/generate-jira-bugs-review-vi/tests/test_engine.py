@@ -15,6 +15,9 @@ from jira_bug_skill.config import (  # noqa: E402
     DEFAULT_FOUND_IN_ENVIRONMENT,
     DEFAULT_JIRA_LABEL,
     DEFAULT_PRIORITY,
+    JIRA_API_VERSION,
+    JIRA_DEPLOYMENT,
+    JIRA_DESCRIPTION_FORMAT,
     MAX_CREATE_BATCH,
     MAX_PREVIEW_CANDIDATES,
     SCHEMA,
@@ -58,6 +61,7 @@ class ConfigTests(unittest.TestCase):
         self.assertEqual(MAX_PREVIEW_CANDIDATES, 5)
         self.assertEqual(SUMMARY["max_length"], 255)
         self.assertEqual(SUMMARY["technical_terms"]["rabbitmq"], "RabbitMQ")
+        self.assertEqual((JIRA_DEPLOYMENT, JIRA_API_VERSION, JIRA_DESCRIPTION_FORMAT), ("server", "2", "wiki"))
         self.assertIn("found-in-qc", ALLOWED_JIRA_LABELS)
         self.assertIn("sys-api", ALLOWED_JIRA_LABELS)
 
@@ -66,7 +70,9 @@ class ConfigTests(unittest.TestCase):
         self.assertIn("branch", SCHEMA["properties"])
         self.assertIn("domain", SCHEMA["properties"])
         self.assertIn("target_url", SCHEMA["properties"])
+        self.assertIn("diagnostic_data", SCHEMA["properties"])
         self.assertIn("actual", SCHEMA["x-row-override-fields"])
+        self.assertIn("diagnostic_data", SCHEMA["x-row-override-fields"])
         self.assertNotIn("bug_id", SCHEMA["x-row-override-fields"])
 
     def test_runtime_config_is_internally_consistent(self):
@@ -154,9 +160,9 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(draft["creation_state"], "needs_clarification")
         self.assertNotIn("invented-label", draft["payload"]["fields"].get("labels", []))
 
-    def test_missing_core_field_is_invalid(self):
+    def test_missing_core_field_is_invalid_for_sheet(self):
         rows = [{"Testname": "Thiếu actual", "Step": "1. Test", "Expected Result": "Có dữ liệu"}]
-        result = preview(rows)
+        result = preview(rows, source_kind="sheet")
         self.assertEqual(result["stats"]["invalid"], 1)
         self.assertEqual(result["stats"]["ready_for_review"], 0)
 

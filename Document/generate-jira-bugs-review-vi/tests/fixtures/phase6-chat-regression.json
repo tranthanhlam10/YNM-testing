@@ -1,0 +1,20 @@
+[
+  {
+    "id": "chat_missing_expected",
+    "raw": "Name: Scale pod báo lỗi khi đang chạy test\nStep:\n1. Chạy loader\n2. Vào K8s để scale pod\nActual Result: Hệ thống báo Cant scale this pod",
+    "expected_creation_state": "needs_clarification",
+    "expected_warning": "missing_chat_expected"
+  },
+  {
+    "id": "chat_json_log_with_secret",
+    "raw": "Name: API callback trả dữ liệu sai\nStep: Gửi request callback\nActual Result: Response trả sai field identity\nExpected Result: Response trả đúng field identity\n```json\n{\"Authorization\": \"Bearer fake.phase6.token\", \"identity\": null}\n```",
+    "expected_creation_state": "create_ready",
+    "expected_label": "sys-api"
+  },
+  {
+    "id": "chat_label_provenance",
+    "raw": "Name: Crawl Tiktok mapping sai field identity name\nStep: Chạy crawler và kiểm tra dữ liệu sau transform\nActual Result: Crawler mapping sai field identity name\nExpected Result: Crawler mapping đúng field identity name",
+    "expected_creation_state": "create_ready",
+    "expected_labels": ["sys-crawling-auto", "sys-transform", "flow-transform", "found-in-qc"]
+  }
+]

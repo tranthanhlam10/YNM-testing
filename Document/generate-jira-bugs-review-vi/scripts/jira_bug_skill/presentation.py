@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from typing import Any
 
+from .diagnostics import compact_diagnostic_items
+
 
 VISIBLE_DESCRIPTION_SECTIONS = {
     "Preconditions",
@@ -13,6 +15,13 @@ VISIBLE_DESCRIPTION_SECTIONS = {
     "Affected targets",
     "Evidence",
     "Notes",
+}
+
+BULLET_DESCRIPTION_SECTIONS = {
+    "Affected targets",
+    "Evidence",
+    "Label classification",
+    "Source information",
 }
 
 
@@ -28,7 +37,7 @@ def _section_key(heading: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", heading.casefold()).strip("_")
 
 
-def compact_description(description: dict[str, Any]) -> dict[str, Any]:
+def _compact_adf_description(description: dict[str, Any]) -> dict[str, Any]:
     sections: dict[str, Any] = {}
     heading = ""
     paragraphs: list[str] = []
@@ -64,6 +73,47 @@ def compact_description(description: dict[str, Any]) -> dict[str, Any]:
     return sections
 
 
+def _compact_wiki_description(description: str) -> dict[str, Any]:
+    sections: dict[str, Any] = {}
+    heading = ""
+    paragraphs: list[str] = []
+    bullets: list[str] = []
+
+    def flush() -> None:
+        nonlocal paragraphs, bullets
+        if heading in VISIBLE_DESCRIPTION_SECTIONS:
+            key = _section_key(heading)
+            if bullets and not paragraphs:
+                sections[key] = bullets
+            elif paragraphs:
+                sections[key] = "\n".join(paragraphs).strip()
+        paragraphs = []
+        bullets = []
+
+    for line in description.splitlines():
+        heading_match = re.match(r"^h[1-6]\.\s+(.+?)\s*$", line)
+        if heading_match:
+            flush()
+            heading = heading_match.group(1)
+            continue
+        if not heading or not line.strip():
+            continue
+        if heading in BULLET_DESCRIPTION_SECTIONS and line.startswith("* "):
+            bullets.append(line[2:].strip())
+        else:
+            paragraphs.append(line.rstrip())
+    flush()
+    return sections
+
+
+def compact_description(description: str | dict[str, Any]) -> dict[str, Any]:
+    if isinstance(description, str):
+        return _compact_wiki_description(description)
+    if isinstance(description, dict):
+        return _compact_adf_description(description)
+    return {}
+
+
 def _compact_warning(warning: dict[str, Any]) -> dict[str, Any]:
     keys = ["code", "blocking", "accepted"]
     if warning.get("blocking"):
@@ -95,6 +145,9 @@ def compact_preview(preview: dict[str, Any], candidate_limit: int) -> dict[str, 
             "description": compact_description(fields.get("description") or {}),
             "targets": draft.get("target_metadata") or {},
             "evidence": draft.get("evidence_items") or [],
+            "diagnostics": compact_diagnostic_items(draft.get("diagnostic_items") or []),
+            "chat_extraction": draft.get("chat_extraction") or {},
+            "label_provenance": (draft.get("label_classification") or {}).get("provenance") or [],
             "warnings": [_compact_warning(item) for item in draft.get("quality_warnings") or []],
             "duplicate": {
                 "state": draft.get("duplicate_state"),
@@ -120,7 +173,9 @@ def compact_preview(preview: dict[str, Any], candidate_limit: int) -> dict[str, 
         "issue_type": preview.get("issue_type"),
         "source_kind": preview.get("source_kind"),
         "selection_mode": preview.get("selection_mode"),
+        "input_mode": preview.get("input_mode"),
         "related_task": preview.get("related_task") or {},
+        "jira": preview.get("jira") or {},
         "stats": compact_stats,
         "display": {
             "shown_candidates": len(candidates),

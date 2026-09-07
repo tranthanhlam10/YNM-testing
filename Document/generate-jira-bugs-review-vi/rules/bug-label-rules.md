@@ -22,6 +22,21 @@ Nguồn máy duy nhất dùng để validate và tạo payload là [../config/po
 7. Nếu người dùng không nhập label ở `JIRA LABELS`, `ROOT CAUSE`, `SYSTEM LABELS` hoặc `FLOW LABELS`, thêm `found-in-qc`.
 8. Không tự thêm label truy vết `generated-by-qc`, `linked-testcase`, `no-testcase` hoặc label ngoài allowlist.
 
+## Nguồn gốc label trong preview
+
+Mỗi label được chọn phải có `provenance` để QC biết vì sao skill gắn label:
+
+| Source | Ý nghĩa |
+| --- | --- |
+| `explicit_argument` | Tester truyền trực tiếp qua tham số label |
+| `source_field` | Giá trị đến từ field `JIRA LABELS`, `ROOT CAUSE`, `SYSTEM LABELS`, `FLOW LABELS` hoặc `TEST TYPE` |
+| `prefix` | Test Type được map từ metadata prefix hợp lệ trong Testname/Summary |
+| `keyword` | System/Flow được suy từ marker thuộc policy; phải kèm `source_field` và `matched_marker` |
+| `derived` | Lifecycle được tạo từ trạng thái nguồn, ví dụ `BUG STATUS=reopen` |
+| `default` | Giá trị mặc định `found-in-qc` từ policy |
+
+Khi cùng một label có nhiều nguồn, ưu tiên: `explicit_argument` → `source_field` → `prefix` → `keyword` → `derived` → `default`. Provenance chỉ giải thích label đã nằm trong allowlist; nó không biến label ngoài taxonomy thành hợp lệ. Root Cause chỉ có provenance tường minh từ argument/source field, không bao giờ có source `keyword`.
+
 ## Detection Source — label mặc định
 
 | Label | Dùng khi |
@@ -110,4 +125,4 @@ Nếu nguồn chứa nhiều Test Type trái nhau, không chọn hộ; đánh d�
 - Environment có nội dung nhưng không map được sang ba giá trị Jira → cảnh báo chặn.
 - Environment trống → mặc định `Testing`, không chặn.
 - Label trống → mặc định `found-in-qc`, không chặn.
-- Preview phải hiển thị label theo nhóm để QC review trước khi tạo Jira.
+- Preview phải hiển thị label theo nhóm và provenance để QC review trước khi tạo Jira.

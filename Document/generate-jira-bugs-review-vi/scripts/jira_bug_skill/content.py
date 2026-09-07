@@ -4,7 +4,15 @@ import re
 from typing import Any
 
 from .common import normalized
-from .config import DEFAULT_PRIORITY, PRIORITY_MAP, PRIORITY_PREFIXES, TEST_METADATA_PREFIXES, TEST_TYPE_MAP
+from .config import (
+    DEFAULT_PRIORITY,
+    JIRA_DESCRIPTION_FORMAT,
+    PRIORITY_MAP,
+    PRIORITY_PREFIXES,
+    TEST_METADATA_PREFIXES,
+    TEST_TYPE_MAP,
+)
+from .description_renderer import bullet_section, code_section, render_description, text_section
 from .evidence import evidence_description_lines
 from .targets import target_description_lines
 
@@ -51,35 +59,6 @@ def resolve_priority(record: dict[str, str], title_metadata: dict[str, Any]) -> 
     return DEFAULT_PRIORITY, "default"
 
 
-def adf_text(text: str) -> dict[str, Any]:
-    return {"type": "text", "text": text}
-
-
-def adf_paragraph(text: str) -> dict[str, Any]:
-    return {"type": "paragraph", "content": [adf_text(text)]}
-
-
-def add_section(content: list[dict[str, Any]], heading: str, value: str) -> None:
-    if not value:
-        return
-    content.append({"type": "heading", "attrs": {"level": 3}, "content": [adf_text(heading)]})
-    for line in value.splitlines() or [value]:
-        content.append(adf_paragraph(line or " "))
-
-
-def add_bullet_section(content: list[dict[str, Any]], heading: str, values: list[str]) -> None:
-    if not values:
-        return
-    content.append({"type": "heading", "attrs": {"level": 3}, "content": [adf_text(heading)]})
-    content.append({
-        "type": "bulletList",
-        "content": [
-            {"type": "listItem", "content": [adf_paragraph(value)]}
-            for value in values
-        ],
-    })
-
-
 def build_description(
     record: dict[str, str],
     source_row: int,
@@ -91,27 +70,47 @@ def build_description(
     priority_source: str,
     target_metadata: dict[str, Any],
     evidence_items: list[dict[str, str]],
-) -> dict[str, Any]:
-    content: list[dict[str, Any]] = []
-    if source_kind == "chat":
-        add_section(content, "Steps to reproduce", record["steps"])
-        add_section(content, "Actual result", record["actual"])
-        add_section(content, "Expected result", record["expected"])
-        add_section(content, "Preconditions", record["preconditions"])
-        add_section(content, "Test data", record["test_data"])
-        if any((record["environment"], record["branch"], record["domain"], record["target_url"])):
-            add_bullet_section(content, "Affected targets", target_description_lines(target_metadata))
-        if evidence_items:
-            add_bullet_section(content, "Evidence", evidence_description_lines(evidence_items))
-        add_section(content, "Notes", record["remarks"])
-        return {"type": "doc", "version": 1, "content": content}
+    diagnostic_items: list[dict[str, Any]],
+    description_format: str = JIRA_DESCRIPTION_FORMAT,
+) -> str | dict[str, Any]:
+    sections: list[dict[str, Any]] = []
 
-    add_section(content, "Preconditions", record["preconditions"])
-    add_section(content, "Steps to reproduce", record["steps"])
-    add_section(content, "Actual result", record["actual"])
-    add_section(content, "Expected result", record["expected"])
-    add_section(content, "Test data", record["test_data"])
-    add_bullet_section(content, "Affected targets", target_description_lines(target_metadata))
+    def add_text(heading: str, value: str) -> None:
+        section = text_section(heading, value)
+        if section:
+            sections.append(section)
+
+    def add_bullets(heading: str, values: list[str]) -> None:
+        section = bullet_section(heading, values)
+        if section:
+            sections.append(section)
+
+    def add_code(heading: str, items: list[dict[str, Any]]) -> None:
+        section = code_section(heading, items)
+        if section:
+            sections.append(section)
+
+    if source_kind == "chat":
+        add_text("Steps to reproduce", record["steps"])
+        add_text("Actual result", record["actual"])
+        add_text("Expected result", record["expected"])
+        add_text("Preconditions", record["preconditions"])
+        add_text("Test data", record["test_data"])
+        add_code("Diagnostic data", diagnostic_items)
+        if any((record["environment"], record["branch"], record["domain"], record["target_url"])):
+            add_bullets("Affected targets", target_description_lines(target_metadata))
+        if evidence_items:
+            add_bullets("Evidence", evidence_description_lines(evidence_items))
+        add_text("Notes", record["remarks"])
+        return render_description(sections, description_format)
+
+    add_text("Preconditions", record["preconditions"])
+    add_text("Steps to reproduce", record["steps"])
+    add_text("Actual result", record["actual"])
+    add_text("Expected result", record["expected"])
+    add_text("Test data", record["test_data"])
+    add_code("Diagnostic data", diagnostic_items)
+    add_bullets("Affected targets", target_description_lines(target_metadata))
     label_lines = [
         f"Found In Environment: {label_classification['found_in_environment'] or 'Not determined'}",
         "Root Cause: " + (", ".join(label_classification["root_cause"]) or "Not determined — update before closing the bug"),
@@ -124,12 +123,12 @@ def build_description(
         label_lines.append("Lifecycle: " + ", ".join(label_classification["lifecycle"]))
     if label_classification["operational"]:
         label_lines.append("Detection Source: " + ", ".join(label_classification["operational"]))
-    add_bullet_section(content, "Label classification", label_lines)
+    add_bullets("Label classification", label_lines)
     if evidence_items:
-        add_bullet_section(content, "Evidence", evidence_description_lines(evidence_items))
+        add_bullets("Evidence", evidence_description_lines(evidence_items))
     else:
-        add_section(content, "Evidence", "No evidence was provided.")
-    add_section(content, "Notes", record["remarks"])
+        add_text("Evidence", "No evidence was provided.")
+    add_text("Notes", record["remarks"])
 
     source_lines = [
         f"Input source: {record['source_type'] or source_kind}",
@@ -154,5 +153,5 @@ def build_description(
         source_lines.append(f"Source bug status: {record['bug_status']}")
     if record["status"]:
         source_lines.append(f"Source test status: {record['status']}")
-    add_bullet_section(content, "Source information", source_lines)
-    return {"type": "doc", "version": 1, "content": content}
+    add_bullets("Source information", source_lines)
+    return render_description(sections, description_format)

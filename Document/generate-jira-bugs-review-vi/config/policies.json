@@ -12,6 +12,19 @@
     "duplicate_possible_score": 45,
     "duplicate_strong_score": 75
   },
+  "jira": {
+    "deployment": "server",
+    "api_version": "2",
+    "description_format": "wiki"
+  },
+  "diagnostics": {
+    "allowed_types": ["log", "json", "query", "command", "code", "request", "response", "stacktrace", "text"],
+    "max_items": 8,
+    "max_item_chars": 8000,
+    "max_total_chars": 20000,
+    "preview_max_chars": 1200,
+    "sensitive_keys": ["token", "access_token", "refresh_token", "api_key", "apikey", "password", "passwd", "secret", "session", "session_id", "sessionid", "cookie", "authorization"]
+  },
   "selection": {
     "modes": ["status", "ready", "all", "candidates"],
     "ready_values": ["yes", "ready", "true", "1"],
