@@ -1,73 +1,50 @@
-# Chuẩn test cases cá nhân
+# Chuẩn test cases — dễ hiểu, ít token
 
-Chuẩn này được tổng hợp từ `Ai_Agents/templates/codex/testcase_template_codex_2508.md` và các bộ test cases trong `Ai_Agents/test_cases` tại ngày 25/08/2026.
+## Bắt buộc
 
-## Schema bắt buộc
+- Người chưa biết tính năng đọc riêng testcase vẫn hiểu mục đích, dữ liệu, thao tác và điều kiện pass.
+- Mỗi cell chỉ chứa thông tin cần để execute hoặc đánh giá; không lặp requirement và không thêm kỹ thuật ngoài scope.
+- Đúng 7 cột: `TEST CASE ID` · `MODULE/FEATURE` · `TEST NAME` · `PRE-CONDITION` · `TEST STEPS` · `TEST DATA` · `EXPECTED RESULT`.
+- Nếu Sheet có cột execution phía sau, giữ nguyên và chỉ ghi 7 cột trên.
 
-Output phải có chính xác 7 cột, đúng thứ tự:
+## Cách viết từng cột
 
-1. `TEST CASE ID`
-2. `MODULE/FEATURE`
-3. `TEST NAME`
-4. `PRE-CONDITION`
-5. `TEST STEPS`
-6. `TEST DATA`
-7. `EXPECTED RESULT`
+- **TEST CASE ID:** `TC_<MODULE>_<NNN>`, duy nhất, tăng liên tục.
+- **MODULE/FEATURE:** khu vực người dùng nhận ra, ví dụ `Label Validation - Preview`.
+- **TEST NAME:** `[High|Medium|Low] [Positive|Negative|Edge] <hành vi cụ thể>`; đọc tên phải biết case test gì.
+- **PRE-CONDITION:** 1–3 câu về màn hình, quyền/trạng thái và dữ liệu cần có. Không lặp môi trường chung.
+- **TEST STEPS:** thường 3–5 bước đánh số, mỗi bước một hành động có tên nút/field rõ ràng; không chứa expected.
+- **TEST DATA:** ưu tiên `Field = Value; Field = Value`. Chỉ dùng bảng/JSON khi nhiều biến thể hoặc chính payload là đối tượng test.
+- **EXPECTED RESULT:** thường 2–4 assertion quan sát được; không kể lại steps và không dùng câu mơ hồ như “thành công”.
 
-Không tự thêm cột. Với Markdown dùng bảng; với CSV quote đúng các cell có dấu phẩy, JSON hoặc xuống dòng.
+## Giữ bộ case gọn
 
-## Contract từng cột
+- Một case cho một hành vi chính; gộp các boundary dùng chung flow.
+- Không tách UI/API/DB thành nhiều case nếu các layer không có contract/risk riêng.
+- Không đưa BR/AC vào Test Data trừ khi người dùng yêu cầu traceability trên output.
+- Không lặp cùng thông tin ở Pre-condition, Test Data và Expected Result.
+- Chỉ nhắc API/DB/queue/log trong case kỹ thuật tương ứng.
 
-- **TEST CASE ID:** `TC_<MODULE>_<NNN>`, module viết ASCII uppercase có ý nghĩa, số tăng liên tục trong module và không trùng.
-- **MODULE/FEATURE:** tên phạm vi đủ cụ thể để filter/group, không chỉ ghi tên project.
-- **TEST NAME:** `[High|Medium|Low] [Positive|Negative|Edge] <hành vi cần kiểm chứng>`. Priority phản ánh business/release risk, không phản ánh độ khó execute.
-- **PRE-CONDITION:** trạng thái hệ thống, quyền, config và seed data cần có; chứa ít nhất một ví dụ cụ thể khi setup phụ thuộc dữ liệu.
-- **TEST STEPS:** danh sách `1.`, `2.`, `3.` ngắn, action rõ, có bước capture/đối soát evidence khi cần. Không nhét expected result vào steps.
-- **TEST DATA:** giá trị thực thi cụ thể. Nếu có nhiều field, dùng một JSON object hợp lệ; nêu boundary pair/set và control record khi cần chứng minh include/exclude.
-- **EXPECTED RESULT:** các assertion quan sát được, mỗi ý một dòng/gạch đầu dòng. Kiểm tra UI/API/queue/cache/DB/log chỉ ở layer thuộc scope và có contract; nêu rõ dữ liệu không được thay đổi khi đó là invariant.
+## Đồng bộ Google Sheet
 
-Ví dụ hình thức một dòng (chỉ minh họa schema, không phải facts để tái dùng):
+- Đọc `OverView` theo nhãn, không hard-code địa chỉ ô nếu template đã đổi layout.
+- Điền metadata task: `PROJECT TITLE`, `FEATURE NAME`, `DESCRIPTION`, `SCOPE`; giữ `TESTER`, `TESTER AUTHOR`, `REVIEWER` theo template/user. Trong `FEATURE DETAILS`, điền `FEATURE`, mô tả ngắn, status/Jira ID nếu có nguồn và tên/link tab testcase.
+- `FEATURE` trong `OverView` là danh sách module chuẩn. Mọi giá trị `MODULE/FEATURE` trong testcase phải khớp chính xác về ký tự, khoảng trắng và hoa/thường; hai tập giá trị khác rỗng phải bằng nhau.
+- Ghi `OverView` và nguồn dropdown trước khi ghi testcase. Không paste module ngoài danh sách cho phép.
+- Verify bằng MCP: không còn module task cũ, không có `#REF!`, source range dropdown phủ đủ module và read-back không có giá trị invalid.
+- Chỉ dùng MCP đã cấu hình; không dùng browser/CUA để sửa validation hoặc kiểm tra trực quan.
 
-| TEST CASE ID | MODULE/FEATURE | TEST NAME | PRE-CONDITION | TEST STEPS | TEST DATA | EXPECTED RESULT |
-| --- | --- | --- | --- | --- | --- | --- |
-| TC_RULE_001 | Rule lựa chọn dữ liệu | [High] [Edge] Áp dụng đúng giá trị tại boundary | Feature flag test đã bật; có control record hai phía boundary | 1. Seed data.<br>2. Trigger flow.<br>3. Đối soát output và persistence. | `{\"below\":999,\"at\":1000,\"above\":1001}` | - Record tại/qua boundary được xử lý theo AC.<br>- Record dưới boundary bị loại.<br>- Không phát sinh duplicate hoặc side effect ngoài scope. |
+## Mâu thuẫn
 
-## Coverage model
+- BA/AC là oracle nghiệp vụ.
+- Nếu technical spec khác BA: `(Need Confirm: technical spec ...; expected theo BA là ...)`.
+- Nếu chưa có oracle, không tự chọn kết quả pass.
 
-Tạo checklist/traceability nội bộ từ requirement và risk trước khi viết. Bộ case nên xét các nhóm sau khi liên quan:
+## Quality gate
 
-- Happy path và alternative positive flow.
-- Mỗi validation/business rule có negative/control case độc lập.
-- Boundary inclusive/exclusive, null/missing/invalid type, empty/single/many/maximum.
-- Permission/role/tenant/domain/country isolation.
-- State transition, retry, idempotency, timeout, partial failure, restart/recovery.
-- Concurrency, ordering, pagination/batch/chunk, date/timezone/month boundary.
-- API/payload/data mapping, persistence, cache/queue và observability.
-- Regression của luồng cũ, feature flag và backward compatibility.
-
-Không ép tất cả nhóm vào mọi feature. Một case chỉ nên có một failure diagnosis chính.
-
-## Mâu thuẫn và dữ liệu thiếu
-
-- BA/AC là oracle cho expected nghiệp vụ. Nếu technical spec khác BA, viết expected theo BA và thêm `(Need Confirm: <mâu thuẫn>)` trong chính `EXPECTED RESULT`.
-- Nếu cả hai nguồn không chốt expected, ghi rõ Need Confirm và tránh bịa giá trị. Có thể tạo case để giữ coverage nhưng phải chỉ ra điều kiện chốt pass/fail.
-- Không dùng dữ liệu production nhạy cảm làm test data; dùng fixture/ID giả nhưng hợp lệ theo format.
-
-## Gate ghi Google Sheet
-
-- Phân tích requirement và thiết kế coverage trước. Chỉ yêu cầu link khi đã sẵn sàng ghi và yêu cầu hiện tại chưa có link Sheet đã cấp quyền.
-- Link người dùng vừa gửi chỉ cho phép ghi spreadsheet đó trong task hiện tại; không suy ra quyền cho Sheet hoặc task khác.
-- Xác định tab từ `gid` khi có. Trước write phải đọc metadata, header và vùng dữ liệu hiện hữu.
-- Header phải khớp chính xác 7 cột của schema. Append vào vùng trống kế tiếp; không ghi đè và không tạo Test Case ID trùng.
-- Sau write, đọc lại đúng vùng vừa cập nhật để kiểm tra số dòng, 7 cột, ID đầu/cuối và nội dung không bị lệch cột.
-
-## Quality gate trước bàn giao
-
-- Header và mọi row có đúng 7 cột; ID unique và đúng format.
-- Mỗi rule/risk trong scope có ít nhất một case hoặc một lý do loại trừ có căn cứ.
-- Pre-condition + steps + data đủ để một QA khác execute mà không đoán.
-- Test data cụ thể; JSON hợp lệ; boundary có expected rõ.
-- Expected result có test oracle, không chỉ ghi “thành công”, “đúng” hoặc “hiển thị đúng”.
-- Không assert layer ngoài release scope và không bịa schema/config.
-- Các Need Confirm dễ tìm và nêu đúng tác động.
-- Markdown render đúng hoặc CSV parse đúng; không còn URL/path/task data của prompt mẫu cũ.
+- Đúng 7 cột; ID không trùng; không lệch cột.
+- Tên case cho biết mục tiêu; pre-condition + steps + data đủ để người mới thực hiện.
+- Expected cụ thể và ngắn; không lặp steps.
+- Boundary chung flow đã được gộp; không có case kỹ thuật vô căn cứ.
+- `Need Confirm` ngắn, cụ thể và dễ tìm.
+- Metadata task đã điền; module ở `OverView` và testcase khớp tuyệt đối; dropdown không có `#REF!`.
