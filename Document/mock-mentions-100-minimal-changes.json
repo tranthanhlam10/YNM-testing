@@ -1,0 +1,5202 @@
+[
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c41"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000001",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c42"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000002",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c43"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000003",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c44"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000004",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c45"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000005",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c46"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000006",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c47"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000007",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c48"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000008",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c49"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000009",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c4a"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000000a",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c4b"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000000b",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c4c"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000000c",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c4d"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000000d",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c4e"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000000e",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c4f"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000000f",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c50"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000010",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c51"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000011",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c52"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000012",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c53"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000013",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c54"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000014",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c55"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000015",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c56"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000016",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c57"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000017",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c58"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000018",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c59"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000019",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c5a"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000001a",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c5b"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000001b",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c5c"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000001c",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c5d"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000001d",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c5e"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000001e",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 2,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c5f"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000001f",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c60"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000020",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c61"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000021",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c62"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000022",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c63"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000023",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c64"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000024",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c65"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000025",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c66"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000026",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c67"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000027",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c68"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000028",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c69"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000029",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c6a"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000002a",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c6b"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000002b",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c6c"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000002c",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c6d"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000002d",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c6e"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000002e",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c6f"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000002f",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c70"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000030",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c71"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000031",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c72"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000032",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c73"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000033",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c74"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000034",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c75"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000035",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c76"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000036",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c77"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000037",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c78"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000038",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c79"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000039",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c7a"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000003a",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c7b"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000003b",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c7c"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000003c",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 3,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c7d"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000003d",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c7e"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000003e",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c7f"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000003f",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c80"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000040",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c81"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000041",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c82"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000042",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c83"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000043",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c84"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000044",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c85"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000045",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c86"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000046",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c87"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000047",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c88"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000048",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c89"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000049",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c8a"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000004a",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c8b"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000004b",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c8c"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000004c",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c8d"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000004d",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c8e"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000004e",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c8f"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000004f",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c90"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000050",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c91"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000051",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c92"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000052",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c93"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000053",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c94"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000054",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c95"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000055",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c96"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000056",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c97"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000057",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c98"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000058",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c99"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000059",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c9a"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000005a",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c9b"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000005b",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c9c"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000005c",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c9d"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000005d",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Kiểm thử bộ lọc",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c9e"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000005e",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Dữ liệu mẫu",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148c9f"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-00000000005f",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Filter test record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148ca0"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000060",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Demo mention",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148ca1"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000061",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "LamTT",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148ca2"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000062",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Test filter mentions",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148ca3"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000063",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "Mock data filter",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6a718e8902c4210330148ca4"
+    },
+    "mention_id": "7b1bfc49-1778-567d-b829-000000000064",
+    "rule_id": 162,
+    "status": "skipped",
+    "topic_ids": [10236418],
+    "ai_summary_content": "Nội dung tập trung vào việc nói lên sự thật về Ousmane Dembélé, đây là Phần 3 của chuỗi nội dung.",
+    "alert_mode": null,
+    "alerted_at": null,
+    "alerted_by_user_id": null,
+    "created_at": {
+      "$date": "2026-08-04T03:00:00.000Z"
+    },
+    "description": "QA mention record",
+    "groups": [],
+    "id_reference": null,
+    "id_source": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity": "tt_MS4wLjABAAAABzj6S1NUMsrDt2_BoFzDsG6j2Q-XU5xj-2Ce0t3mipcZ4KvGLf5zKcGUzAwDY_G0",
+    "identity_name": "Código Fútbol",
+    "link_shared": null,
+    "mention_copied_at": {
+      "$date": "2026-07-31T03:36:26.992Z"
+    },
+    "mention_created_date": {
+      "$date": "2026-08-04T02:42:48.000Z"
+    },
+    "mention_type": 1,
+    "mention_updated_at": {
+      "$date": "2026-07-31T03:33:36.263Z"
+    },
+    "negative_level": 1,
+    "platform": 9,
+    "push_notification_error": null,
+    "push_notification_status": null,
+    "send_email_error": null,
+    "send_email_status": null,
+    "send_sms_error": null,
+    "send_sms_status": null,
+    "sentiment": -1,
+    "skipped_at": {
+      "$date": "2026-08-04T07:05:38.584Z"
+    },
+    "skipped_by_user_id": 5812,
+    "snapshot_negative_level": 3,
+    "snapshot_sentiment": -1,
+    "title": null,
+    "updated_at": {
+      "$date": "2026-08-04T07:06:39.242Z"
+    }
+  }
+]

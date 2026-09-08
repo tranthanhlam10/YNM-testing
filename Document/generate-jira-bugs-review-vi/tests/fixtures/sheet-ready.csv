@@ -1,0 +1,3 @@
+TEST CASE ID,TEST NAME,TEST STEPS,EXPECTED RESULT,ACTUAL RESULT,READY TO JIRA,TEST TYPE,EVIDENCE
+TC-001,[High] [Positive] Lưu cấu hình bộ lọc,1. Mở cấu hình và nhấn Save,Cấu hình được lưu,Giao diện báo thành công nhưng tải lại trang không có cấu hình,Yes,Functional,https://drive.google.com/example
+TC-002,[Low] Hiển thị danh sách,1. Mở danh sách,Danh sách hiển thị,Danh sách hiển thị đúng,No,Functional,

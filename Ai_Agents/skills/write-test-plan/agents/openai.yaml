@@ -1,0 +1,4 @@
+interface:
+  display_name: "Viết test plan"
+  short_description: "Lập test plan từ Jira, Wiki và tài liệu QA"
+  default_prompt: "Dùng $write-test-plan để đọc task và tài liệu tôi cung cấp, rồi viết test plan tiếng Việt có đánh dấu Need Confirm."

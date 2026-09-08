@@ -1041,7 +1041,7 @@ testing.cl.posts_2_solr_tt_posts
 
    {
     "id_keyword": 32700,
-    "keyword": "Gai dep",
+    "keyword": "Dam Vinh Hung",
     "id_platform": 9,
     "id_process": 2955,
     "is_critical": 1,
@@ -1049,7 +1049,7 @@ testing.cl.posts_2_solr_tt_posts
     "crawling_type": "crisis_tracking",
     "source": "graph",
     "is_first_crawl": 1,
-    "last_data_date": "2026-03-10T06:29:00.000Z",
+    "last_data_date": "2025-07-10T06:29:00.000Z",
     "id_last_crawling": 97217,
     "tag_id": null,
     "country": "VN"
@@ -1225,6 +1225,11 @@ ynm-cl-tt-crisis-images-kw-mobi-api-service (download img svc)
 
 ynm-cl-tt-crisis-keyword-by-mob-api-service
 ynm-cl-tt-critical-keyword-by-mob-api-service
+
+
+
+ynm-cl-tt-crisis-keyword-by-mob-api-srv
+ynm-cl-tt-criti-keyword-by-mob-api-srv
 
 + data-pusher
 ynm-cl-data-pusher-mention-service

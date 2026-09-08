@@ -1,0 +1,11 @@
+{
+  "defaults": {
+    "environment": "testing"
+  },
+  "rows": {
+    "2": {
+      "actual": "Log chỉ ghi docs=0 nên QC không xác định được nguyên nhân job bỏ qua Solr action",
+      "severity": "High"
+    }
+  }
+}

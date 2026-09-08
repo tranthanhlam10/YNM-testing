@@ -8,8 +8,8 @@ const ENVIRONMENTS = {
   staging: { method: 'https', domain: 'rabbitmq-staging.younetmedia.com',    userName: 'lamtt', password: 'vYoWn4KCmDYpvuFiqovWbF' },
 };
 
-const TARGET_QUEUE = "app.eci.sync_title_miss";
-const BATCH_SIZE    = 500;
+const TARGET_QUEUE = "eca_shopee_product_item_unify_crawling";
+const BATCH_SIZE    = 200;
 const CONCURRENCY   = 5;
 
 // Dừng khi không tìm được message mới sau N batch LIÊN TIẾP (tính trên tất cả workers)

@@ -1,0 +1,36 @@
+6849
+6850
+
+
+
+// Full quyền
+Lam_Test_Full_Crisis_Content_Monitoring@younetgroup.com
+Lam@12345
+
+
+// Quyền PIC
+Lam_Test_PIC_Crisis_Content_Monitoring@younetgroup.com
+Lam@12345
+
+
+// Không có quyền
+Lam_Test_No_Crisis_Content_Monitoring@younetgroup.com
+Lam@12345
+
+
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOjY4NjMsImlkIjo2ODYzLCJ1c2VyIjp7ImlkIjo2ODYzLCJlbWFpbCI6IkxhbV9UZXN0X05vX0NyaXNpc19Db250ZW50X01vbml0b3JpbmdAeW91bmV0Z3JvdXAuY29tIiwicGhvbmUiOiIwMTIzNDU2Nzg5IiwiZnVsbG5hbWUiOiJMYW1fVGVzdF9Ob19DcmlzaXNfQ29udGVudF9Nb25pdG9yaW5nQHlvdW5ldGdyb3VwLmNvbSJ9LCJpYXQiOjE3ODU5MTYxMjUsImV4cCI6MTc4NjUyMDkyNSwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNjg2MyIsImp0aSI6ImQ2ZmNjZWFhLTg5ZDUtNDE1My1hOTFiLTFkMTVmNzc5NzY2YiJ9.2EzugqjOpl4XgaNr-F-r8O-uJdM73_BBG1LNmgeSMhY
+
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJ1c2VySWQiOjY4NjIsImlkIjo2ODYyLCJ1c2VyIjp7ImlkIjo2ODYyLCJlbWFpbCI6IkxhbV9UZXN0X1BJQ19DcmlzaXNfQ29udGVudF9Nb25pdG9yaW5nQHlvdW5ldGdyb3VwLmNvbSIsInBob25lIjoiMDEyMzQ1Njc4OSIsImZ1bGxuYW1lIjoiTGFtX1Rlc3RfUElDX0NyaXNpc19Db250ZW50X01vbml0b3JpbmdAeW91bmV0Z3JvdXAuY29tIn0sImlhdCI6MTc4NTkxNDE5NiwiZXhwIjoxNzg2NTE4OTk2LCJhdWQiOiJodHRwczovL3lvdXJkb21haW4uY29tIiwiaXNzIjoiZmVhdGhlcnMiLCJzdWIiOiI2ODYyIiwianRpIjoiZWQ0MDRkZTYtMTEwYi00OWExLWI2NzEtZDZiODk5NjBhZTNlIn0.Vvk3Z9xAESlhl1V59XV59HKRyuHpfIecVk1ziNlLI_I
+
+
+
+git commit -m "$(cat <<'EOF'
+feat(ynm-qc-jira-bugs): hỗ trợ log bug từ chat và exploratory không cần test case
+Chuẩn hóa một template/label taxonomy, thêm input tối thiểu cho tester, default selection ready.
+EOF
+)"

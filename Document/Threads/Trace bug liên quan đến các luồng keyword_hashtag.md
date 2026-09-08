@@ -458,4 +458,4 @@ ThreadsKeyword*
 
 
 
-high_priority_detail_url_info|staging.cl.news.article_urls|auto_parser
+high_priority_detail_url_info|cl.news.article_urls|auto_parser

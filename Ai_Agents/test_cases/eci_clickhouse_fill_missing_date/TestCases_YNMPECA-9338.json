@@ -1,0 +1,650 @@
+[
+  {
+    "TEST CASE ID": "TC_PIPE_001",
+    "MODULE/FEATURE": "Pipeline - Duyệt PID",
+    "TEST NAME": "[High] [Positive] Chỉ lấy các PI trên Solr thỏa đúng source và shard được truyền vào",
+    "PRE-CONDITION": "Solr `product_items` có đúng 3 PI Shopee trong shard test; ClickHouse có timeline tương ứng. Ví dụ PI hợp lệ=`shopee_fill_001`, PI khác source=`tiki_fill_001`, PI khác shard=`shopee_fill_002`.",
+    "TEST STEPS": "1. Chạy dry-run với filter `source_id:shopee.vn`, shard=`shard1`.\n2. Kiểm tra danh sách PID trong log.\n3. Đối chiếu với Solr query cùng filter.",
+    "TEST DATA": "{\"collection\":\"product_items\",\"filter\":\"source_id:shopee.vn\",\"shard\":\"shard1\",\"expected_pid\":[\"shopee_fill_001\"]}",
+    "EXPECTED RESULT": "- Chỉ `shopee_fill_001` được đưa vào pipeline.\n- Không lấy PI khác source hoặc khác shard.\n- Log thể hiện filter, shard và PID count chính xác.\n- Dry-run không ghi dữ liệu xuống ClickHouse."
+  },
+  {
+    "TEST CASE ID": "TC_PIPE_002",
+    "MODULE/FEATURE": "Pipeline - Duyệt PID",
+    "TEST NAME": "[High] [Edge] Đọc đủ 1.205 PI qua nhiều trang Solr, không bỏ sót hoặc lặp PI tại mốc 1.000",
+    "PRE-CONDITION": "Solr có 1.205 PI thỏa filter, sort `id asc`; mỗi PI có timeline tối thiểu để script đọc được.",
+    "TEST STEPS": "1. Chạy dry-run với filter test.\n2. Theo dõi từng page/cursorMark.\n3. Export danh sách PID script đã xử lý.\n4. So sánh với Solr.",
+    "TEST DATA": "{\"rows_per_page\":1000,\"solr_match_count\":1205,\"sort\":\"id asc\",\"allow_write_source\":0}",
+    "EXPECTED RESULT": "- Script đọc đủ 1.205 PID qua 2 page, không dừng ở 1.000.\n- Không trùng hoặc bỏ PID tại boundary page.\n- CursorMark tiến tới trạng thái kết thúc, không loop vô hạn.\n- Tổng processed + skipped = 1.205."
+  },
+  {
+    "TEST CASE ID": "TC_PIPE_003",
+    "MODULE/FEATURE": "Pipeline - Đọc Timeline",
+    "TEST NAME": "[High] [Positive] Đọc đủ toàn bộ lịch sử ClickHouse của từng PI trong một batch",
+    "PRE-CONDITION": "Ba PI test có lần lượt 2, 5 và 20 record trong khoảng mở rộng trước/sau From-To.",
+    "TEST STEPS": "1. Query baseline trực tiếp ClickHouse.\n2. Chạy dry-run cho 3 PID.\n3. Kiểm tra count và min/max `crawled_date` trong log/output.\n4. So sánh từng PID.",
+    "TEST DATA": "{\"product_item_ids\":[\"pi_pipe_2rows\",\"pi_pipe_5rows\",\"pi_pipe_20rows\"],\"from_date\":\"20260201\",\"to_date\":\"20260221\",\"baseline_counts\":[2,5,20]}",
+    "EXPECTED RESULT": "- Timeline của từng PI khớp baseline về count, timestamp và sold.\n- Không trộn record giữa các PI.\n- Script đọc được record cận trái trước From và cận phải cần thiết sau khoảng thiếu theo contract."
+  },
+  {
+    "TEST CASE ID": "TC_PIPE_004",
+    "MODULE/FEATURE": "Pipeline - Đọc Timeline",
+    "TEST NAME": "[High] [Edge] Sắp xếp lịch sử theo crawled_date trước khi xác định ngày cần rải",
+    "PRE-CONDITION": "ClickHouse trả/seed record cùng PI theo thứ tự vật lý 10/02, 01/02, 05/02; timestamps khác nhau rõ ràng.",
+    "TEST STEPS": "1. Query raw timeline không ép sort để ghi nhận input.\n2. Chạy fill.\n3. Query output sort tăng dần theo `crawled_date`.\n4. Kiểm tra cận và chain.",
+    "TEST DATA": "{\"product_item_id\":\"pi_unsorted_001\",\"records\":[{\"date\":\"2026-02-10\",\"total_sold\":120},{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-05\",\"total_sold\":110}]}",
+    "EXPECTED RESULT": "- Logic sắp xếp theo `crawled_date`, không dựa vào thứ tự đọc vật lý.\n- Cận trái/phải được chọn đúng theo timeline.\n- Output và chain tăng dần theo thời gian, không tạo delta từ 10/02 quay về 01/02."
+  },
+  {
+    "TEST CASE ID": "TC_PIPE_005",
+    "MODULE/FEATURE": "Pipeline - Isolation",
+    "TEST NAME": "[High] [Negative] Không dùng record của PI khác làm điểm dữ liệu trước hoặc sau khoảng cần rải",
+    "PRE-CONDITION": "Hai PI có record xen kẽ timestamp; PI-A thiếu cận phải, PI-B có đủ hai cận.",
+    "TEST STEPS": "1. Chạy script cho cả PI-A và PI-B trong cùng batch.\n2. Kiểm tra eligibility và output từng PI.\n3. Query record fill theo `product_item_id`.",
+    "TEST DATA": "{\"pi_a\":[{\"date\":\"2026-02-01\",\"total_sold\":100}],\"pi_b\":[{\"date\":\"2026-02-01\",\"total_sold\":50},{\"date\":\"2026-02-10\",\"total_sold\":70}]}",
+    "EXPECTED RESULT": "- PI-A không fill vì chỉ có một điểm/cận phải không tồn tại.\n- PI-B được đánh giá độc lập theo các rule còn lại.\n- Không có record PI-A mang sold hoặc timestamp suy ra từ PI-B."
+  },
+  {
+    "TEST CASE ID": "TC_PIPE_006",
+    "MODULE/FEATURE": "Pipeline - Source/Destination",
+    "TEST NAME": "[High] [Positive] Chỉ đọc và ghi vào đúng bảng ClickHouse được truyền trong cấu hình",
+    "PRE-CONDITION": "Dataset `eci_testing` có source/destination test riêng; production table không nằm trong quyền ghi của QA.",
+    "TEST STEPS": "1. Chạy script với `tableId` và `destination_source` test.\n2. Query source/destination sau chạy.\n3. Kiểm tra table khác cùng database.",
+    "TEST DATA": "{\"datasetId\":\"eci_testing\",\"tableId\":\"product_item_histories_distributed\",\"destination_source\":\"product_item_histories_distributed\",\"product_item_id\":\"pi_pipe_dest_001\"}",
+    "EXPECTED RESULT": "- Script đọc/ghi đúng table được truyền.\n- Record fill chỉ xuất hiện ở destination test.\n- Không có write ngoài table/dataset chỉ định.\n- Log nêu rõ source và destination."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_001",
+    "MODULE/FEATURE": "Eligibility - Số điểm dữ liệu",
+    "TEST NAME": "[High] [Negative] Không tạo record rải khi PI không có dữ liệu lịch sử",
+    "PRE-CONDITION": "Solr có PID nhưng ClickHouse không có record trong toàn timeline cần đọc.",
+    "TEST STEPS": "1. Chạy script cho PID.\n2. Kiểm tra log eligibility.\n3. Query record `FILL_MISSING`.",
+    "TEST DATA": "{\"product_item_id\":\"pi_zero_point\",\"from_date\":\"20260201\",\"to_date\":\"20260221\",\"records\":[]}",
+    "EXPECTED RESULT": "- PI bị skip an toàn.\n- Không insert record `FILL_MISSING`.\n- Log reason thể hiện không có timeline/không đủ 2 điểm.\n- Job không crash hoặc chặn PI khác trong batch."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_002",
+    "MODULE/FEATURE": "Eligibility - Số điểm dữ liệu",
+    "TEST NAME": "[High] [Negative] Không tạo record rải khi PI chỉ có một điểm dữ liệu",
+    "PRE-CONDITION": "PI chỉ có một observed record ngày 13/02/2026.",
+    "TEST STEPS": "1. Chạy script từ 01/02 đến 16/02.\n2. Kiểm tra planned insert.\n3. Query ClickHouse sau chạy.",
+    "TEST DATA": "{\"product_item_id\":\"pi_one_point\",\"from_date\":\"20260201\",\"to_date\":\"20260216\",\"records\":[{\"date\":\"2026-02-13\",\"total_sold\":101}]}",
+    "EXPECTED RESULT": "- Không fill vì vi phạm FR-01.\n- Observed record 13/02 giữ nguyên.\n- `inserted_fill_count=0`.\n- Log nêu lý do insufficient data points."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_003",
+    "MODULE/FEATURE": "Eligibility - Số điểm dữ liệu",
+    "TEST NAME": "[High] [Positive] Bắt đầu xét rải khi PI có đúng hai điểm dữ liệu hợp lệ",
+    "PRE-CONDITION": "PI có đúng hai observed record, các rule range/future/weekend/growth đều thỏa.",
+    "TEST STEPS": "1. Chạy dry-run và xem eligibility.\n2. Chạy write.\n3. Query các ngày fill và hai cận.",
+    "TEST DATA": "{\"product_item_id\":\"pi_two_points\",\"from_date\":\"20260201\",\"to_date\":\"20260216\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-10\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- PI vượt boundary FR-01 và được xét tiếp các rule khác.\n- Nếu tất cả rule còn lại pass, fill đúng 02/02–09/02.\n- Hai observed record không bị thay đổi."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_004",
+    "MODULE/FEATURE": "Eligibility - Date Range",
+    "TEST NAME": "[High] [Negative] Không rải dữ liệu khi From và To chỉ nằm trong một tuần",
+    "PRE-CONDITION": "PI có hai observed record và sold tăng >1 nhưng range chỉ 01/02–07/02/2026.",
+    "TEST STEPS": "1. Chạy script với range một tuần.\n2. Kiểm tra log skip.\n3. Query ClickHouse.",
+    "TEST DATA": "{\"product_item_id\":\"pi_one_week\",\"from_date\":\"20260201\",\"to_date\":\"20260207\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-07\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- Không fill vì vi phạm FR-02.\n- Không có write query/record mới.\n- Log phân biệt rõ skip do range, không ghi nhầm do sold."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_005",
+    "MODULE/FEATURE": "Eligibility - Date Range",
+    "TEST NAME": "[High] [Edge] Xác định đúng điều kiện hai tuần khi From là Chủ Nhật và To là Thứ Hai kế tiếp",
+    "PRE-CONDITION": "Timezone test đã cố định; PI có đủ hai cận và sold tăng >1.",
+    "TEST STEPS": "1. Chạy range 01/02/2026 (Chủ Nhật) đến 02/02/2026 (Thứ Hai).\n2. Kiểm tra cách script tính week.\n3. So sánh AC đã chốt.",
+    "TEST DATA": "{\"product_item_id\":\"pi_cross_week_2days\",\"from_date\":\"20260201\",\"to_date\":\"20260202\",\"timezone\":\"Asia/Ho_Chi_Minh\"}",
+    "EXPECTED RESULT": "- Hệ thống xử lý nhất quán theo định nghĩa week chính thức.\n- Không phụ thuộc locale của server.\n- (Need Confirm) BA/Dev cần chốt `đi qua tối thiểu 2 tuần` có chấp nhận range chỉ 2 ngày qua boundary hay không; expected cuối theo rule được chốt."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_006",
+    "MODULE/FEATURE": "Eligibility - Dữ liệu tuần sau",
+    "TEST NAME": "[High] [Negative] Không rải dữ liệu cho tuần cuối nếu chưa có record của tuần kế tiếp",
+    "PRE-CONDITION": "PI có dữ liệu tuần hiện tại nhưng không có observed record ở tuần kế tiếp.",
+    "TEST STEPS": "1. Chạy fill cho range bao gồm tuần cuối.\n2. Kiểm tra planned dates.\n3. Query output của tuần cuối.",
+    "TEST DATA": "{\"product_item_id\":\"pi_no_future_week\",\"from_date\":\"20260201\",\"to_date\":\"20260216\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-04\",\"total_sold\":110}]}",
+    "EXPECTED RESULT": "- Không fill phần tuần chưa có future evidence theo FR-03.\n- Không kéo dài cumulative sold bằng cách đoán sau record cuối.\n- Log nêu rõ tuần/range bị skip vì thiếu dữ liệu tuần sau."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_007",
+    "MODULE/FEATURE": "Eligibility - Dữ liệu tuần sau",
+    "TEST NAME": "[High] [Positive] Rải các ngày thiếu khi đã có record làm mốc ở tuần kế tiếp",
+    "PRE-CONDITION": "PI có observed record 01/02 và 10/02; sold tăng >1; không có observed record cuối tuần bị chặn.",
+    "TEST STEPS": "1. Chạy script 01/02–16/02.\n2. Kiểm tra eligibility.\n3. Query danh sách ngày fill.",
+    "TEST DATA": "{\"product_item_id\":\"pi_future_week\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-10\",\"total_sold\":120}],\"expected_fill_dates\":[\"2026-02-02\",\"2026-02-03\",\"2026-02-04\",\"2026-02-05\",\"2026-02-06\",\"2026-02-07\",\"2026-02-08\",\"2026-02-09\"]}",
+    "EXPECTED RESULT": "- Fill đúng 8 ngày 02/02–09/02 theo ví dụ Wiki.\n- Không fill hai ngày cận.\n- Mọi record sinh có `crawler_type=FILL_MISSING`.\n- Chain sau fill liên tục."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_008",
+    "MODULE/FEATURE": "Eligibility - Dữ liệu tuần sau",
+    "TEST NAME": "[High] [Edge] Xác định đúng record nào của tuần kế tiếp đủ điều kiện làm mốc rải",
+    "PRE-CONDITION": "Có ba PI giống nhau, future record lần lượt rơi vào Thứ Hai, Thứ Tư và Chủ Nhật tuần sau.",
+    "TEST STEPS": "1. Chạy cùng From-To cho ba PI.\n2. So sánh eligibility.\n3. Đối chiếu định nghĩa future data đã chốt.",
+    "TEST DATA": "{\"future_dates\":[\"2026-02-09\",\"2026-02-11\",\"2026-02-15\"],\"left_date\":\"2026-02-01\",\"sold\":[100,120]}",
+    "EXPECTED RESULT": "- Kết quả nhất quán theo cùng một định nghĩa future-week data.\n- (Need Confirm) BA/Dev xác nhận chỉ cần bất kỳ observed record tuần sau hay record phải thuộc nhóm ngày cuối tuần.\n- Không dùng record `FILL_MISSING` cũ làm future observed evidence nếu contract không cho phép."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_009",
+    "MODULE/FEATURE": "Eligibility - Ngày cuối tuần ECI",
+    "TEST NAME": "[High] [Negative] Không rải thêm cho tuần đã có dữ liệu vào Thứ Năm",
+    "PRE-CONDITION": "PI có observed record Thứ Năm trong tuần cần xét và đủ các điều kiện khác.",
+    "TEST STEPS": "1. Chạy fill cho PI.\n2. Kiểm tra planned dates của tuần chứa Thứ Năm.\n3. Query output.",
+    "TEST DATA": "{\"product_item_id\":\"pi_weekend_thu\",\"week_observed_date\":\"2026-02-12\",\"weekday\":\"Thursday\",\"total_sold\":120}",
+    "EXPECTED RESULT": "- Không sinh record fill cho tuần đã có dữ liệu Thứ Năm theo FR-05.\n- Record observed giữ nguyên.\n- Log reason ghi nhận week-end data exists hoặc tương đương."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_010",
+    "MODULE/FEATURE": "Eligibility - Ngày cuối tuần ECI",
+    "TEST NAME": "[High] [Negative] Không rải thêm cho tuần đã có dữ liệu vào Thứ Sáu",
+    "PRE-CONDITION": "PI có observed record Thứ Sáu 13/02/2026 và đủ các điều kiện khác.",
+    "TEST STEPS": "1. Chạy script 01/02–16/02.\n2. Kiểm tra tuần chứa 13/02.\n3. Query record fill.",
+    "TEST DATA": "{\"product_item_id\":\"pi_weekend_fri\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-13\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- Không fill tuần đã có record Thứ Sáu theo ví dụ Wiki.\n- Không nhầm record 13/02 thành cận phải để fill toàn bộ khoảng 02/02–12/02 nếu FR-05 áp dụng.\n- Need Confirm phạm vi tuần bị skip khi gap đi qua nhiều tuần."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_011",
+    "MODULE/FEATURE": "Eligibility - Ngày cuối tuần ECI",
+    "TEST NAME": "[High] [Negative] Không rải thêm cho tuần đã có dữ liệu vào Thứ Bảy",
+    "PRE-CONDITION": "PI có observed record Thứ Bảy trong tuần cần xét và future data đầy đủ.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra log rule FR-05.\n3. Query output trong tuần.",
+    "TEST DATA": "{\"product_item_id\":\"pi_weekend_sat\",\"week_observed_date\":\"2026-02-14\",\"weekday\":\"Saturday\",\"total_sold\":120}",
+    "EXPECTED RESULT": "- Không tạo record `FILL_MISSING` trong tuần có observed record Thứ Bảy.\n- Không ảnh hưởng việc xét các tuần khác của cùng PI."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_012",
+    "MODULE/FEATURE": "Eligibility - Ngày cuối tuần ECI",
+    "TEST NAME": "[High] [Edge] Không xem record Thứ Tư là dữ liệu cuối tuần để chặn rải",
+    "PRE-CONDITION": "PI có observed record Thứ Tư; các rule khác đều thỏa và còn missing dates hợp lệ.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra FR-05.\n3. Query missing dates còn lại.",
+    "TEST DATA": "{\"product_item_id\":\"pi_weekday_wed\",\"week_observed_date\":\"2026-02-11\",\"weekday\":\"Wednesday\",\"left_total_sold\":100,\"right_total_sold\":120}",
+    "EXPECTED RESULT": "- Thứ Tư không tự kích hoạt rule không-fill của FR-05.\n- PI tiếp tục được xét bằng các điều kiện còn lại.\n- Không hard-code sai nhóm ngày."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_013",
+    "MODULE/FEATURE": "Eligibility - Ngày cuối tuần ECI",
+    "TEST NAME": "[High] [Edge] Không xem record Chủ Nhật là dữ liệu cuối tuần theo định nghĩa riêng của ECI",
+    "PRE-CONDITION": "PI có observed record Chủ Nhật nhưng không có record Thứ Năm/Sáu/Bảy; các rule khác thỏa.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra reason eligibility.\n3. So sánh với case Thứ Bảy.",
+    "TEST DATA": "{\"product_item_id\":\"pi_weekday_sun\",\"week_observed_date\":\"2026-02-15\",\"weekday\":\"Sunday\"}",
+    "EXPECTED RESULT": "- Không dùng định nghĩa weekend thông thường Thứ Bảy/Chủ Nhật để thay FR-05.\n- Chủ Nhật được xử lý theo rule chính thức của ECI.\n- Need Confirm nếu Dev định nghĩa week khiến Chủ Nhật thuộc tuần khác."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_014",
+    "MODULE/FEATURE": "Eligibility - Sold Growth",
+    "TEST NAME": "[High] [Negative] Không rải dữ liệu khi tổng sold giữa hai điểm không tăng",
+    "PRE-CONDITION": "Hai observed record hợp lệ có cùng total_sold; các điều kiện khác đều thỏa.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra delta giữa hai cận.\n3. Query output.",
+    "TEST DATA": "{\"product_item_id\":\"pi_delta_zero\",\"left\":{\"date\":\"2026-02-01\",\"total_sold\":100},\"right\":{\"date\":\"2026-02-10\",\"total_sold\":100},\"delta\":0}",
+    "EXPECTED RESULT": "- Không fill vì không có tăng trưởng.\n- Không sinh daily sold dương.\n- Log ghi nhận delta=0/insufficient growth."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_015",
+    "MODULE/FEATURE": "Eligibility - Sold Growth",
+    "TEST NAME": "[High] [Edge] Không rải dữ liệu khi tổng sold giữa hai điểm chỉ tăng đúng 1",
+    "PRE-CONDITION": "Hai observed record hợp lệ có total_sold 100 và 101; các điều kiện khác đều thỏa.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra phép so sánh growth.\n3. Query output và log.",
+    "TEST DATA": "{\"product_item_id\":\"pi_delta_one\",\"left_total_sold\":100,\"right_total_sold\":101,\"delta\":1}",
+    "EXPECTED RESULT": "- Theo câu chữ Wiki `số bán > 1`, delta=1 không đủ điều kiện và không fill.\n- (Need Confirm) BA xác nhận `sold > 1` là delta giữa hai điểm, không phải sold tuyệt đối của cận phải.\n- Sau confirm, code và test oracle dùng cùng phép so sánh."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_016",
+    "MODULE/FEATURE": "Eligibility - Sold Growth",
+    "TEST NAME": "[High] [Edge] Cho phép rải dữ liệu khi tổng sold giữa hai điểm tăng đúng 2",
+    "PRE-CONDITION": "Hai observed record hợp lệ có total_sold 100 và 102; mọi rule khác đều pass.",
+    "TEST STEPS": "1. Chạy dry-run.\n2. Kiểm tra eligibility.\n3. Chạy write và query output.",
+    "TEST DATA": "{\"product_item_id\":\"pi_delta_two\",\"left_total_sold\":100,\"right_total_sold\":102,\"delta\":2}",
+    "EXPECTED RESULT": "- Nếu `>1` là delta, PI đủ điều kiện fill.\n- Record fill được sinh đúng ngày và không làm tổng delta vượt 2.\n- (Need Confirm) Expected từng ngày phụ thuộc công thức phân bổ/rounding."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_017",
+    "MODULE/FEATURE": "Eligibility - Sold Growth",
+    "TEST NAME": "[High] [Negative] Không tạo sold âm khi điểm dữ liệu sau có total_sold thấp hơn điểm trước",
+    "PRE-CONDITION": "Clean timeline còn hai observed record có total_sold giảm từ 120 xuống 100.",
+    "TEST STEPS": "1. Chạy Remove Buff/eligibility.\n2. Chạy fill.\n3. Query record mới và log.",
+    "TEST DATA": "{\"product_item_id\":\"pi_delta_negative\",\"left_total_sold\":120,\"right_total_sold\":100,\"delta\":-20}",
+    "EXPECTED RESULT": "- Không tạo chuỗi `FILL_MISSING` có delta âm.\n- PI bị skip hoặc chuyển sang luồng abnormal theo contract.\n- Job không crash; log đủ PID, hai cận và reason.\n- Need Confirm owner/behavior exact với Detect Invalid."
+  },
+  {
+    "TEST CASE ID": "TC_ELIG_018",
+    "MODULE/FEATURE": "Eligibility - Kết hợp điều kiện",
+    "TEST NAME": "[High] [Positive] Rải đúng các ngày thiếu khi PI thỏa toàn bộ sáu điều kiện nghiệp vụ",
+    "PRE-CONDITION": "PI có hai observed record sạch, range qua nhiều tuần, có future data, không có record Thứ Năm/Sáu/Bảy trong tuần cần fill và delta >1.",
+    "TEST STEPS": "1. Lập bảng timeline expected.\n2. Chạy dry-run.\n3. Chạy write.\n4. Query output và chain.\n5. Rerun một lần.",
+    "TEST DATA": "{\"product_item_id\":\"pi_happy_001\",\"from_date\":\"20260201\",\"to_date\":\"20260216\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-10\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- PI được đánh giá eligible.\n- Fill đúng 02/02–09/02.\n- Record mới đúng metadata và formula đã chốt.\n- Observed data giữ nguyên, chain liên tục.\n- Rerun không sinh duplicate."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_001",
+    "MODULE/FEATURE": "Date Range - Cận trái",
+    "TEST NAME": "[High] [Positive] Dùng record hợp lệ gần nhất trước From làm điểm bắt đầu rải",
+    "PRE-CONDITION": "From=01/02/2026; record gần nhất trước From là 31/01/2026; có cận phải hợp lệ và các rule khác pass.",
+    "TEST STEPS": "1. Query timeline gồm ngày trước From.\n2. Chạy fill.\n3. Kiểm tra ngày insert đầu tiên.",
+    "TEST DATA": "{\"product_item_id\":\"pi_left_before_from\",\"from_date\":\"20260201\",\"to_date\":\"20260216\",\"records\":[{\"date\":\"2026-01-31\",\"total_sold\":100},{\"date\":\"2026-02-10\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- Chọn 31/01 làm cận trái.\n- Có thể fill bắt đầu từ 01/02 theo ví dụ Wiki.\n- Không tạo record trước From.\n- Không thay đổi record 31/01."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_002",
+    "MODULE/FEATURE": "Date Range - Cận trái",
+    "TEST NAME": "[High] [Positive] Giữ nguyên record đúng ngày From và bắt đầu rải từ ngày kế tiếp",
+    "PRE-CONDITION": "Có observed record đúng From và cận phải hợp lệ.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query ngày From và ngày kế tiếp.\n3. Kiểm tra planned range.",
+    "TEST DATA": "{\"product_item_id\":\"pi_left_on_from\",\"from_date\":\"20260201\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-10\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- Ngày 01/02 giữ observed record và không bị overwrite.\n- Ngày fill đầu tiên là 02/02.\n- Không có hai record cùng natural key ngày From."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_003",
+    "MODULE/FEATURE": "Date Range - Cận trái",
+    "TEST NAME": "[High] [Positive] Chỉ rải từ ngày sau record đầu tiên xuất hiện giữa tuần đầu",
+    "PRE-CONDITION": "From=01/02; observed record đầu tiên trong tuần là 03/02; có cận phải và rule khác pass.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query 01/02–04/02.\n3. Kiểm tra ngày insert đầu tiên.",
+    "TEST DATA": "{\"product_item_id\":\"pi_left_midweek\",\"from_date\":\"20260201\",\"records\":[{\"date\":\"2026-02-03\",\"total_sold\":100},{\"date\":\"2026-02-10\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- Không fill 01/02–02/02 vì chưa có cận trái.\n- Bắt đầu fill từ 04/02 theo ví dụ Wiki.\n- Record 03/02 giữ nguyên."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_004",
+    "MODULE/FEATURE": "Date Range - Cận trái",
+    "TEST NAME": "[High] [Negative] Không rải các ngày đầu khoảng thời gian khi chưa có record làm mốc trước đó",
+    "PRE-CONDITION": "Không có record trước From; observed record đầu tiên xuất hiện ở tuần thứ hai.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra planned dates trước observed record đầu tiên.\n3. Query output.",
+    "TEST DATA": "{\"product_item_id\":\"pi_no_left_bound\",\"from_date\":\"20260201\",\"to_date\":\"20260221\",\"records\":[{\"date\":\"2026-02-10\",\"total_sold\":100},{\"date\":\"2026-02-18\",\"total_sold\":120}]}",
+    "EXPECTED RESULT": "- Không sinh dữ liệu 01/02–09/02 vì không có cận trái đáng tin cậy.\n- Chỉ xét khoảng sau 10/02 nếu đủ rule.\n- Không giả lập cumulative sold trước record đầu tiên."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_005",
+    "MODULE/FEATURE": "Date Range - Cận phải",
+    "TEST NAME": "[High] [Positive] Giữ nguyên record làm mốc phía sau và chỉ rải đến ngày ngay trước record đó",
+    "PRE-CONDITION": "Observed cận phải ngày 10/02 tồn tại với total_sold=120.",
+    "TEST STEPS": "1. Snapshot record 10/02.\n2. Chạy fill.\n3. Query ngày 09/02 và 10/02.\n4. Compare snapshot.",
+    "TEST DATA": "{\"product_item_id\":\"pi_right_bound\",\"left_date\":\"2026-02-01\",\"right_date\":\"2026-02-10\",\"expected_last_fill_date\":\"2026-02-09\"}",
+    "EXPECTED RESULT": "- Record fill cuối là 09/02.\n- 10/02 vẫn là observed record, không đổi business fields.\n- Chain của cận phải liên kết đúng với record trước theo cơ chế Dev chốt."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_006",
+    "MODULE/FEATURE": "Date Range - Gap dài",
+    "TEST NAME": "[High] [Positive] Tạo đủ 16 record cho 16 ngày thiếu liên tiếp qua nhiều tuần",
+    "PRE-CONDITION": "Observed cận trái 01/02 và cận phải 18/02; các rule đều pass.",
+    "TEST STEPS": "1. Chạy fill 01/02–21/02.\n2. Query ngày fill.\n3. Đếm và so sánh expected.\n4. Kiểm tra chain qua boundary tuần.",
+    "TEST DATA": "{\"product_item_id\":\"pi_gap_16\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-18\",\"total_sold\":150}],\"expected_range\":\"2026-02-02..2026-02-17\",\"expected_count\":16}",
+    "EXPECTED RESULT": "- Insert đúng 16 ngày liên tục 02/02–17/02 theo ví dụ Wiki.\n- Không bỏ/trùng ngày khi qua tuần.\n- Không insert hai cận.\n- Giá trị từng ngày theo formula đã chốt."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_007",
+    "MODULE/FEATURE": "Date Range - Nhiều gap",
+    "TEST NAME": "[High] [Edge] Rải độc lập từng khoảng ngày thiếu khi một PI có hai khoảng bị gián đoạn",
+    "PRE-CONDITION": "PI có observed records tạo hai gap tách biệt; tất cả cận sạch.",
+    "TEST STEPS": "1. Vẽ timeline và expected cho từng gap.\n2. Chạy fill một lần.\n3. Query output theo ngày.\n4. Kiểm tra không phân bổ cross-gap.",
+    "TEST DATA": "{\"product_item_id\":\"pi_two_gaps\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100},{\"date\":\"2026-02-05\",\"total_sold\":110},{\"date\":\"2026-02-06\",\"total_sold\":111},{\"date\":\"2026-02-10\",\"total_sold\":125}],\"gaps\":[\"02/02-04/02\",\"07/02-09/02\"]}",
+    "EXPECTED RESULT": "- Hai gap được xét độc lập.\n- Không dùng delta của gap 1 để rải gap 2 hoặc ngược lại.\n- Ngày 05/02 và 06/02 giữ observed records.\n- Need Confirm FR-05/FR-03 nếu các gap thuộc tuần bị chặn."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_008",
+    "MODULE/FEATURE": "Date Range - Biên tháng",
+    "TEST NAME": "[High] [Edge] Tạo đúng các ngày thiếu khi khoảng rải đi qua ngày cuối tháng",
+    "PRE-CONDITION": "Cận trái 27/02/2026, cận phải 03/03/2026; đủ eligibility.",
+    "TEST STEPS": "1. Chạy fill qua biên tháng.\n2. Query theo date và partition.\n3. Kiểm tra count/ngày/chain.",
+    "TEST DATA": "{\"product_item_id\":\"pi_cross_month\",\"left\":{\"date\":\"2026-02-27\",\"total_sold\":100},\"right\":{\"date\":\"2026-03-03\",\"total_sold\":112},\"expected_fill_dates\":[\"2026-02-28\",\"2026-03-01\",\"2026-03-02\"]}",
+    "EXPECTED RESULT": "- Không mất/trùng ngày tại 28/02–01/03.\n- Record ghi đúng partition/table.\n- Chain xuyên tháng liên tục.\n- Need Confirm nếu FR-02/FR-05 khiến dataset cần cận khác để eligible."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_009",
+    "MODULE/FEATURE": "Date Range - Biên năm",
+    "TEST NAME": "[High] [Edge] Tạo đúng các ngày thiếu khi khoảng rải đi qua 31/12 và 01/01",
+    "PRE-CONDITION": "Cận trái 29/12/2025, cận phải 03/01/2026; eligibility đã được setup đúng.",
+    "TEST STEPS": "1. Chạy fill qua biên năm.\n2. Query output theo date.\n3. Kiểm tra week/year partition và chain.",
+    "TEST DATA": "{\"product_item_id\":\"pi_cross_year\",\"left_total_sold\":200,\"right_total_sold\":220,\"expected_fill_dates\":[\"2025-12-30\",\"2025-12-31\",\"2026-01-01\",\"2026-01-02\"]}",
+    "EXPECTED RESULT": "- Năm của record fill đúng theo calendar date.\n- Không gán sai week-year/shard tại 01/01.\n- Không bỏ hoặc duplicate record biên năm.\n- Need Confirm applicability FR-05 với ngày Thứ Năm/Sáu."
+  },
+  {
+    "TEST CASE ID": "TC_DATE_010",
+    "MODULE/FEATURE": "Date Range - Leap Day/Timezone",
+    "TEST NAME": "[High] [Edge] Xác định đúng ngày 29/02 và ngày dữ liệu khi timestamp nằm sát 00:00",
+    "PRE-CONDITION": "Môi trường có timezone được chốt; dùng năm nhuận 2028 và timestamps sát midnight.",
+    "TEST STEPS": "1. Seed cận 28/02 23:59 và 02/03 00:01 theo timezone business.\n2. Chạy fill.\n3. Query `toDate(crawled_date)` theo timezone.\n4. Kiểm tra ngày 29/02 và 01/03.",
+    "TEST DATA": "{\"product_item_id\":\"pi_leap_timezone\",\"timezone\":\"Asia/Ho_Chi_Minh\",\"left_ts\":\"2028-02-28T23:59:00+07:00\",\"right_ts\":\"2028-03-02T00:01:00+07:00\"}",
+    "EXPECTED RESULT": "- Nhận diện đúng ngày lịch 29/02 trong năm nhuận.\n- Không lệch ngày do UTC conversion.\n- Mỗi missing date chỉ có một record theo timezone contract.\n- (Need Confirm) Timezone chính thức phải được Dev cung cấp."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_001",
+    "MODULE/FEATURE": "Distribution - Một ngày thiếu",
+    "TEST NAME": "[High] [Positive] Tạo đúng một record khi khoảng lịch sử chỉ thiếu một ngày",
+    "PRE-CONDITION": "Dataset được điều chỉnh để các eligibility rules pass; giữa hai cận chỉ có một missing date.",
+    "TEST STEPS": "1. Lấy golden expected từ Dev.\n2. Chạy fill.\n3. Compare từng field record sinh.\n4. Kiểm tra tổng delta.",
+    "TEST DATA": "{\"product_item_id\":\"pi_dist_one_day\",\"left\":{\"date\":\"2026-02-01\",\"total_sold\":100},\"missing_date\":\"2026-02-02\",\"right\":{\"date\":\"2026-02-03\",\"total_sold\":106}}",
+    "EXPECTED RESULT": "- Sinh đúng một record cho missing date.\n- Sold/total_sold/price/gmv khớp golden formula.\n- Tổng delta giữa hai cận được bảo toàn.\n- (Need Confirm) Giá trị cụ thể phụ thuộc công thức Dev."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_002",
+    "MODULE/FEATURE": "Distribution - Delta chia hết",
+    "TEST NAME": "[High] [Positive] Tính đúng sold từng ngày khi chênh lệch sold chia hết cho số bước thời gian",
+    "PRE-CONDITION": "Golden dataset có delta và số bước chia hết theo công thức đã chốt.",
+    "TEST STEPS": "1. Tính expected từng ngày bằng formula chính thức.\n2. Chạy fill.\n3. Compare values và tổng.",
+    "TEST DATA": "{\"product_item_id\":\"pi_dist_even\",\"left_total_sold\":100,\"right_total_sold\":120,\"time_steps\":10,\"delta\":20}",
+    "EXPECTED RESULT": "- Giá trị từng ngày khớp golden expected 100%.\n- Không phát sinh rounding error.\n- Cumulative sold không giảm và kết thúc đúng 120.\n- Need Confirm cách đếm `time_steps` có bao gồm cận phải."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_003",
+    "MODULE/FEATURE": "Distribution - Remainder",
+    "TEST NAME": "[High] [Edge] Phân bổ đúng phần sold dư và cho cùng kết quả ở mọi lần chạy",
+    "PRE-CONDITION": "Golden dataset có delta không chia hết cho số bước; rounding rule đã được Dev xác nhận.",
+    "TEST STEPS": "1. Tính expected remainder.\n2. Chạy fill lần 1.\n3. Compare từng ngày/tổng.\n4. Xóa data test có kiểm soát hoặc dùng PI clone và chạy lại để so deterministic.",
+    "TEST DATA": "{\"product_item_id\":\"pi_dist_remainder\",\"left_total_sold\":100,\"right_total_sold\":110,\"time_steps\":4,\"delta\":10}",
+    "EXPECTED RESULT": "- Remainder được đặt đúng ngày theo rule, không mất/tự sinh sold.\n- Tổng delta cuối bằng 10 theo invariant đã chốt.\n- Hai lần chạy trên input tương đương cho cùng output.\n- (Need Confirm) Quy tắc floor/ceil/phân bổ dư."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_004",
+    "MODULE/FEATURE": "Distribution - Cumulative Sold",
+    "TEST NAME": "[High] [Positive] Đảm bảo total_sold không giảm dần trong chuỗi lịch sử sau khi rải",
+    "PRE-CONDITION": "Dev xác nhận field `total_sold` là cumulative; hai cận sạch có sold tăng.",
+    "TEST STEPS": "1. Chạy fill.\n2. Sort timeline tăng dần.\n3. Dùng window query compare mỗi total_sold với record trước.\n4. Kiểm tra cận phải.",
+    "TEST DATA": "{\"product_item_id\":\"pi_cumulative\",\"left_total_sold\":100,\"right_total_sold\":150,\"missing_days\":8}",
+    "EXPECTED RESULT": "- Mọi record fill có `total_sold >= previous.total_sold`.\n- Không record fill vượt `right.total_sold`.\n- Record cận phải vẫn đúng 150.\n- Tổng delta khớp chênh lệch cận theo contract."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_005",
+    "MODULE/FEATURE": "Distribution - Price/GMV",
+    "TEST NAME": "[High] [Edge] Tính đúng sell_price và GMV cho record rải khi giá thay đổi giữa hai điểm",
+    "PRE-CONDITION": "Hai cận có `sell_price` khác nhau; Dev đã chốt record fill dùng price nào hoặc nội suy ra sao.",
+    "TEST STEPS": "1. Lập golden expected price/gmv.\n2. Chạy fill.\n3. Compare `sell_price`, `delta_sold`, `gmv` từng ngày.\n4. Sum GMV.",
+    "TEST DATA": "{\"product_item_id\":\"pi_price_change\",\"left\":{\"total_sold\":100,\"sell_price\":10000},\"right\":{\"total_sold\":110,\"sell_price\":12000},\"missing_days\":3}",
+    "EXPECTED RESULT": "- Field price và GMV theo đúng mapping/formula chính thức.\n- Không copy ngẫu nhiên từ record buff hoặc PI khác.\n- Không có sai số ngoài precision được chốt.\n- (Need Confirm) Price source và GMV formula cho record fill."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_006",
+    "MODULE/FEATURE": "Distribution - Null Price",
+    "TEST NAME": "[Medium] [Negative] Không crash hoặc sinh giá trị sai khi price hoặc sell_price bị null",
+    "PRE-CONDITION": "Cận hợp lệ về sold nhưng một hoặc hai field price bị null.",
+    "TEST STEPS": "1. Chạy fill.\n2. Kiểm tra output field price/gmv.\n3. Kiểm tra log/error và chain.",
+    "TEST DATA": "{\"product_item_id\":\"pi_null_price\",\"left\":{\"total_sold\":100,\"sell_price\":null},\"right\":{\"total_sold\":110,\"sell_price\":12000}}",
+    "EXPECTED RESULT": "- Script không crash hoặc ghi `NaN/Infinity`.\n- Output null/0/fallback đúng contract.\n- Sold distribution và chain không bị hỏng.\n- (Need Confirm) Expected GMV khi price null."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_007",
+    "MODULE/FEATURE": "Distribution - Giá trị lớn",
+    "TEST NAME": "[Medium] [Edge] Không tràn số hoặc mất độ chính xác khi sold và GMV có giá trị rất lớn",
+    "PRE-CONDITION": "Schema test hỗ trợ giá trị gần giới hạn kiểu dữ liệu production.",
+    "TEST STEPS": "1. Seed cận có total_sold/price lớn.\n2. Chạy fill.\n3. Query type/value output.\n4. Kiểm tra log overflow.",
+    "TEST DATA": "{\"product_item_id\":\"pi_large_number\",\"left_total_sold\":2147483000,\"right_total_sold\":2147483600,\"sell_price\":999999999,\"missing_days\":16}",
+    "EXPECTED RESULT": "- Không overflow, âm hóa hoặc mất precision ngoài schema contract.\n- GMV nằm trong type hợp lệ.\n- Nếu input vượt giới hạn, job reject/skip rõ ràng và không partial write."
+  },
+  {
+    "TEST CASE ID": "TC_DIST_008",
+    "MODULE/FEATURE": "Distribution - Parity",
+    "TEST NAME": "[High] [Positive] Kết quả rải từ ClickHouse phải khớp phương án Solr cũ trên cùng bộ dữ liệu chuẩn",
+    "PRE-CONDITION": "Có snapshot input giống nhau và output script Solr cũ đã được BA/Dev xác nhận đúng.",
+    "TEST STEPS": "1. Chạy/thu baseline cũ.\n2. Chạy script ClickHouse mới trên clone dataset.\n3. Diff theo PID+date+field.\n4. Aggregate diff theo tuần/tháng.",
+    "TEST DATA": "{\"dataset\":\"golden_parity_v1\",\"product_item_ids\":[\"pi_parity_001\",\"pi_parity_002\",\"pi_parity_003\"],\"compare_fields\":[\"date\",\"sold\",\"total_sold\",\"sell_price\",\"gmv\"]}",
+    "EXPECTED RESULT": "- Parity đạt ngưỡng BA/Dev phê duyệt.\n- Mọi diff được phân loại và giải thích.\n- (Need Confirm) Nếu technical implementation phải kế thừa hoàn toàn, kỳ vọng parity 100% ngoại trừ metadata `crawler_type`."
+  },
+  {
+    "TEST CASE ID": "TC_BUFF_001",
+    "MODULE/FEATURE": "Remove Buff",
+    "TEST NAME": "[High] [Positive] Loại dữ liệu buff trước khi xác định điểm dữ liệu và rải các ngày thiếu",
+    "PRE-CONDITION": "Timeline có một record được đánh dấu/nhận diện buff giữa hai observed record sạch; log pipeline bật đầy đủ.",
+    "TEST STEPS": "1. Chạy pipeline.\n2. Kiểm tra thứ tự log Remove Buff và Fill.\n3. Kiểm tra clean timeline được dùng.\n4. Query output.",
+    "TEST DATA": "{\"product_item_id\":\"pi_buff_middle\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100,\"buff\":false},{\"date\":\"2026-02-05\",\"total_sold\":10000,\"buff\":true},{\"date\":\"2026-02-10\",\"total_sold\":120,\"buff\":false}]}",
+    "EXPECTED RESULT": "- Remove Buff chạy trước Fill theo OR-05.\n- Record 05/02 không được dùng làm cận hoặc giá trị phân bổ.\n- Output được tính từ clean timeline 100→120.\n- Log có evidence record buff bị loại."
+  },
+  {
+    "TEST CASE ID": "TC_BUFF_002",
+    "MODULE/FEATURE": "Remove Buff",
+    "TEST NAME": "[High] [Negative] Không dùng record buff làm điểm bắt đầu của khoảng rải",
+    "PRE-CONDITION": "Record gần From nhất là buff; còn một observed record sạch cũ hơn và cận phải sạch.",
+    "TEST STEPS": "1. Chạy Remove Buff.\n2. Kiểm tra cận trái mới.\n3. Chạy fill và compare dates/values.",
+    "TEST DATA": "{\"product_item_id\":\"pi_buff_left\",\"records\":[{\"date\":\"2026-01-31\",\"total_sold\":100,\"buff\":false},{\"date\":\"2026-02-01\",\"total_sold\":9999,\"buff\":true},{\"date\":\"2026-02-10\",\"total_sold\":120,\"buff\":false}]}",
+    "EXPECTED RESULT": "- Không chọn record buff 01/02 làm cận trái.\n- Chọn record sạch 31/01 hoặc skip theo contract nếu nằm ngoài lookback.\n- Record fill không mang sold/metadata từ buff.\n- Need Confirm lookback limit nếu có."
+  },
+  {
+    "TEST CASE ID": "TC_BUFF_003",
+    "MODULE/FEATURE": "Remove Buff",
+    "TEST NAME": "[High] [Negative] Không dùng record buff làm điểm kết thúc của khoảng rải",
+    "PRE-CONDITION": "Cận phải gần nhất là buff; có một record sạch muộn hơn.",
+    "TEST STEPS": "1. Chạy pipeline.\n2. Kiểm tra cận phải sau clean.\n3. Query range fill và tổng delta.",
+    "TEST DATA": "{\"product_item_id\":\"pi_buff_right\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100,\"buff\":false},{\"date\":\"2026-02-10\",\"total_sold\":9999,\"buff\":true},{\"date\":\"2026-02-18\",\"total_sold\":130,\"buff\":false}]}",
+    "EXPECTED RESULT": "- Không dùng 10/02 làm cận phải.\n- Dùng cận sạch 18/02 hoặc skip theo phạm vi rule.\n- Không phân bổ delta 9.899 giả.\n- Output/eligibility được tính lại trên clean timeline."
+  },
+  {
+    "TEST CASE ID": "TC_BUFF_004",
+    "MODULE/FEATURE": "Remove Buff",
+    "TEST NAME": "[High] [Negative] Không rải khi sau bước loại buff chỉ còn dưới hai điểm dữ liệu hợp lệ",
+    "PRE-CONDITION": "Timeline ban đầu có hai record nhưng một record là buff; sau clean chỉ còn một record.",
+    "TEST STEPS": "1. Chạy Remove Buff.\n2. Kiểm tra clean point count.\n3. Kiểm tra eligibility và output.",
+    "TEST DATA": "{\"product_item_id\":\"pi_buff_insufficient\",\"records\":[{\"date\":\"2026-02-01\",\"total_sold\":100,\"buff\":false},{\"date\":\"2026-02-10\",\"total_sold\":5000,\"buff\":true}]}",
+    "EXPECTED RESULT": "- Sau clean, FR-01 được đánh giá lại và PI bị skip.\n- Không fill dựa trên raw point count=2.\n- Log thể hiện buff removed và insufficient clean points."
+  },
+  {
+    "TEST CASE ID": "TC_BUFF_005",
+    "MODULE/FEATURE": "Remove Buff",
+    "TEST NAME": "[High] [Positive] Record FILL_MISSING không được chứa giá trị hoặc cờ buff",
+    "PRE-CONDITION": "Dataset có buff metadata cụ thể và một gap đủ điều kiện sau clean.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query toàn bộ record `FILL_MISSING`.\n3. Compare các field buff/abnormal/source với mapping contract.",
+    "TEST DATA": "{\"product_item_id\":\"pi_no_buff_output\",\"buff_marker\":{\"is_buff\":true,\"buff_sold\":9000},\"expected_crawler_type\":\"FILL_MISSING\"}",
+    "EXPECTED RESULT": "- Không record fill nào có flag/value buff được copy.\n- `crawler_type=FILL_MISSING`.\n- Field abnormal/buff có giá trị đúng mapping (Need Confirm schema).\n- Query downstream không nhận record fill như buff."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_001",
+    "MODULE/FEATURE": "Output - Metadata",
+    "TEST NAME": "[High] [Positive] Gán crawler_type=FILL_MISSING cho mọi record được script tạo ra",
+    "PRE-CONDITION": "Một PI eligible sinh ít nhất 8 record.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query tất cả inserted rows theo PID/range.\n3. Group by `crawler_type`.",
+    "TEST DATA": "{\"product_item_id\":\"pi_output_type\",\"expected_fill_count\":8,\"expected_crawler_type\":\"FILL_MISSING\"}",
+    "EXPECTED RESULT": "- 100% inserted rows có `crawler_type='FILL_MISSING'`.\n- Không dùng crawler type gốc như `PI_BY_SHOP`.\n- Count theo crawler type bằng expected fill count."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_002",
+    "MODULE/FEATURE": "Output - Append Only",
+    "TEST NAME": "[High] [Positive] Chỉ thêm record ngày thiếu, không sửa hoặc xóa các record crawl gốc",
+    "PRE-CONDITION": "Đã lưu snapshot field-level/hash của observed records trước chạy.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query observed records với `crawler_type!='FILL_MISSING'`.\n3. Compare count, key và business fields với snapshot.",
+    "TEST DATA": "{\"product_item_id\":\"pi_append_only\",\"snapshot_fields\":[\"crawled_date\",\"total_sold\",\"sell_price\",\"source_id\",\"crawler_type\"]}",
+    "EXPECTED RESULT": "- Count và toàn bộ business fields của observed records không đổi.\n- Chỉ các missing dates được insert.\n- Nếu chain field observed được phép đổi để re-link, phải đúng ngoại lệ Dev đã chốt; nếu chưa có thì đánh `Need Confirm`."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_003",
+    "MODULE/FEATURE": "Output - Date Coverage",
+    "TEST NAME": "[High] [Positive] Số record được tạo phải bằng đúng số ngày thiếu đủ điều kiện rải",
+    "PRE-CONDITION": "Expected missing date list đã lập trước khi chạy.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query `FILL_MISSING` theo PID/range.\n3. Diff expected-only và actual-only.\n4. So sánh count.",
+    "TEST DATA": "{\"product_item_id\":\"pi_output_count\",\"expected_fill_dates\":[\"2026-02-02\",\"2026-02-03\",\"2026-02-04\",\"2026-02-05\",\"2026-02-06\",\"2026-02-07\",\"2026-02-08\",\"2026-02-09\"]}",
+    "EXPECTED RESULT": "- `actual_dates = expected_dates`.\n- Expected-only và actual-only đều rỗng.\n- Insert count=8.\n- Không có record ngoài range hoặc trên ngày observed."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_004",
+    "MODULE/FEATURE": "Output - Duplicate",
+    "TEST NAME": "[High] [Negative] Không tạo hai record FILL_MISSING cho cùng một PI trong cùng một ngày",
+    "PRE-CONDITION": "PI eligible; script chạy thành công ít nhất một lần.",
+    "TEST STEPS": "1. Query group by PID+toDate(crawled_date).\n2. Chạy lại script.\n3. Query duplicate lần nữa.",
+    "TEST DATA": "{\"product_item_id\":\"pi_no_duplicate_date\",\"natural_key_assumption\":[\"product_item_id\",\"date\"]}",
+    "EXPECTED RESULT": "- Mỗi missing date có tối đa một effective fill record.\n- Rerun không tăng count.\n- Nếu ReplacingMergeTree tạm có nhiều physical row, query effective/FINAL phải còn một record và Dev cung cấp expected merge behavior."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_005",
+    "MODULE/FEATURE": "Output - Chain",
+    "TEST NAME": "[High] [Positive] Mỗi record phải có last_crawled_date trỏ đúng record liền trước theo thời gian",
+    "PRE-CONDITION": "Schema có `last_crawled_date`; timeline sau fill có observed và fill records.",
+    "TEST STEPS": "1. Query timeline sort tăng dần.\n2. Dùng `lagInFrame(crawled_date)`.\n3. Compare với `last_crawled_date` từng record.",
+    "TEST DATA": "{\"product_item_id\":\"pi_chain_date\",\"compare_field\":\"last_crawled_date\",\"order_by\":\"crawled_date ASC\"}",
+    "EXPECTED RESULT": "- Mỗi record sau record đầu trỏ đúng timestamp record liền trước theo contract.\n- Không trỏ xuyên qua record fill hoặc về cận trái cũ.\n- Không chain sang PI khác."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_006",
+    "MODULE/FEATURE": "Output - Chain",
+    "TEST NAME": "[High] [Positive] Mỗi record phải có last_total_sold và delta_sold khớp record liền trước",
+    "PRE-CONDITION": "Schema có `last_total_sold` và `delta_sold`; formula field đã được xác nhận.",
+    "TEST STEPS": "1. Query timeline.\n2. Dùng lag total_sold.\n3. Compare `last_total_sold`.\n4. Tính lại delta và compare.",
+    "TEST DATA": "{\"product_item_id\":\"pi_chain_sold\",\"formula\":\"delta_sold=total_sold-previous.total_sold\"}",
+    "EXPECTED RESULT": "- `last_total_sold` khớp total_sold record liền trước.\n- `delta_sold` khớp formula chính thức.\n- Không double-count delta tại cận phải.\n- Need Confirm nếu materialized column có semantics khác."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_007",
+    "MODULE/FEATURE": "Output - Chain",
+    "TEST NAME": "[High] [Edge] Nối record gốc phía sau với record rải cuối mà không vi phạm nguyên tắc append-only",
+    "PRE-CONDITION": "Observed cận phải từng trỏ trực tiếp về cận trái trước khi fill; đã snapshot chain fields.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query record fill cuối và observed cận phải.\n3. Kiểm tra chain/effective calculation.\n4. Compare observed snapshot.",
+    "TEST DATA": "{\"product_item_id\":\"pi_relink_right\",\"left_date\":\"2026-02-01\",\"last_fill_date\":\"2026-02-09\",\"right_date\":\"2026-02-10\"}",
+    "EXPECTED RESULT": "- Effective chain đi 01/02 → các fill records → 10/02.\n- Không tính delta 01/02→10/02 thêm lần nữa.\n- (Need Confirm) Dev phải chứng minh cách re-link mà vẫn đáp ứng append-only; mọi update observed ngoài ngoại lệ đã chốt là bug."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_008",
+    "MODULE/FEATURE": "Output - Field Mapping",
+    "TEST NAME": "[High] [Positive] Record rải phải giữ đúng product_item_id, source, domain và shard của PI",
+    "PRE-CONDITION": "PI nguồn có đầy đủ identity/source fields; field mapping chính thức đã được Dev cung cấp.",
+    "TEST STEPS": "1. Chạy fill.\n2. Query toàn bộ output fields.\n3. Compare với PI và cận nguồn đúng.",
+    "TEST DATA": "{\"product_item_id\":\"shopee_123456\",\"source_id\":\"shopee.vn\",\"platform\":\"shopee\",\"domain\":\"vn\",\"shard\":\"shard1\"}",
+    "EXPECTED RESULT": "- Record fill giữ đúng `product_item_id`, source, platform, domain và shard.\n- Không copy identity/source của PI khác.\n- Các field không được phép suy ra có null/default đúng contract."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_009",
+    "MODULE/FEATURE": "Output - Timestamp",
+    "TEST NAME": "[Medium] [Edge] Mỗi ngày chỉ có một timestamp rải thống nhất theo timezone quy định",
+    "PRE-CONDITION": "Timezone/timestamp convention đã được Dev chốt.",
+    "TEST STEPS": "1. Chạy fill cho gap nhiều ngày.\n2. Query exact `crawled_date`, không chỉ toDate.\n3. Kiểm tra timezone và uniqueness.",
+    "TEST DATA": "{\"product_item_id\":\"pi_fill_timestamp\",\"timezone\":\"Asia/Ho_Chi_Minh\",\"expected_time_of_day\":\"Need Confirm\"}",
+    "EXPECTED RESULT": "- Mỗi missing date có timestamp deterministic theo contract.\n- `toDate(crawled_date)` đúng ngày business.\n- Không duplicate do UTC/local conversion.\n- Need Confirm giờ cụ thể dùng cho record fill."
+  },
+  {
+    "TEST CASE ID": "TC_OUT_010",
+    "MODULE/FEATURE": "Output - Downstream",
+    "TEST NAME": "[High] [Positive] Weekly/Monthly chỉ tính sold và GMV một lần sau khi thêm record rải",
+    "PRE-CONDITION": "Có baseline/golden aggregate cho PI và quyền trigger targeted calculation.",
+    "TEST STEPS": "1. Ghi nhận weekly/monthly trước fill.\n2. Chạy fill.\n3. Trigger targeted calculation.\n4. Query sold/gmv output và compare golden.",
+    "TEST DATA": "{\"product_item_id\":\"pi_downstream_001\",\"week_shard\":\"202606\",\"month_shard\":\"202602\",\"expected_total_sold_delta\":20}",
+    "EXPECTED RESULT": "- Aggregate phản ánh đúng chuỗi sau fill theo business formula.\n- Không cộng cả delta cũ và delta fill.\n- Không tạo duplicate weekly/monthly doc.\n- Mọi chênh lệch với baseline có approval."
+  },
+  {
+    "TEST CASE ID": "TC_RETRY_001",
+    "MODULE/FEATURE": "Idempotency - Rerun",
+    "TEST NAME": "[High] [Positive] Chạy lại cùng PI và khoảng ngày không tạo thêm record FILL_MISSING",
+    "PRE-CONDITION": "Lần chạy đầu đã fill thành công và lưu count/hash output.",
+    "TEST STEPS": "1. Chạy lại đúng command.\n2. Query count và values.\n3. Compare với snapshot sau lần 1.\n4. Kiểm tra log.",
+    "TEST DATA": "{\"product_item_id\":\"pi_rerun_same\",\"from_date\":\"20260201\",\"to_date\":\"20260216\",\"first_run_fill_count\":8}",
+    "EXPECTED RESULT": "- Effective fill count vẫn là 8.\n- Không thay đổi deterministic values.\n- Log cho biết ngày đã tồn tại/0 insert thay vì báo thành công giả với duplicate.\n- Observed records không đổi."
+  },
+  {
+    "TEST CASE ID": "TC_RETRY_002",
+    "MODULE/FEATURE": "Idempotency - Overlap",
+    "TEST NAME": "[High] [Edge] Chạy lại với khoảng ngày chồng lấn chỉ tạo các ngày mới còn thiếu",
+    "PRE-CONDITION": "Đã fill range 01/02–16/02; chuẩn bị chạy range 05/02–21/02.",
+    "TEST STEPS": "1. Snapshot output cũ.\n2. Chạy range overlap.\n3. Query phần overlap và phần mở rộng.\n4. Compare count/value.",
+    "TEST DATA": "{\"product_item_id\":\"pi_overlap\",\"run1\":{\"from\":\"20260201\",\"to\":\"20260216\"},\"run2\":{\"from\":\"20260205\",\"to\":\"20260221\"}}",
+    "EXPECTED RESULT": "- Phần overlap không duplicate hoặc đổi giá trị ngoài rule.\n- Chỉ missing dates mới ở phần mở rộng được insert nếu eligible.\n- Chain toàn timeline vẫn liên tục."
+  },
+  {
+    "TEST CASE ID": "TC_RETRY_003",
+    "MODULE/FEATURE": "Concurrency",
+    "TEST NAME": "[High] [Edge] Hai job chạy cùng lúc cho một PI không tạo record rải trùng",
+    "PRE-CONDITION": "Môi trường test cho phép trigger hai process gần đồng thời; có query theo run ID.",
+    "TEST STEPS": "1. Trigger hai job cùng command trong cùng thời điểm.\n2. Chờ cả hai hoàn tất.\n3. Query effective và physical duplicates.\n4. Kiểm tra log/lock/retry.",
+    "TEST DATA": "{\"product_item_id\":\"pi_concurrent_same\",\"concurrent_jobs\":2,\"from_date\":\"20260201\",\"to_date\":\"20260216\"}",
+    "EXPECTED RESULT": "- Chỉ một bộ record fill effective tồn tại.\n- Không double-count downstream.\n- Job còn lại skip/upsert/dedup an toàn theo design.\n- Không deadlock hoặc crash."
+  },
+  {
+    "TEST CASE ID": "TC_RETRY_004",
+    "MODULE/FEATURE": "Recovery - Partial Failure",
+    "TEST NAME": "[High] [Negative] Chạy lại sau lỗi giữa batch không nhân đôi các record đã ghi thành công",
+    "PRE-CONDITION": "Có cơ chế fault injection làm job fail sau khi ghi một phần batch; dữ liệu test cô lập.",
+    "TEST STEPS": "1. Trigger job và inject failure sau N inserts.\n2. Ghi nhận partial state.\n3. Retry cùng command.\n4. Query final state.",
+    "TEST DATA": "{\"product_item_id\":\"pi_partial_retry\",\"expected_fill_count\":16,\"fail_after_insert_count\":7}",
+    "EXPECTED RESULT": "- Retry hoàn thiện đủ 16 effective records, không thành 23.\n- Không observed record bị corrupt.\n- Log phân biệt partial failure và retry result.\n- Nếu hệ thống dùng all-or-nothing, lần fail phải có 0 committed records."
+  },
+  {
+    "TEST CASE ID": "TC_RETRY_005",
+    "MODULE/FEATURE": "Concurrency - Different PID",
+    "TEST NAME": "[Medium] [Positive] Xử lý đồng thời nhiều PI nhưng không trộn ngày, sold hoặc metadata giữa các PI",
+    "PRE-CONDITION": "Có 20 PI eligible với sold/date/source khác nhau.",
+    "TEST STEPS": "1. Chạy batch/concurrency theo config.\n2. Query output từng PID.\n3. Compare expected dates/values.\n4. Kiểm tra log correlation.",
+    "TEST DATA": "{\"pid_count\":20,\"pid_pattern\":\"pi_concurrent_001..020\",\"expected_fill_per_pid\":8}",
+    "EXPECTED RESULT": "- Mỗi PI có đúng output của chính nó.\n- Không trộn cận, sold, source hoặc chain.\n- Tổng fill effective=160 nếu tất cả eligible.\n- Log trace được theo PID/batch/run ID."
+  },
+  {
+    "TEST CASE ID": "TC_ERR_001",
+    "MODULE/FEATURE": "CLI Validation",
+    "TEST NAME": "[High] [Negative] Từ chối chạy và không ghi dữ liệu khi From lớn hơn To",
+    "PRE-CONDITION": "Script sẵn sàng trên local_testing; không bật write production.",
+    "TEST STEPS": "1. Chạy command với From>To.\n2. Kiểm tra exit code/log.\n3. Query destination.",
+    "TEST DATA": "{\"from_date\":\"20260221\",\"to_date\":\"20260201\",\"allow_write_source\":1,\"product_item_id\":\"pi_invalid_range\"}",
+    "EXPECTED RESULT": "- Script reject trước khi query/write.\n- Exit code hoặc status thể hiện validation failure.\n- Message nêu rõ From phải <= To.\n- Destination không thay đổi."
+  },
+  {
+    "TEST CASE ID": "TC_ERR_002",
+    "MODULE/FEATURE": "CLI Validation",
+    "TEST NAME": "[High] [Negative] Từ chối ngày sai định dạng hoặc ngày không tồn tại, không tự sửa sang ngày khác",
+    "PRE-CONDITION": "Không có job khác ghi vào PID test.",
+    "TEST STEPS": "1. Chạy lần lượt các date invalid.\n2. Kiểm tra log/exit.\n3. Query destination.",
+    "TEST DATA": "{\"invalid_dates\":[\"2026-02-01\",\"20260230\",\"abc\",\"\",null],\"expected_format\":\"YYYYMMDD\"}",
+    "EXPECTED RESULT": "- Mỗi input invalid bị reject rõ ràng.\n- Không coerce 20260230 sang tháng khác.\n- Không query toàn bộ dữ liệu khi date rỗng/null.\n- Không có record mới."
+  },
+  {
+    "TEST CASE ID": "TC_ERR_003",
+    "MODULE/FEATURE": "CLI Safety",
+    "TEST NAME": "[High] [Negative] Không ghi ClickHouse khi chạy dry-run với allow_write_source=0",
+    "PRE-CONDITION": "PI eligible; snapshot destination count/hash đã có.",
+    "TEST STEPS": "1. Chạy với `allow_write_source=0`.\n2. Kiểm tra planned output/log.\n3. Query destination và compare snapshot.",
+    "TEST DATA": "{\"product_item_id\":\"pi_dry_run\",\"allow_write_source\":0,\"expected_planned_fill_count\":8}",
+    "EXPECTED RESULT": "- Script có thể hiển thị planned 8 records nhưng không insert.\n- Destination count/hash không đổi.\n- Log ghi rõ DRY-RUN/write disabled.\n- (Need Confirm) Dev xác nhận semantics chính thức của flag."
+  },
+  {
+    "TEST CASE ID": "TC_ERR_004",
+    "MODULE/FEATURE": "CLI Safety/Security",
+    "TEST NAME": "[High] [Negative] Chặn thao tác ghi khi filter rỗng hoặc chọn toàn bộ PI ngoài ý muốn",
+    "PRE-CONDITION": "Môi trường test có nhiều PI; policy safe-run đã được Dev/PM chốt.",
+    "TEST STEPS": "1. Chạy write với filter rỗng hoặc `*:*`.\n2. Kiểm tra validation/confirmation.\n3. Kiểm tra Solr/ClickHouse query count.",
+    "TEST DATA": "{\"filters\":[\"\",\"*:*\"],\"allow_write_source\":1,\"environment\":\"local_testing\"}",
+    "EXPECTED RESULT": "- Script fail-fast hoặc yêu cầu guard/explicit approval theo policy.\n- Không vô tình xử lý toàn collection.\n- Log không chứa credential/token.\n- Need Confirm guardrail bắt buộc của Dev."
+  },
+  {
+    "TEST CASE ID": "TC_ERR_005",
+    "MODULE/FEATURE": "Integration - ClickHouse Error",
+    "TEST NAME": "[High] [Negative] Khi ClickHouse timeout, job không báo thành công và không để dữ liệu ghi dở dang",
+    "PRE-CONDITION": "Có fault injection/timeout config an toàn trên Testing.",
+    "TEST STEPS": "1. Cấu hình timeout khi đọc hoặc ghi.\n2. Trigger job.\n3. Kiểm tra retry/status/log.\n4. Query destination.",
+    "TEST DATA": "{\"product_item_id\":\"pi_ch_timeout\",\"query_timeout_ms\":100,\"expected_fill_count\":16}",
+    "EXPECTED RESULT": "- Job timeout/fail hoặc retry theo contract, không báo success sai.\n- Không có partial effective output; nếu có partial, phải recover idempotently.\n- Log có run ID, stage, PID/batch và error nhưng không lộ secret."
+  },
+  {
+    "TEST CASE ID": "TC_ERR_006",
+    "MODULE/FEATURE": "Integration - Missing Timeline",
+    "TEST NAME": "[Medium] [Negative] Bỏ qua an toàn khi PI có trên Solr nhưng không có lịch sử trong ClickHouse",
+    "PRE-CONDITION": "PID tồn tại trong Solr filter nhưng không có record ở ClickHouse source table.",
+    "TEST STEPS": "1. Chạy script cho PID.\n2. Kiểm tra reconciliation Solr→ClickHouse.\n3. Query destination và log.",
+    "TEST DATA": "{\"product_item_id\":\"pi_solr_only\",\"solr_exists\":true,\"clickhouse_record_count\":0}",
+    "EXPECTED RESULT": "- PID được skip an toàn, không sinh dữ liệu giả.\n- Log/metric ghi nhận missing timeline để reconciliation.\n- Job tiếp tục xử lý PID khác.\n- Không crash vì empty array/null."
+  },
+  {
+    "TEST CASE ID": "TC_PERF_001",
+    "MODULE/FEATURE": "Performance - Batch",
+    "TEST NAME": "[Medium] [Edge] Xử lý đủ batch 1.000 PI trong thời gian và tài nguyên được chấp nhận",
+    "PRE-CONDITION": "Staging có 1.000 PI đại diện, mix eligible/skip/gap dài; monitoring CPU/RAM/query time sẵn sàng.",
+    "TEST STEPS": "1. Chạy dry-run và write trên dataset clone.\n2. Ghi duration, rows read/written, CPU, memory, error rate.\n3. So sánh baseline/threshold.",
+    "TEST DATA": "{\"pid_count\":1000,\"eligible_ratio\":0.6,\"avg_history_rows_per_pid\":365,\"rows_per_solr_page\":1000}",
+    "EXPECTED RESULT": "- Job hoàn tất trong SLA/ngưỡng Dev-PM chốt.\n- Không OOM, timeout hoặc mất PID.\n- Processed+skipped+failed=1.000.\n- Metrics đủ để so với script cũ."
+  },
+  {
+    "TEST CASE ID": "TC_PERF_002",
+    "MODULE/FEATURE": "Performance - Timeline dài",
+    "TEST NAME": "[Medium] [Edge] Xử lý PI có ba năm lịch sử và nhiều khoảng thiếu mà không hết bộ nhớ",
+    "PRE-CONDITION": "Một PI có 3 năm timeline, nhiều records/ngày và 50 gap; dữ liệu đã cô lập.",
+    "TEST STEPS": "1. Chạy fill cho range dài được phép.\n2. Theo dõi query scan, memory, duration.\n3. Verify output sample và count toàn bộ.",
+    "TEST DATA": "{\"product_item_id\":\"pi_long_history\",\"history_days\":1095,\"raw_record_count\":5000,\"gap_count\":50}",
+    "EXPECTED RESULT": "- Job không crash/OOM và không treo.\n- Output đúng count/eligibility cho 50 gap.\n- Query không scan ngoài phạm vi cần thiết bất thường.\n- Duration đạt threshold đã chốt."
+  },
+  {
+    "TEST CASE ID": "TC_PERF_003",
+    "MODULE/FEATURE": "Performance - Multi-shard",
+    "TEST NAME": "[Medium] [Edge] Xử lý đủ các shard mà không bỏ sót hoặc xử lý trùng PI",
+    "PRE-CONDITION": "Có dữ liệu test trên 3 shard với PID disjoint và một PID kiểm soát theo thiết kế sharding.",
+    "TEST STEPS": "1. Chạy script từng shard.\n2. Tổng hợp PID/output count.\n3. Kiểm tra duplicate cross-shard.\n4. So sánh resource usage.",
+    "TEST DATA": "{\"shards\":[\"shard1\",\"shard2\",\"shard3\"],\"pid_counts\":[400,350,250],\"expected_total_pid\":1000}",
+    "EXPECTED RESULT": "- Xử lý đúng tổng 1.000 PID, không mất/trùng giữa shard.\n- Record fill nằm đúng shard theo contract.\n- Một shard fail không làm report success toàn bộ nếu chưa xử lý đủ."
+  },
+  {
+    "TEST CASE ID": "TC_PERF_004",
+    "MODULE/FEATURE": "Observability",
+    "TEST NAME": "[Medium] [Positive] Log và metric phải chỉ rõ PI nào được rải, bỏ qua hoặc lỗi",
+    "PRE-CONDITION": "Logging/monitoring được bật; batch có ít nhất một PI fill, một PI skip và một PI fail có kiểm soát.",
+    "TEST STEPS": "1. Chạy batch hỗn hợp.\n2. Thu log/metric.\n3. Reconcile số PID và row.\n4. Kiểm tra dữ liệu nhạy cảm.",
+    "TEST DATA": "{\"run_id\":\"fill-missing-test-20260813-01\",\"pids\":{\"eligible\":\"pi_log_fill\",\"skipped\":\"pi_log_skip\",\"failed\":\"pi_log_fail\"}}",
+    "EXPECTED RESULT": "- Log có run ID, stage, PID/batch, From-To, missing count, insert count, skip/fail reason và duration.\n- Tổng planned/inserted/skipped/failed reconcile được với DB.\n- Không log password, token hoặc connection secret.\n- Có thể khoanh vùng lỗi theo từng pipeline stage."
+  }
+]
