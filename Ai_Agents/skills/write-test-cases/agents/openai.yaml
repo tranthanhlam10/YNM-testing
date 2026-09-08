@@ -1,0 +1,4 @@
+interface:
+  display_name: "Viết test cases"
+  short_description: "Thiết kế test cases QA đúng template 7 cột"
+  default_prompt: "Dùng $write-test-cases để tạo test cases từ task, tài liệu kỹ thuật và test plan tôi cung cấp."
