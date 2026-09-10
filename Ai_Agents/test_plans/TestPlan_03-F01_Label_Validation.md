@@ -59,6 +59,48 @@ Xác nhận ECI Data có thể thay thế script Console F12 bằng luồng Labe
 
 UI không polling/realtime. User bấm `Refresh` để nạp trạng thái mới.
 
+#### Sơ đồ tổng — kết nối và nơi lưu dữ liệu
+
+```mermaid
+flowchart TB
+  UI["eca-tool<br/>Label Validation: Setup, List, Details"]
+  API["social-listening-api<br/>Quyền, validation, Preview, quản lý request"]
+  subgraph MYSQL["MySQL — hai database cùng instance theo technical doc"]
+    REQ[("eca_reports.label_validation_requests<br/>Cấu hình và kết quả gần nhất")]
+    MASTER[("eca_reports<br/>labels, industries, brands, models")]
+    RUN[("monitoring_app_new.trackers<br/>Một bản ghi cho mỗi lượt chạy")]
+    USER[("monitoring_app_new.users<br/>Tên và email người dùng")]
+    PERM[("monitoring_app_new.permissions<br/>Catalogue quyền API")]
+  end
+  Q["RabbitMQ<br/>exchange: ynm-eca<br/>queue / routing key: ecomheat.label_validation"]
+  WORKER["ynm-ecomheat / services/label-validation<br/>Quét PI, Rule D/M, tạo file và gửi mail"]
+  SOLR[("Solr core: product_items<br/>Đọc PI trong phạm vi")]
+  ING["services/ingestor<br/>HTTP gateway gửi chunk tiếp theo vào queue"]
+  MONGO[("MongoDB connection: ecomheat_mongo<br/>Entity Template: nội dung email")]
+  DRIVE[("Google Drive / Google Sheets<br/>File vi phạm; tài khoản và folder của Export Data")]
+  MAIL["Mailer connection: ecomheat<br/>Gửi cho người khởi chạy lượt"]
+  UI -->|"REST API"| API
+  API <-->|"Đọc / ghi request"| REQ
+  API -->|"Đọc master để Preview / guard"| MASTER
+  API <-->|"Tạo / đọc / đóng lượt"| RUN
+  API -->|"Đọc tên owner, updater"| USER
+  API -->|"Authorization dùng catalogue quyền"| PERM
+  API -->|"Lượt đầu: id + tracker_id"| Q
+  Q -->|"Consumer nhận từng chunk"| WORKER
+  WORKER <-->|"Trạng thái, report_link, file_sequence"| REQ
+  WORKER <-->|"Snapshot, trạng thái, cursor, counts"| RUN
+  WORKER -->|"Đọc labels để gom prefix"| MASTER
+  WORKER -->|"cursorMark; tối đa 5.000 PI/chunk"| SOLR
+  WORKER -->|"HTTP sendToQueue; giữ tracker_id"| ING
+  ING -->|"Publish chunk tiếp theo"| Q
+  WORKER -->|"Đọc email qua trackers.created_by"| USER
+  WORKER -->|"Đọc EXPORT_DATA_NOTIFICATION"| MONGO
+  WORKER -->|"Tạo file mới và share"| DRIVE
+  WORKER -->|"Gửi kết quả sau khi ghi trạng thái"| MAIL
+```
+
+Các mũi tên đọc/ghi thể hiện trách nhiệm của component, không khẳng định tất cả thao tác cùng một transaction. Đây là **sơ đồ thiết kế theo doc**, chưa phải kết quả kiểm tra cấu hình đang deploy. Tên connection có thể khác tên database thật; xem bảng ánh xạ và các sơ đồ chi tiết tại **Phụ lục C**.
+
 ### 1.3 Test oracle cốt lõi
 
 | Nhóm | Oracle |
@@ -223,6 +265,7 @@ Test data phải tách namespace/staging và có phương án dọn sau test. Kh
 | API | `social-listening-api` với 9 endpoint `eca/label-validation-requests*` |
 | Worker | `@ynm/label-validation-service`, queue/deployment riêng |
 | Database | MySQL `eca_reports` và `monitoring_app_new`; quyền read-only cho QA hoặc query evidence do Dev cung cấp |
+| MongoDB | Connection `ecomheat_mongo`, entity `Template` cho email; tên DB/collection vật lý cần đối chiếu config môi trường (Phụ lục C.1) |
 | Solr | Core `product_items` có dataset kiểm soát được |
 | RabbitMQ | Exchange `ynm-eca`, routing key/queue `ecomheat.label_validation`; có quan sát queue depth/message |
 | Ingestor | `services/ingestor` sẵn sàng cho self-chaining hoặc phương án kỹ thuật thay thế đã chốt |
@@ -348,3 +391,286 @@ Chỉ bắt đầu test execution chính thức khi đạt tất cả điều ki
 | Release boundary và upstream/downstream rõ | PASS |
 | Không tuyên bố bao phủ 100% khi chưa có traceability test case | PASS |
 | Markdown render được, không còn placeholder từ template mẫu | PASS |
+
+## Phụ lục C — Sơ đồ chi tiết và đối soát dữ liệu
+
+Bổ sung ngày **09/09/2026** từ bộ doc đã khôi phục. Sơ đồ nghiệp vụ theo FRD v3.0; DB, connection và luồng gọi service theo technical spec. Các đoạn technical doc còn mâu thuẫn được ghi tại C.10 và mục 5.1.
+
+| Mã nguồn | Tài liệu đối chiếu |
+|---|---|
+| FRD | [03-F01-label-validation.md](/Users/tranthanhlam/product-ai-docs/EcomHeat/specs/03-qc-duplicate-label/03-F01-label-validation.md) — BR-01–BR-51, S4 |
+| ARCH | [architecture.md](/Users/tranthanhlam/product-ai-docs/EcomHeat/specs/03-qc-duplicate-label/technical-specs/03-F01-label-validation/architecture.md) — §2, §4 |
+| API | [social-listening-api.md](/Users/tranthanhlam/product-ai-docs/EcomHeat/specs/03-qc-duplicate-label/technical-specs/03-F01-label-validation/social-listening-api.md) — §2.3, §4–§6, §9 |
+| WORKER | [ynm-ecomheat.md](/Users/tranthanhlam/product-ai-docs/EcomHeat/specs/03-qc-duplicate-label/technical-specs/03-F01-label-validation/ynm-ecomheat.md) — §2.3–§2.6, §3–§6, §8 |
+| DB | [sl-api-migrates.md](/Users/tranthanhlam/product-ai-docs/EcomHeat/specs/03-qc-duplicate-label/technical-specs/03-F01-label-validation/sl-api-migrates.md) — §3–§5, §9 |
+| FE | [eca-tool.md](/Users/tranthanhlam/product-ai-docs/EcomHeat/specs/03-qc-duplicate-label/technical-specs/03-F01-label-validation/eca-tool.md) — §5–§6 |
+| MODEL | [label_validation_requests.md](/Users/tranthanhlam/product-ai-docs/_context/data-models/mysql/eca-reports/label_validation_requests.md), [trackers.md](/Users/tranthanhlam/product-ai-docs/_context/data-models/mysql/monitoring-app-new/trackers.md) — cột và liên kết; lifecycle của MODEL còn lệch FRD |
+
+### C.1 Kết nối ở đâu, dữ liệu lưu ở đâu?
+
+| Component / connection | Đích lưu trữ | Dữ liệu và cách sử dụng |
+|---|---|---|
+| API: `mysql.ynm_eca_reports` → `knexClientEca`; worker: `database.eca_report` | MySQL `eca_reports.label_validation_requests` | Một dòng request sống qua nhiều lượt chạy. Lưu `name`, `industry_id`, `label_ids`, `brand_ids`, `model_ids`, `rules`, `prefixes`, `version`, `status`, `file_sequence`, `report_link`, `report_reason`, audit và `deleted_at`. |
+| API: model schema-qualified + `bindKnex`; worker: `database.monitoring_app_new` | MySQL `monitoring_app_new.trackers` | Mỗi lượt có `id` riêng; `tracker_type = label_validation`; `source_id` = request ID dạng **chuỗi**. Lưu snapshot cấu hình trong `filters`, phiên bản trong `metadata.version`, người chạy, cursor và counters. |
+| API cross-DB; worker: `database.monitoring_app_new` | MySQL `monitoring_app_new.users` | Đọc tên hiển thị và email. Người nhận file/email lấy từ `trackers.created_by` của đúng lượt. |
+| API / master services; worker: `database.eca_report` | MySQL `eca_reports.labels`, `industries`, `brands`, `models` | API đọc master để cấp option / guard. Worker đọc `labels` để lập nhóm prefix; luồng validation không sửa master. |
+| Migration: Knex env `monitoring_app_new` | MySQL `monitoring_app_new.permissions` | Seed 8 dòng quyền theo root API và sub-path. Chỉ tạo catalogue; admin cấp quyền qua User & Permission. |
+| Migration: Knex env `ynm_eca_reports` | MySQL `eca_reports` | Tạo bảng request; lịch sử migration nằm ở `eca_reports.knex_migrations`. Tên env `ynm_eca_reports` khác tên DB `eca_reports`. |
+| Worker: `solr.product_items` | Solr core `product_items` | Đọc `id`, `labels` của PI theo filter và cursor. PI nguồn nằm ở Solr trong luồng quét này. |
+| Worker: `database.ecomheat_mongo` | MongoDB, entity `Template` | Đọc template `EMAIL_TEMPLATE.EXPORT_DATA_NOTIFICATION`. `ecomheat_mongo` là **tên connection**; doc này chưa nêu tên DB/collection vật lý. |
+| API producer / worker consumer | RabbitMQ exchange `ynm-eca`, queue và routing key `ecomheat.label_validation` | Message đầu `{ id, tracker_id }`; message tiếp `{ id, tracker_id, cursorMark }`. Message trỏ đến cấu hình trong DB. |
+| Worker: `http.ingestor.baseURL` | HTTP `services/ingestor` → `/rabbitmq/sendToQueue` | Trung chuyển message cho chunk tiếp theo; không phải nơi lưu request. |
+| Worker: `googlesheet.*` | Google Drive, folder dùng chung với Export Data | File Google Sheet chứa từng dòng vi phạm. DB request chỉ lưu mảng link của lượt mới nhất. Doc chưa nêu folder ID cụ thể. |
+| Worker: `mailer.ecomheat` | Mail service và log gửi | Gửi kết quả sau khi chốt trạng thái; nơi lưu log cụ thể chưa được chốt trong doc. |
+| FE: `setupDraft`, `previewRows` | State cục bộ của màn hình | Cấu hình chưa submit và kết quả Preview; Preview không tạo request/tracker. |
+
+**Phân biệt dữ liệu trung gian:** WORKER §4.2 mô tả map `prefix → Set<label_id>` nằm trong bộ nhớ; FRD S4 mô tả danh sách vi phạm sau quét ở bộ nhớ. Doc chưa chốt cách giữ hai tập này qua các message/chunk, replica hoặc worker restart. Không coi các counter trong `trackers` là nơi lưu đầy đủ từng dòng vi phạm; xem C.10.
+
+Host, port, tên DB vật lý của Mongo, folder ID Drive và thông tin kết nối từng môi trường phải đối chiếu config deploy. Sơ đồ không suy ra các giá trị này từ tên connection. Nguồn: API §2.3/§6, WORKER §2.3/§2.6/§3.2, DB §3–§5, FE §6.
+
+### C.2 Quan hệ request — lượt chạy — người dùng — file
+
+```mermaid
+flowchart LR
+  REQ[("eca_reports.label_validation_requests<br/>id = 101<br/>version = V1")]
+  T1[("monitoring_app_new.trackers<br/>id = 501; source_id = '101'<br/>tracker_type = label_validation<br/>metadata.version = V1")]
+  T2[("monitoring_app_new.trackers<br/>id = 502; source_id = '101'<br/>tracker_type = label_validation<br/>metadata.version = V1")]
+  OWNER[("monitoring_app_new.users<br/>Người tạo request A")]
+  STARTER[("monitoring_app_new.users<br/>Người chạy lượt 502: B")]
+  OLD["Drive: file của lượt 501<br/>Vẫn tồn tại"]
+  NEW["Drive: file của lượt 502<br/>Kết quả hiện trên Details"]
+  REQ -->|"created_by"| OWNER
+  REQ -->|"Một request có nhiều lượt"| T1
+  REQ -->|"Start lại: giữ id và version"| T2
+  T2 -->|"created_by là người nhận file/mail"| STARTER
+  REQ -->|"report_link: mảng link lượt gần nhất"| NEW
+  T1 -.->|"Đã sinh ở lượt cũ; không khẳng định có cột lưu link lịch sử"| OLD
+```
+
+Các ID và `V1` chỉ là ví dụ. Liên kết là **logical reference**, schema không khai FK cho feature. Khi đối soát phải lọc cả `tracker_type = 'label_validation'` và `source_id = '<request_id>'`, vì bảng `trackers` được nhiều nghiệp vụ dùng chung. `Start` tạo tracker mới; submit Create/Copy tạo request mới; submit Edit giữ request ID nhưng sinh `version = Date.now()` mới. `version` dùng so bằng, không dùng làm số thứ tự lượt. Nguồn: ARCH §4, API §2.3/§4.2–§4.6, DB §4.1.
+
+### C.3 Setup và Preview — đọc label, chưa chạy kiểm tra PI
+
+```mermaid
+sequenceDiagram
+  actor QA as Người dùng
+  participant UI as eca-tool / Setup
+  participant API as social-listening-api
+  participant DB as MySQL eca_reports
+  QA->>UI: Nhập tên, Industry, filter, rule, prefix
+  UI->>API: Nạp option qua API industries / brands / models / labels
+  API->>DB: Đọc master tương ứng
+  DB-->>API: Master data
+  API-->>UI: Option cho các dropdown
+  QA->>UI: Bấm Preview
+  UI->>API: POST eca/label-validation-requests/preview
+  API->>DB: Đọc labels khớp prefix, loại DELETED
+  DB-->>API: Label ID và tên
+  API-->>UI: rows: prefix, total, sampleLabels
+  UI-->>QA: Hiện số label và cảnh báo 0 / 1 label
+  Note over UI,DB: Preview không ghi request, không tạo tracker, không quét Solr
+```
+
+Khớp prefix là STARTS WITH, phân biệt hoa/thường. `total` của Preview là số **label master**, không phải số PI hay số vi phạm. Prefix khớp 1 label chỉ cảnh báo khi bật Rule D; prefix 0 label sẽ bị guard chặn khi chạy. Thay đổi prefix xóa Preview cũ. Nguồn: FRD BR-11/BR-20–BR-22, API §4.4, FE §5–§6.
+
+### C.4 Create / Edit / Start — ghi hai DB rồi gửi queue
+
+```mermaid
+sequenceDiagram
+  actor QA as Người khởi chạy
+  participant UI as eca-tool
+  participant API as social-listening-api
+  participant ECA as MySQL eca_reports
+  participant MON as MySQL monitoring_app_new
+  participant MQ as RabbitMQ ynm-eca
+  QA->>UI: Run check / Save & Run Check / Start
+  UI->>API: POST root / PATCH :id / POST start
+  API->>API: Kiểm quyền, input và trạng thái được phép
+  API->>ECA: Guard prefix, Industry, Labels, Brand, Model
+  API->>MQ: Kiểm tra queue khả dụng trước khi ghi/xếp lượt
+  alt Validation / guard / queue health không đạt
+    API-->>UI: Báo lỗi, không xếp lượt, giữ cấu hình/trạng thái cũ
+  else Đủ điều kiện
+    API->>ECA: Create/Edit: lưu cấu hình + version mới + ACTIVE
+    Note over API,ECA: Start: giữ cấu hình và version, đặt ACTIVE
+    API->>MON: INSERT trackers: INITIALIZING, type=label_validation
+    Note over API,MON: source_id=str(request.id), filters=snapshot, metadata.version, created_by=người chạy
+    MON-->>API: tracker_id
+    API->>MQ: Publish ecomheat.label_validation: id + tracker_id
+    API-->>UI: Request / kết quả xếp lượt
+  end
+```
+
+Guard có bốn điều kiện: mỗi prefix khớp ít nhất 1 label; Industry còn hiệu lực; Brand/Model nếu khai báo phải còn ít nhất 1 giá trị hợp lệ; riêng Labels chỉ cần **1 label bị xóa** là chặn. Lỗi guard giữ trạng thái cũ, không tự chuyển `FAILED`. Không có thao tác lưu cấu hình mà không chạy. Luồng bulk có thời điểm guard riêng tại C.9.
+
+**Điểm kiểm lỗi:** health-check thành công chưa bảo đảm publish sau đó thành công. Doc chưa mô tả đầy đủ rollback/compensation nếu đã ghi request hoặc tracker nhưng publish thất bại; cần đối soát cả hai DB và queue, không chỉ HTTP response. Nguồn: API §4.2–§4.6/§5, FRD BR-21/BR-31.
+
+### C.5 Worker — quét nhiều chunk và ghi tiến trình
+
+```mermaid
+flowchart TB
+  MSG["Nhận message: id, tracker_id, cursorMark nếu có"]
+  READ["Đọc monitoring_app_new.trackers theo tracker_id<br/>Đối chiếu tracker_type và request"]
+  LIVE{"Lượt còn INITIALIZING / PROCESSING?"}
+  STOP["Lượt DONE / FAILED đã đóng: bỏ message<br/>Ack do thư viện quản lý; cần xác minh cơ chế"]
+  BEGIN["Lượt đầu: request PROCESSING + tracker PROCESSING<br/>Bắt đầu đồng hồ quét 900 giây"]
+  CONF["Đọc snapshot filters và metadata.version của lượt<br/>Đọc request ở eca_reports.label_validation_requests"]
+  LABEL["Đọc eca_reports.labels<br/>Lập map prefix → tập label_id còn hiệu lực"]
+  SCAN["Đọc Solr product_items theo cursorMark<br/>5.000 PI/chunk; lấy id và labels"]
+  RULE["Áp Rule D/M<br/>Tạo các dòng vi phạm của chunk"]
+  SAVE["Ghi trackers.current và processed_count<br/>Cập nhật counters vi phạm theo contract"]
+  MORE{"Còn chunk?"}
+  HTTP["POST services/ingestor /rabbitmq/sendToQueue<br/>id + cùng tracker_id + cursorMark mới"]
+  MQ["Ingestor publish lại queue ecomheat.label_validation"]
+  OUT["Hết PI: chuyển pha kết quả tại C.7"]
+  MSG --> READ --> LIVE
+  LIVE -->|"Không; lượt đã đóng"| STOP
+  LIVE -->|"Có"| BEGIN --> CONF --> LABEL --> SCAN --> RULE --> SAVE --> MORE
+  MORE -->|"Có"| HTTP --> MQ --> MSG
+  MORE -->|"Không"| OUT
+```
+
+Chunk tiếp theo giữ lượt `PROCESSING` và **không reset đồng hồ 900 giây**. Cursor đầu là `trackers.start`, mặc định `*`; mỗi chunk ghi `current`. PI phải thuộc Industry đã chọn và `latest_sold > 0`; OR trong cùng field filter, AND giữa các field; không lọc `manual_updated`. Mỗi lần Start lại quét toàn bộ phạm vi.
+
+Worker là package và deployment riêng `services/label-validation`; chỉ tham khảo cách làm của Export Data. `http.ingestor.baseURL` là dependency runtime thật. Worker chết hoặc ingestor lỗi có thể làm đứt chuỗi chunk; cơ chế phục hồi và lưu dữ liệu trung gian cần xác nhận ở C.10. Nguồn: WORKER §2–§4/§6/§8.
+
+### C.6 Rule D và Rule M — đếm theo PI, không đếm tổng master label
+
+```mermaid
+flowchart TB
+  PI["Một PI từ Solr: id + các label_id đang gắn"]
+  MAP["Map từ MySQL labels<br/>prefix → tập label_id hợp lệ"]
+  COUNT["Với từng prefix g: COUNT(g)<br/>= số label của PI thuộc nhóm g"]
+  D{"Bật Rule D?"}
+  DC{"COUNT(g) từ 2 trở lên?"}
+  DR["Một dòng Duplicate cho mỗi nhóm g vi phạm"]
+  M{"Bật Rule M?"}
+  MC{"PI có label thuộc ít nhất một nhóm?"}
+  ZERO["Mỗi nhóm g có COUNT(g) = 0<br/>sinh một dòng Missing"]
+  SKIP["Không sinh dòng Missing"]
+  JOIN["Gộp dòng của các rule đã bật<br/>Một PI có thể sinh nhiều dòng"]
+  PI --> COUNT
+  MAP --> COUNT
+  COUNT --> D
+  COUNT --> M
+  D -->|"Có; xét từng g"| DC
+  DC -->|"Có"| DR --> JOIN
+  DC -->|"Không"| JOIN
+  D -->|"Không"| JOIN
+  M -->|"Có; bộ 2–20 prefix"| MC
+  MC -->|"Có"| ZERO --> JOIN
+  MC -->|"Không"| SKIP --> JOIN
+  M -->|"Không"| JOIN
+```
+
+Ví dụ bật D + M với `BMP_Color_` và `BMP_Size_`; giả sử mọi label dưới đây còn hiệu lực và các PI nằm trong phạm vi:
+
+| PI | Labels đang gắn | Dòng kết quả |
+|---|---|---|
+| PI-01 | `BMP_Color_Red`, `BMP_Color_Blue` | Duplicate `BMP_Color_` và Missing `BMP_Size_`: **2 dòng, 1 PI vi phạm** |
+| PI-02 | `BMP_Size_L` | Missing `BMP_Color_`: **1 dòng** |
+| PI-03 | `BMP_Color_Red`, `BMP_Size_L` | Không vi phạm |
+| PI-04 | Chỉ có label ngoài hai prefix | Không vi phạm D; bỏ qua M |
+
+Đây là dữ liệu minh họa, không phải ID master thật. Prefix giao nhau vẫn tính độc lập; label `DELETED`, sai casing hoặc chỉ chứa prefix ở giữa tên không được tính. Cần phân biệt **số PI vi phạm** và **số dòng vi phạm** khi kiểm counters. Nguồn: FRD BR-11–BR-19, WORKER §4.2–§4.4.
+
+### C.7 Kết quả — file lưu trên Drive, link lưu trong MySQL
+
+```mermaid
+flowchart TB
+  END["Quét xong"] --> HAS{"Có dòng vi phạm?"}
+  HAS -->|"Không"| ANY{"processed_count lớn hơn 0?"}
+  ANY -->|"Có"| CLEAN["report_reason = report.noFile<br/>report_link = NULL"]
+  ANY -->|"Không"| EMPTY["report_reason = report.noPi<br/>report_link = NULL"]
+  HAS -->|"Có"| FILE["Sinh Google Sheet mới trong folder Export Data<br/>4 cột; tách khi vượt 50.000 dòng<br/>Đồng hồ pha file: 15 phút"]
+  FILE --> COUNTER["Tăng atomic request.file_sequence cho mỗi file<br/>Tên: Name, Name (1), Name (2)..."]
+  COUNTER --> LINKS["Ghi request.report_link = mảng link mới<br/>request.report_reason = NULL"]
+  LINKS --> DONE["MySQL eca_reports: request COMPLETED<br/>monitoring_app_new: tracker DONE"]
+  CLEAN --> DONE
+  EMPTY --> DONE
+  ERR["Quét / tạo file lỗi hoặc quá thời gian"] --> FAIL["Request FAILED; tracker FAILED<br/>report_link = NULL; ghi report_reason<br/>Không share file dở dang"]
+  DONE --> WHO["Lấy trackers.created_by → monitoring_app_new.users<br/>Đọc Template qua Mongo connection ecomheat_mongo"]
+  FAIL --> WHO
+  WHO --> SHARE["Có file hoàn tất: share cho người khởi chạy"]
+  SHARE --> EMAIL["Gửi một email kết quả cho đúng người chạy<br/>Lỗi gửi mail: ghi log, giữ trạng thái"]
+  EMAIL --> UI["User Refresh / nạp lại Details<br/>API đọc trạng thái và kết quả gần nhất"]
+```
+
+File gồm `Violation type`, `Product item ID`, `Label prefix`, `Labels on product item`. Label hiển thị dạng `Tên (ID)`, nối bằng `; `; Missing để trống cột label theo ví dụ nghiệp vụ. `report_link` là mảng JSON vì một lượt có thể có nhiều file; nó thay thế link hiển thị cũ, **không ghi đè hoặc xóa file cũ trên Drive**. Không lưu từng dòng vi phạm vào bảng request.
+
+`file_sequence` liên tục theo request, kể cả tách file và chạy lại. DB không tự cập nhật `updated_at`: tăng bộ đếm file không được làm đổi thời gian; khi lượt kết thúc, FRD BR-28 yêu cầu ghi audit với người khởi chạy và thời điểm kết thúc. Các nhánh share lỗi và timeout message còn cần xác nhận ở C.10. Nguồn: FRD BR-28/BR-32–BR-38/S4, WORKER §4.5–§6, DB §4.1.
+
+### C.8 Cancel / Delete — đóng đúng tracker, bảo toàn file cũ
+
+```mermaid
+flowchart TB
+  ACTION{"Thao tác trên request"}
+  ACTION -->|"Cancel run"| ACTIVE{"Request còn ACTIVE?"}
+  ACTIVE -->|"Không"| REJECT["Từ chối; không thay đổi"]
+  ACTIVE -->|"Có"| RACE["API conditional UPDATE<br/>WHERE id = request_id AND status = ACTIVE"]
+  RACE --> WIN{"Cập nhật được dòng?"}
+  WIN -->|"Không; worker đã nhận"| LATE["409 LV_CANCEL_TOO_LATE"]
+  WIN -->|"Có"| V{"Có lượt kết thúc trước đó<br/>cùng metadata.version?"}
+  V -->|"Có"| RESTORE["Khôi phục COMPLETED / FAILED và kết quả cũ"]
+  V -->|"Không"| CANCEL["FAILED; report.cancelled<br/>Thôi trỏ tới kết quả cũ"]
+  RESTORE --> CLOSE["Đóng tracker đang chờ: FAILED<br/>Ghi audit của người hủy; không email"]
+  CANCEL --> CLOSE
+  ACTION -->|"Delete đã xác nhận"| PROCESS{"Request PROCESSING?"}
+  PROCESS -->|"Có"| REJECT
+  PROCESS -->|"Không"| DEL["ACTIVE: đóng tracker đang chờ<br/>Set deleted_at trên request và trackers của nó"]
+  DEL --> KEEP["File cũ trên Google Drive vẫn còn<br/>Không gửi email"]
+  CLOSE --> OLD["Message cũ vẫn có thể nằm trong RabbitMQ"]
+  KEEP --> OLD
+  OLD --> WORK["Worker kiểm đúng tracker_id<br/>Lượt đã đóng thì bỏ; không quét lại"]
+```
+
+Sơ đồ mô tả điều kiện và hệ quả; không quy định thứ tự từng câu SQL khôi phục kết quả. API §9 F-03 đã chốt conditional update để xử lý race. Hủy theo `tracker_id` giúp phân biệt message cũ với lượt mới trên cùng request; không thêm enum `CANCELLED`. Khi Cancel khôi phục request `COMPLETED`, tracker vừa hủy vẫn là `FAILED` — hai trạng thái không nhất thiết giống nhau. Soft delete ẩn dữ liệu qua `deleted_at IS NULL`, không xóa vật lý bảng hoặc file Drive. Nguồn: FRD BR-24–BR-30, ARCH §2.2, API §4.3/§4.7/§9.
+
+| Mốc | Request trong `eca_reports` | Tracker của lượt trong `monitoring_app_new` | UI |
+|---|---|---|---|
+| Đã xếp lượt | `ACTIVE` | `INITIALIZING` | Active, 0% |
+| Worker bắt đầu | `PROCESSING` | `PROCESSING` | Processing, 0% |
+| Hoàn tất, có hoặc không có file | `COMPLETED` | `DONE` | Completed, 100% |
+| Lượt chạy lỗi | `FAILED` | `FAILED` | Failed, 0% |
+| Hủy lượt chờ | Khôi phục kết quả cũ cùng version; nếu không có thì `FAILED` | Lượt bị hủy: `FAILED` | Theo trạng thái request sau hủy |
+
+### C.9 Bulk Start / Delete — chốt tập trước khi thực thi
+
+```mermaid
+flowchart TB
+  SELECT["User chọn request trên một hoặc nhiều trang"] --> MODE{"Bulk Start hay Delete?"}
+  MODE -->|"Start"| GS["Khi mở confirm: đọc trạng thái và chạy guard BR-21<br/>Chốt tập S đủ điều kiện chạy"]
+  MODE -->|"Delete"| GD["Khi mở confirm: đọc trạng thái<br/>Chốt tập S được xóa; bỏ PROCESSING"]
+  GS --> CONF["Hiện số sẽ xử lý và số bị bỏ qua"]
+  GD --> CONF
+  CONF --> ZERO{"Tập S rỗng?"}
+  ZERO -->|"Có"| ACK["Chỉ xác nhận đã hiểu; không xử lý request"]
+  ZERO -->|"Không; user xác nhận"| CHECK["Chỉ kiểm lại trạng thái các ID trong S<br/>Chỉ loại bớt; không thêm ID mới"]
+  CHECK --> EXEC{"Thực thi"}
+  EXEC -->|"Start"| RUN["Mỗi ID còn hợp lệ: request ACTIVE<br/>Tạo tracker INITIALIZING + publish message"]
+  EXEC -->|"Delete"| DEL["Mỗi ID còn hợp lệ: soft delete request + trackers<br/>ACTIVE thì đóng lượt chờ; giữ file Drive"]
+  RUN --> RESULT["Một toast gộp số thực tế<br/>Số thực tế không vượt số đã báo"]
+  DEL --> RESULT
+```
+
+**Theo FRD BR-49, Bulk Start không chạy lại guard tại bước xác nhận**; guard đã chạy khi chốt tập. Đây là điểm khác với sơ đồ Start đơn lẻ ở C.4. FRD không đặt trần 20 request; API/FE spec vẫn còn ghi trần 20 và chưa thể hiện đủ contract chốt tập. Cần chốt nơi giữ tập S, cách truyền/kiểm tập S và chống thay đổi giữa hai bước trước khi kết luận implementation đáp ứng luồng này (NC-01). Một lần bulk xếp N lượt sẽ có N tracker và N email khi các lượt kết thúc bình thường; không có một email chung cho cả batch. Nguồn: FRD BR-45–BR-51, API §4.5/§4.8.
+
+### C.10 Những điểm cần lưu ý khi kiểm DB và debug
+
+| Điểm | Căn cứ / trạng thái | Cần kiểm hoặc xác nhận |
+|---|---|---|
+| Connection khác tên DB | `eca_report` ở worker; `ynm_eca_reports` ở API/migration; DB đều là `eca_reports` | Đối chiếu từng config môi trường; hai DB MySQL cần cùng instance và có quyền đọc/ghi cross-DB theo thiết kế. |
+| Enum tracker bị lệch | ARCH §4, API §4.6 và MODEL chốt `INITIALIZING`; WORKER §3–§5 vẫn có `QUEUED` | Dùng enum schema làm căn cứ kiểm insert; cập nhật worker doc theo NC-03. |
+| Lifecycle data model bị lệch | MODEL còn ghi Start chuyển thẳng PROCESSING và hủy lúc PROCESSING | Theo FRD: Start → ACTIVE; worker nhận → PROCESSING; chỉ Cancel khi ACTIVE. Giữ NC-04. |
+| Audit khi kết thúc | FRD BR-28 yêu cầu cập nhật theo người chạy; API §4.6 có mô tả `updated_at` như chỉ thay đổi do người thao tác | Tách việc tăng `file_sequence` khỏi sự kiện kết thúc; kiểm audit cuối lượt theo FRD, không gán danh tính worker. |
+| Dữ liệu trung gian qua nhiều chunk | WORKER §4.2 giữ map trong bộ nhớ, §3.3 gửi message mới mỗi chunk; FRD S4 có danh sách vi phạm trong bộ nhớ | **Need Confirm — Dev/Infra:** lưu hoặc tái dựng map và các dòng vi phạm ở đâu khi đổi replica/restart? Snapshot cấu hình trong `filters` không tự bảo đảm snapshot PI/master xuyên chunk. |
+| Ghi DB rồi publish lỗi | API mô tả INSERT request → INSERT tracker → publish | **Need Confirm — API/Infra:** rollback/compensation/idempotency nếu lỗi giữa ba bước; tránh request ACTIVE không có message hoặc message bị publish trùng. |
+| Consumer chết, ingestor lỗi, message gửi lại | WORKER §8 F-01/F-02/F-04 còn Open | Xác minh ack/requeue/DLQ, giữ dữ liệu chunk, chống đếm/ghi dòng trùng và ai chuyển lượt treo sang FAILED. Không mặc định worker chết sẽ tự bị timeout. |
+| Hai timeout độc lập | Quét 900 giây từ PROCESSING; tạo file 15 phút | Không tính thời gian ACTIVE, không reset đồng hồ khi sang chunk; message timeout file vẫn lệch FRD (NC-09). |
+| Số PI và số dòng | ARCH mô tả `impacted_count` = PI vi phạm, `processed_impacted_count` = dòng ghi; WORKER F-06 còn Open | Xác nhận ý nghĩa trước khi dùng counter làm oracle. Ví dụ C.6: PI-01 tạo 2 dòng nhưng chỉ là 1 PI vi phạm. |
+| Share Drive thất bại | WORKER §4.6 gom share/mail trong try/catch; bảng lỗi chỉ chốt rõ lỗi email không đổi status | **Need Confirm — Dev/BA:** trạng thái, retry và thông báo nếu file tạo xong nhưng share thất bại; không suy từ chính sách lỗi mail. |
+| Mongo và folder Drive | Doc chỉ nêu connection `ecomheat_mongo`, entity `Template`, và folder Export Data | Xác nhận tên DB/collection, folder ID và config account thực tế. Không dùng mặc định thư mục QA lưu testcase làm folder output của ứng dụng. |
+| Link gần nhất và lịch sử | Request lưu `report_link` gần nhất; tracker lưu facts per-run; Drive giữ file cũ | Không hiểu “ghi đè kết quả” là xóa file Drive; doc chưa chốt nơi giữ link lịch sử trên từng tracker. |
+| Schema migration còn đoạn cũ | ARCH W5 từng nói thêm index tracker; DB §5 chốt chỉ seed permission trên `monitoring_app_new`; MODEL tracker chỉ có PK | Kiểm migration/schema thật; không mặc định index `(tracker_type, source_id, id)` đã tồn tại. |
+
+Các dòng **Need Confirm** ở đây là khoảng trống hoặc mâu thuẫn của thiết kế, chưa phải bug đã tái hiện. Khi trace một lượt, dùng đồng thời **request ID + tracker ID + version**, đối chiếu snapshot/cursor/counts trong tracker, trạng thái/link trên request, message/log và file Drive tương ứng.
