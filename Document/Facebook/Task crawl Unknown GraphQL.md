@@ -22,9 +22,11 @@
 ynmpdp-5755-testing-ynm-crawler-empty
 
 kubectl get pods -n crawler-testing | grep ynmpdp-5755-testing-ynm-crawler-empty
-kubectl exec -it ynmpdp-5755-testing-ynm-crawler-empty-74f6cdff8f-qc9f5 -n crawler-testing -- sh
+kubectl exec -it lamtt-test-testing-ynm-crawler-empty-5c48d74f7f-rrlcz -n crawler-testing -- sh
 kubectl config use-context lamtt-k8s-local
 
+
+lamtt-test-testing-ynm-crawler-empty-5c48d74f7f-rrlcz
 
 // Regex rabbitMQ
 
