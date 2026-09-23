@@ -1,0 +1,4 @@
+interface:
+  display_name: "Viết test cases"
+  short_description: "Viết testcase và đồng bộ Sheet Overview"
+  default_prompt: "Dùng $write-test-cases để viết test cases ngắn gọn, điền task/module vào Overview và chỉ thao tác qua MCP."

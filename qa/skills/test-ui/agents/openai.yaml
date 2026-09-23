@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test UI từ test cases"
+  short_description: "Chạy UI test và ghi kết quả ngắn gọn"
+  default_prompt: "Dùng $test-ui để chạy các test case UI trên website tôi cung cấp và cập nhật kết quả bằng MCP."
