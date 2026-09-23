@@ -4,3 +4,16 @@ TestData/
 venv/
 serviceAccount.json
 mcp.log
+.DS_Store
+__pycache__/
+*.py[cod]
+.ruff_cache/
+
+# Output sinh ra khi chạy các script thủ công
+raw_messages.json
+messages_peek.csv
+messages_peek.json
+failed_message_*.txt
+error_response.json
+solr_data.json
+decoded_ids.csv

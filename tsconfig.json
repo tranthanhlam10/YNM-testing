@@ -9,6 +9,14 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "tests/**/*.ts",
+    "playground/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "venv",
+    "Data_get_from_rabbitMQ_by_scripts",
+    "TestData"
+  ]
 }

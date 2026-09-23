@@ -1,6 +1,11 @@
 {
+  "name": "ynm-testing-workspace",
+  "private": true,
   "scripts": {
-    "test:hashTitle": "node --experimental-strip-types hashTitle.test.ts"
+    "test": "npm run test:hash-title",
+    "test:hash-title": "node --experimental-strip-types tests/unit/hashTitle.test.ts",
+    "test:hashTitle": "npm run test:hash-title",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "amqplib": "^0.10.7",
